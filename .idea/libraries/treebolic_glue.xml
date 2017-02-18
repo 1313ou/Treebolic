@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="treebolic-glue">
+    <CLASSES>
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/libs/treebolic-glue.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

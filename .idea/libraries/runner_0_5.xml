@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="runner-0.5">
     <ANNOTATIONS>
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlueIface/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGraph/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
@@ -8,13 +9,16 @@
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicLib/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicMutable/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicPortable/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/jars/classes.jar!/" />
-      <root url="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/res" />
+      <root url="file:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/res" />
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
