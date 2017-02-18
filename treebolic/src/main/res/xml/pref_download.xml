@@ -1,0 +1,16 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:my="http://schemas.android.com/apk/res-auto" >
+
+    <org.treebolic.preference.AutoEditTextPreference
+        android:capitalize="none"
+        android:defaultValue="@string/pref_download_url_default"
+        android:inputType="textUri"
+        android:key="pref_download"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="@string/pref_description_download"
+        android:title="@string/pref_title_download"
+        my:values="@array/pref_download_urls" />
+
+</PreferenceScreen>

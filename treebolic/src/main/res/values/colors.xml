@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- pink -->
+    <!-- <item name="button_color" type="color">#FFFF4081</item> -->
+    <!-- <item name="button_border_color" type="color">#FFFF4081</item> -->
+
+
+    <!-- holo blue -->
+    <!-- <item name="button_color" type="color">#FF0281D1</item> -->
+    <!-- <item name="button_border_color" type="color">#FF0281D1</item> -->
+
+
+    <!-- lollipop -->
+    <!-- <item name="button_color" type="color">#FF009587</item> -->
+    <!-- <item name="button_border_color" type="color">#FF009587</item> -->
+
+
+    <!-- blue -->
+    <item name="button_color" type="color">#FF3765B1</item>
+    <item name="button_border_color" type="color">#FF3765B1</item>
+
+</resources>

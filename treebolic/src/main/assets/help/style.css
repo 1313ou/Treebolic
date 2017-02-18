@@ -1,0 +1,91 @@
+/* Treebolic Help */
+
+* {
+	color: black;
+	font-family: sans-serif;
+}
+
+body {
+	background-color: #F3F1E2;
+	font-size: small;
+	padding: 0px;
+}
+
+table {
+	empty-cells: show;
+}
+table.center {
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+img.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+/********* custom *********/
+
+.header {
+	margin-bottom: 50px;
+}
+
+.img {
+	text-align: center;
+	border-style: solid;
+	border-width: 1;
+}
+
+.img2 {
+	text-align: center;
+	background-color: #202020;
+	color: #808080;
+	border-style: solid;
+	border-width: 1;
+}
+
+.from {
+	background-color: #E0E0FF;
+	font-family: sans;
+	font-style: italic;
+	border-style: solid;
+	border-width: 1;
+	padding-right: 2px;
+	padding-left: 2px;
+	word-break: normal;
+}
+
+.to {
+	font-family: sans;
+	font-style: normal;
+	border-style: solid;
+	border-width: 1;
+	padding-right: 2px;
+	padding-left: 2px;
+	word-break: normal;
+}
+
+.section {
+	margin-top: 32px; 
+	margin-left: 10%; 
+	margin-right: 10%;
+}
+
+.sectionhead {
+	font-size: large;
+	font-weight: bold;
+	text-align: center;
+}
+
+.gloss {
+	font-size: small;
+	font-style: normal;
+	color: gray;
+}
+
+.keyw {
+	font-weight: bold;
+	color: black;
+}
+

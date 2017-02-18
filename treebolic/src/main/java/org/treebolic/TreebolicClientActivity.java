@@ -1,0 +1,557 @@
+package org.treebolic;
+
+import java.net.URL;
+import java.util.Properties;
+
+import org.treebolic.clients.TreebolicAIDLBoundClient;
+import org.treebolic.clients.TreebolicBoundClient;
+import org.treebolic.clients.TreebolicClientActivityStub;
+import org.treebolic.clients.TreebolicIntentClient;
+import org.treebolic.clients.TreebolicMessengerClient;
+import org.treebolic.clients.iface.ITreebolicClient;
+import org.treebolic.search.SearchSettings;
+
+import android.app.ActionBar;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Process;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.inputmethod.InputMethodManager;
+import android.webkit.MimeTypeMap;
+import android.widget.SearchView;
+import android.widget.Toast;
+import treebolic.IContext;
+import treebolic.Widget;
+import treebolic.model.Model;
+import treebolic.view.View;
+
+/**
+ * Treebolic client activity (requests model from server) and displays returned model
+ *
+ * @author Bernard Bou
+ */
+public class TreebolicClientActivity extends TreebolicClientActivityStub implements IContext
+{
+	/**
+	 * Log tag
+	 */
+	private static final String TAG = "Treebolic Client Activity"; //$NON-NLS-1$
+
+	/**
+	 * Parameters
+	 */
+	private Properties parameters;
+
+	/**
+	 * Treebolic widget
+	 */
+	private Widget widget;
+
+	/**
+	 * Search view on action bar
+	 */
+	private SearchView searchView;
+
+	// L I F E C Y C L E
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreate(android.os.Bundle)
+	 */
+	@Override
+	protected void onCreate(final Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+
+		// action bar
+		final ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+
+		// widget
+		this.widget = new Widget(this, this);
+		setContentView(this.widget);
+
+		// init widget with model is asynchronous
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onPause()
+	 */
+	@Override
+	protected void onPause()
+	{
+		Log.d(TreebolicClientActivity.TAG, "Activity paused, terminating surface drawing thread"); //$NON-NLS-1$
+
+		// terminate thread
+		final View view = this.widget.getView();
+		if (view != null)
+		{
+			view.getThread().terminate();
+		}
+
+		// super
+		super.onPause();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(final Menu menu)
+	{
+		// menu
+		getMenuInflater().inflate(R.menu.treebolic, menu);
+
+		// search view listener
+		final MenuItem searchMenuItem = menu.findItem(R.id.searchView);
+		searchMenuItem.expandActionView();
+		this.searchView = (SearchView) searchMenuItem.getActionView();
+		int width = this.getResources().getInteger(R.integer.search_view_max_width);
+		if (width != -1)
+			this.searchView.setMaxWidth(width);
+		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+		{
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see android.widget.SearchView.OnQueryTextListener#onQueryTextSubmit(java.lang.String)
+			 */
+			@Override
+			public boolean onQueryTextSubmit(final String query)
+			{
+				handleQueryChanged(query, true);
+				return true;
+			}
+
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see android.widget.SearchView.OnQueryTextListener#onQueryTextChange(java.lang.String)
+			 */
+			@Override
+			public boolean onQueryTextChange(final String query)
+			{
+				handleQueryChanged(query, false);
+				return true;
+			}
+		});
+
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+	 */
+	@Override
+	public boolean onOptionsItemSelected(final MenuItem item)
+	{
+		switch (item.getItemId())
+		{
+		case R.id.action_settings:
+			final Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			return true;
+
+		case R.id.action_finish:
+			finish();
+			return true;
+
+		case R.id.action_kill:
+			Process.killProcess(Process.myPid());
+			return true;
+
+		default:
+			break;
+		}
+		return false;
+	}
+
+	// T R E E B O L I C C O N T E X T
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#getBase()
+	 */
+	@Override
+	public URL getBase()
+	{
+		return Settings.getURLPref(this, TreebolicIface.PREF_BASE);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#getImagesBase()
+	 */
+	@Override
+	public URL getImagesBase()
+	{
+		return Settings.getURLPref(this, TreebolicIface.PREF_IMAGEBASE);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#getParameters()
+	 */
+	@Override
+	public Properties getParameters()
+	{
+		if (this.parameters == null)
+		{
+			this.parameters = makeParameters();
+		}
+		return this.parameters;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#getStyle()
+	 */
+	@Override
+	public String getStyle()
+	{
+		return Settings.STYLE_DEFAULT;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#linkTo(java.lang.String, java.lang.String)
+	 */
+	@Override
+	public boolean linkTo(final String url, final String target)
+	{
+		// if we handle url, initiate another query/response cycle
+		if (this.urlScheme != null && url.startsWith(this.urlScheme))
+		{
+			final String source2 = url.substring(this.urlScheme.length());
+			query(source2);
+			return true;
+		}
+
+		// standard handling
+		try
+		{
+			final Intent intent = new Intent(Intent.ACTION_VIEW);
+			final Uri uri = Uri.parse(url);
+			final String extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
+			final String mimetype = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+			intent.setDataAndType(uri, mimetype);
+			startActivity(intent);
+			return true;
+		}
+		catch (final Exception e)
+		{
+			Toast.makeText(this, R.string.error_link, Toast.LENGTH_LONG).show();
+		}
+		return false;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#getInput()
+	 */
+	@Override
+	public String getInput()
+	{
+		return this.searchView.getQuery().toString();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#warn(java.lang.String)
+	 */
+	@Override
+	public void warn(final String message)
+	{
+		toast(message, Toast.LENGTH_LONG);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see treebolic.IContext#status(java.lang.String)
+	 */
+	@Override
+	public void status(final String message)
+	{
+		toast(message, Toast.LENGTH_SHORT);
+	}
+
+	/**
+	 * Make parameters from bundle
+	 *
+	 * @return properties
+	 */
+	private Properties makeParameters()
+	{
+		final Properties theseParameters = new Properties();
+		theseParameters.setProperty("base", Settings.getStringPref(this, TreebolicIface.PREF_BASE)); //$NON-NLS-1$
+		theseParameters.setProperty("imagebase", Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE)); //$NON-NLS-1$
+		theseParameters.setProperty("settings", Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS)); //$NON-NLS-1$
+		return theseParameters;
+	}
+
+	// C L I E N T
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.treebolic.clients.TreebolicClientActivityStub#getClient()
+	 */
+	@Override
+	protected ITreebolicClient getClient()
+	{
+		final String service = Settings.getStringPref(this, Settings.PREF_SERVICE);
+		if (service != null)
+		{
+			if (service.contains("Intent")) //$NON-NLS-1$
+			{
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service); //$NON-NLS-1$
+				return new TreebolicIntentClient(this, service, this, this);
+			}
+			else if (service.contains("AIDL")) //$NON-NLS-1$
+			{
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to AIDL bound service " + service); //$NON-NLS-1$
+				return new TreebolicAIDLBoundClient(this, service, this, this);
+			}
+			else if (service.contains("Bound")) //$NON-NLS-1$
+			{
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to bound service " + service); //$NON-NLS-1$
+				return new TreebolicBoundClient(this, service, this, this);
+			}
+			else if (service.contains("Messenger")) //$NON-NLS-1$
+			{
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to messenger service " + service); //$NON-NLS-1$
+				return new TreebolicMessengerClient(this, service, this, this);
+			}
+		}
+		Log.d(TreebolicClientActivity.TAG, "Null service"); //$NON-NLS-1$
+		return null;
+	}
+
+	// M O D E L
+
+	/**
+	 * Query model from source
+	 *
+	 * @param source
+	 *            source
+	 */
+	private void query(final String source)
+	{
+		if (this.client == null)
+		{
+			Log.d(TreebolicClientActivity.TAG, "Null client"); //$NON-NLS-1$
+			return;
+		}
+		if (source == null || source.isEmpty())
+		{
+			Log.d(TreebolicClientActivity.TAG, "Null source"); //$NON-NLS-1$
+			return;
+		}
+		Log.d(TreebolicClientActivity.TAG, "Requesting model for source " + source); //$NON-NLS-1$
+		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
+		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
+		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
+		final Intent forward = null;
+		this.client.requestModel(source, base, imageBase, settings, forward);
+		return;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.treebolic.clients.iface.IModelListener#onModel(treebolic.model.Model, java.lang.String)
+	 */
+	@Override
+	public void onModel(final Model model, final String urlScheme0)
+	{
+		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model); //$NON-NLS-1$
+
+		// abort
+		if (model == null)
+		{
+			Toast.makeText(this, R.string.error_null_model, Toast.LENGTH_LONG).show();
+			finish();
+			return;
+		}
+
+		// init widget with model
+		this.urlScheme = urlScheme0;
+		TreebolicClientActivity.this.widget.init(model);
+	}
+
+	// S E A R C H
+
+	static private final String CMD_SEARCH = "SEARCH"; //$NON-NLS-1$
+
+	static private final String CMD_RESET = "RESET"; //$NON-NLS-1$
+
+	static private final String CMD_CONTINUE = "CONTINUE"; //$NON-NLS-1$
+
+	static private final String SCOPE_SOURCE = "SOURCE"; //$NON-NLS-1$
+
+	static private final String SCOPE_LABEL = "LABEL"; //$NON-NLS-1$
+
+	static private final String MODE_STARTSWITH = "STARTSWITH"; //$NON-NLS-1$
+
+	static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
+
+	/**
+	 * Search pending flag
+	 */
+	private boolean searchPending = false;
+
+	/**
+	 * SearchView query change listener
+	 * 
+	 * @param query
+	 *            new query
+	 * @param submit
+	 *            whether submit was changed
+	 */
+	protected void handleQueryChanged(final String query, boolean submit)
+	{
+		// clear keyboard out of the way
+		if (submit)
+			closeKeyboard();
+
+		// reset current search if any
+		this.widget.search(CMD_RESET);
+
+		if (submit || query.length() > SEARCH_TRIGGER_LEVEL)
+		{
+			// query applies to source: search is a requery
+			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
+			if (SCOPE_SOURCE.equals(scope))
+			{
+				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
+				if (submit)
+					query(query);
+				return;
+			}
+
+			// query applies to non-source scope (label, content, ..): tree search
+			final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, MODE_STARTSWITH); // equals, startswith, includes
+			runSearch(scope, mode, query);
+		}
+	}
+
+	/**
+	 * Tree search handler
+	 */
+	protected void handleSearchRun()
+	{
+		// clear keyboard out of the way
+		closeKeyboard();
+
+		// new or continued search
+		if (!this.searchPending)
+		{
+			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+			final String query = this.searchView.getQuery().toString();
+			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
+			if (SCOPE_SOURCE.equals(scope))
+			{
+				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
+				query(query);
+				return;
+			}
+
+			final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, MODE_STARTSWITH); // equals, startswith, includes
+			runSearch(scope, mode, query);
+		}
+		else
+		{
+			continueSearch();
+		}
+	}
+
+	/**
+	 * Tree search reset handler
+	 */
+	protected void handleSearchReset()
+	{
+		// clear keyboard out of the way
+		closeKeyboard();
+
+		// clear current query
+		TreebolicClientActivity.this.searchView.setQuery("", false); //$NON-NLS-1$
+
+		resetSearch();
+	}
+
+	private void closeKeyboard()
+	{
+		final android.view.View view = this.getCurrentFocus();
+		if (view != null)
+		{
+			final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+		}
+	}
+
+	// SEARCH INTERFACE
+
+	protected void runSearch(String scope, String mode, String target)
+	{
+		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target); //$NON-NLS-1$
+		this.searchPending = true;
+		this.widget.search(CMD_SEARCH, scope, mode, target);
+	}
+
+	protected void continueSearch()
+	{
+		Log.d(TAG, "Search continue"); //$NON-NLS-1$
+		this.widget.search(CMD_CONTINUE);
+	}
+
+	protected void resetSearch()
+	{
+		Log.d(TAG, "Search reset"); //$NON-NLS-1$
+		this.searchPending = false;
+		this.widget.search(CMD_RESET);
+	}
+
+	// H E L P E R S
+
+	/**
+	 * Put toast on UI thread
+	 *
+	 * @param message
+	 *            message
+	 * @param duration
+	 *            duration
+	 */
+	private void toast(final String message, final int duration)
+	{
+		runOnUiThread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				Toast.makeText(TreebolicClientActivity.this, message, duration).show();
+			}
+		});
+	}
+}

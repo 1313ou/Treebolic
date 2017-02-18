@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="title_download">Téléchargement</string>
+    <string name="title_activity_download">Téléchargement</string>
+
+    <!-- pref -->
+    <string name="pref_header_download">Téléchargements</string>
+    <string name="pref_summary_header_download">URL de téléchargement pour données supplémentaires</string>
+    <string name="pref_title_download">Adresse de téléchargement</string>
+    <string name="pref_description_download">Adresse (URL) de téléchargement de données supplémentaires</string>
+
+</resources>

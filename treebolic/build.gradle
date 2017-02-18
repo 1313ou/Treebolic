@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "org.treebolic"
+        minSdkVersion 14
+        targetSdkVersion 23
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':treebolicIface')
+    compile project(':treebolicLib')
+    compile project(':treebolicClientsLib')
+
+    compile project(':fileChooserLib')
+    compile project(':storageLib')
+    compile project(':downloadLib')
+    compile project(':preferenceLib')
+    compile project(':guideLib')
+    compile project(':searchLib')
+    compile project(':wheelLib')
+
+    compile files('libs/treebolic-provider-text-indent-tre.jar')
+    compile files('libs/treebolic-provider-text-indent.jar')
+    compile files('libs/treebolic-provider-text-pair.jar')
+    compile files('libs/treebolic-provider-xml-dom.jar')
+}

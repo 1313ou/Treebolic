@@ -1,0 +1,54 @@
+// CORE
+
+include ':treebolicLib'
+project(':treebolicLib').projectDir = new File('../TreebolicLib/treebolicLib/')
+
+include ':treebolicPortable'
+project(':treebolicPortable').projectDir = new File('../TreebolicLib/treebolicPortable/')
+
+include ':treebolicGraph'
+project(':treebolicGraph').projectDir = new File('../TreebolicLib/treebolicGraph/')
+
+include ':treebolicMutable'
+project(':treebolicMutable').projectDir = new File('../TreebolicLib/treebolicMutable/')
+
+include ':treebolicGlue'
+project(':treebolicGlue').projectDir = new File('../TreebolicLib/treebolicGlue/')
+
+include ':treebolicGlueIface'
+project(':treebolicGlueIface').projectDir = new File('../TreebolicLib/treebolicGlueIface/')
+
+include ':treebolicIface'
+project(':treebolicIface').projectDir = new File('../TreebolicLib/treebolicIface/')
+
+// LIBS
+
+include ':searchLib'
+project(':searchLib').projectDir = new File('../TreebolicSupportLibs/searchLib/')
+
+include ':wheelLib'
+project(':wheelLib').projectDir = new File('../TreebolicSupportLibs/wheelLib/')
+
+include ':guideLib'
+project(':guideLib').projectDir = new File('../TreebolicSupportLibs/guideLib/')
+
+include ':downloadLib'
+project(':downloadLib').projectDir = new File('../TreebolicSupportLibs/downloadLib/')
+
+include ':preferenceLib'
+project(':preferenceLib').projectDir = new File('../TreebolicSupportLibs/preferenceLib/')
+
+include ':fileChooserLib'
+project(':fileChooserLib').projectDir = new File('../TreebolicSupportLibs/fileChooserLib/')
+
+include ':storageLib'
+project(':storageLib').projectDir = new File('../TreebolicSupportLibs/storageLib/')
+
+// LIB
+
+include ':treebolicClientsLib'
+
+// APP
+
+include ':treebolic'
+

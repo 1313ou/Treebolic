@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Treebolic</string>
+    <string name="treebolic">Treebolic</string>
+
+    <!-- menu+actionbar -->
+    <string name="hint_search">source</string>
+    <string name="hint_search_treebolic">query</string>
+
+    <!-- activity -->
+    <string name="title_activity_main">Treebolic</string>
+    <string name="title_activity_treebolic">Treebolic</string>
+    <string name="title_activity_treebolic_plugin">Treebolic (module)</string>
+    <string name="title_activity_treebolic_source">Treebolic (source)</string>
+    <string name="title_activity_treebolic_bundle">Treebolic (archive)</string>
+    <string name="title_activity_treebolic_serialized">Treebolic (sérialisé)</string>
+    <string name="title_activity_treebolic_model">Treebolic (modèle)</string>
+    <string name="title_activity_treebolic_client">Treebolic (client)</string>
+    <string name="title_activity_services">Services</string>
+    <string name="title_activity_providers">Fournisseurs</string>
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="title_activity_app_settings">Application</string>
+    <string name="title_help">Aide</string>
+    <string name="title_tips">Astuces</string>
+    <string name="title_about">À propos</string>
+
+    <!-- menu -->
+    <string name="title_treebolic">Ouvrir</string>
+    <string name="title_treebolic_source">Ouvrir source</string>
+    <string name="title_treebolic_bundle">Ouvrir archive</string>
+    <string name="title_treebolic_serialized">Ouvrir modèle sérialisé</string>
+    <string name="title_treebolic_client">Lancer client</string>
+    <string name="title_query">Requête</string>
+    <string name="title_start">Démarrer</string>
+    <string name="title_finish">Finir</string>
+    <string name="title_kill">Terminer</string>
+    <string name="title_demo">Démo</string>
+    <string name="title_rescan">Actualiser</string>
+    <string name="title_settings">Paramètres</string>
+
+    <!-- search settings -->
+    <string name="title_search_settings_dialog">Recherche Treebolic</string>
+    <string name="message_search_settings_dialog">Entrer les paramètres de la recherche</string>
+    <string name="ok_search_settings_dialog">OK</string>
+    <string name="cancel_search_settings_dialog">Annuler</string> <!-- errors -->
+
+
+    <!-- errors -->
+    <string name="error_null_source">Source nulle</string>
+    <string name="error_null_provider">Fournisseur nul</string>
+    <string name="error_null_plugin">Module nul</string>
+    <string name="error_null_model">Modèle nul retourné</string>
+    <string name="error_null_data">Données nulles</string>
+    <string name="error_link">Erreur de lien</string>
+    <string name="error_query">Erreur de requête</string>
+    <string name="error_deserialize">Erreur lors de la désérialisation</string>
+    <string name="error_no_services">Aucun service disponible</string>
+
+    <!-- list views -->
+    <string name="service">service</string>
+    <string name="provider">fournisseur</string>
+    <string name="pkg">paquetage</string>
+    <string name="name">nom</string>
+    <string name="process">processus</string>
+    <string name="enabled">activé</string>
+    <string name="exported">exporté</string>
+    <string name="permission">permission</string>
+    <string name="flags">drapeaux</string>
+    <string name="label">étiquette</string>
+    <string name="description">description</string>
+    <string name="plugin">module</string>
+    <string name="mimetype">type mime</string>
+    <string name="extension">extension</string>
+    <string name="scheme">schema</string>
+    <string name="source">source</string>
+    <string name="base">base</string>
+    <string name="imagebase">base images</string>
+    <string name="settings">rendu</string>
+
+</resources>

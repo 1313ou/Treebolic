@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.treebolic.MainActivity" >
+
+    <item
+        android:id="@+id/searchView"
+        android:actionViewClass="android.widget.SearchView"
+        android:iconifiedByDefault="true"
+        android:showAsAction="always"
+        android:title="@string/title_search"
+        tools:ignore="AlwaysShowAction"/>
+    <item
+        android:id="@+id/action_search_run"
+        android:icon="@drawable/ic_action_search_run"
+        android:showAsAction="always"
+        android:title="@string/title_search_run"/>
+    <item
+        android:id="@+id/action_search_reset"
+        android:icon="@drawable/ic_action_search_reset"
+        android:showAsAction="always"
+        android:title="@string/title_search_reset"/>
+    <item
+        android:id="@+id/action_search_settings"
+        android:icon="@drawable/ic_action_search_settings"
+        android:showAsAction="ifRoom"
+        android:title="@string/title_search_settings"/>
+    <item
+        android:id="@+id/action_tips"
+        android:showAsAction="never"
+        android:title="@string/title_tips"/>
+    <item
+        android:id="@+id/action_help"
+        android:showAsAction="never"
+        android:title="@string/title_help"/>
+    <item
+        android:id="@+id/action_finish"
+        android:showAsAction="never"
+        android:title="@string/title_finish"/>
+
+</menu>

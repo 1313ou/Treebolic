@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ok/errors -->
+    <string name="fail_bind">Échec lors de la connexion au service</string>
+    <string name="fail_start">Échec lors du démarrage du service</string>
+    <string name="fail_nullquery">Requête nulle</string>
+    <string name="fail_nullclient">Client nul</string>
+
+</resources>

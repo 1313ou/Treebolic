@@ -1,0 +1,99 @@
+package org.treebolic;
+
+import org.treebolic.search.SearchSettings;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import treebolic.IWidget;
+
+public class Searcher
+{
+	private static final String TAG = "Searcher"; //$NON-NLS-1$
+
+	static private final String CMD_SEARCH = "SEARCH"; //$NON-NLS-1$
+
+	static private final String CMD_RESET = "RESET"; //$NON-NLS-1$
+
+	static private final String CMD_CONTINUE = "CONTINUE"; //$NON-NLS-1$
+
+	/**
+	 * Search pending flag
+	 */
+	private boolean searchPending;
+
+	/**
+	 * Context
+	 */
+	private final Context context;
+
+	/**
+	 * Widget
+	 */
+	private final IWidget widget;
+
+	/**
+	 * Constructor
+	 * 
+	 * @param context0
+	 *            context
+	 * @param widget0
+	 *            widget
+	 */
+	public Searcher(final Context context0, final IWidget widget0)
+	{
+		this.searchPending = false;
+		this.context = context0;
+		this.widget = widget0;
+	}
+
+	protected boolean search(final String target)
+	{
+		final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.context);
+
+		final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, "LABEL"); // label, content, link, id //$NON-NLS-1$
+		final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, "STARTSWITH"); // equals, startswith, includes //$NON-NLS-1$
+
+		Log.d(TAG, "Search for " + scope + ' ' + mode + ' ' + '"' + target + '"'); //$NON-NLS-1$
+		if ("source".equals(scope)) //$NON-NLS-1$
+		{
+			return false;
+		}
+
+		if (!this.searchPending)
+		{
+			runSearch(scope, mode, target);
+		}
+		else
+		{
+			continueSearch();
+		}
+		return true;
+	}
+	
+	// SEARCH INTERFACE
+
+	protected void runSearch(String scope, String mode, String target)
+	{
+		if (target == null || target.isEmpty())
+			return;
+
+		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target); //$NON-NLS-1$
+		this.searchPending = true;
+		this.widget.search(CMD_SEARCH, scope, mode, target);
+	}
+
+	protected void continueSearch()
+	{
+		Log.d(TAG, "Search continue"); //$NON-NLS-1$
+		this.widget.search(CMD_CONTINUE);
+	}
+
+	protected void resetSearch()
+	{
+		Log.d(TAG, "Search reset"); //$NON-NLS-1$
+		this.searchPending = false;
+		this.widget.search(CMD_RESET);
+	}
+}
