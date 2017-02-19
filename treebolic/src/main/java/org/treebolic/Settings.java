@@ -1,10 +1,6 @@
 package org.treebolic;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +8,11 @@ import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Settings
@@ -78,9 +79,9 @@ public class Settings
 	/**
 	 * Set providers default settings from provider data
 	 *
-	 * @param context
-	 *            context
+	 * @param context context
 	 */
+	@SuppressLint("CommitPrefEdits")
 	@SuppressWarnings("boxing")
 	static public void setDefaults(final Context context)
 	{
@@ -88,30 +89,31 @@ public class Settings
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, false);
 
 		// create prefs for built-in providers
-		for (int i = 0; i < providers.size(); i++)
+		if (providers != null)
 		{
-			final HashMap<String, Object> provider = providers.get(i);
-			if (provider.get(Providers.ISPLUGIN).equals(true))
+			for (int i = 0; i < providers.size(); i++)
 			{
-				continue;
-			}
-
-			// provider shared preferences
-			final SharedPreferences providerSharedPrefs = context.getSharedPreferences(Settings.PREF_FILE_PREFIX + provider.get(Providers.NAME),
-					Context.MODE_PRIVATE);
-
-			// commit non existent values
-			final Editor providerEditor = providerSharedPrefs.edit();
-			final String[] keys = new String[] { TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE,
-					TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER };
-			final String[] providerKeys = new String[] { Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS, Providers.PROVIDER };
-			for (int j = 0; j < keys.length; j++)
-			{
-				final String key = keys[j];
-				if (!providerSharedPrefs.contains(key))
+				final HashMap<String, Object> provider = providers.get(i);
+				if (provider.get(Providers.ISPLUGIN).equals(true))
 				{
-					final String value = (String) provider.get(providerKeys[j]);
-					providerEditor.putString(key, value).commit();
+					continue;
+				}
+
+				// provider shared preferences
+				final SharedPreferences providerSharedPrefs = context.getSharedPreferences(Settings.PREF_FILE_PREFIX + provider.get(Providers.NAME), Context.MODE_PRIVATE);
+
+				// commit non existent values
+				final Editor providerEditor = providerSharedPrefs.edit();
+				final String[] keys = new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER};
+				final String[] providerKeys = new String[]{Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS, Providers.PROVIDER};
+				for (int j = 0; j < keys.length; j++)
+				{
+					final String key = keys[j];
+					if (!providerSharedPrefs.contains(key))
+					{
+						final String value = (String) provider.get(providerKeys[j]);
+						providerEditor.putString(key, value).commit();
+					}
 				}
 			}
 		}
@@ -120,11 +122,10 @@ public class Settings
 	/**
 	 * Set active provider settings (copied into default preferences)
 	 *
-	 * @param context
-	 *            context
-	 * @param provider
-	 *            active provider
+	 * @param context  context
+	 * @param provider active provider
 	 */
+	@SuppressLint("CommitPrefEdits")
 	@SuppressWarnings("boxing")
 	static public void setActivePrefs(final Context context, final HashMap<String, Object> provider)
 	{
@@ -145,12 +146,14 @@ public class Settings
 			final String providerClass = providerSharedPrefs.getString(Settings.PREF_PROVIDER, null);
 			defaultEditor.putString(Settings.PREF_PROVIDER, providerClass);
 		}
-
-		final String[] keys = new String[] { TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS };
-		for (final String key : keys)
+		if (providerSharedPrefs != null)
 		{
-			final String value = providerSharedPrefs.getString(key, null);
-			defaultEditor.putString(key, value);
+			final String[] keys = new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS};
+			for (final String key : keys)
+			{
+				final String value = providerSharedPrefs.getString(key, null);
+				defaultEditor.putString(key, value);
+			}
 		}
 		defaultEditor.commit();
 	}
@@ -158,13 +161,11 @@ public class Settings
 	/**
 	 * Put string preference
 	 *
-	 * @param context
-	 *            context
-	 * @param key
-	 *            key
-	 * @param value
-	 *            value
+	 * @param context context
+	 * @param key     key
+	 * @param value   value
 	 */
+	@SuppressLint("CommitPrefEdits")
 	static public void putStringPref(final Context context, final String key, final String value)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -174,13 +175,11 @@ public class Settings
 	/**
 	 * Put integer preference
 	 *
-	 * @param context
-	 *            context
-	 * @param key
-	 *            key
-	 * @param value
-	 *            value
+	 * @param context context
+	 * @param key     key
+	 * @param value   value
 	 */
+	@SuppressLint("CommitPrefEdits")
 	static public void putIntPref(final Context context, final String key, final int value)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -190,42 +189,34 @@ public class Settings
 	/**
 	 * Get string preference
 	 *
-	 * @param context
-	 *            context
-	 * @param key
-	 *            key
+	 * @param context context
+	 * @param key     key
 	 * @return value
 	 */
 	static public String getStringPref(final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		final String result = sharedPref.getString(key, null);
-		return result;
+		return sharedPref.getString(key, null);
 	}
 
 	/**
 	 * Get int preference
 	 *
-	 * @param context
-	 *            context
-	 * @param key
-	 *            key
+	 * @param context context
+	 * @param key     key
 	 * @return value
 	 */
 	static public int getIntPref(final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		final int result = sharedPref.getInt(key, 0);
-		return result;
+		return sharedPref.getInt(key, 0);
 	}
 
 	/**
 	 * Get preference value as url
 	 *
-	 * @param context
-	 *            context
-	 * @param key
-	 *            key
+	 * @param context context
+	 * @param key     key
 	 * @return preference value as
 	 */
 	static public URL getURLPref(final Context context, final String key)
@@ -240,8 +231,7 @@ public class Settings
 	/**
 	 * Make URL from string
 	 *
-	 * @param url
-	 *            url string
+	 * @param url url string
 	 * @return url
 	 */
 	static public URL makeURL(final String url)
@@ -259,10 +249,8 @@ public class Settings
 	/**
 	 * Application settings
 	 *
-	 * @param context
-	 *            context
-	 * @param pkgName
-	 *            package name
+	 * @param context context
+	 * @param pkgName package name
 	 */
 	static public void applicationSettings(final Context context, final String pkgName)
 	{

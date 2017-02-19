@@ -21,8 +21,7 @@ public class Utils
 	static ClassLoader getClassLoader(final Context context, final String pkgName) throws NameNotFoundException
 	{
 		final Context providerContext = context.createPackageContext(pkgName, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
-		final ClassLoader classLoader = providerContext.getClassLoader();
-		return classLoader;
+		return providerContext.getClassLoader();
 	}
 
 	/**

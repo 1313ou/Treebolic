@@ -1,8 +1,5 @@
 package org.treebolic;
 
-import java.util.HashMap;
-import java.util.List;
-
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +14,9 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * A {@link PreferenceActivity} that presents a set of application settings. On handset devices, settings are presented as a single list. On tablets, settings
@@ -87,7 +87,9 @@ public class SettingsActivity extends PreferenceActivity
 		}
 	}
 
-	/** {@inheritDoc} */
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void onBuildHeaders(final List<Header> target)
 	{
@@ -107,151 +109,157 @@ public class SettingsActivity extends PreferenceActivity
 	@Override
 	protected boolean isValidFragment(final String fragmentName)
 	{
-		if (ActivePreferenceFragment.class.getName().equals(fragmentName) || //
+		return ActivePreferenceFragment.class.getName().equals(fragmentName) || //
 				XmlPreferenceFragment.class.getName().equals(fragmentName) || //
 				TextIndentPreferenceFragment.class.getName().equals(fragmentName) || //
 				TextIndentTrePreferenceFragment.class.getName().equals(fragmentName) || //
 				TextPairPreferenceFragment.class.getName().equals(fragmentName) || //
 				DownloadPreferenceFragment.class.getName().equals(fragmentName) || //
-				ServicePreferenceFragment.class.getName().equals(fragmentName))
-			return true;
-		return false;
+				ServicePreferenceFragment.class.getName().equals(fragmentName);
 	}
 
 	/**
 	 * Shows the simplified settings UI if the device configuration if the device configuration dictates that a simplified, single-pane UI should be shown.
 	 */
-	@SuppressWarnings({ "deprecation", "boxing" })
+	@SuppressWarnings({"deprecation", "boxing"})
 	private void setupSimplePreferencesScreen()
 	{
 		// In the simplified UI, fragments are not used at all and we instead use the older PreferenceActivity APIs.
 		final String action = getIntent().getAction();
 		if (action != null)
 		{
-			if (action.equals(SettingsActivity.ACTION_GENERAL))
+			switch (action)
 			{
-				final Boolean isPlugin = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
-
-				// shared preferences
-				final PreferenceManager prefManager = getPreferenceManager();
-				if (!isPlugin)
+				case SettingsActivity.ACTION_GENERAL:
 				{
-					prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME)); //$NON-NLS-1$
+					final Boolean isPlugin = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
+
+					// shared preferences
+					final PreferenceManager prefManager = getPreferenceManager();
+					if (!isPlugin)
+					{
+						prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME)); //$NON-NLS-1$
+						prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
+					}
+					final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
+
+					// layout
+					addPreferencesFromResource(isPlugin ? R.xml.pref_active_plugin : R.xml.pref_active_builtin);
+
+					// active name
+					final Preference namePref = findPreference(Settings.PREF_PROVIDER_NAME);
+					if (namePref != null)
+					{
+						final String key = namePref.getKey();
+						namePref.setSummary(Settings.getStringPref(this, key));
+					}
+
+					// active icon
+					final Preference iconPref = findPreference(Settings.PREF_PROVIDER_ICON);
+					if (iconPref != null)
+					{
+						try
+						{
+							if ((Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN))
+							{
+								final Drawable drawable = getPackageManager().getApplicationIcon((String) SettingsActivity.provider.get(Providers.PACKAGE));
+								iconPref.setIcon(drawable);
+							}
+							else
+							{
+								final int resId = (Integer) SettingsActivity.provider.get(Providers.ICON);
+								iconPref.setIcon(resId);
+							}
+						}
+						catch (final NameNotFoundException e)
+						{
+							iconPref.setIcon(R.drawable.ic_treebolic);
+						}
+					}
+
+					// active preferences
+					for (final String prefKey : new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER})
+					{
+						final Preference pref = findPreference(prefKey);
+						if (pref != null)
+						{
+							final String key = pref.getKey();
+							pref.setSummary(sharedPrefs.getString(key, null));
+						}
+					}
+
+					// forward button to plugin provider settings activity
+					if (isPlugin)
+					{
+						final Preference button = findPreference("button_provider_settings"); //$NON-NLS-1$
+						button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
+						{
+							@SuppressWarnings("synthetic-access")
+							@Override
+							public boolean onPreferenceClick(final Preference arg0)
+							{
+								final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
+								final String activityName = pkg + ".SettingsActivity"; //$NON-NLS-1$
+								final Intent intent = new Intent();
+								intent.setComponent(new ComponentName(pkg, activityName));
+								startActivity(intent);
+								return true;
+							}
+						});
+					}
+					break;
+				}
+				case SettingsActivity.ACTION_DOWNLOAD:
+				{
+					addPreferencesFromResource(R.xml.pref_download);
+					final Preference pref = findPreference(Settings.PREF_DOWNLOAD);
+					final String key = pref.getKey();
+					pref.setSummary(Settings.getStringPref(this, key));
+					break;
+				}
+				case SettingsActivity.ACTION_SERVICE:
+					addPreferencesFromResource(R.xml.pref_service);
+					final ListPreference listPreference = (ListPreference) findPreference(Settings.PREF_SERVICE);
+					fillWithServiceData(listPreference);
+					break;
+				default:
+				{
+					String key = null;
+					switch (action)
+					{
+						case SettingsActivity.ACTION_XML:
+							key = "xml"; //$NON-NLS-1$
+
+							break;
+						case SettingsActivity.ACTION_TXT:
+							key = "text (indented)"; //$NON-NLS-1$
+
+							break;
+						case SettingsActivity.ACTION_TRE:
+							key = "text (indented, tre)"; //$NON-NLS-1$
+
+							break;
+						case SettingsActivity.ACTION_TXT2:
+							key = "text (pairs)"; //$NON-NLS-1$
+
+							break;
+					}
+
+					// non-default preference manager
+					final PreferenceManager prefManager = getPreferenceManager();
+					prefManager.setSharedPreferencesName("org.treebolic_preferences_" + key); //$NON-NLS-1$
+
 					prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
-				}
-				final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
+					addPreferencesFromResource(R.xml.pref_general);
+					final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
 
-				// layout
-				addPreferencesFromResource(isPlugin ? R.xml.pref_active_plugin : R.xml.pref_active_builtin);
-
-				// active name
-				final Preference namePref = findPreference(Settings.PREF_PROVIDER_NAME);
-				if (namePref != null)
-				{
-					final String key = namePref.getKey();
-					namePref.setSummary(Settings.getStringPref(this, key));
+					// provider
+					final Preference providerPref = findPreference(Settings.PREF_PROVIDER);
+					final String providerKey = providerPref.getKey();
+					final String providerValue = sharedPrefs.getString(providerKey, null);
+					providerPref.setSummary(providerValue);
+					break;
 				}
-
-				// active icon
-				final Preference iconPref = findPreference(Settings.PREF_PROVIDER_ICON);
-				if (iconPref != null)
-				{
-					try
-					{
-						if ((Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN))
-						{
-							final Drawable drawable = getPackageManager().getApplicationIcon((String) SettingsActivity.provider.get(Providers.PACKAGE));
-							iconPref.setIcon(drawable);
-						}
-						else
-						{
-							final int resId = (Integer) SettingsActivity.provider.get(Providers.ICON);
-							iconPref.setIcon(resId);
-						}
-					}
-					catch (final NameNotFoundException e)
-					{
-						iconPref.setIcon(R.drawable.ic_treebolic);
-					}
-				}
-
-				// active preferences
-				for (final String prefKey : new String[] { TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE,
-						TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER })
-				{
-					final Preference pref = findPreference(prefKey);
-					if (pref != null)
-					{
-						final String key = pref.getKey();
-						pref.setSummary(sharedPrefs.getString(key, null));
-					}
-				}
-
-				// forward button to plugin provider settings activity
-				if (isPlugin)
-				{
-					final Preference button = findPreference("button_provider_settings"); //$NON-NLS-1$
-					button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
-					{
-						@SuppressWarnings("synthetic-access")
-						@Override
-						public boolean onPreferenceClick(final Preference arg0)
-						{
-							final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-							final String activityName = pkg + ".SettingsActivity"; //$NON-NLS-1$
-							final Intent intent = new Intent();
-							intent.setComponent(new ComponentName(pkg, activityName));
-							startActivity(intent);
-							return true;
-						}
-					});
-				}
-			}
-			else if (action.equals(SettingsActivity.ACTION_DOWNLOAD))
-			{
-				addPreferencesFromResource(R.xml.pref_download);
-				final Preference pref = findPreference(Settings.PREF_DOWNLOAD);
-				final String key = pref.getKey();
-				pref.setSummary(Settings.getStringPref(this, key));
-			}
-			else if (action.equals(SettingsActivity.ACTION_SERVICE))
-			{
-				addPreferencesFromResource(R.xml.pref_service);
-				final ListPreference listPreference = (ListPreference) findPreference(Settings.PREF_SERVICE);
-				fillWithServiceData(listPreference);
-			}
-			else
-			{
-				String key = null;
-				if (action.equals(SettingsActivity.ACTION_XML))
-				{
-					key = "xml"; //$NON-NLS-1$
-				}
-				else if (action.equals(SettingsActivity.ACTION_TXT))
-				{
-					key = "text (indented)"; //$NON-NLS-1$
-				}
-				else if (action.equals(SettingsActivity.ACTION_TRE))
-				{
-					key = "text (indented, tre)"; //$NON-NLS-1$
-				}
-				else if (action.equals(SettingsActivity.ACTION_TXT2))
-				{
-					key = "text (pairs)"; //$NON-NLS-1$
-				}
-
-				// non-default preference manager
-				final PreferenceManager prefManager = getPreferenceManager();
-				prefManager.setSharedPreferencesName("org.treebolic_preferences_" + key); //$NON-NLS-1$
-				prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
-				addPreferencesFromResource(R.xml.pref_general);
-				final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
-
-				// provider
-				final Preference providerPref = findPreference(Settings.PREF_PROVIDER);
-				final String providerKey = providerPref.getKey();
-				final String providerValue = sharedPrefs.getString(providerKey, null);
-				providerPref.setSummary(providerValue);
 			}
 		}
 		else
@@ -263,7 +271,9 @@ public class SettingsActivity extends PreferenceActivity
 
 	// D E T E C T I O N
 
-	/** {@inheritDoc} */
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean onIsMultiPane()
 	{
@@ -285,6 +295,7 @@ public class SettingsActivity extends PreferenceActivity
 	 */
 	private static boolean isSimplePreferences(final Context context)
 	{
+		//noinspection ConstantConditions
 		return SettingsActivity.ALWAYS_SIMPLE_PREFS || !SettingsActivity.isLargeTablet(context);
 	}
 
@@ -327,14 +338,16 @@ public class SettingsActivity extends PreferenceActivity
 
 	public static class ActivePreferenceFragment extends PreferenceFragment
 	{
-		@SuppressWarnings({ "synthetic-access", "boxing" })
+		@SuppressWarnings({"synthetic-access", "boxing"})
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{
 			super.onCreate(savedInstanceState);
 
 			if (SettingsActivity.provider == null)
+			{
 				return;
+			}
 
 			// activity
 			final SettingsActivity activity = (SettingsActivity) getActivity();
@@ -369,8 +382,7 @@ public class SettingsActivity extends PreferenceActivity
 				{
 					if ((Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN))
 					{
-						final Drawable drawable = getActivity().getPackageManager().getApplicationIcon(
-								(String) SettingsActivity.provider.get(Providers.PACKAGE));
+						final Drawable drawable = getActivity().getPackageManager().getApplicationIcon((String) SettingsActivity.provider.get(Providers.PACKAGE));
 						iconPref.setIcon(drawable);
 					}
 					else
@@ -386,8 +398,7 @@ public class SettingsActivity extends PreferenceActivity
 			}
 
 			// active preferences
-			for (final String prefKey : new String[] { TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE,
-					TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER })
+			for (final String prefKey : new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER})
 			{
 				final Preference pref = findPreference(prefKey);
 				if (pref != null)
@@ -423,7 +434,7 @@ public class SettingsActivity extends PreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return (String) Providers.getProviders(getActivity(), false).get(0).get(Providers.NAME);
+			return getName(0);
 		}
 	}
 
@@ -432,7 +443,7 @@ public class SettingsActivity extends PreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return (String) Providers.getProviders(getActivity(), false).get(1).get(Providers.NAME);
+			return getName(1);
 		}
 	}
 
@@ -441,7 +452,7 @@ public class SettingsActivity extends PreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return (String) Providers.getProviders(getActivity(), false).get(2).get(Providers.NAME);
+			return getName(2);
 		}
 	}
 
@@ -450,7 +461,7 @@ public class SettingsActivity extends PreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return (String) Providers.getProviders(getActivity(), false).get(3).get(Providers.NAME);
+			return getName(3);
 		}
 	}
 
@@ -458,7 +469,7 @@ public class SettingsActivity extends PreferenceActivity
 	{
 		abstract protected String getName();
 
-		@SuppressWarnings({ "synthetic-access" })
+		@SuppressWarnings({"synthetic-access"})
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{
@@ -512,6 +523,20 @@ public class SettingsActivity extends PreferenceActivity
 				activity.bind(providerPreference, sharedPrefs.getString(key, null), activity.listener);
 			}
 		}
+
+		protected String getName(final int thisIndex)
+		{
+			final List<HashMap<String, Object>> providers = Providers.getProviders(getActivity(), false);
+			if (providers != null)
+			{
+				final HashMap<String, Object> provider = providers.get(thisIndex);
+				if (provider != null)
+				{
+					return (String) provider.get(Providers.NAME);
+				}
+			}
+			return null;
+		}
 	}
 
 	public static class DownloadPreferenceFragment extends PreferenceFragment
@@ -561,22 +586,24 @@ public class SettingsActivity extends PreferenceActivity
 	/**
 	 * Connect list preference to service data
 	 *
-	 * @param listPreference
-	 *            list preference
+	 * @param listPreference list preference
 	 */
 	private void fillWithServiceData(final ListPreference listPreference)
 	{
 		final List<HashMap<String, Object>> services = Services.getServices(this, true);
-		final int n = services.size();
-		final String[] entries = new String[n];
-		final String[] values = new String[n];
-		for (int i = 0; i < n; i++)
+		if (services != null)
 		{
-			final HashMap<String, Object> service = services.get(i);
-			entries[i] = (String) service.get(Services.LABEL);
-			values[i] = (String) service.get(Services.PACKAGE) + '/' + (String) service.get(Services.NAME);
+			final int n = services.size();
+			final String[] entries = new String[n];
+			final String[] values = new String[n];
+			for (int i = 0; i < n; i++)
+			{
+				final HashMap<String, Object> service = services.get(i);
+				entries[i] = (String) service.get(Services.LABEL);
+				values[i] = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
+			}
+			listPreference.setEntries(entries);
+			listPreference.setEntryValues(values);
 		}
-		listPreference.setEntries(entries);
-		listPreference.setEntryValues(values);
 	}
 }

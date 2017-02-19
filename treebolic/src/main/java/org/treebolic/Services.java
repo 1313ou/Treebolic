@@ -1,9 +1,5 @@
 package org.treebolic;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -13,6 +9,10 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * List of Services
@@ -68,8 +68,7 @@ public class Services
 	{
 		if (iconId != 0)
 		{
-			final Drawable drawable = packageManager.getDrawable(packageName, iconId, null);
-			return drawable;
+			return packageManager.getDrawable(packageName, iconId, null);
 		}
 		return packageManager.getDefaultActivityIcon();
 	}
@@ -100,7 +99,6 @@ public class Services
 	 *            context
 	 * @param filter
 	 *            positive filter
-	 * @return hash maps of services
 	 */
 	@SuppressWarnings("boxing")
 	static private void makeServices(final Context context, final String filter)
@@ -115,12 +113,12 @@ public class Services
 			{
 				for (final ServiceInfo service : services)
 				{
-					final HashMap<String, Object> map = new HashMap<String, Object>();
+					final HashMap<String, Object> map = new HashMap<>();
 					map.put(Services.NAME, service.name);
 					map.put(Services.PACKAGE, pkg.packageName);
 					map.put(Services.PROCESS, service.processName);
-					map.put(Services.ENABLED, Boolean.valueOf(service.enabled));
-					map.put(Services.EXPORTED, Boolean.valueOf(service.exported));
+					map.put(Services.ENABLED, service.enabled);
+					map.put(Services.EXPORTED, service.exported);
 					map.put(Services.FLAGS, Integer.toHexString(service.flags));
 					map.put(Services.PERMISSION, service.permission);
 					map.put(Services.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
@@ -160,7 +158,7 @@ public class Services
 		}
 
 		// fill in the grid_item layout
-		final SimpleAdapter adapter = new SimpleAdapter(context, services, itemRes, from, to)
+		return new SimpleAdapter(context, services, itemRes, from, to)
 		{
 			@SuppressWarnings("synthetic-access")
 			@Override
@@ -179,7 +177,6 @@ public class Services
 				}
 			}
 		};
-		return adapter;
 	}
 
 	/**
@@ -196,7 +193,7 @@ public class Services
 		boolean scan = rescan;
 		if (Services.data == null)
 		{
-			Services.data = new ArrayList<HashMap<String, Object>>();
+			Services.data = new ArrayList<>();
 			scan = true;
 		}
 		if (scan)

@@ -1,16 +1,5 @@
 package org.treebolic;
 
-import java.net.URL;
-import java.util.Properties;
-
-import org.treebolic.clients.TreebolicAIDLBoundClient;
-import org.treebolic.clients.TreebolicBoundClient;
-import org.treebolic.clients.TreebolicClientActivityStub;
-import org.treebolic.clients.TreebolicIntentClient;
-import org.treebolic.clients.TreebolicMessengerClient;
-import org.treebolic.clients.iface.ITreebolicClient;
-import org.treebolic.search.SearchSettings;
-
 import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +15,18 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
 import android.widget.SearchView;
 import android.widget.Toast;
+
+import org.treebolic.clients.TreebolicAIDLBoundClient;
+import org.treebolic.clients.TreebolicBoundClient;
+import org.treebolic.clients.TreebolicClientActivityStub;
+import org.treebolic.clients.TreebolicIntentClient;
+import org.treebolic.clients.TreebolicMessengerClient;
+import org.treebolic.clients.iface.ITreebolicClient;
+import org.treebolic.search.SearchSettings;
+
+import java.net.URL;
+import java.util.Properties;
+
 import treebolic.IContext;
 import treebolic.Widget;
 import treebolic.model.Model;
@@ -41,7 +42,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "Treebolic Client Activity"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicClientA"; //$NON-NLS-1$
 
 	/**
 	 * Parameters
@@ -72,7 +73,10 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 		// action bar
 		final ActionBar actionBar = getActionBar();
-		actionBar.setDisplayHomeAsUpEnabled(true);
+		if (actionBar != null)
+		{
+			actionBar.setDisplayHomeAsUpEnabled(true);
+		}
 
 		// widget
 		this.widget = new Widget(this, this);
@@ -119,7 +123,9 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		this.searchView = (SearchView) searchMenuItem.getActionView();
 		int width = this.getResources().getInteger(R.integer.search_view_max_width);
 		if (width != -1)
+		{
 			this.searchView.setMaxWidth(width);
+		}
 		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			/*
@@ -160,21 +166,21 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		switch (item.getItemId())
 		{
-		case R.id.action_settings:
-			final Intent intent = new Intent(this, SettingsActivity.class);
-			startActivity(intent);
-			return true;
+			case R.id.action_settings:
+				final Intent intent = new Intent(this, SettingsActivity.class);
+				startActivity(intent);
+				return true;
 
-		case R.id.action_finish:
-			finish();
-			return true;
+			case R.id.action_finish:
+				finish();
+				return true;
 
-		case R.id.action_kill:
-			Process.killProcess(Process.myPid());
-			return true;
+			case R.id.action_kill:
+				Process.killProcess(Process.myPid());
+				return true;
 
-		default:
-			break;
+			default:
+				break;
 		}
 		return false;
 	}
@@ -353,8 +359,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Query model from source
 	 *
-	 * @param source
-	 *            source
+	 * @param source source
 	 */
 	private void query(final String source)
 	{
@@ -374,7 +379,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
 		final Intent forward = null;
 		this.client.requestModel(source, base, imageBase, settings, forward);
-		return;
 	}
 
 	/*
@@ -423,17 +427,17 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	/**
 	 * SearchView query change listener
-	 * 
-	 * @param query
-	 *            new query
-	 * @param submit
-	 *            whether submit was changed
+	 *
+	 * @param query  new query
+	 * @param submit whether submit was changed
 	 */
 	protected void handleQueryChanged(final String query, boolean submit)
 	{
 		// clear keyboard out of the way
 		if (submit)
+		{
 			closeKeyboard();
+		}
 
 		// reset current search if any
 		this.widget.search(CMD_RESET);
@@ -447,7 +451,9 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			{
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
 				if (submit)
+				{
 					query(query);
+				}
 				return;
 			}
 
@@ -538,10 +544,8 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Put toast on UI thread
 	 *
-	 * @param message
-	 *            message
-	 * @param duration
-	 *            duration
+	 * @param message  message
+	 * @param duration duration
 	 */
 	private void toast(final String message, final int duration)
 	{

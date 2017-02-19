@@ -1,16 +1,17 @@
 package org.treebolic;
 
-import java.io.IOException;
-import java.util.NoSuchElementException;
-
-import treebolic.model.Model;
-import treebolic.model.ModelReader;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.util.NoSuchElementException;
+
+import treebolic.model.Model;
+import treebolic.model.ModelReader;
 
 /**
  * Treebolic server activity (display server)
@@ -22,7 +23,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "Treebolic Model Activity"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicModelA"; //$NON-NLS-1$
 
 	/**
 	 * Parameter : Model
@@ -79,7 +80,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			}
 			else
 			{
-				final ParcelableModel parcelModel = (ParcelableModel) params.getParcelable(TreebolicIface.ARG_MODEL);
+				final ParcelableModel parcelModel = params.getParcelable(TreebolicIface.ARG_MODEL);
 				if (parcelModel != null)
 				{
 					this.model = parcelModel.getModel();

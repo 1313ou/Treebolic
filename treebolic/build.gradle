@@ -1,13 +1,15 @@
 apply plugin: 'com.android.application'
 
+//noinspection GroovyMissingReturnStatement
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion "25.0.2"
 
+    //noinspection GroovyMissingReturnStatement
     defaultConfig {
         applicationId "org.treebolic"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 25
     }
 
     buildTypes {

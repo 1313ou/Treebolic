@@ -1,11 +1,11 @@
 package org.treebolic;
 
-import java.io.IOException;
+import android.util.Log;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
-import android.util.Log;
 import treebolic.IContext;
 import treebolic.model.Model;
 import treebolic.provider.IProvider;
@@ -67,9 +67,8 @@ public class ModelFactory
 	 * @param settings
 	 *            settings
 	 * @return model
-	 * @throws IOException
 	 */
-	public Model make(final String source, final String base, final String imageBase, final String settings) throws IOException
+	public Model make(final String source, final String base, final String imageBase, final String settings)
 	{
 		// provider
 		this.provider.setup(this.providerContext);

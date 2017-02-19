@@ -1,13 +1,5 @@
 package org.treebolic;
 
-import java.io.File;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import org.treebolic.storage.Storage;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -21,6 +13,14 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
+
+import org.treebolic.storage.Storage;
+
+import java.io.File;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Providers
 {
@@ -59,10 +59,9 @@ public class Providers
 	 *            context
 	 * @param parentPackageName
 	 *            package name
-	 * @return list of providers (hashmap of features)
 	 * @throws NameNotFoundException
 	 */
-	@SuppressWarnings("boxing")
+	@SuppressWarnings({"boxing", "ConstantConditions", "ConfusingArgumentToVarargsMethod"})
 	static private void makeProviders(final Context context, final String parentPackageName) throws NameNotFoundException
 	{
 		final PackageManager packageManager = context.getPackageManager();
@@ -196,7 +195,7 @@ public class Providers
 						uniqueName = name + (fields.length < 2 ? ++ith : '-' + fields[fields.length - 2]);
 					}
 
-					final HashMap<String, Object> provider = new HashMap<String, Object>();
+					final HashMap<String, Object> provider = new HashMap<>();
 					// structural
 					provider.put(Providers.PROVIDER, providerName);
 					provider.put(Providers.NAME, uniqueName);
@@ -235,7 +234,7 @@ public class Providers
 	 *            process name
 	 * @return number of built-in providers
 	 */
-	@SuppressWarnings("boxing")
+	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable"})
 	static private int addBuiltInProviders(final Context context, final String parentPackage, final String processName)
 	{
 		// base and image base in external storage
@@ -265,7 +264,7 @@ public class Providers
 		// add array data
 		for (int i = 0; i < lowest; i++)
 		{
-			final HashMap<String, Object> provider = new HashMap<String, Object>();
+			final HashMap<String, Object> provider = new HashMap<>();
 			// structural
 			provider.put(Providers.PROVIDER, values[i]);
 			provider.put(Providers.NAME, titles[i]);
@@ -309,7 +308,7 @@ public class Providers
 			return null;
 
 		// fill in the grid_item layout
-		final SimpleAdapter adapter = new SimpleAdapter(context, providers, itemRes, from, to)
+		return new SimpleAdapter(context, providers, itemRes, from, to)
 		{
 			@Override
 			public void setViewImage(final ImageView v, final String pkg)
@@ -326,7 +325,6 @@ public class Providers
 				}
 			}
 		};
-		return adapter;
 	}
 
 	/**
@@ -343,7 +341,7 @@ public class Providers
 		boolean scan = rescan;
 		if (Providers.data == null)
 		{
-			Providers.data = new ArrayList<HashMap<String, Object>>();
+			Providers.data = new ArrayList<>();
 			scan = true;
 		}
 		if (scan)

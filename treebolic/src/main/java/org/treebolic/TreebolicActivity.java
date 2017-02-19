@@ -14,7 +14,7 @@ public class TreebolicActivity extends TreebolicSourceActivity
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "Treebolic Activity"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicA"; //$NON-NLS-1$
 
 	// C O N S T R U C T O R
 
