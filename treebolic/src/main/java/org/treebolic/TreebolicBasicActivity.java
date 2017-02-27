@@ -1,8 +1,8 @@
 package org.treebolic;
 
 import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Activity;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -36,7 +36,7 @@ import treebolic.view.View;
  *
  * @author Bernard Bou
  */
-abstract public class TreebolicBasicActivity extends Activity implements IContext
+abstract public class TreebolicBasicActivity extends AppCompatActivity implements IContext
 {
 	/**
 	 * Log tag
@@ -114,18 +114,13 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 
 	// L I F E C Y C L E
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 
 		// action bar
-		final ActionBar actionBar = getActionBar();
+		final ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null)
 		{
 			actionBar.setDisplayHomeAsUpEnabled(true);
@@ -136,11 +131,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		setContentView(this.widget);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onNewIntent(android.content.Intent)
-	 */
 	@Override
 	protected void onNewIntent(final Intent intent)
 	{
@@ -151,11 +141,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		setIntent(intent);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onResume()
-	 */
 	@Override
 	protected void onResume()
 	{
@@ -184,15 +169,10 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 			edit.putBoolean(Settings.PREF_FIRSTRUN, true).apply();
 
 			// tips
-			Tip.show(getFragmentManager());
+			Tip.show(getSupportFragmentManager());
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onPause()
-	 */
 	@Override
 	protected void onPause()
 	{
@@ -209,11 +189,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		super.onPause();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu)
 	{
@@ -231,11 +206,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		}
 		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see android.widget.SearchView.OnQueryTextListener#onQueryTextSubmit(java.lang.String)
-			 */
 			@Override
 			public boolean onQueryTextSubmit(final String query)
 			{
@@ -243,11 +213,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 				return true;
 			}
 
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see android.widget.SearchView.OnQueryTextListener#onQueryTextChange(java.lang.String)
-			 */
 			@Override
 			public boolean onQueryTextChange(final String query)
 			{
@@ -259,11 +224,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
-	 */
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item)
 	{
@@ -283,7 +243,7 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 				return true;
 
 			case R.id.action_tips:
-				Tip.show(getFragmentManager());
+				Tip.show(getSupportFragmentManager());
 				return true;
 
 			case R.id.action_help:
@@ -299,7 +259,7 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 				return true;
 
 			case R.id.action_search_settings:
-				SearchSettings.show(getFragmentManager());
+				SearchSettings.show(getSupportFragmentManager());
 				return true;
 
 			default:
@@ -308,11 +268,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		return false;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#getParentActivityIntent()
-	 */
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	@Override
 	public Intent getParentActivityIntent()
@@ -352,11 +307,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 
 	// T R E E B O L I C C O N T E X T
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getBase()
-	 */
 	@Override
 	public URL getBase()
 	{
@@ -374,11 +324,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		return Settings.getURLPref(this, TreebolicIface.PREF_BASE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getImagesBase()
-	 */
 	@Override
 	public URL getImagesBase()
 	{
@@ -396,22 +341,12 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		return Settings.getURLPref(this, TreebolicIface.PREF_IMAGEBASE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getParameters()
-	 */
 	@Override
 	public Properties getParameters()
 	{
 		return this.parameters;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getStyle()
-	 */
 	@Override
 	public String getStyle()
 	{
@@ -419,11 +354,6 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 				Settings.STYLE_DEFAULT;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#linkTo(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public boolean linkTo(final String url, final String target)
 	{
@@ -460,33 +390,18 @@ abstract public class TreebolicBasicActivity extends Activity implements IContex
 		return false;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getInput()
-	 */
 	@Override
 	public String getInput()
 	{
 		return this.input;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#warn(java.lang.String)
-	 */
 	@Override
 	public void warn(final String message)
 	{
 		toast(message, Toast.LENGTH_LONG);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#status(java.lang.String)
-	 */
 	@Override
 	public void status(final String message)
 	{

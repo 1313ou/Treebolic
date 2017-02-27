@@ -1,14 +1,14 @@
 package org.treebolic;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import android.os.Bundle;
+import android.widget.Toast;
 
 import org.treebolic.download.Deploy;
 import org.treebolic.storage.Storage;
 
-import android.os.Bundle;
-import android.widget.Toast;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Dot download activity
@@ -17,11 +17,7 @@ import android.widget.Toast;
  */
 public class DownloadActivity extends org.treebolic.download.DownloadActivity
 {
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.treebolic.download.DownloadActivity#onCreate(android.os.Bundle)
-	 */
+
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
@@ -35,11 +31,7 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.treebolic.download.DownloadActivity#start()
-	 */
+
 	@Override
 	public void start()
 	{
@@ -48,22 +40,12 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 
 	// P O S T P R O C E S S I N G
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.download.DownloadActivity#doProcessing()
-	 */
 	@Override
 	protected boolean doProcessing()
 	{
 		return true;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.download.DownloadActivity#process(java.io.InputStream)
-	 */
 	@Override
 	protected boolean process(final InputStream inputStream) throws IOException
 	{

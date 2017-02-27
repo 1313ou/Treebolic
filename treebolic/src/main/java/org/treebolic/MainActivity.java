@@ -1,9 +1,9 @@
 package org.treebolic;
 
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -41,7 +41,7 @@ import java.util.HashMap;
  *
  * @author Bernard Bou
  */
-public class MainActivity extends Activity implements OnClickListener
+public class MainActivity extends AppCompatActivity implements OnClickListener
 {
 	/**
 	 * Log tag
@@ -90,11 +90,6 @@ public class MainActivity extends Activity implements OnClickListener
 
 	// L I F E C Y C L E O V E R R I D E S
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@SuppressLint("InflateParams")
 	@SuppressWarnings("unchecked")
 	@Override
@@ -108,7 +103,7 @@ public class MainActivity extends Activity implements OnClickListener
 		initialize();
 
 		// set up the action bar to show a custom layout
-		final ActionBar actionBar = getActionBar();
+		final ActionBar actionBar = getSupportActionBar();
 		final View actionBarView = getLayoutInflater().inflate(R.layout.actionbar_custom, null);
 		if (actionBar != null)
 		{
@@ -176,15 +171,10 @@ public class MainActivity extends Activity implements OnClickListener
 		// fragment
 		if (savedInstanceState == null)
 		{
-			getFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
+			getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onResume()
-	 */
 	@Override
 	protected void onResume()
 	{
@@ -192,11 +182,6 @@ public class MainActivity extends Activity implements OnClickListener
 		updateButton();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
-	 */
 	@Override
 	public void onSaveInstanceState(final Bundle savedInstanceState)
 	{
@@ -208,11 +193,6 @@ public class MainActivity extends Activity implements OnClickListener
 		super.onSaveInstanceState(savedInstanceState);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
-	 */
 	@Override
 	public void onRestoreInstanceState(final Bundle savedInstanceState)
 	{
@@ -226,11 +206,6 @@ public class MainActivity extends Activity implements OnClickListener
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu)
 	{
@@ -261,22 +236,12 @@ public class MainActivity extends Activity implements OnClickListener
 		return true;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
-	 */
 	@Override
 	public void onClick(final View arg0)
 	{
 		tryStartTreebolic((String) null);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
-	 */
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item)
 	{
@@ -323,7 +288,7 @@ public class MainActivity extends Activity implements OnClickListener
 				return true;
 
 			case R.id.action_tips:
-				Tip.show(getFragmentManager());
+				Tip.show(getSupportFragmentManager());
 				return true;
 
 			case R.id.action_help:
@@ -396,11 +361,6 @@ public class MainActivity extends Activity implements OnClickListener
 
 	// S P E C I F I C R E T U R N S
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onActivityResult(int, int, android.content.Intent)
-	 */
 	@Override
 	protected void onActivityResult(final int requestCode, final int resultCode, final Intent returnIntent)
 	{
@@ -410,7 +370,7 @@ public class MainActivity extends Activity implements OnClickListener
 			case REQUEST_FILE_CODE:
 			case REQUEST_BUNDLE_CODE:
 			case REQUEST_SERIALIZED_CODE:
-				if (resultCode == Activity.RESULT_OK)
+				if (resultCode == AppCompatActivity.RESULT_OK)
 				{
 					final Uri fileUri = returnIntent.getData();
 					if (fileUri == null)
@@ -461,11 +421,6 @@ public class MainActivity extends Activity implements OnClickListener
 			//
 		}
 
-		/*
-		 * (non-Javadoc)
-		 * 
-		 * @see android.app.Fragment#onCreateView(android.view.LayoutInflater, android.view.ViewGroup, android.os.Bundle)
-		 */
 		@Override
 		public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
 		{

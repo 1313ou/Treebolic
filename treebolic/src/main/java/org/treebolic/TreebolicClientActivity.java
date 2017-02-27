@@ -61,11 +61,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// L I F E C Y C L E
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
@@ -85,11 +80,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		// init widget with model is asynchronous
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onPause()
-	 */
 	@Override
 	protected void onPause()
 	{
@@ -106,11 +96,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		super.onPause();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
-	 */
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu)
 	{
@@ -128,11 +113,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		}
 		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see android.widget.SearchView.OnQueryTextListener#onQueryTextSubmit(java.lang.String)
-			 */
 			@Override
 			public boolean onQueryTextSubmit(final String query)
 			{
@@ -140,11 +120,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 				return true;
 			}
 
-			/*
-			 * (non-Javadoc)
-			 * 
-			 * @see android.widget.SearchView.OnQueryTextListener#onQueryTextChange(java.lang.String)
-			 */
 			@Override
 			public boolean onQueryTextChange(final String query)
 			{
@@ -156,11 +131,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
-	 */
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item)
 	{
@@ -187,33 +157,18 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// T R E E B O L I C C O N T E X T
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getBase()
-	 */
 	@Override
 	public URL getBase()
 	{
 		return Settings.getURLPref(this, TreebolicIface.PREF_BASE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getImagesBase()
-	 */
 	@Override
 	public URL getImagesBase()
 	{
 		return Settings.getURLPref(this, TreebolicIface.PREF_IMAGEBASE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getParameters()
-	 */
 	@Override
 	public Properties getParameters()
 	{
@@ -224,22 +179,12 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return this.parameters;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getStyle()
-	 */
 	@Override
 	public String getStyle()
 	{
 		return Settings.STYLE_DEFAULT;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#linkTo(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public boolean linkTo(final String url, final String target)
 	{
@@ -269,33 +214,18 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return false;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#getInput()
-	 */
 	@Override
 	public String getInput()
 	{
 		return this.searchView.getQuery().toString();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#warn(java.lang.String)
-	 */
 	@Override
 	public void warn(final String message)
 	{
 		toast(message, Toast.LENGTH_LONG);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see treebolic.IContext#status(java.lang.String)
-	 */
 	@Override
 	public void status(final String message)
 	{
@@ -318,11 +248,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// C L I E N T
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.clients.TreebolicClientActivityStub#getClient()
-	 */
 	@Override
 	protected ITreebolicClient getClient()
 	{
@@ -381,11 +306,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		this.client.requestModel(source, base, imageBase, settings, forward);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.clients.iface.IModelListener#onModel(treebolic.model.Model, java.lang.String)
-	 */
 	@Override
 	public void onModel(final Model model, final String urlScheme0)
 	{

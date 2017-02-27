@@ -25,11 +25,6 @@ public class TreebolicActivity extends TreebolicSourceActivity
 
 	// Q U E R Y
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#query()
-	 */
 	@Override
 	protected void query()
 	{
@@ -45,11 +40,6 @@ public class TreebolicActivity extends TreebolicSourceActivity
 		this.widget.init(this.providerName, this.source);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#requery(java.lang.String)
-	 */
 	@Override
 	protected void requery(String source0)
 	{

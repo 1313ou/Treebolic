@@ -123,10 +123,21 @@
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-v4-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-compat-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-v13-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-media-compat-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-vector-drawable-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-core-utils-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="support-fragment-25.2.0" level="project" />
+    <orderEntry type="library" exported="" name="animated-vector-drawable-25.2.0" level="project" />
     <orderEntry type="library" exported="" name="nineoldandroids-2.2.0" level="project" />
+    <orderEntry type="library" exported="" name="treebolic-iface" level="project" />
     <orderEntry type="library" exported="" name="treebolic-provider" level="project" />
     <orderEntry type="library" exported="" name="treebolic-service-iface" level="project" />
-    <orderEntry type="library" exported="" name="treebolic-iface" level="project" />
     <orderEntry type="library" exported="" name="treebolic-parcel" level="project" />
     <orderEntry type="library" exported="" name="treebolic-glue" level="project" />
     <orderEntry type="library" exported="" name="commons-compress-proguard-1.8.1" level="project" />

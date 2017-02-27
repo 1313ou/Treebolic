@@ -98,11 +98,6 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 
 	// Q U E R Y
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#query()
-	 */
 	@Override
 	protected void query()
 	{
@@ -128,11 +123,6 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#query(java.lang.String)
-	 */
 	@Override
 	protected void requery(final String source)
 	{

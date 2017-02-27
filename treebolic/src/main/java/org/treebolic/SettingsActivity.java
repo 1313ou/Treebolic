@@ -71,11 +71,6 @@ public class SettingsActivity extends PreferenceActivity
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onPostCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onPostCreate(final Bundle savedInstanceState)
 	{
@@ -101,11 +96,6 @@ public class SettingsActivity extends PreferenceActivity
 
 	// S E T U P
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.preference.PreferenceActivity#isValidFragment(java.lang.String)
-	 */
 	@Override
 	protected boolean isValidFragment(final String fragmentName)
 	{

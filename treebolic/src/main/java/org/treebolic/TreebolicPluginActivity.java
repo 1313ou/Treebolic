@@ -57,11 +57,6 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 
 	// L I F E C Y C L E
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
-	 */
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item)
 	{
@@ -95,11 +90,6 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		return theseParameters;
 	}
 
-	//	/*
-	//	 * (non-Javadoc)
-	//	 *
-	//	 * @see treebolic.IContext#getBase()
-	//	 */
 	//	@Override
 	//	public URL getBase()
 	//	{
@@ -125,11 +115,6 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 
 	// U N M A R S H A L
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#unmarshalArgs(android.content.Intent)
-	 */
 	@Override
 	protected void unmarshalArgs(final Intent intent)
 	{
@@ -142,22 +127,12 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 
 	// Q U E R Y
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#query()
-	 */
 	@Override
 	protected void query()
 	{
 		queryModel();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#query(java.lang.String)
-	 */
 	@Override
 	protected void requery(final String source0)
 	{

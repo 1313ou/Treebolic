@@ -47,11 +47,6 @@ public class Services
 	static public final String LOGO = "logo"; //$NON-NLS-1$
 	static public final String DRAWABLE = "drawable"; //$NON-NLS-1$
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 
 	/**
 	 * Load icon

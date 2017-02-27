@@ -1,9 +1,9 @@
 package org.treebolic;
 
-import java.util.Properties;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+import java.util.Properties;
 
 public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 {
@@ -31,11 +31,6 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	
 	// L I F E C Y C L E
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onCreate(android.os.Bundle)
-	 */
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
@@ -45,11 +40,6 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 		this.restoring = savedInstanceState != null;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
-	 */
 	@Override
 	public void onRestoreInstanceState(final Bundle savedInstanceState)
 	{
@@ -60,11 +50,6 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 		this.source = savedInstanceState.getString(TreebolicIface.ARG_SOURCE);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
-	 */
 	@Override
 	public void onSaveInstanceState(final Bundle savedInstanceState)
 	{
@@ -77,11 +62,6 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	
 	// T R E E B O L I C C O N T E X T
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.treebolic.TreebolicBasicActivity#makeParameters()
-	 */
 	@Override
 	protected Properties makeParameters()
 	{
