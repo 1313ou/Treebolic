@@ -5,7 +5,7 @@
     android:installLocation="auto"
     android:sharedUserId="org.treebolic.userId"
     android:versionCode="13"
-    android:versionName="1.13" >
+    android:versionName="1.14" >
 
     <supports-screens
         android:largeScreens="true"
@@ -24,7 +24,7 @@
         android:label="@string/app_name"
         android:process="org.treebolic"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/CompatAppTheme"
         tools:ignore="AllowBackup,UnusedAttribute" >
         <activity
             android:name=".MainActivity"

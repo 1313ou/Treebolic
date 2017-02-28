@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="treebolic-parcel">
     <CLASSES>
-      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/libs/treebolic-parcel.jar!/" />
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/libs/treebolic-parcel.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

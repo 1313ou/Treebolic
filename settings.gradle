@@ -46,8 +46,8 @@ project(':storageLib').projectDir = new File('../TreebolicSupportLibs/storageLib
 
 // LIB
 
-include ':treebolicClientsLib'
-project(':treebolicClientsLib').projectDir = new File('../TreebolicServices/treebolicClientsLib/')
+// include ':treebolicClientsLib'
+// project(':treebolicClientsLib').projectDir = new File('../TreebolicServices/treebolicClientsLib/')
 
 include ':treebolicServicesLib'
 project(':treebolicServicesLib').projectDir = new File('../TreebolicServices/treebolicServicesLib/')

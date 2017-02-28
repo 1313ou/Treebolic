@@ -1,15 +1,17 @@
 package org.treebolic;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,7 +22,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
-import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -108,8 +109,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		if (actionBar != null)
 		{
 			actionBar.setCustomView(actionBarView);
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
-			actionBar.setDisplayShowTitleEnabled(false);
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
 		}
 
 		// spinner
@@ -120,11 +120,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		final int[] to = new int[]{R.id.icon, R.id.provider};
 
 		// spinner adapter
-		this.adapter = Providers.makeAdapter(this, R.layout.actionbar_item_providers, from, to, false);
+		this.adapter = Providers.makeAdapter(this, R.layout.spinner_item_providers, from, to, false);
 		if (this.adapter != null)
 		{
 			// prepare the list providers
-			this.adapter.setDropDownViewResource(R.layout.actionbar_item_providers);
+			this.adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown);
 
 			// set up the dropdown list navigation in the action bar.
 			this.spinner.setOnItemSelectedListener(new OnItemSelectedListener()
@@ -213,7 +213,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		getMenuInflater().inflate(R.menu.main, menu);
 
 		// search view
-		final SearchView searchView = (SearchView) menu.findItem(R.id.searchView).getActionView();
+		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
+		final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@SuppressWarnings("synthetic-access")

@@ -23,8 +23,8 @@ android {
 dependencies {
     compile project(':treebolicIface')
     compile project(':treebolicLib')
-    compile project(':treebolicClientsLib')
-
+    // compile project(':treebolicClientsLib')
+    compile files('libs/treebolic-clients-lib.jar')
     compile project(':fileChooserLib')
     compile project(':storageLib')
     compile project(':downloadLib')
@@ -32,9 +32,10 @@ dependencies {
     compile project(':guideLib')
     compile project(':searchLib')
     compile project(':wheelLib')
-
     compile files('libs/treebolic-provider-text-indent-tre.jar')
     compile files('libs/treebolic-provider-text-indent.jar')
     compile files('libs/treebolic-provider-text-pair.jar')
     compile files('libs/treebolic-provider-xml-dom.jar')
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.android.support:support-v4:25.2.0'
 }

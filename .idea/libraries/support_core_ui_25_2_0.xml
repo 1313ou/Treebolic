@@ -5,6 +5,7 @@
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/fileChooserLib/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/guideLib/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/searchLib/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/annotations.zip!/" />
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.2.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
