@@ -21,7 +21,7 @@ public class ModelFactory
 	/**
 	 * Log tag
 	 */
-	static private final String TAG = "Model factory"; //$NON-NLS-1$
+	static private final String TAG = "Model factory";
 
 	/**
 	 * Provider
@@ -76,7 +76,7 @@ public class ModelFactory
 
 		// model
 		final Model model = this.provider.makeModel(source, ModelFactory.makeBaseURL(base), ModelFactory.makeParameters(source, base, imageBase, settings));
-		Log.d(ModelFactory.TAG, "model=" + model); //$NON-NLS-1$
+		Log.d(ModelFactory.TAG, "model=" + model);
 		return model;
 	}
 
@@ -91,7 +91,7 @@ public class ModelFactory
 	{
 		try
 		{
-			return new URL(base != null && !base.endsWith("/") ? base + "/" : base); //$NON-NLS-1$ //$NON-NLS-2$
+			return new URL(base != null && !base.endsWith("/") ? base + "/" : base);
 		}
 		catch (final MalformedURLException e)
 		{
@@ -118,19 +118,19 @@ public class ModelFactory
 		final Properties theseParameters = new Properties();
 		if (source != null)
 		{
-			theseParameters.setProperty("source", source); //$NON-NLS-1$
+			theseParameters.setProperty("source", source);
 		}
 		if (base != null)
 		{
-			theseParameters.setProperty("base", base); //$NON-NLS-1$
+			theseParameters.setProperty("base", base);
 		}
 		if (imageBase != null)
 		{
-			theseParameters.setProperty("imagebase", imageBase); //$NON-NLS-1$
+			theseParameters.setProperty("imagebase", imageBase);
 		}
 		if (settings != null)
 		{
-			theseParameters.setProperty("settings", settings); //$NON-NLS-1$
+			theseParameters.setProperty("settings", settings);
 		}
 
 		return theseParameters;

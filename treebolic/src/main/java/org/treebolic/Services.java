@@ -24,7 +24,7 @@ public class Services
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "Services"; //$NON-NLS-1$
+	private static final String TAG = "Services";
 
 	/**
 	 * Data
@@ -34,18 +34,18 @@ public class Services
 	/**
 	 * Keys
 	 */
-	static public final String NAME = "name"; //$NON-NLS-1$
-	static public final String PROCESS = "process"; //$NON-NLS-1$
-	static public final String PACKAGE = "package"; //$NON-NLS-1$
-	static public final String FLAGS = "flags"; //$NON-NLS-1$
-	static public final String EXPORTED = "exported"; //$NON-NLS-1$
-	static public final String ENABLED = "enabled"; //$NON-NLS-1$
-	static public final String PERMISSION = "permission"; //$NON-NLS-1$
-	static public final String LABEL = "label"; //$NON-NLS-1$
-	static public final String DESCRIPTION = "description"; //$NON-NLS-1$
-	static public final String ICON = "icon"; //$NON-NLS-1$
-	static public final String LOGO = "logo"; //$NON-NLS-1$
-	static public final String DRAWABLE = "drawable"; //$NON-NLS-1$
+	static public final String NAME = "name";
+	static public final String PROCESS = "process";
+	static public final String PACKAGE = "package";
+	static public final String FLAGS = "flags";
+	static public final String EXPORTED = "exported";
+	static public final String ENABLED = "enabled";
+	static public final String PERMISSION = "permission";
+	static public final String LABEL = "label";
+	static public final String DESCRIPTION = "description";
+	static public final String ICON = "icon";
+	static public final String LOGO = "logo";
+	static public final String DRAWABLE = "drawable";
 
 
 	/**
@@ -84,7 +84,7 @@ public class Services
 			final CharSequence label = packageManager.getText(packageName, labelId, null);
 			return label.toString();
 		}
-		return "?"; //$NON-NLS-1$
+		return "?";
 	}
 
 	/**
@@ -161,7 +161,7 @@ public class Services
 			{
 				try
 				{
-					final String[] fields = value.split("#"); //$NON-NLS-1$
+					final String[] fields = value.split("#");
 					final int index = Integer.parseInt(fields[1]);
 					final Drawable d = Services.loadIcon(context.getPackageManager(), fields[0], index);
 					v.setImageDrawable(d);
@@ -196,11 +196,11 @@ public class Services
 			Services.data.clear();
 			try
 			{
-				Services.makeServices(context, "org.treebolic\\..*"); //$NON-NLS-1$
+				Services.makeServices(context, "org.treebolic\\..*");
 			}
 			catch (final Exception e)
 			{
-				Log.e(Services.TAG, "Error when scanning for services", e); //$NON-NLS-1$
+				Log.e(Services.TAG, "Error when scanning for services", e);
 				return null;
 			}
 		}

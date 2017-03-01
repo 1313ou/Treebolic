@@ -26,7 +26,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "TreebolicPluginA"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicPluginA";
 
 	/**
 	 * Parameter : pluginProvider package
@@ -55,7 +55,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		super(R.menu.treebolic_plugin);
 	}
 
-	// L I F E C Y C L E
+	// M E N U
 
 	@Override
 	public boolean onOptionsItemSelected(final MenuItem item)
@@ -85,33 +85,35 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		final Properties theseParameters = super.makeParameters();
 		if (this.pluginPkg != null)
 		{
-			theseParameters.setProperty("plugin", this.pluginPkg); //$NON-NLS-1$
+			theseParameters.setProperty("plugin", this.pluginPkg);
 		}
 		return theseParameters;
 	}
 
-	//	@Override
-	//	public URL getBase()
-	//	{
-	//		return super.getBase();
-	//
-	//		try
-	//		{
-	//			final Context pluginContext = createPackageContext(this.pluginPkg, Context.CONTEXT_IGNORE_SECURITY);
-	//			final File thisDir = pluginContext.getFilesDir();
-	//			return thisDir.toURI().toURL();
-	//
-	//		}
-	//		catch (final NameNotFoundException e)
-	//		{
-	//			Log.d(TreebolicPluginActivity.TAG, "Plugin context", e); //$NON-NLS-1$
-	//		}
-	//		catch (MalformedURLException e)
-	//		{
-	//			Log.d(TreebolicPluginActivity.TAG, "Plugin context", e); //$NON-NLS-1$
-	//		}
-	//		return null;
-	//	}
+	/*
+	@Override
+	public URL getBase()
+	{
+		return super.getBase();
+
+		try
+		{
+			final Context pluginContext = createPackageContext(this.pluginPkg, Context.CONTEXT_IGNORE_SECURITY);
+			final File thisDir = pluginContext.getFilesDir();
+			return thisDir.toURI().toURL();
+
+		}
+		catch (final NameNotFoundException e)
+		{
+			Log.d(TreebolicPluginActivity.TAG, "Plugin context", e);
+		}
+		catch (MalformedURLException e)
+		{
+			Log.d(TreebolicPluginActivity.TAG, "Plugin context", e);
+		}
+		return null;
+	}
+	*/
 
 	// U N M A R S H A L
 
@@ -145,7 +147,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 */
 	private void queryModel()
 	{
-		Log.d(TreebolicPluginActivity.TAG, "Requesting model from " + this.pluginPkg + " provider " + this.providerName + " and source " + this.source); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+		Log.d(TreebolicPluginActivity.TAG, "Requesting model from " + this.pluginPkg + " provider " + this.providerName + " and source " + this.source);
 		try
 		{
 			// class loader
@@ -163,7 +165,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 			{
 				// load class
 				final Class<?> clazz = TreebolicPluginActivity.this.classLoader.loadClass(TreebolicPluginActivity.this.providerName);
-				Log.d(TreebolicPluginActivity.TAG, "Class has been loaded " + clazz.toString()); //$NON-NLS-1$
+				Log.d(TreebolicPluginActivity.TAG, "Class has been loaded " + clazz.toString());
 
 				// ClassLoader.loadClass:
 				// The class loader returned by Thread.getContextClassLoader() may fail for processes that host multiple applications.
@@ -173,7 +175,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 
 				// the class instance is cast to an interface through which the method is called directly
 				this.provider = (IProvider) clazz.newInstance();
-				Log.i(TreebolicPluginActivity.TAG, "Loaded provider " + this.provider); //$NON-NLS-1$
+				Log.i(TreebolicPluginActivity.TAG, "Loaded provider " + this.provider);
 			}
 
 			// init widget with provider
@@ -182,7 +184,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		catch (final Exception e)
 		{
 			Toast.makeText(TreebolicPluginActivity.this, R.string.error_query, Toast.LENGTH_LONG).show();
-			Log.e(TreebolicPluginActivity.TAG, "Exception while making provider", e); //$NON-NLS-1$
+			Log.e(TreebolicPluginActivity.TAG, "Exception while making provider", e);
 		}
 	}
 
@@ -199,17 +201,17 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	static ClassLoader getPluginClassLoader(final Context context, final String pluginPkg) throws NameNotFoundException
 	{
 		// cache to store optimized classes
-		File dexCache = context.getDir("plugins", Context.MODE_PRIVATE); //$NON-NLS-1$
+		File dexCache = context.getDir("plugins", Context.MODE_PRIVATE);
 		if (dexCache == null || !dexCache.exists())
 		{
 			// external storage cache
-			Log.w(TreebolicPluginActivity.TAG, "app/data storage is not accessible, trying to use external storage"); //$NON-NLS-1$
+			Log.w(TreebolicPluginActivity.TAG, "app/data storage is not accessible, trying to use external storage");
 			final File sd = Environment.getExternalStorageDirectory();
 			if (sd == null)
 			{
 				return null; // nowhere to store the dex
 			}
-			dexCache = new File(sd, "temp"); //$NON-NLS-1$
+			dexCache = new File(sd, "temp");
 			if (!dexCache.exists())
 			{
 				dexCache.mkdir();
@@ -218,7 +220,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		// get plugin apk
 		final ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(pluginPkg, 0);
 		final String apk = appInfo.sourceDir;
-		Log.d(TreebolicPluginActivity.TAG, "Plugin apk is " + apk); //$NON-NLS-1$
+		Log.d(TreebolicPluginActivity.TAG, "Plugin apk is " + apk);
 
 		// application class loader
 		final ClassLoader appClassLoader = context.getClass().getClassLoader();

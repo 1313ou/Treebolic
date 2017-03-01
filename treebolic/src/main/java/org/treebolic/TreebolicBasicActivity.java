@@ -42,7 +42,7 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "TreebolicBasicA"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicBasicA";
 
 	/**
 	 * Parameter : Document base
@@ -145,7 +145,7 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 	@Override
 	protected void onResume()
 	{
-		Log.d(TreebolicBasicActivity.TAG, "Activity resumed"); //$NON-NLS-1$
+		Log.d(TreebolicBasicActivity.TAG, "Activity resumed");
 
 		// super
 		super.onResume();
@@ -177,7 +177,7 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 	@Override
 	protected void onPause()
 	{
-		Log.d(TreebolicBasicActivity.TAG, "Activity paused, terminating surface drawing thread"); //$NON-NLS-1$
+		Log.d(TreebolicBasicActivity.TAG, "Activity paused, terminating surface drawing thread");
 
 		// terminate thread
 		final View view = this.widget.getView();
@@ -196,15 +196,16 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		// inflate
 		getMenuInflater().inflate(this.menuId, menu);
 
-		// search view listener
+		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 		searchMenuItem.expandActionView();
 		this.searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
-		int width = this.getResources().getInteger(R.integer.search_view_max_width);
-		if (width != -1)
-		{
-			this.searchView.setMaxWidth(width);
-		}
+
+		// search view width
+		int screenWidth = treebolic.glue.component.Utils.screenWidth(this);
+		this.searchView.setMaxWidth(screenWidth / 2);
+
+		// search view listener
 		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@Override
@@ -425,17 +426,17 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 
 	// S E A R C H
 
-	static private final String CMD_SEARCH = "SEARCH"; //$NON-NLS-1$
+	static private final String CMD_SEARCH = "SEARCH";
 
-	static private final String CMD_RESET = "RESET"; //$NON-NLS-1$
+	static private final String CMD_RESET = "RESET";
 
-	static private final String CMD_CONTINUE = "CONTINUE"; //$NON-NLS-1$
+	static private final String CMD_CONTINUE = "CONTINUE";
 
-	static private final String SCOPE_SOURCE = "SOURCE"; //$NON-NLS-1$
+	static private final String SCOPE_SOURCE = "SOURCE";
 
-	static private final String SCOPE_LABEL = "LABEL"; //$NON-NLS-1$
+	static private final String SCOPE_LABEL = "LABEL";
 
-	static private final String MODE_STARTSWITH = "STARTSWITH"; //$NON-NLS-1$
+	static private final String MODE_STARTSWITH = "STARTSWITH";
 
 	static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
 
@@ -468,7 +469,7 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
 			if (SCOPE_SOURCE.equals(scope))
 			{
-				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
+				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				if (submit)
 				{
 					requery(query);
@@ -498,7 +499,7 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
 			if (SCOPE_SOURCE.equals(scope))
 			{
-				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
+				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				requery(query);
 				return;
 			}
@@ -524,10 +525,10 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		String query = TreebolicBasicActivity.this.searchView.getQuery().toString();
 
 		// clear current query
-		TreebolicBasicActivity.this.searchView.setQuery("", false); //$NON-NLS-1$
+		TreebolicBasicActivity.this.searchView.setQuery("", false);
 
 		// query was already empty
-		if ("".equals(query)) //$NON-NLS-1$
+		if ("".equals(query))
 		{
 			resetSearch();
 		}
@@ -555,20 +556,20 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 			return;
 		}
 
-		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target); //$NON-NLS-1$
+		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target);
 		this.searchPending = true;
 		this.widget.search(CMD_SEARCH, scope, mode, target);
 	}
 
 	protected void continueSearch()
 	{
-		Log.d(TAG, "Search continue"); //$NON-NLS-1$
+		Log.d(TAG, "Search continue");
 		this.widget.search(CMD_CONTINUE);
 	}
 
 	protected void resetSearch()
 	{
-		Log.d(TAG, "Search reset"); //$NON-NLS-1$
+		Log.d(TAG, "Search reset");
 		this.searchPending = false;
 		this.widget.search(CMD_RESET);
 	}
@@ -585,17 +586,17 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		final Properties theseParameters = new Properties();
 		if (this.base != null)
 		{
-			theseParameters.setProperty("base", this.base); //$NON-NLS-1$
+			theseParameters.setProperty("base", this.base);
 		}
 		if (this.imageBase != null)
 		{
-			theseParameters.setProperty("imagebase", this.imageBase); //$NON-NLS-1$
+			theseParameters.setProperty("imagebase", this.imageBase);
 		}
 		if (this.settings != null)
 		{
-			theseParameters.setProperty("settings", this.settings); //$NON-NLS-1$
+			theseParameters.setProperty("settings", this.settings);
 		}
-		theseParameters.setProperty("debug", Boolean.toString(BuildConfig.DEBUG)); //$NON-NLS-1$
+		theseParameters.setProperty("debug", Boolean.toString(BuildConfig.DEBUG));
 		return theseParameters;
 	}
 

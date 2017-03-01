@@ -23,7 +23,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "TreebolicModelA"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicModelA";
 
 	/**
 	 * Parameter : Model
@@ -87,7 +87,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 				}
 			}
 		}
-		Log.d(TreebolicModelActivity.TAG, "model=" + this.model); //$NON-NLS-1$
+		Log.d(TreebolicModelActivity.TAG, "model=" + this.model);
 
 		// retrieve other parameters
 		this.serializedModel = params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI);
@@ -113,7 +113,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		// init widget with model
 		if (this.serializedModel != null)
 		{
-			Log.d(TreebolicModelActivity.TAG, "Using serialized model"); //$NON-NLS-1$
+			Log.d(TreebolicModelActivity.TAG, "Using serialized model");
 			final Model thisModel = deserializeGuarded(new ModelReader(this.serializedModel.getPath()));
 			this.widget.init(thisModel);
 		}
@@ -128,7 +128,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	{
 		if (this.parentActivity != null)
 		{
-			Log.d(TreebolicModelActivity.TAG, "Requesting model from " + source); //$NON-NLS-1$
+			Log.d(TreebolicModelActivity.TAG, "Requesting model from " + source);
 			try
 			{
 				this.parentActivity.putExtra(TreebolicIface.ARG_SOURCE, source);
@@ -156,12 +156,12 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		}
 		catch (final ClassNotFoundException e)
 		{
-			Log.d(TreebolicModelActivity.TAG, "Class not found while deserializing", e); //$NON-NLS-1$
+			Log.d(TreebolicModelActivity.TAG, "Class not found while deserializing", e);
 			Toast.makeText(TreebolicModelActivity.this, R.string.error_deserialize, Toast.LENGTH_SHORT).show();
 		}
 		catch (final IOException e)
 		{
-			Log.d(TreebolicModelActivity.TAG, "IOException while deserializing", e); //$NON-NLS-1$
+			Log.d(TreebolicModelActivity.TAG, "IOException while deserializing", e);
 			Toast.makeText(TreebolicModelActivity.this, R.string.error_deserialize, Toast.LENGTH_SHORT).show();
 		}
 		return null;

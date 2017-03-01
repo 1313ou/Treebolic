@@ -28,7 +28,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	{
 		super(menuId0);
 	}
-	
+
 	// L I F E C Y C L E
 
 	@Override
@@ -59,7 +59,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 		// always call the superclass so it can save the view hierarchy state
 		super.onSaveInstanceState(savedInstanceState);
 	}
-	
+
 	// T R E E B O L I C C O N T E X T
 
 	@Override
@@ -69,12 +69,12 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 
 		if (this.source != null)
 		{
-			theseParameters.setProperty("source", this.source); //$NON-NLS-1$
-			theseParameters.setProperty("doc", this.source); //$NON-NLS-1$
+			theseParameters.setProperty("source", this.source);
+			theseParameters.setProperty("doc", this.source);
 		}
 		if (this.providerName != null)
 		{
-			theseParameters.setProperty("provider", this.providerName); //$NON-NLS-1$
+			theseParameters.setProperty("provider", this.providerName);
 		}
 		return theseParameters;
 	}
@@ -84,8 +84,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	/**
 	 * Unmarshal parameters from intent
 	 *
-	 * @param intent
-	 *            intent
+	 * @param intent intent
 	 */
 	@Override
 	protected void unmarshalArgs(final Intent intent)

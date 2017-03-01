@@ -24,57 +24,57 @@ public class Settings
 	/**
 	 * Demo
 	 */
-	public static final String DEMO = "demo.zip"; //$NON-NLS-1$
+	public static final String DEMO = "demo.zip";
 
 	/**
 	 * Initialized preference name
 	 */
-	public static final String PREF_INITIALIZED = "pref_initialized"; //$NON-NLS-1$
+	public static final String PREF_INITIALIZED = "pref_initialized";
 
 	/**
 	 * First preference name
 	 */
-	public static final String PREF_FIRSTRUN = "pref_first_run"; //$NON-NLS-1$
+	public static final String PREF_FIRSTRUN = "pref_first_run";
 
 	/**
 	 * Provider preference name
 	 */
-	public static final String PREF_PROVIDER = "pref_provider"; //$NON-NLS-1$
+	public static final String PREF_PROVIDER = "pref_provider";
 
 	/**
 	 * Provider icon preference name
 	 */
-	public static final String PREF_PROVIDER_ICON = "pref_provider_icon"; //$NON-NLS-1$
+	public static final String PREF_PROVIDER_ICON = "pref_provider_icon";
 
 	/**
 	 * Active provider preference name
 	 */
-	public static final String PREF_PROVIDER_NAME = "pref_provider_name"; //$NON-NLS-1$
+	public static final String PREF_PROVIDER_NAME = "pref_provider_name";
 
 	/**
 	 * Service preference name
 	 */
-	public static final String PREF_SERVICE = "pref_service"; //$NON-NLS-1$
+	public static final String PREF_SERVICE = "pref_service";
 
 	/**
 	 * Preference file prefix
 	 */
-	private static final String PREF_FILE_PREFIX = "org.treebolic_preferences_"; //$NON-NLS-1$
+	private static final String PREF_FILE_PREFIX = "org.treebolic_preferences_";
 
 	/**
 	 * Download preference name
 	 */
-	public static final String PREF_DOWNLOAD = "pref_download"; //$NON-NLS-1$
+	public static final String PREF_DOWNLOAD = "pref_download";
 
 	/**
 	 * Default CSS
 	 */
-	public static final String STYLE_DEFAULT = ".content { }\n" + // //$NON-NLS-1$
-			".link {color: #FFA500;font-size: small;}\n" + // //$NON-NLS-1$
-			".linking {color: #FFA500; font-size: small; }" + // //$NON-NLS-1$
-			".mount {color: #CD5C5C; font-size: small;}" + // //$NON-NLS-1$
-			".mounting {color: #CD5C5C; font-size: small; }" + // //$NON-NLS-1$
-			".searching {color: #FF7F50; font-size: small; }"; //$NON-NLS-1$
+	public static final String STYLE_DEFAULT = ".content { }\n" + //
+			".link {color: #FFA500;font-size: small;}\n" + //
+			".linking {color: #FFA500; font-size: small; }" + //
+			".mount {color: #CD5C5C; font-size: small;}" + //
+			".mounting {color: #CD5C5C; font-size: small; }" + //
+			".searching {color: #FF7F50; font-size: small; }";
 
 	/**
 	 * Set providers default settings from provider data
@@ -260,14 +260,14 @@ public class Settings
 		if (apiLevel >= 9)
 		{
 			intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-			intent.setData(Uri.parse("package:" + pkgName)); //$NON-NLS-1$
+			intent.setData(Uri.parse("package:" + pkgName));
 		}
 		else
 		{
-			final String appPkgName = apiLevel == 8 ? "pkg" : "com.android.settings.ApplicationPkgName"; //$NON-NLS-1$ //$NON-NLS-2$
+			final String appPkgName = apiLevel == 8 ? "pkg" : "com.android.settings.ApplicationPkgName";
 
 			intent.setAction(Intent.ACTION_VIEW);
-			intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails"); //$NON-NLS-1$ //$NON-NLS-2$
+			intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
 			intent.putExtra(appPkgName, pkgName);
 		}
 

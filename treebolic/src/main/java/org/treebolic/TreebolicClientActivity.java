@@ -43,7 +43,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "TreebolicClientA"; //$NON-NLS-1$
+	private static final String TAG = "TreebolicClientA";
 
 	/**
 	 * Parameters
@@ -84,7 +84,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	protected void onPause()
 	{
-		Log.d(TreebolicClientActivity.TAG, "Activity paused, terminating surface drawing thread"); //$NON-NLS-1$
+		Log.d(TreebolicClientActivity.TAG, "Activity paused, terminating surface drawing thread");
 
 		// terminate thread
 		final View view = this.widget.getView();
@@ -103,15 +103,16 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		// menu
 		getMenuInflater().inflate(R.menu.treebolic, menu);
 
-		// search view listener
+		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 		searchMenuItem.expandActionView();
 		this.searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
-		int width = this.getResources().getInteger(R.integer.search_view_max_width);
-		if (width != -1)
-		{
-			this.searchView.setMaxWidth(width);
-		}
+
+		// search view width
+		int screenWidth = treebolic.glue.component.Utils.screenWidth(this);
+		this.searchView.setMaxWidth(screenWidth / 2);
+
+		// search view listener
 		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@Override
@@ -241,9 +242,9 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	private Properties makeParameters()
 	{
 		final Properties theseParameters = new Properties();
-		theseParameters.setProperty("base", Settings.getStringPref(this, TreebolicIface.PREF_BASE)); //$NON-NLS-1$
-		theseParameters.setProperty("imagebase", Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE)); //$NON-NLS-1$
-		theseParameters.setProperty("settings", Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS)); //$NON-NLS-1$
+		theseParameters.setProperty("base", Settings.getStringPref(this, TreebolicIface.PREF_BASE));
+		theseParameters.setProperty("imagebase", Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE));
+		theseParameters.setProperty("settings", Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS));
 		return theseParameters;
 	}
 
@@ -255,28 +256,28 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		final String service = Settings.getStringPref(this, Settings.PREF_SERVICE);
 		if (service != null)
 		{
-			if (service.contains("Intent")) //$NON-NLS-1$
+			if (service.contains("Intent"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service); //$NON-NLS-1$
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service);
 				return new TreebolicIntentClient(this, service, this, this);
 			}
-			else if (service.contains("AIDL")) //$NON-NLS-1$
+			else if (service.contains("AIDL"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to AIDL bound service " + service); //$NON-NLS-1$
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to AIDL bound service " + service);
 				return new TreebolicAIDLBoundClient(this, service, this, this);
 			}
-			else if (service.contains("Bound")) //$NON-NLS-1$
+			else if (service.contains("Bound"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to bound service " + service); //$NON-NLS-1$
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to bound service " + service);
 				return new TreebolicBoundClient(this, service, this, this);
 			}
-			else if (service.contains("Messenger")) //$NON-NLS-1$
+			else if (service.contains("Messenger"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to messenger service " + service); //$NON-NLS-1$
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to messenger service " + service);
 				return new TreebolicMessengerClient(this, service, this, this);
 			}
 		}
-		Log.d(TreebolicClientActivity.TAG, "Null service"); //$NON-NLS-1$
+		Log.d(TreebolicClientActivity.TAG, "Null service");
 		return null;
 	}
 
@@ -291,15 +292,15 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		if (this.client == null)
 		{
-			Log.d(TreebolicClientActivity.TAG, "Null client"); //$NON-NLS-1$
+			Log.d(TreebolicClientActivity.TAG, "Null client");
 			return;
 		}
 		if (source == null || source.isEmpty())
 		{
-			Log.d(TreebolicClientActivity.TAG, "Null source"); //$NON-NLS-1$
+			Log.d(TreebolicClientActivity.TAG, "Null source");
 			return;
 		}
-		Log.d(TreebolicClientActivity.TAG, "Requesting model for source " + source); //$NON-NLS-1$
+		Log.d(TreebolicClientActivity.TAG, "Requesting model for source " + source);
 		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
@@ -310,7 +311,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onModel(final Model model, final String urlScheme0)
 	{
-		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model); //$NON-NLS-1$
+		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model);
 
 		// abort
 		if (model == null)
@@ -327,17 +328,17 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// S E A R C H
 
-	static private final String CMD_SEARCH = "SEARCH"; //$NON-NLS-1$
+	static private final String CMD_SEARCH = "SEARCH";
 
-	static private final String CMD_RESET = "RESET"; //$NON-NLS-1$
+	static private final String CMD_RESET = "RESET";
 
-	static private final String CMD_CONTINUE = "CONTINUE"; //$NON-NLS-1$
+	static private final String CMD_CONTINUE = "CONTINUE";
 
-	static private final String SCOPE_SOURCE = "SOURCE"; //$NON-NLS-1$
+	static private final String SCOPE_SOURCE = "SOURCE";
 
-	static private final String SCOPE_LABEL = "LABEL"; //$NON-NLS-1$
+	static private final String SCOPE_LABEL = "LABEL";
 
-	static private final String MODE_STARTSWITH = "STARTSWITH"; //$NON-NLS-1$
+	static private final String MODE_STARTSWITH = "STARTSWITH";
 
 	static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
 
@@ -370,7 +371,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
 			if (SCOPE_SOURCE.equals(scope))
 			{
-				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
+				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				if (submit)
 				{
 					query(query);
@@ -400,7 +401,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
 			if (SCOPE_SOURCE.equals(scope))
 			{
-				Log.d(TAG, "Source" + ' ' + '"' + query + '"'); //$NON-NLS-1$
+				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				query(query);
 				return;
 			}
@@ -423,7 +424,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		closeKeyboard();
 
 		// clear current query
-		TreebolicClientActivity.this.searchView.setQuery("", false); //$NON-NLS-1$
+		TreebolicClientActivity.this.searchView.setQuery("", false);
 
 		resetSearch();
 	}
@@ -442,20 +443,20 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	protected void runSearch(String scope, String mode, String target)
 	{
-		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target); //$NON-NLS-1$
+		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target);
 		this.searchPending = true;
 		this.widget.search(CMD_SEARCH, scope, mode, target);
 	}
 
 	protected void continueSearch()
 	{
-		Log.d(TAG, "Search continue"); //$NON-NLS-1$
+		Log.d(TAG, "Search continue");
 		this.widget.search(CMD_CONTINUE);
 	}
 
 	protected void resetSearch()
 	{
-		Log.d(TAG, "Search reset"); //$NON-NLS-1$
+		Log.d(TAG, "Search reset");
 		this.searchPending = false;
 		this.widget.search(CMD_RESET);
 	}

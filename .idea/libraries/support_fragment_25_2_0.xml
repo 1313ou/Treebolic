@@ -4,6 +4,7 @@
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/downloadLib/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/fileChooserLib/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/guideLib/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/preferenceLib/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/searchLib/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support/support-fragment/25.2.0/annotations.zip!/" />
@@ -14,6 +15,7 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/support-fragment/25.2.0/support-fragment-25.2.0-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/support-fragment/25.2.0/support-fragment-25.2.0-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/support-fragment/25.2.0/support-fragment-25.2.0-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/../../../androidstudio/sdk/extras/android/m2repository/com/android/support/support-fragment/25.2.0/support-fragment-25.2.0-sources.jar!/" />

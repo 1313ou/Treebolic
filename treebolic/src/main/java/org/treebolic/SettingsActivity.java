@@ -14,6 +14,8 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.contrib.AppCompatPreferenceActivity;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +27,7 @@ import java.util.List;
  * See <a href="http://developer.android.com/design/patterns/settings.html"> Android Design: Settings</a> for design guidelines and the <a
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings API Guide</a> for more information on developing a Settings UI.
  */
-public class SettingsActivity extends PreferenceActivity
+public class SettingsActivity extends AppCompatPreferenceActivity
 {
 	/**
 	 * Determines whether to always show the simplified settings UI, where settings are presented in a single list. When false, settings are shown as a
@@ -36,18 +38,18 @@ public class SettingsActivity extends PreferenceActivity
 	/**
 	 * Selected provider argument
 	 */
-	public static final String ARG_PROVIDER_SELECTED = "org.treebolic.selected"; //$NON-NLS-1$
+	public static final String ARG_PROVIDER_SELECTED = "org.treebolic.selected";
 
 	/**
 	 * Subactions
 	 */
-	public static final String ACTION_GENERAL = "org.treebolic.prefs.GENERAL"; //$NON-NLS-1$
-	public static final String ACTION_XML = "org.treebolic.prefs.XML"; //$NON-NLS-1$
-	public static final String ACTION_TXT = "org.treebolic.prefs.TXT"; //$NON-NLS-1$
-	public static final String ACTION_TRE = "org.treebolic.prefs.TRE"; //$NON-NLS-1$
-	public static final String ACTION_TXT2 = "org.treebolic.prefs.TXT2"; //$NON-NLS-1$
-	public static final String ACTION_DOWNLOAD = "org.treebolic.prefs.DOWNLOAD"; //$NON-NLS-1$
-	public static final String ACTION_SERVICE = "org.treebolic.prefs.SERVICE"; //$NON-NLS-1$
+	public static final String ACTION_GENERAL = "org.treebolic.prefs.GENERAL";
+	public static final String ACTION_XML = "org.treebolic.prefs.XML";
+	public static final String ACTION_TXT = "org.treebolic.prefs.TXT";
+	public static final String ACTION_TRE = "org.treebolic.prefs.TRE";
+	public static final String ACTION_TXT2 = "org.treebolic.prefs.TXT2";
+	public static final String ACTION_DOWNLOAD = "org.treebolic.prefs.DOWNLOAD";
+	public static final String ACTION_SERVICE = "org.treebolic.prefs.SERVICE";
 
 	/**
 	 * Selected provider
@@ -68,6 +70,13 @@ public class SettingsActivity extends PreferenceActivity
 		if (action == null)
 		{
 			SettingsActivity.provider = (HashMap<String, Object>) getIntent().getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
+		}
+
+		// set up the action bar
+		final ActionBar actionBar = getSupportActionBar();
+		if (actionBar != null)
+		{
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
 		}
 	}
 
@@ -128,7 +137,7 @@ public class SettingsActivity extends PreferenceActivity
 					final PreferenceManager prefManager = getPreferenceManager();
 					if (!isPlugin)
 					{
-						prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME)); //$NON-NLS-1$
+						prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME));
 						prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 					}
 					final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
@@ -181,7 +190,7 @@ public class SettingsActivity extends PreferenceActivity
 					// forward button to plugin provider settings activity
 					if (isPlugin)
 					{
-						final Preference button = findPreference("button_provider_settings"); //$NON-NLS-1$
+						final Preference button = findPreference("button_provider_settings");
 						button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
 						{
 							@SuppressWarnings("synthetic-access")
@@ -189,7 +198,7 @@ public class SettingsActivity extends PreferenceActivity
 							public boolean onPreferenceClick(final Preference arg0)
 							{
 								final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-								final String activityName = pkg + ".SettingsActivity"; //$NON-NLS-1$
+								final String activityName = pkg + ".SettingsActivity";
 								final Intent intent = new Intent();
 								intent.setComponent(new ComponentName(pkg, activityName));
 								startActivity(intent);
@@ -218,26 +227,26 @@ public class SettingsActivity extends PreferenceActivity
 					switch (action)
 					{
 						case SettingsActivity.ACTION_XML:
-							key = "xml"; //$NON-NLS-1$
+							key = "xml";
 
 							break;
 						case SettingsActivity.ACTION_TXT:
-							key = "text (indented)"; //$NON-NLS-1$
+							key = "text (indented)";
 
 							break;
 						case SettingsActivity.ACTION_TRE:
-							key = "text (indented, tre)"; //$NON-NLS-1$
+							key = "text (indented, tre)";
 
 							break;
 						case SettingsActivity.ACTION_TXT2:
-							key = "text (pairs)"; //$NON-NLS-1$
+							key = "text (pairs)";
 
 							break;
 					}
 
 					// non-default preference manager
 					final PreferenceManager prefManager = getPreferenceManager();
-					prefManager.setSharedPreferencesName("org.treebolic_preferences_" + key); //$NON-NLS-1$
+					prefManager.setSharedPreferencesName("org.treebolic_preferences_" + key);
 
 					prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 					addPreferencesFromResource(R.xml.pref_general);
@@ -300,7 +309,7 @@ public class SettingsActivity extends PreferenceActivity
 		public boolean onPreferenceChange(final Preference preference, final Object value)
 		{
 			// set the summary to the value's simple string representation.
-			final String stringValue = value == null ? "" : value.toString(); //$NON-NLS-1$
+			final String stringValue = value == null ? "" : value.toString();
 			preference.setSummary(stringValue);
 			return true;
 		}
@@ -347,7 +356,7 @@ public class SettingsActivity extends PreferenceActivity
 			final Boolean isPlugin = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
 			if (!isPlugin)
 			{
-				prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME)); //$NON-NLS-1$
+				prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME));
 				prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 			}
 			final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
@@ -401,14 +410,14 @@ public class SettingsActivity extends PreferenceActivity
 			// forward button to plugin provider settings activity
 			if (isPlugin)
 			{
-				final Preference button = findPreference("button_provider_settings"); //$NON-NLS-1$
+				final Preference button = findPreference("button_provider_settings");
 				button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
 				{
 					@Override
 					public boolean onPreferenceClick(final Preference arg0)
 					{
 						final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-						final String activityName = pkg + ".SettingsActivity"; //$NON-NLS-1$
+						final String activityName = pkg + ".SettingsActivity";
 						final Intent intent = new Intent();
 						intent.setComponent(new ComponentName(pkg, activityName));
 						startActivity(intent);
@@ -467,7 +476,7 @@ public class SettingsActivity extends PreferenceActivity
 
 			// non-default preference manager
 			final PreferenceManager prefManager = getPreferenceManager();
-			prefManager.setSharedPreferencesName("org.treebolic_preferences_" + getName()); //$NON-NLS-1$
+			prefManager.setSharedPreferencesName("org.treebolic_preferences_" + getName());
 			prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 			final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
 

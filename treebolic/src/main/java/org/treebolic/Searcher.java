@@ -10,13 +10,13 @@ import treebolic.IWidget;
 
 public class Searcher
 {
-	private static final String TAG = "Searcher"; //$NON-NLS-1$
+	private static final String TAG = "Searcher";
 
-	static private final String CMD_SEARCH = "SEARCH"; //$NON-NLS-1$
+	static private final String CMD_SEARCH = "SEARCH";
 
-	static private final String CMD_RESET = "RESET"; //$NON-NLS-1$
+	static private final String CMD_RESET = "RESET";
 
-	static private final String CMD_CONTINUE = "CONTINUE"; //$NON-NLS-1$
+	static private final String CMD_CONTINUE = "CONTINUE";
 
 	/**
 	 * Search pending flag
@@ -52,11 +52,11 @@ public class Searcher
 	{
 		final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.context);
 
-		final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, "LABEL"); // label, content, link, id //$NON-NLS-1$
-		final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, "STARTSWITH"); // equals, startswith, includes //$NON-NLS-1$
+		final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, "LABEL"); // label, content, link, id
+		final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, "STARTSWITH"); // equals, startswith, includes
 
-		Log.d(TAG, "Search for " + scope + ' ' + mode + ' ' + '"' + target + '"'); //$NON-NLS-1$
-		if ("source".equals(scope)) //$NON-NLS-1$
+		Log.d(TAG, "Search for " + scope + ' ' + mode + ' ' + '"' + target + '"');
+		if ("source".equals(scope))
 		{
 			return false;
 		}
@@ -79,20 +79,20 @@ public class Searcher
 		if (target == null || target.isEmpty())
 			return;
 
-		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target); //$NON-NLS-1$
+		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target);
 		this.searchPending = true;
 		this.widget.search(CMD_SEARCH, scope, mode, target);
 	}
 
 	protected void continueSearch()
 	{
-		Log.d(TAG, "Search continue"); //$NON-NLS-1$
+		Log.d(TAG, "Search continue");
 		this.widget.search(CMD_CONTINUE);
 	}
 
 	protected void resetSearch()
 	{
-		Log.d(TAG, "Search reset"); //$NON-NLS-1$
+		Log.d(TAG, "Search reset");
 		this.searchPending = false;
 		this.widget.search(CMD_RESET);
 	}

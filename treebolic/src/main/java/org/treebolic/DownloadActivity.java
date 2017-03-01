@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Dot download activity
+ * Download activity
  *
  * @author Bernard Bou
  */

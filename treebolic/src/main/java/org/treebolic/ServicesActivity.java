@@ -6,7 +6,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 /**
- * List of Services
+ * Activity listing services
  *
  * @author Bernard Bou
  */

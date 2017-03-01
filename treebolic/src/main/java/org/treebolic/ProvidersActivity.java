@@ -6,7 +6,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 /**
- * List of Providers
+ * Activity listing providers
  *
  * @author Bernard Bou
  */

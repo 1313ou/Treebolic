@@ -27,7 +27,7 @@ public class Providers
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "Providers"; //$NON-NLS-1$
+	private static final String TAG = "Providers";
 
 	/**
 	 * Data
@@ -37,20 +37,20 @@ public class Providers
 	/**
 	 * Keys
 	 */
-	static public final String NAME = "name"; //$NON-NLS-1$
-	static public final String PROCESS = "process"; //$NON-NLS-1$
-	static public final String PACKAGE = "package"; //$NON-NLS-1$
-	static public final String ISPLUGIN = "isplugin"; //$NON-NLS-1$
-	static public final String PROVIDER = "provider"; //$NON-NLS-1$
-	static public final String MIMETYPE = "mimetype"; //$NON-NLS-1$
-	static public final String EXTENSIONS = "extensions"; //$NON-NLS-1$
-	static public final String URLSCHEME = "urlscheme"; //$NON-NLS-1$
-	static public final String STYLE = "style"; //$NON-NLS-1$
-	static public final String ICON = "icon"; //$NON-NLS-1$
-	static public final String SOURCE = "source"; //$NON-NLS-1$
-	static public final String BASE = "base"; //$NON-NLS-1$
-	static public final String IMAGEBASE = "imagebase"; //$NON-NLS-1$
-	static public final String SETTINGS = "settings"; //$NON-NLS-1$
+	static public final String NAME = "name";
+	static public final String PROCESS = "process";
+	static public final String PACKAGE = "package";
+	static public final String ISPLUGIN = "isplugin";
+	static public final String PROVIDER = "provider";
+	static public final String MIMETYPE = "mimetype";
+	static public final String EXTENSIONS = "extensions";
+	static public final String URLSCHEME = "urlscheme";
+	static public final String STYLE = "style";
+	static public final String ICON = "icon";
+	static public final String SOURCE = "source";
+	static public final String BASE = "base";
+	static public final String IMAGEBASE = "imagebase";
+	static public final String SETTINGS = "settings";
 
 	/**
 	 * List providers
@@ -87,13 +87,13 @@ public class Providers
 			}
 
 			// special case of app package
-			if (pkg.endsWith(".app") || pkg.endsWith(".service")) //$NON-NLS-1$ //$NON-NLS-2$
+			if (pkg.endsWith(".app") || pkg.endsWith(".service"))
 			{
 				continue;
 			}
 
 			// plugin name
-			final String[] components = pkg.split("\\."); //$NON-NLS-1$
+			final String[] components = pkg.split("\\.");
 			final String name = components[components.length - 1];
 
 			// plugin context
@@ -104,7 +104,7 @@ public class Providers
 			}
 			catch (final NameNotFoundException e1)
 			{
-				Log.d(Providers.TAG, "Error while creating package context for " + pkg + ' ' + e1.getMessage()); //$NON-NLS-1$
+				Log.d(Providers.TAG, "Error while creating package context for " + pkg + ' ' + e1.getMessage());
 				continue;
 			}
 
@@ -121,11 +121,11 @@ public class Providers
 			try
 			{
 				// plugin description
-				final Class<?> pluginProviderDataClass = pluginClassLoader.loadClass(pkg + ".ProviderData"); //$NON-NLS-1$
-				Log.d(Providers.TAG, "Plugin access class has been loaded " + pluginProviderDataClass.toString()); //$NON-NLS-1$
+				final Class<?> pluginProviderDataClass = pluginClassLoader.loadClass(pkg + ".ProviderData");
+				Log.d(Providers.TAG, "Plugin access class has been loaded " + pluginProviderDataClass.toString());
 
 				// plugin classes
-				final Method getClassesMethod = pluginProviderDataClass.getMethod("getProviderClasses", (Class<?>[]) null); //$NON-NLS-1$
+				final Method getClassesMethod = pluginProviderDataClass.getMethod("getProviderClasses", (Class<?>[]) null);
 				if (getClassesMethod == null)
 				{
 					continue;
@@ -136,7 +136,7 @@ public class Providers
 				String mimetype = null;
 				try
 				{
-					final Method getMimetypeMethod = pluginProviderDataClass.getMethod("getMimetype", (Class<?>[]) null); //$NON-NLS-1$
+					final Method getMimetypeMethod = pluginProviderDataClass.getMethod("getMimetype", (Class<?>[]) null);
 					mimetype = (String) getMimetypeMethod.invoke(null, (Object[]) null);
 				}
 				catch (final NoSuchMethodException e)
@@ -148,7 +148,7 @@ public class Providers
 				String extensions = null;
 				try
 				{
-					final Method getExtensionsMethod = pluginProviderDataClass.getMethod("getExtensions", (Class<?>[]) null); //$NON-NLS-1$
+					final Method getExtensionsMethod = pluginProviderDataClass.getMethod("getExtensions", (Class<?>[]) null);
 					extensions = (String) getExtensionsMethod.invoke(null, (Object[]) null);
 				}
 				catch (final NoSuchMethodException e)
@@ -157,10 +157,10 @@ public class Providers
 				}
 
 				// plugin urlScheme
-				String urlScheme = "treebolic:"; //$NON-NLS-1$
+				String urlScheme = "treebolic:";
 				try
 				{
-					final Method getSchemeMethod = pluginProviderDataClass.getMethod("getUrlScheme", (Class<?>[]) null); //$NON-NLS-1$
+					final Method getSchemeMethod = pluginProviderDataClass.getMethod("getUrlScheme", (Class<?>[]) null);
 					urlScheme = (String) getSchemeMethod.invoke(null, (Object[]) null);
 				}
 				catch (final NoSuchMethodException e)
@@ -172,7 +172,7 @@ public class Providers
 				String style = null;
 				try
 				{
-					final Method getStyleMethod = pluginProviderDataClass.getMethod("getStyle", (Class<?>[]) null); //$NON-NLS-1$
+					final Method getStyleMethod = pluginProviderDataClass.getMethod("getStyle", (Class<?>[]) null);
 					style = (String) getStyleMethod.invoke(null, (Object[]) null);
 				}
 				catch (final NoSuchMethodException e)
@@ -191,7 +191,7 @@ public class Providers
 					}
 					else
 					{
-						final String[] fields = providerName.split("\\."); //$NON-NLS-1$
+						final String[] fields = providerName.split("\\.");
 						uniqueName = name + (fields.length < 2 ? ++ith : '-' + fields[fields.length - 2]);
 					}
 
@@ -218,7 +218,7 @@ public class Providers
 			}
 			catch (final Exception e)
 			{
-				Log.d(Providers.TAG, "Error while scanning for provider " + pkg + ' ' + e.getMessage()); //$NON-NLS-1$
+				Log.d(Providers.TAG, "Error while scanning for provider " + pkg + ' ' + e.getMessage());
 			}
 		}
 	}
@@ -349,11 +349,11 @@ public class Providers
 			Providers.data.clear();
 			try
 			{
-				Providers.makeProviders(context, "org.treebolic"); //$NON-NLS-1$
+				Providers.makeProviders(context, "org.treebolic");
 			}
 			catch (final Exception e)
 			{
-				Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage()); //$NON-NLS-1$
+				Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
 				return null;
 			}
 		}
