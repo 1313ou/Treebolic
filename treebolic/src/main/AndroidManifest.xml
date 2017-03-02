@@ -38,21 +38,27 @@
 		</activity>
 
 		<activity
-			android:name=".TreebolicClientActivity"
-			android:exported="true"
-			android:hardwareAccelerated="true"
-			android:label="@string/title_activity_treebolic_client"
-			android:parentActivityName=".MainActivity"
-			tools:ignore="UnusedAttribute">
-		</activity>
-
-		<activity
 			android:name=".TreebolicActivity"
 			android:exported="true"
 			android:hardwareAccelerated="true"
 			android:label="@string/title_activity_treebolic"
 			android:parentActivityName=".MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
+		</activity>
+
+		<activity
+			android:name=".TreebolicClientActivity"
+			android:exported="true"
+			android:hardwareAccelerated="true"
+			android:label="@string/title_activity_treebolic_client"
+			android:parentActivityName=".MainActivity"
+			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -62,6 +68,9 @@
 			android:label="@string/title_activity_treebolic_model"
 			android:parentActivityName=".MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -71,14 +80,20 @@
 			android:label="@string/title_activity_treebolic_plugin"
 			android:parentActivityName=".MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
 			android:name=".SettingsActivity"
 			android:exported="true"
 			android:label="@string/title_activity_settings"
-			android:parentActivityName=".MainActivity"
+			android:parentActivityName="org.treebolic.MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -87,6 +102,9 @@
 			android:label="@string/title_activity_help"
 			android:parentActivityName="org.treebolic.MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -94,6 +112,9 @@
 			android:label="@string/title_activity_about"
 			android:parentActivityName="org.treebolic.MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -101,6 +122,9 @@
 			android:label="@string/title_activity_services"
 			android:parentActivityName=".MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -108,6 +132,9 @@
 			android:label="@string/title_activity_providers"
 			android:parentActivityName=".MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity
@@ -115,6 +142,9 @@
 			android:label="@string/title_activity_download"
 			android:parentActivityName=".MainActivity"
 			tools:ignore="UnusedAttribute">
+			<meta-data
+				android:name="android.support.PARENT_ACTIVITY"
+				android:value="org.treebolic.MainActivity"/>
 		</activity>
 
 		<activity

@@ -1,6 +1,7 @@
 package org.treebolic;
 
 import android.annotation.TargetApi;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -124,7 +125,8 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		final ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null)
 		{
-			actionBar.setDisplayHomeAsUpEnabled(true);
+			actionBar.setElevation(0);
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
 		}
 
 		// widget
@@ -231,6 +233,10 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 	{
 		switch (item.getItemId())
 		{
+			case android.R.id.home:
+				NavUtils.navigateUpFromSameTask(this);
+				return true;
+
 			case R.id.action_settings:
 				final Intent intent = new Intent(this, SettingsActivity.class);
 				startActivity(intent);

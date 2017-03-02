@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
 			// set up action bar
 			actionBar.setCustomView(actionBarView);
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE);
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_HOME_AS_UP);
 
 			// spinner
 			this.spinner = (Spinner) actionBarView.findViewById(R.id.spinner);
