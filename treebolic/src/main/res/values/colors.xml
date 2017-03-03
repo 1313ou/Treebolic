@@ -6,11 +6,14 @@
     <!-- pink -->
     <item name="pink_color" type="color">#FFef2063</item>
 
-    <!-- lt_blue -->
+    <!-- blue -->
     <item name="dark_blue_color" type="color">#FF293073</item>
     <item name="blue_color" type="color">#FF4251bd</item>
     <item name="blue1_color" type="color">#FF3765B1</item>
     <item name="blue2_color" type="color">#FF3765B1</item>
+
+    <!-- gray -->
+    <color name="light_gray">#ffB0B0B0</color>
 
     <!-- MAIN -->
 

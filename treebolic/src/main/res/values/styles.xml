@@ -23,6 +23,28 @@
         <!-- activated background indicator -->
         <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
 
+	    <!-- T R E E B O L I C -->
+
+	    <!-- treebolic action bar colors -->
+	    <item name="treebolic_actionbar_icon_color">@android:color/white</item>
+
+	    <!-- treebolic colors -->
+	    <item name="treebolic_toolbar_background">@color/primary_dark</item>
+	    <item name="treebolic_toolbar_icon_color">@android:color/white</item>
+
+	    <item name="treebolic_statusbar_background">@color/primary_dark</item>
+	    <item name="treebolic_statusbar_foreground">@color/light_gray</item>
+	    <item name="treebolic_statusbar_foreground_enhanced">@android:color/white</item>
+	    <item name="treebolic_statusbar_icon_color">@android:color/white</item>
+
+	    <item name="treebolic_dialog_background">@color/primary_dark</item>
+	    <item name="treebolic_dialog_foreground">@color/light_gray</item>
+	    <item name="treebolic_dialog_foreground_enhanced">@android:color/white</item>
+	    <item name="treebolic_dialog_icon_color">@android:color/white</item>
+
+	    <item name="treebolic_splitbar_color">@color/primary</item>
+	    <item name="treebolic_splitbar_drag_color">@color/accent</item>
+
     </style>
 
     <!-- Action bar -->

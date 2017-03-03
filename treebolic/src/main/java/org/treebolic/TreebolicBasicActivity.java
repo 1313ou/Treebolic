@@ -225,6 +225,9 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 			}
 		});
 
+		// icon tint
+		org.treebolic.search.Utils.tint(this, menu, R.id.action_search_run, R.id.action_search_reset);
+
 		return super.onCreateOptionsMenu(menu);
 	}
 
