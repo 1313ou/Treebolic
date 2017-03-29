@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="espresso-idling-resource-2.2.2">
     <CLASSES>
-      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/jars/classes.jar!/" />
-      <root url="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/res" />
+      <root url="jar:///mnt/data2/android/build-cache/ef7496b7f84c9ead4d75aa0a3a377b32c23f29ae/output/jars/classes.jar!/" />
+      <root url="file:///mnt/data2/android/build-cache/ef7496b7f84c9ead4d75aa0a3a377b32c23f29ae/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -196,7 +196,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 * @param context   context
 	 * @param pluginPkg plugin package
 	 * @return pluginProvider dex class loader
-	 * @throws NameNotFoundException
+	 * @throws NameNotFoundException name not found exception
 	 */
 	static ClassLoader getPluginClassLoader(final Context context, final String pluginPkg) throws NameNotFoundException
 	{

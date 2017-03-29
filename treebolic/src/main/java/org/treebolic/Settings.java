@@ -81,7 +81,7 @@ public class Settings
 	 *
 	 * @param context context
 	 */
-	@SuppressLint("CommitPrefEdits")
+	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	@SuppressWarnings("boxing")
 	static public void setDefaults(final Context context)
 	{
@@ -125,7 +125,7 @@ public class Settings
 	 * @param context  context
 	 * @param provider active provider
 	 */
-	@SuppressLint("CommitPrefEdits")
+	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	@SuppressWarnings("boxing")
 	static public void setActivePrefs(final Context context, final HashMap<String, Object> provider)
 	{
@@ -165,7 +165,7 @@ public class Settings
 	 * @param key     key
 	 * @param value   value
 	 */
-	@SuppressLint("CommitPrefEdits")
+	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	static public void putStringPref(final Context context, final String key, final String value)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -179,7 +179,7 @@ public class Settings
 	 * @param key     key
 	 * @param value   value
 	 */
-	@SuppressLint("CommitPrefEdits")
+	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	static public void putIntPref(final Context context, final String key, final int value)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);

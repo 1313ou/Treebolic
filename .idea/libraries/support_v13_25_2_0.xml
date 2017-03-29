@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="support-v13-25.2.0">
     <CLASSES>
-      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/downloadLib/build/intermediates/exploded-aar/com.android.support/support-v13/25.2.0/jars/classes.jar!/" />
-      <root url="file:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/downloadLib/build/intermediates/exploded-aar/com.android.support/support-v13/25.2.0/res" />
+      <root url="file:///mnt/data2/android/build-cache/9f5f003db9d92fd78a713892231e18d2d741e249/output/res" />
+      <root url="jar:///mnt/data2/android/build-cache/9f5f003db9d92fd78a713892231e18d2d741e249/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

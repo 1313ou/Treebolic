@@ -341,7 +341,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	/**
 	 * Initialize
 	 */
-	@SuppressLint("CommitPrefEdits")
+	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	private void initializePrefs()
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);

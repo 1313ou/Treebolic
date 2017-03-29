@@ -11,8 +11,8 @@
       <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res" />
-      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars/classes.jar!/" />
+      <root url="jar:///mnt/data2/android/build-cache/3706fcb34da7e4f5bbe976d95db8556817e54997/output/jars/classes.jar!/" />
+      <root url="file:///mnt/data2/android/build-cache/3706fcb34da7e4f5bbe976d95db8556817e54997/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

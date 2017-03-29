@@ -59,7 +59,7 @@ public class Providers
 	 *            context
 	 * @param parentPackageName
 	 *            package name
-	 * @throws NameNotFoundException
+	 * @throws NameNotFoundException name not found exception
 	 */
 	@SuppressWarnings({"boxing", "ConstantConditions", "ConfusingArgumentToVarargsMethod"})
 	static private void makeProviders(final Context context, final String parentPackageName) throws NameNotFoundException

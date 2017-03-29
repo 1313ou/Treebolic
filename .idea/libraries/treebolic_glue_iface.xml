@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="treebolic-glue-iface">
+    <CLASSES>
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/libs/treebolic-glue-iface.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

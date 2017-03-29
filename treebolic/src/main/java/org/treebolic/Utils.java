@@ -16,7 +16,7 @@ public class Utils
 	 * @param pkgName
 	 *            package name
 	 * @return package class loader
-	 * @throws NameNotFoundException
+	 * @throws NameNotFoundException name not found exception
 	 */
 	static ClassLoader getClassLoader(final Context context, final String pkgName) throws NameNotFoundException
 	{
@@ -32,7 +32,7 @@ public class Utils
 	 * @param pkgName
 	 *            package name
 	 * @return package resources
-	 * @throws NameNotFoundException
+	 * @throws NameNotFoundException name not found exception
 	 */
 	static Resources getResources(final Context context, final String pkgName) throws NameNotFoundException
 	{

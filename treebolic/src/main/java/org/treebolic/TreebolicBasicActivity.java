@@ -1,10 +1,6 @@
 package org.treebolic;
 
 import android.annotation.TargetApi;
-import android.support.v4.app.NavUtils;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,12 +9,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NavUtils;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
-import android.support.v7.widget.SearchView;
 import android.widget.Toast;
 
 import org.treebolic.guide.HelpActivity;
@@ -122,12 +121,14 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		super.onCreate(savedInstanceState);
 
 		// action bar
+		/*
 		final ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null)
 		{
 			actionBar.setElevation(0);
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
 		}
+		*/
 
 		// widget
 		this.widget = new Widget(this, this);
