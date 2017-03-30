@@ -12,6 +12,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -103,6 +104,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		// init preferences
 		initializePrefs();
 
+		// toolbar
+		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
+
 		// action bar
 		final ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null)
@@ -112,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
 			// set up action bar
 			actionBar.setCustomView(actionBarView);
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_HOME_AS_UP);
+			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_USE_LOGO);
 
 			// spinner
 			this.spinner = (Spinner) actionBarView.findViewById(R.id.spinner);

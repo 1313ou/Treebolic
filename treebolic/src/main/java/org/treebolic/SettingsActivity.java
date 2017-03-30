@@ -16,6 +16,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.contrib.AppCompatPreferenceActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import java.util.HashMap;
@@ -72,6 +73,10 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 		{
 			SettingsActivity.provider = (HashMap<String, Object>) getIntent().getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
 		}
+
+		// toolbar
+		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
 
 		// set up the action bar
 		final ActionBar actionBar = getSupportActionBar();

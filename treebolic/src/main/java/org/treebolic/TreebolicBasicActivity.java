@@ -11,8 +11,11 @@ import android.os.Process;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -120,19 +123,27 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 	{
 		super.onCreate(savedInstanceState);
 
+		// toolbar
+		final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
+		setSupportActionBar(toolbar);
+
 		// action bar
-		/*
 		final ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null)
 		{
 			actionBar.setElevation(0);
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
 		}
-		*/
 
 		// widget
 		this.widget = new Widget(this, this);
-		setContentView(this.widget);
+
+		// content view
+		final LinearLayoutCompat contentView = new LinearLayoutCompat(this);
+		contentView.setOrientation(LinearLayoutCompat.VERTICAL);
+		contentView.addView(toolbar);
+		contentView.addView(this.widget);
+		setContentView(contentView);
 	}
 
 	@Override

@@ -22,6 +22,7 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 	protected void onCreate(final Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+
 		this.destDir = Storage.getTreebolicStorage(this);
 		this.downloadUrl = Settings.getStringPref(this, Settings.PREF_DOWNLOAD);
 		if (this.downloadUrl == null || this.downloadUrl.isEmpty())
