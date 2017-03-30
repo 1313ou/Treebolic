@@ -1,5 +1,6 @@
 package org.treebolic;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -124,7 +125,7 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		super.onCreate(savedInstanceState);
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
+		@SuppressLint("InflateParams") final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
 		setSupportActionBar(toolbar);
 
 		// action bar
