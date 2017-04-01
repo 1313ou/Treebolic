@@ -43,6 +43,7 @@
 			android:hardwareAccelerated="true"
 			android:label="@string/title_activity_treebolic"
 			android:parentActivityName=".MainActivity"
+			android:theme="@style/CompatAppTheme"
 			tools:ignore="UnusedAttribute">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
@@ -55,6 +56,7 @@
 			android:hardwareAccelerated="true"
 			android:label="@string/title_activity_treebolic_client"
 			android:parentActivityName=".MainActivity"
+			android:theme="@style/CompatAppTheme"
 			tools:ignore="UnusedAttribute">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
@@ -67,6 +69,7 @@
 			android:hardwareAccelerated="true"
 			android:label="@string/title_activity_treebolic_model"
 			android:parentActivityName=".MainActivity"
+			android:theme="@style/CompatAppTheme"
 			tools:ignore="UnusedAttribute">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"
@@ -79,6 +82,7 @@
 			android:hardwareAccelerated="true"
 			android:label="@string/title_activity_treebolic_plugin"
 			android:parentActivityName=".MainActivity"
+			android:theme="@style/CompatAppTheme"
 			tools:ignore="UnusedAttribute">
 			<meta-data
 				android:name="android.support.PARENT_ACTIVITY"

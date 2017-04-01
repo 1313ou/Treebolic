@@ -21,6 +21,7 @@ public class ServicesActivity extends AppCompatActivity
 	{
 		super.onCreate(savedInstanceState);
 
+		// layout
 		setContentView(R.layout.activity_services);
 
 		// toolbar

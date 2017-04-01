@@ -67,13 +67,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 		// super
 		super.onCreate(savedInstanceState);
 
-		// read args
-		final String action = getIntent().getAction();
-		if (action == null)
-		{
-			SettingsActivity.provider = (HashMap<String, Object>) getIntent().getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
-		}
-
 		// toolbar
 		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
@@ -83,6 +76,13 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 		if (actionBar != null)
 		{
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
+		}
+
+		// read args
+		final String action = getIntent().getAction();
+		if (action == null)
+		{
+			SettingsActivity.provider = (HashMap<String, Object>) getIntent().getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
 		}
 	}
 

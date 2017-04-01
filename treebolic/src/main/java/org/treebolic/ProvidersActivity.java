@@ -22,6 +22,7 @@ public class ProvidersActivity extends AppCompatActivity
 	{
 		super.onCreate(savedInstanceState);
 
+		// layout
 		setContentView(R.layout.activity_providers);
 
 		// toolbar

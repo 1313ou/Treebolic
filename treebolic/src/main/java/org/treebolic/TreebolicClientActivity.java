@@ -1,6 +1,6 @@
 package org.treebolic;
 
-import android.support.v7.app.ActionBar;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,12 +9,15 @@ import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
-import android.support.v7.widget.SearchView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.treebolic.clients.TreebolicAIDLBoundClient;
@@ -65,19 +68,27 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
+		// toolbar
+		@SuppressLint("InflateParams") final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
+
+		// widget
+		this.widget = new Widget(this, this);
+
+		// content view
+		final LinearLayout contentView = new LinearLayout(this);
+		contentView.setOrientation(LinearLayout.VERTICAL);
+		contentView.addView(toolbar);
+		contentView.addView(this.widget);
+		setContentView(contentView);
 
 		// action bar
+		setSupportActionBar(toolbar);
 		final ActionBar actionBar = getSupportActionBar();
 		if (actionBar != null)
 		{
 			actionBar.setElevation(0);
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
 		}
-
-		// widget
-		this.widget = new Widget(this, this);
-		setContentView(this.widget);
 
 		// init widget with model is asynchronous
 	}
