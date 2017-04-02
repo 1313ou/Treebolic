@@ -22,10 +22,13 @@ android {
 
 dependencies {
     compile project(':treebolicIface')
+    compile project(':treebolicParcel')
     compile project(':treebolicLib')
     compile project(':treebolicGraph')
+
     compile files('libs/treebolic-clients-lib.jar')
     compile files('libs/treebolic-service-iface.jar')
+
     compile project(':fileChooserLib')
     compile project(':storageLib')
     compile project(':downloadLib')

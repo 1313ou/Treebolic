@@ -3,8 +3,11 @@
 include ':treebolicLib'
 project(':treebolicLib').projectDir = new File('../TreebolicLib/treebolicLib/')
 
-include ':treebolicPortable'
-project(':treebolicPortable').projectDir = new File('../TreebolicLib/treebolicPortable/')
+include ':treebolicLibModel'
+project(':treebolicLibModel').projectDir = new File('../TreebolicLib/treebolicLibModel/')
+
+include ':treebolicLibView'
+project(':treebolicLibView').projectDir = new File('../TreebolicLib/treebolicLibView/')
 
 include ':treebolicGraph'
 project(':treebolicGraph').projectDir = new File('../TreebolicLib/treebolicGraph/')
@@ -20,6 +23,9 @@ project(':treebolicGlueIface').projectDir = new File('../TreebolicLib/treebolicG
 
 include ':treebolicIface'
 project(':treebolicIface').projectDir = new File('../TreebolicLib/treebolicIface/')
+
+include ':treebolicParcel'
+project(':treebolicParcel').projectDir = new File('../TreebolicServices/treebolicParcel/')
 
 // LIBS
 

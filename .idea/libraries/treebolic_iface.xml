@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="treebolic-iface">
-    <CLASSES>
-      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/libs/treebolic-iface.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
