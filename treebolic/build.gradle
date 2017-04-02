@@ -25,9 +25,7 @@ dependencies {
     compile project(':treebolicParcel')
     compile project(':treebolicLib')
     compile project(':treebolicGraph')
-
-    compile files('libs/treebolic-clients-lib.jar')
-    compile files('libs/treebolic-service-iface.jar')
+    compile project(':treebolicClientsLib')
 
     compile project(':fileChooserLib')
     compile project(':storageLib')
