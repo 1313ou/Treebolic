@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="treebolic-provider">
+    <CLASSES>
+      <root url="jar:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/libs/treebolic-provider.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
