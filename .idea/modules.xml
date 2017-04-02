@@ -10,6 +10,7 @@
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/searchLib/searchLib.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/searchLib/searchLib.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/storageLib/storageLib.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/storageLib/storageLib.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/treebolic.iml" filepath="/mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/treebolic.iml" />
+      <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsIface/treebolicClientsIface.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsIface/treebolicClientsIface.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/treebolicClientsLib.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib/treebolicClientsLib.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/treebolicGlue.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue/treebolicGlue.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlueIface/treebolicGlueIface.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlueIface/treebolicGlueIface.iml" />
@@ -22,6 +23,7 @@
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicParcel/treebolicParcel.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicParcel/treebolicParcel.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicPortable/treebolicPortable.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicPortable/treebolicPortable.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicPortableModel/treebolicPortableModel.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicPortableModel/treebolicPortableModel.iml" />
+      <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesIface/treebolicServicesIface.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesIface/treebolicServicesIface.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/treebolicServicesLib.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib/treebolicServicesLib.iml" />
       <module fileurl="file:///mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/wheelLib/wheelLib.iml" filepath="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/wheelLib/wheelLib.iml" />
     </modules>
