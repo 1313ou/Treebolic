@@ -17,12 +17,6 @@
 		<!-- theme UI controls like checkboxes and text fields -->
 		<item name="colorAccent">@color/accent</item>
 
-		<!-- action bar -->
-		<item name="android:actionBarStyle">@style/ActionBar</item>
-
-		<!-- activated background indicator -->
-		<item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
-
 		<!-- T R E E B O L I C -->
 
 		<!-- treebolic action bar colors -->
@@ -45,11 +39,6 @@
 		<item name="treebolic_splitbar_color">@color/primary</item>
 		<item name="treebolic_splitbar_drag_color">@color/accent</item>
 
-	</style>
-
-	<!-- Action bar -->
-	<style name="ActionBar" parent="Widget.AppCompat.ActionBar">
-		<item name="android:background">@color/primary</item>
 	</style>
 
 </resources>

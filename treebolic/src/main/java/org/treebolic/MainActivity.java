@@ -22,7 +22,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -475,7 +475,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	 */
 	protected void updateButton()
 	{
-		final Button button = (Button) findViewById(R.id.treebolicButton);
+		final ImageButton button = (ImageButton) findViewById(R.id.treebolicButton);
 		button.setVisibility(sourceSet() ? View.VISIBLE : View.INVISIBLE);
 	}
 
