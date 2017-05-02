@@ -295,7 +295,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		final String service = Settings.getStringPref(this, Settings.PREF_SERVICE);
 		if (service != null)
 		{
-			snackbar(service, Snackbar.LENGTH_SHORT);
 			if (service.contains("Intent"))
 			{
 				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service);
@@ -506,8 +505,8 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onConnected(final boolean flag)
 	{
-		// TODO
-		snackbar(getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected), Snackbar.LENGTH_LONG);
+		final String service = Settings.getStringPref(this, Settings.PREF_SERVICE);
+		snackbar(getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected) + ' ' + service, Snackbar.LENGTH_LONG);
 		super.onConnected(flag);
 	}
 
