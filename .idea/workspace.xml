@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="/mnt/data2/devel/android-treebolic-as/Treebolic/.idea/workspace.xml" afterPath="/mnt/data2/devel/android-treebolic-as/Treebolic/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="/mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterPath="/mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" />
     </list>
     <ignored path="Treebolic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -378,7 +377,7 @@
     <favorites_list name="Treebolic" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../dist/keystore/treebolic" />
@@ -18211,7 +18210,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -18239,44 +18239,11 @@
               <option name="myItemId" value="searchLib" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Treebolic" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="searchLib" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Treebolic" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="searchLib" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -18648,7 +18615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493730649020</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixes">
+      <created>1493732654031</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1493732654031</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -18670,28 +18644,28 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36226416" sideWeight="0.4980864" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36226416" sideWeight="0.4980864" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986331" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35359675" sideWeight="0.24526873" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15199563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986331" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3528302" sideWeight="0.75473124" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15199563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24876982" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990566" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24986331" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3528302" sideWeight="0.75473124" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -18815,7 +18789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18850,10 +18823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="e#1165#1166#0" expanded="false" />
-            <element signature="e#1183#1184#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -18871,7 +18840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18879,7 +18847,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18887,7 +18854,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18898,7 +18864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18906,76 +18871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="613" column="0" selection-start-line="613" selection-start-column="0" selection-end-line="613" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#TAG#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#STATE_SELECTED_PROVIDER_ITEM#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#RESCAN_KEY#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#REQUEST_FILE_CODE#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#REQUEST_BUNDLE_CODE#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#REQUEST_SERIALIZED_CODE#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#REQUEST_DOWNLOAD_CODE#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#pluginProvider#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#spinner#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;field#adapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#2636#2666#0" expanded="false" />
-            <element signature="class#3613:4578" expanded="false" />
-            <element signature="e#3647#3684#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#3613:4578" expanded="false" />
-            <element signature="method#onNothingSelected#0;class#3613:4578" expanded="false" />
-            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onSaveInstanceState#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onRestoreInstanceState#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#6136:6508" expanded="false" />
-            <element signature="e#6176#6213#0" expanded="false" />
-            <element signature="method#onQueryTextSubmit#0;class#6136:6508" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#6698#6756#0" expanded="false" />
-            <element signature="e#8598#8623#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;class#PlaceholderFragment#0;class#MainActivity#0" expanded="false" />
-            <element signature="class#PlaceholderFragment#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#PlaceholderFragment#0;class#PlaceholderFragment#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#PlaceholderFragment#0;class#PlaceholderFragment#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#initializePrefs#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#getFolder#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#getFolder#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#setFolder#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setFolder#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#setAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#makeAdapter#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#setViewImage#0;class#12971:13327" expanded="false" />
-            <element signature="docComment;method#makeRescanDummy#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#makeRescanDummy#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#updateButton#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#sourceSet#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#sourceSet#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#requestTreebolicSource#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#requestTreebolicSource#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#requestTreebolicBundle#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#requestTreebolicBundle#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#requestTreebolicSerialized#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#requestTreebolicSerialized#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolic#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolic#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicBuiltin#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolicBuiltin#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicPlugin#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolicPlugin#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolic#1;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolic#1;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicBundle#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolicBundle#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicBundle#1;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolicBundle#1;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicSerialized#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolicSerialized#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicSettings#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#tryStartTreebolicSettings#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#tryStartTreebolicClient#0;class#MainActivity#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -18983,7 +18878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-65">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18991,7 +18885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -18999,7 +18892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19007,7 +18899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19015,7 +18906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="793">
           <caret line="61" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19023,7 +18913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="60" column="65" selection-start-line="60" selection-start-column="65" selection-end-line="60" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19031,7 +18920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19039,7 +18927,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1573">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19047,7 +18934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19055,7 +18941,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-637">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19063,7 +18948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="244" column="20" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19074,7 +18958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19082,7 +18965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-208">
           <caret line="115" column="56" selection-start-line="115" selection-start-column="56" selection-end-line="115" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19090,7 +18972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19098,7 +18979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19106,7 +18986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="231" column="22" selection-start-line="231" selection-start-column="16" selection-end-line="231" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19114,7 +18993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19122,7 +19000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="144" column="60" selection-start-line="144" selection-start-column="60" selection-end-line="144" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19130,7 +19007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="19" column="25" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19138,7 +19014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="158" column="82" selection-start-line="158" selection-start-column="79" selection-end-line="158" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19154,7 +19029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19162,44 +19036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
           <caret line="46" column="72" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="72" />
-          <folding>
-            <element signature="docComment;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;field#TAG#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;field#parameters#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;field#widget#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;field#searchView#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#onCreate#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#onPause#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="class#3615:3923" expanded="false" />
-            <element signature="method#onQueryTextSubmit#0;class#3615:3923" expanded="false" />
-            <element signature="method#onQueryTextChange#0;class#3615:3923" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#getParameters#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#linkTo#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;method#makeParameters#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#makeParameters#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;method#query#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#query#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#onModel#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;field#searchPending#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;method#handleQueryChanged#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#handleQueryChanged#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;method#handleSearchRun#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#handleSearchRun#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;method#handleSearchReset#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#handleSearchReset#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#closeKeyboard#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#runSearch#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#continueSearch#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#resetSearch#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="e#12817#12849#0" expanded="true" />
-            <element signature="e#12852#12887#0" expanded="true" />
-            <element signature="docComment;method#toast#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#toast#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="docComment;method#snackbar#0;class#TreebolicClientActivity#0" expanded="false" />
-            <element signature="method#snackbar#0;class#TreebolicClientActivity#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -19207,7 +19043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19215,7 +19050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19223,7 +19057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19231,7 +19064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1456">
           <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19239,7 +19071,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1131">
           <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19247,7 +19078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="299" column="25" selection-start-line="299" selection-start-column="12" selection-end-line="299" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19255,7 +19085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1341">
           <caret line="527" column="28" selection-start-line="527" selection-start-column="28" selection-end-line="527" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -19268,7 +19097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="6" column="37" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
