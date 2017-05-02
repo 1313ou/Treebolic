@@ -3,6 +3,7 @@ package org.treebolic;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
@@ -23,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -36,7 +38,9 @@ import org.treebolic.storage.Storage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Treebolic main activity (home)
@@ -54,6 +58,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	 * State
 	 */
 	private static final String STATE_SELECTED_PROVIDER_ITEM = "org.treebolic.provider.selected";
+
+	/**
+	 * Rescan key
+	 */
+	private static final String RESCAN_KEY = "rescan";
 
 	/**
 	 * File request code
@@ -74,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	 * Download request
 	 */
 	private static final int REQUEST_DOWNLOAD_CODE = 10;
+
+	// Adapter Key - Res id mapping
+	static private final String[] from = new String[]{Providers.ICON, Providers.NAME};
+	static private final int[] to = new int[]{R.id.icon, R.id.provider};
 
 	/**
 	 * Selected pluginProvider
@@ -123,58 +136,39 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 			// spinner
 			this.spinner = (Spinner) actionBarView.findViewById(R.id.spinner);
 
-			// spinner adapter: create the key-id mapping
-			final String[] from = new String[]{Providers.ICON, Providers.NAME};
-			final int[] to = new int[]{R.id.icon, R.id.provider};
-
-			// spinner adapter
-			this.adapter = Providers.makeAdapter(this, R.layout.spinner_item_providers, from, to, false);
-			if (this.adapter != null)
+			// set up the dropdown list navigation in the action bar.
+			this.spinner.setOnItemSelectedListener(new OnItemSelectedListener()
 			{
-				// prepare the list providers
-				this.adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown);
-
-				// set up the dropdown list navigation in the action bar.
-				this.spinner.setOnItemSelectedListener(new OnItemSelectedListener()
+				@SuppressWarnings("synthetic-access")
+				@Override
+				public void onItemSelected(final AdapterView<?> parentView, final View selectedItemView, final int position, final long id)
 				{
-					@SuppressWarnings("synthetic-access")
-					@Override
-					public void onItemSelected(final AdapterView<?> parentView, final View selectedItemView, final int position, final long id)
+					final HashMap<String, Object> provider = (HashMap<String, Object>) MainActivity.this.adapter.getItem(position);
+					if (provider.containsKey(RESCAN_KEY))
 					{
-						MainActivity.this.pluginProvider = (HashMap<String, Object>) MainActivity.this.adapter.getItem(position);
-						final String name = (String) MainActivity.this.pluginProvider.get(Providers.NAME);
-						Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
-						Settings.setActivePrefs(MainActivity.this, MainActivity.this.pluginProvider);
-						updateButton();
-						Log.d(MainActivity.TAG, (String) MainActivity.this.pluginProvider.get(Providers.PROVIDER));
+						setAdapter();
+						return;
 					}
 
-					@Override
-					public void onNothingSelected(final AdapterView<?> parentView)
-					{
-						//
-					}
-				});
+					MainActivity.this.pluginProvider = provider;
 
-				// set spinner adapter
-				this.spinner.setAdapter(this.adapter);
+					final String name = (String) MainActivity.this.pluginProvider.get(Providers.NAME);
+					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
+					Settings.setActivePrefs(MainActivity.this, MainActivity.this.pluginProvider);
+					Log.d(MainActivity.TAG, (String) MainActivity.this.pluginProvider.get(Providers.PROVIDER));
 
-				// saved name
-				final String name = Settings.getStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME);
-
-				// position
-				if (name != null)
-				{
-					for (int position = 0; position < this.adapter.getCount(); position++)
-					{
-						final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
-						if (provider.get(Providers.NAME).equals(name))
-						{
-							this.spinner.setSelection(position);
-						}
-					}
+					updateButton();
 				}
-			}
+
+				@Override
+				public void onNothingSelected(final AdapterView<?> parentView)
+				{
+					//
+				}
+			});
+
+			// adapter
+			setAdapter();
 		}
 
 		// fragment
@@ -317,11 +311,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 				startActivity(new Intent(this, ProvidersActivity.class));
 				return true;
 
-			case R.id.action_rescan:
-				Providers.getProviders(this, true);
-				this.adapter.notifyDataSetChanged();
-				return true;
-
 			case R.id.action_finish:
 				finish();
 				return true;
@@ -344,32 +333,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		return false;
 	}
 
-	/**
-	 * Initialize
-	 */
-	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	private void initializePrefs()
-	{
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-
-		// test if initialized
-		final boolean result = sharedPref.getBoolean(Settings.PREF_INITIALIZED, false);
-		if (result)
-		{
-			return;
-		}
-
-		// default settings
-		Settings.setDefaults(this);
-
-		// deploy
-		Storage.expandZipAssetFile(this, "tests.zip");
-
-		// flag as initialized
-		sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit();
-	}
-
-	// S P E C I F I C R E T U R N S
+	// S E L E C T I O N  A C T I V I T Y  R E T U R N S (source, bundle, serialized)
 
 	@Override
 	protected void onActivityResult(final int requestCode, final int resultCode, final Intent returnIntent)
@@ -438,9 +402,35 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		}
 	}
 
-	// T E S T
+	// P R E F E R E N C E S
 
-	// F O L D E R P R E F E R E N C E
+	/**
+	 * Initialize
+	 */
+	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
+	private void initializePrefs()
+	{
+		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
+		// test if initialized
+		final boolean result = sharedPref.getBoolean(Settings.PREF_INITIALIZED, false);
+		if (result)
+		{
+			return;
+		}
+
+		// default settings
+		Settings.setDefaults(this);
+
+		// deploy
+		Storage.expandZipAssetFile(this, "tests.zip");
+		// Storage.expandZipAssetFile(this, "serialized.zip");
+
+		// flag as initialized
+		sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit();
+	}
+
+	// folder preference
 
 	static final String PREF_CURRENTFOLDER = "org.treebolic.folder";
 
@@ -469,6 +459,114 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		final String path = new File(fileUri.getPath()).getParent();
 		FileChooserActivity.setFolder(this, MainActivity.PREF_CURRENTFOLDER, path);
 	}
+
+	// S P I N N E R
+
+	/**
+	 * Set spinner adapter
+	 */
+	private void setAdapter()
+	{
+		// spinner adapter
+		this.adapter = makeAdapter(R.layout.spinner_item_providers, from, to);
+		if (this.adapter != null)
+		{
+			// set spinner adapter
+			this.spinner.setAdapter(this.adapter);
+
+			// saved name
+			final String name = Settings.getStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME);
+
+			// position
+			if (name != null)
+			{
+				for (int position = 0; position < this.adapter.getCount(); position++)
+				{
+					final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
+					if (provider.get(Providers.NAME).equals(name))
+					{
+						this.spinner.setSelection(position);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Make adapter
+	 *
+	 * @param itemRes item layout
+	 * @param from    from key
+	 * @param to      to res id
+	 * @return base adapter
+	 */
+	private SimpleAdapter makeAdapter(final int itemRes, final String[] from, final int[] to)
+	{
+		// data
+		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, false);
+		if (providers0 == null)
+		{
+			providers0 = new ArrayList<>();
+		}
+		final List<HashMap<String, Object>> providers = new ArrayList(providers0);
+		providers.add(makeRescanDummy());
+
+		// adapter
+		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemRes, from, to)
+		{
+			@Override
+			public boolean isEnabled(int position)
+			{
+				if (position == providers.size() - 1)
+				{
+					//TODO
+					return true;
+				}
+				else
+				{
+					return true;
+				}
+			}
+
+			@Override
+			public void setViewImage(final ImageView imageView, final String pkg)
+			{
+				try
+				{
+					// icon
+					final Drawable drawable = getPackageManager().getApplicationIcon(pkg);
+					imageView.setImageDrawable(drawable);
+				}
+				catch (final Exception re)
+				{
+					//
+				}
+			}
+		};
+
+		// drop down
+		adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown);
+
+		return adapter;
+	}
+
+	/**
+	 * Dummy provider for rescan action
+	 *
+	 * @return dummy provider
+	 */
+	private HashMap<String, Object> makeRescanDummy()
+	{
+		final HashMap<String, Object> result = new HashMap<>();
+		final String name = getString(R.string.title_rescan);
+		result.put(Providers.NAME, name);
+		result.put(Providers.ICON, R.drawable.ic_refresh);
+		result.put(Providers.PACKAGE, null);
+		result.put(RESCAN_KEY, true);
+		return result;
+	}
+
+	// A C T I O N   B U T T O N
 
 	/**
 	 * Update button visibility

@@ -50,10 +50,6 @@
 		android:title="@string/title_activity_services"
 		app:showAsAction="never"/>
 	<item
-		android:id="@+id/action_rescan"
-		android:title="@string/title_rescan"
-		app:showAsAction="never"/>
-	<item
 		android:id="@+id/action_app_settings"
 		android:title="@string/title_activity_app_settings"
 		app:showAsAction="never"/>

@@ -16,7 +16,6 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.contrib.AppCompatPreferenceActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import java.util.HashMap;
@@ -68,8 +67,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 		super.onCreate(savedInstanceState);
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+		setupToolbar(R.layout.toolbar, R.id.toolbar);
 
 		// set up the action bar
 		final ActionBar actionBar = getSupportActionBar();
@@ -226,9 +224,18 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 				case SettingsActivity.ACTION_DOWNLOAD:
 				{
 					addPreferencesFromResource(R.xml.pref_download);
-					final Preference pref = findPreference(Settings.PREF_DOWNLOAD);
-					final String key = pref.getKey();
-					pref.setSummary(Settings.getStringPref(this, key));
+
+					final Preference prefBase = findPreference(Settings.PREF_DOWNLOAD_BASE);
+					final String keyBase = prefBase.getKey();
+					final String valBase = Settings.getStringPref(this, keyBase);
+					//prefBase.setSummary(valBase);
+					bind(prefBase, valBase, this.listener);
+
+					final Preference prefFile = findPreference(Settings.PREF_DOWNLOAD_FILE);
+					final String keyFile = prefFile.getKey();
+					final String valFile = Settings.getStringPref(this, keyFile);
+					//prefFile.setSummary(valFile);
+					bind(prefFile, valFile, this.listener);
 					break;
 				}
 				case SettingsActivity.ACTION_SERVICE:
@@ -236,6 +243,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 					final ListPreference listPreference = (ListPreference) findPreference(Settings.PREF_SERVICE);
 					fillWithServiceData(listPreference);
 					break;
+
 				default:
 				{
 					String key = null;
@@ -563,9 +571,14 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 
 			// bind
 			final SettingsActivity activity = (SettingsActivity) getActivity();
-			final Preference preference = findPreference(Settings.PREF_DOWNLOAD);
-			final String value = Settings.getStringPref(activity, preference.getKey());
-			activity.bind(preference, value, activity.listener);
+
+			final Preference basePreference = findPreference(Settings.PREF_DOWNLOAD_BASE);
+			final String baseValue = Settings.getStringPref(activity, basePreference.getKey());
+			activity.bind(basePreference, baseValue, activity.listener);
+
+			final Preference filePreference = findPreference(Settings.PREF_DOWNLOAD_FILE);
+			final String fileValue = Settings.getStringPref(activity, filePreference.getKey());
+			activity.bind(filePreference, fileValue, activity.listener);
 		}
 	}
 

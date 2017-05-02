@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:minEms="10"
+            android:minEms="7"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/pkg" />
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:minEms="10"
+            android:minEms="7"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/process" />
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:minEms="10"
+            android:minEms="7"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/permission" />
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:minEms="10"
+            android:minEms="7"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/flags" />
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:minEms="10"
+            android:minEms="7"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/label" />
@@ -132,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:minEms="10"
+            android:minEms="7"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="@string/description" />

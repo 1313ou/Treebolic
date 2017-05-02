@@ -12,7 +12,7 @@ list_launch="ic_launcher.svg"
 
 declare -A res_prov
 res_prov=([mdpi]=48 [hdpi]=72 [xhdpi]=96 [xxhdpi]=144 [xxxhdpi]=192)
-list_prov="ic_xml.svg ic_textindent.svg ic_textindenttre.svg ic_textpair.svg"
+list_prov="ic_xml.svg ic_textindent.svg ic_textindenttre.svg ic_textpair.svg ic_refresh.svg"
 
 declare -A res_splash
 res_splash=([mdpi]=144 [hdpi]=192 [xhdpi]=288 [xxhdpi]=384 [xxxhdpi]=576)

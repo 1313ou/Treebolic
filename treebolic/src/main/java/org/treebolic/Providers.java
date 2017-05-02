@@ -55,10 +55,8 @@ public class Providers
 	/**
 	 * List providers
 	 *
-	 * @param context
-	 *            context
-	 * @param parentPackageName
-	 *            package name
+	 * @param context           context
+	 * @param parentPackageName package name
 	 * @throws NameNotFoundException name not found exception
 	 */
 	@SuppressWarnings({"boxing", "ConstantConditions", "ConfusingArgumentToVarargsMethod"})
@@ -144,7 +142,7 @@ public class Providers
 					//
 				}
 
-				// plugin mimetype
+				// plugin extensions
 				String extensions = null;
 				try
 				{
@@ -196,6 +194,7 @@ public class Providers
 					}
 
 					final HashMap<String, Object> provider = new HashMap<>();
+
 					// structural
 					provider.put(Providers.PROVIDER, providerName);
 					provider.put(Providers.NAME, uniqueName);
@@ -207,6 +206,7 @@ public class Providers
 					provider.put(Providers.ISPLUGIN, true);
 					provider.put(Providers.ICON, pkg);
 					provider.put(Providers.STYLE, style);
+
 					// settings
 					provider.put(Providers.SOURCE, source);
 					provider.put(Providers.BASE, base);
@@ -226,12 +226,9 @@ public class Providers
 	/**
 	 * Add builtin providers to list
 	 *
-	 * @param context
-	 *            context
-	 * @param parentPackage
-	 *            parent package
-	 * @param processName
-	 *            process name
+	 * @param context       context
+	 * @param parentPackage parent package
+	 * @param processName   process name
 	 * @return number of built-in providers
 	 */
 	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable"})
@@ -255,16 +252,19 @@ public class Providers
 
 		// lowest array length
 		int lowest = Integer.MAX_VALUE;
-		for (final int l : new int[] { titles.length, values.length, mimetypes.length, urlSchemes.length, settings.length, icons.length() })
+		for (final int l : new int[]{titles.length, values.length, mimetypes.length, urlSchemes.length, settings.length, icons.length()})
+		{
 			if (lowest > l)
 			{
 				lowest = l;
 			}
+		}
 
 		// add array data
 		for (int i = 0; i < lowest; i++)
 		{
 			final HashMap<String, Object> provider = new HashMap<>();
+
 			// structural
 			provider.put(Providers.PROVIDER, values[i]);
 			provider.put(Providers.NAME, titles[i]);
@@ -275,6 +275,7 @@ public class Providers
 			provider.put(Providers.MIMETYPE, mimetypes[i]);
 			provider.put(Providers.EXTENSIONS, extensions[i]);
 			provider.put(Providers.URLSCHEME, urlSchemes[i]);
+
 			// settings
 			provider.put(Providers.SOURCE, sources[i]);
 			provider.put(Providers.BASE, base);
@@ -290,34 +291,51 @@ public class Providers
 	/**
 	 * Make adapter
 	 *
-	 * @param context
-	 *            context
-	 * @param itemRes
-	 *            item layout
-	 * @param from
-	 *            from key
-	 * @param to
-	 *            to res id
+	 * @param context context
+	 * @param itemRes item layout
+	 * @param from    from key
+	 * @param to      to res id
+	 * @param rescan  rescan list
 	 * @return base adapter
 	 */
 	static public SimpleAdapter makeAdapter(final Context context, final int itemRes, final String[] from, final int[] to, final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, rescan);
+
+		// adapter
+		return makeAdapter(context, providers, itemRes, from, to);
+	}
+
+	/**
+	 * Make adapter
+	 *
+	 * @param context   context
+	 * @param providers providers
+	 * @param itemRes   item layout
+	 * @param from      from key
+	 * @param to        to res id
+	 * @return base adapter
+	 */
+	static public SimpleAdapter makeAdapter(final Context context, final List<HashMap<String, Object>> providers, final int itemRes, final String[] from, final int[] to)
+	{
+		// data
 		if (providers == null)
+		{
 			return null;
+		}
 
 		// fill in the grid_item layout
 		return new SimpleAdapter(context, providers, itemRes, from, to)
 		{
 			@Override
-			public void setViewImage(final ImageView v, final String pkg)
+			public void setViewImage(final ImageView imageView, final String pkg)
 			{
 				try
 				{
 					// icon
 					final Drawable drawable = context.getPackageManager().getApplicationIcon(pkg);
-					v.setImageDrawable(drawable);
+					imageView.setImageDrawable(drawable);
 				}
 				catch (final Exception re)
 				{
@@ -330,10 +348,8 @@ public class Providers
 	/**
 	 * Get (possibly cached) list of providers
 	 *
-	 * @param context
-	 *            context
-	 * @param rescan
-	 *            rescan, do not use cache
+	 * @param context context
+	 * @param rescan  rescan, do not use cache
 	 * @return list of providers (including builtin + plugins)
 	 */
 	static public List<HashMap<String, Object>> getProviders(final Context context, final boolean rescan)

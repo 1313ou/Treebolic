@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="pref_download_url_default" translatable="false">http://treebolic.sourceforge.net/data/extra.zip</string>
+	<!-- download locations -->
+	<string name="pref_download_base_default" translatable="false">http://treebolic.sourceforge.net/data/zipped</string>
+	<string-array name="pref_download_bases" translatable="false">
+		<item>@string/pref_download_base_default</item>
+	</string-array>
 
-    <!-- download locations -->
-    <string-array name="pref_download_urls" translatable="false">
-        <item>http://treebolic.sourceforge.net/data/zipped/demo.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/extra.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/animals.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/plantae.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/monarchy.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/sumo.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/wordnet.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/graphnet.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/misc.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/pizza-xml.zip</item>
-        <item>http://treebolic.sourceforge.net/data/zipped/robots-xml.zip</item>
-    </string-array>
+	<!-- download files -->
+	<string name="pref_download_file_default" translatable="false">extra.zip</string>
+	<string-array name="pref_download_files" translatable="false">
+		<item>@string/pref_download_file_default</item>
+		<item>demo.zip</item>
+		<item>serialized.zip</item>
+		<item>animals.zip</item>
+		<item>plantae.zip</item>
+		<item>monarchy.zip</item>
+		<item>sumo.zip</item>
+		<item>wordnet.zip</item>
+		<item>graphnet.zip</item>
+		<item>misc.zip</item>
+		<item>pizza-xml.zip</item>
+		<item>robots-xml.zip</item>
+	</string-array>
 
-    <!-- builtin providers -->
+	<!-- builtin providers -->
     <string-array name="pref_providers_list_values" translatable="false">
         <item>treebolic.provider.xml.dom.Provider</item>
         <item>treebolic.provider.text.indent.Provider</item>

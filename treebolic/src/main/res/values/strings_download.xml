@@ -6,7 +6,9 @@
     <!-- pref -->
     <string name="pref_header_download">Download</string>
     <string name="pref_summary_header_download">Download data</string>
-    <string name="pref_title_download">Download URL</string>
-    <string name="pref_description_download">Download URL for extra data</string>
+    <string name="pref_title_download_base">Download URL base</string>
+    <string name="pref_description_download_base">Download URL base for extra data</string>
+    <string name="pref_title_download_file">File to download</string>
+    <string name="pref_description_download_file">File to download for extra data</string>
 
 </resources>

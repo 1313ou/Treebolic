@@ -62,9 +62,14 @@ public class Settings
 	private static final String PREF_FILE_PREFIX = "org.treebolic_preferences_";
 
 	/**
-	 * Download preference name
+	 * Download base preference name
 	 */
-	public static final String PREF_DOWNLOAD = "pref_download";
+	public static final String PREF_DOWNLOAD_BASE = "pref_download_base";
+
+	/**
+	 * Download file preference name
+	 */
+	public static final String PREF_DOWNLOAD_FILE = "pref_download_file";
 
 	/**
 	 * Default CSS
