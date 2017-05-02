@@ -242,6 +242,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 					addPreferencesFromResource(R.xml.pref_service);
 					final ListPreference listPreference = (ListPreference) findPreference(Settings.PREF_SERVICE);
 					fillWithServiceData(listPreference);
+					bind(listPreference, Settings.getStringPref(this, listPreference.getKey()), this.listener);
 					break;
 
 				default:

@@ -45,6 +45,9 @@
     <string name="ok_search_settings_dialog">OK</string>
     <string name="cancel_search_settings_dialog">Cancel</string>
 
+    <!-- status -->
+    <string name="status_client_connected">Client connected</string>
+
     <!-- errors -->
     <string name="error_null_source">Null source</string>
     <string name="error_null_provider">Null provider</string>
@@ -55,6 +58,7 @@
     <string name="error_query">Query error</string>
     <string name="error_deserialize">Error when deserializing</string>
     <string name="error_no_services">No available services</string>
+    <string name="error_client_not_connected">Client connected</string>
 
     <!-- list views -->
     <string name="service">service</string>

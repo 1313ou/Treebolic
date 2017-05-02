@@ -6,8 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Process;
 import android.preference.PreferenceManager;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
@@ -26,6 +27,8 @@ import org.treebolic.clients.TreebolicClientActivityStub;
 import org.treebolic.clients.TreebolicIntentClient;
 import org.treebolic.clients.TreebolicMessengerClient;
 import org.treebolic.clients.iface.ITreebolicClient;
+import org.treebolic.guide.HelpActivity;
+import org.treebolic.guide.Tip;
 import org.treebolic.search.SearchSettings;
 
 import java.net.URL;
@@ -68,6 +71,8 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
+		super.onCreate(savedInstanceState);
+
 		// toolbar
 		@SuppressLint("InflateParams") final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
 
@@ -108,6 +113,8 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		// super
 		super.onPause();
 	}
+
+	// M E N U
 
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu)
@@ -150,6 +157,10 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		switch (item.getItemId())
 		{
+			case android.R.id.home:
+				NavUtils.navigateUpFromSameTask(this);
+				return true;
+
 			case R.id.action_settings:
 				final Intent intent = new Intent(this, SettingsActivity.class);
 				startActivity(intent);
@@ -159,8 +170,24 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 				finish();
 				return true;
 
-			case R.id.action_kill:
-				Process.killProcess(Process.myPid());
+			case R.id.action_tips:
+				Tip.show(getSupportFragmentManager());
+				return true;
+
+			case R.id.action_help:
+				HelpActivity.start(this);
+				return true;
+
+			case R.id.action_search_run:
+				handleSearchRun();
+				return true;
+
+			case R.id.action_search_reset:
+				handleSearchReset();
+				return true;
+
+			case R.id.action_search_settings:
+				SearchSettings.show(getSupportFragmentManager());
 				return true;
 
 			default:
@@ -268,6 +295,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		final String service = Settings.getStringPref(this, Settings.PREF_SERVICE);
 		if (service != null)
 		{
+			snackbar(service, Snackbar.LENGTH_SHORT);
 			if (service.contains("Intent"))
 			{
 				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service);
@@ -451,7 +479,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		}
 	}
 
-	// SEARCH INTERFACE
+	// S E A R C H   I N T E R F A C E
 
 	protected void runSearch(String scope, String mode, String target)
 	{
@@ -473,6 +501,16 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		this.widget.search(CMD_RESET);
 	}
 
+	// C O N N E C T I O N L I S T E N E R
+
+	@Override
+	public void onConnected(final boolean flag)
+	{
+		// TODO
+		snackbar(getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected), Snackbar.LENGTH_LONG);
+		super.onConnected(flag);
+	}
+
 	// H E L P E R S
 
 	/**
@@ -489,6 +527,24 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			public void run()
 			{
 				Toast.makeText(TreebolicClientActivity.this, message, duration).show();
+			}
+		});
+	}
+
+	/**
+	 * Put toast on UI thread
+	 *
+	 * @param message  message
+	 * @param duration duration
+	 */
+	private void snackbar(final String message, final int duration)
+	{
+		runOnUiThread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				Snackbar.make(TreebolicClientActivity.this.widget, message, duration).show();
 			}
 		});
 	}

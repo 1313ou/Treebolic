@@ -90,31 +90,6 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		return theseParameters;
 	}
 
-	/*
-	@Override
-	public URL getBase()
-	{
-		return super.getBase();
-
-		try
-		{
-			final Context pluginContext = createPackageContext(this.pluginPkg, Context.CONTEXT_IGNORE_SECURITY);
-			final File thisDir = pluginContext.getFilesDir();
-			return thisDir.toURI().toURL();
-
-		}
-		catch (final NameNotFoundException e)
-		{
-			Log.d(TreebolicPluginActivity.TAG, "Plugin context", e);
-		}
-		catch (MalformedURLException e)
-		{
-			Log.d(TreebolicPluginActivity.TAG, "Plugin context", e);
-		}
-		return null;
-	}
-	*/
-
 	// U N M A R S H A L
 
 	@Override

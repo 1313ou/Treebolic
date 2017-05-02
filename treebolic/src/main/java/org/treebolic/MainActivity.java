@@ -515,20 +515,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemRes, from, to)
 		{
 			@Override
-			public boolean isEnabled(int position)
-			{
-				if (position == providers.size() - 1)
-				{
-					//TODO
-					return true;
-				}
-				else
-				{
-					return true;
-				}
-			}
-
-			@Override
 			public void setViewImage(final ImageView imageView, final String pkg)
 			{
 				try
