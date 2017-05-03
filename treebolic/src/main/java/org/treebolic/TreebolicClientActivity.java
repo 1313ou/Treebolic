@@ -264,13 +264,15 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void warn(final String message)
 	{
-		toast(message, Toast.LENGTH_LONG);
+		// toast(message, Toast.LENGTH_LONG);
+		snackbar(message, Snackbar.LENGTH_LONG);
 	}
 
 	@Override
 	public void status(final String message)
 	{
-		toast(message, Toast.LENGTH_SHORT);
+		// toast(message, Toast.LENGTH_SHORT);
+		snackbar(message, Snackbar.LENGTH_SHORT);
 	}
 
 	/**
@@ -531,7 +533,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	}
 
 	/**
-	 * Put toast on UI thread
+	 * Put snackbar on UI thread
 	 *
 	 * @param message  message
 	 * @param duration duration

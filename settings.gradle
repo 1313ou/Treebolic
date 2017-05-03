@@ -52,6 +52,9 @@ project(':storageLib').projectDir = new File('../TreebolicSupportLibs/storageLib
 
 // LIB
 
+include ':treebolicAidl'
+project(':treebolicAidl').projectDir = new File('../TreebolicServices/treebolicAidl/')
+
 include ':treebolicClientsIface'
 project(':treebolicClientsIface').projectDir = new File('../TreebolicServices/treebolicClientsIface/')
 

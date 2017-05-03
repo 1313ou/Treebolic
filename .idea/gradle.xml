@@ -17,6 +17,7 @@
             <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicLibModel" />
             <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicLibView" />
             <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicMutable" />
+            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicAidl" />
             <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsIface" />
             <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib" />
             <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicParcel" />

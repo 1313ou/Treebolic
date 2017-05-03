@@ -123,6 +123,7 @@
     <orderEntry type="module" module-name="preferenceLib" exported="" />
     <orderEntry type="module" module-name="treebolicGlue" exported="" />
     <orderEntry type="module" module-name="treebolicParcel" exported="" />
+    <orderEntry type="module" module-name="treebolicAidl" exported="" />
     <orderEntry type="module" module-name="treebolicClientsIface" exported="" />
     <orderEntry type="module" module-name="guideLib" exported="" />
     <orderEntry type="module" module-name="wheelLib" exported="" />
