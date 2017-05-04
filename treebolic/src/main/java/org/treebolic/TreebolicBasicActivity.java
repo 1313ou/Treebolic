@@ -12,6 +12,7 @@ import android.os.Process;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -658,7 +659,10 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 			@Override
 			public void run()
 			{
-				Snackbar.make(TreebolicBasicActivity.this.widget, message, duration).show();
+				final Snackbar snack = Snackbar.make(TreebolicBasicActivity.this.widget, message, duration);
+				final android.view.View view = snack.getView();
+				view.setBackgroundColor(ContextCompat.getColor(TreebolicBasicActivity.this, R.color.snackbar_color));
+				snack.show();
 			}
 		});
 	}

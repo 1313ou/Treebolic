@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
@@ -545,7 +546,10 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			@Override
 			public void run()
 			{
-				Snackbar.make(TreebolicClientActivity.this.widget, message, duration).show();
+				final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, duration);
+				final android.view.View view = snack.getView();
+				view.setBackgroundColor(ContextCompat.getColor(TreebolicClientActivity.this, R.color.snackbar_color));
+				snack.show();
 			}
 		});
 	}

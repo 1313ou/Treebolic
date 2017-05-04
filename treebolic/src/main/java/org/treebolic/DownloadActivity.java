@@ -2,6 +2,7 @@ package org.treebolic;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import org.treebolic.download.Deploy;
@@ -24,6 +25,7 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 	{
 		super.onCreate(savedInstanceState);
 
+		this.expandArchiveCheckbox.setVisibility(View.VISIBLE);
 		this.destDir = Storage.getTreebolicStorage(this);
 
 		final String base = Settings.getStringPref(this, Settings.PREF_DOWNLOAD_BASE);
