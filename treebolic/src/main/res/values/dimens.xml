@@ -1,7 +1,6 @@
 <resources>
 
     <!-- Action button -->
-    <dimen name="action_button_size">70dp</dimen>
     <dimen name="action_button_margin">25dp</dimen>
 
     <!-- Default screen margins, per the Android Design guidelines. -->

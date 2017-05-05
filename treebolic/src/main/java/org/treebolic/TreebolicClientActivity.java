@@ -376,12 +376,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	static private final String CMD_CONTINUE = "CONTINUE";
 
-	static private final String SCOPE_SOURCE = "SOURCE";
-
-	static private final String SCOPE_LABEL = "LABEL";
-
-	static private final String MODE_STARTSWITH = "STARTSWITH";
-
 	static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
 
 	/**
@@ -410,8 +404,8 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		{
 			// query applies to source: search is a requery
 			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
-			if (SCOPE_SOURCE.equals(scope))
+			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL); // label, content, link, id
+			if (SearchSettings.SCOPE_SOURCE.equals(scope))
 			{
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				if (submit)
@@ -422,7 +416,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			}
 
 			// query applies to non-source scope (label, content, ..): tree search
-			final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, MODE_STARTSWITH); // equals, startswith, includes
+			final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_STARTSWITH); // equals, startswith, includes
 			runSearch(scope, mode, query);
 		}
 	}
@@ -440,15 +434,15 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		{
 			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 			final String query = this.searchView.getQuery().toString();
-			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SCOPE_LABEL); // label, content, link, id
-			if (SCOPE_SOURCE.equals(scope))
+			final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL); // label, content, link, id
+			if (SearchSettings.SCOPE_SOURCE.equals(scope))
 			{
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				query(query);
 				return;
 			}
 
-			final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, MODE_STARTSWITH); // equals, startswith, includes
+			final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_STARTSWITH); // equals, startswith, includes
 			runSearch(scope, mode, query);
 		}
 		else
@@ -514,6 +508,20 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	}
 
 	// H E L P E R S
+
+	/**
+	 * Initialize search preferences
+	 *
+	 * @param context context
+	 */
+	static public void initializeSearchPrefs(final Context context)
+	{
+		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+		final SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_SOURCE);
+		editor.putString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_IS);
+		editor.apply();
+	}
 
 	/**
 	 * Put toast on UI thread

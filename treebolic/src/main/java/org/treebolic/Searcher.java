@@ -1,11 +1,12 @@
 package org.treebolic;
 
-import org.treebolic.search.SearchSettings;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import org.treebolic.search.SearchSettings;
+
 import treebolic.IWidget;
 
 public class Searcher
@@ -52,8 +53,8 @@ public class Searcher
 	{
 		final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.context);
 
-		final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, "LABEL"); // label, content, link, id
-		final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, "STARTSWITH"); // equals, startswith, includes
+		final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL); // label, content, link, id
+		final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_STARTSWITH); // equals, startswith, includes
 
 		Log.d(TAG, "Search for " + scope + ' ' + mode + ' ' + '"' + target + '"');
 		if ("source".equals(scope))
