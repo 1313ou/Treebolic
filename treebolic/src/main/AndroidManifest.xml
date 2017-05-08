@@ -4,8 +4,8 @@
           package="org.treebolic"
           android:installLocation="auto"
           android:sharedUserId="org.treebolic.userId"
-          android:versionCode="14"
-          android:versionName="1.14">
+          android:versionCode="15"
+          android:versionName="1.15">
 
 	<supports-screens
 		android:largeScreens="true"

@@ -16,12 +16,11 @@
 
 	</android.support.design.widget.AppBarLayout>
 
-	<FrameLayout
+	<LinearLayout
 		android:id="@+id/container"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
+		android:orientation="vertical"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-	<include layout="@layout/actionbutton"/>
 
 </android.support.design.widget.CoordinatorLayout>
