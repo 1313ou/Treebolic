@@ -1,6 +1,7 @@
 package org.treebolic;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -11,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -25,6 +27,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -259,8 +263,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 				return true;
 
 			case R.id.action_treebolic_client:
+				tryStartOneOfTreebolicClients();
+				return true;
+
+			case R.id.action_treebolic_default_client:
 				TreebolicClientActivity.initializeSearchPrefs(this);
-				tryStartTreebolicClient();
+				tryStartTreebolicDefaultClient();
 				return true;
 
 			case R.id.action_treebolic_source:
@@ -583,6 +591,64 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		return false;
 	}
 
+	/**
+	 * Choose service
+	 */
+	private void tryStartOneOfTreebolicClients()
+	{
+		final List<HashMap<String, Object>> services = Services.getServices(this, true);
+
+		final AlertDialog.Builder alert = new AlertDialog.Builder(this);
+		alert.setTitle(R.string.title_services);
+		alert.setMessage(R.string.title_choose_service);
+
+		final RadioGroup input = new RadioGroup(this);
+		for (HashMap<String, Object> service : services)
+		{
+			final RadioButton radioButton = new RadioButton(this);
+			radioButton.setText((String) service.get(Services.LABEL));
+			final String drawableRef = (String) service.get(Services.DRAWABLE);
+			final String[] fields = drawableRef.split("#");
+			final int index = Integer.parseInt(fields[1]);
+			final Drawable drawable = Services.loadIcon(getPackageManager(), fields[0], index);
+			radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+			radioButton.setCompoundDrawablePadding(10);
+			radioButton.setTag(service);
+			input.addView(radioButton);
+		}
+		alert.setView(input);
+		alert.setNegativeButton(R.string.action_cancel, new DialogInterface.OnClickListener()
+		{
+			@Override
+			public void onClick(DialogInterface dialog, int whichButton)
+			{
+				// canceled.
+			}
+		});
+
+		final AlertDialog dialog = alert.create();
+		input.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+		{
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId)
+			{
+				dialog.dismiss();
+
+				int childCount = input.getChildCount();
+				for (int i = 0; i < childCount; i++)
+				{
+					final RadioButton radioButton = (RadioButton) input.getChildAt(i);
+					if (radioButton.getId() == input.getCheckedRadioButtonId())
+					{
+						final HashMap<String, Object> service = (HashMap<String, Object>) radioButton.getTag();
+						tryStartTreebolicClient(service);
+					}
+				}
+			}
+		});
+		dialog.show();
+	}
+
 	// R E Q U E S T S ( S T A R T A C T I V I T Y F O R R E S U L T )
 
 	/**
@@ -851,13 +917,27 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	}
 
 	/**
-	 * Try to start Treebolic client activity
+	 * Try to start Treebolic default client activity
 	 */
-	private void tryStartTreebolicClient()
+	private void tryStartTreebolicDefaultClient()
 	{
 		final Intent intent = new Intent();
 		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
-		Log.d(MainActivity.TAG, "Start treebolic client");
+		Log.d(MainActivity.TAG, "Start  treebolic default client");
+		startActivity(intent);
+	}
+
+	/**
+	 * Try to start Treebolic client activity
+	 */
+	private void tryStartTreebolicClient(final HashMap<String, Object> service)
+	{
+		final String argService = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
+
+		final Intent intent = new Intent();
+		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
+		intent.putExtra(TreebolicIface.ARG_SERVICE, argService);
+		Log.d(MainActivity.TAG, "Start treebolic client for " + argService);
 		startActivity(intent);
 	}
 }

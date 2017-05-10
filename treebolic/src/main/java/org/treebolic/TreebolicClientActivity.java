@@ -53,6 +53,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	private static final String TAG = "TreebolicClientA";
 
 	/**
+	 * Client
+	 */
+	private String argService;
+
+	/**
 	 * Parameters
 	 */
 	private Properties parameters;
@@ -97,6 +102,18 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		}
 
 		// init widget with model is asynchronous
+	}
+
+	@Override
+	protected void onResume()
+	{
+		Log.d(TreebolicClientActivity.TAG, "Activity resumed");
+
+		// super
+		super.onResume();
+
+		// retrieve arguments
+		unmarshalArgs(getIntent());
 	}
 
 	@Override
@@ -290,32 +307,57 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return theseParameters;
 	}
 
+	// U N M A R S H A L
+
+	protected void unmarshalArgs(final Intent intent)
+	{
+		final Bundle params = intent.getExtras();
+		this.argService = params.getString(TreebolicIface.ARG_SERVICE);
+	}
+
 	// C L I E N T
 
 	@Override
-	protected ITreebolicClient getClient()
+	protected ITreebolicClient makeClient()
 	{
-		final String service = Settings.getStringPref(this, Settings.PREF_SERVICE);
-		if (service != null)
+		String service = this.argService;
+		if (service == null || service.isEmpty())
+		{
+			// default
+			service = Settings.getStringPref(this, Settings.PREF_SERVICE);
+		}
+
+		return service2Client(service);
+	}
+
+	/**
+	 * Make client from service name
+	 *
+	 * @param service name
+	 * @return client to service
+	 */
+	protected ITreebolicClient service2Client(final String service)
+	{
+		if (service != null && !service.isEmpty())
 		{
 			if (service.contains("Intent"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service);
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent argService" + service);
 				return new TreebolicIntentClient(this, service, this, this);
 			}
 			else if (service.contains("AIDL"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to AIDL bound service " + service);
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to AIDL bound argService " + service);
 				return new TreebolicAIDLBoundClient(this, service, this, this);
 			}
 			else if (service.contains("Bound"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to bound service " + service);
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to bound argService " + service);
 				return new TreebolicBoundClient(this, service, this, this);
 			}
 			else if (service.contains("Messenger"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to messenger service " + service);
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to messenger argService " + service);
 				return new TreebolicMessengerClient(this, service, this, this);
 			}
 		}
@@ -353,7 +395,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onModel(final Model model, final String urlScheme0)
 	{
-		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model);
+		Log.d(TreebolicClientActivity.TAG, "Receiving model from argService " + model);
 
 		// abort
 		if (model == null)

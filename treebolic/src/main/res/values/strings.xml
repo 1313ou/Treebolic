@@ -4,6 +4,10 @@
     <string name="app_name">Treebolic</string>
     <string name="treebolic">Treebolic</string>
 
+    <!-- action -->
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+
     <!-- menu+actionbar -->
     <string name="hint_search">source</string>
     <string name="hint_search_treebolic">query</string>
@@ -30,7 +34,8 @@
     <string name="title_treebolic_source">Open source</string>
     <string name="title_treebolic_bundle">Open bundle</string>
     <string name="title_treebolic_serialized">Open serialized</string>
-    <string name="title_treebolic_client">Start client</string>
+    <string name="title_treebolic_client">Start client &#8230;</string>
+    <string name="title_treebolic_default_client">Start default client</string>
     <string name="title_query">Query</string>
     <string name="title_start">Start</string>
     <string name="title_finish">Finish</string>
@@ -38,6 +43,10 @@
     <string name="title_demo">Demo</string>
     <string name="title_rescan">Rescan</string>
     <string name="title_settings">Settings</string>
+
+    <!-- choose services -->
+    <string name="title_services">Services</string>
+    <string name="title_choose_service">Choose</string>
 
     <!-- search settings -->
     <string name="title_search_settings_dialog">Treebolic search</string>

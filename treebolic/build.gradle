@@ -33,7 +33,6 @@ dependencies {
     compile project(':preferenceLib')
     compile project(':guideLib')
     compile project(':searchLib')
-    compile project(':wheelLib')
 
     compile files('libs/treebolic-provider-text-indent-tre.jar')
     compile files('libs/treebolic-provider-text-indent.jar')

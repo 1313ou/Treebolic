@@ -59,7 +59,7 @@ public class Services
 	 *            icon id
 	 * @return drawable
 	 */
-	static private Drawable loadIcon(final PackageManager packageManager, final String packageName, final int iconId)
+	static public Drawable loadIcon(final PackageManager packageManager, final String packageName, final int iconId)
 	{
 		if (iconId != 0)
 		{
@@ -163,8 +163,8 @@ public class Services
 				{
 					final String[] fields = value.split("#");
 					final int index = Integer.parseInt(fields[1]);
-					final Drawable d = Services.loadIcon(context.getPackageManager(), fields[0], index);
-					v.setImageDrawable(d);
+					final Drawable drawable = Services.loadIcon(context.getPackageManager(), fields[0], index);
+					v.setImageDrawable(drawable);
 				}
 				catch (final Exception re)
 				{
