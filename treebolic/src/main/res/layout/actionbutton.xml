@@ -19,7 +19,7 @@
 		android:id="@+id/treebolicButton"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_below="@+id/querySource"
+		android:layout_below="@+id/treebolicSource"
 		android:layout_centerHorizontal="true"
 		android:contentDescription="@string/title_query"
 		android:elevation="4dp"

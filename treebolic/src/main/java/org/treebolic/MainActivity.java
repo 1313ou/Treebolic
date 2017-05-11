@@ -485,7 +485,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 			{
 				for (int position = 0; position < this.adapter.getCount(); position++)
 				{
-					final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
+					@SuppressWarnings("unchecked") final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
 					if (provider.get(Providers.NAME).equals(name))
 					{
 						this.spinner.setSelection(position);
@@ -511,7 +511,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		{
 			providers0 = new ArrayList<>();
 		}
-		final List<HashMap<String, Object>> providers = new ArrayList(providers0);
+		@SuppressWarnings("unchecked") final List<HashMap<String, Object>> providers = new ArrayList(providers0);
 		providers.add(makeRescanDummy());
 
 		// adapter
@@ -613,18 +613,21 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		alert.setMessage(R.string.title_choose_service);
 
 		final RadioGroup input = new RadioGroup(this);
-		for (HashMap<String, Object> service : services)
+		if (services != null)
 		{
-			final RadioButton radioButton = new RadioButton(this);
-			radioButton.setText((String) service.get(Services.LABEL));
-			final String drawableRef = (String) service.get(Services.DRAWABLE);
-			final String[] fields = drawableRef.split("#");
-			final int index = Integer.parseInt(fields[1]);
-			final Drawable drawable = Services.loadIcon(getPackageManager(), fields[0], index);
-			radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-			radioButton.setCompoundDrawablePadding(10);
-			radioButton.setTag(service);
-			input.addView(radioButton);
+			for (HashMap<String, Object> service : services)
+			{
+				final RadioButton radioButton = new RadioButton(this);
+				radioButton.setText((String) service.get(Services.LABEL));
+				final String drawableRef = (String) service.get(Services.DRAWABLE);
+				final String[] fields = drawableRef.split("#");
+				final int index = Integer.parseInt(fields[1]);
+				final Drawable drawable = Services.loadIcon(getPackageManager(), fields[0], index);
+				radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+				radioButton.setCompoundDrawablePadding(10);
+				radioButton.setTag(service);
+				input.addView(radioButton);
+			}
 		}
 		alert.setView(input);
 		alert.setNegativeButton(R.string.action_cancel, new DialogInterface.OnClickListener()
@@ -650,7 +653,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 					final RadioButton radioButton = (RadioButton) input.getChildAt(i);
 					if (radioButton.getId() == input.getCheckedRadioButtonId())
 					{
-						final HashMap<String, Object> service = (HashMap<String, Object>) radioButton.getTag();
+						@SuppressWarnings("unchecked") final HashMap<String, Object> service = (HashMap<String, Object>) radioButton.getTag();
 						tryStartTreebolicClient(service);
 					}
 				}

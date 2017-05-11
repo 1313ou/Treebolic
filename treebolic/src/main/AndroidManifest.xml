@@ -1,162 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="org.treebolic"
-          android:installLocation="auto"
-          android:sharedUserId="org.treebolic.userId"
-          android:versionCode="15"
-          android:versionName="1.15">
-
-	<supports-screens
-		android:largeScreens="true"
-		android:normalScreens="true"
-		android:requiresSmallestWidthDp="360"
-		android:smallScreens="false"
-		android:xlargeScreens="true"/>
-
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	<uses-permission android:name="android.permission.INTERNET"/>
-
-	<application
-		android:allowBackup="true"
-		android:icon="@drawable/ic_launcher"
-		android:label="@string/app_name"
-		android:process="org.treebolic"
-		android:supportsRtl="true"
-		android:theme="@style/CompatAppTheme"
-		tools:ignore="AllowBackup,UnusedAttribute">
-
-		<activity
-			android:name=".MainActivity"
-			android:label="@string/title_activity_main"
-			android:launchMode="singleTop">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
-		</activity>
-
-		<activity
-			android:name=".TreebolicActivity"
-			android:exported="true"
-			android:hardwareAccelerated="true"
-			android:label="@string/title_activity_treebolic"
-			android:parentActivityName=".MainActivity"
-			android:theme="@style/CompatAppTheme"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".TreebolicClientActivity"
-			android:exported="true"
-			android:hardwareAccelerated="true"
-			android:label="@string/title_activity_treebolic_client"
-			android:parentActivityName=".MainActivity"
-			android:theme="@style/CompatAppTheme"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".TreebolicModelActivity"
-			android:exported="true"
-			android:hardwareAccelerated="true"
-			android:label="@string/title_activity_treebolic_model"
-			android:parentActivityName=".MainActivity"
-			android:theme="@style/CompatAppTheme"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".TreebolicPluginActivity"
-			android:exported="true"
-			android:hardwareAccelerated="true"
-			android:label="@string/title_activity_treebolic_plugin"
-			android:parentActivityName=".MainActivity"
-			android:theme="@style/CompatAppTheme"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".SettingsActivity"
-			android:exported="true"
-			android:label="@string/title_activity_settings"
-			android:parentActivityName="org.treebolic.MainActivity"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name="org.treebolic.guide.HelpActivity"
-			android:exported="true"
-			android:label="@string/title_activity_help"
-			android:parentActivityName="org.treebolic.MainActivity"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name="org.treebolic.guide.AboutActivity"
-			android:label="@string/title_activity_about"
-			android:parentActivityName="org.treebolic.MainActivity"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".ServicesActivity"
-			android:label="@string/title_activity_services"
-			android:parentActivityName=".MainActivity"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".ProvidersActivity"
-			android:label="@string/title_activity_providers"
-			android:parentActivityName=".MainActivity"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name=".DownloadActivity"
-			android:label="@string/title_activity_download"
-			android:parentActivityName=".MainActivity"
-			tools:ignore="UnusedAttribute">
-			<meta-data
-				android:name="android.support.PARENT_ACTIVITY"
-				android:value="org.treebolic.MainActivity"/>
-		</activity>
-
-		<activity
-			android:name="org.treebolic.filechooser.FileChooserActivity"
-			android:exported="false"
-			tools:ignore="MissingRegistered">
-		</activity>
-
-	</application>
-
-</manifest>
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"          xmlns:tools="http://schemas.android.com/tools"          package="org.treebolic"          android:installLocation="auto"          android:sharedUserId="org.treebolic.userId"          android:versionCode="15"          android:versionName="1.15">	<supports-screens		android:largeScreens="true"		android:normalScreens="true"		android:requiresSmallestWidthDp="360"		android:smallScreens="false"		android:xlargeScreens="true"/>	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>	<uses-permission android:name="android.permission.INTERNET"/>	<application		android:allowBackup="true"		android:icon="@drawable/ic_launcher"		android:label="@string/app_name"		android:process="org.treebolic"		android:supportsRtl="true"		android:theme="@style/CompatAppTheme"		tools:ignore="AllowBackup,UnusedAttribute">		<activity			android:name=".MainActivity"			android:label="@string/title_activity_main"			android:launchMode="singleTop">			<intent-filter>				<action android:name="android.intent.action.MAIN"/>				<category android:name="android.intent.category.LAUNCHER"/>			</intent-filter>		</activity>		<activity			android:name=".TreebolicActivity"			android:exported="true"			android:hardwareAccelerated="true"			android:label="@string/title_activity_treebolic"			android:parentActivityName=".MainActivity"			android:theme="@style/CompatAppTheme"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".TreebolicClientActivity"			android:exported="true"			android:hardwareAccelerated="true"			android:label="@string/title_activity_treebolic_client"			android:parentActivityName=".MainActivity"			android:theme="@style/CompatAppTheme"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".TreebolicModelActivity"			android:exported="true"			android:hardwareAccelerated="true"			android:label="@string/title_activity_treebolic_model"			android:parentActivityName=".MainActivity"			android:theme="@style/CompatAppTheme"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".TreebolicPluginActivity"			android:exported="true"			android:hardwareAccelerated="true"			android:label="@string/title_activity_treebolic_plugin"			android:parentActivityName=".MainActivity"			android:theme="@style/CompatAppTheme"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".SettingsActivity"			android:exported="true"			android:label="@string/title_activity_settings"			android:parentActivityName="org.treebolic.MainActivity"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name="org.treebolic.guide.HelpActivity"			android:exported="true"			android:label="@string/title_activity_help"			android:parentActivityName="org.treebolic.MainActivity"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name="org.treebolic.guide.AboutActivity"			android:label="@string/title_activity_about"			android:parentActivityName="org.treebolic.MainActivity"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".ServicesActivity"			android:label="@string/title_activity_services"			android:parentActivityName=".MainActivity"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".ProvidersActivity"			android:label="@string/title_activity_providers"			android:parentActivityName=".MainActivity"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name=".DownloadActivity"			android:label="@string/title_activity_download"			android:parentActivityName=".MainActivity"			tools:ignore="UnusedAttribute">			<meta-data				android:name="android.support.PARENT_ACTIVITY"				android:value="org.treebolic.MainActivity"/>		</activity>		<activity			android:name="org.treebolic.filechooser.FileChooserActivity"			android:exported="false"			tools:ignore="MissingRegistered">		</activity>	</application></manifest>
