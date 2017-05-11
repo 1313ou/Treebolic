@@ -31,6 +31,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.treebolic.filechooser.EntryChooser;
@@ -186,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	protected void onResume()
 	{
 		super.onResume();
+
 		updateButton();
 	}
 
@@ -342,7 +344,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		return false;
 	}
 
-	// S E L E C T I O N  A C T I V I T Y  R E T U R N S (source, bundle, serialized)
+	// S E L E C T I O N   A C T I V I T Y   R E T U R N S (source, bundle, serialized)
 
 	@Override
 	protected void onActivityResult(final int requestCode, final int resultCode, final Intent returnIntent)
@@ -396,14 +398,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	 */
 	public static class PlaceholderFragment extends Fragment
 	{
-		/**
-		 * Constructor
-		 */
-		public PlaceholderFragment()
-		{
-			//
-		}
-
 		@Override
 		public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
 		{
@@ -566,27 +560,43 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 	/**
 	 * Update button visibility
 	 */
-	protected void updateButton()
+	private void updateButton()
 	{
 		final ImageButton button = (ImageButton) findViewById(R.id.treebolicButton);
-		button.setVisibility(sourceSet() ? View.VISIBLE : View.INVISIBLE);
+		final TextView sourceText = (TextView) findViewById(R.id.treebolicSource);
+		final String source = Settings.getStringPref(this, TreebolicIface.PREF_SOURCE);
+		final boolean qualifies = sourceQualifies(source);
+		button.setVisibility(qualifies ? View.VISIBLE : View.INVISIBLE);
+		sourceText.setVisibility(qualifies ? View.VISIBLE : View.INVISIBLE);
+		if (qualifies)
+		{
+			sourceText.setText(source);
+		}
 	}
 
 	/**
-	 * Whether source is set
+	 * Whether source qualifies
 	 *
-	 * @return true if source is set
+	 * @return true if source qualifies
 	 */
-	private boolean sourceSet()
+	private boolean sourceQualifies(final String source)
 	{
-		final String source = Settings.getStringPref(this, TreebolicIface.PREF_SOURCE);
-		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 		if (source != null && !source.isEmpty())
 		{
+			/*
+			final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 			final File baseFile = base == null ? null : new File(Uri.parse(base).getPath());
 			final File file = new File(baseFile, source);
 			Log.d(MainActivity.TAG, "file=" + file);
 			return file.exists();
+			 */
+
+			/*
+			final File file = new File(source);
+			Log.d(MainActivity.TAG, "file=" + file);
+			return file.exists() && file.isDirectory();
+			 */
+			return true;
 		}
 		return false;
 	}
@@ -620,7 +630,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 		alert.setNegativeButton(R.string.action_cancel, new DialogInterface.OnClickListener()
 		{
 			@Override
-			public void onClick(DialogInterface dialog, int whichButton)
+			public void onClick(final DialogInterface dialog, final int whichButton)
 			{
 				// canceled.
 			}

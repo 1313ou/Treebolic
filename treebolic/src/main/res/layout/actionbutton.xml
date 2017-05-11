@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.FloatingActionButton
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/treebolicButton"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_gravity="bottom|center"
-	android:layout_marginBottom="@dimen/action_button_margin"
-	android:contentDescription="@string/title_start"
-	android:onClick="onClick"
-	android:visibility="invisible"
-	app:fabSize="normal"
-	app:srcCompat="@drawable/ic_treebolic"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="@dimen/action_button_margin">
+
+	<TextView
+		android:id="@+id/treebolicSource"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:visibility="invisible"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/treebolicButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/querySource"
+		android:layout_centerHorizontal="true"
+		android:contentDescription="@string/title_query"
+		android:elevation="4dp"
+		android:onClick="onClick"
+		android:visibility="invisible"
+		app:fabSize="normal"
+		app:srcCompat="@drawable/ic_treebolic"
+		tools:ignore="UnusedAttribute"/>
+
+</RelativeLayout>
