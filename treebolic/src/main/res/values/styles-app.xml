@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<style name="CompatAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+	<style name="CompatAppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+		<item name="android:background">?attr/colorPrimary</item>item>
+	</style>
 
 	<style name="CompatAppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
