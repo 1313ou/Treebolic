@@ -1,6 +1,5 @@
 package org.treebolic;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,9 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.treebolic.clients.TreebolicAIDLBoundClient;
@@ -79,18 +78,16 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		super.onCreate(savedInstanceState);
 
-		// toolbar
-		@SuppressLint("InflateParams") final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
-
 		// widget
 		this.widget = new Widget(this, this);
 
 		// content view
-		final LinearLayout contentView = new LinearLayout(this);
-		contentView.setOrientation(LinearLayout.VERTICAL);
-		contentView.addView(toolbar);
-		contentView.addView(this.widget);
-		setContentView(contentView);
+		setContentView(R.layout.activity_treebolic);
+		final ViewGroup container = (ViewGroup) findViewById(R.id.container);
+		container.addView(this.widget);
+
+		// toolbar
+		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 		// action bar
 		setSupportActionBar(toolbar);

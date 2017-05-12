@@ -126,21 +126,10 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 	{
 		super.onCreate(savedInstanceState);
 
-		// toolbar
-		// @SuppressLint("InflateParams") final Toolbar toolbar = (Toolbar) getLayoutInflater().inflate(R.layout.toolbar, null);
-
 		// widget
 		this.widget = new Widget(this, this);
 
 		// content view
-		/*
-		final LinearLayout contentView = new LinearLayout(this);
-		contentView.setOrientation(LinearLayout.VERTICAL);
-		contentView.addView(toolbar);
-		contentView.addView(this.widget);
-		setContentView(contentView);
-		*/
-
 		setContentView(R.layout.activity_treebolic);
 		final ViewGroup container = (ViewGroup) findViewById(R.id.container);
 		container.addView(this.widget);
