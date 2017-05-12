@@ -1,6 +1,7 @@
 <resources>
 
     <!-- Action button -->
-    <dimen name="action_button_margin">10dp</dimen>
-     
+	<dimen name="action_button_group_margin">25dp</dimen>
+	<dimen name="action_button_margin">5dp</dimen>
+
 </resources>
