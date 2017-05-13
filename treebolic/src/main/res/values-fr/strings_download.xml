@@ -11,4 +11,25 @@
     <string name="pref_title_download_file">Fichier téléchargé</string>
     <string name="pref_description_download_file">Fichier téléchargé comme données supplémentaires</string>
 
+	<!-- see pref_download_bases, same order -->
+	<string-array name="pref_download_base_labels">
+		<item>Sourceforge</item>
+	</string-array>
+
+	<!-- see pref_download_files, same order -->
+	<string-array name="pref_download_file_labels">
+		<item>Extras</item>
+		<item>Demos</item>
+		<item>Sérializés</item>
+		<item>Animaux</item>
+		<item>Plantae</item>
+		<item>Monarchie britannique</item>
+		<item>SUMO</item>
+		<item>Graphnet</item>
+		<item>Divers</item>
+		<item>WordNet (xml)</item>
+		<item>Pizza (xml)</item>
+		<item>Robots (xml)</item>
+	</string-array>
+
 </resources>

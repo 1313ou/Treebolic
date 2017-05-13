@@ -287,6 +287,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
 			case R.id.action_demo:
 				final Uri archiveUri = Storage.copyAssetFile(this, Settings.DEMO);
+				this.spinner.setSelection(0);
 				tryStartTreebolicBundle(archiveUri);
 				return true;
 

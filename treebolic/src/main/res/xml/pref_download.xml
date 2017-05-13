@@ -1,28 +1,20 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:my="http://schemas.android.com/apk/res-auto" >
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
-    <org.treebolic.preference.AutoEditTextPreference
-        android:capitalize="none"
+    <org.treebolic.preference.OpenEditTextPreference
         android:defaultValue="@string/pref_download_base_default"
-        android:inputType="textUri"
         android:key="pref_download_base"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
         android:summary="@string/pref_description_download_base"
         android:title="@string/pref_title_download_base"
-        my:values="@array/pref_download_bases" />
+        app:labels="@array/pref_download_base_labels"
+        app:values="@array/pref_download_bases"/>
 
-    <org.treebolic.preference.AutoEditTextPreference
-        android:capitalize="none"
+    <org.treebolic.preference.OpenEditTextPreference
         android:defaultValue="@string/pref_download_file_default"
-        android:inputType="textUri"
         android:key="pref_download_file"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
         android:summary="@string/pref_description_download_file"
         android:title="@string/pref_title_download_file"
-        my:values="@array/pref_download_files" />
+        app:labels="@array/pref_download_file_labels"
+        app:values="@array/pref_download_files"/>
 
 </PreferenceScreen>

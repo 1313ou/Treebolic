@@ -11,4 +11,25 @@
     <string name="pref_title_download_file">File to download</string>
     <string name="pref_description_download_file">File to download for extra data</string>
 
+	<!-- see pref_download_bases, same order -->
+	<string-array name="pref_download_base_labels">
+		<item>Sourceforge</item>
+	</string-array>
+
+	<!-- see pref_download_files, same order -->
+	<string-array name="pref_download_file_labels">
+		<item>Extras</item>
+		<item>Demos</item>
+		<item>Serialized</item>
+		<item>Animals</item>
+		<item>Plantae</item>
+		<item>British monarchy</item>
+		<item>SUMO</item>
+		<item>Graphnet</item>
+		<item>Miscellaneous</item>
+		<item>WordNet (xml)</item>
+		<item>Pizza (xml)</item>
+		<item>Robots (xml)</item>
+	</string-array>
+
 </resources>
