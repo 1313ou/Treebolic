@@ -36,7 +36,7 @@
     <string name="title_treebolic_serialized">Ouvrir modèle sérialisé</string>
     <string name="title_treebolic_client">Lancer client &#8230;</string>
     <string name="title_treebolic_default_client">Lancer client par défaut</string>
-    <string name="title_query">Requête</string>
+    <string name="title_query">Lancer</string>
     <string name="title_start">Démarrer</string>
     <string name="title_finish">Finir</string>
     <string name="title_kill">Terminer</string>

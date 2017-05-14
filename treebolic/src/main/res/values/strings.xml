@@ -36,7 +36,7 @@
     <string name="title_treebolic_serialized">Open serialized</string>
     <string name="title_treebolic_client">Start client &#8230;</string>
     <string name="title_treebolic_default_client">Start default client</string>
-    <string name="title_query">Query</string>
+    <string name="title_query">Run</string>
     <string name="title_start">Start</string>
     <string name="title_finish">Finish</string>
     <string name="title_kill">Kill</string>
