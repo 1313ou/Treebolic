@@ -91,7 +91,7 @@ public class Services
 	 * List services
 	 *
 	 * @param context
-	 *            context
+	 *            locatorContext
 	 * @param filter
 	 *            positive filter
 	 */
@@ -132,7 +132,7 @@ public class Services
 	 * Make adapter
 	 *
 	 * @param context
-	 *            context
+	 *            locatorContext
 	 * @param itemRes
 	 *            item layout
 	 * @param from
@@ -178,7 +178,7 @@ public class Services
 	 * Get (possibly cached) list of services
 	 *
 	 * @param context
-	 *            context
+	 *            locatorContext
 	 * @param rescan
 	 *            rescan, do not use cache
 	 * @return list of services

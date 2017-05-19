@@ -1,5 +1,6 @@
 package org.treebolic;
 
+import android.content.Context;
 import android.util.Log;
 
 import java.net.MalformedURLException;
@@ -34,45 +35,46 @@ public class ModelFactory
 	final IProviderContext providerContext;
 
 	/**
-	 * Context
+	 * Locator context
 	 */
-	final IContext context;
+	final IContext locatorContext;
+
+	/**
+	 * Application context
+	 */
+	final Context applicationContext;
 
 	/**
 	 * Constructor
 	 *
-	 * @param provider0
-	 *            provider
-	 * @param providerContext0
-	 *            provider context
-	 * @param context0
-	 *            context to get provider data
+	 * @param provider0           provider
+	 * @param providerContext0    provider locatorContext
+	 * @param locatorContext0     locator context to get provider data
+	 * @param applicationContext0 context
 	 */
-	public ModelFactory(final IProvider provider0, final IProviderContext providerContext0, final IContext context0)
+	public ModelFactory(final IProvider provider0, final IProviderContext providerContext0, final IContext locatorContext0, final Context applicationContext0)
 	{
 		this.provider = provider0;
 		this.providerContext = providerContext0;
-		this.context = context0;
+		this.locatorContext = locatorContext0;
+		this.applicationContext = applicationContext0;
 	}
 
 	/**
 	 * Make model
 	 *
-	 * @param source
-	 *            source
-	 * @param base
-	 *            base
-	 * @param imageBase
-	 *            image base
-	 * @param settings
-	 *            settings
+	 * @param source    source
+	 * @param base      base
+	 * @param imageBase image base
+	 * @param settings  settings
 	 * @return model
 	 */
 	public Model make(final String source, final String base, final String imageBase, final String settings)
 	{
 		// provider
-		this.provider.setup(this.providerContext);
-		this.provider.setup(this.context);
+		this.provider.setContext(this.providerContext);
+		this.provider.setLocator(this.locatorContext);
+		this.provider.setHandle(this.applicationContext);
 
 		// model
 		final Model model = this.provider.makeModel(source, ModelFactory.makeBaseURL(base), ModelFactory.makeParameters(source, base, imageBase, settings));
@@ -83,8 +85,7 @@ public class ModelFactory
 	/**
 	 * Make base URL
 	 *
-	 * @param base
-	 *            base
+	 * @param base base
 	 * @return base URL
 	 */
 	private static URL makeBaseURL(final String base)
@@ -103,14 +104,10 @@ public class ModelFactory
 	/**
 	 * Make parameters
 	 *
-	 * @param source
-	 *            source
-	 * @param base
-	 *            base
-	 * @param imageBase
-	 *            image base
-	 * @param settings
-	 *            settings
+	 * @param source    source
+	 * @param base      base
+	 * @param imageBase image base
+	 * @param settings  settings
 	 * @return parameters
 	 */
 	private static Properties makeParameters(final String source, final String base, final String imageBase, final String settings)

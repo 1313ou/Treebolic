@@ -84,7 +84,7 @@ public class Settings
 	/**
 	 * Set providers default settings from provider data
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	@SuppressWarnings("boxing")
@@ -127,7 +127,7 @@ public class Settings
 	/**
 	 * Set active provider settings (copied into default preferences)
 	 *
-	 * @param context  context
+	 * @param context  locatorContext
 	 * @param provider active provider
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
@@ -166,7 +166,7 @@ public class Settings
 	/**
 	 * Put string preference
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param key     key
 	 * @param value   value
 	 */
@@ -180,7 +180,7 @@ public class Settings
 	/**
 	 * Put integer preference
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param key     key
 	 * @param value   value
 	 */
@@ -194,7 +194,7 @@ public class Settings
 	/**
 	 * Get string preference
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param key     key
 	 * @return value
 	 */
@@ -207,7 +207,7 @@ public class Settings
 	/**
 	 * Get int preference
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param key     key
 	 * @return value
 	 */
@@ -220,7 +220,7 @@ public class Settings
 	/**
 	 * Get preference value as url
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param key     key
 	 * @return preference value as
 	 */
@@ -254,7 +254,7 @@ public class Settings
 	/**
 	 * Application settings
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param pkgName package name
 	 */
 	static public void applicationSettings(final Context context, final String pkgName)

@@ -52,7 +52,7 @@ public class TreebolicActivity extends TreebolicSourceActivity
 	/**
 	 * Make Treebolic activity intent
 	 *
-	 * @param context      context
+	 * @param context      locatorContext
 	 * @param providerName providerName class
 	 * @param source       source
 	 * @param base         base

@@ -55,7 +55,7 @@ public class Providers
 	/**
 	 * List providers
 	 *
-	 * @param context           context
+	 * @param context           locatorContext
 	 * @param parentPackageName package name
 	 * @throws NameNotFoundException name not found exception
 	 */
@@ -94,7 +94,7 @@ public class Providers
 			final String[] components = pkg.split("\\.");
 			final String name = components[components.length - 1];
 
-			// plugin context
+			// plugin locatorContext
 			Context pluginContext;
 			try
 			{
@@ -102,11 +102,11 @@ public class Providers
 			}
 			catch (final NameNotFoundException e1)
 			{
-				Log.d(Providers.TAG, "Error while creating package context for " + pkg + ' ' + e1.getMessage());
+				Log.d(Providers.TAG, "Error while creating package locatorContext for " + pkg + ' ' + e1.getMessage());
 				continue;
 			}
 
-			// preferences from plugin context
+			// preferences from plugin locatorContext
 			final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(pluginContext);
 			final String source = sharedPref.getString(TreebolicIface.PREF_SOURCE, null);
 			final String base = sharedPref.getString(TreebolicIface.PREF_BASE, null);
@@ -226,7 +226,7 @@ public class Providers
 	/**
 	 * Add builtin providers to list
 	 *
-	 * @param context       context
+	 * @param context       locatorContext
 	 * @param parentPackage parent package
 	 * @param processName   process name
 	 * @return number of built-in providers
@@ -291,7 +291,7 @@ public class Providers
 	/**
 	 * Make adapter
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param itemRes item layout
 	 * @param from    from key
 	 * @param to      to res id
@@ -310,7 +310,7 @@ public class Providers
 	/**
 	 * Make adapter
 	 *
-	 * @param context   context
+	 * @param context   locatorContext
 	 * @param providers providers
 	 * @param itemRes   item layout
 	 * @param from      from key
@@ -348,7 +348,7 @@ public class Providers
 	/**
 	 * Get (possibly cached) list of providers
 	 *
-	 * @param context context
+	 * @param context locatorContext
 	 * @param rescan  rescan, do not use cache
 	 * @return list of providers (including builtin + plugins)
 	 */

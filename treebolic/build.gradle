@@ -22,8 +22,8 @@ android {
 
 dependencies {
     compile project(':treebolicIface')
-    compile project(':treebolicParcel')
     compile project(':treebolicLib')
+    compile project(':treebolicParcel')
     compile project(':treebolicGraph')
     compile project(':treebolicClientsLib')
 

@@ -144,7 +144,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 
 				// ClassLoader.loadClass:
 				// The class loader returned by Thread.getContextClassLoader() may fail for processes that host multiple applications.
-				// You should explicitly specify a context class loader.
+				// You should explicitly specify a locatorContext class loader.
 				// For example: Thread.setContextClassLoader(getClass().getClassLoader());
 				Thread.currentThread().setContextClassLoader(clazz.getClassLoader());
 
@@ -168,7 +168,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	/**
 	 * Get plugin class loader
 	 *
-	 * @param context   context
+	 * @param context   locatorContext
 	 * @param pluginPkg plugin package
 	 * @return pluginProvider dex class loader
 	 * @throws NameNotFoundException name not found exception
@@ -209,7 +209,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	/**
 	 * Make Treebolic plugin activity intent
 	 *
-	 * @param context   context
+	 * @param context   locatorContext
 	 * @param pluginPkg plugin package
 	 * @param provider  provider name class
 	 * @param urlScheme url scheme

@@ -12,7 +12,7 @@ public class Utils
 	 * Get package class loader
 	 *
 	 * @param context
-	 *            current context
+	 *            current locatorContext
 	 * @param pkgName
 	 *            package name
 	 * @return package class loader
@@ -28,7 +28,7 @@ public class Utils
 	 * Get package resources
 	 *
 	 * @param context
-	 *            current context
+	 *            current locatorContext
 	 * @param pkgName
 	 *            package name
 	 * @return package resources
@@ -44,7 +44,7 @@ public class Utils
 	 * Get plugin default shared preferences
 	 *
 	 * @param context
-	 *            current context
+	 *            current locatorContext
 	 * @param pkg
 	 *            package name
 	 * @return default shared preferences

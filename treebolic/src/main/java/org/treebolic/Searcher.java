@@ -38,7 +38,7 @@ public class Searcher
 	 * Constructor
 	 * 
 	 * @param context0
-	 *            context
+	 *            locatorContext
 	 * @param widget0
 	 *            widget
 	 */
