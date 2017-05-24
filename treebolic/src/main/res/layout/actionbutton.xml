@@ -24,16 +24,13 @@
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/treebolicSource"
 		android:layout_centerHorizontal="true"
-		android:layout_marginBottom="@dimen/action_button_margin"
-		android:layout_marginLeft="@dimen/action_button_margin"
-		android:layout_marginRight="@dimen/action_button_margin"
 		android:contentDescription="@string/title_query"
 		android:elevation="4dp"
 		android:onClick="onClick"
 		android:visibility="visible"
 		app:fabSize="normal"
-		app:srcCompat="@drawable/ic_treebolic"
 		app:useCompatPadding="true"
+		app:srcCompat="@drawable/ic_treebolic"
 		tools:ignore="UnusedAttribute"/>
 
 </RelativeLayout>
