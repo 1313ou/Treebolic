@@ -2,14 +2,13 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:layout_weight="1"
               android:orientation="vertical"
               tools:context="org.treebolic.MainActivity$PlaceholderFragment">
 
 	<ImageView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="top|center_horizontal"
+		android:layout_gravity="center_horizontal"
 		android:contentDescription="@string/treebolic"
 		android:paddingTop="20dp"
 		android:src="@drawable/ic_splash_text"/>
@@ -17,15 +16,10 @@
 	<ImageView
 		android:id="@+id/imageView"
 		android:layout_width="wrap_content"
-		android:layout_height="0dp"
-		android:layout_gravity="center"
-		android:layout_weight=".55"
+		android:layout_height="wrap_content"
+		android:layout_gravity="top|center_horizontal"
 		android:contentDescription="@string/treebolic"
-		android:paddingBottom="20dp"
+		android:paddingTop="20dp"
 		android:src="@drawable/ic_splash"/>
 
-	<Space
-		android:layout_width="wrap_content"
-		android:layout_weight=".35"
-		android:layout_height="0dp"/>
 </LinearLayout>

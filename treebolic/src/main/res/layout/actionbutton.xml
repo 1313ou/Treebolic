@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_gravity="bottom|center"
+                android:layout_gravity="bottom|center_horizontal"
                 android:layout_marginBottom="@dimen/action_button_group_margin">
 
 	<TextView
@@ -13,7 +14,9 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_centerHorizontal="true"
-		android:visibility="invisible"/>
+		android:gravity="bottom"
+		android:visibility="invisible"
+		tools:text="@string/source"/>
 
 	<android.support.design.widget.FloatingActionButton
 		android:id="@+id/treebolicButton"
@@ -22,12 +25,15 @@
 		android:layout_below="@+id/treebolicSource"
 		android:layout_centerHorizontal="true"
 		android:layout_marginBottom="@dimen/action_button_margin"
+		android:layout_marginLeft="@dimen/action_button_margin"
+		android:layout_marginRight="@dimen/action_button_margin"
 		android:contentDescription="@string/title_query"
 		android:elevation="4dp"
 		android:onClick="onClick"
 		android:visibility="visible"
 		app:fabSize="normal"
 		app:srcCompat="@drawable/ic_treebolic"
+		app:useCompatPadding="true"
 		tools:ignore="UnusedAttribute"/>
 
 </RelativeLayout>
