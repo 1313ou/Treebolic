@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.NoSuchElementException;
 
 import treebolic.model.Model;
+import treebolic.model.ModelDump;
 import treebolic.model.ModelReader;
 
 /**
@@ -88,6 +89,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			}
 		}
 		Log.d(TreebolicModelActivity.TAG, "model=" + this.model);
+		Log.d(TreebolicModelActivity.TAG, "model=" + ModelDump.toString(this.model));
 
 		// retrieve other parameters
 		this.serializedModel = params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI);

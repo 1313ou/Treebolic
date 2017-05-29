@@ -8,7 +8,7 @@ dirapp=..
 
 declare -A res_launch
 res_launch=([mdpi]=48 [hdpi]=72 [xhdpi]=96 [xxhdpi]=144 [xxxhdpi]=192)
-list_launch="ic_launcher.svg"
+list_launch="ic_launcher.svg ic_launcher_round.svg"
 
 declare -A res_prov
 res_prov=([mdpi]=48 [hdpi]=72 [xhdpi]=96 [xxhdpi]=144 [xxxhdpi]=192)
@@ -37,7 +37,7 @@ list_web="ic_launcher.svg"
 # launcher
 for svg in ${list_launch}; do
 	for r in ${!res_launch[@]}; do 
-		d="${dirres}/drawable-${r}"
+		d="${dirres}/mipmap-${r}"
 		mkdir -p ${d}
 		png="${svg%.svg}.png"
 		echo "${svg}.svg -> ${d}/${png}.png @ resolution ${res_launch[$r]}"

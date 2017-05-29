@@ -395,7 +395,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onModel(final Model model, final String urlScheme0)
 	{
-		Log.d(TreebolicClientActivity.TAG, "Receiving model from argService " + model);
+		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model);
 
 		// abort
 		if (model == null)
