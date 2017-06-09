@@ -36,6 +36,7 @@ import java.util.Properties;
 
 import treebolic.IContext;
 import treebolic.Widget;
+import treebolic.glue.component.TreebolicThread;
 import treebolic.view.View;
 
 /**
@@ -198,7 +199,11 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		final View view = this.widget.getView();
 		if (view != null)
 		{
-			view.getThread().terminate();
+			final TreebolicThread thread = view.getThread();
+			if (thread != null)
+			{
+				thread.terminate();
+			}
 		}
 
 		// super
