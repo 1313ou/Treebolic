@@ -27,6 +27,7 @@ import org.treebolic.clients.TreebolicClientActivityStub;
 import org.treebolic.clients.TreebolicIntentClient;
 import org.treebolic.clients.TreebolicMessengerClient;
 import org.treebolic.clients.iface.ITreebolicClient;
+import org.treebolic.guide.AboutActivity;
 import org.treebolic.guide.HelpActivity;
 import org.treebolic.guide.Tip;
 import org.treebolic.search.SearchSettings;
@@ -36,6 +37,7 @@ import java.util.Properties;
 
 import treebolic.IContext;
 import treebolic.Widget;
+import treebolic.glue.component.TreebolicThread;
 import treebolic.model.Model;
 import treebolic.view.View;
 
@@ -122,7 +124,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		final View view = this.widget.getView();
 		if (view != null)
 		{
-			view.getThread().terminate();
+			final TreebolicThread thread = view.getThread();
+			if (thread != null)
+			{
+				thread.terminate();
+			}
 		}
 
 		// super
@@ -190,7 +196,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 				return true;
 
 			case R.id.action_help:
-				HelpActivity.start(this);
+				startActivity(new Intent(this, HelpActivity.class));
+				return true;
+
+			case R.id.action_about:
+				startActivity(new Intent(this, AboutActivity.class));
 				return true;
 
 			case R.id.action_search_run:

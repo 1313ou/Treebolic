@@ -52,7 +52,7 @@ import java.util.List;
  *
  * @author Bernard Bou
  */
-public class MainActivity extends AppCompatActivity implements OnClickListener
+public class MainActivity extends AppCompatCommonActivity implements OnClickListener
 {
 	/**
 	 * Log tag
@@ -308,11 +308,11 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 				return true;
 
 			case R.id.action_help:
-				HelpActivity.start(this);
+				startActivity(new Intent(this, HelpActivity.class));
 				return true;
 
 			case R.id.action_about:
-				AboutActivity.start(this);
+				startActivity(new Intent(this, AboutActivity.class));
 				return true;
 
 			case R.id.action_services:

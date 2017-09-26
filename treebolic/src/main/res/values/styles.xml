@@ -1,43 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<!-- BASE application theme, dependent on API level. This theme is replaced by AppBaseTheme from res/values-vXX/styles-app.xml on newer devices. -->
-	<style name="CompatAppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-	</style>
-
-	<!-- APP theme -->
-	<style name="CompatAppTheme" parent="CompatAppBaseTheme">
-
-		<!-- app branding color for the app bar -->
-		<item name="colorPrimary">@color/primary</item>
-
-		<!-- darker variant for the status bar and contextual app bars -->
-		<item name="colorPrimaryDark">@color/primary_dark</item>
-
-		<!-- theme UI controls like checkboxes and text fields -->
-		<item name="colorAccent">@color/accent</item>
+	<style name="MyXTheme" parent="MyTheme">
 
 		<!-- T R E E B O L I C -->
 
-		<!-- treebolic action bar colors -->
-		<item name="treebolic_actionbar_icon_color">@android:color/white</item>
-
 		<!-- treebolic colors -->
-		<item name="treebolic_toolbar_background">@color/primary_dark</item>
-		<item name="treebolic_toolbar_icon_color">@android:color/white</item>
+		<item name="treebolic_toolbar_background">?attr/colorPrimaryDark</item>
+		<item name="treebolic_toolbar_foreground_icon">@android:color/white</item>
 
-		<item name="treebolic_statusbar_background">@color/primary_dark</item>
+		<item name="treebolic_statusbar_background">?attr/colorPrimaryDark</item>
 		<item name="treebolic_statusbar_foreground">@color/light_gray</item>
 		<item name="treebolic_statusbar_foreground_enhanced">@android:color/white</item>
-		<item name="treebolic_statusbar_icon_color">@android:color/white</item>
+		<item name="treebolic_statusbar_foreground_icon">@android:color/white</item>
 
-		<item name="treebolic_dialog_background">@color/primary_dark</item>
+		<item name="treebolic_dialog_background">?attr/colorPrimaryDark</item>
 		<item name="treebolic_dialog_foreground">@color/light_gray</item>
 		<item name="treebolic_dialog_foreground_enhanced">@android:color/white</item>
-		<item name="treebolic_dialog_icon_color">@android:color/white</item>
+		<item name="treebolic_dialog_foreground_icon">@android:color/white</item>
 
-		<item name="treebolic_splitbar_color">@color/primary</item>
-		<item name="treebolic_splitbar_drag_color">@color/accent</item>
+		<item name="treebolic_splitbar_color">?attr/colorPrimary</item>
+		<item name="treebolic_splitbar_drag_color">?attr/colorAccent</item>
 
 	</style>
 

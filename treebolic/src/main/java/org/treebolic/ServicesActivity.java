@@ -1,9 +1,8 @@
 package org.treebolic;
 
+import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.BaseAdapter;
@@ -15,7 +14,7 @@ import android.widget.SimpleAdapter;
  *
  * @author Bernard Bou
  */
-public class ServicesActivity extends AppCompatActivity
+public class ServicesActivity extends AppCompatCommonActivity
 {
 	// Adapter Key - Res id mapping
 	final String[] from = new String[]{Services.DRAWABLE, Services.NAME, Services.PACKAGE, Services.PROCESS, Services.ENABLED, Services.EXPORTED, Services.PERMISSION, Services.FLAGS, Services.LABEL, Services.DESCRIPTION};

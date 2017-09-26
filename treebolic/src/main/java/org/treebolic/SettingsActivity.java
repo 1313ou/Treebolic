@@ -15,7 +15,6 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.contrib.AppCompatPreferenceActivity;
 import android.view.MenuItem;
 
 import java.util.HashMap;
@@ -28,29 +27,12 @@ import java.util.List;
  * See <a href="http://developer.android.com/design/patterns/settings.html"> Android Design: Settings</a> for design guidelines and the <a
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings API Guide</a> for more information on developing a Settings UI.
  */
-public class SettingsActivity extends AppCompatPreferenceActivity
+public class SettingsActivity extends AppCompatCommonPreferenceActivity
 {
-	/**
-	 * Determines whether to always show the simplified settings UI, where settings are presented in a single list. When false, settings are shown as a
-	 * master/detail two-pane view on tablets. When true, a single pane is shown on tablets.
-	 */
-	private static final boolean ALWAYS_SIMPLE_PREFS = false;
-
 	/**
 	 * Selected provider argument
 	 */
 	public static final String ARG_PROVIDER_SELECTED = "org.treebolic.selected";
-
-	/**
-	 * Subactions
-	 */
-	public static final String ACTION_GENERAL = "org.treebolic.prefs.GENERAL";
-	public static final String ACTION_XML = "org.treebolic.prefs.XML";
-	public static final String ACTION_TXT = "org.treebolic.prefs.TXT";
-	public static final String ACTION_TRE = "org.treebolic.prefs.TRE";
-	public static final String ACTION_TXT2 = "org.treebolic.prefs.TXT2";
-	public static final String ACTION_DOWNLOAD = "org.treebolic.prefs.DOWNLOAD";
-	public static final String ACTION_SERVICE = "org.treebolic.prefs.SERVICE";
 
 	/**
 	 * Selected provider
@@ -85,17 +67,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 	}
 
 	@Override
-	protected void onPostCreate(final Bundle savedInstanceState)
-	{
-		super.onPostCreate(savedInstanceState);
-
-		if (SettingsActivity.isSimplePreferences(this))
-		{
-			setupSimplePreferencesScreen();
-		}
-	}
-
-	@Override
 	public boolean onOptionsItemSelected(final MenuItem item)
 	{
 		switch (item.getItemId())
@@ -110,10 +81,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 	@Override
 	public void onBuildHeaders(final List<Header> target)
 	{
-		if (!SettingsActivity.isSimplePreferences(this))
-		{
-			loadHeadersFromResource(R.xml.pref_headers, target);
-		}
+		loadHeadersFromResource(R.xml.pref_headers, target);
 	}
 
 	// S E T U P
@@ -130,174 +98,12 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 				ServicePreferenceFragment.class.getName().equals(fragmentName);
 	}
 
-	/**
-	 * Shows the simplified settings UI if the device configuration if the device configuration dictates that a simplified, single-pane UI should be shown.
-	 */
-	@SuppressWarnings({"deprecation", "boxing"})
-	private void setupSimplePreferencesScreen()
-	{
-		// In the simplified UI, fragments are not used at all and we instead use the older PreferenceActivity APIs.
-		final String action = getIntent().getAction();
-		if (action != null)
-		{
-			switch (action)
-			{
-				case SettingsActivity.ACTION_GENERAL:
-				{
-					final Boolean isPlugin = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
-
-					// shared preferences
-					final PreferenceManager prefManager = getPreferenceManager();
-					if (!isPlugin)
-					{
-						prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME));
-						prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
-					}
-					final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
-
-					// layout
-					addPreferencesFromResource(isPlugin ? R.xml.pref_active_plugin : R.xml.pref_active_builtin);
-
-					// active name
-					final Preference namePref = findPreference(Settings.PREF_PROVIDER_NAME);
-					if (namePref != null)
-					{
-						final String key = namePref.getKey();
-						namePref.setSummary(Settings.getStringPref(this, key));
-					}
-
-					// active icon
-					final Preference iconPref = findPreference(Settings.PREF_PROVIDER_ICON);
-					if (iconPref != null)
-					{
-						try
-						{
-							if ((Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN))
-							{
-								final Drawable drawable = getPackageManager().getApplicationIcon((String) SettingsActivity.provider.get(Providers.PACKAGE));
-								iconPref.setIcon(drawable);
-							}
-							else
-							{
-								final int resId = (Integer) SettingsActivity.provider.get(Providers.ICON);
-								iconPref.setIcon(resId);
-							}
-						}
-						catch (final NameNotFoundException e)
-						{
-							iconPref.setIcon(R.drawable.ic_treebolic);
-						}
-					}
-
-					// active preferences
-					for (final String prefKey : new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER})
-					{
-						final Preference pref = findPreference(prefKey);
-						if (pref != null)
-						{
-							final String key = pref.getKey();
-							pref.setSummary(sharedPrefs.getString(key, null));
-						}
-					}
-
-					// forward button to plugin provider settings activity
-					if (isPlugin)
-					{
-						final Preference button = findPreference("button_provider_settings");
-						button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
-						{
-							@SuppressWarnings("synthetic-access")
-							@Override
-							public boolean onPreferenceClick(final Preference arg0)
-							{
-								final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-								final String activityName = pkg + ".SettingsActivity";
-								final Intent intent = new Intent();
-								intent.setComponent(new ComponentName(pkg, activityName));
-								startActivity(intent);
-								return true;
-							}
-						});
-					}
-					break;
-				}
-				case SettingsActivity.ACTION_DOWNLOAD:
-				{
-					addPreferencesFromResource(R.xml.pref_download);
-
-					final Preference prefBase = findPreference(Settings.PREF_DOWNLOAD_BASE);
-					final String keyBase = prefBase.getKey();
-					final String valBase = Settings.getStringPref(this, keyBase);
-					//prefBase.setSummary(valBase);
-					bind(prefBase, valBase, this.listener);
-
-					final Preference prefFile = findPreference(Settings.PREF_DOWNLOAD_FILE);
-					final String keyFile = prefFile.getKey();
-					final String valFile = Settings.getStringPref(this, keyFile);
-					//prefFile.setSummary(valFile);
-					bind(prefFile, valFile, this.listener);
-					break;
-				}
-				case SettingsActivity.ACTION_SERVICE:
-					addPreferencesFromResource(R.xml.pref_service);
-					final ListPreference listPreference = (ListPreference) findPreference(Settings.PREF_SERVICE);
-					fillWithServiceData(listPreference);
-					bind(listPreference, Settings.getStringPref(this, listPreference.getKey()), this.listener);
-					break;
-
-				default:
-				{
-					String key = null;
-					switch (action)
-					{
-						case SettingsActivity.ACTION_XML:
-							key = "xml";
-
-							break;
-						case SettingsActivity.ACTION_TXT:
-							key = "text (indented)";
-
-							break;
-						case SettingsActivity.ACTION_TRE:
-							key = "text (indented, tre)";
-
-							break;
-						case SettingsActivity.ACTION_TXT2:
-							key = "text (pairs)";
-
-							break;
-					}
-
-					// non-default preference manager
-					final PreferenceManager prefManager = getPreferenceManager();
-					prefManager.setSharedPreferencesName("org.treebolic_preferences_" + key);
-
-					prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
-					addPreferencesFromResource(R.xml.pref_general);
-					final SharedPreferences sharedPrefs = prefManager.getSharedPreferences();
-
-					// provider
-					final Preference providerPref = findPreference(Settings.PREF_PROVIDER);
-					final String providerKey = providerPref.getKey();
-					final String providerValue = sharedPrefs.getString(providerKey, null);
-					providerPref.setSummary(providerValue);
-					break;
-				}
-			}
-		}
-		else
-		{
-			// Load the legacy preferences headers
-			addPreferencesFromResource(R.xml.pref_headers_legacy);
-		}
-	}
-
 	// D E T E C T I O N
 
 	@Override
 	public boolean onIsMultiPane()
 	{
-		return SettingsActivity.isLargeTablet(this) && !SettingsActivity.isSimplePreferences(this);
+		return SettingsActivity.isLargeTablet(this);
 	}
 
 	/**
@@ -306,17 +112,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity
 	private static boolean isLargeTablet(final Context context)
 	{
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
-	}
-
-	/**
-	 * Determines whether the simplified settings UI should be shown. This is true if this is forced via {@link #ALWAYS_SIMPLE_PREFS}, or the device doesn't
-	 * have newer APIs like {@link PreferenceFragment}, or the device doesn't have an extra-large screen. In these cases, a single-pane "simplified" settings UI
-	 * should be shown.
-	 */
-	private static boolean isSimplePreferences(final Context context)
-	{
-		//noinspection ConstantConditions
-		return SettingsActivity.ALWAYS_SIMPLE_PREFS || !SettingsActivity.isLargeTablet(context);
 	}
 
 	// L I S T E N E R

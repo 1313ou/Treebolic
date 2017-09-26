@@ -14,7 +14,6 @@ import android.support.v4.app.NavUtils;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -25,6 +24,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
+import org.treebolic.guide.AboutActivity;
 import org.treebolic.guide.HelpActivity;
 import org.treebolic.guide.Tip;
 import org.treebolic.search.SearchSettings;
@@ -44,7 +44,7 @@ import treebolic.view.View;
  *
  * @author Bernard Bou
  */
-abstract public class TreebolicBasicActivity extends AppCompatActivity implements IContext
+abstract public class TreebolicBasicActivity extends AppCompatCommonActivity implements IContext
 {
 	/**
 	 * Log tag
@@ -246,7 +246,8 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 		});
 
 		// icon tint
-		Tint.tint(this, menu, R.id.action_search_run, R.id.action_search_reset, R.id.action_search_settings);
+		final int iconTint = Tint.getActionBarForegroundColorFromTheme(this);
+		Tint.tint(iconTint, menu, R.id.action_search_run, R.id.action_search_reset, R.id.action_search_settings);
 
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -278,9 +279,13 @@ abstract public class TreebolicBasicActivity extends AppCompatActivity implement
 				return true;
 
 			case R.id.action_help:
-				HelpActivity.start(this);
+				startActivity(new Intent(this, HelpActivity.class));
 				return true;
 
+			case R.id.action_about:
+				startActivity(new Intent(this, AboutActivity.class));
+				return true;
+			
 			case R.id.action_search_run:
 				handleSearchRun();
 				return true;

@@ -1,9 +1,8 @@
 package org.treebolic;
 
+import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +14,7 @@ import android.widget.ListView;
  *
  * @author Bernard Bou
  */
-public class ProvidersActivity extends AppCompatActivity
+public class ProvidersActivity extends AppCompatCommonActivity
 {
 	// Adapter Key - Res id mapping
 	static final String[] from = new String[]{Providers.ICON, Providers.NAME, Providers.PROVIDER, Providers.PACKAGE, Providers.PROCESS, Providers.MIMETYPE, Providers.EXTENSIONS, Providers.URLSCHEME, Providers.ISPLUGIN, Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS};
