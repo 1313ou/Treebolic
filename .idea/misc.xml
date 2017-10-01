@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
-    <entry_points version="2.0" />
+    <entry_points version="2.0">
+      <entry_point TYPE="implicit.constructor" FQNAME="treebolic.model.graph.Converter" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.Graph Graph()" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.GraphEdge GraphEdge(treebolic.model.graph.GraphNode thisFromNode, treebolic.model.graph.GraphNode thisToNode, java.lang.Boolean isTreeEdgeFlag)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.services.IntentFactory android.content.Intent makeTreebolicIntent(treebolic.model.Model model, android.content.Intent parentIntent, java.lang.String base, java.lang.String imageBase, java.lang.String settings)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.ModelFactory ModelFactory(treebolic.provider.IProvider provider0, treebolic.provider.IProviderContext providerContext0, treebolic.IContext locatorContext0, android.content.Context applicationContext0)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Models treebolic.model.Model get(android.os.Bundle bundle)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Models void set(treebolic.model.Model model, android.os.Bundle bundle)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Models treebolic.model.Model get(android.content.Intent intent)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Models void set(treebolic.model.Model model, android.content.Intent intent)" />
+      <entry_point TYPE="implicit.constructor" FQNAME="org.treebolic.Models" />
+      <entry_point TYPE="implicit.constructor" FQNAME="treebolic.model.graph.MutableGraph" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.MutableGraphNode MutableGraphNode(java.lang.String thisId)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.ParcelableModel void writeSerializableToParcel(android.os.Parcel parcel, treebolic.model.Model model)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.ParcelableModel treebolic.model.Model readSerializableModel(android.os.Parcel parcel)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Searcher Searcher(android.content.Context context0, treebolic.IWidget widget0)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Settings void putIntPref(android.content.Context context, java.lang.String key, int value)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Settings int getIntPref(android.content.Context context, java.lang.String key)" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.Tree Tree(treebolic.model.graph.Graph thisGraph, treebolic.model.graph.GraphNode thisRoot)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.TreebolicBasicActivity void toast(java.lang.String message, int duration)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.TreebolicClientActivity void toast(java.lang.String message, int duration)" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ACTIVITY_CLIENT" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ACTIVITY_PLUGIN" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ACTIVITY_TREEBOLIC" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ARG_MORE" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface USE_MODEL_REFERENCES" />
+      <entry_point TYPE="class" FQNAME="org.treebolic.TreebolicIface" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Utils java.lang.ClassLoader getClassLoader(android.content.Context context, java.lang.String pkgName)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Utils android.content.res.Resources getResources(android.content.Context context, java.lang.String pkgName)" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.Converter treebolic.model.Tree graphToTree(treebolic.model.graph.Graph thisGraph)" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.Graph treebolic.model.graph.Tree makeSpanningTree()" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.Graph java.util.Map&lt;treebolic.model.graph.GraphNode,java.util.Collection&lt;treebolic.model.graph.GraphEdge&gt;&gt; getNodeToEdgesMap()" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.GraphEdge java.lang.Boolean get()" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.ModelFactory treebolic.model.Model make(java.lang.String source, java.lang.String base, java.lang.String imageBase, java.lang.String settings)" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.MutableGraph void add(treebolic.model.graph.GraphEdge thisEdge)" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.MutableGraph void add(treebolic.model.graph.GraphNode thisNode)" />
+      <entry_point TYPE="method" FQNAME="treebolic.model.graph.MutableGraphNode int getIndex()" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Searcher void resetSearch()" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.Searcher boolean search(java.lang.String target)" />
+    </entry_points>
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
@@ -37,7 +76,7 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8 (1)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

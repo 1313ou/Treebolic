@@ -28,7 +28,6 @@ import org.treebolic.guide.AboutActivity;
 import org.treebolic.guide.HelpActivity;
 import org.treebolic.guide.Tip;
 import org.treebolic.search.SearchSettings;
-import org.treebolic.search.Tint;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -54,31 +53,37 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	/**
 	 * Parameter : Document base
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected String base;
 
 	/**
 	 * Parameter : Image base
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected String imageBase;
 
 	/**
 	 * Parameter : Settings
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected String settings;
 
 	/**
 	 * Parameter : CSS style for WebViews
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected String style;
 
 	/**
 	 * Parameter : Returned URL urlScheme that is handled
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected String urlScheme;
 
 	/**
 	 * Parameter : parameters
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected Properties parameters;
 
 	// components
@@ -86,16 +91,19 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	/**
 	 * Treebolic widget
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected Widget widget;
 
 	/**
 	 * Search view on action bar
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected SearchView searchView;
 
 	/**
 	 * Input
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected final String input;
 
 	// parent
@@ -103,6 +111,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	/**
 	 * Parent (client) activity
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected Intent parentActivity;
 
 	// menu
@@ -246,8 +255,8 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		});
 
 		// icon tint
-		final int iconTint = Tint.getActionBarForegroundColorFromTheme(this);
-		Tint.tint(iconTint, menu, R.id.action_search_run, R.id.action_search_reset, R.id.action_search_settings);
+		final int iconTint = ColorUtils.getActionBarForegroundColorFromTheme(this);
+		ColorUtils.tint(iconTint, menu, R.id.action_search_run, R.id.action_search_reset, R.id.action_search_settings);
 
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -326,6 +335,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	 *
 	 * @param intent intent
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void unmarshalArgs(final Intent intent)
 	{
 		// retrieve arguments
@@ -481,6 +491,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	 * @param query  new query
 	 * @param submit whether submit was changed
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void handleQueryChanged(final String query, boolean submit)
 	{
 		// clear keyboard out of the way
@@ -516,6 +527,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	/**
 	 * Tree search handler
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void handleSearchRun()
 	{
 		// clear keyboard out of the way
@@ -546,6 +558,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	/**
 	 * Tree search reset handler
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void handleSearchReset()
 	{
 		// clear keyboard out of the way
@@ -579,6 +592,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 
 	// SEARCH INTERFACE
 
+	@SuppressWarnings("WeakerAccess")
 	protected void runSearch(String scope, String mode, String target)
 	{
 		if (target == null || target.isEmpty())
@@ -591,12 +605,14 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		this.widget.search(CMD_SEARCH, scope, mode, target);
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	protected void continueSearch()
 	{
 		Log.d(TAG, "Search continue");
 		this.widget.search(CMD_CONTINUE);
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	protected void resetSearch()
 	{
 		Log.d(TAG, "Search reset");
@@ -611,6 +627,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	 *
 	 * @return properties
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected Properties makeParameters()
 	{
 		final Properties theseParameters = new Properties();

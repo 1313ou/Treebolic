@@ -43,11 +43,6 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 */
 	private IProvider provider = null;
 
-	/**
-	 * Restoring
-	 */
-	private boolean restoring;
-
 	// C O N S T R U C T O R
 
 	public TreebolicPluginActivity()
@@ -173,7 +168,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 * @return pluginProvider dex class loader
 	 * @throws NameNotFoundException name not found exception
 	 */
-	static ClassLoader getPluginClassLoader(final Context context, final String pluginPkg) throws NameNotFoundException
+	private static ClassLoader getPluginClassLoader(final Context context, final String pluginPkg) throws NameNotFoundException
 	{
 		// cache to store optimized classes
 		File dexCache = context.getDir("plugins", Context.MODE_PRIVATE);
@@ -189,6 +184,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 			dexCache = new File(sd, "temp");
 			if (!dexCache.exists())
 			{
+				//noinspection ResultOfMethodCallIgnored
 				dexCache.mkdir();
 			}
 		}

@@ -29,6 +29,9 @@ project(':treebolicParcel').projectDir = new File('../TreebolicServices/treeboli
 
 // LIBS
 
+include ':commonLib'
+project(':commonLib').projectDir = new File('../TreebolicSupportLibs/commonLib/')
+
 include ':searchLib'
 project(':searchLib').projectDir = new File('../TreebolicSupportLibs/searchLib/')
 

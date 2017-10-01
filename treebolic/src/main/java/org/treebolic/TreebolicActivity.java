@@ -11,10 +11,10 @@ import android.widget.Toast;
  */
 public class TreebolicActivity extends TreebolicSourceActivity
 {
-	/**
+	/*
 	 * Log tag
 	 */
-	private static final String TAG = "TreebolicA";
+	// private static final String TAG = "TreebolicA";
 
 	// C O N S T R U C T O R
 

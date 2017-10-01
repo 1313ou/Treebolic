@@ -17,6 +17,7 @@ import treebolic.provider.IProviderContext;
  *
  * @author Bernard Bou
  */
+@SuppressWarnings("WeakerAccess")
 public class ModelFactory
 {
 	/**

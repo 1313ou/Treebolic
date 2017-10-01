@@ -444,7 +444,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 
 	// folder preference
 
-	static final String PREF_CURRENTFOLDER = "org.treebolic.folder";
+	private static final String PREF_CURRENTFOLDER = "org.treebolic.folder";
 
 	/**
 	 * Get initial folder
@@ -512,7 +512,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 * @param to      to res id
 	 * @return base adapter
 	 */
-	private SimpleAdapter makeAdapter(final int itemRes, final String[] from, final int[] to)
+	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
 	{
 		// data
 		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, false);
@@ -590,6 +590,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private boolean sourceQualifies(final String source)
 	{
+		//noinspection RedundantIfStatement
 		if (source != null && !source.isEmpty())
 		{
 			/*

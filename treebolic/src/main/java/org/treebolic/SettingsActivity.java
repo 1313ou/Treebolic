@@ -339,6 +339,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			}
 		}
 
+		@SuppressWarnings("WeakerAccess")
 		protected String getName(final int thisIndex)
 		{
 			final List<HashMap<String, Object>> providers = Providers.getProviders(getActivity(), false);

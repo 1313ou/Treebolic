@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+@SuppressWarnings("WeakerAccess")
 public class Providers
 {
 	/**
@@ -60,7 +61,7 @@ public class Providers
 	 * @throws NameNotFoundException name not found exception
 	 */
 	@SuppressWarnings({"boxing", "ConstantConditions", "ConfusingArgumentToVarargsMethod"})
-	static private void makeProviders(final Context context, final String parentPackageName) throws NameNotFoundException
+	static private void makeProviders(final Context context, @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
 	{
 		final PackageManager packageManager = context.getPackageManager();
 
@@ -231,7 +232,7 @@ public class Providers
 	 * @param processName   process name
 	 * @return number of built-in providers
 	 */
-	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable"})
+	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable", "UnusedReturnValue"})
 	static private int addBuiltInProviders(final Context context, final String parentPackage, final String processName)
 	{
 		// base and image base in external storage
@@ -298,7 +299,7 @@ public class Providers
 	 * @param rescan  rescan list
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(final Context context, final int itemRes, final String[] from, final int[] to, final boolean rescan)
+	static public SimpleAdapter makeAdapter(final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, rescan);

@@ -16,8 +16,7 @@
 		android:maxLines="1"
 		android:textColor="?attr/treebolic_search_settings_foreground"
 		android:textSize="20sp"
-		android:textStyle="normal"
-		android:tint="?attr/colorAccent"/>
+		android:textStyle="normal"/>
 
 	<ImageView
 		android:id="@+id/wheel_icon"
@@ -27,6 +26,7 @@
 		android:contentDescription="@string/item_description"
 		android:cropToPadding="true"
 		android:padding="2dp"
-		android:scaleType="fitXY"/>
+		android:scaleType="fitXY"
+		android:tint="?attr/colorAccent"/>
 
 </LinearLayout>

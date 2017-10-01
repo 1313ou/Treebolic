@@ -17,8 +17,8 @@ import android.widget.ListView;
 public class ProvidersActivity extends AppCompatCommonActivity
 {
 	// Adapter Key - Res id mapping
-	static final String[] from = new String[]{Providers.ICON, Providers.NAME, Providers.PROVIDER, Providers.PACKAGE, Providers.PROCESS, Providers.MIMETYPE, Providers.EXTENSIONS, Providers.URLSCHEME, Providers.ISPLUGIN, Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS};
-	static final int[] to = new int[]{R.id.icon, R.id.name, R.id.provider, R.id.pkg, R.id.process, R.id.mimetype, R.id.extension, R.id.urlScheme, R.id.plugin, R.id.source, R.id.base, R.id.imagebase, R.id.settings};
+	private static final String[] from = new String[]{Providers.ICON, Providers.NAME, Providers.PROVIDER, Providers.PACKAGE, Providers.PROCESS, Providers.MIMETYPE, Providers.EXTENSIONS, Providers.URLSCHEME, Providers.ISPLUGIN, Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS};
+	private static final int[] to = new int[]{R.id.icon, R.id.name, R.id.provider, R.id.pkg, R.id.process, R.id.mimetype, R.id.extension, R.id.urlScheme, R.id.plugin, R.id.source, R.id.base, R.id.imagebase, R.id.settings};
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)

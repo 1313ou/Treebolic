@@ -6,6 +6,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
+@SuppressWarnings("WeakerAccess")
 public class Utils
 {
 	/**

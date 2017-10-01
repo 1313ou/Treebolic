@@ -19,6 +19,7 @@ import java.util.List;
  *
  * @author Bernard Bou
  */
+@SuppressWarnings("WeakerAccess")
 public class Services
 {
 	/**
@@ -96,7 +97,7 @@ public class Services
 	 *            positive filter
 	 */
 	@SuppressWarnings("boxing")
-	static private void makeServices(final Context context, final String filter)
+	static private void makeServices(final Context context, @SuppressWarnings("SameParameterValue") final String filter)
 	{
 		final PackageManager packageManager = context.getPackageManager();
 
@@ -141,7 +142,7 @@ public class Services
 	 *            to res id
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(final Context context, final int itemRes, final String[] from, final int[] to, final boolean rescan)
+	static public SimpleAdapter makeAdapter(final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> services = Services.getServices(context, rescan);

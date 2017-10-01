@@ -9,6 +9,7 @@ import org.treebolic.search.SearchSettings;
 
 import treebolic.IWidget;
 
+@SuppressWarnings("WeakerAccess")
 public class Searcher
 {
 	private static final String TAG = "Searcher";
@@ -75,6 +76,7 @@ public class Searcher
 	
 	// SEARCH INTERFACE
 
+	@SuppressWarnings("WeakerAccess")
 	protected void runSearch(String scope, String mode, String target)
 	{
 		if (target == null || target.isEmpty())
@@ -85,6 +87,7 @@ public class Searcher
 		this.widget.search(CMD_SEARCH, scope, mode, target);
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	protected void continueSearch()
 	{
 		Log.d(TAG, "Search continue");

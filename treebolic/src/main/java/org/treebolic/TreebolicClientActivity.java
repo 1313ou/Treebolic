@@ -316,6 +316,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// U N M A R S H A L
 
+	@SuppressWarnings("WeakerAccess")
 	protected void unmarshalArgs(final Intent intent)
 	{
 		this.argService = intent.getStringExtra(TreebolicIface.ARG_SERVICE);
@@ -341,6 +342,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 * @param service name
 	 * @return client to service
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected ITreebolicClient service2Client(final String service)
 	{
 		if (service != null && !service.isEmpty())
@@ -441,6 +443,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 * @param query  new query
 	 * @param submit whether submit was changed
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void handleQueryChanged(final String query, boolean submit)
 	{
 		// clear keyboard out of the way
@@ -476,6 +479,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Tree search handler
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void handleSearchRun()
 	{
 		// clear keyboard out of the way
@@ -506,6 +510,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Tree search reset handler
 	 */
+	@SuppressWarnings("WeakerAccess")
 	protected void handleSearchReset()
 	{
 		// clear keyboard out of the way
@@ -529,6 +534,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// S E A R C H   I N T E R F A C E
 
+	@SuppressWarnings("WeakerAccess")
 	protected void runSearch(String scope, String mode, String target)
 	{
 		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target);
@@ -536,12 +542,14 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		this.widget.search(CMD_SEARCH, scope, mode, target);
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	protected void continueSearch()
 	{
 		Log.d(TAG, "Search continue");
 		this.widget.search(CMD_CONTINUE);
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	protected void resetSearch()
 	{
 		Log.d(TAG, "Search reset");
