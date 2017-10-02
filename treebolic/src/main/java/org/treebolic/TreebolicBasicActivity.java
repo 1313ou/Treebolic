@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import org.treebolic.guide.AboutActivity;
@@ -142,7 +143,8 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		// content view
 		setContentView(R.layout.activity_treebolic);
 		final ViewGroup container = (ViewGroup) findViewById(R.id.container);
-		container.addView(this.widget);
+		final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.F);
+		container.addView(this.widget, params);
 
 		// toolbar
 		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
