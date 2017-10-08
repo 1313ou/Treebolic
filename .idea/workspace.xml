@@ -23,46 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_3_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/lint.xml" afterPath="$PROJECT_DIR$/treebolic/lint.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/actionbar_custom.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/actionbar_custom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers_dropdown.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers_dropdown.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_download.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_download.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-land/dimens.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-land/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-w820dp/dimens.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-w820dp/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/dimens.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_download.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_download.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_nontranslatable.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_nontranslatable.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" />
     </list>
     <ignored path="Treebolic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20856,7 +20818,14 @@
       <option name="project" value="LOCAL" />
       <updated>1507007301819</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="reformatted&#10;">
+      <created>1507469051992</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1507469051992</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -20920,7 +20889,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="action button" />
     <MESSAGE value="rework" />
     <MESSAGE value="fixes" />
     <MESSAGE value="rebuild&#10;snackbar" />
@@ -20945,7 +20913,8 @@
     <MESSAGE value="widget's container layout parameters&#10;" />
     <MESSAGE value="rebuild&#10;" />
     <MESSAGE value="cleanup&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup&#10;" />
+    <MESSAGE value="reformatted&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformatted&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
