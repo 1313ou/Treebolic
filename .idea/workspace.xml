@@ -2,6 +2,7 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
     <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Analyzed" />
   </component>
@@ -22,8 +23,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/styles.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_3_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_25_3_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/lint.xml" afterPath="$PROJECT_DIR$/treebolic/lint.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/actionbar_custom.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/actionbar_custom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers_dropdown.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/spinner_item_providers_dropdown.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_download.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_download.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-land/dimens.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-land/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-w820dp/dimens.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-w820dp/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_download.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_download.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_nontranslatable.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_nontranslatable.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" />
     </list>
     <ignored path="Treebolic.iws" />
@@ -366,6 +404,9 @@
     <ignored path="../../../../mnt/data2/devel/android-treebolic-as/Treebolic/treebolic/build/" />
     <ignored path="../../../../mnt/data2/devel/android-treebolic-as/Treebolic/build/" />
     <ignored path="../../../../mnt/data2/devel/android-treebolic-as/Treebolic/captures/" />
+    <ignored path="treebolic/build/" />
+    <ignored path="build/" />
+    <ignored path="captures/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17713,7 +17754,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="37569072017109" />
+        <entry key="$PROJECT_DIR$" value="37570135727459" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -20182,7 +20223,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="AndroidView" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Analyzed" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -20196,12 +20237,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Analyzed">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -20212,6 +20260,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -20799,7 +20849,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506924015953</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="cleanup&#10;">
+      <created>1507007301819</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1507007301819</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -20822,13 +20879,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27659574" sideWeight="0.26144835" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27659574" sideWeight="0.7385517" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786221" sideWeight="0.420347" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2786221" sideWeight="0.420347" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879376" sideWeight="0.4958994" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35359675" sideWeight="0.24526873" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14802982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14802982" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4924012" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35055724" sideWeight="0.7353745" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16657504" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -20839,11 +20898,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920128" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4924012" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35055724" sideWeight="0.7353745" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -20887,7 +20944,8 @@
     <MESSAGE value="lint&#10;tint error in scope search wheel&#10;" />
     <MESSAGE value="widget's container layout parameters&#10;" />
     <MESSAGE value="rebuild&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild&#10;" />
+    <MESSAGE value="cleanup&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleanup&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

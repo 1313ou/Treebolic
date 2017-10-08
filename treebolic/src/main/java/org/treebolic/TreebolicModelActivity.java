@@ -48,8 +48,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Unmarshal model and parameters from intent
 	 *
-	 * @param intent
-	 *            intent
+	 * @param intent intent
 	 */
 	@Override
 	@SuppressWarnings("boxing")
@@ -146,8 +145,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Deserialize model
 	 *
-	 * @param reader
-	 *            model reader
+	 * @param reader model reader
 	 * @return model
 	 */
 	private Model deserializeGuarded(final ModelReader reader)
@@ -174,10 +172,8 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Make Treebolic serialized model activity intent
 	 *
-	 * @param context
-	 *            locatorContext
-	 * @param serialized
-	 *            serialized model uti
+	 * @param context    locatorContext
+	 * @param serialized serialized model uti
 	 * @return intent
 	 */
 	static public Intent makeTreebolicSerializedIntent(final Context context, final Uri serialized)

@@ -296,7 +296,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 			case R.id.action_about:
 				startActivity(new Intent(this, AboutActivity.class));
 				return true;
-			
+
 			case R.id.action_search_run:
 				handleSearchRun();
 				return true;

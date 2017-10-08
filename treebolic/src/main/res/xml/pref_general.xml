@@ -1,48 +1,48 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <EditTextPreference
-        android:capitalize="none"
-        android:inputType="text"
-        android:key="pref_source"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:summary="@string/pref_description_source"
-        android:title="@string/pref_title_source" />
-    
-    <EditTextPreference
-        android:capitalize="none"
-        android:inputType="textUri"
-        android:key="pref_base"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:summary="@string/pref_description_base"
-        android:title="@string/pref_title_base" />
-    
-    <EditTextPreference
-        android:capitalize="none"
-        android:inputType="textUri"
-        android:key="pref_imagebase"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:summary="@string/pref_description_imagebase"
-        android:title="@string/pref_title_imagebase" />
-    
-    <EditTextPreference
-        android:capitalize="none"
-        android:inputType="text"
-        android:key="pref_settings"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:summary="@string/pref_description_settings"
-        android:title="@string/pref_title_settings" />
-    
-    <Preference
-        android:key="pref_provider"
-        android:summary="@string/pref_description_provider"
-        android:title="@string/pref_title_provider" />
+	<EditTextPreference
+		android:capitalize="none"
+		android:inputType="text"
+		android:key="pref_source"
+		android:maxLines="1"
+		android:selectAllOnFocus="true"
+		android:singleLine="true"
+		android:summary="@string/pref_description_source"
+		android:title="@string/pref_title_source"/>
+
+	<EditTextPreference
+		android:capitalize="none"
+		android:inputType="textUri"
+		android:key="pref_base"
+		android:maxLines="1"
+		android:selectAllOnFocus="true"
+		android:singleLine="true"
+		android:summary="@string/pref_description_base"
+		android:title="@string/pref_title_base"/>
+
+	<EditTextPreference
+		android:capitalize="none"
+		android:inputType="textUri"
+		android:key="pref_imagebase"
+		android:maxLines="1"
+		android:selectAllOnFocus="true"
+		android:singleLine="true"
+		android:summary="@string/pref_description_imagebase"
+		android:title="@string/pref_title_imagebase"/>
+
+	<EditTextPreference
+		android:capitalize="none"
+		android:inputType="text"
+		android:key="pref_settings"
+		android:maxLines="1"
+		android:selectAllOnFocus="true"
+		android:singleLine="true"
+		android:summary="@string/pref_description_settings"
+		android:title="@string/pref_title_settings"/>
+
+	<Preference
+		android:key="pref_provider"
+		android:summary="@string/pref_description_provider"
+		android:title="@string/pref_title_provider"/>
 
 </PreferenceScreen>

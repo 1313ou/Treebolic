@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Active settings -->
-    <string name="pref_header_active">Active</string>
-    <string name="pref_summary_header_active">Settings for active provider</string>
+	<!-- Active settings -->
+	<string name="pref_header_active">Active</string>
+	<string name="pref_summary_header_active">Settings for active provider</string>
 
-    <!-- active built-in provider -->
-    <string name="pref_title_provider_name">Name</string>
-    <string name="pref_description_provider_name">Active provider name (volatile)</string>
-    <!-- source -->
-    <string name="pref_title_source">Source</string>
-    <string name="pref_description_source">Source string interpreted by provider</string>
-    <!-- base -->
-    <string name="pref_title_base">Base</string>
-    <string name="pref_description_base">Base URL</string>
-    <!-- imagebase -->
-    <string name="pref_title_imagebase">Image base</string>
-    <string name="pref_description_imagebase">Image base URL</string>
-    <!-- settings -->
-    <string name="pref_title_settings">Rendering</string>
-    <string name="pref_description_settings">Rendering properties</string>
-    <!-- provider -->
-    <string name="pref_title_provider">Class</string>
-    <string name="pref_description_provider">Data provider class</string>
-    <!-- button -->
-    <string name="pref_title_provider_settings">Settings</string>
-    <string name="pref_description_provider_settings">Access to provider settings</string>
+	<!-- active built-in provider -->
+	<string name="pref_title_provider_name">Name</string>
+	<string name="pref_description_provider_name">Active provider name (volatile)</string>
+	<!-- source -->
+	<string name="pref_title_source">Source</string>
+	<string name="pref_description_source">Source string interpreted by provider</string>
+	<!-- base -->
+	<string name="pref_title_base">Base</string>
+	<string name="pref_description_base">Base URL</string>
+	<!-- imagebase -->
+	<string name="pref_title_imagebase">Image base</string>
+	<string name="pref_description_imagebase">Image base URL</string>
+	<!-- settings -->
+	<string name="pref_title_settings">Rendering</string>
+	<string name="pref_description_settings">Rendering properties</string>
+	<!-- provider -->
+	<string name="pref_title_provider">Class</string>
+	<string name="pref_description_provider">Data provider class</string>
+	<!-- button -->
+	<string name="pref_title_provider_settings">Settings</string>
+	<string name="pref_description_provider_settings">Access to provider settings</string>
 
-    <!-- active plugin provider -->
-    <string name="pref_title_plugin">Plugin</string>
-    <string name="pref_description_plugin">Plugins have their own settings page</string>
+	<!-- active plugin provider -->
+	<string name="pref_title_plugin">Plugin</string>
+	<string name="pref_description_plugin">Plugins have their own settings page</string>
 
-    <!-- built-in providers settings -->
-    <string name="pref_header_xml">XML</string>
-    <string name="pref_header_text_indent">Text (indent)</string>
-    <string name="pref_header_text_indent_tre">Text (indent-tre)</string>
-    <string name="pref_header_text_pair">Text (pairs)</string>
-    <string name="pref_summary_header_xml">Settings for XML provider</string>
-    <string name="pref_summary_header_text_indent">Settings for Text (indent) provider</string>
-    <string name="pref_summary_header_text_indent_tre">Settings for Text (indent-tre) provider</string>
-    <string name="pref_summary_header_text_pair">Settings for Text (pairs) provider</string>
+	<!-- built-in providers settings -->
+	<string name="pref_header_xml">XML</string>
+	<string name="pref_header_text_indent">Text (indent)</string>
+	<string name="pref_header_text_indent_tre">Text (indent-tre)</string>
+	<string name="pref_header_text_pair">Text (pairs)</string>
+	<string name="pref_summary_header_xml">Settings for XML provider</string>
+	<string name="pref_summary_header_text_indent">Settings for Text (indent) provider</string>
+	<string name="pref_summary_header_text_indent_tre">Settings for Text (indent-tre) provider</string>
+	<string name="pref_summary_header_text_pair">Settings for Text (pairs) provider</string>
 
-    <!-- builtin providers -->
-    <string-array name="pref_providers_list_titles">
-        <item>xml</item>
-        <item>text (indented)</item>
-        <item>text (indented, tre)</item>
-        <item>text (pairs)</item>
-    </string-array>
+	<!-- builtin providers -->
+	<string-array name="pref_providers_list_titles">
+		<item>xml</item>
+		<item>text (indented)</item>
+		<item>text (indented, tre)</item>
+		<item>text (pairs)</item>
+	</string-array>
 
-    <!-- Service settings -->
-    <string name="pref_header_service">Service</string>
-    <string name="pref_summary_header_service">Settings for service</string>
-    <string name="pref_title_service">Service</string>
-    <string name="pref_description_service">Service type</string>
+	<!-- Service settings -->
+	<string name="pref_header_service">Service</string>
+	<string name="pref_summary_header_service">Settings for service</string>
+	<string name="pref_title_service">Service</string>
+	<string name="pref_description_service">Service type</string>
 
 </resources>

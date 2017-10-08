@@ -1,93 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Treebolic</string>
-    <string name="treebolic">Treebolic</string>
+	<string name="app_name">Treebolic</string>
+	<string name="treebolic">Treebolic</string>
 
-    <!-- action -->
-    <string name="action_ok">OK</string>
-    <string name="action_cancel">Cancel</string>
+	<!-- action -->
+	<string name="action_ok">OK</string>
+	<string name="action_cancel">Cancel</string>
 
-    <!-- menu+actionbar -->
-    <string name="hint_search">source</string>
-    <string name="hint_search_treebolic">query</string>
+	<!-- menu+actionbar -->
+	<string name="hint_search">source</string>
+	<string name="hint_search_treebolic">query</string>
 
-    <!-- activity -->
-    <string name="title_activity_main">Treebolic</string>
-    <string name="title_activity_treebolic">Treebolic</string>
-    <string name="title_activity_treebolic_plugin">Treebolic (plugin)</string>
-    <string name="title_activity_treebolic_source">Treebolic (source)</string>
-    <string name="title_activity_treebolic_bundle">Treebolic (bundle)</string>
-    <string name="title_activity_treebolic_serialized">Treebolic (serialized)</string>
-    <string name="title_activity_treebolic_model">Treebolic (model)</string>
-    <string name="title_activity_treebolic_client">Treebolic (client)</string>
-    <string name="title_activity_services">Services</string>
-    <string name="title_activity_providers">Providers</string>
-    <string name="title_activity_settings">Settings</string>
-    <string name="title_activity_app_settings">Application</string>
-    <string name="title_help">Help</string>
-    <string name="title_tips">Tips</string>
-    <string name="title_about">About</string>
+	<!-- activity -->
+	<string name="title_activity_main">Treebolic</string>
+	<string name="title_activity_treebolic">Treebolic</string>
+	<string name="title_activity_treebolic_plugin">Treebolic (plugin)</string>
+	<string name="title_activity_treebolic_source">Treebolic (source)</string>
+	<string name="title_activity_treebolic_bundle">Treebolic (bundle)</string>
+	<string name="title_activity_treebolic_serialized">Treebolic (serialized)</string>
+	<string name="title_activity_treebolic_model">Treebolic (model)</string>
+	<string name="title_activity_treebolic_client">Treebolic (client)</string>
+	<string name="title_activity_services">Services</string>
+	<string name="title_activity_providers">Providers</string>
+	<string name="title_activity_settings">Settings</string>
+	<string name="title_activity_app_settings">Application</string>
+	<string name="title_help">Help</string>
+	<string name="title_tips">Tips</string>
+	<string name="title_about">About</string>
 
-    <!-- menu -->
-    <string name="title_treebolic">Open</string>
-    <string name="title_treebolic_source">Open source</string>
-    <string name="title_treebolic_bundle">Open bundle</string>
-    <string name="title_treebolic_serialized">Open serialized</string>
-    <string name="title_treebolic_client">Start client &#8230;</string>
-    <string name="title_treebolic_default_client">Start default client</string>
-    <string name="title_query">Run</string>
-    <string name="title_start">Start</string>
-    <string name="title_finish">Finish</string>
-    <string name="title_kill">Kill</string>
-    <string name="title_demo">Demo</string>
-    <string name="title_rescan">Rescan</string>
-    <string name="title_settings">Settings</string>
+	<!-- menu -->
+	<string name="title_treebolic">Open</string>
+	<string name="title_treebolic_source">Open source</string>
+	<string name="title_treebolic_bundle">Open bundle</string>
+	<string name="title_treebolic_serialized">Open serialized</string>
+	<string name="title_treebolic_client">Start client &#8230;</string>
+	<string name="title_treebolic_default_client">Start default client</string>
+	<string name="title_query">Run</string>
+	<string name="title_start">Start</string>
+	<string name="title_finish">Finish</string>
+	<string name="title_kill">Kill</string>
+	<string name="title_demo">Demo</string>
+	<string name="title_rescan">Rescan</string>
+	<string name="title_settings">Settings</string>
 
-    <!-- choose services -->
-    <string name="title_services">Services</string>
-    <string name="title_choose_service">Choose</string>
+	<!-- choose services -->
+	<string name="title_services">Services</string>
+	<string name="title_choose_service">Choose</string>
 
-    <!-- search settings -->
-    <string name="title_search_settings_dialog">Treebolic search</string>
-    <string name="message_search_settings_dialog">Enter search settings</string>
-    <string name="ok_search_settings_dialog">OK</string>
-    <string name="cancel_search_settings_dialog">Cancel</string>
+	<!-- search settings -->
+	<string name="title_search_settings_dialog">Treebolic search</string>
+	<string name="message_search_settings_dialog">Enter search settings</string>
+	<string name="ok_search_settings_dialog">OK</string>
+	<string name="cancel_search_settings_dialog">Cancel</string>
 
-    <!-- status -->
-    <string name="status_client_connected">Client connected</string>
+	<!-- status -->
+	<string name="status_client_connected">Client connected</string>
 
-    <!-- errors -->
-    <string name="error_null_source">Null source</string>
-    <string name="error_null_provider">Null provider</string>
-    <string name="error_null_plugin">Null plugin</string>
-    <string name="error_null_model">Null model received</string>
-    <string name="error_null_data">Unknown source, provider or model</string>
-    <string name="error_link">Link error</string>
-    <string name="error_query">Query error</string>
-    <string name="error_deserialize">Error when deserializing</string>
-    <string name="error_no_services">No available services</string>
-    <string name="error_client_not_connected">Client connected</string>
+	<!-- errors -->
+	<string name="error_null_source">Null source</string>
+	<string name="error_null_provider">Null provider</string>
+	<string name="error_null_plugin">Null plugin</string>
+	<string name="error_null_model">Null model received</string>
+	<string name="error_null_data">Unknown source, provider or model</string>
+	<string name="error_link">Link error</string>
+	<string name="error_query">Query error</string>
+	<string name="error_deserialize">Error when deserializing</string>
+	<string name="error_no_services">No available services</string>
+	<string name="error_client_not_connected">Client connected</string>
 
-    <!-- list views -->
-    <string name="service">service</string>
-    <string name="provider">provider</string>
-    <string name="pkg">package</string>
-    <string name="name">name</string>
-    <string name="process">process</string>
-    <string name="enabled">enabled</string>
-    <string name="exported">exported</string>
-    <string name="permission">permission</string>
-    <string name="flags">flags</string>
-    <string name="label">label</string>
-    <string name="description">description</string>
-    <string name="plugin">plugin</string>
-    <string name="mimetype">mimetype</string>
-    <string name="extension">extension</string>
-    <string name="scheme">scheme</string>
-    <string name="source">source</string>
-    <string name="base">base</string>
-    <string name="imagebase">image base</string>
-    <string name="settings">rendering</string>
+	<!-- list views -->
+	<string name="service">service</string>
+	<string name="provider">provider</string>
+	<string name="pkg">package</string>
+	<string name="name">name</string>
+	<string name="process">process</string>
+	<string name="enabled">enabled</string>
+	<string name="exported">exported</string>
+	<string name="permission">permission</string>
+	<string name="flags">flags</string>
+	<string name="label">label</string>
+	<string name="description">description</string>
+	<string name="plugin">plugin</string>
+	<string name="mimetype">mimetype</string>
+	<string name="extension">extension</string>
+	<string name="scheme">scheme</string>
+	<string name="source">source</string>
+	<string name="base">base</string>
+	<string name="imagebase">image base</string>
+	<string name="settings">rendering</string>
 
 </resources>

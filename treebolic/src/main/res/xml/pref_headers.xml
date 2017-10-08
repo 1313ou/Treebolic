@@ -1,27 +1,27 @@
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android" >
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- These settings headers are only used on tablets. -->
+	<!-- These settings headers are only used on tablets. -->
 
-    <header
-        android:fragment="org.treebolic.SettingsActivity$ActivePreferenceFragment"
-        android:title="@string/pref_header_active" />
-    <header
-        android:fragment="org.treebolic.SettingsActivity$XmlPreferenceFragment"
-        android:title="@string/pref_header_xml" />
-    <header
-        android:fragment="org.treebolic.SettingsActivity$TextIndentPreferenceFragment"
-        android:title="@string/pref_header_text_indent" />
-    <header
-        android:fragment="org.treebolic.SettingsActivity$TextIndentTrePreferenceFragment"
-        android:title="@string/pref_header_text_indent_tre" />
-    <header
-        android:fragment="org.treebolic.SettingsActivity$TextPairPreferenceFragment"
-        android:title="@string/pref_header_text_pair" />
-    <header
-        android:fragment="org.treebolic.SettingsActivity$ServicePreferenceFragment"
-        android:title="@string/pref_header_service" />
-    <header
-        android:fragment="org.treebolic.SettingsActivity$DownloadPreferenceFragment"
-        android:title="@string/pref_header_download" />
-    
+	<header
+		android:fragment="org.treebolic.SettingsActivity$ActivePreferenceFragment"
+		android:title="@string/pref_header_active"/>
+	<header
+		android:fragment="org.treebolic.SettingsActivity$XmlPreferenceFragment"
+		android:title="@string/pref_header_xml"/>
+	<header
+		android:fragment="org.treebolic.SettingsActivity$TextIndentPreferenceFragment"
+		android:title="@string/pref_header_text_indent"/>
+	<header
+		android:fragment="org.treebolic.SettingsActivity$TextIndentTrePreferenceFragment"
+		android:title="@string/pref_header_text_indent_tre"/>
+	<header
+		android:fragment="org.treebolic.SettingsActivity$TextPairPreferenceFragment"
+		android:title="@string/pref_header_text_pair"/>
+	<header
+		android:fragment="org.treebolic.SettingsActivity$ServicePreferenceFragment"
+		android:title="@string/pref_header_service"/>
+	<header
+		android:fragment="org.treebolic.SettingsActivity$DownloadPreferenceFragment"
+		android:title="@string/pref_header_download"/>
+
 </preference-headers>

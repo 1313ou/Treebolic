@@ -37,11 +37,9 @@ public class Searcher
 
 	/**
 	 * Constructor
-	 * 
-	 * @param context0
-	 *            locatorContext
-	 * @param widget0
-	 *            widget
+	 *
+	 * @param context0 locatorContext
+	 * @param widget0  widget
 	 */
 	public Searcher(final Context context0, final IWidget widget0)
 	{
@@ -73,14 +71,16 @@ public class Searcher
 		}
 		return true;
 	}
-	
+
 	// SEARCH INTERFACE
 
 	@SuppressWarnings("WeakerAccess")
 	protected void runSearch(String scope, String mode, String target)
 	{
 		if (target == null || target.isEmpty())
+		{
 			return;
+		}
 
 		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target);
 		this.searchPending = true;

@@ -25,47 +25,47 @@
 	</string-array>
 
 	<!-- builtin providers -->
-    <string-array name="pref_providers_list_values" translatable="false">
-        <item>treebolic.provider.xml.dom.Provider</item>
-        <item>treebolic.provider.text.indent.Provider</item>
-        <item>treebolic.provider.text.indent.tre.Provider</item>
-        <item>treebolic.provider.text.pair.Provider</item>
-    </string-array>
-    <string-array name="pref_providers_list_icons" translatable="false">
-        <item>@drawable/ic_xml</item>
-        <item>@drawable/ic_textindent</item>
-        <item>@drawable/ic_textindenttre</item>
-        <item>@drawable/ic_textpair</item>
-    </string-array>
-    <string-array name="pref_providers_list_mimetypes" translatable="false">
-        <item>application/xml</item>
-        <item>text/plain</item>
-        <item>text/plain</item>
-        <item>text/plain</item>
-    </string-array>
-    <string-array name="pref_providers_list_extensions" translatable="false">
-        <item>xml</item>
-        <item>txt,text</item>
-        <item>tre</item>
-        <item>txt2,text2</item>
-    </string-array>
-    <string-array name="pref_providers_list_schemes" translatable="false">
-        <item>xml:</item>
-        <item>text:</item>
-        <item>tre:</item>
-        <item>text2:</item>
-    </string-array>
-    <string-array name="pref_providers_list_sources" translatable="false">
-        <item>test.xml</item>
-        <item>test.txt</item>
-        <item>test.tre</item>
-        <item>test.txt2</item>
-    </string-array>
-    <string-array name="pref_providers_list_settings" translatable="false">
-        <item/>
-        <item>test.properties</item>
-        <item>test.properties</item>
-        <item>test.properties</item>
-    </string-array>
+	<string-array name="pref_providers_list_values" translatable="false">
+		<item>treebolic.provider.xml.dom.Provider</item>
+		<item>treebolic.provider.text.indent.Provider</item>
+		<item>treebolic.provider.text.indent.tre.Provider</item>
+		<item>treebolic.provider.text.pair.Provider</item>
+	</string-array>
+	<string-array name="pref_providers_list_icons" translatable="false">
+		<item>@drawable/ic_xml</item>
+		<item>@drawable/ic_textindent</item>
+		<item>@drawable/ic_textindenttre</item>
+		<item>@drawable/ic_textpair</item>
+	</string-array>
+	<string-array name="pref_providers_list_mimetypes" translatable="false">
+		<item>application/xml</item>
+		<item>text/plain</item>
+		<item>text/plain</item>
+		<item>text/plain</item>
+	</string-array>
+	<string-array name="pref_providers_list_extensions" translatable="false">
+		<item>xml</item>
+		<item>txt,text</item>
+		<item>tre</item>
+		<item>txt2,text2</item>
+	</string-array>
+	<string-array name="pref_providers_list_schemes" translatable="false">
+		<item>xml:</item>
+		<item>text:</item>
+		<item>tre:</item>
+		<item>text2:</item>
+	</string-array>
+	<string-array name="pref_providers_list_sources" translatable="false">
+		<item>test.xml</item>
+		<item>test.txt</item>
+		<item>test.tre</item>
+		<item>test.txt2</item>
+	</string-array>
+	<string-array name="pref_providers_list_settings" translatable="false">
+		<item/>
+		<item>test.properties</item>
+		<item>test.properties</item>
+		<item>test.properties</item>
+	</string-array>
 
 </resources>

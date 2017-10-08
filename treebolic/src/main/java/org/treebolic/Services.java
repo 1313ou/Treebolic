@@ -52,12 +52,9 @@ public class Services
 	/**
 	 * Load icon
 	 *
-	 * @param packageManager
-	 *            package manager
-	 * @param packageName
-	 *            package name
-	 * @param iconId
-	 *            icon id
+	 * @param packageManager package manager
+	 * @param packageName    package name
+	 * @param iconId         icon id
 	 * @return drawable
 	 */
 	static public Drawable loadIcon(final PackageManager packageManager, final String packageName, final int iconId)
@@ -72,10 +69,8 @@ public class Services
 	/**
 	 * Load label
 	 *
-	 * @param packageName
-	 *            package name
-	 * @param labelId
-	 *            label id
+	 * @param packageName package name
+	 * @param labelId     label id
 	 * @return label
 	 */
 	static private String loadText(final PackageManager packageManager, final String packageName, final int labelId)
@@ -91,10 +86,8 @@ public class Services
 	/**
 	 * List services
 	 *
-	 * @param context
-	 *            locatorContext
-	 * @param filter
-	 *            positive filter
+	 * @param context locatorContext
+	 * @param filter  positive filter
 	 */
 	@SuppressWarnings("boxing")
 	static private void makeServices(final Context context, @SuppressWarnings("SameParameterValue") final String filter)
@@ -132,14 +125,10 @@ public class Services
 	/**
 	 * Make adapter
 	 *
-	 * @param context
-	 *            locatorContext
-	 * @param itemRes
-	 *            item layout
-	 * @param from
-	 *            from key
-	 * @param to
-	 *            to res id
+	 * @param context locatorContext
+	 * @param itemRes item layout
+	 * @param from    from key
+	 * @param to      to res id
 	 * @return base adapter
 	 */
 	static public SimpleAdapter makeAdapter(final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
@@ -147,7 +136,9 @@ public class Services
 		// data
 		final List<HashMap<String, Object>> services = Services.getServices(context, rescan);
 		if (services == null)
+		{
 			return null;
+		}
 		if (services.size() == 0)
 		{
 			Toast.makeText(context, R.string.error_no_services, Toast.LENGTH_SHORT).show();
@@ -178,10 +169,8 @@ public class Services
 	/**
 	 * Get (possibly cached) list of services
 	 *
-	 * @param context
-	 *            locatorContext
-	 * @param rescan
-	 *            rescan, do not use cache
+	 * @param context locatorContext
+	 * @param rescan  rescan, do not use cache
 	 * @return list of services
 	 */
 	static public List<HashMap<String, Object>> getServices(final Context context, final boolean rescan)
