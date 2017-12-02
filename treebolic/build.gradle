@@ -38,7 +38,7 @@ dependencies {
     compile files('libs/treebolic-provider-text-pair.jar')
     compile files('libs/treebolic-provider-xml-dom.jar')
 
-    compile 'com.android.support:appcompat-v7:27.0.1'
-    compile 'com.android.support:support-v4:27.0.1'
-    compile 'com.android.support:design:27.0.1'
+    compile 'com.android.support:appcompat-v7:27.0.2'
+    compile 'com.android.support:support-v4:27.0.2'
+    compile 'com.android.support:design:27.0.2'
 }
