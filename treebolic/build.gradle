@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "org.treebolic"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 27
     }
 
     buildTypes {
@@ -25,6 +24,7 @@ dependencies {
     compile project(':treebolicGraph')
     compile project(':treebolicClientsLib')
 
+    compile project(':commonLib')
     compile project(':storageLib')
     compile project(':searchLib')
 
@@ -38,7 +38,7 @@ dependencies {
     compile files('libs/treebolic-provider-text-pair.jar')
     compile files('libs/treebolic-provider-xml-dom.jar')
 
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:appcompat-v7:27.0.1'
+    compile 'com.android.support:support-v4:27.0.1'
+    compile 'com.android.support:design:27.0.1'
 }
