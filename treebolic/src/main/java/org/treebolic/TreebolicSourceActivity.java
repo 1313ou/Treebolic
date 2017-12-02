@@ -92,6 +92,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	protected void unmarshalArgs(final Intent intent)
 	{
 		final Bundle params = intent.getExtras();
+		assert params != null;
 		this.providerName = params.getString(TreebolicIface.ARG_PROVIDER);
 		if (!this.restoring)
 		{

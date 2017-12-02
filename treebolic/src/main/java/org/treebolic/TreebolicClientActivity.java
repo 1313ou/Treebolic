@@ -9,7 +9,6 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -85,11 +84,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 		// content view
 		setContentView(R.layout.activity_treebolic);
-		final ViewGroup container = (ViewGroup) findViewById(R.id.container);
+		final ViewGroup container = findViewById(R.id.container);
 		container.addView(this.widget);
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		final Toolbar toolbar = findViewById(R.id.toolbar);
 
 		// action bar
 		setSupportActionBar(toolbar);
@@ -146,7 +145,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 		searchMenuItem.expandActionView();
-		this.searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
+		this.searchView = (SearchView) searchMenuItem.getActionView();
 
 		// search view width
 		int screenWidth = treebolic.glue.component.Utils.screenWidth(this);
@@ -528,6 +527,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		if (view != null)
 		{
 			final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			assert imm != null;
 			imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 		}
 	}

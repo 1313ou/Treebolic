@@ -56,6 +56,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	{
 		// retrieve arguments
 		final Bundle params = intent.getExtras();
+		assert params != null;
 		params.setClassLoader(getClassLoader());
 
 		// retrieve model

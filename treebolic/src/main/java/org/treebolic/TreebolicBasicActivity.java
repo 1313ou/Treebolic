@@ -12,7 +12,6 @@ import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -142,12 +141,12 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 
 		// content view
 		setContentView(R.layout.activity_treebolic);
-		final ViewGroup container = (ViewGroup) findViewById(R.id.container);
+		final ViewGroup container = findViewById(R.id.container);
 		final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1.F);
 		container.addView(this.widget, params);
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		final Toolbar toolbar = findViewById(R.id.toolbar);
 
 		// action bar
 		setSupportActionBar(toolbar);
@@ -232,7 +231,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 		searchMenuItem.expandActionView();
-		this.searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
+		this.searchView = (SearchView) searchMenuItem.getActionView();
 
 		// search view width
 		int screenWidth = treebolic.glue.component.Utils.screenWidth(this);
@@ -342,6 +341,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	{
 		// retrieve arguments
 		final Bundle params = intent.getExtras();
+		assert params != null;
 		params.setClassLoader(getClassLoader());
 
 		// retrieve arguments
@@ -588,6 +588,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		if (view != null)
 		{
 			final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			assert imm != null;
 			imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 		}
 	}

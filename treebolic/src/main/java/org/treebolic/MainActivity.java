@@ -9,8 +9,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		initialize();
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		final Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
 		// action bar
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_USE_LOGO);
 
 			// spinner
-			this.spinner = (Spinner) actionBarView.findViewById(R.id.spinner);
+			this.spinner = actionBarView.findViewById(R.id.spinner);
 
 			// set up the dropdown list navigation in the action bar.
 			this.spinner.setOnItemSelectedListener(new OnItemSelectedListener()
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 
 		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-		final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
+		final SearchView searchView = (SearchView) searchMenuItem.getActionView();
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@SuppressWarnings("synthetic-access")
@@ -400,7 +400,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	public static class PlaceholderFragment extends Fragment
 	{
 		@Override
-		public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
+		public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
 		{
 			return inflater.inflate(R.layout.fragment_main, container, false);
 		}
@@ -571,8 +571,8 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void updateButton()
 	{
-		final ImageButton button = (ImageButton) findViewById(R.id.treebolicButton);
-		final TextView sourceText = (TextView) findViewById(R.id.treebolicSource);
+		final ImageButton button = findViewById(R.id.treebolicButton);
+		final TextView sourceText = findViewById(R.id.treebolicSource);
 		final String source = Settings.getStringPref(this, TreebolicIface.PREF_SOURCE);
 		final boolean qualifies = sourceQualifies(source);
 		button.setVisibility(qualifies ? View.VISIBLE : View.INVISIBLE);

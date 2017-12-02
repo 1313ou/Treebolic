@@ -29,7 +29,7 @@ public class ServicesActivity extends AppCompatCommonActivity
 		setContentView(R.layout.activity_services);
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		final Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
 		// set up the action bar
@@ -41,7 +41,7 @@ public class ServicesActivity extends AppCompatCommonActivity
 
 		// adapter
 		final SimpleAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
-		final ListView listView = (ListView) findViewById(R.id.services);
+		final ListView listView = findViewById(R.id.services);
 		listView.setAdapter(adapter);
 	}
 
@@ -56,7 +56,7 @@ public class ServicesActivity extends AppCompatCommonActivity
 
 			case R.id.action_rescan:
 				final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
-				final ListView listView = (ListView) findViewById(R.id.services);
+				final ListView listView = findViewById(R.id.services);
 				listView.setAdapter(adapter);
 				return true;
 		}

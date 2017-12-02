@@ -91,6 +91,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	protected void unmarshalArgs(final Intent intent)
 	{
 		final Bundle params = intent.getExtras();
+		assert params != null;
 		this.pluginPkg = params.getString(TreebolicIface.ARG_PLUGINPKG);
 
 		// super

@@ -29,7 +29,7 @@ public class ProvidersActivity extends AppCompatCommonActivity
 		setContentView(R.layout.activity_providers);
 
 		// toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		final Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
 		// set up the action bar
@@ -41,7 +41,7 @@ public class ProvidersActivity extends AppCompatCommonActivity
 
 		// adapter
 		final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
-		final ListView listView = (ListView) findViewById(R.id.providers);
+		final ListView listView = findViewById(R.id.providers);
 		listView.setAdapter(adapter);
 	}
 
@@ -64,7 +64,7 @@ public class ProvidersActivity extends AppCompatCommonActivity
 
 			case R.id.action_rescan:
 				final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
-				final ListView listView = (ListView) findViewById(R.id.providers);
+				final ListView listView = findViewById(R.id.providers);
 				listView.setAdapter(adapter);
 				return true;
 		}
