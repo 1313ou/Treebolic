@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -29,11 +31,13 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Parameter : Model
 	 */
+	@Nullable
 	private Model model;
 
 	/**
 	 * Parameter : serialized model uri
 	 */
+	@Nullable
 	private Uri serializedModel;
 
 	// C O N S T R U C T O R
@@ -52,7 +56,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	 */
 	@Override
 	@SuppressWarnings("boxing")
-	protected void unmarshalArgs(final Intent intent)
+	protected void unmarshalArgs(@NonNull final Intent intent)
 	{
 		// retrieve arguments
 		final Bundle params = intent.getExtras();
@@ -67,7 +71,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			{
 				this.model = Models.get(key);
 			}
-			catch (final NoSuchElementException ignored)
+			catch (@NonNull final NoSuchElementException ignored)
 			{
 				this.model = null;
 			}
@@ -136,7 +140,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 				this.parentActivity.putExtra(TreebolicIface.ARG_SOURCE, source);
 				startActivity(this.parentActivity);
 			}
-			catch (final Exception ignored)
+			catch (@NonNull final Exception ignored)
 			{
 				Toast.makeText(this, R.string.error_query, Toast.LENGTH_LONG).show();
 			}
@@ -149,18 +153,18 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	 * @param reader model reader
 	 * @return model
 	 */
-	private Model deserializeGuarded(final ModelReader reader)
+	private Model deserializeGuarded(@NonNull final ModelReader reader)
 	{
 		try
 		{
 			return reader.deserialize();
 		}
-		catch (final ClassNotFoundException e)
+		catch (@NonNull final ClassNotFoundException e)
 		{
 			Log.d(TreebolicModelActivity.TAG, "Class not found while deserializing", e);
 			Toast.makeText(TreebolicModelActivity.this, R.string.error_deserialize, Toast.LENGTH_SHORT).show();
 		}
-		catch (final IOException e)
+		catch (@NonNull final IOException e)
 		{
 			Log.d(TreebolicModelActivity.TAG, "IOException while deserializing", e);
 			Toast.makeText(TreebolicModelActivity.this, R.string.error_deserialize, Toast.LENGTH_SHORT).show();
@@ -177,6 +181,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	 * @param serialized serialized model uti
 	 * @return intent
 	 */
+	@NonNull
 	static public Intent makeTreebolicSerializedIntent(final Context context, final Uri serialized)
 	{
 		final Intent intent = new Intent(context, TreebolicModelActivity.class);

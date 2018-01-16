@@ -42,6 +42,7 @@
       <entry_point TYPE="method" FQNAME="org.treebolic.Searcher boolean search(java.lang.String target)" />
       <entry_point TYPE="field" FQNAME="org.treebolic.ParcelableModel CREATOR" />
     </entry_points>
+    <pattern value="org.treebolic.ParcelableModel" method="writeToParcel" />
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />

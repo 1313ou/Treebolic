@@ -6,6 +6,8 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -31,16 +33,19 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	/**
 	 * Parameter : pluginProvider package
 	 */
+	@Nullable
 	private String pluginPkg;
 
 	/**
 	 * Plugin class loader
 	 */
+	@Nullable
 	private ClassLoader classLoader = null;
 
 	/**
 	 * Plugin provider
 	 */
+	@Nullable
 	private IProvider provider = null;
 
 	// C O N S T R U C T O R
@@ -53,7 +58,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	// M E N U
 
 	@Override
-	public boolean onOptionsItemSelected(final MenuItem item)
+	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
 		switch (item.getItemId())
 		{
@@ -88,7 +93,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	// U N M A R S H A L
 
 	@Override
-	protected void unmarshalArgs(final Intent intent)
+	protected void unmarshalArgs(@NonNull final Intent intent)
 	{
 		final Bundle params = intent.getExtras();
 		assert params != null;
@@ -152,7 +157,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 			// init widget with provider
 			TreebolicPluginActivity.this.widget.init(this.provider, this.source);
 		}
-		catch (final Exception e)
+		catch (@NonNull final Exception e)
 		{
 			Toast.makeText(TreebolicPluginActivity.this, R.string.error_query, Toast.LENGTH_LONG).show();
 			Log.e(TreebolicPluginActivity.TAG, "Exception while making provider", e);
@@ -169,7 +174,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 * @return pluginProvider dex class loader
 	 * @throws NameNotFoundException name not found exception
 	 */
-	private static ClassLoader getPluginClassLoader(final Context context, final String pluginPkg) throws NameNotFoundException
+	private static ClassLoader getPluginClassLoader(@NonNull final Context context, final String pluginPkg) throws NameNotFoundException
 	{
 		// cache to store optimized classes
 		File dexCache = context.getDir("plugins", Context.MODE_PRIVATE);
@@ -217,6 +222,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 * @param style     style
 	 * @return intent
 	 */
+	@NonNull
 	static public Intent makeTreebolicIntent(final Context context, final String pluginPkg, final String provider, final String urlScheme, final String source, final String base, final String imageBase, final String settings, final String style)
 	{
 		final Intent intent = new Intent(context, TreebolicPluginActivity.class);

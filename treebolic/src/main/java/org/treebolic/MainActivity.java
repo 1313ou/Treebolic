@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	/**
 	 * Provider adapter
 	 */
+	@Nullable
 	private SimpleAdapter adapter;
 
 	// L I F E C Y C L E O V E R R I D E S
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	@SuppressLint("InflateParams")
 	@SuppressWarnings("unchecked")
 	@Override
-	protected void onCreate(final Bundle savedInstanceState)
+	protected void onCreate(@Nullable final Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 
@@ -146,6 +148,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				@Override
 				public void onItemSelected(final AdapterView<?> parentView, final View selectedItemView, final int position, final long id)
 				{
+					assert MainActivity.this.adapter != null;
 					final HashMap<String, Object> provider = (HashMap<String, Object>) MainActivity.this.adapter.getItem(position);
 					if (provider.containsKey(RESCAN_KEY))
 					{
@@ -190,7 +193,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	@Override
-	public void onSaveInstanceState(final Bundle savedInstanceState)
+	public void onSaveInstanceState(@NonNull final Bundle savedInstanceState)
 	{
 		// serialize the current dropdown position
 		final int position = this.spinner.getSelectedItemPosition();
@@ -201,7 +204,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	@Override
-	public void onRestoreInstanceState(final Bundle savedInstanceState)
+	public void onRestoreInstanceState(@NonNull final Bundle savedInstanceState)
 	{
 		// always call the superclass so it can restore the view hierarchy
 		super.onRestoreInstanceState(savedInstanceState);
@@ -214,7 +217,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(final Menu menu)
+	public boolean onCreateOptionsMenu(@NonNull final Menu menu)
 	{
 		// inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
@@ -250,7 +253,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(final MenuItem item)
+	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
@@ -285,6 +288,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			case R.id.action_demo:
 				final Uri archiveUri = Storage.copyAssetFile(this, Settings.DEMO);
 				this.spinner.setSelection(0);
+				assert archiveUri != null;
 				tryStartTreebolicBundle(archiveUri);
 				return true;
 
@@ -345,7 +349,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	// S E L E C T I O N   A C T I V I T Y   R E T U R N S (source, bundle, serialized)
 
 	@Override
-	protected void onActivityResult(final int requestCode, final int resultCode, final Intent returnIntent)
+	protected void onActivityResult(final int requestCode, final int resultCode, @NonNull final Intent returnIntent)
 	{
 		// handle selection of input by other activity which returns selected input
 		switch (requestCode)
@@ -448,6 +452,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @return initial folder
 	 */
+	@NonNull
 	private String getFolder()
 	{
 		final File thisFolder = FileChooserActivity.getFolder(this, MainActivity.PREF_CURRENTFOLDER);
@@ -463,7 +468,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param fileUri uri
 	 */
-	private void setFolder(final Uri fileUri)
+	private void setFolder(@NonNull final Uri fileUri)
 	{
 		final String path = new File(fileUri.getPath()).getParent();
 		FileChooserActivity.setFolder(this, MainActivity.PREF_CURRENTFOLDER, path);
@@ -478,8 +483,8 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	{
 		// spinner adapter
 		this.adapter = makeAdapter(R.layout.spinner_item_providers, from, to);
-		if (this.adapter != null)
-		{
+		//if (this.adapter != null)
+		//{
 			// set spinner adapter
 			this.spinner.setAdapter(this.adapter);
 
@@ -498,7 +503,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 					}
 				}
 			}
-		}
+		//}
 	}
 
 	/**
@@ -509,6 +514,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 * @param to      to res id
 	 * @return base adapter
 	 */
+	@NonNull
 	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
 	{
 		// data
@@ -524,7 +530,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemRes, from, to)
 		{
 			@Override
-			public void setViewImage(final ImageView imageView, final String pkg)
+			public void setViewImage(@NonNull final ImageView imageView, final String pkg)
 			{
 				try
 				{
@@ -532,7 +538,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 					final Drawable drawable = getPackageManager().getApplicationIcon(pkg);
 					imageView.setImageDrawable(drawable);
 				}
-				catch (final Exception ignored)
+				catch (@NonNull final Exception ignored)
 				{
 					//
 				}
@@ -550,6 +556,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @return dummy provider
 	 */
+	@NonNull
 	private HashMap<String, Object> makeRescanDummy()
 	{
 		final HashMap<String, Object> result = new HashMap<>();
@@ -585,7 +592,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @return true if source qualifies
 	 */
-	private boolean sourceQualifies(final String source)
+	private boolean sourceQualifies(@Nullable final String source)
 	{
 		//noinspection RedundantIfStatement
 		if (source != null && !source.isEmpty())
@@ -732,7 +739,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param source0 source
 	 */
-	private void tryStartTreebolicBuiltin(final String source0)
+	private void tryStartTreebolicBuiltin(@Nullable final String source0)
 	{
 		final String provider = (String) this.pluginProvider.get(Providers.PROVIDER);
 		if (provider == null || provider.isEmpty())
@@ -760,7 +767,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param source0 source
 	 */
-	private void tryStartTreebolicPlugin(final String source0)
+	private void tryStartTreebolicPlugin(@Nullable final String source0)
 	{
 		if (this.pluginProvider == null)
 		{
@@ -801,7 +808,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 * @param fileUri XML file uri
 	 */
 	@SuppressWarnings("boxing")
-	private void tryStartTreebolic(final Uri fileUri)
+	private void tryStartTreebolic(@NonNull final Uri fileUri)
 	{
 		if (this.pluginProvider == null)
 		{
@@ -839,14 +846,14 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param archiveUri archive uri
 	 */
-	private void tryStartTreebolicBundle(final Uri archiveUri)
+	private void tryStartTreebolicBundle(@NonNull final Uri archiveUri)
 	{
 		try
 		{
 			// choose bundle entry
 			EntryChooser.choose(this, new File(archiveUri.getPath()), zipEntry -> tryStartTreebolicBundle(archiveUri, zipEntry));
 		}
-		catch (final IOException e)
+		catch (@NonNull final IOException e)
 		{
 			Log.d(MainActivity.TAG, "Failed to start treebolic from bundle uri " + archiveUri, e);
 		}
@@ -859,7 +866,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 * @param zipEntry   archive entry
 	 */
 	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable"})
-	private void tryStartTreebolicBundle(final Uri archiveUri, final String zipEntry)
+	private void tryStartTreebolicBundle(@NonNull final Uri archiveUri, final String zipEntry)
 	{
 		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri + " and zipentry " + zipEntry);
 		final String source = zipEntry; // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry;
@@ -895,7 +902,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param archiveUri zipped serialized model file
 	 */
-	private void tryStartTreebolicSerialized(final Uri archiveUri)
+	private void tryStartTreebolicSerialized(@Nullable final Uri archiveUri)
 	{
 		if (archiveUri == null)
 		{
@@ -934,7 +941,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	/**
 	 * Try to start Treebolic client activity
 	 */
-	private void tryStartTreebolicClient(final HashMap<String, Object> service)
+	private void tryStartTreebolicClient(@NonNull final HashMap<String, Object> service)
 	{
 		final String argService = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
 

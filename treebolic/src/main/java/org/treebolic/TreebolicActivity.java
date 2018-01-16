@@ -2,6 +2,7 @@ package org.treebolic;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.widget.Toast;
 
 /**
@@ -61,6 +62,7 @@ public class TreebolicActivity extends TreebolicSourceActivity
 	 * @param style        style
 	 * @return intent
 	 */
+	@NonNull
 	static public Intent makeTreebolicIntent(final Context context, final String providerName, final String source, final String base, final String imageBase, final String settings, final String style)
 	{
 		final Intent intent = new Intent(context, TreebolicActivity.class);

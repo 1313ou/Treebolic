@@ -3,6 +3,7 @@ package org.treebolic;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import org.treebolic.search.SearchSettings;
@@ -75,7 +76,7 @@ public class Searcher
 	// SEARCH INTERFACE
 
 	@SuppressWarnings("WeakerAccess")
-	protected void runSearch(String scope, String mode, String target)
+	protected void runSearch(String scope, String mode, @Nullable String target)
 	{
 		if (target == null || target.isEmpty())
 		{

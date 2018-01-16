@@ -8,6 +8,8 @@ import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -89,7 +91,7 @@ public class Settings
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	@SuppressWarnings("boxing")
-	static public void setDefaults(final Context context)
+	static public void setDefaults(@NonNull final Context context)
 	{
 		// create providers
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, false);
@@ -132,7 +134,7 @@ public class Settings
 	 * @param provider active provider
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void setActivePrefs(final Context context, final HashMap<String, Object> provider)
+	static public void setActivePrefs(@NonNull final Context context, @NonNull final HashMap<String, Object> provider)
 	{
 		final SharedPreferences defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 		final Editor defaultEditor = defaultSharedPrefs.edit();
@@ -198,6 +200,7 @@ public class Settings
 	 * @param key     key
 	 * @return value
 	 */
+	@Nullable
 	static public String getStringPref(final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -224,6 +227,7 @@ public class Settings
 	 * @param key     key
 	 * @return preference value as
 	 */
+	@Nullable
 	static public URL getURLPref(final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -245,7 +249,7 @@ public class Settings
 		{
 			return new URL(url);
 		}
-		catch (final MalformedURLException ignored)
+		catch (@NonNull final MalformedURLException ignored)
 		{
 			return null;
 		}
@@ -257,7 +261,7 @@ public class Settings
 	 * @param context locatorContext
 	 * @param pkgName package name
 	 */
-	static public void applicationSettings(final Context context, @SuppressWarnings("SameParameterValue") final String pkgName)
+	static public void applicationSettings(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final String pkgName)
 	{
 		final int apiLevel = Build.VERSION.SDK_INT;
 		final Intent intent = new Intent();

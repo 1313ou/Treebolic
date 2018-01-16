@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
 import android.support.v4.content.ContextCompat;
@@ -55,6 +57,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Client
 	 */
+	@Nullable
 	private String argService;
 
 	/**
@@ -137,7 +140,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	// M E N U
 
 	@Override
-	public boolean onCreateOptionsMenu(final Menu menu)
+	public boolean onCreateOptionsMenu(@NonNull final Menu menu)
 	{
 		// menu
 		getMenuInflater().inflate(R.menu.treebolic, menu);
@@ -155,14 +158,14 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		this.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@Override
-			public boolean onQueryTextSubmit(final String query)
+			public boolean onQueryTextSubmit(@NonNull final String query)
 			{
 				handleQueryChanged(query, true);
 				return true;
 			}
 
 			@Override
-			public boolean onQueryTextChange(final String query)
+			public boolean onQueryTextChange(@NonNull final String query)
 			{
 				handleQueryChanged(query, false);
 				return true;
@@ -173,7 +176,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(final MenuItem item)
+	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
 		switch (item.getItemId())
 		{
@@ -251,7 +254,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	}
 
 	@Override
-	public boolean linkTo(final String url, final String target)
+	public boolean linkTo(@NonNull final String url, final String target)
 	{
 		// if we handle url, initiate another query/response cycle
 		if (this.urlScheme != null && url.startsWith(this.urlScheme))
@@ -272,7 +275,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			startActivity(intent);
 			return true;
 		}
-		catch (final Exception ignored)
+		catch (@NonNull final Exception ignored)
 		{
 			Toast.makeText(this, R.string.error_link, Toast.LENGTH_LONG).show();
 		}
@@ -286,14 +289,14 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	}
 
 	@Override
-	public void warn(final String message)
+	public void warn(@NonNull final String message)
 	{
 		// toast(message, Toast.LENGTH_LONG);
 		snackbar(message, Snackbar.LENGTH_LONG);
 	}
 
 	@Override
-	public void status(final String message)
+	public void status(@NonNull final String message)
 	{
 		// toast(message, Toast.LENGTH_SHORT);
 		snackbar(message, Snackbar.LENGTH_SHORT);
@@ -304,6 +307,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 *
 	 * @return properties
 	 */
+	@NonNull
 	private Properties makeParameters()
 	{
 		final Properties theseParameters = new Properties();
@@ -316,13 +320,14 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	// U N M A R S H A L
 
 	@SuppressWarnings("WeakerAccess")
-	protected void unmarshalArgs(final Intent intent)
+	protected void unmarshalArgs(@NonNull final Intent intent)
 	{
 		this.argService = intent.getStringExtra(TreebolicIface.ARG_SERVICE);
 	}
 
 	// C L I E N T
 
+	@Nullable
 	@Override
 	protected ITreebolicClient makeClient()
 	{
@@ -341,8 +346,9 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 * @param service name
 	 * @return client to service
 	 */
+	@Nullable
 	@SuppressWarnings("WeakerAccess")
-	protected ITreebolicClient service2Client(final String service)
+	protected ITreebolicClient service2Client(@Nullable final String service)
 	{
 		if (service != null && !service.isEmpty())
 		{
@@ -378,7 +384,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 *
 	 * @param source source
 	 */
-	private void query(final String source)
+	private void query(@Nullable final String source)
 	{
 		if (this.client == null)
 		{
@@ -404,7 +410,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	}
 
 	@Override
-	public void onModel(final Model model, final String urlScheme0)
+	public void onModel(@Nullable final Model model, final String urlScheme0)
 	{
 		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model);
 
@@ -443,7 +449,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 * @param submit whether submit was changed
 	 */
 	@SuppressWarnings("WeakerAccess")
-	protected void handleQueryChanged(final String query, boolean submit)
+	protected void handleQueryChanged(@NonNull final String query, boolean submit)
 	{
 		// clear keyboard out of the way
 		if (submit)
@@ -562,6 +568,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onConnected(final boolean flag)
 	{
+		assert this.argService != null;
 		final String[] fields = this.argService.split("/");
 		snackbar(getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected) + ' ' + fields[1], Snackbar.LENGTH_LONG);
 
@@ -601,7 +608,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 * @param message  message
 	 * @param duration duration
 	 */
-	private void snackbar(final String message, final int duration)
+	private void snackbar(@NonNull final String message, final int duration)
 	{
 		runOnUiThread(() ->
 		{

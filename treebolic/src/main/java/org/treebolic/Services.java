@@ -5,6 +5,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ServiceInfo;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -30,6 +32,7 @@ public class Services
 	/**
 	 * Data
 	 */
+	@Nullable
 	static private List<HashMap<String, Object>> data = null;
 
 	/**
@@ -57,7 +60,7 @@ public class Services
 	 * @param iconId         icon id
 	 * @return drawable
 	 */
-	static public Drawable loadIcon(final PackageManager packageManager, final String packageName, final int iconId)
+	static public Drawable loadIcon(@NonNull final PackageManager packageManager, final String packageName, final int iconId)
 	{
 		if (iconId != 0)
 		{
@@ -73,7 +76,7 @@ public class Services
 	 * @param labelId     label id
 	 * @return label
 	 */
-	static private String loadText(final PackageManager packageManager, final String packageName, final int labelId)
+	static private String loadText(@NonNull final PackageManager packageManager, final String packageName, final int labelId)
 	{
 		if (labelId != 0)
 		{
@@ -90,7 +93,7 @@ public class Services
 	 * @param filter  positive filter
 	 */
 	@SuppressWarnings("boxing")
-	static private void makeServices(final Context context, @SuppressWarnings("SameParameterValue") final String filter)
+	static private void makeServices(@NonNull final Context context, @Nullable @SuppressWarnings("SameParameterValue") final String filter)
 	{
 		final PackageManager packageManager = context.getPackageManager();
 
@@ -116,7 +119,8 @@ public class Services
 					map.put(Services.ICON, service.icon);
 					map.put(Services.DRAWABLE, pkg.packageName + '#' + service.icon);
 
-					Services.data.add(map);
+					assert data != null;
+					data.add(map);
 				}
 			}
 		}
@@ -131,7 +135,7 @@ public class Services
 	 * @param to      to res id
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> services = Services.getServices(context, rescan);
@@ -148,7 +152,7 @@ public class Services
 		return new SimpleAdapter(context, services, itemRes, from, to)
 		{
 			@Override
-			public void setViewImage(final ImageView v, final String value)
+			public void setViewImage(@NonNull final ImageView v, @NonNull final String value)
 			{
 				try
 				{
@@ -157,7 +161,7 @@ public class Services
 					final Drawable drawable = Services.loadIcon(context.getPackageManager(), fields[0], index);
 					v.setImageDrawable(drawable);
 				}
-				catch (final Exception ignored)
+				catch (@NonNull final Exception ignored)
 				{
 					//
 				}
@@ -172,27 +176,27 @@ public class Services
 	 * @param rescan  rescan, do not use cache
 	 * @return list of services
 	 */
-	static public List<HashMap<String, Object>> getServices(final Context context, final boolean rescan)
+	static public List<HashMap<String, Object>> getServices(@NonNull final Context context, final boolean rescan)
 	{
 		boolean scan = rescan;
-		if (Services.data == null)
+		if (data == null)
 		{
-			Services.data = new ArrayList<>();
+			data = new ArrayList<>();
 			scan = true;
 		}
 		if (scan)
 		{
-			Services.data.clear();
+			data.clear();
 			try
 			{
 				Services.makeServices(context, "org.treebolic\\..*");
 			}
-			catch (final Exception e)
+			catch (@NonNull final Exception e)
 			{
 				Log.e(Services.TAG, "Error when scanning for services", e);
 				return null;
 			}
 		}
-		return Services.data;
+		return data;
 	}
 }

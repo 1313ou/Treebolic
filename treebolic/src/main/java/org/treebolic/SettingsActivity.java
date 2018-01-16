@@ -13,6 +13,8 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBar;
 import android.view.MenuItem;
@@ -67,7 +69,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(final MenuItem item)
+	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
 		switch (item.getItemId())
 		{
@@ -109,7 +111,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	/**
 	 * Helper method to determine if the device has an extra-large screen. For example, 10" tablets are extra-large.
 	 */
-	private static boolean isLargeTablet(final Context context)
+	private static boolean isLargeTablet(@NonNull final Context context)
 	{
 		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
@@ -136,7 +138,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	 *
 	 * @see #listener
 	 */
-	private void bind(final Preference preference, final String value0, final OnPreferenceChangeListener listener0)
+	private void bind(@NonNull final Preference preference, final String value0, final OnPreferenceChangeListener listener0)
 	{
 		// set the listener to watch for value changes.
 		preference.setOnPreferenceChangeListener(listener0);
@@ -202,7 +204,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 						iconPref.setIcon(resId);
 					}
 				}
-				catch (final NameNotFoundException ignored)
+				catch (@NonNull final NameNotFoundException ignored)
 				{
 					iconPref.setIcon(R.drawable.ic_treebolic);
 				}
@@ -238,6 +240,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class XmlPreferenceFragment extends ProviderPreferenceFragment
 	{
+		@Nullable
 		@Override
 		protected String getName()
 		{
@@ -247,6 +250,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class TextIndentPreferenceFragment extends ProviderPreferenceFragment
 	{
+		@Nullable
 		@Override
 		protected String getName()
 		{
@@ -256,6 +260,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class TextIndentTrePreferenceFragment extends ProviderPreferenceFragment
 	{
+		@Nullable
 		@Override
 		protected String getName()
 		{
@@ -265,6 +270,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class TextPairPreferenceFragment extends ProviderPreferenceFragment
 	{
+		@Nullable
 		@Override
 		protected String getName()
 		{
@@ -274,6 +280,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	abstract public static class ProviderPreferenceFragment extends PreferenceFragment
 	{
+		@Nullable
 		abstract protected String getName();
 
 		@Override
@@ -330,6 +337,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			}
 		}
 
+		@Nullable
 		@SuppressWarnings("WeakerAccess")
 		protected String getName(final int thisIndex)
 		{
@@ -398,7 +406,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	 *
 	 * @param listPreference list preference
 	 */
-	private void fillWithServiceData(final ListPreference listPreference)
+	private void fillWithServiceData(@NonNull final ListPreference listPreference)
 	{
 		final List<HashMap<String, Object>> services = Services.getServices(this, true);
 		if (services != null)

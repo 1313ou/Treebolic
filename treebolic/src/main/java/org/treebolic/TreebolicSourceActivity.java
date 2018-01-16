@@ -2,6 +2,8 @@ package org.treebolic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 
 import java.util.Properties;
 
@@ -10,12 +12,14 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	/**
 	 * Parameter : source (interpreted by provider)
 	 */
+	@Nullable
 	@SuppressWarnings("WeakerAccess")
 	protected String source;
 
 	/**
 	 * Parameter : data provider
 	 */
+	@Nullable
 	@SuppressWarnings("WeakerAccess")
 	protected String providerName;
 
@@ -34,7 +38,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	// L I F E C Y C L E
 
 	@Override
-	protected void onCreate(final Bundle savedInstanceState)
+	protected void onCreate(@Nullable final Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 
@@ -43,7 +47,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	}
 
 	@Override
-	public void onRestoreInstanceState(final Bundle savedInstanceState)
+	public void onRestoreInstanceState(@NonNull final Bundle savedInstanceState)
 	{
 		// always call the superclass so it can restore the view hierarchy
 		super.onRestoreInstanceState(savedInstanceState);
@@ -53,7 +57,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	}
 
 	@Override
-	public void onSaveInstanceState(final Bundle savedInstanceState)
+	public void onSaveInstanceState(@NonNull final Bundle savedInstanceState)
 	{
 		// save
 		savedInstanceState.putString(TreebolicIface.ARG_SOURCE, this.source);
@@ -89,7 +93,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	 * @param intent intent
 	 */
 	@Override
-	protected void unmarshalArgs(final Intent intent)
+	protected void unmarshalArgs(@NonNull final Intent intent)
 	{
 		final Bundle params = intent.getExtras();
 		assert params != null;

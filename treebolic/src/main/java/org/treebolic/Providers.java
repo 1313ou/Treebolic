@@ -10,6 +10,8 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -33,6 +35,7 @@ public class Providers
 	/**
 	 * Data
 	 */
+	@Nullable
 	static private List<HashMap<String, Object>> data = null;
 
 	/**
@@ -61,7 +64,7 @@ public class Providers
 	 * @throws NameNotFoundException name not found exception
 	 */
 	@SuppressWarnings({"boxing", "ConstantConditions"})
-	static private void makeProviders(final Context context, @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
+	static private void makeProviders(@NonNull final Context context, @NonNull @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
 	{
 		final PackageManager packageManager = context.getPackageManager();
 
@@ -101,7 +104,7 @@ public class Providers
 			{
 				pluginContext = context.createPackageContext(pkg, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
 			}
-			catch (final NameNotFoundException e1)
+			catch (@NonNull final NameNotFoundException e1)
 			{
 				Log.d(Providers.TAG, "Error while creating package locatorContext for " + pkg + ' ' + e1.getMessage());
 				continue;
@@ -138,7 +141,7 @@ public class Providers
 					final Method getMimetypeMethod = pluginProviderDataClass.getMethod("getMimetype", (Class<?>[]) null);
 					mimetype = (String) getMimetypeMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException ignored)
+				catch (@NonNull final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -150,7 +153,7 @@ public class Providers
 					final Method getExtensionsMethod = pluginProviderDataClass.getMethod("getExtensions", (Class<?>[]) null);
 					extensions = (String) getExtensionsMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException ignored)
+				catch (@NonNull final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -162,7 +165,7 @@ public class Providers
 					final Method getSchemeMethod = pluginProviderDataClass.getMethod("getUrlScheme", (Class<?>[]) null);
 					urlScheme = (String) getSchemeMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException ignored)
+				catch (@NonNull final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -174,7 +177,7 @@ public class Providers
 					final Method getStyleMethod = pluginProviderDataClass.getMethod("getStyle", (Class<?>[]) null);
 					style = (String) getStyleMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException ignored)
+				catch (@NonNull final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -217,7 +220,7 @@ public class Providers
 					Providers.data.add(provider);
 				}
 			}
-			catch (final Exception e)
+			catch (@NonNull final Exception e)
 			{
 				Log.d(Providers.TAG, "Error while scanning for provider " + pkg + ' ' + e.getMessage());
 			}
@@ -233,7 +236,7 @@ public class Providers
 	 * @return number of built-in providers
 	 */
 	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable", "UnusedReturnValue"})
-	static private int addBuiltInProviders(final Context context, final String parentPackage, final String processName)
+	static private int addBuiltInProviders(@NonNull final Context context, final String parentPackage, final String processName)
 	{
 		// base and image base in external storage
 		final File treebolicStorage = Storage.getTreebolicStorage(context);
@@ -283,7 +286,8 @@ public class Providers
 			provider.put(Providers.IMAGEBASE, imagebase);
 			provider.put(Providers.SETTINGS, settings[i]);
 
-			Providers.data.add(provider);
+			assert data != null;
+			data.add(provider);
 		}
 		icons.recycle();
 		return lowest;
@@ -299,7 +303,8 @@ public class Providers
 	 * @param rescan  rescan list
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	@Nullable
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, rescan);
@@ -318,7 +323,8 @@ public class Providers
 	 * @param to        to res id
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(final Context context, final List<HashMap<String, Object>> providers, final int itemRes, final String[] from, final int[] to)
+	@Nullable
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @Nullable final List<HashMap<String, Object>> providers, final int itemRes, final String[] from, final int[] to)
 	{
 		// data
 		if (providers == null)
@@ -330,7 +336,7 @@ public class Providers
 		return new SimpleAdapter(context, providers, itemRes, from, to)
 		{
 			@Override
-			public void setViewImage(final ImageView imageView, final String pkg)
+			public void setViewImage(@NonNull final ImageView imageView, final String pkg)
 			{
 				try
 				{
@@ -338,7 +344,7 @@ public class Providers
 					final Drawable drawable = context.getPackageManager().getApplicationIcon(pkg);
 					imageView.setImageDrawable(drawable);
 				}
-				catch (final Exception ignored)
+				catch (@NonNull final Exception ignored)
 				{
 					//
 				}
@@ -353,27 +359,27 @@ public class Providers
 	 * @param rescan  rescan, do not use cache
 	 * @return list of providers (including builtin + plugins)
 	 */
-	static public List<HashMap<String, Object>> getProviders(final Context context, final boolean rescan)
+	static public List<HashMap<String, Object>> getProviders(@NonNull final Context context, final boolean rescan)
 	{
 		boolean scan = rescan;
-		if (Providers.data == null)
+		if (data == null)
 		{
-			Providers.data = new ArrayList<>();
+			data = new ArrayList<>();
 			scan = true;
 		}
 		if (scan)
 		{
-			Providers.data.clear();
+			data.clear();
 			try
 			{
 				Providers.makeProviders(context, "org.treebolic");
 			}
-			catch (final Exception e)
+			catch (@NonNull final Exception e)
 			{
 				Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
 				return null;
 			}
 		}
-		return Providers.data;
+		return data;
 	}
 }
