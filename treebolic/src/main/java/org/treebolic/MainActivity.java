@@ -485,24 +485,24 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		this.adapter = makeAdapter(R.layout.spinner_item_providers, from, to);
 		//if (this.adapter != null)
 		//{
-			// set spinner adapter
-			this.spinner.setAdapter(this.adapter);
+		// set spinner adapter
+		this.spinner.setAdapter(this.adapter);
 
-			// saved name
-			final String name = Settings.getStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME);
+		// saved name
+		final String name = Settings.getStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME);
 
-			// position
-			if (name != null)
+		// position
+		if (name != null)
+		{
+			for (int position = 0; position < this.adapter.getCount(); position++)
 			{
-				for (int position = 0; position < this.adapter.getCount(); position++)
+				@SuppressWarnings("unchecked") final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
+				if (provider.get(Providers.NAME).equals(name))
 				{
-					@SuppressWarnings("unchecked") final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
-					if (provider.get(Providers.NAME).equals(name))
-					{
-						this.spinner.setSelection(position);
-					}
+					this.spinner.setSelection(position);
 				}
 			}
+		}
 		//}
 	}
 

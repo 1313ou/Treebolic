@@ -23,48 +23,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/android_arch_lifecycle_runtime_1_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/android_arch_lifecycle_runtime_1_0_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_animated_vector_drawable_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_animated_vector_drawable_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_appcompat_v7_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_appcompat_v7_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_design_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_design_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_recyclerview_v7_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_recyclerview_v7_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_compat_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_compat_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_ui_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_ui_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_utils_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_core_utils_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_fragment_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_fragment_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_media_compat_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_media_compat_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v13_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v13_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_v4_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_vector_drawable_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_support_vector_drawable_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_core_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_core_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_idling_resource_2_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_espresso_espresso_idling_resource_2_2_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_exposed_instrumentation_api_publish_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_exposed_instrumentation_api_publish_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_rules_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_rules_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_runner_0_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_test_runner_0_5.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/com_android_support_transition_27_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/com_android_support_transition_27_0_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Treebolic.iml" afterPath="$PROJECT_DIR$/Treebolic.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_launcher.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_launcher.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_launcher_backup.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_launcher_backup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_launcher_round.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_launcher_round.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_launcher_round_backup.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_launcher_round_backup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_refresh.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_refresh.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_refresh_backup.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_refresh_backup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_splash.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_splash.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_splash_backup.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_splash_backup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_splash_text.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_splash_text.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_splash_text_backup.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_splash_text_backup.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_textindent.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_textindent.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_textindenttre.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_textindenttre.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_textpair.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_textpair.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_treebolic.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_treebolic.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/artwork/ic_xml.svg" afterPath="$PROJECT_DIR$/treebolic/artwork/ic_xml.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/build.gradle" afterPath="$PROJECT_DIR$/treebolic/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/lint.xml" afterPath="$PROJECT_DIR$/treebolic/lint.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/assets/help/fr-index.html" afterPath="$PROJECT_DIR$/treebolic/src/main/assets/help/fr-index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/assets/help/index.html" afterPath="$PROJECT_DIR$/treebolic/src/main/assets/help/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Permissions.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Permissions.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ServicesActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ServicesActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" />
     </list>
     <ignored path="Treebolic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19731,7 +19718,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516090110622" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516091133769" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -19779,7 +19766,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516090110622" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516091133770" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -19973,7 +19960,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516090110623" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1516091133771" />
       </method>
     </configuration>
     <list size="1">
@@ -20344,7 +20331,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516087762758</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="lint&#10;nullable analysis">
+      <created>1516090137616</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1516090137616</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView">
@@ -20375,11 +20369,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26568627" sideWeight="0.5982485" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26568627" sideWeight="0.5982485" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4958994" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35359675" sideWeight="0.24526873" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15982485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15982485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35" sideWeight="0.7353745" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -20413,7 +20407,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="choose service fro client" />
     <MESSAGE value="unmarshal fix" />
     <MESSAGE value="button source" />
     <MESSAGE value="popup color&#10;version++" />
@@ -20438,7 +20431,8 @@
     <MESSAGE value="new version" />
     <MESSAGE value="new build chain" />
     <MESSAGE value="lint" />
-    <option name="LAST_COMMIT_MESSAGE" value="lint" />
+    <MESSAGE value="lint&#10;nullable analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="lint&#10;nullable analysis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -20804,7 +20798,7 @@
         <state relative-caret-position="201">
           <caret line="571" column="48" lean-forward="false" selection-start-line="571" selection-start-column="48" selection-end-line="571" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -20838,8 +20832,8 @@
         <state relative-caret-position="117">
           <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="37" />
           <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="false" />
+            <element signature="e#425#426#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -20875,9 +20869,9 @@
         <state relative-caret-position="180">
           <caret line="289" column="16" lean-forward="true" selection-start-line="289" selection-start-column="16" selection-end-line="289" selection-end-column="16" />
           <folding>
-            <element signature="e#13252#13291#0" expanded="true" />
-            <element signature="e#13311#13350#0" expanded="true" />
-            <element signature="e#13372#13411#0" expanded="true" />
+            <element signature="e#13236#13275#0" expanded="false" />
+            <element signature="e#13295#13334#0" expanded="false" />
+            <element signature="e#13356#13395#0" expanded="false" />
           </folding>
         </state>
       </provider>
