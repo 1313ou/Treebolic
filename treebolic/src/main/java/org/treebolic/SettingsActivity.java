@@ -119,16 +119,12 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	/**
 	 * A preference value change listener that updates the preference's summary to reflect its new value.
 	 */
-	private final Preference.OnPreferenceChangeListener listener = new Preference.OnPreferenceChangeListener()
+	private final Preference.OnPreferenceChangeListener listener = (preference, value) ->
 	{
-		@Override
-		public boolean onPreferenceChange(final Preference preference, final Object value)
-		{
-			// set the summary to the value's simple string representation.
-			final String stringValue = value == null ? "" : value.toString();
-			preference.setSummary(stringValue);
-			return true;
-		}
+		// set the summary to the value's simple string representation.
+		final String stringValue = value == null ? "" : value.toString();
+		preference.setSummary(stringValue);
+		return true;
 	};
 
 	// B I N D S U M M A R Y
@@ -153,7 +149,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class ActivePreferenceFragment extends PreferenceFragment
 	{
-		@SuppressWarnings({"synthetic-access", "boxing"})
+		@SuppressWarnings({"boxing"})
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{
@@ -206,7 +202,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 						iconPref.setIcon(resId);
 					}
 				}
-				catch (final NameNotFoundException e)
+				catch (final NameNotFoundException ignored)
 				{
 					iconPref.setIcon(R.drawable.ic_treebolic);
 				}
@@ -227,18 +223,14 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			if (isPlugin)
 			{
 				final Preference button = findPreference("button_provider_settings");
-				button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener()
+				button.setOnPreferenceClickListener(arg0 ->
 				{
-					@Override
-					public boolean onPreferenceClick(final Preference arg0)
-					{
-						final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-						final String activityName = pkg + ".SettingsActivity";
-						final Intent intent = new Intent();
-						intent.setComponent(new ComponentName(pkg, activityName));
-						startActivity(intent);
-						return true;
-					}
+					final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
+					final String activityName = pkg + ".SettingsActivity";
+					final Intent intent = new Intent();
+					intent.setComponent(new ComponentName(pkg, activityName));
+					startActivity(intent);
+					return true;
 				});
 			}
 		}
@@ -284,7 +276,6 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	{
 		abstract protected String getName();
 
-		@SuppressWarnings({"synthetic-access"})
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{
@@ -357,7 +348,6 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class DownloadPreferenceFragment extends PreferenceFragment
 	{
-		@SuppressWarnings("synthetic-access")
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{
@@ -381,7 +371,6 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class ServicePreferenceFragment extends PreferenceFragment
 	{
-		@SuppressWarnings("synthetic-access")
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{

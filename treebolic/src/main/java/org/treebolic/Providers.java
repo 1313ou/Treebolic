@@ -60,7 +60,7 @@ public class Providers
 	 * @param parentPackageName package name
 	 * @throws NameNotFoundException name not found exception
 	 */
-	@SuppressWarnings({"boxing", "ConstantConditions", "ConfusingArgumentToVarargsMethod"})
+	@SuppressWarnings({"boxing", "ConstantConditions"})
 	static private void makeProviders(final Context context, @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
 	{
 		final PackageManager packageManager = context.getPackageManager();
@@ -138,7 +138,7 @@ public class Providers
 					final Method getMimetypeMethod = pluginProviderDataClass.getMethod("getMimetype", (Class<?>[]) null);
 					mimetype = (String) getMimetypeMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException e)
+				catch (final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -150,7 +150,7 @@ public class Providers
 					final Method getExtensionsMethod = pluginProviderDataClass.getMethod("getExtensions", (Class<?>[]) null);
 					extensions = (String) getExtensionsMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException e)
+				catch (final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -162,7 +162,7 @@ public class Providers
 					final Method getSchemeMethod = pluginProviderDataClass.getMethod("getUrlScheme", (Class<?>[]) null);
 					urlScheme = (String) getSchemeMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException e)
+				catch (final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -174,7 +174,7 @@ public class Providers
 					final Method getStyleMethod = pluginProviderDataClass.getMethod("getStyle", (Class<?>[]) null);
 					style = (String) getStyleMethod.invoke(null, (Object[]) null);
 				}
-				catch (final NoSuchMethodException e)
+				catch (final NoSuchMethodException ignored)
 				{
 					//
 				}
@@ -338,7 +338,7 @@ public class Providers
 					final Drawable drawable = context.getPackageManager().getApplicationIcon(pkg);
 					imageView.setImageDrawable(drawable);
 				}
-				catch (final Exception re)
+				catch (final Exception ignored)
 				{
 					//
 				}

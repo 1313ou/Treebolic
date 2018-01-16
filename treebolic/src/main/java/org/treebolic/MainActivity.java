@@ -1,7 +1,6 @@
 package org.treebolic;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -144,7 +143,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			// set up the dropdown list navigation in the action bar.
 			this.spinner.setOnItemSelectedListener(new OnItemSelectedListener()
 			{
-				@SuppressWarnings("synthetic-access")
 				@Override
 				public void onItemSelected(final AdapterView<?> parentView, final View selectedItemView, final int position, final long id)
 				{
@@ -226,7 +224,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final SearchView searchView = (SearchView) searchMenuItem.getActionView();
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
-			@SuppressWarnings("synthetic-access")
 			@Override
 			public boolean onQueryTextSubmit(final String query)
 			{
@@ -535,7 +532,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 					final Drawable drawable = getPackageManager().getApplicationIcon(pkg);
 					imageView.setImageDrawable(drawable);
 				}
-				catch (final Exception re)
+				catch (final Exception ignored)
 				{
 					//
 				}
@@ -640,32 +637,24 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			}
 		}
 		alert.setView(input);
-		alert.setNegativeButton(R.string.action_cancel, new DialogInterface.OnClickListener()
+		alert.setNegativeButton(R.string.action_cancel, (dialog, whichButton) ->
 		{
-			@Override
-			public void onClick(final DialogInterface dialog, final int whichButton)
-			{
-				// canceled.
-			}
+			// canceled.
 		});
 
 		final AlertDialog dialog = alert.create();
-		input.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+		input.setOnCheckedChangeListener((group, checkedId) ->
 		{
-			@Override
-			public void onCheckedChanged(RadioGroup group, int checkedId)
-			{
-				dialog.dismiss();
+			dialog.dismiss();
 
-				int childCount = input.getChildCount();
-				for (int i = 0; i < childCount; i++)
+			int childCount = input.getChildCount();
+			for (int i = 0; i < childCount; i++)
+			{
+				final RadioButton radioButton = (RadioButton) input.getChildAt(i);
+				if (radioButton.getId() == input.getCheckedRadioButtonId())
 				{
-					final RadioButton radioButton = (RadioButton) input.getChildAt(i);
-					if (radioButton.getId() == input.getCheckedRadioButtonId())
-					{
-						@SuppressWarnings("unchecked") final HashMap<String, Object> service = (HashMap<String, Object>) radioButton.getTag();
-						tryStartTreebolicClient(service);
-					}
+					@SuppressWarnings("unchecked") final HashMap<String, Object> service = (HashMap<String, Object>) radioButton.getTag();
+					tryStartTreebolicClient(service);
 				}
 			}
 		});
@@ -855,15 +844,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		try
 		{
 			// choose bundle entry
-			EntryChooser.choose(this, new File(archiveUri.getPath()), new EntryChooser.Callback()
-			{
-				@SuppressWarnings("synthetic-access")
-				@Override
-				public void onSelect(final String zipEntry)
-				{
-					tryStartTreebolicBundle(archiveUri, zipEntry);
-				}
-			});
+			EntryChooser.choose(this, new File(archiveUri.getPath()), zipEntry -> tryStartTreebolicBundle(archiveUri, zipEntry));
 		}
 		catch (final IOException e)
 		{

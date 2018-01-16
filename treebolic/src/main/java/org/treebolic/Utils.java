@@ -51,7 +51,7 @@ public class Utils
 			final Context pluginContext = context.createPackageContext(pkg, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
 			return PreferenceManager.getDefaultSharedPreferences(pluginContext);
 		}
-		catch (final NameNotFoundException e)
+		catch (final NameNotFoundException ignored)
 		{
 			//
 		}

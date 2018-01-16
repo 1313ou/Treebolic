@@ -95,7 +95,7 @@ public class ModelFactory
 		{
 			return new URL(base != null && !base.endsWith("/") ? base + "/" : base);
 		}
-		catch (final MalformedURLException e)
+		catch (final MalformedURLException ignored)
 		{
 			//
 		}

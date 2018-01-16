@@ -67,7 +67,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			{
 				this.model = Models.get(key);
 			}
-			catch (final NoSuchElementException e)
+			catch (final NoSuchElementException ignored)
 			{
 				this.model = null;
 			}
@@ -136,7 +136,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 				this.parentActivity.putExtra(TreebolicIface.ARG_SOURCE, source);
 				startActivity(this.parentActivity);
 			}
-			catch (final Exception e)
+			catch (final Exception ignored)
 			{
 				Toast.makeText(this, R.string.error_query, Toast.LENGTH_LONG).show();
 			}

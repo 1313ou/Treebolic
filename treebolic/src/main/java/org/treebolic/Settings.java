@@ -132,7 +132,6 @@ public class Settings
 	 * @param provider active provider
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	@SuppressWarnings("boxing")
 	static public void setActivePrefs(final Context context, final HashMap<String, Object> provider)
 	{
 		final SharedPreferences defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
@@ -246,7 +245,7 @@ public class Settings
 		{
 			return new URL(url);
 		}
-		catch (final MalformedURLException e)
+		catch (final MalformedURLException ignored)
 		{
 			return null;
 		}

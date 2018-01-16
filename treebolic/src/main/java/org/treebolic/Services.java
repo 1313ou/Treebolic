@@ -147,7 +147,6 @@ public class Services
 		// fill in the grid_item layout
 		return new SimpleAdapter(context, services, itemRes, from, to)
 		{
-			@SuppressWarnings("synthetic-access")
 			@Override
 			public void setViewImage(final ImageView v, final String value)
 			{
@@ -158,7 +157,7 @@ public class Services
 					final Drawable drawable = Services.loadIcon(context.getPackageManager(), fields[0], index);
 					v.setImageDrawable(drawable);
 				}
-				catch (final Exception re)
+				catch (final Exception ignored)
 				{
 					//
 				}

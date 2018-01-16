@@ -272,7 +272,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			startActivity(intent);
 			return true;
 		}
-		catch (final Exception e)
+		catch (final Exception ignored)
 		{
 			Toast.makeText(this, R.string.error_link, Toast.LENGTH_LONG).show();
 		}
@@ -592,14 +592,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 */
 	private void toast(final String message, final int duration)
 	{
-		runOnUiThread(new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				Toast.makeText(TreebolicClientActivity.this, message, duration).show();
-			}
-		});
+		runOnUiThread(() -> Toast.makeText(TreebolicClientActivity.this, message, duration).show());
 	}
 
 	/**
@@ -610,16 +603,12 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 */
 	private void snackbar(final String message, final int duration)
 	{
-		runOnUiThread(new Runnable()
+		runOnUiThread(() ->
 		{
-			@Override
-			public void run()
-			{
-				final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, duration);
-				final android.view.View view = snack.getView();
-				view.setBackgroundColor(ContextCompat.getColor(TreebolicClientActivity.this, R.color.snackbar_color));
-				snack.show();
-			}
+			final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, duration);
+			final android.view.View view = snack.getView();
+			view.setBackgroundColor(ContextCompat.getColor(TreebolicClientActivity.this, R.color.snackbar_color));
+			snack.show();
 		});
 	}
 }
