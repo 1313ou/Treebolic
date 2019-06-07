@@ -64,7 +64,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		params.setClassLoader(getClassLoader());
 
 		// retrieve model
-		final Long key = params.getLong(TreebolicIface.ARG_MODEL_REFERENCE, -1L);
+		final long key = params.getLong(TreebolicIface.ARG_MODEL_REFERENCE, -1L);
 		if (key != -1L)
 		{
 			try
@@ -120,8 +120,8 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		if (this.serializedModel != null)
 		{
 			Log.d(TreebolicModelActivity.TAG, "Using serialized model");
-			final Model thisModel = deserializeGuarded(new ModelReader(this.serializedModel.getPath()));
-			this.widget.init(thisModel);
+			final Model model = deserializeGuarded(new ModelReader(this.serializedModel.getPath()));
+			this.widget.init(model);
 		}
 		else
 		{

@@ -41,34 +41,221 @@
       <entry_point TYPE="method" FQNAME="org.treebolic.Searcher void resetSearch()" />
       <entry_point TYPE="method" FQNAME="org.treebolic.Searcher boolean search(java.lang.String target)" />
       <entry_point TYPE="field" FQNAME="org.treebolic.ParcelableModel CREATOR" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicAIDLBoundService factory" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicBoundService factory" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicIntentService factory" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicMessengerService factory" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.graph.MutableGraphNode serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.clients.TreebolicClientActivityStub urlScheme" />
     </entry_points>
     <pattern value="org.treebolic.ParcelableModel" method="writeToParcel" />
+    <pattern value="treebolic.model.graph.MutableGraph" method="add" />
+    <pattern value="treebolic.model.graph.Converter" />
+    <pattern value="org.treebolic.ParcelableModel" method="describeContents" />
+    <pattern value="org.treebolic.DownloadActivity" />
+    <pattern value="treebolic.model.graph.GraphEdge" method="get" />
+    <pattern value="org.treebolic.Models" method="get" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="getBase" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="getBase" />
+    <pattern value="org.treebolic.Utils" method="getClassLoader" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="getImagesBase" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="getImagesBase" />
+    <pattern value="treebolic.model.graph.MutableGraphNode" method="getIndex" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="getInput" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="getInput" />
+    <pattern value="org.treebolic.Settings" method="getIntPref" />
+    <pattern value="treebolic.model.graph.Graph" method="getNodeToEdgesMap" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="getParameters" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="getParameters" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="getParentActivityIntent" />
+    <pattern value="org.treebolic.Utils" method="getResources" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="getStyle" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="getStyle" />
+    <pattern value="treebolic.model.graph.Graph" />
+    <pattern value="treebolic.model.graph.Graph" method="Graph" />
+    <pattern value="treebolic.model.graph.GraphEdge" />
+    <pattern value="treebolic.model.graph.GraphEdge" method="GraphEdge" />
+    <pattern value="treebolic.model.graph.Converter" method="graphToTree" />
+    <pattern value="org.treebolic.MainActivity" />
+    <pattern value="org.treebolic.Models" />
+    <pattern value="treebolic.model.graph.MutableGraph" />
+    <pattern value="org.treebolic.ProvidersActivity" />
+    <pattern value="org.treebolic.ServicesActivity" />
+    <pattern value="org.treebolic.SettingsActivity" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient.IncomingHandler" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient.IncomingHandler" method="IncomingHandler" />
+    <pattern value="org.treebolic.services.IntentFactory" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="linkTo" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="linkTo" />
+    <pattern value="org.treebolic.services.ModelFactory" method="make" />
+    <pattern value="org.treebolic.ModelFactory" method="make" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="makeClient" />
+    <pattern value="org.treebolic.services.Utils" method="makeLogProviderContext" />
+    <pattern value="treebolic.model.graph.Graph" method="makeSpanningTree" />
+    <pattern value="org.treebolic.services.IntentFactory" method="makeTreebolicIntent" />
+    <pattern value="org.treebolic.ModelFactory" />
+    <pattern value="org.treebolic.services.ModelFactory" />
+    <pattern value="org.treebolic.ModelFactory" method="ModelFactory" />
+    <pattern value="org.treebolic.services.ModelFactory" method="ModelFactory" />
+    <pattern value="treebolic.model.graph.MutableGraphNode" />
+    <pattern value="treebolic.model.graph.MutableGraphNode" method="MutableGraphNode" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onConnected" />
+    <pattern value="org.treebolic.clients.TreebolicClientActivityStub" method="onConnected" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="onCreate" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onCreate" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="onCreateOptionsMenu" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onCreateOptionsMenu" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onModel" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="onNewIntent" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="onPause" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onPause" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="onResume" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="onResume" />
+    <pattern value="org.treebolic.ParcelableModel" />
+    <pattern value="org.treebolic.Settings" method="putIntPref" />
+    <pattern value="org.treebolic.ParcelableModel" method="readSerializableModel" />
+    <pattern value="org.treebolic.Searcher" method="resetSearch" />
+    <pattern value="org.treebolic.Searcher" method="search" />
+    <pattern value="org.treebolic.Searcher" />
+    <pattern value="org.treebolic.Searcher" method="Searcher" />
+    <pattern value="org.treebolic.Models" method="set" />
+    <pattern value="org.treebolic.Settings" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="status" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="status" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="toast" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="toast" />
+    <pattern value="treebolic.model.graph.Graph" method="toString" />
+    <pattern value="treebolic.model.graph.Tree" />
+    <pattern value="treebolic.model.graph.Tree" method="Tree" />
+    <pattern value="org.treebolic.TreebolicActivity" />
+    <pattern value="org.treebolic.TreebolicActivity" method="TreebolicActivity" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService" method="TreebolicAIDLBoundService" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" />
+    <pattern value="org.treebolic.services.TreebolicBoundService" />
+    <pattern value="org.treebolic.services.TreebolicBoundService" method="TreebolicBoundService" />
+    <pattern value="org.treebolic.TreebolicClientActivity" />
+    <pattern value="org.treebolic.clients.TreebolicClientActivityStub" />
+    <pattern value="org.treebolic.TreebolicIface" />
+    <pattern value="org.treebolic.services.TreebolicIntentService" />
+    <pattern value="org.treebolic.services.TreebolicIntentService" method="TreebolicIntentService" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient" />
+    <pattern value="org.treebolic.services.TreebolicMessengerService" />
+    <pattern value="org.treebolic.services.TreebolicMessengerService" method="TreebolicMessengerService" />
+    <pattern value="org.treebolic.TreebolicModelActivity" />
+    <pattern value="org.treebolic.TreebolicModelActivity" method="TreebolicModelActivity" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="TreebolicPluginActivity" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" method="TreebolicSourceActivity" />
+    <pattern value="org.treebolic.services.ModelFactory" method="useFilesDir" />
+    <pattern value="org.treebolic.services.Utils" />
+    <pattern value="org.treebolic.Utils" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="warn" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="warn" />
+    <pattern value="org.treebolic.ParcelableModel" method="writeSerializableToParcel" />
+    <pattern value="org.treebolic.SettingsActivity.ActivePreferenceFragment" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient" method="connect" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient" method="disconnect" />
+    <pattern value="org.treebolic.DownloadActivity" method="doProcessing" />
+    <pattern value="org.treebolic.SettingsActivity.DownloadPreferenceFragment" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient.IncomingHandler" method="handleMessage" />
+    <pattern value="org.treebolic.MainActivity.PlaceholderFragment" />
+    <pattern value="org.treebolic.SettingsActivity.ServicePreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity.TextIndentPreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity.TextIndentTrePreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity.TextPairPreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity.XmlPreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity" method="isValidFragment" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="makeParameters" />
+    <pattern value="org.treebolic.MainActivity" method="onActivityResult" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService" method="onBind" />
+    <pattern value="org.treebolic.services.TreebolicBoundService" method="onBind" />
+    <pattern value="org.treebolic.services.TreebolicMessengerService" method="onBind" />
+    <pattern value="org.treebolic.SettingsActivity" method="onBuildHeaders" />
+    <pattern value="org.treebolic.MainActivity" method="onClick" />
+    <pattern value="org.treebolic.DownloadActivity" method="onCreate" />
+    <pattern value="org.treebolic.MainActivity" method="onCreate" />
+    <pattern value="org.treebolic.ProvidersActivity" method="onCreate" />
+    <pattern value="org.treebolic.ServicesActivity" method="onCreate" />
+    <pattern value="org.treebolic.SettingsActivity" method="onCreate" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" method="onCreate" />
+    <pattern value="org.treebolic.MainActivity" method="onCreateOptionsMenu" />
+    <pattern value="org.treebolic.ProvidersActivity" method="onCreateOptionsMenu" />
+    <pattern value="org.treebolic.services.TreebolicIntentService" method="onHandleIntent" />
+    <pattern value="org.treebolic.SettingsActivity" method="onIsMultiPane" />
+    <pattern value="org.treebolic.MainActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.ProvidersActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.ServicesActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.SettingsActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="onOptionsItemSelected" />
+    <pattern value="org.treebolic.MainActivity" method="onRestoreInstanceState" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" method="onRestoreInstanceState" />
+    <pattern value="org.treebolic.MainActivity" method="onResume" />
+    <pattern value="org.treebolic.MainActivity" method="onSaveInstanceState" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" method="onSaveInstanceState" />
+    <pattern value="org.treebolic.ParcelableModel" method="ParcelableModel" />
+    <pattern value="org.treebolic.DownloadActivity" method="process" />
+    <pattern value="org.treebolic.TreebolicActivity" method="query" />
+    <pattern value="org.treebolic.TreebolicModelActivity" method="query" />
+    <pattern value="org.treebolic.TreebolicActivity" method="requery" />
+    <pattern value="org.treebolic.TreebolicModelActivity" method="requery" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="requery" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient" method="requestModel" />
+    <pattern value="org.treebolic.DownloadActivity" method="start" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="TreebolicBasicActivity" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient" method="TreebolicMessengerClient" />
+    <pattern value="org.treebolic.TreebolicModelActivity" method="unmarshalArgs" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="unmarshalArgs" />
+    <pattern value="org.treebolic.SettingsActivity.XmlPreferenceFragment" method="getName" />
+    <pattern value="org.treebolic.SettingsActivity.TextIndentPreferenceFragment" method="getName" />
+    <pattern value="org.treebolic.SettingsActivity.TextIndentTrePreferenceFragment" method="getName" />
+    <pattern value="org.treebolic.SettingsActivity.TextPairPreferenceFragment" method="getName" />
+    <pattern value="org.treebolic.SettingsActivity.ActivePreferenceFragment" method="onCreate" />
+    <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" method="onCreate" />
+    <pattern value="org.treebolic.SettingsActivity.DownloadPreferenceFragment" method="onCreate" />
+    <pattern value="org.treebolic.SettingsActivity.ServicePreferenceFragment" method="onCreate" />
+    <pattern value="org.treebolic.MainActivity.PlaceholderFragment" method="onCreateView" />
+    <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" />
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
     <option name="myNullables">
       <value>
-        <list size="4">
+        <list size="10">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.Nullable" />
           <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nullable" />
           <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.Nullable" />
           <item index="3" class="java.lang.String" itemvalue="android.support.annotation.Nullable" />
+          <item index="4" class="java.lang.String" itemvalue="javax.annotation.CheckForNull" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.Nullable" />
+          <item index="6" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNullable" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.Nullable" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableDecl" />
+          <item index="9" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NullableType" />
         </list>
       </value>
     </option>
     <option name="myNotNulls">
       <value>
-        <list size="4">
+        <list size="9">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
           <item index="1" class="java.lang.String" itemvalue="javax.annotation.Nonnull" />
           <item index="2" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
           <item index="3" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
+          <item index="4" class="java.lang.String" itemvalue="androidx.annotation.NonNull" />
+          <item index="5" class="java.lang.String" itemvalue="androidx.annotation.RecentlyNonNull" />
+          <item index="6" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.qual.NonNull" />
+          <item index="7" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullDecl" />
+          <item index="8" class="java.lang.String" itemvalue="org.checkerframework.checker.nullness.compatqual.NonNullType" />
         </list>
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 (1)" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

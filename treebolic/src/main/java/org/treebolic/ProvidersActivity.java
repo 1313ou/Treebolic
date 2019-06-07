@@ -46,6 +46,7 @@ public class ProvidersActivity extends AppCompatCommonActivity
 		listView.setAdapter(adapter);
 	}
 
+	@SuppressWarnings("SameReturnValue")
 	@Override
 	public boolean onCreateOptionsMenu(final Menu menu)
 	{

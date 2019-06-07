@@ -3,34 +3,37 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT" />
+        </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="/mnt/data2/devel/android-treebolic-as/Treebolic" />
-            <option value="/mnt/data2/devel/android-treebolic-as/Treebolic/treebolic" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlue" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGlueIface" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicGraph" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicIface" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicLibModel" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicLibView" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicLib/treebolicMutable" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicAidl" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsIface" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicClientsLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicParcel" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesIface" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicServices/treebolicServicesLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/commonLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/downloadLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/fileChooserLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/guideLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/preferenceLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/searchLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/storageLib" />
-            <option value="/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/wheelLib" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/treebolic" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlueIface" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGraph" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicIface" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicLib" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicLibModel" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicLibView" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicMutable" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicAidl" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsIface" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicParcel" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/fileChooserLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/guideLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/searchLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/storageLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/wheelLib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

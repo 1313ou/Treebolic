@@ -60,14 +60,10 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	@Override
 	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
-		switch (item.getItemId())
+		if (item.getItemId() == R.id.action_query)
 		{
-			case R.id.action_query:
-				query();
-				return true;
-
-			default:
-				break;
+			query();
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -82,12 +78,12 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	@Override
 	protected Properties makeParameters()
 	{
-		final Properties theseParameters = super.makeParameters();
+		final Properties parameters = super.makeParameters();
 		if (this.pluginPkg != null)
 		{
-			theseParameters.setProperty("plugin", this.pluginPkg);
+			parameters.setProperty("plugin", this.pluginPkg);
 		}
-		return theseParameters;
+		return parameters;
 	}
 
 	// U N M A R S H A L
@@ -105,6 +101,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 
 	// Q U E R Y
 
+	@SuppressWarnings("WeakerAccess")
 	@Override
 	protected void query()
 	{

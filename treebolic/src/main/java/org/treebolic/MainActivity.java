@@ -455,10 +455,10 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	@NonNull
 	private String getFolder()
 	{
-		final File thisFolder = FileChooserActivity.getFolder(this, MainActivity.PREF_CURRENTFOLDER);
-		if (thisFolder != null)
+		final File folder = FileChooserActivity.getFolder(this, MainActivity.PREF_CURRENTFOLDER);
+		if (folder != null)
 		{
-			return thisFolder.getPath();
+			return folder.getPath();
 		}
 		return Storage.getTreebolicStorage(this).getAbsolutePath();
 	}
@@ -718,7 +718,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param source0 source
 	 */
-	@SuppressWarnings("boxing")
 	private void tryStartTreebolic(final String source0)
 	{
 		if (this.pluginProvider == null)
@@ -807,7 +806,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 *
 	 * @param fileUri XML file uri
 	 */
-	@SuppressWarnings("boxing")
 	private void tryStartTreebolic(@NonNull final Uri fileUri)
 	{
 		if (this.pluginProvider == null)
@@ -865,10 +863,10 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 * @param archiveUri archive file uri
 	 * @param zipEntry   archive entry
 	 */
-	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable"})
+	@SuppressWarnings({"UnnecessaryLocalVariable"})
 	private void tryStartTreebolicBundle(@NonNull final Uri archiveUri, final String zipEntry)
 	{
-		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri + " and zipentry " + zipEntry);
+		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri + " and zip entry " + zipEntry);
 		final String source = zipEntry; // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry;
 		if (source == null)
 		{

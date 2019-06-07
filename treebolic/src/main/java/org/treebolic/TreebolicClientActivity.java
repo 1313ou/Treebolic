@@ -247,6 +247,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return this.parameters;
 	}
 
+	@SuppressWarnings("SameReturnValue")
 	@Override
 	public String getStyle()
 	{
@@ -310,11 +311,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@NonNull
 	private Properties makeParameters()
 	{
-		final Properties theseParameters = new Properties();
-		theseParameters.setProperty("base", Settings.getStringPref(this, TreebolicIface.PREF_BASE));
-		theseParameters.setProperty("imagebase", Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE));
-		theseParameters.setProperty("settings", Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS));
-		return theseParameters;
+		final Properties parameters = new Properties();
+		parameters.setProperty("base", Settings.getStringPref(this, TreebolicIface.PREF_BASE));
+		parameters.setProperty("imagebase", Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE));
+		parameters.setProperty("settings", Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS));
+		return parameters;
 	}
 
 	// U N M A R S H A L

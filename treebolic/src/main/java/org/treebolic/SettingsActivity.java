@@ -71,11 +71,10 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	@Override
 	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
-		switch (item.getItemId())
+		if (item.getItemId() == android.R.id.home)
 		{
-			case android.R.id.home:
-				NavUtils.navigateUpFromSameTask(this);
-				return true;
+			NavUtils.navigateUpFromSameTask(this);
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -151,7 +150,6 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	public static class ActivePreferenceFragment extends PreferenceFragment
 	{
-		@SuppressWarnings({"boxing"})
 		@Override
 		public void onCreate(final Bundle savedInstanceState)
 		{
@@ -339,12 +337,12 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 		@Nullable
 		@SuppressWarnings("WeakerAccess")
-		protected String getName(final int thisIndex)
+		protected String getName(final int index)
 		{
 			final List<HashMap<String, Object>> providers = Providers.getProviders(getActivity(), false);
 			if (providers != null)
 			{
-				final HashMap<String, Object> provider = providers.get(thisIndex);
+				final HashMap<String, Object> provider = providers.get(index);
 				if (provider != null)
 				{
 					return (String) provider.get(Providers.NAME);

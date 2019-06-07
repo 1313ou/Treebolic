@@ -51,6 +51,7 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 
 	// P O S T P R O C E S S I N G
 
+	@SuppressWarnings("SameReturnValue")
 	@Override
 	protected boolean doProcessing()
 	{

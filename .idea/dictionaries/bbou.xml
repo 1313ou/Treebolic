@@ -3,22 +3,42 @@
     <words>
       <w>actionbutton</w>
       <w>androidstudio</w>
+      <w>asbytearray</w>
+      <w>currentfolder</w>
       <w>deserializing</w>
+      <w>filechooser</w>
+      <w>firstrun</w>
       <w>forwardto</w>
       <w>graphnet</w>
       <w>hashmap</w>
+      <w>iface</w>
+      <w>imagebase</w>
+      <w>imagemethod</w>
+      <w>isplugin</w>
+      <w>makemodel</w>
+      <w>mimetype</w>
       <w>mimetypes</w>
       <w>nineoldandroids</w>
       <w>nullclient</w>
       <w>nullquery</w>
       <w>parcelab</w>
+      <w>parcelization</w>
+      <w>parentactivity</w>
+      <w>pkgs</w>
       <w>plantae</w>
+      <w>pluginpkg</w>
+      <w>requery</w>
       <w>snackbar</w>
       <w>splitbar</w>
+      <w>startswith</w>
+      <w>statusbar</w>
       <w>textindent</w>
       <w>textindenttre</w>
       <w>textpair</w>
+      <w>treebolic</w>
+      <w>unmarshal</w>
       <w>unparcel</w>
+      <w>urlscheme</w>
     </words>
   </dictionary>
 </component>

@@ -68,21 +68,22 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 
 	// T R E E B O L I C C O N T E X T
 
+	@SuppressWarnings("WeakerAccess")
 	@Override
 	protected Properties makeParameters()
 	{
-		final Properties theseParameters = super.makeParameters();
+		final Properties parameters = super.makeParameters();
 
 		if (this.source != null)
 		{
-			theseParameters.setProperty("source", this.source);
-			theseParameters.setProperty("doc", this.source);
+			parameters.setProperty("source", this.source);
+			parameters.setProperty("doc", this.source);
 		}
 		if (this.providerName != null)
 		{
-			theseParameters.setProperty("provider", this.providerName);
+			parameters.setProperty("provider", this.providerName);
 		}
-		return theseParameters;
+		return parameters;
 	}
 
 	// U N M A R S H A L
@@ -92,6 +93,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 	 *
 	 * @param intent intent
 	 */
+	@SuppressWarnings("WeakerAccess")
 	@Override
 	protected void unmarshalArgs(@NonNull final Intent intent)
 	{

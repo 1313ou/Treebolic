@@ -132,6 +132,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 
 	// C O N S T R U C T O R
 
+	@SuppressWarnings("WeakerAccess")
 	protected TreebolicBasicActivity(final int menuId0)
 	{
 		this.menuId = menuId0;
@@ -140,6 +141,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 
 	// L I F E C Y C L E
 
+	@SuppressWarnings("WeakerAccess")
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
@@ -271,6 +273,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		return super.onCreateOptionsMenu(menu);
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	@Override
 	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
@@ -643,21 +646,21 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	@SuppressWarnings("WeakerAccess")
 	protected Properties makeParameters()
 	{
-		final Properties theseParameters = new Properties();
+		final Properties parameters = new Properties();
 		if (this.base != null)
 		{
-			theseParameters.setProperty("base", this.base);
+			parameters.setProperty("base", this.base);
 		}
 		if (this.imageBase != null)
 		{
-			theseParameters.setProperty("imagebase", this.imageBase);
+			parameters.setProperty("imagebase", this.imageBase);
 		}
 		if (this.settings != null)
 		{
-			theseParameters.setProperty("settings", this.settings);
+			parameters.setProperty("settings", this.settings);
 		}
-		theseParameters.setProperty("debug", Boolean.toString(BuildConfig.DEBUG));
-		return theseParameters;
+		parameters.setProperty("debug", Boolean.toString(BuildConfig.DEBUG));
+		return parameters;
 	}
 
 	/**
