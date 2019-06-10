@@ -6,14 +6,13 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.NavUtils;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +20,8 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.treebolic.clients.TreebolicAIDLBoundClient;
 import org.treebolic.clients.TreebolicBoundClient;
@@ -403,11 +404,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
 		*/
-		final String base = null;
-		final String imageBase = null;
-		final String settings = null;
-		final Intent forward = null;
-		this.client.requestModel(source, base, imageBase, settings, forward);
+		this.client.requestModel(source, null, null, null, null);
 	}
 
 	@Override
@@ -461,7 +458,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		// reset current search if any
 		this.widget.search(CMD_RESET);
 
-		if (submit || query.length() > SEARCH_TRIGGER_LEVEL)
+		if (submit /*|| query.length() > SEARCH_TRIGGER_LEVEL*/)
 		{
 			// query applies to source: search is a requery
 			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -469,10 +466,10 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			if (SearchSettings.SCOPE_SOURCE.equals(scope))
 			{
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
-				if (submit)
-				{
+				//if (submit)
+				//{
 					query(query);
-				}
+				//}
 				return;
 			}
 

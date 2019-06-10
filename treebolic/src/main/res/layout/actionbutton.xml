@@ -18,7 +18,7 @@
 		android:visibility="invisible"
 		tools:text="@string/source"/>
 
-	<android.support.design.widget.FloatingActionButton
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
 		android:id="@+id/treebolicButton"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

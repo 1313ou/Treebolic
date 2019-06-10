@@ -18,86 +18,80 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____mnt_data2_devel_android_treebolic_as_TreebolicSupportLibs_downloadLib_libs_commons_compress_proguard_1_8_1_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____mnt_data2_devel_android_treebolic_as_TreebolicSupportLibs_wheelLib_libs_nineoldandroids_2_2_0_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____mnt_data2_devel_android_treebolic_as_Treebolic_treebolic_libs_treebolic_provider_text_indent_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____mnt_data2_devel_android_treebolic_as_Treebolic_treebolic_libs_treebolic_provider_text_indent_tre_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____mnt_data2_devel_android_treebolic_as_Treebolic_treebolic_libs_treebolic_provider_text_pair_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle____local_aars____mnt_data2_devel_android_treebolic_as_Treebolic_treebolic_libs_treebolic_provider_xml_dom_jar_unspecified_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_asynclayoutinflater_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_collections_28_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_coordinatorlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cursoradapter_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customview_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_documentfile_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_drawerlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_interpolator_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_loader_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_localbroadcastmanager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_print_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_slidingpanelayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_28_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v13_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_swiperefreshlayout_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_2_2_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_2_2_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_exposed_instrumentation_api_publish_0_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_rules_0_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_0_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_versionedparcelable_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_viewpager_28_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_annotation_javax_annotation_api_1_2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
+    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="renames (this,the dropped)">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_0_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v13_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/bbou.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/bbou.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Treebolic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Treebolic.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent-tre.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent-tre.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-pair.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-pair.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-xml-dom.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-xml-dom.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Permissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Permissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ServicesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ServicesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/actionbutton.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/actionbutton.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/toolbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/toolbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/menu/treebolic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/menu/treebolic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/menu/treebolic_plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/menu/treebolic_plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" afterDir="false" />
     </list>
     <ignored path="Treebolic.iws" />
@@ -471,12 +465,23 @@
     <favorites_list name="Treebolic" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="638" column="39" selection-start-line="638" selection-start-column="39" selection-end-line="638" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>org.treebolic.filechooser</find>
-      <find>filechooser</find>
       <find>deprec</find>
       <find>c</find>
       <find>comp</find>
@@ -505,6 +510,8 @@
       <find>theURL</find>
       <find>the\w</find>
       <find>them-z</find>
+      <find>this[A-Z]</find>
+      <find>isPluginBool</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/treebolic</dir>
@@ -524,6 +531,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="PUSH_TAGS">
       <GitPushTagMode />
     </option>
@@ -531,7 +543,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/progress.xml" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicClientActivityStub.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicParcel/build.gradle" />
@@ -564,29 +575,30 @@
         <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values/attrs.xml" />
         <option value="$PROJECT_DIR$/treebolic/artwork/make-artwork.sh" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicAIDLBoundService.java" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicBoundService.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicIntentService.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicMessengerClient.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicMessengerService.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/Utils.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/ModelFactory.java" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicParcel/src/main/java/org/treebolic/ParcelableModel.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
       </list>
     </option>
   </component>
   <component name="NamedScopeManager">
-    <scope name="Analyzed" pattern="file[treebolic]:src//*||file[treebolic]:build.gradle||file[treebolic]:lint.xml||file[Treebolic]:build.gradle||file[Treebolic]:local.properties||file[Treebolic]:settings.gradle||file[treebolicServicesIface]:src//*||file[treebolicServicesIface]:build.gradle||file[treebolicParcel]:src//*||file[treebolicParcel]:build.gradle||file[treebolicIface]:src//*||file[treebolicIface]:build.gradle||file[treebolicClientsIface]:src//*||file[treebolicClientsIface]:build.gradle||file[treebolicAidl]:src//*||file[treebolicAidl]:build.gradle||file[treebolicClientsLib]:src//*||file[treebolicClientsLib]:build.gradle||file[treebolicGraph]:src//*||file[treebolicGraph]:build.gradle||file[treebolicServicesLib]:build.gradle||file[treebolicServicesLib]:build//*||file[treebolicServicesLib]:lint.xml||file[treebolicClientsLib]:lint.xml||file[treebolicClientsLib]:build/generated/source/buildConfig/debug//*||file[treebolicClientsIface]:build/generated/source/buildConfig/debug//*||file[treebolicAidl]:build/generated/aidl_source_output_dir/debug/compileDebugAidl/out//*||file[treebolicAidl]:build/generated/source/buildConfig/debug//*||file[treebolic]:build/generated/source/buildConfig/debug//*||file[treebolicGraph]:build/generated/source/buildConfig/debug//*||file[treebolicIface]:build/generated/source/buildConfig/debug//*||file[treebolicParcel]:build/generated/source/buildConfig/debug//*||file[treebolicServicesIface]:build/generated/source/buildConfig/debug//*||file[treebolicServicesLib]:src/main//*||file[treebolicServicesIface]:lint.xml||file[treebolicIface]:lint.xml||file[Treebolic]:gradle.properties||file[treebolicAidl]:lint.xml||file[treebolicClientsIface]:lint.xml||file[treebolicGraph]:lint.xml||file[treebolicParcel]:lint.xml" />
+    <scope name="Analyzed" pattern="(file[treebolic]:src//*||file[treebolic]:build.gradle||file[treebolic]:lint.xml||file[Treebolic]:build.gradle||file[Treebolic]:local.properties||file[Treebolic]:settings.gradle||file[treebolicServicesIface]:src//*||file[treebolicServicesIface]:build.gradle||file[treebolicParcel]:src//*||file[treebolicParcel]:build.gradle||file[treebolicIface]:src//*||file[treebolicIface]:build.gradle||file[treebolicClientsIface]:src//*||file[treebolicClientsIface]:build.gradle||file[treebolicAidl]:src//*||file[treebolicAidl]:build.gradle||file[treebolicClientsLib]:src//*||file[treebolicClientsLib]:build.gradle||file[treebolicGraph]:src//*||file[treebolicGraph]:build.gradle||file[treebolicServicesLib]:build.gradle||file[treebolicServicesLib]:build//*||file[treebolicServicesLib]:lint.xml||file[treebolicClientsLib]:lint.xml||file[treebolicClientsLib]:build/generated/source/buildConfig/debug//*||file[treebolicClientsIface]:build/generated/source/buildConfig/debug//*||file[treebolicAidl]:build/generated/aidl_source_output_dir/debug/compileDebugAidl/out//*||file[treebolicAidl]:build/generated/source/buildConfig/debug//*||file[treebolic]:build/generated/source/buildConfig/debug//*||file[treebolicGraph]:build/generated/source/buildConfig/debug//*||file[treebolicIface]:build/generated/source/buildConfig/debug//*||file[treebolicParcel]:build/generated/source/buildConfig/debug//*||file[treebolicServicesIface]:build/generated/source/buildConfig/debug//*||file[treebolicServicesLib]:src/main//*||file[treebolicServicesIface]:lint.xml||file[treebolicIface]:lint.xml||file[Treebolic]:gradle.properties||file[treebolicAidl]:lint.xml||file[treebolicClientsIface]:lint.xml||file[treebolicGraph]:lint.xml||file[treebolicParcel]:lint.xml)&amp;&amp;!file[treebolic]:src/main/assets/help/fr-index.html" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="51" />
@@ -624,8 +636,8 @@
     <panes>
       <pane id="ProjectPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -643,7 +655,7 @@
     <property name="com.android.hv.first.comp.width" value="0" />
     <property name="com.android.hv.last.comp.width" value="0" />
     <property name="device.picker.selection" value="Samsung_S7_edge_API_28" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dist/releases/gen" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TreebolicSupportLibs" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -925,13 +937,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491460403752</updated>
-    </task>
-    <task id="LOCAL-00002" summary="rework">
-      <created>1493710042006</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1493710042006</updated>
     </task>
     <task id="LOCAL-00003" summary="fixes">
       <created>1493730649020</created>
@@ -1269,7 +1274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516343695964</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="renames (this,the dropped)">
+      <created>1559917417436</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1559917417437</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1283,8 +1295,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="27" width="1869" height="1173" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15106732" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11384784" />
       <window_info id="Structure" order="1" weight="0.16657504" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" side_tool="true" weight="0.24973376" />
@@ -1294,22 +1307,22 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.7345375" visible="true" weight="0.34931508" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.73399013" weight="0.34931508" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49574015" weight="0.39803922" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924527" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.26546252" side_tool="true" visible="true" weight="0.34931508" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.50246304" side_tool="true" weight="0.3816047" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019157" side_tool="true" weight="0.49215686" />
       <window_info anchor="bottom" id="Android Monitor" order="10" sideWeight="0.7385517" weight="0.27659574" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.5982485" weight="0.2637255" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.59660643" weight="0.2632094" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4958994" weight="0.32843137" />
       <window_info anchor="bottom" id="Gradle Console" order="13" sideWeight="0.24526873" side_tool="true" weight="0.35359675" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49808428" weight="0.3816047" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49753696" visible="true" weight="0.3816047" />
       <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.48604268" weight="0.47843137" />
-      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.49972633" weight="0.23679061" />
+      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.49863163" weight="0.23679061" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24920128" />
@@ -1337,7 +1350,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="button source" />
     <MESSAGE value="popup color&#10;version++" />
     <MESSAGE value="fixes deploy&#10;fixes fab" />
     <MESSAGE value="openedittext" />
@@ -1362,7 +1374,8 @@
     <MESSAGE value="lint" />
     <MESSAGE value="lint&#10;nullable analysis" />
     <MESSAGE value="artwork make" />
-    <option name="LAST_COMMIT_MESSAGE" value="artwork make" />
+    <MESSAGE value="renames (this,the dropped)" />
+    <option name="LAST_COMMIT_MESSAGE" value="renames (this,the dropped)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1377,9 +1390,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGraph/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlueIface/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1552,13 +1562,6 @@
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/drawable-mdpi/ic_splash_text.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="341" column="44" selection-start-line="341" selection-start-column="44" selection-end-line="341" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/java/org/treebolic/AppCompatCommonActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
@@ -1579,18 +1582,6 @@
           <caret line="90" column="28" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="28" />
           <folding>
             <element signature="e#2542#2575#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="276" selection-start-line="276" selection-end-line="276" />
-          <folding>
-            <element signature="e#2787#2820#0" expanded="true" />
-            <element signature="e#2951#2984#0" expanded="true" />
-            <element signature="e#6387#6420#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1660,18 +1651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="250" selection-start-line="250" selection-end-line="250" />
-          <folding>
-            <element signature="e#5724#5760#0" expanded="true" />
-            <element signature="e#5761#5762#0" expanded="true" />
-            <element signature="e#5797#5798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -1731,13 +1710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="374" column="49" lean-forward="true" selection-start-line="374" selection-start-column="49" selection-end-line="374" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="39">
@@ -1747,8 +1719,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="377">
+          <caret line="29" selection-start-line="28" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="496" column="7" selection-start-line="496" selection-start-column="7" selection-end-line="496" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15541#15542#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="231" selection-start-line="231" selection-end-line="231" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="475" column="18" selection-start-line="475" selection-start-column="18" selection-end-line="475" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#15223#15224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="638" column="39" selection-start-line="638" selection-start-column="39" selection-end-line="638" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

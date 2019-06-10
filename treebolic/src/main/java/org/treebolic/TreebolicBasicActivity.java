@@ -9,14 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.NavUtils;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +17,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import org.treebolic.guide.AboutActivity;
 import org.treebolic.guide.HelpActivity;
@@ -35,6 +29,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
 import treebolic.IContext;
 import treebolic.Widget;
 import treebolic.glue.component.TreebolicThread;
@@ -493,7 +494,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 
 	static private final String CMD_CONTINUE = "CONTINUE";
 
-	static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
+	// static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
 
 	/**
 	 * Search pending flag
@@ -518,7 +519,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		// reset current search if any
 		resetSearch();
 
-		if (submit || query.length() > SEARCH_TRIGGER_LEVEL)
+		if (submit /*|| query.length() > SEARCH_TRIGGER_LEVEL*/)
 		{
 			// query applies to source: search is a requery
 			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
@@ -526,10 +527,10 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 			if (SearchSettings.SCOPE_SOURCE.equals(scope))
 			{
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
-				if (submit)
-				{
-					requery(query);
-				}
+				//if (submit)
+				//{
+				requery(query);
+				//}
 				return;
 			}
 
@@ -682,8 +683,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	 */
 	private void snackbar(@NonNull final String message, final int duration)
 	{
-		runOnUiThread(() ->
-		{
+		runOnUiThread(() -> {
 			final Snackbar snack = Snackbar.make(TreebolicBasicActivity.this.widget, message, duration);
 			final android.view.View view = snack.getView();
 			view.setBackgroundColor(ContextCompat.getColor(TreebolicBasicActivity.this, R.color.snackbar_color));

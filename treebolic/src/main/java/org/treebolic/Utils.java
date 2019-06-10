@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 @SuppressWarnings("WeakerAccess")
 public class Utils

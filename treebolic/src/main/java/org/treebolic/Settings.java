@@ -8,8 +8,8 @@ import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Build;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -90,7 +90,6 @@ public class Settings
 	 * @param context locatorContext
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	@SuppressWarnings("boxing")
 	static public void setDefaults(@NonNull final Context context)
 	{
 		// create providers
@@ -102,7 +101,9 @@ public class Settings
 			for (int i = 0; i < providers.size(); i++)
 			{
 				final HashMap<String, Object> provider = providers.get(i);
-				if (provider.get(Providers.ISPLUGIN).equals(true))
+				final Boolean isPluginBool = (Boolean) provider.get(Providers.ISPLUGIN);
+				final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+				if (isPlugin)
 				{
 					continue;
 				}
@@ -140,7 +141,8 @@ public class Settings
 		final Editor defaultEditor = defaultSharedPrefs.edit();
 		SharedPreferences providerSharedPrefs;
 
-		final Boolean isPlugin = (Boolean) provider.get(Providers.ISPLUGIN);
+		final Boolean isPluginBool = (Boolean) provider.get(Providers.ISPLUGIN);
+		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
 		if (isPlugin)
 		{
 			final String pkg = (String) provider.get(Providers.PACKAGE);

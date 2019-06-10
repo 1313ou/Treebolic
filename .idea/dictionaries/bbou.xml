@@ -6,6 +6,7 @@
       <w>asbytearray</w>
       <w>currentfolder</w>
       <w>deserializing</w>
+      <w>doubletap</w>
       <w>filechooser</w>
       <w>firstrun</w>
       <w>forwardto</w>
@@ -15,6 +16,7 @@
       <w>imagebase</w>
       <w>imagemethod</w>
       <w>isplugin</w>
+      <w>keyw</w>
       <w>makemodel</w>
       <w>mimetype</w>
       <w>mimetypes</w>
@@ -28,6 +30,10 @@
       <w>plantae</w>
       <w>pluginpkg</w>
       <w>requery</w>
+      <w>scaledown</w>
+      <w>scaleone</w>
+      <w>scaleup</w>
+      <w>sectionhead</w>
       <w>snackbar</w>
       <w>splitbar</w>
       <w>startswith</w>
@@ -39,6 +45,10 @@
       <w>unmarshal</w>
       <w>unparcel</w>
       <w>urlscheme</w>
+      <w>wordnet</w>
+      <w>zoomin</w>
+      <w>zoomone</w>
+      <w>zoomout</w>
     </words>
   </dictionary>
 </component>

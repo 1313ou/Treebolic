@@ -13,10 +13,12 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.ActionBar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.NavUtils;
+import androidx.appcompat.app.ActionBar;
+
 import android.view.MenuItem;
 
 import java.util.HashMap;
@@ -120,8 +122,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	/**
 	 * A preference value change listener that updates the preference's summary to reflect its new value.
 	 */
-	private final Preference.OnPreferenceChangeListener listener = (preference, value) ->
-	{
+	private final Preference.OnPreferenceChangeListener listener = (preference, value) -> {
 		// set the summary to the value's simple string representation.
 		final String stringValue = value == null ? "" : value.toString();
 		preference.setSummary(stringValue);
@@ -165,7 +166,8 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 			// shared preferences
 			final PreferenceManager prefManager = getPreferenceManager();
-			final Boolean isPlugin = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
+			final Boolean isPluginBool = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
+			final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
 			if (!isPlugin)
 			{
 				prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME));
@@ -191,14 +193,15 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			{
 				try
 				{
-					if ((Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN))
+					if (isPlugin)
 					{
 						final Drawable drawable = getActivity().getPackageManager().getApplicationIcon((String) SettingsActivity.provider.get(Providers.PACKAGE));
 						iconPref.setIcon(drawable);
 					}
 					else
 					{
-						final int resId = (Integer) SettingsActivity.provider.get(Providers.ICON);
+						final Integer resIdInt = (Integer) SettingsActivity.provider.get(Providers.ICON);
+						final int resId = resIdInt == null ? 0 : resIdInt;
 						iconPref.setIcon(resId);
 					}
 				}
@@ -223,9 +226,9 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			if (isPlugin)
 			{
 				final Preference button = findPreference("button_provider_settings");
-				button.setOnPreferenceClickListener(arg0 ->
-				{
+				button.setOnPreferenceClickListener(arg0 -> {
 					final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
+					assert pkg != null;
 					final String activityName = pkg + ".SettingsActivity";
 					final Intent intent = new Intent();
 					intent.setComponent(new ComponentName(pkg, activityName));

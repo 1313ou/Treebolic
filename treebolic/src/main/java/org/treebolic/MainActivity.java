@@ -8,14 +8,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -349,7 +351,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	// S E L E C T I O N   A C T I V I T Y   R E T U R N S (source, bundle, serialized)
 
 	@Override
-	protected void onActivityResult(final int requestCode, final int resultCode, @NonNull final Intent returnIntent)
+	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent returnIntent)
 	{
 		// handle selection of input by other activity which returns selected input
 		switch (requestCode)
@@ -357,7 +359,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			case REQUEST_FILE_CODE:
 			case REQUEST_BUNDLE_CODE:
 			case REQUEST_SERIALIZED_CODE:
-				if (resultCode == AppCompatActivity.RESULT_OK)
+				if (resultCode == AppCompatActivity.RESULT_OK && returnIntent != null)
 				{
 					final Uri fileUri = returnIntent.getData();
 					if (fileUri == null)
@@ -497,7 +499,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			for (int position = 0; position < this.adapter.getCount(); position++)
 			{
 				@SuppressWarnings("unchecked") final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
-				if (provider.get(Providers.NAME).equals(name))
+				if (name.equals(provider.get(Providers.NAME)))
 				{
 					this.spinner.setSelection(position);
 				}
@@ -634,24 +636,25 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				final RadioButton radioButton = new RadioButton(this);
 				radioButton.setText((String) service.get(Services.LABEL));
 				final String drawableRef = (String) service.get(Services.DRAWABLE);
-				final String[] fields = drawableRef.split("#");
-				final int index = Integer.parseInt(fields[1]);
-				final Drawable drawable = Services.loadIcon(getPackageManager(), fields[0], index);
-				radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+				if (drawableRef != null)
+				{
+					final String[] fields = drawableRef.split("#");
+					final int index = Integer.parseInt(fields[1]);
+					final Drawable drawable = Services.loadIcon(getPackageManager(), fields[0], index);
+					radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
+				}
 				radioButton.setCompoundDrawablePadding(10);
 				radioButton.setTag(service);
 				input.addView(radioButton);
 			}
 		}
 		alert.setView(input);
-		alert.setNegativeButton(R.string.action_cancel, (dialog, whichButton) ->
-		{
+		alert.setNegativeButton(R.string.action_cancel, (dialog, whichButton) -> {
 			// canceled.
 		});
 
 		final AlertDialog dialog = alert.create();
-		input.setOnCheckedChangeListener((group, checkedId) ->
-		{
+		input.setOnCheckedChangeListener((group, checkedId) -> {
 			dialog.dismiss();
 
 			int childCount = input.getChildCount();
@@ -724,7 +727,8 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		{
 			return;
 		}
-		final Boolean isPlugin = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
+		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
+		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
 		if (isPlugin)
 		{
 			tryStartTreebolicPlugin(source0);
@@ -813,7 +817,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			return;
 		}
 		final String source = fileUri.toString();
-		if (source == null || source.isEmpty())
+		if (source.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
 			return;
@@ -829,9 +833,10 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
 
 		final String pkg = (String) this.pluginProvider.get(Providers.PACKAGE);
-		final Boolean isPlugin = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
 		final String style = (String) this.pluginProvider.get(Providers.STYLE);
 		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
+		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
+		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
 
 		final Intent intent = isPlugin ? //
 				TreebolicPluginActivity.makeTreebolicIntent(this, pkg, provider, urlScheme, source, base, imageBase, settings, style) : TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
@@ -885,9 +890,10 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
 
 		final String pkg = (String) this.pluginProvider.get(Providers.PACKAGE);
-		final Boolean isPlugin = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
 		final String style = (String) this.pluginProvider.get(Providers.STYLE);
 		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
+		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
+		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
 
 		final Intent intent = isPlugin ? //
 				TreebolicPluginActivity.makeTreebolicIntent(this, pkg, provider, urlScheme, source, base, imageBase, settings, style) : TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
