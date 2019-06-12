@@ -515,13 +515,13 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	/**
 	 * Make adapter
 	 *
-	 * @param itemRes item layout
-	 * @param from    from key
-	 * @param to      to res id
+	 * @param itemLayoutRes item layout
+	 * @param from          from key
+	 * @param to            to res id
 	 * @return base adapter
 	 */
 	@NonNull
-	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") @LayoutRes final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
+	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
 	{
 		// data
 		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, false);
@@ -533,7 +533,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		providers.add(makeRescanDummy());
 
 		// adapter
-		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemRes, from, to)
+		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemLayoutRes, from, to)
 		{
 			@Override
 			public void setViewImage(@NonNull final ImageView imageView, final String pkg)

@@ -17,22 +17,12 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="lint&#10;reformat&#10;annotations">
-      <change afterPath="$PROJECT_DIR$/.idea/copyright/treebolic.xml" afterDir="false" />
+    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="copyright">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Searcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterDir="false" />
     </list>
     <ignored path="Treebolic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -405,17 +395,58 @@
     <favorites_list name="Treebolic" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6630">
-              <caret line="519" column="99" selection-start-line="519" selection-start-column="99" selection-end-line="519" selection-end-column="99" />
+            <state relative-caret-position="206">
+              <caret line="523" column="104" selection-start-line="523" selection-start-column="104" selection-end-line="523" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13273#13312#0" expanded="true" />
-                <element signature="e#13343#13382#0" expanded="true" />
-                <element signature="e#13404#13443#0" expanded="true" />
+                <element signature="e#13345#13384#0" expanded="true" />
+                <element signature="e#13415#13454#0" expanded="true" />
+                <element signature="e#13476#13515#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+              <folding>
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#780#781#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="70" column="138" selection-start-line="70" selection-start-column="138" selection-end-line="70" selection-end-column="138" />
+              <folding>
+                <element signature="e#4190#4229#0" expanded="true" />
+                <element signature="e#4297#4336#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="312" column="147" selection-start-line="312" selection-start-column="147" selection-end-line="312" selection-end-column="147" />
+              <folding>
+                <element signature="e#10123#10162#0" expanded="true" />
+                <element signature="e#10193#10232#0" expanded="true" />
+                <element signature="e#10254#10293#0" expanded="true" />
+                <element signature="e#10310#10349#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -533,9 +564,9 @@
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/java/org/treebolic/download/DownloadActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/Models.java" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
       </list>
     </option>
@@ -577,31 +608,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="treebolic" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="treebolic" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
-              <item name="treebolic" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="treebolic" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -900,13 +910,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491460403752</updated>
-    </task>
-    <task id="LOCAL-00006" summary="rebuild&#10;snackbar">
-      <created>1493801975051</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1493801975051</updated>
     </task>
     <task id="LOCAL-00007" summary="snackbar color">
       <created>1493884192330</created>
@@ -1244,7 +1247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560320091966</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="copyright">
+      <created>1560323651344</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1560323651344</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1258,8 +1268,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="27" width="1869" height="1173" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14504652" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14504652" />
       <window_info id="Structure" order="1" weight="0.16657504" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" side_tool="true" weight="0.24973376" />
@@ -1269,7 +1280,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.40790513" weight="0.34637964" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.40790513" visible="true" weight="0.34637964" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4323725" weight="0.39530334" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -1279,10 +1290,10 @@
       <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.6666667" side_tool="true" weight="0.41585127" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019157" side_tool="true" weight="0.49215686" />
       <window_info anchor="bottom" id="Android Monitor" order="10" sideWeight="0.7385517" weight="0.27659574" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.41761827" visible="true" weight="0.26125243" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.41761827" weight="0.26125243" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4958994" weight="0.32843137" />
       <window_info anchor="bottom" id="Gradle Console" order="13" sideWeight="0.24526873" side_tool="true" weight="0.35359675" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49753696" weight="0.28066733" />
+      <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49753696" weight="0.40606654" />
       <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.48604268" weight="0.47843137" />
       <window_info anchor="bottom" id="Build" order="16" sideWeight="0.33333334" weight="0.2964775" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -1312,7 +1323,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="minor" />
     <MESSAGE value="update data" />
     <MESSAGE value="main layout&#10;fab" />
     <MESSAGE value="trim&#10;" />
@@ -1337,7 +1347,8 @@
     <MESSAGE value="androidx&#10;lint" />
     <MESSAGE value="androidx&#10;lint&#10;data" />
     <MESSAGE value="lint&#10;reformat&#10;annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="lint&#10;reformat&#10;annotations" />
+    <MESSAGE value="copyright" />
+    <option name="LAST_COMMIT_MESSAGE" value="copyright" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1712,16 +1723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
-          <folding>
-            <element signature="e#1270#1306#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/Models.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1732,49 +1733,63 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/Annotation Inference Report_2">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="312" selection-start-line="312" selection-end-line="312" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="34" column="44" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
-          <folding>
-            <element signature="e#2103#2136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="141" column="137" selection-start-line="141" selection-start-column="137" selection-end-line="141" selection-end-column="137" />
-          <folding>
-            <element signature="e#4118#4157#0" expanded="true" />
-            <element signature="e#4225#4264#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/copyright/treebolic.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicSourceActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
+          <folding>
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#780#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Services.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="70" column="138" selection-start-line="70" selection-start-column="138" selection-end-line="70" selection-end-column="138" />
+          <folding>
+            <element signature="e#4190#4229#0" expanded="true" />
+            <element signature="e#4297#4336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="312" column="147" selection-start-line="312" selection-start-column="147" selection-end-line="312" selection-end-column="147" />
+          <folding>
+            <element signature="e#10123#10162#0" expanded="true" />
+            <element signature="e#10193#10232#0" expanded="true" />
+            <element signature="e#10254#10293#0" expanded="true" />
+            <element signature="e#10310#10349#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6630">
-          <caret line="519" column="99" selection-start-line="519" selection-start-column="99" selection-end-line="519" selection-end-column="99" />
+        <state relative-caret-position="206">
+          <caret line="523" column="104" selection-start-line="523" selection-start-column="104" selection-end-line="523" selection-end-column="104" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13273#13312#0" expanded="true" />
-            <element signature="e#13343#13382#0" expanded="true" />
-            <element signature="e#13404#13443#0" expanded="true" />
+            <element signature="e#13345#13384#0" expanded="true" />
+            <element signature="e#13415#13454#0" expanded="true" />
+            <element signature="e#13476#13515#0" expanded="true" />
           </folding>
         </state>
       </provider>

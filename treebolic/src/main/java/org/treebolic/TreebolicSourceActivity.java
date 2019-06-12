@@ -36,9 +36,9 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 
 	// C O N S T R U C T O R
 
-	public TreebolicSourceActivity(@MenuRes int menuId0)
+	public TreebolicSourceActivity(@MenuRes int menuRes)
 	{
-		super(menuId0);
+		super(menuRes);
 	}
 
 	// L I F E C Y C L E

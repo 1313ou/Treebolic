@@ -303,20 +303,20 @@ public class Providers
 	 * Make adapter
 	 *
 	 * @param context locatorContext
-	 * @param itemRes item layout
+	 * @param itemLayoutRes item layout
 	 * @param from    from key
 	 * @param to      to res id
 	 * @param rescan  rescan list
 	 * @return base adapter
 	 */
 	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, rescan);
 
 		// adapter
-		return makeAdapter(context, providers, itemRes, from, to);
+		return makeAdapter(context, providers, itemLayoutRes, from, to);
 	}
 
 	/**

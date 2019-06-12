@@ -65,14 +65,14 @@ public class Services
 	 *
 	 * @param packageManager package manager
 	 * @param packageName    package name
-	 * @param iconId         icon id
+	 * @param iconRes         icon id
 	 * @return drawable
 	 */
-	static public Drawable loadIcon(@NonNull final PackageManager packageManager, final String packageName, @DrawableRes final int iconId)
+	static public Drawable loadIcon(@NonNull final PackageManager packageManager, final String packageName, @DrawableRes final int iconRes)
 	{
-		if (iconId != 0)
+		if (iconRes != 0)
 		{
-			return packageManager.getDrawable(packageName, iconId, null);
+			return packageManager.getDrawable(packageName, iconRes, null);
 		}
 		return packageManager.getDefaultActivityIcon();
 	}
@@ -81,14 +81,14 @@ public class Services
 	 * Load label
 	 *
 	 * @param packageName package name
-	 * @param labelId     label id
+	 * @param labelRes     label id
 	 * @return label
 	 */
-	static private String loadText(@NonNull final PackageManager packageManager, final String packageName, @StringRes final int labelId)
+	static private String loadText(@NonNull final PackageManager packageManager, final String packageName, @StringRes final int labelRes)
 	{
-		if (labelId != 0)
+		if (labelRes != 0)
 		{
-			final CharSequence label = packageManager.getText(packageName, labelId, null);
+			final CharSequence label = packageManager.getText(packageName, labelRes, null);
 			return label.toString();
 		}
 		return "?";
@@ -138,12 +138,12 @@ public class Services
 	 * Make adapter
 	 *
 	 * @param context locatorContext
-	 * @param itemRes item layout
+	 * @param itemLayoutRes item layout
 	 * @param from    from key
 	 * @param to      to res id
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> services = Services.getServices(context, rescan);
@@ -157,7 +157,7 @@ public class Services
 		}
 
 		// fill in the grid_item layout
-		return new SimpleAdapter(context, services, itemRes, from, to)
+		return new SimpleAdapter(context, services, itemLayoutRes, from, to)
 		{
 			@Override
 			public void setViewImage(@NonNull final ImageView v, @NonNull final String value)
