@@ -5,8 +5,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ServiceInfo;
 import android.graphics.drawable.Drawable;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -15,6 +13,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import androidx.annotation.DrawableRes;
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 
 /**
  * List of Services
@@ -60,7 +64,7 @@ public class Services
 	 * @param iconId         icon id
 	 * @return drawable
 	 */
-	static public Drawable loadIcon(@NonNull final PackageManager packageManager, final String packageName, final int iconId)
+	static public Drawable loadIcon(@NonNull final PackageManager packageManager, final String packageName, @DrawableRes final int iconId)
 	{
 		if (iconId != 0)
 		{
@@ -76,7 +80,7 @@ public class Services
 	 * @param labelId     label id
 	 * @return label
 	 */
-	static private String loadText(@NonNull final PackageManager packageManager, final String packageName, final int labelId)
+	static private String loadText(@NonNull final PackageManager packageManager, final String packageName, @StringRes final int labelId)
 	{
 		if (labelId != 0)
 		{
@@ -135,7 +139,7 @@ public class Services
 	 * @param to      to res id
 	 * @return base adapter
 	 */
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> services = Services.getServices(context, rescan);

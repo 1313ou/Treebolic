@@ -1,14 +1,14 @@
 package org.treebolic;
 
 import android.content.Context;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Properties;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import treebolic.IContext;
 import treebolic.model.Model;
 import treebolic.provider.IProvider;

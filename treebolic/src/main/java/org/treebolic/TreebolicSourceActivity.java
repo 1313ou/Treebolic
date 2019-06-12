@@ -2,10 +2,12 @@ package org.treebolic;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import java.util.Properties;
+
+import androidx.annotation.MenuRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 {
@@ -30,7 +32,7 @@ public abstract class TreebolicSourceActivity extends TreebolicBasicActivity
 
 	// C O N S T R U C T O R
 
-	public TreebolicSourceActivity(int menuId0)
+	public TreebolicSourceActivity(@MenuRes int menuId0)
 	{
 		super(menuId0);
 	}

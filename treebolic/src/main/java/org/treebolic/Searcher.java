@@ -3,11 +3,11 @@ package org.treebolic;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import androidx.annotation.Nullable;
 import android.util.Log;
 
 import org.treebolic.search.SearchSettings;
 
+import androidx.annotation.Nullable;
 import treebolic.IWidget;
 
 @SuppressWarnings("WeakerAccess")

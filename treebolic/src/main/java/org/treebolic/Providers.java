@@ -10,8 +10,6 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -23,6 +21,10 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 @SuppressWarnings("WeakerAccess")
 public class Providers
@@ -304,7 +306,7 @@ public class Providers
 	 * @return base adapter
 	 */
 	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
 		final List<HashMap<String, Object>> providers = Providers.getProviders(context, rescan);

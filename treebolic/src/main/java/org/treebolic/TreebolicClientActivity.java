@@ -6,13 +6,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.NavUtils;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,6 +30,13 @@ import org.treebolic.search.SearchSettings;
 import java.net.URL;
 import java.util.Properties;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
 import treebolic.IContext;
 import treebolic.Widget;
 import treebolic.glue.component.TreebolicThread;
@@ -468,7 +468,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
 				//if (submit)
 				//{
-					query(query);
+				query(query);
 				//}
 				return;
 			}
@@ -608,8 +608,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 */
 	private void snackbar(@NonNull final String message, final int duration)
 	{
-		runOnUiThread(() ->
-		{
+		runOnUiThread(() -> {
 			final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, duration);
 			final android.view.View view = snack.getView();
 			view.setBackgroundColor(ContextCompat.getColor(TreebolicClientActivity.this, R.color.snackbar_color));

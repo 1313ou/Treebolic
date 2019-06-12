@@ -6,8 +6,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
 import android.os.Environment;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -15,6 +13,8 @@ import android.widget.Toast;
 import java.io.File;
 import java.util.Properties;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import dalvik.system.DexClassLoader;
 import treebolic.provider.IProvider;
 

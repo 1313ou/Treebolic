@@ -1,14 +1,15 @@
 package org.treebolic;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.core.app.NavUtils;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
 /**
  * Activity listing services

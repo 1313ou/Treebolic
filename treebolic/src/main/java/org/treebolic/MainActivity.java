@@ -8,16 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
 import android.preference.PreferenceManager;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -48,6 +38,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
 /**
  * Treebolic main activity (home)
@@ -517,7 +517,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 * @return base adapter
 	 */
 	@NonNull
-	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
+	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") @LayoutRes final int itemRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
 	{
 		// data
 		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, false);

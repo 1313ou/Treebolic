@@ -2,8 +2,9 @@ package org.treebolic;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.annotation.NonNull;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 /**
  * Treebolic standard activity

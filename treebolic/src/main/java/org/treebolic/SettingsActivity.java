@@ -13,16 +13,15 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.app.NavUtils;
-import androidx.appcompat.app.ActionBar;
-
 import android.view.MenuItem;
 
 import java.util.HashMap;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.core.app.NavUtils;
 
 /**
  * A PreferenceActivity that presents a set of application settings. On handset devices, settings are presented as a single list. On tablets, settings

@@ -4,14 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.NoSuchElementException;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import treebolic.model.Model;
 import treebolic.model.ModelDump;
 import treebolic.model.ModelReader;
