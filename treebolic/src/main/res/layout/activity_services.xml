@@ -1,3 +1,7 @@
+<!--
+  ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
+  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"

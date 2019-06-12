@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
+  -->
+
 <full-backup-content>
 	<!-- Exclude specific shared preferences that contain GCM registration Id -->
 </full-backup-content>
