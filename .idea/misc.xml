@@ -47,6 +47,7 @@
       <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicMessengerService factory" />
       <entry_point TYPE="field" FQNAME="treebolic.model.graph.MutableGraphNode serialVersionUID" />
       <entry_point TYPE="field" FQNAME="org.treebolic.clients.TreebolicClientActivityStub urlScheme" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicClientActivity SEARCH_TRIGGER_LEVEL" />
     </entry_points>
     <pattern value="org.treebolic.ParcelableModel" method="writeToParcel" />
     <pattern value="treebolic.model.graph.MutableGraph" method="add" />
@@ -219,10 +220,11 @@
     <pattern value="org.treebolic.SettingsActivity.ServicePreferenceFragment" method="onCreate" />
     <pattern value="org.treebolic.MainActivity.PlaceholderFragment" method="onCreateView" />
     <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="query" />
   </component>
   <component name="NullableNotNullManager">
-    <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
-    <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />
+    <option name="myDefaultNullable" value="androidx.annotation.Nullable" />
+    <option name="myDefaultNotNull" value="androidx.annotation.NonNull" />
     <option name="myNullables">
       <value>
         <list size="10">

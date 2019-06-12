@@ -1,8 +1,6 @@
 package org.treebolic;
 
-import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.Toast;
 
@@ -12,6 +10,8 @@ import org.treebolic.storage.Storage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+
+import androidx.annotation.NonNull;
 
 /**
  * Download activity
@@ -27,7 +27,6 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 		super.onCreate(savedInstanceState);
 
 		this.expandArchiveCheckbox.setVisibility(View.VISIBLE);
-		this.destDir = Storage.getTreebolicStorage(this);
 
 		final String base = Settings.getStringPref(this, Settings.PREF_DOWNLOAD_BASE);
 		final String file = Settings.getStringPref(this, Settings.PREF_DOWNLOAD_FILE);
@@ -58,22 +57,20 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 		return true;
 	}
 
+	@SuppressWarnings("SameReturnValue")
 	@Override
 	protected boolean process(@NonNull final InputStream inputStream) throws IOException
 	{
+		final File storage = Storage.getTreebolicStorage(this);
+
 		if (this.expandArchive)
 		{
-			Deploy.expand(inputStream, Storage.getTreebolicStorage(this), false);
+			Deploy.expand(inputStream, storage, false);
 			return true;
 		}
-		final File storage = Storage.getTreebolicStorage(this);
-		final File destFile = new File(storage, this.destUri.getLastPathSegment());
-		final Uri destFileUri = Uri.fromFile(destFile);
-		if (this.destUri.compareTo(destFileUri) != 0)
-		{
-			Deploy.copy(inputStream, destFile);
-			return true;
-		}
-		return false;
+
+		final File destFile = new File(storage, this.downloadUri.getLastPathSegment());
+		Deploy.copy(inputStream, destFile);
+		return true;
 	}
 }
