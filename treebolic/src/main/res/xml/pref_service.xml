@@ -2,7 +2,7 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<ListPreference
 		android:key="pref_service"
@@ -11,4 +11,4 @@
 		android:summary="@string/pref_description_service"
 		android:title="@string/pref_title_service"/>
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

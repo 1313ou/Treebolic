@@ -2,30 +2,29 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+<preference-headers
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<!-- These settings headers are only used on tablets. -->
-
 	<header
-		android:fragment="org.treebolic.SettingsActivity$ActivePreferenceFragment"
-		android:title="@string/pref_header_active"/>
+		app:fragment="org.treebolic.SettingsActivity$ActivePreferenceFragment"
+		app:title="@string/pref_header_active"/>
 	<header
-		android:fragment="org.treebolic.SettingsActivity$XmlPreferenceFragment"
-		android:title="@string/pref_header_xml"/>
+		app:fragment="org.treebolic.SettingsActivity$XmlPreferenceFragment"
+		app:title="@string/pref_header_xml"/>
 	<header
-		android:fragment="org.treebolic.SettingsActivity$TextIndentPreferenceFragment"
-		android:title="@string/pref_header_text_indent"/>
+		app:fragment="org.treebolic.SettingsActivity$TextIndentPreferenceFragment"
+		app:title="@string/pref_header_text_indent"/>
 	<header
-		android:fragment="org.treebolic.SettingsActivity$TextIndentTrePreferenceFragment"
-		android:title="@string/pref_header_text_indent_tre"/>
+		app:fragment="org.treebolic.SettingsActivity$TextIndentTrePreferenceFragment"
+		app:title="@string/pref_header_text_indent_tre"/>
 	<header
-		android:fragment="org.treebolic.SettingsActivity$TextPairPreferenceFragment"
-		android:title="@string/pref_header_text_pair"/>
+		app:fragment="org.treebolic.SettingsActivity$TextPairPreferenceFragment"
+		app:title="@string/pref_header_text_pair"/>
 	<header
-		android:fragment="org.treebolic.SettingsActivity$ServicePreferenceFragment"
-		android:title="@string/pref_header_service"/>
+		app:fragment="org.treebolic.SettingsActivity$ServicePreferenceFragment"
+		app:title="@string/pref_header_service"/>
 	<header
-		android:fragment="org.treebolic.SettingsActivity$DownloadPreferenceFragment"
-		android:title="@string/pref_header_download"/>
+		app:fragment="org.treebolic.SettingsActivity$DownloadPreferenceFragment"
+		app:title="@string/pref_header_download"/>
 
 </preference-headers>

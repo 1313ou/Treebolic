@@ -302,11 +302,11 @@ public class Providers
 	/**
 	 * Make adapter
 	 *
-	 * @param context locatorContext
+	 * @param context       locatorContext
 	 * @param itemLayoutRes item layout
-	 * @param from    from key
-	 * @param to      to res id
-	 * @param rescan  rescan list
+	 * @param from          from key
+	 * @param to            to res id
+	 * @param rescan        rescan list
 	 * @return base adapter
 	 */
 	@Nullable

@@ -2,7 +2,7 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<Preference android:key="pref_provider_icon"/>
 	<Preference
@@ -51,4 +51,4 @@
 		android:summary="@string/pref_description_settings"
 		android:title="@string/pref_title_settings"/>
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>

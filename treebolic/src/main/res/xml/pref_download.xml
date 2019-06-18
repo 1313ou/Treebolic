@@ -2,12 +2,13 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<org.treebolic.preference.OpenEditTextPreference
 		android:defaultValue="@string/pref_download_base_default"
 		android:key="pref_download_base"
+		app:key="pref_download_base"
 		android:summary="@string/pref_description_download_base"
 		android:title="@string/pref_title_download_base"
 		app:labels="@array/pref_download_base_labels"
@@ -16,9 +17,10 @@
 	<org.treebolic.preference.OpenEditTextPreference
 		android:defaultValue="@string/pref_download_file_default"
 		android:key="pref_download_file"
+		app:key="pref_download_file"
 		android:summary="@string/pref_description_download_file"
 		android:title="@string/pref_title_download_file"
 		app:labels="@array/pref_download_file_labels"
 		app:values="@array/pref_download_files"/>
 
-</PreferenceScreen>
+</androidx.preference.PreferenceScreen>
