@@ -221,6 +221,11 @@
     <pattern value="org.treebolic.MainActivity.PlaceholderFragment" method="onCreateView" />
     <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" />
     <pattern value="org.treebolic.TreebolicClientActivity" method="query" />
+    <pattern value="org.treebolic.SettingsActivity.DownloadPreferenceFragment" method="onDisplayPreferenceDialog" />
+    <pattern value="org.treebolic.SettingsActivity.ActivePreferenceFragment" method="onCreatePreferences" />
+    <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" method="onCreatePreferences" />
+    <pattern value="org.treebolic.SettingsActivity.DownloadPreferenceFragment" method="onCreatePreferences" />
+    <pattern value="org.treebolic.SettingsActivity.ServicePreferenceFragment" method="onCreatePreferences" />
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="androidx.annotation.Nullable" />

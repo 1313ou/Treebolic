@@ -17,31 +17,10 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="copyright">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_rc01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_beta01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_rc01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_beta01_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_1_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_beta01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_beta02_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_beta02_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_rc01_aar.xml" afterDir="false" />
+    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="preference 1.1.0">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" afterDir="false" />
     </list>
     <ignored path="Treebolic.iws" />
@@ -417,31 +396,77 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/PreferenceFragmentCompat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="167">
+              <caret line="461" column="30" selection-start-line="461" selection-start-column="12" selection-end-line="461" selection-end-column="30" />
+              <folding>
+                <element signature="e#12448#12449#0" expanded="true" />
+                <element signature="e#12489#12490#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/Preference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="193">
+              <caret line="1091" column="22" selection-start-line="1091" selection-start-column="22" selection-end-line="1091" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
           <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+              <folding>
+                <element signature="docComment;class#SettingsActivity#0" />
+                <element signature="docComment;field#ARG_PROVIDER_SELECTED#0;class#SettingsActivity#0" />
+                <element signature="docComment;field#provider#0;class#SettingsActivity#0" />
+                <element signature="method#onCreate#0;class#SettingsActivity#0" />
+                <element signature="method#onOptionsItemSelected#0;class#SettingsActivity#0" />
+                <element signature="method#isValidFragment#0;class#SettingsActivity#0" />
+                <element signature="docComment;method#isLargeTablet#0;class#SettingsActivity#0" />
+                <element signature="class#XmlPreferenceFragment#0;class#SettingsActivity#0" />
+                <element signature="class#TextIndentPreferenceFragment#0;class#SettingsActivity#0" />
+                <element signature="class#TextIndentTrePreferenceFragment#0;class#SettingsActivity#0" />
+                <element signature="class#TextPairPreferenceFragment#0;class#SettingsActivity#0" />
+                <element signature="e#10125#10126#0" expanded="true" />
+                <element signature="e#10169#10170#0" expanded="true" />
+                <element signature="docComment;method#fillWithServiceData#0;class#SettingsActivity#0" />
+                <element signature="method#fillWithServiceData#0;class#SettingsActivity#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>compileO</find>
-      <find>compileOn</find>
-      <find>compileOnl</find>
       <find>compileOnly</find>
       <find>TreebolicToolbarTheme</find>
       <find>TreebolicStatusTheme</find>
@@ -469,6 +494,9 @@
       <find>android</find>
       <find>setke</find>
       <find>layout</find>
+      <find>listener</find>
+      <find>mPreferenceManager</find>
+      <find>&quot;org.treebolic_preferences_&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>app</replace>
@@ -503,11 +531,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/make-apks.sh" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/build.gradle" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicLibView/build.gradle" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsIface/build.gradle" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/build.gradle" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface/build.gradle" />
         <option value="$PROJECT_DIR$/../TreebolicLib/treebolicLibModel/src/main/java/treebolic/model/ModelDump.java" />
@@ -548,12 +571,17 @@
         <option value="$PROJECT_DIR$/treebolic/build.gradle" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/build.gradle" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/java/org/treebolic/preference/OpenEditTextPreference.java" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/java/org/treebolic/preference/AutoEditTextPreference.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/DownloadActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
       </list>
     </option>
   </component>
@@ -597,7 +625,43 @@
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="treebolic" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="xml" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,13 +960,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491460403752</updated>
-    </task>
-    <task id="LOCAL-00008" summary="search settings">
-      <created>1493977611058</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1493977611058</updated>
     </task>
     <task id="LOCAL-00009" summary="treebolic layout">
       <created>1494233659208</created>
@@ -1240,7 +1297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560324657472</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="preference 1.1.0">
+      <created>1560848475235</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1560848475235</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1266,17 +1330,17 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.40613025" visible="true" weight="0.34637964" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.40613025" weight="0.34637964" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.621237" weight="0.31506848" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924527" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.378763" side_tool="true" weight="0.31506848" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019157" side_tool="true" weight="0.49215686" />
       <window_info anchor="bottom" id="Android Monitor" order="10" sideWeight="0.7385517" weight="0.27659574" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.41761827" visible="true" weight="0.26125243" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.41761827" weight="0.26125243" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4958994" weight="0.32843137" />
       <window_info anchor="bottom" id="Gradle Console" order="13" sideWeight="0.24526873" side_tool="true" weight="0.35359675" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49753696" visible="true" weight="0.40606654" />
@@ -1309,7 +1373,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="update data" />
     <MESSAGE value="main layout&#10;fab" />
     <MESSAGE value="trim&#10;" />
     <MESSAGE value="rebuild (parcelization error)&#10;" />
@@ -1334,7 +1397,8 @@
     <MESSAGE value="androidx&#10;lint&#10;data" />
     <MESSAGE value="lint&#10;reformat&#10;annotations" />
     <MESSAGE value="copyright" />
-    <option name="LAST_COMMIT_MESSAGE" value="copyright" />
+    <MESSAGE value="preference 1.1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="preference 1.1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1379,26 +1443,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/drawable-hdpi/ic_download.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout/activity_download.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout-land/activity_download.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/src/main/res/drawable-mdpi/ic_search_mode_includes.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/src/main/res/drawable-hdpi/ic_search_mode_startswith.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/src/main/res/drawable-xxxhdpi/ic_search_mode_includes.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/src/main/java/org/treebolic/search/SearchSettings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -1542,10 +1586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/java/androidx/preference/legacy/contrib/PreferenceActivityCompatDelegate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -1581,17 +1621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="70" selection-start-line="69" selection-end-line="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.0.0/bcd167792ec03e930d5c8345c99ae07b2627de84/fragment-1.0.0-sources.jar!/androidx/fragment/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
@@ -1619,39 +1648,6 @@
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="388" column="17" selection-start-line="388" selection-start-column="17" selection-end-line="388" selection-end-column="17" />
-          <folding>
-            <element signature="docComment;class#SettingsActivity#0" />
-            <element signature="docComment;field#ARG_PROVIDER_SELECTED#0;class#SettingsActivity#0" />
-            <element signature="docComment;field#provider#0;class#SettingsActivity#0" />
-            <element signature="method#onCreate#0;class#SettingsActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#SettingsActivity#0" />
-            <element signature="method#isValidFragment#0;class#SettingsActivity#0" />
-            <element signature="docComment;method#isLargeTablet#0;class#SettingsActivity#0" />
-            <element signature="docComment;field#listener#0;class#SettingsActivity#0" />
-            <element signature="docComment;method#bind#0;class#SettingsActivity#0" />
-            <element signature="method#bind#0;class#SettingsActivity#0" />
-            <element signature="class#ActivePreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="method#onCreatePreferences#0;class#ActivePreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#XmlPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#TextIndentPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#TextIndentTrePreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#TextPairPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#ProviderPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="method#onCreatePreferences#0;class#ProviderPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="method#getName#1;class#ProviderPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="method#onCreatePreferences#0;class#DownloadPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#ServicePreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="method#onCreatePreferences#0;class#ServicePreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="docComment;method#fillWithServiceData#0;class#SettingsActivity#0" />
-            <element signature="method#fillWithServiceData#0;class#SettingsActivity#0" />
           </folding>
         </state>
       </provider>
@@ -1737,6 +1733,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -1744,13 +1748,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml">
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="52">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="58" column="42" lean-forward="true" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicLib/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/Preference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="1091" column="22" selection-start-line="1091" selection-start-column="22" selection-end-line="1091" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/PreferenceFragmentCompat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="461" column="30" selection-start-line="461" selection-start-column="12" selection-end-line="461" selection-end-column="30" />
+          <folding>
+            <element signature="e#12448#12449#0" expanded="true" />
+            <element signature="e#12489#12490#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+          <folding>
+            <element signature="docComment;class#SettingsActivity#0" />
+            <element signature="docComment;field#ARG_PROVIDER_SELECTED#0;class#SettingsActivity#0" />
+            <element signature="docComment;field#provider#0;class#SettingsActivity#0" />
+            <element signature="method#onCreate#0;class#SettingsActivity#0" />
+            <element signature="method#onOptionsItemSelected#0;class#SettingsActivity#0" />
+            <element signature="method#isValidFragment#0;class#SettingsActivity#0" />
+            <element signature="docComment;method#isLargeTablet#0;class#SettingsActivity#0" />
+            <element signature="class#XmlPreferenceFragment#0;class#SettingsActivity#0" />
+            <element signature="class#TextIndentPreferenceFragment#0;class#SettingsActivity#0" />
+            <element signature="class#TextIndentTrePreferenceFragment#0;class#SettingsActivity#0" />
+            <element signature="class#TextPairPreferenceFragment#0;class#SettingsActivity#0" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10169#10170#0" expanded="true" />
+            <element signature="docComment;method#fillWithServiceData#0;class#SettingsActivity#0" />
+            <element signature="method#fillWithServiceData#0;class#SettingsActivity#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
