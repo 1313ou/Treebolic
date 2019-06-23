@@ -147,14 +147,13 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			final SettingsActivity activity = (SettingsActivity) getActivity();
 			if (activity != null)
 			{
-
 				// shared preferences
 				final PreferenceManager prefManager = getPreferenceManager();
 				final Boolean isPluginBool = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
 				final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
 				if (!isPlugin)
 				{
-					prefManager.setSharedPreferencesName("org.treebolic_preferences_" + SettingsActivity.provider.get(Providers.NAME));
+					prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + SettingsActivity.provider.get(Providers.NAME));
 					prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 				}
 
@@ -271,7 +270,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		{
 			// non-default preference manager
 			final PreferenceManager prefManager = getPreferenceManager();
-			prefManager.setSharedPreferencesName("org.treebolic_preferences_" + getName());
+			prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + getName());
 			prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 
 			// inflate

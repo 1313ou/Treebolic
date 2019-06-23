@@ -67,7 +67,7 @@ public class Settings
 	/**
 	 * Preference file prefix
 	 */
-	private static final String PREF_FILE_PREFIX = "org.treebolic_preferences_";
+	public static final String PREF_FILE_PREFIX = "org.treebolic_preferences_";
 
 	/**
 	 * Download base preference name
