@@ -32,4 +32,11 @@ allprojects {
         compileSdkVersion = 28
         multiDexEnabled = true
     }
+
+    gradle.projectsEvaluated {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:deprecation"
+            options.compilerArgs << "-Xlint:unchecked"
+        }
+    }
 }
