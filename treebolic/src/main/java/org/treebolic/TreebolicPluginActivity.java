@@ -8,8 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -148,7 +148,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 				// The class loader returned by Thread.getContextClassLoader() may fail for processes that host multiple applications.
 				// You should explicitly specify a locatorContext class loader.
 				// For example: Thread.setContextClassLoader(getClass().getClassLoader());
-				Thread.currentThread().setContextClassLoader(clazz.getClassLoader());
+				//Thread.currentThread().setContextClassLoader(clazz.getClassLoader());
 
 				// the class instance is cast to an interface through which the method is called directly
 				this.provider = (IProvider) clazz.newInstance();
@@ -177,34 +177,59 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 */
 	private static ClassLoader getPluginClassLoader(@NonNull final Context context, final String pluginPkg) throws NameNotFoundException
 	{
-		// cache to store optimized classes
-		File dexCache = context.getDir("plugins", Context.MODE_PRIVATE);
-		if (dexCache == null || !dexCache.exists())
+		File dexCache = null;
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
 		{
-			// external storage cache
-			Log.w(TreebolicPluginActivity.TAG, "app/data storage is not accessible, trying to use external storage");
-			final File sd = Environment.getExternalStorageDirectory();
-			if (sd == null)
+			dexCache = context.getCodeCacheDir();
+		}
+		else
+		{
+			// cache to store optimized classes
+			dexCache = context.getDir("plugins", Context.MODE_PRIVATE);
+			/*
+			if (dexCache == null || !dexCache.exists())
 			{
-				return null; // nowhere to store the dex
+				// do not cache optimized classes on external storage. External storage does not provide access controls necessary to protect your application from code injection attacks
+				// external storage cache
+				Log.w(TreebolicPluginActivity.TAG, "app/data storage is not accessible, trying to use external storage");
+				final File sd = Environment.getExternalStorageDirectory();
+				if (sd == null)
+				{
+					return null; // nowhere to store the dex
+				}
+				dexCache = new File(sd, "temp");
 			}
-			dexCache = new File(sd, "temp");
+			*/
+
 			if (!dexCache.exists())
 			{
 				//noinspection ResultOfMethodCallIgnored
 				dexCache.mkdir();
 			}
 		}
+		final String dexCachePath = dexCache.getAbsolutePath();
+
+		// application class loader
+		ClassLoader classLoader = context.getClass().getClassLoader();
+
 		// get plugin apk
 		final ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(pluginPkg, 0);
 		final String apk = appInfo.sourceDir;
-		Log.d(TreebolicPluginActivity.TAG, "Plugin apk is " + apk);
+		Log.d(TreebolicPluginActivity.TAG, "Base plugin apk is " + apk);
 
-		// application class loader
-		final ClassLoader appClassLoader = context.getClass().getClassLoader();
+		// dex class loader with base apk
+		classLoader = new DexClassLoader(apk, dexCachePath, null, classLoader);
 
-		// plugin dex class loader
-		return new DexClassLoader(apk, dexCache.getAbsolutePath(), null, appClassLoader);
+		// dex class loader with split apk
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+		{
+			for (String splitApk : appInfo.splitPublicSourceDirs)
+			{
+				Log.d(TreebolicPluginActivity.TAG, "Split plugin apk is " + splitApk);
+				classLoader = new DexClassLoader(splitApk, dexCachePath, null, classLoader);
+			}
+		}
+		return classLoader;
 	}
 
 	// I N T E N T
