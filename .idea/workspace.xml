@@ -17,14 +17,8 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="build">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_compress_1_12_jar.xml" afterDir="false" />
+    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="fixes plugin classloaders after lollipop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent-tre.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent-tre.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-indent.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-pair.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-pair.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-xml-dom.jar" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/libs/treebolic-provider-xml-dom.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" afterDir="false" />
     </list>
     <ignored path="Treebolic.iws" />
@@ -398,11 +392,11 @@
     <favorites_list name="Treebolic" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="72">
               <caret line="174" column="46" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
             </state>
           </provider>
@@ -567,10 +561,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -869,13 +863,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491460403752</updated>
-    </task>
-    <task id="LOCAL-00012" summary="unmarshal fix">
-      <created>1494419170019</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1494419170019</updated>
     </task>
     <task id="LOCAL-00013" summary="button source">
       <created>1494518780663</created>
@@ -1213,7 +1200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561351418321</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="fixes plugin classloaders after lollipop">
+      <created>1561456805181</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1561456805181</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1227,8 +1221,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="27" width="1869" height="1173" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14504652" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14504652" />
       <window_info id="Structure" order="1" weight="0.16657504" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" side_tool="true" weight="0.24973376" />
@@ -1240,15 +1235,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4050356" weight="0.34637964" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.42255062" visible="true" weight="0.5107632" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.42255062" weight="0.5107632" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924527" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.5774494" side_tool="true" visible="true" weight="0.5107632" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.52654624" side_tool="true" visible="true" weight="0.26125243" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019157" side_tool="true" weight="0.49215686" />
       <window_info anchor="bottom" id="Android Monitor" order="10" sideWeight="0.7385517" weight="0.27659574" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.47454843" weight="0.26125243" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.47345376" visible="true" weight="0.26125243" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4958994" weight="0.32843137" />
       <window_info anchor="bottom" id="Gradle Console" order="13" sideWeight="0.24526873" side_tool="true" weight="0.35359675" />
       <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49753696" weight="0.40606654" />
@@ -1281,7 +1276,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="trim&#10;" />
     <MESSAGE value="rebuild (parcelization error)&#10;" />
     <MESSAGE value="guard against null surface thread&#10;" />
     <MESSAGE value="new theming and update&#10;" />
@@ -1306,7 +1300,8 @@
     <MESSAGE value="preference 1.1.0" />
     <MESSAGE value="lint" />
     <MESSAGE value="build" />
-    <option name="LAST_COMMIT_MESSAGE" value="build" />
+    <MESSAGE value="fixes plugin classloaders after lollipop" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes plugin classloaders after lollipop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1396,12 +1391,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/res/layout/dialog_autoedittext_pref.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/res/layout/dialog_openedittext_pref.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/Preference.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1470,12 +1465,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1485,20 +1480,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicLib/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -1510,12 +1505,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/Preference.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1536,20 +1531,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1587,51 +1582,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic.files-eZf7bRuH6ewRkEI_-U-VfQ==/base.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic.files-eZf7bRuH6ewRkEI_-U-VfQ==/split_lib_dependencies_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/base.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_dependencies_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_resources_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_0_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_1_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_3_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_2_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_4_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_5_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_6_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_7_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_8_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_9_apk.apk">
-      <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic.files-eZf7bRuH6ewRkEI_-U-VfQ==/base.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic.files-eZf7bRuH6ewRkEI_-U-VfQ==/split_lib_dependencies_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/base.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_dependencies_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_resources_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_0_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_1_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_3_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_2_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_4_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_5_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_6_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_7_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_8_apk.apk" />
+    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_9_apk.apk" />
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -1677,7 +1642,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="72">
           <caret line="174" column="46" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
         </state>
       </provider>

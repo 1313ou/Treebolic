@@ -177,7 +177,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 */
 	private static ClassLoader getPluginClassLoader(@NonNull final Context context, final String pluginPkg) throws NameNotFoundException
 	{
-		File dexCache = null;
+		File dexCache;
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
 		{
 			dexCache = context.getCodeCacheDir();
