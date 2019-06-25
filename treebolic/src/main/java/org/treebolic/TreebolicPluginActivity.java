@@ -223,10 +223,13 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		// dex class loader with split apk
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
 		{
-			for (String splitApk : appInfo.splitPublicSourceDirs)
+			if (appInfo.splitPublicSourceDirs != null)
 			{
-				Log.d(TreebolicPluginActivity.TAG, "Split plugin apk is " + splitApk);
-				classLoader = new DexClassLoader(splitApk, dexCachePath, null, classLoader);
+				for (String splitApk : appInfo.splitPublicSourceDirs)
+				{
+					Log.d(TreebolicPluginActivity.TAG, "Split plugin apk is " + splitApk);
+					classLoader = new DexClassLoader(splitApk, dexCachePath, null, classLoader);
+				}
 			}
 		}
 		return classLoader;
