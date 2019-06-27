@@ -226,6 +226,7 @@
     <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" method="onCreatePreferences" />
     <pattern value="org.treebolic.SettingsActivity.DownloadPreferenceFragment" method="onCreatePreferences" />
     <pattern value="org.treebolic.SettingsActivity.ServicePreferenceFragment" method="onCreatePreferences" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="onDestroy" />
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="androidx.annotation.Nullable" />

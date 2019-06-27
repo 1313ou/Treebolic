@@ -17,8 +17,12 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="fixes plugin classloaders after lollipop">
+    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="lib update">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" afterDir="false" />
     </list>
     <ignored path="Treebolic.iws" />
@@ -392,31 +396,10 @@
     <favorites_list name="Treebolic" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="174" column="46" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TreebolicToolbarTheme</find>
-      <find>TreebolicStatusTheme</find>
-      <find>colorForeSecondary</find>
-      <find>default_secondaryForeColor</find>
-      <find>treebolic_toolbar_foreground_icon</find>
-      <find>TreebolicDialogTheme</find>
-      <find>treebolic_statusbar_foreground_enhanced</find>
-      <find>s</find>
-      <find>sty</find>
-      <find>stylea</find>
-      <find>styleable</find>
       <find>format=&quot;color|reference&quot;</find>
       <find>this[^\s.;,()]</find>
       <find>the[^\s.;,()]</find>
@@ -436,13 +419,28 @@
       <find>mPreferenceManager</find>
       <find>&quot;org.treebolic_preferences_&quot;</find>
       <find>LoadBalancer</find>
+      <find>scale_donw</find>
+      <find>R.drawable</find>
+      <find>imageButton</find>
+      <find>context</find>
+      <find>R.string.</find>
+      <find>CheckBox</find>
+      <find>tips</find>
+      <find>ImageView</find>
+      <find>android:contentDescription=&quot;@string</find>
+      <find>pref_settings</find>
+      <find>default_ac</find>
     </findStrings>
     <replaceStrings>
       <replace>app</replace>
+      <replace>R.string</replace>
+      <replace>&lt;string name=&quot;</replace>
+      <replace>android:id=&quot;@+id</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/treebolic</dir>
       <dir>$PROJECT_DIR$/../TreebolicSupportLibs/commonLib</dir>
+      <dir>$PROJECT_DIR$/treebolic/src/main/res</dir>
+      <dir>$PROJECT_DIR$/treebolic</dir>
     </dirStrings>
   </component>
   <component name="GenerateSignedApkSettings">
@@ -470,24 +468,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/build.gradle" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface/build.gradle" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicLibModel/src/main/java/treebolic/model/ModelDump.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicBoundClient.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicAIDLBoundClient.java" />
-        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/storageLib/src/main/java/org/treebolic/storage/Storage.java" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Toolbar.java" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Statusbar.java" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Utils.java" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values/attrs.xml" />
-        <option value="$PROJECT_DIR$/treebolic/artwork/make-artwork.sh" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ModelFactory.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicAIDLBoundService.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicBoundService.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicIntentService.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicMessengerClient.java" />
-        <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicMessengerService.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/Utils.java" />
         <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/ModelFactory.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" />
@@ -514,13 +494,31 @@
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/dialog_layout.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/status_h.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/status_v.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/tip_layout.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values-fr/strings.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Toolbar.java" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Surface.java" />
+        <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/res/drawable/bg_semitransparent_rounded.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/res/layout/dialog_tips.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout/downloadbutton.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/values-fr/strings.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout-land/activity_download.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout/activity_download.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
       </list>
     </option>
   </component>
@@ -530,8 +528,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="53" />
     <option name="y" value="31" />
-    <option name="width" value="1248" />
-    <option name="height" value="914" />
+    <option name="width" value="1238" />
+    <option name="height" value="921" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -561,9 +559,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -863,27 +861,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491460403752</updated>
-    </task>
-    <task id="LOCAL-00013" summary="button source">
-      <created>1494518780663</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1494518780663</updated>
-    </task>
-    <task id="LOCAL-00014" summary="lint">
-      <created>1494521810138</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1494521810138</updated>
-    </task>
-    <task id="LOCAL-00015" summary="lint">
-      <created>1494567989796</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1494567989796</updated>
     </task>
     <task id="LOCAL-00016" summary="popup color&#10;version++">
       <created>1494576070837</created>
@@ -1207,7 +1184,28 @@
       <option name="project" value="LOCAL" />
       <updated>1561456805181</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="lib update">
+      <created>1561481261616</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1561481261616</updated>
+    </task>
+    <task id="LOCAL-00063" summary="nullable splitPublicSourceDirs">
+      <created>1561482910115</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1561482910116</updated>
+    </task>
+    <task id="LOCAL-00064" summary="content description">
+      <created>1561539255869</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1561539255869</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1221,9 +1219,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="27" width="1869" height="1173" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14504652" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13245758" />
       <window_info id="Structure" order="1" weight="0.16657504" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" side_tool="true" weight="0.24973376" />
@@ -1233,22 +1230,22 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4050356" weight="0.34637964" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.40339354" visible="true" weight="0.34637964" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.42255062" weight="0.5107632" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924527" />
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.52654624" side_tool="true" visible="true" weight="0.26125243" />
+      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.59660643" side_tool="true" visible="true" weight="0.34637964" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019157" side_tool="true" weight="0.49215686" />
       <window_info anchor="bottom" id="Android Monitor" order="10" sideWeight="0.7385517" weight="0.27659574" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="11" sideWeight="0.47345376" visible="true" weight="0.26125243" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.47126436" weight="0.26125243" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4958994" weight="0.32843137" />
       <window_info anchor="bottom" id="Gradle Console" order="13" sideWeight="0.24526873" side_tool="true" weight="0.35359675" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.49753696" weight="0.40606654" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" order="14" sideWeight="0.4958949" visible="true" weight="0.40606654" />
       <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.48604268" weight="0.47843137" />
-      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.3305966" weight="0.2964775" />
+      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.32950193" weight="0.2964775" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.2484948" />
@@ -1276,9 +1273,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="rebuild (parcelization error)&#10;" />
-    <MESSAGE value="guard against null surface thread&#10;" />
-    <MESSAGE value="new theming and update&#10;" />
     <MESSAGE value="lint&#10;tint error in scope search wheel&#10;" />
     <MESSAGE value="widget's container layout parameters&#10;" />
     <MESSAGE value="rebuild&#10;" />
@@ -1301,7 +1295,10 @@
     <MESSAGE value="lint" />
     <MESSAGE value="build" />
     <MESSAGE value="fixes plugin classloaders after lollipop" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixes plugin classloaders after lollipop" />
+    <MESSAGE value="lib update" />
+    <MESSAGE value="nullable splitPublicSourceDirs" />
+    <MESSAGE value="content description" />
+    <option name="LAST_COMMIT_MESSAGE" value="content description" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1344,7 +1341,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java</url>
-          <line>153</line>
+          <line>163</line>
           <properties />
           <option name="timeStamp" value="61" />
         </line-breakpoint>
@@ -1352,261 +1349,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.0.0/bcd167792ec03e930d5c8345c99ae07b2627de84/fragment-1.0.0-sources.jar!/androidx/fragment/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="582" column="26" lean-forward="true" selection-start-line="582" selection-start-column="26" selection-end-line="582" selection-end-column="26" />
-          <folding>
-            <element signature="e#22576#22577#0" expanded="true" />
-            <element signature="e#22609#22610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/java/org/treebolic/AppCompatCommonPreferenceActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/SeekBarPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="33" column="58" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/res/layout/dialog_autoedittext_pref.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/res/layout/dialog_openedittext_pref.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/Preference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="633" selection-start-line="633" selection-end-line="633" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/PreferenceDialogFragmentCompat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/EditTextPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/SwitchPreferenceCompat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1313">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/PreferenceViewHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.0.0/3eb748f2645fba8bb4510f4a53456dfcde7f8a0d/preference-1.0.0-sources.jar!/androidx/preference/EditTextPreferenceDialogFragmentCompat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="76" selection-start-line="60" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/res/values/attrs_autoedit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="10" column="12" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/java/org/treebolic/preference/AutoEditTextPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-328">
-          <caret line="159" column="24" selection-start-line="159" selection-start-column="24" selection-end-line="159" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/src/main/java/org/treebolic/preference/OpenEditTextPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="289" column="34" selection-start-line="289" selection-start-column="34" selection-end-line="289" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_headers_legacy.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicLib/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_download.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/Preference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="1091" column="22" selection-start-line="1091" selection-start-column="22" selection-end-line="1091" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.preference/preference/1.1.0-beta01/a84122332d9af02fe22e809f8700c9fcbccfcd92/preference-1.1.0-beta01-sources.jar!/androidx/preference/PreferenceFragmentCompat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="461" column="30" selection-start-line="461" selection-start-column="12" selection-end-line="461" selection-end-column="30" />
-          <folding>
-            <element signature="e#12448#12449#0" expanded="true" />
-            <element signature="e#12489#12490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
-          <folding>
-            <element signature="docComment;class#SettingsActivity#0" />
-            <element signature="docComment;field#ARG_PROVIDER_SELECTED#0;class#SettingsActivity#0" />
-            <element signature="docComment;field#provider#0;class#SettingsActivity#0" />
-            <element signature="method#onCreate#0;class#SettingsActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#SettingsActivity#0" />
-            <element signature="method#isValidFragment#0;class#SettingsActivity#0" />
-            <element signature="docComment;method#isLargeTablet#0;class#SettingsActivity#0" />
-            <element signature="class#XmlPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#TextIndentPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#TextIndentTrePreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="class#TextPairPreferenceFragment#0;class#SettingsActivity#0" />
-            <element signature="docComment;method#fillWithServiceData#0;class#SettingsActivity#0" />
-            <element signature="method#fillWithServiceData#0;class#SettingsActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="63" column="7" selection-start-line="63" selection-start-column="7" selection-end-line="63" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="49" column="46" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic.files-eZf7bRuH6ewRkEI_-U-VfQ==/base.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic.files-eZf7bRuH6ewRkEI_-U-VfQ==/split_lib_dependencies_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/base.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_dependencies_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_resources_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_0_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_1_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_3_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_2_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_4_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_5_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_6_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_7_apk.apk" />
-    <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_8_apk.apk" />
     <entry file="file://$USER_HOME$/AndroidStudio/DeviceExplorer/Samsung_S7_edge_API_28 [emulator-5554]/data/app/org.treebolic-JTl3MXi5ZmpDqtkDpl8P3Q==/split_lib_slice_9_apk.apk" />
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/build/outputs/apk/debug/treebolic-debug.apk">
       <provider selected="true" editor-type-id="apk-viewer" />
     </entry>
@@ -1640,10 +1383,360 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///opt/androidstudio/sdk/platforms/android-28/android.jar!/dalvik/system/DexFile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#1479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/build/generated/source/buildConfig/androidTest/debug/org/treebolic/test/BuildConfig.java" />
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="174" column="46" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
+        <state relative-caret-position="208">
+          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+          <folding>
+            <element signature="e#2250#2251#0" expanded="true" />
+            <element signature="e#2269#2270#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/Arc2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/dialog_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="53" lean-forward="true" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
+          <folding>
+            <element signature="e#529#558#0" expanded="true" />
+            <element signature="e#916#938#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/status_v.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#745#774#0" expanded="true" />
+            <element signature="e#1144#1166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/tip_layout.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#450#479#0" expanded="true" />
+            <element signature="e#729#751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/status_h.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#758#787#0" expanded="true" />
+            <element signature="e#1190#1212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Statusbar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="65" column="37" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/layout/progress.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Tip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="81" column="62" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlueIface/src/main/java/treebolic/glue/iface/component/Toolbar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicLibView/src/main/java/treebolic/component/Toolbar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Toolbar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="212" lean-forward="true" selection-start-line="211" selection-end-line="212" />
+          <folding>
+            <element signature="e#1697#1698#0" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+            <element signature="e#1808#1834#0" expanded="true" />
+            <element signature="e#1842#1870#0" expanded="true" />
+            <element signature="e#1872#1899#0" expanded="true" />
+            <element signature="e#1901#1928#0" expanded="true" />
+            <element signature="e#1930#1956#0" expanded="true" />
+            <element signature="e#1958#1984#0" expanded="true" />
+            <element signature="e#1992#2020#0" expanded="true" />
+            <element signature="e#2022#2050#0" expanded="true" />
+            <element signature="e#2052#2086#0" expanded="true" />
+            <element signature="e#2088#2128#0" expanded="true" />
+            <element signature="e#2136#2163#0" expanded="true" />
+            <element signature="e#2165#2193#0" expanded="true" />
+            <element signature="e#2195#2228#0" expanded="true" />
+            <element signature="e#2236#2264#0" expanded="true" />
+            <element signature="e#2266#2295#0" expanded="true" />
+            <element signature="e#2297#2326#0" expanded="true" />
+            <element signature="e#2334#2363#0" expanded="true" />
+            <element signature="e#2365#2396#0" expanded="true" />
+            <element signature="e#2398#2428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicLibView/src/main/java/treebolic/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/component/Surface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="200" column="26" selection-start-line="200" selection-start-column="26" selection-end-line="200" selection-end-column="26" />
+          <folding>
+            <element signature="e#4368#4409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-795" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values-fr/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="43" column="75" selection-start-line="43" selection-start-column="75" selection-end-line="43" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/activity_providers.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/activity_services.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/item_mode.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/item_scope.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="e#954#970#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="161" column="9" selection-start-line="161" selection-start-column="9" selection-end-line="161" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/res/drawable/bg_semitransparent_rounded.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/res/values/styles_tips.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="313" column="19" selection-start-line="313" selection-start-column="16" selection-end-line="313" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/res/layout/dialog_tips.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-387">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="e#1136#1157#0" expanded="true" />
+            <element signature="e#1378#1405#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/java/org/treebolic/guide/Tip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="31" column="50" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/values-fr/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="11" lean-forward="true" selection-start-line="10" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout/downloadbutton.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout-land/activity_download.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="32" selection-start-line="31" selection-end-line="32" />
+          <folding>
+            <element signature="e#1033#1060#0" expanded="true" />
+            <element signature="e#1271#1296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout/activity_download.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#963#990#0" expanded="true" />
+            <element signature="e#1330#1355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="123" column="72" selection-start-line="123" selection-start-column="72" selection-end-line="123" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="196" column="157" selection-start-line="196" selection-start-column="157" selection-end-line="196" selection-end-column="157" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/src/main/res/menu/about.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>

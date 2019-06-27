@@ -59,6 +59,16 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		super(R.menu.treebolic_plugin);
 	}
 
+	@Override
+	protected void onDestroy()
+	{
+		super.onDestroy();
+		if(this.classLoader != null)
+		{
+			this.classLoader = null;
+		}
+	}
+
 	// M E N U
 
 	@Override
