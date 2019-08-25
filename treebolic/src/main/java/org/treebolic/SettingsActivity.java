@@ -13,8 +13,6 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import org.treebolic.preference.OpenEditTextPreference;
 

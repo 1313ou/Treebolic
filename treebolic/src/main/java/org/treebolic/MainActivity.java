@@ -392,7 +392,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				}
 				break;
 			case REQUEST_DOWNLOAD_CODE:
-				break;
 			default:
 				break;
 		}
