@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
+  -->
+
+<resources>
+
+	<style name="MyBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+	<!--<style name="MyBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>-->
+	<!--<style name="MyBaseTheme" parent="Theme.AppCompat.NoActionBar"/>-->
+	<!--<style name="MyBaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar"/>-->
+	<!--<style name="MyBaseTheme" parent="Theme.MaterialComponents.NoActionBar"/>-->
+
+	<style name="MyBaseOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
+	<!--<style name="MyBaseOverlay" parent="ThemeOverlay.AppCompat"/>-->
+
+	<style name="MyActionBarBaseOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+	<!--<style name="MyActionBarBaseOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />-->
+
+</resources>

@@ -13,6 +13,8 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import org.treebolic.preference.OpenEditTextPreference;
 
@@ -22,6 +24,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -58,7 +61,8 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		super.onCreate(savedInstanceState);
 
 		// toolbar
-		setupToolbar(R.layout.toolbar, R.id.toolbar);
+		final Toolbar toolbar = findViewById(R.id.toolbar);
+		setSupportActionBar(toolbar);
 
 		// set up the action bar
 		final ActionBar actionBar = getSupportActionBar();

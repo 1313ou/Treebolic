@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="__local_aars__:/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/downloadLib/libs/commons-compress-proguard-1.8.1.jar:unspecified@jar">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/libs/commons-compress-proguard-1.8.1.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
