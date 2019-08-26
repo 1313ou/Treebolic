@@ -7,8 +7,6 @@
 	<style name="MyBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
 	<!--<style name="MyBaseTheme" parent="Theme.AppCompat.Light.NoActionBar"/>-->
 	<!--<style name="MyBaseTheme" parent="Theme.AppCompat.NoActionBar"/>-->
-	<!--<style name="MyBaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar"/>-->
-	<!--<style name="MyBaseTheme" parent="Theme.MaterialComponents.NoActionBar"/>-->
 
 	<style name="MyBaseOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
 	<!--<style name="MyBaseOverlay" parent="ThemeOverlay.AppCompat"/>-->

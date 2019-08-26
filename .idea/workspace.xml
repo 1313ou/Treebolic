@@ -17,11 +17,10 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="toolbar">
+    <list default="true" id="93a269be-f019-41d7-a8c6-07a3d4defbb2" name="Default" comment="lint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/treebolic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/treebolic.iml" afterDir="false" />
     </list>
     <ignored path="Treebolic.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -398,22 +397,12 @@
     <favorites_list name="Treebolic" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="392" column="22" selection-start-line="392" selection-start-column="22" selection-end-line="392" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml">
-          <provider editor-type-id="android-designer2" />
+        <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state relative-caret-position="359">
+              <caret line="34" lean-forward="true" selection-start-line="29" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -422,7 +411,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>this[A-Z]</find>
       <find>isPluginBool</find>
       <find>TryFinallyCanBeTryWithResources</find>
       <find>failed</find>
@@ -452,6 +440,7 @@
       <find>drawer_color</find>
       <find>default_tertiaryForeColor</find>
       <find>tertiary</find>
+      <find>colorSecondaryDark</find>
     </findStrings>
     <replaceStrings>
       <replace>app</replace>
@@ -490,7 +479,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_service.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" />
@@ -507,7 +495,6 @@
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/layout/downloadbutton.xml" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/values-fr/strings.xml" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/layout/item_services.xml" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/styles.xml" />
@@ -537,10 +524,12 @@
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/java/org/treebolic/AppCompatCommonPreferenceActivity.java" />
         <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/attrs.xml" />
-        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml" />
         <option value="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" />
         <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_active_builtin.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml" />
+        <option value="$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml" />
       </list>
     </option>
   </component>
@@ -581,10 +570,47 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="commonLib" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="commonLib" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="commonLib" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="commonLib" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="themes" type="c431d0b8:AndroidResGroupNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Treebolic" type="1abcf292:AndroidViewProjectNode" />
+              <item name="treebolic" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -881,13 +907,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1491460403752</updated>
-    </task>
-    <task id="LOCAL-00019" summary="openedittext">
-      <created>1494692708773</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1494692708773</updated>
     </task>
     <task id="LOCAL-00020" summary="minor">
       <created>1494747685399</created>
@@ -1225,7 +1244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566716338249</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="lint">
+      <created>1566719508680</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1566719508680</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1241,7 +1267,7 @@
     <frame x="59" y="27" width="1466" height="1173" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17205057" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17134832" />
       <window_info id="Structure" order="1" weight="0.16657504" />
       <window_info id="Designer" order="2" />
       <window_info id="Captures" order="3" side_tool="true" weight="0.24973376" />
@@ -1251,22 +1277,22 @@
       <window_info id="Image Layers" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.48103932" visible="true" weight="0.34637964" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48103932" weight="0.34637964" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4199438" weight="0.25342464" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924527" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.51896065" side_tool="true" visible="true" weight="0.34637964" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5019157" side_tool="true" weight="0.49215686" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" />
+      <window_info anchor="bottom" id="Logcat" order="8" sideWeight="0.68679774" side_tool="true" visible="true" weight="0.3473581" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.60457516" side_tool="true" weight="0.34812623" />
       <window_info anchor="bottom" id="Android Monitor" order="10" sideWeight="0.7385517" weight="0.27659574" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.46558988" weight="0.26125243" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4627809" weight="0.26027396" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4958994" weight="0.32843137" />
       <window_info anchor="bottom" id="Gradle Console" order="13" sideWeight="0.24526873" side_tool="true" weight="0.35359675" />
       <window_info anchor="bottom" id="Inspection Results" order="14" sideWeight="0.4958949" weight="0.40606654" />
       <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.48604268" weight="0.47843137" />
-      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.39817417" weight="0.3483366" />
+      <window_info anchor="bottom" id="Build" order="16" sideWeight="0.31320226" visible="true" weight="0.3473581" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.12219101" />
@@ -1310,7 +1336,6 @@
     <MESSAGE value="lint&#10;reformat&#10;annotations" />
     <MESSAGE value="copyright" />
     <MESSAGE value="preference 1.1.0" />
-    <MESSAGE value="lint" />
     <MESSAGE value="build" />
     <MESSAGE value="fixes plugin classloaders after lollipop" />
     <MESSAGE value="lib update" />
@@ -1319,7 +1344,8 @@
     <MESSAGE value="version number&#10;accessibility" />
     <MESSAGE value="gravity" />
     <MESSAGE value="toolbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="toolbar" />
+    <MESSAGE value="lint" />
+    <option name="LAST_COMMIT_MESSAGE" value="lint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1394,14 +1420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="123" column="72" selection-start-line="123" selection-start-column="72" selection-end-line="123" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -1639,13 +1657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/attrs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
@@ -1657,20 +1668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="9" selection-start-line="8" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="49" column="78" selection-start-line="49" selection-start-column="78" selection-end-line="49" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1745,10 +1742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -1761,6 +1754,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/xml/pref_general.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/attrs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="21" column="58" lean-forward="true" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treebolic/src/main/res/layout/activity_treebolic.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/themes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="34" lean-forward="true" selection-start-line="29" selection-end-line="34" />
         </state>
       </provider>
     </entry>
