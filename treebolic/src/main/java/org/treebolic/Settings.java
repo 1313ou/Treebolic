@@ -250,6 +250,7 @@ public class Settings
 	 * @param url url string
 	 * @return url
 	 */
+	@Nullable
 	static public URL makeURL(final String url)
 	{
 		try

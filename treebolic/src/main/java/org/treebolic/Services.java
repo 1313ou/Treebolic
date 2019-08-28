@@ -84,6 +84,7 @@ public class Services
 	 * @param labelRes     label id
 	 * @return label
 	 */
+	@NonNull
 	static private String loadText(@NonNull final PackageManager packageManager, final String packageName, @StringRes final int labelRes)
 	{
 		if (labelRes != 0)
@@ -143,6 +144,7 @@ public class Services
 	 * @param to      to res id
 	 * @return base adapter
 	 */
+	@Nullable
 	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
@@ -184,6 +186,7 @@ public class Services
 	 * @param rescan  rescan, do not use cache
 	 * @return list of services
 	 */
+	@Nullable
 	static public List<HashMap<String, Object>> getServices(@NonNull final Context context, final boolean rescan)
 	{
 		boolean scan = rescan;

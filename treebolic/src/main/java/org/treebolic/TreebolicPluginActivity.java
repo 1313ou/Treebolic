@@ -141,10 +141,6 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 			if (TreebolicPluginActivity.this.classLoader == null)
 			{
 				TreebolicPluginActivity.this.classLoader = TreebolicPluginActivity.getPluginClassLoader(TreebolicPluginActivity.this, TreebolicPluginActivity.this.pluginPkg);
-				if (TreebolicPluginActivity.this.classLoader == null)
-				{
-					return;
-				}
 			}
 
 			// provider
@@ -185,6 +181,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	 * @return pluginProvider dex class loader
 	 * @throws NameNotFoundException name not found exception
 	 */
+	@NonNull
 	private static ClassLoader getPluginClassLoader(@NonNull final Context context, final String pluginPkg) throws NameNotFoundException
 	{
 		File dexCache;

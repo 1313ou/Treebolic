@@ -11,6 +11,7 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 @SuppressWarnings("WeakerAccess")
 public class Utils
@@ -50,6 +51,7 @@ public class Utils
 	 * @param pkg     package name
 	 * @return default shared preferences
 	 */
+	@Nullable
 	static SharedPreferences getPluginDefaultSharedPreferences(@NonNull final Context context, final String pkg)
 	{
 		try

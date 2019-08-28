@@ -365,6 +365,7 @@ public class Providers
 	 * @param rescan  rescan, do not use cache
 	 * @return list of providers (including builtin + plugins)
 	 */
+	@Nullable
 	static public List<HashMap<String, Object>> getProviders(@NonNull final Context context, final boolean rescan)
 	{
 		boolean scan = rescan;

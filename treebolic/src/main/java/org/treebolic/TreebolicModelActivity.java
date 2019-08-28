@@ -157,6 +157,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	 * @param reader model reader
 	 * @return model
 	 */
+	@Nullable
 	private Model deserializeGuarded(@NonNull final ModelReader reader)
 	{
 		try
