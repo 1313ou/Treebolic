@@ -1,30 +1,43 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<preference-headers
-	xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<header
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$ActivePreferenceFragment"
-		app:title="@string/pref_header_active"/>
-	<header
+		app:icon="@null"
+		app:key="pref_provider_active"
+		app:title="@string/pref_header_active" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$XmlPreferenceFragment"
-		app:title="@string/pref_header_xml"/>
-	<header
+		app:icon="@null"
+		app:key="pref_provider_xml"
+		app:title="@string/pref_header_xml" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$TextIndentPreferenceFragment"
-		app:title="@string/pref_header_text_indent"/>
-	<header
+		app:icon="@null"
+		app:key="pref_provider_textindent"
+		app:title="@string/pref_header_text_indent" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$TextIndentTrePreferenceFragment"
-		app:title="@string/pref_header_text_indent_tre"/>
-	<header
+		app:icon="@null"
+		app:key="pref_provider_textindent_tre"
+		app:title="@string/pref_header_text_indent_tre" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$TextPairPreferenceFragment"
-		app:title="@string/pref_header_text_pair"/>
-	<header
+		app:icon="@null"
+		app:key="pref_provider_textpair"
+		app:title="@string/pref_header_text_pair" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$ServicePreferenceFragment"
-		app:title="@string/pref_header_service"/>
-	<header
+		app:icon="@null"
+		app:key="pref_service"
+		app:title="@string/pref_header_service" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$DownloadPreferenceFragment"
-		app:title="@string/pref_header_download"/>
+		app:icon="@null"
+		app:key="pref_download"
+		app:title="@string/pref_header_download" />
 
-</preference-headers>
+</PreferenceScreen>

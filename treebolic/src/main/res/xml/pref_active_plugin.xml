@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<Preference android:key="pref_provider_icon"/>
 	<Preference
@@ -18,4 +19,4 @@
 		android:summary="@string/pref_description_provider_settings"
 		android:title="@string/pref_title_provider_settings"/>
 
-</androidx.preference.PreferenceScreen>
+</PreferenceScreen>

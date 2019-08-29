@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,21 +20,16 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
-import androidx.preference.legacy.contrib.Header;
 
 /**
- * A PreferenceActivity that presents a set of application settings. On handset devices, settings are presented as a single list. On tablets, settings
- * are split by category, with category headers shown to the left of the list of settings.
- * <p>
- * See <a href="http://developer.android.com/design/patterns/settings.html"> Android Design: Settings</a> for design guidelines and the <a
- * href="http://developer.android.com/guide/topics/ui/settings.html">Settings API Guide</a> for more information on developing a Settings UI.
+ * Settings activity
+ *
+ * @author Bernard Bou
  */
 public class SettingsActivity extends AppCompatCommonPreferenceActivity
 {
@@ -49,7 +43,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	 */
 	private static HashMap<String, Object> provider;
 
-	// E V E N T S
+	// L I F E C Y C L E
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -58,70 +52,12 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		// super
 		super.onCreate(savedInstanceState);
 
-		// toolbar
-		final Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-
-		// set up the action bar
-		final ActionBar actionBar = getSupportActionBar();
-		if (actionBar != null)
-		{
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
-		}
-
 		// read args
 		final String action = getIntent().getAction();
 		if (action == null)
 		{
 			SettingsActivity.provider = (HashMap<String, Object>) getIntent().getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
 		}
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
-	{
-		if (item.getItemId() == android.R.id.home)
-		{
-			NavUtils.navigateUpFromSameTask(this);
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	@Override
-	public void onBuildHeaders(@NonNull final List<Header> target)
-	{
-		loadHeadersFromResource(R.xml.pref_headers, target);
-	}
-
-	// S E T U P
-
-	@Override
-	public boolean isValidFragment(final String fragmentName)
-	{
-		return ActivePreferenceFragment.class.getName().equals(fragmentName) || //
-				XmlPreferenceFragment.class.getName().equals(fragmentName) || //
-				TextIndentPreferenceFragment.class.getName().equals(fragmentName) || //
-				TextIndentTrePreferenceFragment.class.getName().equals(fragmentName) || //
-				TextPairPreferenceFragment.class.getName().equals(fragmentName) || //
-				DownloadPreferenceFragment.class.getName().equals(fragmentName) || //
-				ServicePreferenceFragment.class.getName().equals(fragmentName);
-	}
-
-	// D E T E C T I O N
-
-	@Override
-	public boolean onIsMultiPane()
-	{
-		return SettingsActivity.isLargeTablet(this);
-	}
-
-	/**
-	 * Helper method to determine if the device has an extra-large screen. For example, 10" tablets are extra-large.
-	 */
-	private static boolean isLargeTablet(@NonNull final Context context)
-	{
-		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_LARGE;
 	}
 
 	// S U M M A R Y

@@ -114,22 +114,29 @@ public class Services
 			{
 				for (final ServiceInfo service : services)
 				{
-					final HashMap<String, Object> map = new HashMap<>();
-					map.put(Services.NAME, service.name);
-					map.put(Services.PACKAGE, pkg.packageName);
-					map.put(Services.PROCESS, service.processName);
-					map.put(Services.ENABLED, service.enabled);
-					map.put(Services.EXPORTED, service.exported);
-					map.put(Services.FLAGS, Integer.toHexString(service.flags));
-					map.put(Services.PERMISSION, service.permission);
-					map.put(Services.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
-					map.put(Services.DESCRIPTION, Services.loadText(packageManager, pkg.packageName, service.descriptionRes));
-					map.put(Services.LOGO, service.logo);
-					map.put(Services.ICON, service.icon);
-					map.put(Services.DRAWABLE, pkg.packageName + '#' + service.icon);
+					if(filter == null || service.name.matches(filter))
+					{
+						final HashMap<String, Object> map = new HashMap<>();
+						map.put(Services.NAME, service.name);
+						map.put(Services.PACKAGE, pkg.packageName);
+						map.put(Services.PROCESS, service.processName);
+						map.put(Services.ENABLED, service.enabled);
+						map.put(Services.EXPORTED, service.exported);
+						map.put(Services.FLAGS, Integer.toHexString(service.flags));
+						map.put(Services.PERMISSION, service.permission);
+						map.put(Services.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
+						map.put(Services.DESCRIPTION, Services.loadText(packageManager, pkg.packageName, service.descriptionRes));
+						map.put(Services.LOGO, service.logo);
+						map.put(Services.ICON, service.icon);
+						map.put(Services.DRAWABLE, pkg.packageName + '#' + service.icon);
 
-					assert data != null;
-					data.add(map);
+						assert data != null;
+						data.add(map);
+					}
+					else
+					{
+						Log.d(TAG, "Dropped " + service.toString());
+					}
 				}
 			}
 		}
