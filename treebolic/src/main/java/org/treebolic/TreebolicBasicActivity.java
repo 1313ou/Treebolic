@@ -259,6 +259,8 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 			@Override
 			public boolean onQueryTextSubmit(@NonNull final String query)
 			{
+				TreebolicBasicActivity.this.searchView.clearFocus();
+				TreebolicBasicActivity.this.searchView.setQuery("", false);
 				handleQueryChanged(query, true);
 				return true;
 			}

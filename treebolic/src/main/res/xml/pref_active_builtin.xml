@@ -14,7 +14,6 @@
 		android:key="pref_provider"
 		android:summary="@string/pref_description_provider"
 		android:title="@string/pref_title_provider"/>
-
 	<EditTextPreference
 		android:inputType="textUri"
 		android:key="pref_source"

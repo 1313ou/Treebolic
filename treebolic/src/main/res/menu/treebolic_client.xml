@@ -1,0 +1,54 @@
+<!--
+  ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="org.treebolic.MainActivity">
+
+	<item
+		android:id="@+id/action_search"
+		android:iconifiedByDefault="true"
+		android:title="@string/title_search"
+		app:actionViewClass="androidx.appcompat.widget.SearchView"
+		app:showAsAction="always"
+		tools:ignore="AlwaysShowAction"/>
+	<item
+		android:id="@+id/action_search_run"
+		android:icon="@drawable/ic_action_search_run"
+		android:title="@string/title_search_run"
+		app:showAsAction="always"/>
+	<item
+		android:id="@+id/action_search_reset"
+		android:icon="@drawable/ic_action_search_reset"
+		android:title="@string/title_search_reset"
+		app:showAsAction="always"/>
+	<item
+		android:id="@+id/action_client_status"
+		android:icon="@drawable/ic_status_down"
+		android:title="@string/title_client_status"
+		app:showAsAction="always"/>
+	<item
+		android:id="@+id/action_search_settings"
+		android:icon="@drawable/ic_action_search_settings"
+		android:title="@string/title_search_settings"
+		app:showAsAction="ifRoom"/>
+	<item
+		android:id="@+id/action_treebolic_client_toggle"
+		android:title="@string/title_treebolic_client_toggle"
+		app:showAsAction="never"/>
+	<item
+		android:id="@+id/action_tips"
+		android:title="@string/title_tips"
+		app:showAsAction="never"/>
+	<item
+		android:id="@+id/action_help"
+		android:title="@string/title_help"
+		app:showAsAction="never"/>
+	<item
+		android:id="@+id/action_finish"
+		android:title="@string/title_finish"
+		app:showAsAction="never"/>
+
+</menu>

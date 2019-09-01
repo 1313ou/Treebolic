@@ -80,6 +80,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 */
 	private SearchView searchView;
 
+	/**
+	 * Client status indicator
+	 */
+	private MenuItem clientStatusMenuItem;
+
 	// L I F E C Y C L E
 
 	@Override
@@ -148,7 +153,15 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	public boolean onCreateOptionsMenu(@NonNull final Menu menu)
 	{
 		// menu
-		getMenuInflater().inflate(R.menu.treebolic, menu);
+		getMenuInflater().inflate(R.menu.treebolic_client, menu);
+
+		// client status
+		this.clientStatusMenuItem = menu.findItem(R.id.action_client_status);
+		this.clientStatusMenuItem.setOnMenuItemClickListener(item -> {
+			Toast.makeText(TreebolicClientActivity.this, this.clientStatus ? R.string.client_up : R.string.client_down, Toast.LENGTH_SHORT).show();
+			return true;
+		});
+		updateClientStatus(this.clientStatus);
 
 		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
@@ -165,6 +178,8 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			@Override
 			public boolean onQueryTextSubmit(@NonNull final String query)
 			{
+				TreebolicClientActivity.this.searchView.clearFocus();
+				TreebolicClientActivity.this.searchView.setQuery("", false);
 				handleQueryChanged(query, true);
 				return true;
 			}
@@ -185,6 +200,13 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		switch (item.getItemId())
 		{
+			case R.id.action_treebolic_client_toggle:
+				if(this.clientStatus)
+					stop();
+				else
+					start();
+				return true;
+
 			case android.R.id.home:
 				NavUtils.navigateUpFromSameTask(this);
 				return true;
@@ -392,6 +414,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 */
 	private void query(@Nullable final String source)
 	{
+		Log.d(TreebolicClientActivity.TAG, "Query " + source);
 		if (this.client == null)
 		{
 			Log.d(TreebolicClientActivity.TAG, "Null client");
@@ -470,10 +493,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			if (SearchSettings.SCOPE_SOURCE.equals(scope))
 			{
 				Log.d(TAG, "Source" + ' ' + '"' + query + '"');
-				//if (submit)
-				//{
 				query(query);
-				//}
 				return;
 			}
 
@@ -570,11 +590,22 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onConnected(final boolean flag)
 	{
+		updateClientStatus(flag);
+		super.onConnected(flag);
+	}
+
+	// S T A T U S
+
+	private void updateClientStatus(final boolean flag)
+	{
 		assert this.argService != null;
 		final String[] fields = this.argService.split("/");
 		snackbar(getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected) + ' ' + fields[1], Snackbar.LENGTH_LONG);
 
-		super.onConnected(flag);
+		if (this.clientStatusMenuItem != null)
+		{
+			this.clientStatusMenuItem.setIcon(flag ? R.drawable.ic_status_up : R.drawable.ic_status_down);
+		}
 	}
 
 	// H E L P E R S

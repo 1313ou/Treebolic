@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@Override
-			public boolean onQueryTextSubmit(final String query)
+			public boolean onQueryTextSubmit(@NonNull final String query)
 			{
 				searchView.clearFocus();
 				searchView.setQuery("", false);

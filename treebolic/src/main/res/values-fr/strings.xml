@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
@@ -40,6 +39,7 @@
 	<string name="title_treebolic_serialized">Ouvrir modèle sérialisé</string>
 	<string name="title_treebolic_client">Lancer client &#8230;</string>
 	<string name="title_treebolic_default_client">Lancer client par défaut</string>
+	<string name="title_treebolic_client_toggle">Basculer client</string>
 	<string name="title_query">Lancer</string>
 	<string name="title_start">Démarrer</string>
 	<string name="title_finish">Finir</string>
@@ -47,6 +47,15 @@
 	<string name="title_demo">Démo</string>
 	<string name="title_rescan">Actualiser</string>
 	<string name="title_settings">Paramètres</string>
+	<string name="title_client_status">État client</string>
+
+	<!-- submenus -->
+	<string name="title_menu_open">Ouvrir …</string>
+	<string name="title_menu_data">Données …</string>
+	<string name="title_menu_service">Services …</string>
+	<string name="title_menu_help">Aide …</string>
+	<string name="title_menu_about">À propos …</string>
+	<string name="title_menu_app">App …</string>
 
 	<!-- choose services -->
 	<string name="title_services">Services</string>
@@ -72,6 +81,10 @@
 	<string name="error_deserialize">Erreur lors de la désérialisation</string>
 	<string name="error_no_services">Aucun service disponible</string>
 	<string name="error_client_not_connected">Client non connecté</string>
+
+	<!-- status -->
+	<string name="client_up">Client connecté</string>
+	<string name="client_down">Client déconnecté</string>
 
 	<!-- list views -->
 	<string name="service">service</string>

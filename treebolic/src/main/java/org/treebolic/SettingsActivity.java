@@ -69,6 +69,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 
 	// F R A G M E N T S
 
+	@SuppressWarnings("WeakerAccess")
 	public static class ActivePreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Override
@@ -133,8 +134,10 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 				for (final String prefKey : new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER})
 				{
 					final Preference preference = findPreference(prefKey);
-					assert preference != null;
-					preference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
+					if (preference != null)
+					{
+						preference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
+					}
 				}
 
 				// forward button to plugin provider settings activity
@@ -156,6 +159,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	public static class XmlPreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
@@ -166,6 +170,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	public static class TextIndentPreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
@@ -176,6 +181,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	public static class TextIndentTrePreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
@@ -186,6 +192,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	public static class TextPairPreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
@@ -196,6 +203,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	abstract public static class ProviderPreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Nullable
@@ -251,6 +259,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	public static class DownloadPreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Override
@@ -279,6 +288,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
+	@SuppressWarnings("WeakerAccess")
 	public static class ServicePreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Override

@@ -68,4 +68,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.preference:preference:1.1.0-rc01'
     implementation 'com.google.android.material:material:1.0.0'
+
+    testImplementation 'androidx.test.ext:junit:1.1.1'
 }
