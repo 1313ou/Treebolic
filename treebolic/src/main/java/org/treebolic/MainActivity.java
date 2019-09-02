@@ -809,7 +809,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	/**
-	 * Try to start Treebolic activity from XML source file
+	 * Try to start Treebolic activity from source file
 	 *
 	 * @param fileUri XML file uri
 	 */
@@ -922,19 +922,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	/**
-	 * Try to start Treebolic settings activity
-	 */
-	private void tryStartTreebolicSettings()
-	{
-		final Intent intent = new Intent(this, SettingsActivity.class);
-		if (this.pluginProvider != null)
-		{
-			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.pluginProvider);
-		}
-		startActivity(intent);
-	}
-
-	/**
 	 * Try to start Treebolic default client activity
 	 */
 	private void tryStartTreebolicDefaultClient()
@@ -956,6 +943,19 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
 		intent.putExtra(TreebolicIface.ARG_SERVICE, argService);
 		Log.d(MainActivity.TAG, "Start treebolic client for " + argService);
+		startActivity(intent);
+	}
+
+	/**
+	 * Try to start Treebolic settings activity
+	 */
+	private void tryStartTreebolicSettings()
+	{
+		final Intent intent = new Intent(this, SettingsActivity.class);
+		if (this.pluginProvider != null)
+		{
+			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.pluginProvider);
+		}
 		startActivity(intent);
 	}
 }

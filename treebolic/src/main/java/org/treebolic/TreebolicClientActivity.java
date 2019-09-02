@@ -201,10 +201,14 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		switch (item.getItemId())
 		{
 			case R.id.action_treebolic_client_toggle:
-				if(this.clientStatus)
+				if (this.clientStatus)
+				{
 					stop();
+				}
 				else
+				{
 					start();
+				}
 				return true;
 
 			case android.R.id.home:
@@ -598,9 +602,16 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	private void updateClientStatus(final boolean flag)
 	{
-		assert this.argService != null;
-		final String[] fields = this.argService.split("/");
-		snackbar(getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected) + ' ' + fields[1], Snackbar.LENGTH_LONG);
+		final String[] fields = this.argService == null ? null : this.argService.split("/");
+		final String message = getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected) + ' ' + (fields != null ? fields[1] : "");
+		if (flag)
+		{
+			snackbar(message, Snackbar.LENGTH_LONG);
+		}
+		else
+		{
+			stickySnackbar(message);
+		}
 
 		if (this.clientStatusMenuItem != null)
 		{
@@ -647,6 +658,20 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, duration);
 			final android.view.View view = snack.getView();
 			view.setBackgroundColor(ContextCompat.getColor(TreebolicClientActivity.this, R.color.snackbar_color));
+			snack.show();
+		});
+	}
+
+	/**
+	 * Put sticky snackbar on UI thread
+	 *
+	 * @param message message
+	 */
+	private void stickySnackbar(@NonNull final String message)
+	{
+		runOnUiThread(() -> {
+			final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, Snackbar.LENGTH_INDEFINITE);
+			snack.setAction(android.R.string.yes, (v) -> snack.dismiss());
 			snack.show();
 		});
 	}

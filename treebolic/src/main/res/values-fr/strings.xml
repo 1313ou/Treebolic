@@ -69,6 +69,7 @@
 
 	<!-- status -->
 	<string name="status_client_connected">Client connecté</string>
+	<string name="error_client_not_connected">Client non connecté</string>
 
 	<!-- errors -->
 	<string name="error_null_source">Source nulle</string>
@@ -80,7 +81,6 @@
 	<string name="error_query">Erreur de requête</string>
 	<string name="error_deserialize">Erreur lors de la désérialisation</string>
 	<string name="error_no_services">Aucun service disponible</string>
-	<string name="error_client_not_connected">Client non connecté</string>
 
 	<!-- status -->
 	<string name="client_up">Client connecté</string>
