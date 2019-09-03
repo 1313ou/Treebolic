@@ -488,8 +488,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	{
 		// spinner adapter
 		this.adapter = makeAdapter(R.layout.spinner_item_providers, from, to);
-		//if (this.adapter != null)
-		//{
+
 		// set spinner adapter
 		this.spinner.setAdapter(this.adapter);
 
@@ -508,7 +507,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				}
 			}
 		}
-		//}
 	}
 
 	/**
@@ -523,11 +521,12 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
 	{
 		// data
-		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, false);
+		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, true);
 		if (providers0 == null)
 		{
 			providers0 = new ArrayList<>();
 		}
+
 		@SuppressWarnings("unchecked") final List<HashMap<String, Object>> providers = new ArrayList(providers0);
 		providers.add(makeRescanDummy());
 
