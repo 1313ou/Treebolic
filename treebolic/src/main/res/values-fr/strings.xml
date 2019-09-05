@@ -49,14 +49,6 @@
 	<string name="title_settings">Paramètres</string>
 	<string name="title_client_status">État client</string>
 
-	<!-- submenus -->
-	<string name="title_menu_open">Ouvrir …</string>
-	<string name="title_menu_data">Données …</string>
-	<string name="title_menu_service">Services …</string>
-	<string name="title_menu_help">Aide …</string>
-	<string name="title_menu_about">À propos …</string>
-	<string name="title_menu_app">App …</string>
-
 	<!-- choose services -->
 	<string name="title_services">Services</string>
 	<string name="title_choose_service">Choisir</string>

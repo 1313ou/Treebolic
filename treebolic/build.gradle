@@ -16,6 +16,7 @@ android {
         applicationId "org.treebolic"
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
+        multiDexEnabled true
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -59,6 +60,9 @@ dependencies {
     implementation project(':downloadLib')
     implementation project(':preferenceLib')
     implementation project(':guideLib')
+    implementation project(':rateLib')
+    implementation project(':othersLib')
+    implementation project(':donateLib')
 
     implementation files('libs/treebolic-provider-text-indent-tre.jar')
     implementation files('libs/treebolic-provider-text-indent.jar')

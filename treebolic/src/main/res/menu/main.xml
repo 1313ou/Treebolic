@@ -81,12 +81,12 @@
 		app:showAsAction="never">
 		<menu>
 			<item
-				android:id="@+id/action_tips"
-				android:title="@string/title_tips"
-				app:showAsAction="never" />
-			<item
 				android:id="@+id/action_help"
 				android:title="@string/title_help"
+				app:showAsAction="never" />
+			<item
+				android:id="@+id/action_tips"
+				android:title="@string/title_tips"
 				app:showAsAction="never" />
 		</menu>
 	</item>
@@ -97,6 +97,18 @@
 			<item
 				android:id="@+id/action_about"
 				android:title="@string/title_about"
+				app:showAsAction="never" />
+			<item
+				android:id="@+id/action_others"
+				android:title="@string/title_others"
+				app:showAsAction="never" />
+			<item
+				android:id="@+id/action_rate"
+				android:title="@string/title_rate"
+				app:showAsAction="never" />
+			<item
+				android:id="@+id/action_donate"
+				android:title="@string/title_donate"
 				app:showAsAction="never" />
 		</menu>
 	</item>

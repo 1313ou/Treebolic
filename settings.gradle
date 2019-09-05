@@ -57,6 +57,15 @@ project(':fileChooserLib').projectDir = new File('../TreebolicSupportLibs/fileCh
 include ':storageLib'
 project(':storageLib').projectDir = new File('../TreebolicSupportLibs/storageLib/')
 
+include ':rateLib'
+project(':rateLib').projectDir = new File('../TreebolicSponsorLibs/rateLib/')
+
+include ':othersLib'
+project(':othersLib').projectDir = new File('../TreebolicSponsorLibs/othersLib/')
+
+include ':donateLib'
+project(':donateLib').projectDir = new File('../TreebolicSponsorLibs/donateLib/')
+
 // LIB
 
 include ':treebolicAidl'
