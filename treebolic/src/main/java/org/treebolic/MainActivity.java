@@ -290,6 +290,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				return true;
 
 			case R.id.action_treebolic_client:
+				TreebolicClientActivity.initializeSearchPrefs(this);
 				tryStartOneOfTreebolicClients();
 				return true;
 
