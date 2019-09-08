@@ -287,10 +287,6 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	{
 		switch (item.getItemId())
 		{
-			case android.R.id.home:
-				NavUtils.navigateUpFromSameTask(this);
-				return true;
-
 			case R.id.action_settings:
 				final Intent intent = new Intent(this, SettingsActivity.class);
 				startActivity(intent);

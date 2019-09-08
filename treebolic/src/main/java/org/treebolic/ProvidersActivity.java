@@ -63,17 +63,12 @@ public class ProvidersActivity extends AppCompatCommonActivity
 	@Override
 	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
-		switch (item.getItemId())
+		if (item.getItemId() == R.id.action_rescan)
 		{
-			case android.R.id.home:
-				NavUtils.navigateUpFromSameTask(this);
-				return true;
-
-			case R.id.action_rescan:
-				final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
-				final ListView listView = findViewById(R.id.providers);
-				listView.setAdapter(adapter);
-				return true;
+			final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
+			final ListView listView = findViewById(R.id.providers);
+			listView.setAdapter(adapter);
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

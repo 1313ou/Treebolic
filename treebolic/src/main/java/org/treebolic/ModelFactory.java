@@ -29,7 +29,7 @@ public class ModelFactory
 	/**
 	 * Log tag
 	 */
-	static private final String TAG = "Model factory";
+	static private final String TAG = "ModelFactory";
 
 	/**
 	 * Provider

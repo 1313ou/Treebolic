@@ -54,17 +54,12 @@ public class ServicesActivity extends AppCompatCommonActivity
 	@Override
 	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
-		switch (item.getItemId())
+		if (item.getItemId() == R.id.action_rescan)
 		{
-			case android.R.id.home:
-				NavUtils.navigateUpFromSameTask(this);
-				return true;
-
-			case R.id.action_rescan:
-				final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
-				final ListView listView = findViewById(R.id.services);
-				listView.setAdapter(adapter);
-				return true;
+			final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
+			final ListView listView = findViewById(R.id.services);
+			listView.setAdapter(adapter);
+			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}

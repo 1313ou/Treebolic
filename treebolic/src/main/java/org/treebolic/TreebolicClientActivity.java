@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Process;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
@@ -211,10 +212,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 				}
 				return true;
 
-			case android.R.id.home:
-				NavUtils.navigateUpFromSameTask(this);
-				return true;
-
 			case R.id.action_settings:
 				final Intent intent = new Intent(this, SettingsActivity.class);
 				startActivity(intent);
@@ -222,6 +219,10 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 			case R.id.action_finish:
 				finish();
+				return true;
+
+			case R.id.action_kill:
+				Process.killProcess(Process.myPid());
 				return true;
 
 			case R.id.action_tips:
