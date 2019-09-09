@@ -13,7 +13,6 @@ import android.widget.SimpleAdapter;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NavUtils;
 
 /**
  * Activity listing services

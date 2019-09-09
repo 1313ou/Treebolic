@@ -7,3 +7,6 @@
 **/build
 
 **/*.iml
+
+**/strings_license-nontranslatable.xml
+**/strings_skus-nontranslatable.xml
