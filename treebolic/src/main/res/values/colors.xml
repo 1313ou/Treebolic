@@ -5,8 +5,7 @@
 
 <resources>
 
-	<!-- button and snackbar -->
-	<item name="button_color" type="color">#FF3765b1</item>
+	<!-- snackbar -->
 	<item name="snackbar_color" type="color">#FF3765b1</item>
 
 </resources>

@@ -2,14 +2,14 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
 	<string name="title_download">Download</string>
 	<string name="title_activity_download">Download</string>
 
 	<!-- pref -->
 	<string name="pref_header_download">Download</string>
-	<string name="pref_summary_header_download">Download settings</string>
+	<string name="pref_summary_header_download" tools:keep="@string/pref_summary_header_download">Download settings</string>
 	<string name="pref_title_download_base">Download URL base</string>
 	<string name="pref_description_download_base">Download URL base for extra data</string>
 	<string name="pref_title_download_file">File to download</string>

@@ -5,6 +5,7 @@
 package org.treebolic;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
@@ -48,6 +49,15 @@ public class ServicesActivity extends AppCompatCommonActivity
 		final SimpleAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
 		final ListView listView = findViewById(R.id.services);
 		listView.setAdapter(adapter);
+	}
+
+	@SuppressWarnings("SameReturnValue")
+	@Override
+	public boolean onCreateOptionsMenu(final Menu menu)
+	{
+		// inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.services, menu);
+		return true;
 	}
 
 	@Override

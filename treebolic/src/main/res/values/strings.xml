@@ -2,26 +2,22 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
 	<string name="app_name">Treebolic</string>
 	<string name="treebolic">Treebolic</string>
 
 	<!-- action -->
-	<string name="action_ok">OK</string>
+	<string name="action_ok" tools:keep="@string/action_ok">OK</string>
 	<string name="action_cancel">Cancel</string>
 
 	<!-- menu+actionbar -->
-	<string name="hint_search">source</string>
-	<string name="hint_search_treebolic">query</string>
+	<string name="hint_search" tools:keep="@string/hint_search">source</string>
 
 	<!-- activity -->
 	<string name="title_activity_main">Treebolic</string>
 	<string name="title_activity_treebolic">Treebolic</string>
 	<string name="title_activity_treebolic_plugin">Treebolic (plugin)</string>
-	<string name="title_activity_treebolic_source">Treebolic (source)</string>
-	<string name="title_activity_treebolic_bundle">Treebolic (bundle)</string>
-	<string name="title_activity_treebolic_serialized">Treebolic (serialized)</string>
 	<string name="title_activity_treebolic_model">Treebolic (model)</string>
 	<string name="title_activity_treebolic_client">Treebolic (client)</string>
 	<string name="title_activity_services">Services</string>
@@ -41,7 +37,7 @@
 	<string name="title_treebolic_default_client">Start default client</string>
 	<string name="title_treebolic_client_toggle">Toggle client</string>
 	<string name="title_query">Run</string>
-	<string name="title_start">Start</string>
+	<string name="title_start" tools:keep="@string/title_start">Start</string>
 	<string name="title_finish">Finish</string>
 	<string name="title_kill">Kill</string>
 	<string name="title_demo">Demo</string>
@@ -52,12 +48,6 @@
 	<!-- choose services -->
 	<string name="title_services">Services</string>
 	<string name="title_choose_service">Choose</string>
-
-	<!-- search settings -->
-	<string name="title_search_settings_dialog">Treebolic search</string>
-	<string name="message_search_settings_dialog">Enter search settings</string>
-	<string name="ok_search_settings_dialog">OK</string>
-	<string name="cancel_search_settings_dialog">Cancel</string>
 
 	<!-- status -->
 	<string name="status_client_connected">Client connected</string>

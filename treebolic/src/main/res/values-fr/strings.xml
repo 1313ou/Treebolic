@@ -13,15 +13,11 @@
 
 	<!-- menu+actionbar -->
 	<string name="hint_search">source</string>
-	<string name="hint_search_treebolic">query</string>
 
 	<!-- activity -->
 	<string name="title_activity_main">Treebolic</string>
 	<string name="title_activity_treebolic">Treebolic</string>
 	<string name="title_activity_treebolic_plugin">Treebolic (module)</string>
-	<string name="title_activity_treebolic_source">Treebolic (source)</string>
-	<string name="title_activity_treebolic_bundle">Treebolic (archive)</string>
-	<string name="title_activity_treebolic_serialized">Treebolic (sérialisé)</string>
 	<string name="title_activity_treebolic_model">Treebolic (modèle)</string>
 	<string name="title_activity_treebolic_client">Treebolic (client)</string>
 	<string name="title_activity_services">Services</string>
@@ -52,12 +48,6 @@
 	<!-- choose services -->
 	<string name="title_services">Services</string>
 	<string name="title_choose_service">Choisir</string>
-
-	<!-- search settings -->
-	<string name="title_search_settings_dialog">Recherche Treebolic</string>
-	<string name="message_search_settings_dialog">Entrer les paramètres de la recherche</string>
-	<string name="ok_search_settings_dialog">OK</string>
-	<string name="cancel_search_settings_dialog">Annuler</string> <!-- errors -->
 
 	<!-- status -->
 	<string name="status_client_connected">Client connecté</string>
