@@ -5,6 +5,7 @@
 /captures
 
 **/build
+**/release
 
 **/*.iml
 
