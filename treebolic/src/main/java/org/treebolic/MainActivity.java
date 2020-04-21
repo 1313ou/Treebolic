@@ -424,6 +424,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
+	@SuppressWarnings("WeakerAccess")
 	public static class PlaceholderFragment extends Fragment
 	{
 		@Override

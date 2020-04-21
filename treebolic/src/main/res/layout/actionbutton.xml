@@ -5,13 +5,13 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginBottom="@dimen/action_button_group_margin">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_centerHorizontal="true"
+	android:layout_gravity="bottom|center_horizontal"
+	android:layout_marginBottom="@dimen/action_button_group_margin">
 
 	<TextView
 		android:id="@+id/treebolicSource"
@@ -20,7 +20,7 @@
 		android:layout_centerHorizontal="true"
 		android:gravity="bottom"
 		android:visibility="invisible"
-		tools:text="@string/source"/>
+		tools:text="@string/source" />
 
 	<com.google.android.material.floatingactionbutton.FloatingActionButton
 		android:id="@+id/treebolicButton"
@@ -31,10 +31,12 @@
 		android:contentDescription="@string/title_query"
 		android:elevation="4dp"
 		android:onClick="onClick"
+		android:tint="#FFFFFF"
 		android:visibility="visible"
 		app:fabSize="normal"
-		app:useCompatPadding="true"
 		app:srcCompat="@drawable/ic_treebolic"
-		tools:ignore="UnusedAttribute"/>
+		app:tint="@android:color/white"
+		app:useCompatPadding="true"
+		tools:ignore="UnusedAttribute" />
 
 </RelativeLayout>
