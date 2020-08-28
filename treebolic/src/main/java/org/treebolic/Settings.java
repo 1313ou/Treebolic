@@ -11,7 +11,6 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Build;
-import android.preference.PreferenceManager;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -20,6 +19,7 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.preference.PreferenceManager;
 
 /**
  * Settings

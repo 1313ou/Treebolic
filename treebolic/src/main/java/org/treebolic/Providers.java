@@ -13,7 +13,6 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -29,6 +28,7 @@ import java.util.List;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.preference.PreferenceManager;
 
 @SuppressWarnings("WeakerAccess")
 public class Providers

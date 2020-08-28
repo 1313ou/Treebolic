@@ -73,7 +73,12 @@ public class DownloadActivity extends org.treebolic.download.DownloadActivity
 			return true;
 		}
 
-		final File destFile = new File(storage, this.downloadUri.getLastPathSegment());
+		final String lastSegment = this.downloadUri.getLastPathSegment();
+		if (lastSegment == null)
+		{
+			return false;
+		}
+		final File destFile = new File(storage, lastSegment);
 		Deploy.copy(inputStream, destFile);
 		return true;
 	}

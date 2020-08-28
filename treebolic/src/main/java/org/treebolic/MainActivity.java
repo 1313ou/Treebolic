@@ -11,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -56,6 +55,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceManager;
 
 /**
  * Treebolic main activity (home)
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 					final String name = (String) MainActivity.this.pluginProvider.get(Providers.NAME);
 					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
 					Settings.setActivePrefs(MainActivity.this, MainActivity.this.pluginProvider);
-					Log.d(MainActivity.TAG, (String) MainActivity.this.pluginProvider.get(Providers.PROVIDER));
+					Log.d(MainActivity.TAG, name == null ? "null" : name);
 
 					updateButton();
 				}
@@ -461,7 +461,8 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final File dir = Storage.getTreebolicStorage(this);
 		if (dir.isDirectory())
 		{
-			if (dir.list().length == 0)
+			final String[] dirContent = dir.list();
+			if (dirContent == null || dirContent.length == 0)
 			{
 				// deploy
 				Storage.expandZipAssetFile(this, "tests.zip");
@@ -497,8 +498,12 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void setFolder(@NonNull final Uri fileUri)
 	{
-		final String path = new File(fileUri.getPath()).getParent();
-		FileChooserActivity.setFolder(this, MainActivity.PREF_CURRENTFOLDER, path);
+		final String path = fileUri.getPath();
+		if (path != null)
+		{
+			final String parentPath = new File(path).getParent();
+			FileChooserActivity.setFolder(this, MainActivity.PREF_CURRENTFOLDER, parentPath);
+		}
 	}
 
 	// S P I N N E R
@@ -549,7 +554,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			providers0 = new ArrayList<>();
 		}
 
-		@SuppressWarnings("unchecked") final List<HashMap<String, Object>> providers = new ArrayList(providers0);
+		final List<HashMap<String, Object>> providers = new ArrayList<>(providers0);
 		providers.add(makeRescanDummy());
 
 		// adapter
@@ -877,8 +882,12 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	{
 		try
 		{
-			// choose bundle entry
-			EntryChooser.choose(this, new File(archiveUri.getPath()), zipEntry -> tryStartTreebolicBundle(archiveUri, zipEntry));
+			final String path = archiveUri.getPath();
+			if (path != null)
+			{
+				// choose bundle entry
+				EntryChooser.choose(this, new File(path), zipEntry -> tryStartTreebolicBundle(archiveUri, zipEntry));
+			}
 		}
 		catch (@NonNull final IOException e)
 		{

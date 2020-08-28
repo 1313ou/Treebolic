@@ -90,7 +90,7 @@ public class Services
 		if (labelRes != 0)
 		{
 			final CharSequence label = packageManager.getText(packageName, labelRes, null);
-			return label.toString();
+			return label == null ? "null" : label.toString();
 		}
 		return "?";
 	}

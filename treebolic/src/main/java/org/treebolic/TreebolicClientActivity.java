@@ -10,7 +10,6 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Process;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,6 +40,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.preference.PreferenceManager;
 import treebolic.IContext;
 import treebolic.Widget;
 import treebolic.glue.component.TreebolicThread;
@@ -671,7 +671,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		runOnUiThread(() -> {
 			final Snackbar snack = Snackbar.make(TreebolicClientActivity.this.widget, message, Snackbar.LENGTH_INDEFINITE);
-			snack.setAction(android.R.string.yes, (v) -> snack.dismiss());
+			snack.setAction(android.R.string.ok, (v) -> snack.dismiss());
 			snack.show();
 		});
 	}

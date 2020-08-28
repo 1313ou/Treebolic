@@ -114,7 +114,8 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 					{
 						if (isPlugin)
 						{
-							final Drawable drawable = activity.getPackageManager().getApplicationIcon((String) SettingsActivity.provider.get(Providers.PACKAGE));
+							final String pack = (String) SettingsActivity.provider.get(Providers.PACKAGE);
+							final Drawable drawable = pack == null ? null : activity.getPackageManager().getApplicationIcon(pack);
 							iconPref.setIcon(drawable);
 						}
 						else
