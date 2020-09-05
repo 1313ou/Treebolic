@@ -47,7 +47,10 @@ android {
 }
 
 dependencies {
-    implementation project(':treebolicLib')
+    implementation project(':treebolicLibView')
+    implementation project(':treebolicLibModel')
+    implementation project(':treebolicGraph')
+    implementation project(':treebolicIface')
     implementation project(':treebolicParcel')
     implementation project(':treebolicClientsIface')
     implementation project(':treebolicClientsLib')
