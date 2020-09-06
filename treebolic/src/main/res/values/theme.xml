@@ -8,8 +8,23 @@
 	<!--<style name="MyBaseTheme" parent="Theme.MaterialComponents.Light.NoActionBar"/>-->
 	<!--<style name="MyBaseTheme" parent="Theme.MaterialComponents.NoActionBar"/>-->
 
-	<style name="MyBaseOverlay" parent="ThemeOverlay.MaterialComponents.Dark"/>
-	<!--<style name="MyBaseOverlay" parent="ThemeOverlay.MaterialComponents"/>-->
+	<style name="MyBaseOverlay" parent="ThemeOverlay.MaterialComponents.Dark">
+		<item name="colorSurface">?attr/actionbar_color</item>
+		<item name="colorOnSurface">?attr/actionbar_fore_color</item>
+		<item name="android:colorBackground">?attr/actionbar_color</item>
+		<item name="colorOnBackground">?attr/actionbar_fore_color</item>
+		<item name="android:background">?attr/actionbar_color</item>item> <!-- submenu background -->
+		<item name="android:textColorPrimary">?attr/actionbar_fore_color</item>item> <!-- item foreground -->
+		<item name="android:textColorSecondary">?attr/actionbar_secondary_fore_color</item> <!-- submenu item foreground -->
+	</style>
+	<!--<style name="MyBaseOverlay" parent="ThemeOverlay.MaterialComponents">
+		<item name="colorSurface">?attr/actionbar_color</item>
+		<item name="android:colorBackground">?attr/actionbar_color</item>
+		<item name="android:background">?attr/actionbar_color</item>item>
+		<item name="android:textColorPrimary">?attr/actionbar_fore_color</item>item>
+		<item name="android:textColorSecondary">?attr/actionbar_secondary_fore_color</item>
+	</style>
+	-->
 
 	<style name="MyActionBarBaseOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 	<!--<style name="MyActionBarBaseOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar" />-->
