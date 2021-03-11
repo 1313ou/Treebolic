@@ -198,60 +198,69 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
 	{
-		switch (item.getItemId())
+		int id = item.getItemId();
+		if (R.id.action_treebolic_client_toggle == id)
 		{
-			case R.id.action_treebolic_client_toggle:
-				if (this.clientStatus)
-				{
-					stop();
-				}
-				else
-				{
-					start();
-				}
-				return true;
-
-			case R.id.action_settings:
-				final Intent intent = new Intent(this, SettingsActivity.class);
-				startActivity(intent);
-				return true;
-
-			case R.id.action_finish:
-				finish();
-				return true;
-
-			case R.id.action_kill:
-				Process.killProcess(Process.myPid());
-				return true;
-
-			case R.id.action_tips:
-				Tip.show(getSupportFragmentManager());
-				return true;
-
-			case R.id.action_help:
-				startActivity(new Intent(this, HelpActivity.class));
-				return true;
-
-			case R.id.action_about:
-				startActivity(new Intent(this, AboutActivity.class));
-				return true;
-
-			case R.id.action_search_run:
-				handleSearchRun();
-				return true;
-
-			case R.id.action_search_reset:
-				handleSearchReset();
-				return true;
-
-			case R.id.action_search_settings:
-				SearchSettings.show(getSupportFragmentManager());
-				return true;
-
-			default:
-				break;
+			if (this.clientStatus)
+			{
+				stop();
+			}
+			else
+			{
+				start();
+			}
+			return true;
 		}
-		return false;
+		else if (R.id.action_settings == id)
+		{
+			final Intent intent = new Intent(this, SettingsActivity.class);
+			startActivity(intent);
+			return true;
+		}
+		else if (R.id.action_finish == id)
+		{
+			finish();
+			return true;
+		}
+		else if (R.id.action_kill == id)
+		{
+			Process.killProcess(Process.myPid());
+			return true;
+		}
+		else if (R.id.action_tips == id)
+		{
+			Tip.show(getSupportFragmentManager());
+			return true;
+		}
+		else if (R.id.action_help == id)
+		{
+			startActivity(new Intent(this, HelpActivity.class));
+			return true;
+		}
+		else if (R.id.action_about == id)
+		{
+			startActivity(new Intent(this, AboutActivity.class));
+			return true;
+		}
+		else if (R.id.action_search_run == id)
+		{
+			handleSearchRun();
+			return true;
+		}
+		else if (R.id.action_search_reset == id)
+		{
+			handleSearchReset();
+			return true;
+		}
+		else if (R.id.action_search_settings == id)
+		{
+			SearchSettings.show(getSupportFragmentManager());
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	// T R E E B O L I C C O N T E X T

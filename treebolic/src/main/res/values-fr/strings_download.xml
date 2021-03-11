@@ -8,7 +8,7 @@
 	<string name="title_activity_download">Téléchargement</string>
 
 	<!-- pref -->
-	<string name="pref_header_download">Téléchargements</string>
+	<string name="pref_header_download" tools:keep="@string/pref_header_download">Téléchargements</string>
 	<string name="pref_summary_header_download" tools:keep="@string/pref_summary_header_download">Paramètres de téléchargement pour données supplémentaires</string>
 	<string name="pref_title_download_base">Adresse de base des téléchargements</string>
 	<string name="pref_description_download_base">Adresse de base (URL) du téléchargement de données supplémentaires</string>

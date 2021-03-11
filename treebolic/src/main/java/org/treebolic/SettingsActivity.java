@@ -73,7 +73,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	public static class ActivePreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Override
-		public void onCreatePreferences(@SuppressWarnings("unused") final Bundle savedInstanceState, @SuppressWarnings("unused") final String rootKey)
+		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
 		{
 			if (SettingsActivity.provider == null)
 			{
@@ -211,7 +211,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		abstract protected String getName();
 
 		@Override
-		public void onCreatePreferences(@SuppressWarnings("unused") final Bundle savedInstanceState, @SuppressWarnings("unused") final String rootKey)
+		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
 		{
 			// non-default preference manager
 			final PreferenceManager prefManager = getPreferenceManager();
@@ -264,7 +264,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	public static class DownloadPreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Override
-		public void onCreatePreferences(@SuppressWarnings("unused") final Bundle savedInstanceState, @SuppressWarnings("unused") final String rootKey)
+		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
 		{
 			// inflate
 			addPreferencesFromResource(R.xml.pref_download);
@@ -293,7 +293,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	public static class ServicePreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Override
-		public void onCreatePreferences(@SuppressWarnings("unused") final Bundle savedInstanceState, @SuppressWarnings("unused") final String rootKey)
+		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
 		{
 			// inflate
 			addPreferencesFromResource(R.xml.pref_service);

@@ -2,7 +2,9 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	tools:keep="@xml/pref_headers">
 
 	<Preference
 		app:fragment="org.treebolic.SettingsActivity$ActivePreferenceFragment"

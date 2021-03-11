@@ -271,106 +271,118 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-		switch (item.getItemId())
+		int id = item.getItemId();
+		if (R.id.action_treebolic == id)
 		{
-			case R.id.action_treebolic:
-				tryStartTreebolic((String) null);
-				return true;
-
-			case R.id.action_treebolic_source:
-				requestTreebolicSource();
-				return true;
-
-			case R.id.action_treebolic_bundle:
-				requestTreebolicBundle();
-				return true;
-
-			case R.id.action_treebolic_serialized:
-				requestTreebolicSerialized();
-				return true;
-
-			case R.id.action_treebolic_client:
-				TreebolicClientActivity.initializeSearchPrefs(this);
-				tryStartOneOfTreebolicClients();
-				return true;
-
-			case R.id.action_treebolic_default_client:
-				TreebolicClientActivity.initializeSearchPrefs(this);
-				tryStartTreebolicDefaultClient();
-				return true;
-
-			case R.id.action_demo:
-				final Uri archiveUri = Storage.copyAssetFile(this, Settings.DEMO);
-				this.spinner.setSelection(0);
-				assert archiveUri != null;
-				tryStartTreebolicBundle(archiveUri);
-				return true;
-
-			case R.id.action_download:
-			{
-				final Intent intent = new Intent(this, DownloadActivity.class);
-				intent.putExtra(org.treebolic.download.DownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true);
-				startActivityForResult(intent, MainActivity.REQUEST_DOWNLOAD_CODE);
-				return true;
-			}
-
-			case R.id.action_services:
-				startActivity(new Intent(this, ServicesActivity.class));
-				return true;
-
-			case R.id.action_providers:
-				startActivity(new Intent(this, ProvidersActivity.class));
-				return true;
-
-			case R.id.action_settings:
-				tryStartTreebolicSettings();
-				return true;
-
-			case R.id.action_help:
-				startActivity(new Intent(this, HelpActivity.class));
-				return true;
-
-			case R.id.action_tips:
-				Tip.show(getSupportFragmentManager());
-				return true;
-
-			case R.id.action_about:
-				startActivity(new Intent(this, AboutActivity.class));
-				return true;
-
-			case R.id.action_others:
-				startActivity(new Intent(this, OthersActivity.class));
-				return true;
-
-			case R.id.action_donate:
-				startActivity(new Intent(this, DonateActivity.class));
-				return true;
-
-			case R.id.action_rate:
-				AppRate.rate(this);
-				return true;
-
-			case R.id.action_finish:
-				finish();
-				return true;
-
-			case R.id.action_kill:
-				Process.killProcess(Process.myPid());
-				return true;
-
-			case R.id.action_app_settings:
-				Settings.applicationSettings(this, "org.treebolic");
-				return true;
-
-
-			// case R.id.action_test:
-			// test();
-			// return true;
-
-			default:
-				break;
+			tryStartTreebolic((String) null);
+			return true;
 		}
-		return false;
+		else if (R.id.action_treebolic_source == id)
+		{
+			requestTreebolicSource();
+			return true;
+		}
+		else if (R.id.action_treebolic_bundle == id)
+		{
+			requestTreebolicBundle();
+			return true;
+		}
+		else if (R.id.action_treebolic_serialized == id)
+		{
+			requestTreebolicSerialized();
+			return true;
+		}
+		else if (R.id.action_treebolic_client == id)
+		{
+			TreebolicClientActivity.initializeSearchPrefs(this);
+			tryStartOneOfTreebolicClients();
+			return true;
+		}
+		else if (R.id.action_treebolic_default_client == id)
+		{
+			TreebolicClientActivity.initializeSearchPrefs(this);
+			tryStartTreebolicDefaultClient();
+			return true;
+		}
+		else if (R.id.action_demo == id)
+		{
+			final Uri archiveUri = Storage.copyAssetFile(this, Settings.DEMO);
+			this.spinner.setSelection(0);
+			assert archiveUri != null;
+			tryStartTreebolicBundle(archiveUri);
+			return true;
+		}
+		else if (R.id.action_download == id)
+		{
+			final Intent intent = new Intent(this, DownloadActivity.class);
+			intent.putExtra(org.treebolic.download.DownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true);
+			startActivityForResult(intent, MainActivity.REQUEST_DOWNLOAD_CODE);
+			return true;
+		}
+		else if (R.id.action_services == id)
+		{
+			startActivity(new Intent(this, ServicesActivity.class));
+			return true;
+		}
+		else if (R.id.action_providers == id)
+		{
+			startActivity(new Intent(this, ProvidersActivity.class));
+			return true;
+		}
+		else if (R.id.action_settings == id)
+		{
+			tryStartTreebolicSettings();
+			return true;
+		}
+		else if (R.id.action_help == id)
+		{
+			startActivity(new Intent(this, HelpActivity.class));
+			return true;
+		}
+		else if (R.id.action_tips == id)
+		{
+			Tip.show(getSupportFragmentManager());
+			return true;
+		}
+		else if (R.id.action_about == id)
+		{
+			startActivity(new Intent(this, AboutActivity.class));
+			return true;
+		}
+		else if (R.id.action_others == id)
+		{
+			startActivity(new Intent(this, OthersActivity.class));
+			return true;
+		}
+		else if (R.id.action_donate == id)
+		{
+			startActivity(new Intent(this, DonateActivity.class));
+			return true;
+		}
+		else if (R.id.action_rate == id)
+		{
+			AppRate.rate(this);
+			return true;
+		}
+		else if (R.id.action_finish == id)
+		{
+			finish();
+			return true;
+		}
+		else if (R.id.action_kill == id)
+		{
+			Process.killProcess(Process.myPid());
+			return true;
+		}
+		else if (R.id.action_app_settings == id)
+		{
+			Settings.applicationSettings(this, "org.treebolic");
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	// S E L E C T I O N   A C T I V I T Y   R E T U R N S (source, bundle, serialized)

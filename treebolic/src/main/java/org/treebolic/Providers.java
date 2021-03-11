@@ -69,7 +69,7 @@ public class Providers
 	 * @param parentPackageName package name
 	 * @throws NameNotFoundException name not found exception
 	 */
-	@SuppressWarnings({"boxing", "ConstantConditions"})
+	@SuppressWarnings({"boxing"})
 	static private void makeProviders(@NonNull final Context context, @NonNull @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
 	{
 		final PackageManager packageManager = context.getPackageManager();
@@ -133,8 +133,12 @@ public class Providers
 				Log.d(Providers.TAG, "Plugin access class has been loaded " + pluginProviderDataClass.toString());
 
 				// plugin classes
-				final Method getClassesMethod = pluginProviderDataClass.getMethod("getProviderClasses", (Class<?>[]) null);
-				if (getClassesMethod == null)
+				final Method getClassesMethod;
+				try
+				{
+					getClassesMethod = pluginProviderDataClass.getMethod("getProviderClasses", (Class<?>[]) null);
+				}
+				catch (@NonNull final NoSuchMethodException ignored)
 				{
 					continue;
 				}
@@ -189,41 +193,45 @@ public class Providers
 				}
 
 				// enter
-				int ith = 0;
-				for (final String providerName : providerNames)
+				if (providerNames != null)
 				{
-					String uniqueName;
-					if (providerNames.length == 1)
+					int ith = 0;
+					for (final String providerName : providerNames)
 					{
-						uniqueName = name;
+						String uniqueName;
+						if (providerNames.length == 1)
+						{
+							uniqueName = name;
+						}
+						else
+						{
+							final String[] fields = providerName.split("\\.");
+							uniqueName = name + (fields.length < 2 ? ++ith : '-' + fields[fields.length - 2]);
+						}
+
+						final HashMap<String, Object> provider = new HashMap<>();
+
+						// structural
+						provider.put(Providers.PROVIDER, providerName);
+						provider.put(Providers.NAME, uniqueName);
+						provider.put(Providers.PACKAGE, pkg);
+						provider.put(Providers.PROCESS, processName);
+						provider.put(Providers.MIMETYPE, mimetype);
+						provider.put(Providers.EXTENSIONS, extensions);
+						provider.put(Providers.URLSCHEME, urlScheme);
+						provider.put(Providers.ISPLUGIN, true);
+						provider.put(Providers.ICON, pkg);
+						provider.put(Providers.STYLE, style);
+
+						// settings
+						provider.put(Providers.SOURCE, source);
+						provider.put(Providers.BASE, base);
+						provider.put(Providers.IMAGEBASE, imagebase);
+						provider.put(Providers.SETTINGS, settings);
+
+						assert Providers.data != null;
+						Providers.data.add(provider);
 					}
-					else
-					{
-						final String[] fields = providerName.split("\\.");
-						uniqueName = name + (fields.length < 2 ? ++ith : '-' + fields[fields.length - 2]);
-					}
-
-					final HashMap<String, Object> provider = new HashMap<>();
-
-					// structural
-					provider.put(Providers.PROVIDER, providerName);
-					provider.put(Providers.NAME, uniqueName);
-					provider.put(Providers.PACKAGE, pkg);
-					provider.put(Providers.PROCESS, processName);
-					provider.put(Providers.MIMETYPE, mimetype);
-					provider.put(Providers.EXTENSIONS, extensions);
-					provider.put(Providers.URLSCHEME, urlScheme);
-					provider.put(Providers.ISPLUGIN, true);
-					provider.put(Providers.ICON, pkg);
-					provider.put(Providers.STYLE, style);
-
-					// settings
-					provider.put(Providers.SOURCE, source);
-					provider.put(Providers.BASE, base);
-					provider.put(Providers.IMAGEBASE, imagebase);
-					provider.put(Providers.SETTINGS, settings);
-
-					Providers.data.add(provider);
 				}
 			}
 			catch (@NonNull final Exception e)

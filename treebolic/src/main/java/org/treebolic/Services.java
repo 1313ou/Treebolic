@@ -4,6 +4,7 @@
 
 package org.treebolic;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -106,6 +107,7 @@ public class Services
 	{
 		final PackageManager packageManager = context.getPackageManager();
 
+		@SuppressLint("QueryPermissionsNeeded")
 		final List<PackageInfo> pkgs = packageManager.getInstalledPackages(PackageManager.GET_SERVICES);
 		for (final PackageInfo pkg : pkgs)
 		{
