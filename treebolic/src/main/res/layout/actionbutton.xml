@@ -30,7 +30,6 @@
 		android:layout_centerHorizontal="true"
 		android:contentDescription="@string/title_query"
 		android:elevation="4dp"
-		android:onClick="onClick"
 		android:tint="#FFFFFF"
 		android:visibility="visible"
 		app:fabSize="normal"

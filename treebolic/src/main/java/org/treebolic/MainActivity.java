@@ -5,6 +5,7 @@
 package org.treebolic;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -38,8 +39,8 @@ import org.treebolic.filechooser.FileChooserActivity;
 import org.treebolic.guide.AboutActivity;
 import org.treebolic.guide.HelpActivity;
 import org.treebolic.guide.Tip;
-import org.treebolic.storage.Storage;
 import org.treebolic.storage.Deployer;
+import org.treebolic.storage.Storage;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,12 +48,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -80,26 +82,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private static final String RESCAN_KEY = "rescan";
 
-	/**
-	 * File request code
-	 */
-	private static final int REQUEST_FILE_CODE = 1;
-
-	/**
-	 * Bundle request code
-	 */
-	private static final int REQUEST_BUNDLE_CODE = 2;
-
-	/**
-	 * Serialized model request code
-	 */
-	private static final int REQUEST_SERIALIZED_CODE = 3;
-
-	/**
-	 * Download request
-	 */
-	private static final int REQUEST_DOWNLOAD_CODE = 10;
-
 	// Adapter Key - Res id mapping
 	static private final String[] from = new String[]{Providers.ICON, Providers.NAME};
 	static private final int[] to = new int[]{R.id.icon, R.id.provider};
@@ -120,6 +102,26 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	@Nullable
 	private SimpleAdapter adapter;
 
+	/**
+	 * Activity file result launcher
+	 */
+	protected ActivityResultLauncher<Intent> activityFileResultLauncher;
+
+	/**
+	 * Activity bundle result launcher
+	 */
+	protected ActivityResultLauncher<Intent> activityBundleResultLauncher;
+
+	/**
+	 * Activity serialized result launcher
+	 */
+	protected ActivityResultLauncher<Intent> activitySerializedResultLauncher;
+
+	/**
+	 * Activity download result launcher
+	 */
+	protected ActivityResultLauncher<Intent> activityDownloadResultLauncher;
+
 	// L I F E C Y C L E O V E R R I D E S
 
 	@SuppressLint("InflateParams")
@@ -137,6 +139,80 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 
 		// init preferences
 		initialize();
+
+		// activity file result launcher
+		this.activityFileResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+
+			boolean success = result.getResultCode() == Activity.RESULT_OK;
+			if (success)
+			{
+				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
+				Intent returnIntent = result.getData();
+				if (returnIntent != null)
+				{
+					final Uri fileUri = returnIntent.getData();
+					if (fileUri != null)
+					{
+						Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
+						setFolder(fileUri);
+						tryStartTreebolic(fileUri);
+					}
+				}
+			}
+		});
+
+		// activity bundle result launcher
+		this.activityBundleResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+
+			boolean success = result.getResultCode() == Activity.RESULT_OK;
+			if (success)
+			{
+				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
+				Intent returnIntent = result.getData();
+				if (returnIntent != null)
+				{
+					final Uri fileUri = returnIntent.getData();
+					if (fileUri != null)
+					{
+						Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
+						setFolder(fileUri);
+						tryStartTreebolicBundle(fileUri);
+					}
+				}
+			}
+		});
+
+		// activity serialized  result launcher
+		this.activitySerializedResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+
+			boolean success = result.getResultCode() == Activity.RESULT_OK;
+			if (success)
+			{
+				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
+				Intent returnIntent = result.getData();
+				if (returnIntent != null)
+				{
+					final Uri fileUri = returnIntent.getData();
+					if (fileUri != null)
+					{
+						Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
+						setFolder(fileUri);
+						tryStartTreebolicSerialized(fileUri);
+					}
+				}
+			}
+		});
+
+		// activity download result launcher
+		this.activityDownloadResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
+
+			//			boolean success = result.getResultCode() == Activity.RESULT_OK;
+			//			if (success)
+			//			{
+			//				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
+			//				Intent returnIntent = result.getData();
+			//			}
+		});
 
 		// toolbar
 		final Toolbar toolbar = findViewById(R.id.toolbar);
@@ -317,7 +393,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		{
 			final Intent intent = new Intent(this, DownloadActivity.class);
 			intent.putExtra(org.treebolic.download.DownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true);
-			startActivityForResult(intent, MainActivity.REQUEST_DOWNLOAD_CODE);
+			this.activityDownloadResultLauncher.launch(intent);
 			return true;
 		}
 		else if (R.id.action_services == id)
@@ -384,52 +460,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		{
 			return false;
 		}
-	}
-
-	// S E L E C T I O N   A C T I V I T Y   R E T U R N S (source, bundle, serialized)
-
-	@Override
-	protected void onActivityResult(final int requestCode, final int resultCode, @Nullable final Intent returnIntent)
-	{
-		// handle selection of input by other activity which returns selected input
-		switch (requestCode)
-		{
-			case REQUEST_FILE_CODE:
-			case REQUEST_BUNDLE_CODE:
-			case REQUEST_SERIALIZED_CODE:
-				if (resultCode == AppCompatActivity.RESULT_OK && returnIntent != null)
-				{
-					final Uri fileUri = returnIntent.getData();
-					if (fileUri == null)
-					{
-						break;
-					}
-
-					Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
-					switch (requestCode)
-					{
-						case REQUEST_FILE_CODE:
-							setFolder(fileUri);
-							tryStartTreebolic(fileUri);
-							break;
-						case REQUEST_BUNDLE_CODE:
-							setFolder(fileUri);
-							tryStartTreebolicBundle(fileUri);
-							break;
-						case REQUEST_SERIALIZED_CODE:
-							setFolder(fileUri);
-							tryStartTreebolicSerialized(fileUri);
-							break;
-						default:
-							break;
-					}
-				}
-				break;
-			case REQUEST_DOWNLOAD_CODE:
-			default:
-				break;
-		}
-		super.onActivityResult(requestCode, resultCode, returnIntent);
 	}
 
 	// F R A G M E N T
@@ -620,6 +650,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	private void updateButton()
 	{
 		final ImageButton button = findViewById(R.id.treebolicButton);
+		button.setOnClickListener(this);
 		final TextView sourceText = findViewById(R.id.treebolicSource);
 		final String source = Settings.getStringPref(this, TreebolicIface.PREF_SOURCE);
 		final boolean qualifies = sourceQualifies(source);
@@ -727,7 +758,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.pluginProvider.get(Providers.BASE));
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, extensions == null ? null : extensions.split(","));
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		startActivityForResult(intent, MainActivity.REQUEST_FILE_CODE);
+		this.activityFileResultLauncher.launch(intent); // MainActivity.REQUEST_FILE_CODE
 	}
 
 	/**
@@ -740,7 +771,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.pluginProvider.get(Providers.BASE));
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, new String[]{"zip", "jar"});
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		startActivityForResult(intent, MainActivity.REQUEST_BUNDLE_CODE);
+		this.activityBundleResultLauncher.launch(intent); // MainActivity.REQUEST_BUNDLE_CODE
 	}
 
 	/**
@@ -753,7 +784,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, getFolder());
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, new String[]{"ser"});
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		startActivityForResult(intent, MainActivity.REQUEST_SERIALIZED_CODE);
+		this.activitySerializedResultLauncher.launch(intent); // MainActivity.REQUEST_SERIALIZED_CODE);
 	}
 
 	// R E Q U E S T S ( S T A R T A C T I V I T Y )
@@ -770,7 +801,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			return;
 		}
 		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+		final boolean isPlugin = isPluginBool != null && isPluginBool;
 		if (isPlugin)
 		{
 			tryStartTreebolicPlugin(source0);
@@ -878,7 +909,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String style = (String) this.pluginProvider.get(Providers.STYLE);
 		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
 		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+		final boolean isPlugin = isPluginBool != null && isPluginBool;
 
 		final Intent intent = isPlugin ? //
 				TreebolicPluginActivity.makeTreebolicIntent(this, pkg, provider, urlScheme, source, base, imageBase, settings, style) : TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
@@ -939,7 +970,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String style = (String) this.pluginProvider.get(Providers.STYLE);
 		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
 		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+		final boolean isPlugin = isPluginBool != null && isPluginBool;
 
 		final Intent intent = isPlugin ? //
 				TreebolicPluginActivity.makeTreebolicIntent(this, pkg, provider, urlScheme, source, base, imageBase, settings, style) : TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
