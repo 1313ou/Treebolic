@@ -107,7 +107,7 @@ public class Settings
 			{
 				final HashMap<String, Object> provider = providers.get(i);
 				final Boolean isPluginBool = (Boolean) provider.get(Providers.ISPLUGIN);
-				final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+				final boolean isPlugin = isPluginBool != null && isPluginBool;
 				if (isPlugin)
 				{
 					continue;
@@ -147,7 +147,7 @@ public class Settings
 		SharedPreferences providerSharedPrefs;
 
 		final Boolean isPluginBool = (Boolean) provider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+		final boolean isPlugin = isPluginBool != null && isPluginBool;
 		if (isPlugin)
 		{
 			final String pkg = (String) provider.get(Providers.PACKAGE);

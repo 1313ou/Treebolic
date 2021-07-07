@@ -87,7 +87,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 				// shared preferences
 				final PreferenceManager prefManager = getPreferenceManager();
 				final Boolean isPluginBool = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
-				final boolean isPlugin = isPluginBool == null ? false : isPluginBool;
+				final boolean isPlugin = isPluginBool != null && isPluginBool;
 				if (!isPlugin)
 				{
 					prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + SettingsActivity.provider.get(Providers.NAME));
