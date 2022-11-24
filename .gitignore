@@ -3,6 +3,7 @@
 /.gradle
 /.idea
 /captures
+/dist
 
 **/build
 **/release
