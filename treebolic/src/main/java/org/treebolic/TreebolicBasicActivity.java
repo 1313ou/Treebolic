@@ -454,9 +454,10 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 			startActivity(intent);
 			return true;
 		}
-		catch (@NonNull final Exception ignored)
+		catch (@NonNull final Exception e)
 		{
 			Toast.makeText(this, R.string.error_link, Toast.LENGTH_LONG).show();
+			Log.w(TAG, "Error following link '" + url + "' " + e.getMessage());
 		}
 		return false;
 	}
