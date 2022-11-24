@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: ./treebolic/libs/treebolic-provider-text-pair.jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/treebolic/libs/treebolic-provider-text-pair.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Project Source Files" />
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="BasicA" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="warn" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="AutomaticModuleUnloader">
+    <loaded-modules>
+      <module name="Treebolic.commonLib" />
+      <module name="Treebolic.treebolicServicesLib.androidTest" />
+      <module name="Treebolic.wheelLib.main" />
+      <module name="Treebolic.treebolicServicesIface" />
+      <module name="Treebolic.donateLib.androidTest" />
+      <module name="Treebolic.treebolicIface.main" />
+      <module name="Treebolic.fileChooserLib.unitTest" />
+      <module name="Treebolic.searchLib" />
+      <module name="Treebolic.treebolicAidl.unitTest" />
+      <module name="Treebolic.storageLib.androidTest" />
+      <module name="Treebolic.rateLib" />
+      <module name="Treebolic.downloadLib.main" />
+      <module name="Treebolic.treebolic.main" />
+      <module name="Treebolic.treebolicServicesLib.main" />
+      <module name="Treebolic.commonLib.androidTest" />
+      <module name="Treebolic.wheelLib.androidTest" />
+      <module name="Treebolic.fileChooserLib.main" />
+      <module name="Treebolic.donateLib" />
+      <module name="Treebolic.treebolicIface.unitTest" />
+      <module name="Treebolic.storageLib.main" />
+      <module name="Treebolic.preferenceLib" />
+      <module name="Treebolic.treebolicParcel" />
+      <module name="Treebolic.downloadLib.unitTest" />
+      <module name="Treebolic.treebolic.androidTest" />
+      <module name="Treebolic.wheelLib" />
+      <module name="Treebolic.treebolicServicesLib.unitTest" />
+      <module name="Treebolic.treebolicServicesIface.main" />
+      <module name="Treebolic.donateLib.unitTest" />
+      <module name="Treebolic.fileChooserLib.androidTest" />
+      <module name="Treebolic.guideLib.main" />
+      <module name="Treebolic.searchLib.main" />
+      <module name="Treebolic.treebolicClientsLib" />
+      <module name="Treebolic.storageLib.unitTest" />
+      <module name="Treebolic.treebolicAidl.androidTest" />
+      <module name="Treebolic.preferenceLib.androidTest" />
+      <module name="Treebolic.treebolic" />
+      <module name="Treebolic.treebolicServicesIface.androidTest" />
+      <module name="Treebolic.fileChooserLib" />
+      <module name="Treebolic.donateLib.main" />
+      <module name="Treebolic.guideLib.unitTest" />
+      <module name="Treebolic.searchLib.androidTest" />
+      <module name="Treebolic.treebolicClientsLib.androidTest" />
+      <module name="Treebolic.treebolicAidl.main" />
+      <module name="Treebolic.preferenceLib.main" />
+      <module name="Treebolic.guideLib" />
+      <module name="Treebolic.treebolicClientsIface" />
+      <module name="Treebolic.treebolicClientsLib.main" />
+      <module name="Treebolic.othersLib.main" />
+      <module name="Treebolic.preferenceLib.unitTest" />
+      <module name="Treebolic.treebolicParcel.unitTest" />
+      <module name="Treebolic.treebolicGlue.unitTest" />
+      <module name="Treebolic.treebolicServicesIface.unitTest" />
+      <module name="Treebolic.othersLib" />
+      <module name="Treebolic.searchLib.unitTest" />
+      <module name="Treebolic.guideLib.androidTest" />
+      <module name="Treebolic.rateLib.unitTest" />
+      <module name="Treebolic.treebolicAidl" />
+      <module name="Treebolic.treebolicClientsLib.unitTest" />
+      <module name="Treebolic.othersLib.androidTest" />
+      <module name="Treebolic.treebolicGlue.main" />
+      <module name="Treebolic.commonLib.main" />
+      <module name="Treebolic.treebolicIface" />
+      <module name="Treebolic.treebolicClientsIface.unitTest" />
+      <module name="Treebolic.rateLib.main" />
+      <module name="Treebolic.treebolicParcel.androidTest" />
+      <module name="Treebolic.downloadLib" />
+      <module name="Treebolic.treebolicGlue.androidTest" />
+      <module name="Treebolic.commonLib.unitTest" />
+      <module name="Treebolic.wheelLib.unitTest" />
+      <module name="Treebolic.treebolicServicesLib" />
+      <module name="Treebolic.treebolicIface.androidTest" />
+      <module name="Treebolic.treebolicClientsIface.main" />
+      <module name="Treebolic.treebolicClientsIface.androidTest" />
+      <module name="Treebolic.storageLib" />
+      <module name="Treebolic.rateLib.androidTest" />
+      <module name="Treebolic" />
+      <module name="Treebolic.othersLib.unitTest" />
+      <module name="Treebolic.treebolicParcel.main" />
+      <module name="Treebolic.downloadLib.androidTest" />
+      <module name="Treebolic.treebolicGlue" />
+      <module name="Treebolic.treebolic.unitTest" />
+    </loaded-modules>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/home/bbou/.android/avd/Pixel_4_API_32.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Treebolic" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="/opt/devel/android-treebolic-as/dist/keystore/treebolic.keystore" />
+    <option name="KEY_ALIAS" value="treebolic" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1pQRgmiy1tWsRxqCbvICIggU3kv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="BundleExportedModule" value="Treebolic.treebolic" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/treebolic" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TreebolicServices" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.26372713" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../../treebolic4/treebolic-glue-android/src/main/java/treebolic" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="treebolic" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Treebolic.treebolic.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="" />
+      <created>1615113440793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615113440793</updated>
+    </task>
+    <task id="LOCAL-00001" summary="new dep versions">
+      <created>1615113620066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615113620066</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixes downloadUri removal as member">
+      <created>1615460063365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1615460063365</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lint">
+      <created>1615475331041</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1615475331041</updated>
+    </task>
+    <task id="LOCAL-00004" summary="storage reshuffle">
+      <created>1615621126967</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1615621126967</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lint simplification">
+      <created>1625650813721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1625650813721</updated>
+    </task>
+    <task id="LOCAL-00006" summary="remove XML onClick&#10;remove startActivityForResult">
+      <created>1625650881002</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625650881002</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update libs">
+      <created>1625650905226</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625650905226</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update libs">
+      <created>1628156485118</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1628156485118</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update libs and tools">
+      <created>1659859162625</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659859162625</updated>
+    </task>
+    <task id="LOCAL-00010" summary="exported activities">
+      <created>1659859415573</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1659859415573</updated>
+    </task>
+    <task id="LOCAL-00011" summary="key store">
+      <created>1669308444147</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669308444147</updated>
+    </task>
+    <task id="LOCAL-00012" summary="build with maven">
+      <created>1669308504843</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669308504843</updated>
+    </task>
+    <task id="LOCAL-00013" summary="log linkTo failure">
+      <created>1669310641944</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669310641944</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fixes glue">
+      <created>1669310821188</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669310821188</updated>
+    </task>
+    <task id="LOCAL-00015" summary="maven build">
+      <created>1669310893960</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669310893960</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fixes now ambiguous constructor">
+      <created>1669311141835</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669311141835</updated>
+    </task>
+    <task id="LOCAL-00017" summary="version updates">
+      <created>1669311165408</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669311165408</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="UnloadedModulesList">
+    <module name="Treebolic.treebolicGlueIface" />
+    <module name="Treebolic.treebolicGlueIface.androidTest" />
+    <module name="Treebolic.treebolicGlueIface.main" />
+    <module name="Treebolic.treebolicGlueIface.unitTest" />
+    <module name="Treebolic.treebolicGraph" />
+    <module name="Treebolic.treebolicGraph.androidTest" />
+    <module name="Treebolic.treebolicGraph.main" />
+    <module name="Treebolic.treebolicGraph.unitTest" />
+    <module name="Treebolic.treebolicLib" />
+    <module name="Treebolic.treebolicLib.androidTest" />
+    <module name="Treebolic.treebolicLib.main" />
+    <module name="Treebolic.treebolicLib.unitTest" />
+    <module name="Treebolic.treebolicLibModel" />
+    <module name="Treebolic.treebolicLibModel.androidTest" />
+    <module name="Treebolic.treebolicLibModel.main" />
+    <module name="Treebolic.treebolicLibModel.unitTest" />
+    <module name="Treebolic.treebolicLibView" />
+    <module name="Treebolic.treebolicLibView.androidTest" />
+    <module name="Treebolic.treebolicLibView.main" />
+    <module name="Treebolic.treebolicLibView.unitTest" />
+    <module name="Treebolic.treebolicMutable" />
+    <module name="Treebolic.treebolicMutable.androidTest" />
+    <module name="Treebolic.treebolicMutable.main" />
+    <module name="Treebolic.treebolicMutable.unitTest" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="new dep versions" />
+    <MESSAGE value="fixes downloadUri removal as member" />
+    <MESSAGE value="lint" />
+    <MESSAGE value="storage reshuffle" />
+    <MESSAGE value="lint simplification" />
+    <MESSAGE value="remove XML onClick&#10;remove startActivityForResult" />
+    <MESSAGE value="update libs" />
+    <MESSAGE value="update libs and tools" />
+    <MESSAGE value="exported activities" />
+    <MESSAGE value="key store" />
+    <MESSAGE value="build with maven" />
+    <MESSAGE value="log linkTo failure" />
+    <MESSAGE value="fixes glue" />
+    <MESSAGE value="maven build" />
+    <MESSAGE value="fixes now ambiguous constructor" />
+    <MESSAGE value="version updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="version updates" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java</url>
+          <line>696</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

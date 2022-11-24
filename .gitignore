@@ -1,7 +1,7 @@
 /build
 /gradle
 /.gradle
-/.idea
+/.idea/caches
 /captures
 /dist
 

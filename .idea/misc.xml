@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ACTIVITY_CLIENT" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ACTIVITY_PLUGIN" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ACTIVITY_TREEBOLIC" />
+      <entry_point TYPE="field" FQNAME="treebolic.control.Traverser ALLMATCHER" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.component.Toolbar.Button ARCEDGE" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity ARG_ALLOW_EXPAND_ARCHIVE" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface ARG_MORE" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color BLUE" />
+      <entry_point TYPE="method" FQNAME="treebolic.glue.component.SplitPaneLayout.SavedState$1 treebolic.glue.component.SplitPaneLayout.SavedState createFromParcel(android.os.Parcel in)" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.wheel.AbstractWheel.SavedState CREATOR" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.ParcelableModel CREATOR" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout.SavedState CREATOR" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.preference.StringSavedState CREATOR" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color CYAN" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity downloadButton" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity downloadId" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity downloadManager" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity downloadUri" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity downloadUrl" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation EAST" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation EXPAND" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity expandArchive" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity expandArchiveCheckbox" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation EXPANSIONRESET" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation EXPANSIONSWEEPRESET" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicAIDLBoundService factory" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicBoundService factory" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicIntentService factory" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicMessengerService factory" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.component.Toolbar.Button FOCUSHOVER" />
+      <entry_point TYPE="field" FQNAME="treebolic.view.AbstractPainter fontStyle" />
+      <entry_point TYPE="field" FQNAME="treebolic.view.AbstractPainter foreColor" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge FROMARROW" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge FROMCIRCLE" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge FROMDIAMOND" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge FROMHOOK" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge FROMTRIANGLE" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color GREEN" />
+      <entry_point TYPE="field" FQNAME="treebolic.core.math.ArcMath HALFPI" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation HOME" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout isDragging" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout lastTouchX" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout lastTouchY" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color MAGENTA" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.search.SearchSettings MODE_EQUALS" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.search.SearchSettings MODE_INCLUDES" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation NARROW" />
+      <entry_point TYPE="method" FQNAME="treebolic.glue.component.SplitPaneLayout.SavedState$1 treebolic.glue.component.SplitPaneLayout.SavedState[] newArray(int size)" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation NORTH" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.download.DownloadActivity$1 void onClick(android.view.View v)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.download.DownloadActivity$2 void onReceive(android.content.Context context, android.content.Intent intent)" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout orientation" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout ORIENTATION_HORIZONTAL" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout ORIENTATION_VERTICAL" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.Rectangle2D OUT_BOTTOM" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.Rectangle2D OUT_LEFT" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.Rectangle2D OUT_RIGHT" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.Rectangle2D OUT_TOP" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color PINK" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Graphics PLAIN" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity progressBar" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity progressStatus" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Settings PROP_EDGE_STROKEWIDTH" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Settings PROP_TREE_EDGE_STROKEWIDTH" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation RADIAL" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity receiver" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color RED" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.component.Toolbar.Button REFRESH" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity RESULT_DOWNLOAD_DATA_AVAILABLE" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.download.DownloadActivity$4 void run()" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.download.DownloadActivity$4$1 void run()" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation SCALEDOWN" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation SCALEONE" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation SCALEUP" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.search.SearchSettings SCOPE_CONTENT" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.search.SearchSettings SCOPE_ID" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.search.SearchSettings SCOPE_LINK" />
+      <entry_point TYPE="field" FQNAME="treebolic.IWidget SEARCH" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicClientActivity SEARCH_TRIGGER_LEVEL" />
+      <entry_point TYPE="field" FQNAME="treebolic.IWidget SEARCHCONTINUE" />
+      <entry_point TYPE="field" FQNAME="treebolic.IWidget SEARCHRESET" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.component.Toolbar.Button SEPARATOR" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.core.location.Complex serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.EdgeData serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.XEdgeData serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Edge serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.core.location.EuclideanCircle serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.core.location.HyperCircle serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.core.transform.HyperRotation serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.core.transform.HyperTranslation serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Image serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Location serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.MenuItem serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Model serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.MountPoint serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.MountPoint.Mounting serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.MountPoint.Mounted serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.MutableEdge serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.graph.MutableGraphNode serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.MutableNode serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.NodeData serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.XNodeData serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Node serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.component.PopupMenu serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.component.Progress serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Settings serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.component.Statusbar serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.component.Toolbar serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.Tree serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.TreeMutableEdge serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.TreeMutableNode serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.view.View serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.Widget serialVersionUID" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation SHRINK" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation SOUTH" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout SPLITTER_COLOR" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout SPLITTER_DRAG_COLOR" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout SPLITTER_POSITION_PERCENT" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterDraggingDrawable" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterDrawable" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterMovable" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterPosition" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterPositionPercent" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout.SavedState splitterPositionPercent" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterRect" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterRectangle" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.SplitPaneLayout splitterSize" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity src" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.preference.AutoEditTextPreference SUMMARY_PROVIDER" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation SWEEPRESET" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity TAG" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.download.DownloadActivity target" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge TOARROW" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge TOCIRCLE" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge TODIAMOND" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge TOHOOK" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.component.Toolbar.Button TOOLTIP" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.iface.component.Toolbar.Button TOOLTIPCONTENT" />
+      <entry_point TYPE="field" FQNAME="treebolic.model.IEdge TOTRIANGLE" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.clients.TreebolicClientActivityStub urlScheme" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.TreebolicIface USE_MODEL_REFERENCES" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation WEST" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation WIDEN" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.Color YELLOW" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation ZOOMIN" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation ZOOMONE" />
+      <entry_point TYPE="field" FQNAME="treebolic.glue.component.Toolbar.ButtonImplementation ZOOMOUT" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.search.SearchSettings$1 void onScrollingFinished(org.treebolic.wheel.AbstractWheel wheel)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.search.SearchSettings$1 void onScrollingStarted(org.treebolic.wheel.AbstractWheel wheel)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.services.Utils$1 void progress(java.lang.String text, boolean fail)" />
+      <entry_point TYPE="field" FQNAME="com.bbou.rate.StoreType AMAZON" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicAIDLBoundService binder" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.services.TreebolicAIDLBoundService$1 void makeAndForwardModel(java.lang.String source, java.lang.String base, java.lang.String imageBase, java.lang.String settings, android.content.Intent forward)" />
+      <entry_point TYPE="method" FQNAME="org.treebolic.services.TreebolicAIDLBoundService$1 void makeModel(java.lang.String source, java.lang.String base, java.lang.String imageBase, java.lang.String settings, android.os.ResultReceiver resultReceiver)" />
+    </entry_points>
+    <pattern value="org.treebolic.guide.AboutActivity" />
+    <pattern value="treebolic.core.AbstractLayerOut" />
+    <pattern value="treebolic.view.AbstractPainter" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="AbstractWheel" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelAdapter" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" />
+    <pattern value="org.treebolic.wheel.AbstractWheelView" />
+    <pattern value="org.treebolic.wheel.AbstractWheelView" method="AbstractWheelView" />
+    <pattern value="org.treebolic.SettingsActivity.ActivePreferenceFragment" />
+    <pattern value="treebolic.model.graph.MutableGraph" method="add" />
+    <pattern value="treebolic.glue.iface.component.Toolbar" method="addButton" />
+    <pattern value="treebolic.model.TreeMutableNode" method="addChildren" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="addClickingListener" />
+    <pattern value="treebolic.glue.iface.component.Container" method="addComponent" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="addEventListener" />
+    <pattern value="treebolic.glue.iface.component.PopupMenu" method="addItem" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" method="addListener" />
+    <pattern value="treebolic.glue.iface.Animator" />
+    <pattern value="org.treebolic.AppCompatCommonActivity" />
+    <pattern value="org.treebolic.AppCompatCommonPreferenceActivity" />
+    <pattern value="org.treebolic.AppCompatCommonUtils" />
+    <pattern value="treebolic.glue.iface.Arc2D" />
+    <pattern value="treebolic.core.math.ArcMath" />
+    <pattern value="org.treebolic.wheel.adapters.ArrayWheelAdapter" />
+    <pattern value="org.treebolic.wheel.adapters.ArrayWheelAdapter" method="ArrayWheelAdapter" />
+    <pattern value="treebolic.model.TreeMutableNode" method="assertNoLink" />
+    <pattern value="org.treebolic.preference.AutoEditTextPreference" />
+    <pattern value="org.treebolic.preference.AutoEditTextPreference" method="AutoEditTextPreference" />
+    <pattern value="org.treebolic.preference.AutoEditTextPreference.AutoEditTextPreferenceDialogFragmentCompat" />
+    <pattern value="treebolic.glue.iface.component.Toolbar.Button" />
+    <pattern value="treebolic.glue.component.Toolbar.ButtonImplementation" />
+    <pattern value="treebolic.control.Traverser.CaseMatcher" />
+    <pattern value="treebolic.control.Traverser.CaseMatcher" method="CaseMatcher" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="check" />
+    <pattern value="org.treebolic.storage.Storage" method="cleanup" />
+    <pattern value="treebolic.glue.Color" />
+    <pattern value="treebolic.glue.iface.Color" />
+    <pattern value="org.treebolic.ColorUtils" />
+    <pattern value="treebolic.control.Commander" />
+    <pattern value="treebolic.core.location.Complex" />
+    <pattern value="treebolic.core.location.Complex" method="Complex" />
+    <pattern value="treebolic.glue.component.Container" />
+    <pattern value="treebolic.glue.iface.component.Container" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="containsAngle" />
+    <pattern value="treebolic.model.graph.Converter" />
+    <pattern value="org.treebolic.storage.Storage" method="copyFile" />
+    <pattern value="treebolic.model.ModelReader" method="deserializeGuarded" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="deserializeZip" />
+    <pattern value="org.treebolic.storage.Storage.Directory" />
+    <pattern value="org.treebolic.storage.Storage.Directory" method="Directory" />
+    <pattern value="org.treebolic.storage.Storage.DirType" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="dispatchDraw" />
+    <pattern value="treebolic.glue.iface.component.WebDialog" method="display" />
+    <pattern value="treebolic.core.location.Complex" method="divide" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="doProcessing" />
+    <pattern value="org.treebolic.DownloadActivity" method="doProcessing" />
+    <pattern value="org.treebolic.download.DownloadActivity" />
+    <pattern value="org.treebolic.DownloadActivity" />
+    <pattern value="org.treebolic.SettingsActivity.DownloadPreferenceFragment" />
+    <pattern value="treebolic.view.Painter" method="drawArc" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawArc" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawBackgroundColor" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawImage" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawLine" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawOval" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawPolygon" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawPolyline" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawRoundRectangle" />
+    <pattern value="treebolic.glue.iface.Graphics" method="drawString" />
+    <pattern value="treebolic.model.Edge" />
+    <pattern value="treebolic.model.EdgeData" />
+    <pattern value="treebolic.core.location.EuclideanCircle" />
+    <pattern value="treebolic.glue.iface.EventListener" />
+    <pattern value="treebolic.control.EventListenerAdapter" />
+    <pattern value="treebolic.control.Commander" method="execute" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="extractAttributes" />
+    <pattern value="org.treebolic.ColorUtils" method="fetchColor" />
+    <pattern value="org.treebolic.ColorUtils" method="fetchColorFromStyle" />
+    <pattern value="treebolic.glue.component.Utils" method="fetchColorsNullable" />
+    <pattern value="org.treebolic.filechooser.FileChooserActivity" />
+    <pattern value="treebolic.glue.iface.Graphics" method="fillOval" />
+    <pattern value="treebolic.glue.iface.Graphics" method="fillPolygon" />
+    <pattern value="treebolic.glue.iface.Graphics" method="fillRectangle" />
+    <pattern value="treebolic.glue.iface.Graphics" method="fillRoundRectangle" />
+    <pattern value="treebolic.view.View" method="findNode" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="finished" />
+    <pattern value="treebolic.model.Utils" method="floatsToString" />
+    <pattern value="treebolic.IWidget" method="focus" />
+    <pattern value="treebolic.model.graph.GraphEdge" method="get" />
+    <pattern value="org.treebolic.Models" method="get" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getAngleExtent" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getAngleStart" />
+    <pattern value="treebolic.glue.iface.Graphics" method="getAscent" />
+    <pattern value="treebolic.model.NodeData" method="getBackColor" />
+    <pattern value="treebolic.view.AbstractPainter" method="getBorder" />
+    <pattern value="org.treebolic.storage.Storage" method="getCacheDir" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getCenterX" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getCenterX" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getCenterY" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getCenterY" />
+    <pattern value="treebolic.model.XNodeData" method="getChildrenWeight" />
+    <pattern value="treebolic.core.math.ArcMath" method="getCircleAngleAt" />
+    <pattern value="org.treebolic.Utils" method="getClassLoader" />
+    <pattern value="treebolic.model.EdgeData" method="getColor" />
+    <pattern value="treebolic.glue.iface.Graphics" method="getColor" />
+    <pattern value="treebolic.model.NodeData" method="getContent" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getCounterclockwise" />
+    <pattern value="treebolic.glue.iface.Graphics" method="getDescent" />
+    <pattern value="org.treebolic.storage.Storage" method="getDirectoriesTypesValues" />
+    <pattern value="treebolic.model.NodeData" method="getEdgeColor" />
+    <pattern value="treebolic.model.XNodeData" method="getEdgeImage" />
+    <pattern value="treebolic.model.NodeData" method="getEdgeImageFile" />
+    <pattern value="treebolic.model.NodeData" method="getEdgeImageIndex" />
+    <pattern value="treebolic.model.NodeData" method="getEdgeLabel" />
+    <pattern value="treebolic.model.NodeData" method="getEdgeStyle" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="getEmptyItemResource" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getEndPoint" />
+    <pattern value="treebolic.view.View" method="getFocusNode" />
+    <pattern value="treebolic.model.NodeData" method="getForeColor" />
+    <pattern value="treebolic.glue.iface.GraphicsCache" method="getGraphics" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getHeight" />
+    <pattern value="treebolic.glue.iface.Image" method="getHeight" />
+    <pattern value="treebolic.view.Mapper" method="getHeight" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getHeight" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="getHeight" />
+    <pattern value="treebolic.control.EventListenerAdapter" method="getHotNode" />
+    <pattern value="treebolic.model.NodeData" method="getId" />
+    <pattern value="treebolic.model.XEdgeData" method="getImage" />
+    <pattern value="treebolic.model.XNodeData" method="getImage" />
+    <pattern value="treebolic.model.EdgeData" method="getImageFile" />
+    <pattern value="treebolic.model.NodeData" method="getImageFile" />
+    <pattern value="treebolic.model.EdgeData" method="getImageIndex" />
+    <pattern value="treebolic.model.NodeData" method="getImageIndex" />
+    <pattern value="treebolic.model.graph.MutableGraphNode" method="getIndex" />
+    <pattern value="treebolic.glue.component.Toolbar.ButtonImplementation" method="getIndex" />
+    <pattern value="org.treebolic.Settings" method="getIntPref" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="getItemResource" />
+    <pattern value="org.treebolic.wheel.adapters.ArrayWheelAdapter" method="getItemsCount" />
+    <pattern value="org.treebolic.wheel.adapters.ArrayWheelAdapter" method="getItemText" />
+    <pattern value="org.treebolic.wheel.adapters.NumericWheelAdapter" method="getItemText" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="getItemTextResource" />
+    <pattern value="treebolic.model.EdgeData" method="getLabel" />
+    <pattern value="treebolic.model.NodeData" method="getLabel" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="getLabels" />
+    <pattern value="treebolic.model.NodeData" method="getLink" />
+    <pattern value="treebolic.model.XNodeData" method="getLocation" />
+    <pattern value="treebolic.model.XNodeData" method="getMinWeight" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getMinX" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getMinY" />
+    <pattern value="treebolic.Widget" method="getModel" />
+    <pattern value="treebolic.model.XNodeData" method="getMountPoint" />
+    <pattern value="treebolic.model.graph.Graph" method="getNodeToEdgesMap" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="getOrientation" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="getParceledModel" />
+    <pattern value="org.treebolic.Utils" method="getResources" />
+    <pattern value="treebolic.glue.iface.Color" method="getRGB" />
+    <pattern value="treebolic.core.AbstractLayerOut" method="getRootSweep" />
+    <pattern value="treebolic.view.AbstractPainter" method="getScaleImages" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="getSplitterDraggingDrawable" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="getSplitterDrawable" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="getSplitterPosition" />
+    <pattern value="treebolic.glue.component.Container" method="getSplitterPositionPercent" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="getSplitterPositionPercent" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="getSplitterSize" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getStartPoint" />
+    <pattern value="treebolic.Widget" method="getStatusbar" />
+    <pattern value="org.treebolic.storage.Storage" method="getStorageDirectories" />
+    <pattern value="treebolic.model.EdgeData" method="getStyle" />
+    <pattern value="treebolic.model.NodeData" method="getTarget" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="getTextColor" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="getTextSize" />
+    <pattern value="org.treebolic.ColorUtils" method="getTintedDrawable" />
+    <pattern value="treebolic.Widget" method="getToolbar" />
+    <pattern value="org.treebolic.preference.AutoEditTextPreference" method="getValues" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="getValues" />
+    <pattern value="treebolic.IWidget" method="getVersion" />
+    <pattern value="treebolic.view.Mapper" method="getViewLocation" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="getVisibleItems" />
+    <pattern value="treebolic.model.XNodeData" method="getWeight" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="getWidth" />
+    <pattern value="treebolic.glue.iface.Image" method="getWidth" />
+    <pattern value="treebolic.view.Mapper" method="getWidth" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getWidth" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="getWidth" />
+    <pattern value="treebolic.glue.iface.Point2D" method="getX" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getX" />
+    <pattern value="treebolic.glue.iface.Point2D" method="getY" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="getY" />
+    <pattern value="treebolic.model.graph.Graph" />
+    <pattern value="treebolic.model.graph.GraphEdge" />
+    <pattern value="treebolic.glue.Graphics" />
+    <pattern value="treebolic.glue.iface.Graphics" />
+    <pattern value="treebolic.glue.iface.GraphicsCache" />
+    <pattern value="treebolic.model.graph.Converter" method="graphToTree" />
+    <pattern value="org.treebolic.guide.HelpActivity" />
+    <pattern value="treebolic.view.Mapper" method="hViewToUnitCircle" />
+    <pattern value="treebolic.core.location.HyperCircle" />
+    <pattern value="treebolic.core.transform.HyperRotation" />
+    <pattern value="treebolic.core.transform.HyperRotation" method="HyperRotation" />
+    <pattern value="treebolic.core.transform.HyperTransform" />
+    <pattern value="treebolic.core.transform.HyperTransform" method="HyperTransform" />
+    <pattern value="treebolic.core.transform.HyperTranslation" />
+    <pattern value="treebolic.core.transform.HyperTranslation" method="HyperTranslation" />
+    <pattern value="treebolic.IContext" />
+    <pattern value="treebolic.model.IEdge" />
+    <pattern value="treebolic.glue.iface.Image" />
+    <pattern value="treebolic.glue.Image" />
+    <pattern value="org.treebolic.MainActivity" />
+    <pattern value="treebolic.model.graph.MutableGraph" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference.OpenEditTextPreferenceDialogFragmentCompat" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" />
+    <pattern value="org.treebolic.SettingsActivity.ProviderPreferenceFragment" />
+    <pattern value="org.treebolic.ProvidersActivity" />
+    <pattern value="org.treebolic.SettingsActivity.ServicePreferenceFragment" />
+    <pattern value="org.treebolic.ServicesActivity" />
+    <pattern value="org.treebolic.SettingsActivity" />
+    <pattern value="org.treebolic.SettingsActivity.TextIndentPreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity.TextIndentTrePreferenceFragment" />
+    <pattern value="org.treebolic.SettingsActivity.TextPairPreferenceFragment" />
+    <pattern value="org.treebolic.TreebolicClientActivity" />
+    <pattern value="org.treebolic.clients.TreebolicClientActivityStub" />
+    <pattern value="treebolic.model.Types" />
+    <pattern value="org.treebolic.SettingsActivity.XmlPreferenceFragment" />
+    <pattern value="treebolic.IWidget" method="init" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" method="init" />
+    <pattern value="treebolic.IWidget" method="initSerialized" />
+    <pattern value="org.treebolic.services.IntentFactory" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="intersects" />
+    <pattern value="treebolic.provider.IProviderContext" />
+    <pattern value="treebolic.glue.iface.Color" method="isNull" />
+    <pattern value="treebolic.glue.iface.Animator" method="isRunning" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="isSplitterMovable" />
+    <pattern value="treebolic.IWidget" />
+    <pattern value="treebolic.glue.iface.Worker" method="job" />
+    <pattern value="treebolic.IWidget" method="link" />
+    <pattern value="treebolic.IContext" method="linkTo" />
+    <pattern value="treebolic.model.Settings" method="load" />
+    <pattern value="treebolic.model.Utils" method="load" />
+    <pattern value="treebolic.model.Location" />
+    <pattern value="org.treebolic.ModelFactory" method="make" />
+    <pattern value="org.treebolic.services.ModelFactory" method="make" />
+    <pattern value="treebolic.glue.iface.Color" method="makeBrighter" />
+    <pattern value="treebolic.glue.iface.Color" method="makeDarker" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="makeDefaultTree" />
+    <pattern value="org.treebolic.services.Utils" method="makeLogProviderContext" />
+    <pattern value="treebolic.model.graph.Graph" method="makeSpanningTree" />
+    <pattern value="org.treebolic.services.IntentFactory" method="makeTreebolicIntent" />
+    <pattern value="treebolic.provider.ProviderUtils" method="makeURL" />
+    <pattern value="treebolic.core.transform.HyperRotation" method="map" />
+    <pattern value="treebolic.view.Mapper" />
+    <pattern value="treebolic.control.Traverser.CaseMatcher" method="match" />
+    <pattern value="treebolic.IWidget" method="match" />
+    <pattern value="treebolic.model.MenuItem" />
+    <pattern value="treebolic.model.Model" />
+    <pattern value="org.treebolic.ModelFactory" />
+    <pattern value="org.treebolic.services.ModelFactory" />
+    <pattern value="org.treebolic.ModelFactory" method="ModelFactory" />
+    <pattern value="org.treebolic.services.ModelFactory" method="ModelFactory" />
+    <pattern value="treebolic.model.ModelReader" />
+    <pattern value="org.treebolic.Models" />
+    <pattern value="treebolic.model.ModelWriter" />
+    <pattern value="treebolic.model.ModelWriter" method="ModelWriter" />
+    <pattern value="treebolic.model.Utils" method="modifyStyle" />
+    <pattern value="treebolic.model.MountPoint.Mounted" />
+    <pattern value="treebolic.model.MountPoint.Mounting" />
+    <pattern value="treebolic.model.MountPoint" />
+    <pattern value="treebolic.view.View" method="moveTo" />
+    <pattern value="treebolic.view.View" method="moveToCenter" />
+    <pattern value="treebolic.core.location.Complex" method="multiply" />
+    <pattern value="treebolic.model.MutableEdge" />
+    <pattern value="treebolic.model.graph.MutableGraphNode" />
+    <pattern value="treebolic.model.graph.MutableGraphNode" method="MutableGraphNode" />
+    <pattern value="treebolic.model.MutableNode" />
+    <pattern value="treebolic.model.MutableNode" method="MutableNode" />
+    <pattern value="treebolic.core.location.Complex" method="neg" />
+    <pattern value="treebolic.model.Node" />
+    <pattern value="treebolic.model.NodeData" />
+    <pattern value="treebolic.core.math.ArcMath" method="normalizeAngle" />
+    <pattern value="treebolic.core.math.ArcMath" method="normalizeAngleDiff" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelAdapter" method="notifyDataChangedEvent" />
+    <pattern value="org.treebolic.wheel.adapters.NumericWheelAdapter" />
+    <pattern value="org.treebolic.wheel.adapters.NumericWheelAdapter" method="NumericWheelAdapter" />
+    <pattern value="treebolic.glue.component.QuickAction.OnActionItemClickListener" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onAttachedToWindow" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="onClick" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="onCreate" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onDetachedFromWindow" />
+    <pattern value="treebolic.glue.component.PopupAdapter" method="onDismiss" />
+    <pattern value="org.treebolic.preference.AutoEditTextPreference" method="onDisplayPreferenceDialog" />
+    <pattern value="treebolic.glue.iface.Worker" method="onDone" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onDown" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onDragged" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onFocus" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onHover" />
+    <pattern value="treebolic.glue.component.QuickAction.OnActionItemClickListener" method="onItemClick" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onLayout" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onLink" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onLongHover" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onMeasure" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onMenu" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onMount" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="onPostCreate" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onRestoreInstanceState" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onSaveInstanceState" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onScale" />
+    <pattern value="org.treebolic.wheel.OnWheelScrollListener" method="onScrollingFinished" />
+    <pattern value="org.treebolic.wheel.OnWheelScrollListener" method="onScrollingStarted" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onSelect" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="onStart" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="onStop" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="onTouchEvent" />
+    <pattern value="treebolic.glue.iface.EventListener" method="onUp" />
+    <pattern value="org.treebolic.wheel.OnWheelScrollListener" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="OpenEditTextPreference" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="outcode" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="packageName_isCorrect" />
+    <pattern value="treebolic.view.Painter" />
+    <pattern value="org.treebolic.ParcelableModel" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="parcelization2_isCorrect" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="parcelizationA1_isCorrect" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="parcelizationA2_isCorrect" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="parcelizationB2_isCorrect" />
+    <pattern value="treebolic.glue.iface.Color" method="parse" />
+    <pattern value="treebolic.glue.iface.Point2D" />
+    <pattern value="treebolic.glue.iface.Graphics" method="popMatrix" />
+    <pattern value="treebolic.glue.iface.Graphics" method="popStroke" />
+    <pattern value="treebolic.glue.iface.component.PopupMenu" method="popup" />
+    <pattern value="treebolic.glue.component.PopupAdapter" />
+    <pattern value="treebolic.component.PopupMenu" />
+    <pattern value="treebolic.glue.iface.component.PopupMenu" />
+    <pattern value="treebolic.model.TreeMutableNode" method="prependChild" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="process" />
+    <pattern value="org.treebolic.DownloadActivity" method="process" />
+    <pattern value="treebolic.glue.component.Statusbar.Processor" method="process" />
+    <pattern value="treebolic.glue.component.Statusbar.Processor" />
+    <pattern value="treebolic.component.Progress" />
+    <pattern value="treebolic.glue.iface.component.Progress" />
+    <pattern value="treebolic.provider.IProviderContext" method="progress" />
+    <pattern value="treebolic.provider.ProviderUtils" />
+    <pattern value="treebolic.glue.iface.Graphics" method="pushMatrix" />
+    <pattern value="treebolic.glue.iface.Graphics" method="pushStroke" />
+    <pattern value="treebolic.glue.iface.GraphicsCache" method="put" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" method="put" />
+    <pattern value="treebolic.glue.iface.component.Progress" method="put" />
+    <pattern value="org.treebolic.Settings" method="putIntPref" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="putParceledModel" />
+    <pattern value="treebolic.glue.component.QuickAction" />
+    <pattern value="treebolic.glue.component.QuickAction" method="QuickAction" />
+    <pattern value="treebolic.glue.Color" method="readObject" />
+    <pattern value="treebolic.glue.Image" method="readObject" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="readParcel" />
+    <pattern value="org.treebolic.ParcelableModel" method="readSerializableModel" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" />
+    <pattern value="treebolic.IWidget" method="reinit" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="remeasure" />
+    <pattern value="treebolic.glue.iface.component.Container" method="removeAll" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="removeChangingListener" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="removeClickingListener" />
+    <pattern value="treebolic.model.TreeMutableNode" method="removeFromParent" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="removeScrollingListener" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="repaint" />
+    <pattern value="org.treebolic.Searcher" method="resetSearch" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="restorePref" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="retrieve" />
+    <pattern value="treebolic.glue.iface.Graphics" method="rotate" />
+    <pattern value="treebolic.glue.iface.Animator" method="run" />
+    <pattern value="org.treebolic.wheel.AbstractWheel.SavedState" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout.SavedState" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout.SavedState" method="SavedState" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="savePref" />
+    <pattern value="treebolic.glue.iface.Graphics" method="scale" />
+    <pattern value="org.treebolic.Searcher" method="search" />
+    <pattern value="org.treebolic.Searcher" />
+    <pattern value="org.treebolic.Searcher" method="Searcher" />
+    <pattern value="org.treebolic.search.SearchSettings" />
+    <pattern value="treebolic.model.ModelWriter" method="serialize" />
+    <pattern value="treebolic.glue.iface.Color" method="set" />
+    <pattern value="org.treebolic.Models" method="set" />
+    <pattern value="treebolic.glue.iface.component.WebDialog" method="set" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="setAllItemsVisible" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="setAngleExtent" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="setAngles" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="setAngleStart" />
+    <pattern value="treebolic.glue.component.QuickAction" method="setAnimStyle" />
+    <pattern value="treebolic.glue.component.Statusbar" method="setBase" />
+    <pattern value="treebolic.glue.component.WebDialog" method="setBase" />
+    <pattern value="treebolic.model.TreeMutableNode" method="setChildren" />
+    <pattern value="treebolic.model.XNodeData" method="setChildrenWeight" />
+    <pattern value="treebolic.glue.iface.Graphics" method="setColor" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" method="setColors" />
+    <pattern value="treebolic.glue.component.Statusbar" method="setContentProcessor" />
+    <pattern value="treebolic.glue.component.PopupAdapter" method="setContentView" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="setCounterclockwise" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="setCursor" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="setCyclic" />
+    <pattern value="treebolic.model.XNodeData" method="setEdgeImage" />
+    <pattern value="treebolic.view.View" method="setEllipsize" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="setEmptyItemResource" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="setEnables" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="setFireHover" />
+    <pattern value="treebolic.glue.iface.Graphics" method="setFont" />
+    <pattern value="treebolic.glue.iface.Rectangle2D" method="setFrame" />
+    <pattern value="treebolic.glue.iface.Arc2D" method="setFrameFromCenter" />
+    <pattern value="treebolic.model.TreeMutableEdge" method="setFrom" />
+    <pattern value="treebolic.glue.iface.component.WebDialog" method="setHandle" />
+    <pattern value="treebolic.model.TreeMutableNode" method="setId" />
+    <pattern value="treebolic.model.XEdgeData" method="setImage" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="setInterpolator" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="setItemResource" />
+    <pattern value="treebolic.glue.component.Statusbar" method="setLabelProcessor" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="setLabels" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" method="setListener" />
+    <pattern value="treebolic.glue.iface.component.WebDialog" method="setListener" />
+    <pattern value="org.treebolic.wheel.adapters.NumericWheelAdapter" method="setMaxValue" />
+    <pattern value="org.treebolic.wheel.adapters.NumericWheelAdapter" method="setMinValue" />
+    <pattern value="treebolic.model.XNodeData" method="setMinWeight" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setOrientation" />
+    <pattern value="treebolic.model.Tree" method="setRoot" />
+    <pattern value="treebolic.view.AbstractPainter" method="setScaleImages" />
+    <pattern value="org.treebolic.wheel.AbstractWheelView" method="setSelectionDivider" />
+    <pattern value="org.treebolic.wheel.WheelHorizontalView" method="setSelectionDividerWidth" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setSplitterDraggingDrawable" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setSplitterDrawable" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setSplitterMovable" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setSplitterPosition" />
+    <pattern value="treebolic.glue.component.Container" method="setSplitterPositionPercent" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setSplitterPositionPercent" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="setSplitterSize" />
+    <pattern value="treebolic.glue.iface.Graphics" method="setStroke" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" method="setStyle" />
+    <pattern value="treebolic.glue.iface.component.WebDialog" method="setStyle" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="setTextColor" />
+    <pattern value="treebolic.glue.iface.Graphics" method="setTextSize" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="setTextSize" />
+    <pattern value="org.treebolic.wheel.adapters.AbstractWheelTextAdapter" method="setTextTypeface" />
+    <pattern value="org.treebolic.AppCompatCommonUtils" method="setThemePref" />
+    <pattern value="org.treebolic.Settings" />
+    <pattern value="treebolic.model.Settings" />
+    <pattern value="treebolic.model.TreeMutableEdge" method="setTo" />
+    <pattern value="treebolic.glue.iface.component.Surface" method="setToolTipText" />
+    <pattern value="org.treebolic.preference.AutoEditTextPreference" method="setValues" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="setValues" />
+    <pattern value="treebolic.model.XNodeData" method="setWeight" />
+    <pattern value="treebolic.glue.component.QuickAction" method="show" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="showDownload" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout" method="SplitPaneLayout" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="start" />
+    <pattern value="org.treebolic.DownloadActivity" method="start" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="startProgress" />
+    <pattern value="org.treebolic.download.DownloadActivity" method="status2ResourceId" />
+    <pattern value="treebolic.component.Statusbar" />
+    <pattern value="treebolic.glue.component.Statusbar" />
+    <pattern value="treebolic.glue.iface.component.Statusbar" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="stopScrolling" />
+    <pattern value="org.treebolic.storage.Storage" />
+    <pattern value="org.treebolic.preference.StringSavedState" />
+    <pattern value="treebolic.glue.iface.Graphics" method="stringWidth" />
+    <pattern value="treebolic.glue.iface.component.Surface" />
+    <pattern value="treebolic.glue.component.Tip" />
+    <pattern value="treebolic.glue.component.Tip" method="Tip" />
+    <pattern value="treebolic.glue.component.Tip" method="tip" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="toast" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="toast" />
+    <pattern value="treebolic.core.transform.HyperRotation" method="toComplex" />
+    <pattern value="treebolic.core.transform.HyperTranslation" method="toComplex" />
+    <pattern value="treebolic.model.Utils" method="toInteger" />
+    <pattern value="treebolic.component.Toolbar" />
+    <pattern value="treebolic.glue.component.Toolbar" />
+    <pattern value="treebolic.glue.iface.component.Toolbar" />
+    <pattern value="treebolic.component.Toolbar" method="Toolbar" />
+    <pattern value="treebolic.model.Utils" method="toStrings" />
+    <pattern value="treebolic.model.Utils" method="toTrueBoolean" />
+    <pattern value="treebolic.model.NodeData" method="toWritableString" />
+    <pattern value="treebolic.glue.iface.Graphics" method="translate" />
+    <pattern value="treebolic.control.Traverser" />
+    <pattern value="treebolic.model.Tree" />
+    <pattern value="org.treebolic.TreebolicActivity" />
+    <pattern value="org.treebolic.TreebolicActivity" method="TreebolicActivity" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService" method="TreebolicAIDLBoundService" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="TreebolicBasicActivity" />
+    <pattern value="org.treebolic.services.TreebolicBoundService" />
+    <pattern value="org.treebolic.services.TreebolicBoundService" method="TreebolicBoundService" />
+    <pattern value="org.treebolic.TreebolicIface" />
+    <pattern value="org.treebolic.services.TreebolicIntentService" />
+    <pattern value="org.treebolic.services.TreebolicIntentService" method="TreebolicIntentService" />
+    <pattern value="org.treebolic.services.TreebolicMessengerService" />
+    <pattern value="org.treebolic.services.TreebolicMessengerService" method="TreebolicMessengerService" />
+    <pattern value="org.treebolic.TreebolicModelActivity" />
+    <pattern value="org.treebolic.TreebolicModelActivity" method="TreebolicModelActivity" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" />
+    <pattern value="org.treebolic.TreebolicPluginActivity" method="TreebolicPluginActivity" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" />
+    <pattern value="org.treebolic.TreebolicSourceActivity" method="TreebolicSourceActivity" />
+    <pattern value="treebolic.model.TreeMutableEdge" />
+    <pattern value="treebolic.model.TreeMutableEdge" method="TreeMutableEdge" />
+    <pattern value="treebolic.model.TreeMutableNode" />
+    <pattern value="treebolic.model.TreeMutableNode" method="TreeMutableNode" />
+    <pattern value="treebolic.glue.Image" method="try_make" />
+    <pattern value="org.treebolic.services.ModelFactory" method="useFilesDir" />
+    <pattern value="org.treebolic.services.Utils" />
+    <pattern value="org.treebolic.Utils" />
+    <pattern value="treebolic.glue.component.Utils" />
+    <pattern value="treebolic.model.Utils" />
+    <pattern value="treebolic.glue.iface.component.Container" method="validate" />
+    <pattern value="treebolic.view.View" />
+    <pattern value="treebolic.glue.component.WebDialog" />
+    <pattern value="treebolic.glue.iface.component.WebDialog" />
+    <pattern value="treebolic.glue.component.WebDialog" method="WebDialog" />
+    <pattern value="org.treebolic.wheel.WheelHorizontalView" />
+    <pattern value="org.treebolic.wheel.WheelHorizontalView" method="WheelHorizontalView" />
+    <pattern value="org.treebolic.wheel.WheelVerticalView" />
+    <pattern value="org.treebolic.wheel.WheelVerticalView" method="WheelVerticalView" />
+    <pattern value="org.treebolic.wheel.WheelView" />
+    <pattern value="org.treebolic.wheel.WheelView" method="WheelView" />
+    <pattern value="treebolic.Widget" />
+    <pattern value="treebolic.glue.iface.Worker" />
+    <pattern value="treebolic.glue.Color" method="writeObject" />
+    <pattern value="treebolic.glue.Image" method="writeObject" />
+    <pattern value="org.treebolic.parcel.ParcelInstrumentedTest" method="writeParcel" />
+    <pattern value="org.treebolic.ParcelableModel" method="writeSerializableToParcel" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout.SavedState" method="writeToParcel" />
+    <pattern value="org.treebolic.ParcelableModel" method="writeToParcel" />
+    <pattern value="treebolic.view.Mapper" method="wViewToUnitCircle" />
+    <pattern value="treebolic.model.XEdgeData" />
+    <pattern value="treebolic.model.XNodeData" />
+    <pattern value="treebolic.core.AbstractLayerOut" method="AbstractLayerOut" />
+    <pattern value="treebolic.view.AbstractPainter" method="AbstractPainter" />
+    <pattern value="org.treebolic.download.DownloadActivity$2" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout.SavedState$1" />
+    <pattern value="org.treebolic.download.DownloadActivity$1" />
+    <pattern value="org.treebolic.download.DownloadActivity$4" />
+    <pattern value="org.treebolic.download.DownloadActivity$4$1" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout.SavedState$1" method="createFromParcel" />
+    <pattern value="treebolic.model.EdgeData" method="EdgeData" />
+    <pattern value="treebolic.glue.EventListener" />
+    <pattern value="treebolic.glue.Graphics" method="fillRectangle" />
+    <pattern value="treebolic.Widget" method="getVersion" />
+    <pattern value="treebolic.Widget" method="init" />
+    <pattern value="treebolic.Widget" method="initSerialized" />
+    <pattern value="treebolic.Widget" method="link" />
+    <pattern value="org.treebolic.TreebolicBasicActivity" method="linkTo" />
+    <pattern value="org.treebolic.TreebolicClientActivity" method="linkTo" />
+    <pattern value="treebolic.glue.Color" method="makeBrighter" />
+    <pattern value="treebolic.glue.Color" method="makeDarker" />
+    <pattern value="treebolic.Widget" method="match" />
+    <pattern value="treebolic.glue.component.SplitPaneLayout.SavedState$1" method="newArray" />
+    <pattern value="treebolic.model.NodeData" method="NodeData" />
+    <pattern value="org.treebolic.download.DownloadActivity$1" method="onClick" />
+    <pattern value="org.treebolic.DownloadActivity" method="onCreate" />
+    <pattern value="org.treebolic.search.SearchSettings" method="onCreateDialog" />
+    <pattern value="treebolic.glue.EventListener" method="onFocus" />
+    <pattern value="treebolic.glue.EventListener" method="onLink" />
+    <pattern value="treebolic.control.EventListenerAdapter" method="onLongHover" />
+    <pattern value="treebolic.glue.EventListener" method="onMount" />
+    <pattern value="org.treebolic.download.DownloadActivity$2" method="onReceive" />
+    <pattern value="org.treebolic.ParcelableModel" method="ParcelableModel" />
+    <pattern value="treebolic.glue.component.Statusbar" method="put" />
+    <pattern value="org.treebolic.download.DownloadActivity$4" method="run" />
+    <pattern value="org.treebolic.download.DownloadActivity$4$1" method="run" />
+    <pattern value="treebolic.glue.Color" method="set" />
+    <pattern value="com.bbou.rate.AppRate" />
+    <pattern value="com.bbou.rate.AppRate" method="clearAgreeShowDialog" />
+    <pattern value="com.bbou.rate.AppRate" method="clearSettingsParam" />
+    <pattern value="com.bbou.rate.AppRate" method="isDebug" />
+    <pattern value="com.bbou.rate.AppRate" method="setAgreeShowDialog" />
+    <pattern value="com.bbou.rate.AppRate" method="setCancelable" />
+    <pattern value="com.bbou.rate.AppRate" method="setLaunchTimes" />
+    <pattern value="com.bbou.rate.AppRate" method="setMessage" />
+    <pattern value="com.bbou.rate.AppRate" method="setPastInstallDays" />
+    <pattern value="com.bbou.rate.AppRate" method="setRemindInterval" />
+    <pattern value="com.bbou.rate.AppRate" method="setShowLaterButton" />
+    <pattern value="com.bbou.rate.AppRate" method="setShowNeverButton" />
+    <pattern value="com.bbou.rate.AppRate" method="setShowTitle" />
+    <pattern value="com.bbou.rate.AppRate" method="setTextLater" />
+    <pattern value="com.bbou.rate.AppRate" method="setTextNever" />
+    <pattern value="com.bbou.rate.AppRate" method="setTextRateNow" />
+    <pattern value="com.bbou.rate.AppRate" method="setTitle" />
+    <pattern value="com.bbou.rate.AppRate" method="setView" />
+    <pattern value="org.treebolic.preference.OpenEditTextPreference" method="addOptions" />
+    <pattern value="org.treebolic.services.Utils$1" />
+    <pattern value="org.treebolic.search.SearchSettings$1" />
+    <pattern value="com.bbou.donate.billing.BillingManager" />
+    <pattern value="com.bbou.rate.DialogOptions" />
+    <pattern value="com.bbou.donate.DonateActivity" />
+    <pattern value="com.bbou.donate.billing.BillingManager" method="getBillingClientResponseCode" />
+    <pattern value="com.bbou.donate.billing.BillingManager" method="getContext" />
+    <pattern value="com.bbou.rate.DialogOptions" method="getMessageResId" />
+    <pattern value="com.bbou.donate.billing.Skus" method="getSubscriptionSkus" />
+    <pattern value="com.bbou.rate.DialogOptions" method="getTextNegativeResId" />
+    <pattern value="com.bbou.rate.DialogOptions" method="getTextNeutralResId" />
+    <pattern value="com.bbou.rate.DialogOptions" method="getTextPositiveResId" />
+    <pattern value="com.bbou.rate.DialogOptions" method="getTitleResId" />
+    <pattern value="com.bbou.others.OthersActivity" />
+    <pattern value="com.bbou.others.OthersActivity" method="isAppInstalled" />
+    <pattern value="treebolic.control.EventListenerAdapter" method="onFocus" />
+    <pattern value="treebolic.control.EventListenerAdapter" method="onLink" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketGrammarScope" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketGrammarScopeUDPipe" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketSemantikos" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketSemantikosEWn" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketSemantikosFn" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketSemantikosVn" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketSemantikosWn" />
+    <pattern value="com.bbou.others.OthersActivity" method="onMarketTreebolicWordNet" />
+    <pattern value="treebolic.control.EventListenerAdapter" method="onMount" />
+    <pattern value="org.treebolic.search.SearchSettings$1" method="onScrollingFinished" />
+    <pattern value="org.treebolic.search.SearchSettings$1" method="onScrollingStarted" />
+    <pattern value="org.treebolic.services.Utils$1" method="progress" />
+    <pattern value="com.bbou.donate.billing.BillingManager" method="querySkuDetails" />
+    <pattern value="com.bbou.donate.billing.Skus" />
+    <pattern value="com.bbou.rate.StoreType" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService$1" />
+    <pattern value="treebolic.glue.component.Dialog" />
+    <pattern value="treebolic.glue.iface.component.Dialog" />
+    <pattern value="treebolic.glue.component.Dialog" method="Dialog" />
+    <pattern value="treebolic.glue.iface.component.Dialog" method="display" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService$1" method="makeAndForwardModel" />
+    <pattern value="org.treebolic.services.TreebolicAIDLBoundService$1" method="makeModel" />
+    <pattern value="treebolic.glue.iface.component.Dialog" method="set" />
+    <pattern value="treebolic.glue.component.Dialog" method="setBase" />
+    <pattern value="treebolic.glue.iface.component.Dialog" method="setConverter" />
+    <pattern value="treebolic.glue.iface.component.Dialog" method="setHandle" />
+    <pattern value="treebolic.glue.iface.component.Dialog" method="setListener" />
+    <pattern value="treebolic.glue.iface.component.Dialog" method="setStyle" />
+    <pattern value="org.treebolic.storage.Deployer" method="cleanup" />
+    <pattern value="org.treebolic.storage.Deployer" method="copyFile" />
+    <pattern value="org.treebolic.preference.ResettablePreference" />
+    <pattern value="org.treebolic.preference.ResettablePreference" method="ResettablePreference" />
+    <pattern value="org.treebolic.preference.ResettablePreference" method="setClickListener" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

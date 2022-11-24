@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="Embedded JDK" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/treebolic" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicGlue" />
+            <option value="$PROJECT_DIR$/../TreebolicLib/treebolicIface" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicAidl" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsIface" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicParcel" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface" />
+            <option value="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSponsorLibs/donateLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSponsorLibs/othersLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSponsorLibs/rateLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/fileChooserLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/guideLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/searchLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/storageLib" />
+            <option value="$PROJECT_DIR$/../TreebolicSupportLibs/wheelLib" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
