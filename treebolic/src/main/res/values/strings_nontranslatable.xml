@@ -30,7 +30,7 @@
 
 	<!-- builtin providers -->
 	<string-array name="pref_providers_list_values" translatable="false">
-		<item>treebolic.provider.xml.dom.Provider</item>
+		<item>treebolic.provider.xml.Provider</item>
 		<item>treebolic.provider.text.indent.Provider</item>
 		<item>treebolic.provider.text.indent.tre.Provider</item>
 		<item>treebolic.provider.text.pair.Provider</item>
