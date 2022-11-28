@@ -17,6 +17,12 @@ buildscript {
     }
 }
 
+repositories {
+    google()
+    mavenCentral()
+    maven { url System.getenv('HOME') + "/.m2/repository/" }
+}
+
 allprojects {
 
     repositories {

@@ -41,6 +41,7 @@ android {
     }
 
     compileOptions {
+        coreLibraryDesugaringEnabled true
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -52,6 +53,9 @@ dependencies {
     implementation ('io.github.treebolic:treebolic-model:4.0-SNAPSHOT')
     implementation ('io.github.treebolic:treebolic-view:4.0-SNAPSHOT')
     implementation ('io.github.treebolic:provider-xml:4.0-SNAPSHOT')
+    implementation ('io.github.treebolic:provider-text-indent-tree:4.0-SNAPSHOT')
+    implementation ('io.github.treebolic:provider-text-indent:4.0-SNAPSHOT')
+    implementation ('io.github.treebolic:provider-text-pair:4.0-SNAPSHOT')
 
     implementation project(':treebolicGlue')
     implementation project(':treebolicParcel')
@@ -70,10 +74,7 @@ dependencies {
     implementation project(':othersLib')
     implementation project(':donateLib')
 
-    implementation files('libs/treebolic-provider-text-indent-tre.jar')
-    implementation files('libs/treebolic-provider-text-indent.jar')
-    implementation files('libs/treebolic-provider-text-pair.jar')
-
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'com.google.android.material:material:1.7.0'
