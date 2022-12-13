@@ -12,10 +12,15 @@
 		app:key="pref_provider_active"
 		app:title="@string/pref_header_active" />
 	<Preference
-		app:fragment="org.treebolic.SettingsActivity$XmlPreferenceFragment"
+		app:fragment="org.treebolic.SettingsActivity$XmlSaxPreferenceFragment"
 		app:icon="@null"
-		app:key="pref_provider_xml"
-		app:title="@string/pref_header_xml" />
+		app:key="pref_provider_xml_sax"
+		app:title="@string/pref_header_xml_sax" />
+	<Preference
+		app:fragment="org.treebolic.SettingsActivity$XmlDomPreferenceFragment"
+		app:icon="@null"
+		app:key="pref_provider_xml_dom"
+		app:title="@string/pref_header_xml_dom" />
 	<Preference
 		app:fragment="org.treebolic.SettingsActivity$TextIndentPreferenceFragment"
 		app:icon="@null"

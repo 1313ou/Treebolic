@@ -5,6 +5,11 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+	<Preference
+		android:key="pref_provider"
+		android:summary="@string/pref_description_provider"
+		android:title="@string/pref_title_provider"/>
+
 	<EditTextPreference
 		android:inputType="textUri"
 		android:key="pref_source"
@@ -40,10 +45,5 @@
 		android:singleLine="true"
 		android:summary="@string/pref_description_settings"
 		android:title="@string/pref_title_settings"/>
-
-	<Preference
-		android:key="pref_provider"
-		android:summary="@string/pref_description_provider"
-		android:title="@string/pref_title_provider"/>
 
 </PreferenceScreen>

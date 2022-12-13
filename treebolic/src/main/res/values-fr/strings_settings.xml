@@ -36,7 +36,8 @@
 <!--	<string name="pref_description_plugin">Les modules ont leur propre page de paramètres</string>-->
 
 	<!-- built-in providers settings -->
-	<string name="pref_header_xml" tools:keep="@string/pref_header_xml">XML</string>
+	<string name="pref_header_xml_sax" tools:keep="@string/pref_header_xml_sax">XML (SAX)</string>
+	<string name="pref_header_xml_dom" tools:keep="@string/pref_header_xml_dom">XML (DOM)</string>
 	<string name="pref_header_text_indent" tools:keep="@string/pref_header_text_indent">Text (indenté)</string>
 	<string name="pref_header_text_indent_tre" tools:keep="@string/pref_header_text_indent_tre">Text (indenté-arbre)</string>
 	<string name="pref_header_text_pair" tools:keep="@string/pref_header_text_pair">Text (paires)</string>
@@ -47,7 +48,8 @@
 
 	<!-- builtin providers -->
 	<string-array name="pref_providers_list_titles">
-		<item>xml</item>
+		<item>xml (sax)</item>
+		<item>xml (dom)</item>
 		<item>texte (indenté)</item>
 		<item>texte (indenté, arbre)</item>
 		<item>texte (paires)</item>

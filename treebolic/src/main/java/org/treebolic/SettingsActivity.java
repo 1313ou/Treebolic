@@ -161,7 +161,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	}
 
 	@SuppressWarnings("WeakerAccess")
-	public static class XmlPreferenceFragment extends ProviderPreferenceFragment
+	public static class XmlSaxPreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
 		@Override
@@ -171,8 +171,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 	}
 
-	@SuppressWarnings("WeakerAccess")
-	public static class TextIndentPreferenceFragment extends ProviderPreferenceFragment
+	public static class XmlDomPreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
 		@Override
@@ -183,7 +182,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	}
 
 	@SuppressWarnings("WeakerAccess")
-	public static class TextIndentTrePreferenceFragment extends ProviderPreferenceFragment
+	public static class TextIndentPreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
 		@Override
@@ -194,13 +193,24 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	}
 
 	@SuppressWarnings("WeakerAccess")
-	public static class TextPairPreferenceFragment extends ProviderPreferenceFragment
+	public static class TextIndentTrePreferenceFragment extends ProviderPreferenceFragment
 	{
 		@Nullable
 		@Override
 		protected String getName()
 		{
 			return getName(3);
+		}
+	}
+
+	@SuppressWarnings("WeakerAccess")
+	public static class TextPairPreferenceFragment extends ProviderPreferenceFragment
+	{
+		@Nullable
+		@Override
+		protected String getName()
+		{
+			return getName(4);
 		}
 	}
 
