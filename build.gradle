@@ -9,18 +9,13 @@ buildscript {
     repositories {
         mavenCentral()
         google()
+        maven { url System.getenv('HOME') + "/.m2/repository/" }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.1'
         classpath 'com.google.gms:google-services:4.3.14'
     }
-}
-
-repositories {
-    google()
-    mavenCentral()
-    maven { url System.getenv('HOME') + "/.m2/repository/" }
 }
 
 allprojects {
@@ -35,8 +30,8 @@ allprojects {
         versionCode = 1
         versionName = '0.1'
         minSdkVersion = 14
-        targetSdkVersion = 32
-        compileSdkVersion = 32
+        targetSdkVersion = 33
+        compileSdkVersion = 33
         multiDexEnabled = true
     }
 
