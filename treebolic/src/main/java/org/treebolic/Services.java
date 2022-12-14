@@ -137,7 +137,7 @@ public class Services
 					}
 					else
 					{
-						Log.d(TAG, "Dropped " + service.toString());
+						Log.d(TAG, "Dropped " + service);
 					}
 				}
 			}

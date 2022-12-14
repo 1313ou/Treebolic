@@ -792,6 +792,24 @@
     <pattern value="org.treebolic.preference.ResettablePreference" />
     <pattern value="org.treebolic.preference.ResettablePreference" method="ResettablePreference" />
     <pattern value="org.treebolic.preference.ResettablePreference" method="setClickListener" />
+    <pattern value="treebolic.glue.ActionListener" />
+    <pattern value="treebolic.glue.Animator" />
+    <pattern value="treebolic.glue.Animator" method="Animator" />
+    <pattern value="treebolic.glue.Arc2D" />
+    <pattern value="treebolic.glue.component.Container" method="Container" />
+    <pattern value="treebolic.glue.GraphicsCache" />
+    <pattern value="treebolic.glue.GraphicsCache" method="GraphicsCache" />
+    <pattern value="treebolic.glue.Image" method="Image" />
+    <pattern value="treebolic.glue.Worker" />
+    <pattern value="treebolic.glue.component.QuickAction.OnDismissListener" method="onDismiss" />
+    <pattern value="treebolic.glue.component.QuickAction.OnDismissListener" />
+    <pattern value="treebolic.glue.component.PopupMenu" />
+    <pattern value="treebolic.glue.component.PopupMenu" method="PopupMenu" />
+    <pattern value="treebolic.glue.component.Statusbar" method="Statusbar" />
+    <pattern value="treebolic.glue.component.Toolbar" method="Toolbar" />
+    <pattern value="com.bbou.donate.billing.BillingManager" method="purchasesToProductIds" />
+    <pattern value="com.bbou.donate.billing.BillingManager" method="queryDetailsProductDetails" />
+    <pattern value="com.bbou.donate.DonateActivity" method="onConsume" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

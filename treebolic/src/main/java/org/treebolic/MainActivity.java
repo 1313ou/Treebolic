@@ -962,7 +962,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			return;
 		}
 
-		final String base = "jar:" + archiveUri.toString() + "!/";
+		final String base = "jar:" + archiveUri + "!/";
 		final String imageBase = base;
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
 

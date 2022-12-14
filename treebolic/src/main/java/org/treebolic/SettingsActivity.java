@@ -63,6 +63,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	private static final Preference.SummaryProvider<Preference> STRING_SUMMARY_PROVIDER = (preference) -> {
 
 		final SharedPreferences sharedPrefs = preference.getSharedPreferences();
+		assert sharedPrefs != null;
 		final String value = sharedPrefs.getString(preference.getKey(), null);
 		return value == null ? "" : value;
 	};
@@ -290,7 +291,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		}
 
 		@Override
-		public void onDisplayPreferenceDialog(final Preference preference)
+		public void onDisplayPreferenceDialog(@NonNull final Preference preference)
 		{
 			if (!OpenEditTextPreference.onDisplayPreferenceDialog(this, preference))
 			{
