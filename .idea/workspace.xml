@@ -147,7 +147,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../TreebolicSupportLibs" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -473,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671008960167</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="project settings">
+      <created>1671009021766</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1671009021766</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -524,10 +531,10 @@
     <MESSAGE value="Color class removed" />
     <MESSAGE value="remove xml-dom" />
     <MESSAGE value="desugaring&#10;multidex&#10;import android glue" />
-    <MESSAGE value="project settings" />
     <MESSAGE value="preferences and provider combo" />
     <MESSAGE value="lint" />
-    <option name="LAST_COMMIT_MESSAGE" value="lint" />
+    <MESSAGE value="project settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="project settings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
