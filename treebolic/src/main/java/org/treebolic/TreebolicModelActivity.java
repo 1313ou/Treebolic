@@ -7,6 +7,7 @@ package org.treebolic;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -85,7 +86,14 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			final boolean isSerialized = params.getBoolean(TreebolicIface.ARG_SERIALIZED);
 			if (isSerialized)
 			{
-				this.model = (Model) params.getSerializable(TreebolicIface.ARG_MODEL);
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+				{
+					this.model = params.getSerializable(TreebolicIface.ARG_MODEL, Model.class);
+				}
+				else
+				{
+					this.model = (Model) params.getSerializable(TreebolicIface.ARG_MODEL);
+				}
 			}
 			else
 			{
