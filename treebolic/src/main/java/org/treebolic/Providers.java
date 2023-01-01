@@ -266,45 +266,55 @@ public class Providers
 		final String[] urlSchemes = resources.getStringArray(R.array.pref_providers_list_schemes);
 		final String[] sources = resources.getStringArray(R.array.pref_providers_list_sources);
 		final String[] settings = resources.getStringArray(R.array.pref_providers_list_settings);
-		final TypedArray icons = resources.obtainTypedArray(R.array.pref_providers_list_icons);
-
-		// lowest array length
-		int lowest = Integer.MAX_VALUE;
-		for (final int l : new int[]{titles.length, values.length, mimetypes.length, urlSchemes.length, settings.length, icons.length()})
+		TypedArray icons = null;
+		try
 		{
-			if (lowest > l)
+			icons = resources.obtainTypedArray(R.array.pref_providers_list_icons);
+
+			// lowest array length
+			int lowest = Integer.MAX_VALUE;
+			for (final int l : new int[]{titles.length, values.length, mimetypes.length, urlSchemes.length, settings.length, icons.length()})
 			{
-				lowest = l;
+				if (lowest > l)
+				{
+					lowest = l;
+				}
+			}
+
+			// add array data
+			for (int i = 0; i < lowest; i++)
+			{
+				final HashMap<String, Object> provider = new HashMap<>();
+
+				// structural
+				provider.put(Providers.PROVIDER, values[i]);
+				provider.put(Providers.NAME, titles[i]);
+				provider.put(Providers.PACKAGE, parentPackage);
+				provider.put(Providers.PROCESS, processName);
+				provider.put(Providers.ISPLUGIN, false);
+				provider.put(Providers.ICON, icons.getResourceId(i, -1));
+				provider.put(Providers.MIMETYPE, mimetypes[i]);
+				provider.put(Providers.EXTENSIONS, extensions[i]);
+				provider.put(Providers.URLSCHEME, urlSchemes[i]);
+
+				// settings
+				provider.put(Providers.SOURCE, sources[i]);
+				provider.put(Providers.BASE, base);
+				provider.put(Providers.IMAGEBASE, imagebase);
+				provider.put(Providers.SETTINGS, settings[i]);
+
+				assert data != null;
+				data.add(provider);
+			}
+			return lowest;
+		}
+		finally
+		{
+			if (icons != null)
+			{
+				icons.recycle();
 			}
 		}
-
-		// add array data
-		for (int i = 0; i < lowest; i++)
-		{
-			final HashMap<String, Object> provider = new HashMap<>();
-
-			// structural
-			provider.put(Providers.PROVIDER, values[i]);
-			provider.put(Providers.NAME, titles[i]);
-			provider.put(Providers.PACKAGE, parentPackage);
-			provider.put(Providers.PROCESS, processName);
-			provider.put(Providers.ISPLUGIN, false);
-			provider.put(Providers.ICON, icons.getResourceId(i, -1));
-			provider.put(Providers.MIMETYPE, mimetypes[i]);
-			provider.put(Providers.EXTENSIONS, extensions[i]);
-			provider.put(Providers.URLSCHEME, urlSchemes[i]);
-
-			// settings
-			provider.put(Providers.SOURCE, sources[i]);
-			provider.put(Providers.BASE, base);
-			provider.put(Providers.IMAGEBASE, imagebase);
-			provider.put(Providers.SETTINGS, settings[i]);
-
-			assert data != null;
-			data.add(provider);
-		}
-		icons.recycle();
-		return lowest;
 	}
 
 	/**
