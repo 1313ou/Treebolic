@@ -19,91 +19,93 @@
   </component>
   <component name="AutomaticModuleUnloader">
     <loaded-modules>
-      <module name="Treebolic.treebolicServicesLib.unitTest" />
-      <module name="Treebolic.treebolicServicesIface.main" />
-      <module name="Treebolic.treebolicParcel.androidTest" />
-      <module name="Treebolic.commonLib.main" />
-      <module name="Treebolic.rateLib.androidTest" />
-      <module name="Treebolic.treebolicGlue" />
-      <module name="Treebolic.searchLib.unitTest" />
-      <module name="Treebolic.preferenceLib" />
-      <module name="Treebolic.treebolicParcel.main" />
-      <module name="Treebolic.treebolicServicesIface.androidTest" />
-      <module name="Treebolic.commonLib.androidTest" />
-      <module name="Treebolic.rateLib" />
-      <module name="Treebolic.preferenceLib.androidTest" />
-      <module name="Treebolic.wheelLib.unitTest" />
-      <module name="Treebolic.treebolicClientsLib" />
-      <module name="Treebolic.storageLib.unitTest" />
-      <module name="Treebolic.wheelLib.main" />
-      <module name="Treebolic.commonLib" />
-      <module name="Treebolic.fileChooserLib.unitTest" />
-      <module name="Treebolic.preferenceLib.main" />
-      <module name="Treebolic.treebolicClientsIface" />
-      <module name="Treebolic.searchLib.androidTest" />
-      <module name="Treebolic.treebolicClientsLib.androidTest" />
-      <module name="Treebolic.donateLib.main" />
-      <module name="Treebolic.othersLib.androidTest" />
-      <module name="Treebolic.treebolicServicesIface.unitTest" />
-      <module name="Treebolic.treebolicParcel" />
-      <module name="Treebolic.wheelLib.androidTest" />
-      <module name="Treebolic.fileChooserLib.main" />
-      <module name="Treebolic.treebolicAidl.unitTest" />
-      <module name="Treebolic.treebolic" />
-      <module name="Treebolic.preferenceLib.unitTest" />
-      <module name="Treebolic" />
-      <module name="Treebolic.searchLib.main" />
-      <module name="Treebolic.donateLib.unitTest" />
-      <module name="Treebolic.treebolicClientsLib.main" />
-      <module name="Treebolic.othersLib" />
-      <module name="Treebolic.wheelLib" />
-      <module name="Treebolic.downloadLib" />
-      <module name="Treebolic.fileChooserLib.androidTest" />
-      <module name="Treebolic.treebolicAidl.main" />
-      <module name="Treebolic.treebolic.androidTest" />
-      <module name="Treebolic.storageLib" />
-      <module name="Treebolic.treebolicClientsIface.main" />
-      <module name="Treebolic.guideLib.main" />
-      <module name="Treebolic.treebolicIface" />
-      <module name="Treebolic.othersLib.unitTest" />
-      <module name="Treebolic.treebolicClientsLib.unitTest" />
-      <module name="Treebolic.donateLib" />
+      <module name="Treebolic.treebolic.main" />
       <module name="Treebolic.treebolicServicesLib" />
+      <module name="Treebolic.treebolicAidl.unitTest" />
+      <module name="Treebolic.downloadLib.main" />
+      <module name="Treebolic.fileChooserLib.main" />
+      <module name="Treebolic.donateLib.androidTest" />
+      <module name="Treebolic" />
+      <module name="Treebolic.guideLib.unitTest" />
+      <module name="Treebolic.commonLib" />
+      <module name="Treebolic.searchLib" />
+      <module name="Treebolic.storageLib.androidTest" />
+      <module name="Treebolic.wheelLib.androidTest" />
+      <module name="Treebolic.treebolicIface.androidTest" />
+      <module name="Treebolic.treebolic.unitTest" />
+      <module name="Treebolic.treebolicAidl.main" />
       <module name="Treebolic.downloadLib.androidTest" />
+      <module name="Treebolic.fileChooserLib.androidTest" />
+      <module name="Treebolic.donateLib.main" />
+      <module name="Treebolic.treebolicServicesLib.androidTest" />
+      <module name="Treebolic.storageLib" />
+      <module name="Treebolic.searchLib.androidTest" />
+      <module name="Treebolic.wheelLib" />
+      <module name="Treebolic.othersLib.unitTest" />
+      <module name="Treebolic.treebolicIface.main" />
+      <module name="Treebolic.treebolicClientsIface.main" />
+      <module name="Treebolic.treebolicServicesIface.androidTest" />
       <module name="Treebolic.treebolicAidl.androidTest" />
       <module name="Treebolic.fileChooserLib" />
-      <module name="Treebolic.treebolicClientsIface.androidTest" />
-      <module name="Treebolic.guideLib.unitTest" />
-      <module name="Treebolic.treebolicGlue.unitTest" />
-      <module name="Treebolic.searchLib" />
-      <module name="Treebolic.treebolic.main" />
-      <module name="Treebolic.treebolicIface.androidTest" />
-      <module name="Treebolic.donateLib.androidTest" />
-      <module name="Treebolic.othersLib.main" />
-      <module name="Treebolic.treebolicServicesIface" />
-      <module name="Treebolic.treebolicParcel.unitTest" />
-      <module name="Treebolic.treebolicServicesLib.androidTest" />
-      <module name="Treebolic.downloadLib.main" />
-      <module name="Treebolic.rateLib.unitTest" />
-      <module name="Treebolic.storageLib.main" />
-      <module name="Treebolic.treebolicAidl" />
-      <module name="Treebolic.treebolicGlue.main" />
-      <module name="Treebolic.treebolic.unitTest" />
-      <module name="Treebolic.guideLib" />
-      <module name="Treebolic.treebolicIface.main" />
-      <module name="Treebolic.treebolicServicesLib.main" />
-      <module name="Treebolic.commonLib.unitTest" />
-      <module name="Treebolic.downloadLib.unitTest" />
-      <module name="Treebolic.rateLib.main" />
-      <module name="Treebolic.storageLib.androidTest" />
-      <module name="Treebolic.treebolicClientsIface.unitTest" />
-      <module name="Treebolic.treebolicGlue.androidTest" />
       <module name="Treebolic.guideLib.androidTest" />
+      <module name="Treebolic.treebolicServicesLib.main" />
+      <module name="Treebolic.storageLib.unitTest" />
       <module name="Treebolic.treebolicIface.unitTest" />
+      <module name="Treebolic.treebolicGlue.unitTest" />
+      <module name="Treebolic.treebolicClientsIface.unitTest" />
+      <module name="Treebolic.treebolicServicesIface" />
+      <module name="Treebolic.treebolicAidl" />
+      <module name="Treebolic.donateLib" />
+      <module name="Treebolic.downloadLib.unitTest" />
+      <module name="Treebolic.treebolicServicesLib.unitTest" />
+      <module name="Treebolic.preferenceLib" />
+      <module name="Treebolic.guideLib.main" />
+      <module name="Treebolic.storageLib.main" />
+      <module name="Treebolic.treebolicClientsIface" />
+      <module name="Treebolic.treebolicGlue.main" />
+      <module name="Treebolic.rateLib.unitTest" />
+      <module name="Treebolic.treebolicServicesIface.unitTest" />
+      <module name="Treebolic.preferenceLib.androidTest" />
+      <module name="Treebolic.treebolicParcel.unitTest" />
+      <module name="Treebolic.othersLib" />
+      <module name="Treebolic.treebolicClientsLib" />
+      <module name="Treebolic.treebolicGlue.androidTest" />
+      <module name="Treebolic.treebolicClientsIface.androidTest" />
+      <module name="Treebolic.rateLib.main" />
+      <module name="Treebolic.preferenceLib.unitTest" />
+      <module name="Treebolic.treebolicServicesIface.main" />
+      <module name="Treebolic.commonLib.unitTest" />
+      <module name="Treebolic.preferenceLib.main" />
+      <module name="Treebolic.guideLib" />
+      <module name="Treebolic.treebolicParcel.main" />
+      <module name="Treebolic.treebolicClientsLib.androidTest" />
+      <module name="Treebolic.treebolicGlue" />
+      <module name="Treebolic.treebolic" />
+      <module name="Treebolic.rateLib.androidTest" />
+      <module name="Treebolic.downloadLib" />
+      <module name="Treebolic.commonLib.main" />
+      <module name="Treebolic.donateLib.unitTest" />
+      <module name="Treebolic.searchLib.main" />
+      <module name="Treebolic.treebolicParcel.androidTest" />
+      <module name="Treebolic.othersLib.main" />
+      <module name="Treebolic.wheelLib.unitTest" />
+      <module name="Treebolic.treebolicClientsLib.main" />
+      <module name="Treebolic.treebolic.androidTest" />
+      <module name="Treebolic.rateLib" />
+      <module name="Treebolic.fileChooserLib.unitTest" />
+      <module name="Treebolic.commonLib.androidTest" />
+      <module name="Treebolic.treebolicParcel" />
+      <module name="Treebolic.searchLib.unitTest" />
+      <module name="Treebolic.wheelLib.main" />
+      <module name="Treebolic.othersLib.androidTest" />
+      <module name="Treebolic.treebolicIface" />
+      <module name="Treebolic.treebolicClientsLib.unitTest" />
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="" />
+    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,6 +150,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -158,7 +161,6 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.m2/repository/io/github/treebolic/provider-xml-stax/4.0-SNAPSHOT/provider-xml-stax-4.0-SNAPSHOT-sources.jar!/treebolic/provider/xml/stax/Provider.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar:///opt/java/java8/src.zip!/javax/xml/stream/XMLInputFactory.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -500,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671904044037</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="project homekeeping">
+      <created>1672765076058</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1672765076058</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -529,6 +538,17 @@
     <module name="Treebolic.treebolicMutable.main" />
     <module name="Treebolic.treebolicMutable.unitTest" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
@@ -554,9 +574,9 @@
     <MESSAGE value="preferences and provider combo" />
     <MESSAGE value="lint" />
     <MESSAGE value="project settings" />
-    <MESSAGE value="project homekeeping" />
     <MESSAGE value="various adjusts" />
-    <option name="LAST_COMMIT_MESSAGE" value="various adjusts" />
+    <MESSAGE value="project homekeeping" />
+    <option name="LAST_COMMIT_MESSAGE" value="project homekeeping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -573,7 +593,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicBasicActivity.java</url>
-          <line>696</line>
+          <line>697</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
