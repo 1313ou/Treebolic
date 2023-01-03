@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:treebolic-graph:4.0-0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-graph/4.0-0/cb72b046fd888160b3ae0312f7fa2a1a6888b8d5/treebolic-graph-4.0-0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-graph/4.0-0/8bf8d5805f1486db118c5dda2683ded01bb4174c/treebolic-graph-4.0-0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-graph/4.0-0/69f74dd0bb18de803121f8a085e937aaa6de3506/treebolic-graph-4.0-0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

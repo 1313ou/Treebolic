@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:provider-xml-sax:4.0-0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-xml-sax/4.0-0/90af314252c176201a4bbabdcc6b9fa72bb134a1/provider-xml-sax-4.0-0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-xml-sax/4.0-0/1ffed564a38a8268db6be867427e6f965313f1e0/provider-xml-sax-4.0-0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-xml-sax/4.0-0/eedaf0336be3640d26fd9169e82fabecd730c620/provider-xml-sax-4.0-0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
