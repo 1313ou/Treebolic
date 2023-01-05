@@ -7,6 +7,7 @@ package org.treebolic;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.Bundle;
@@ -63,7 +64,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 	protected void onDestroy()
 	{
 		super.onDestroy();
-		if(this.classLoader != null)
+		if (this.classLoader != null)
 		{
 			this.classLoader = null;
 		}
@@ -220,7 +221,10 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		ClassLoader classLoader = context.getClass().getClassLoader();
 
 		// get plugin apk
-		final ApplicationInfo appInfo = context.getPackageManager().getApplicationInfo(pluginPkg, 0);
+		final PackageManager pm = context.getPackageManager();
+		final ApplicationInfo appInfo = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU ? //
+				pm.getApplicationInfo(pluginPkg, PackageManager.ApplicationInfoFlags.of(0)) : //
+				pm.getApplicationInfo(pluginPkg, 0);
 		final String apk = appInfo.sourceDir;
 		Log.d(TreebolicPluginActivity.TAG, "Base plugin apk is " + apk);
 

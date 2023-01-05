@@ -373,7 +373,9 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		this.settings = params.getString(TreebolicIface.ARG_SETTINGS);
 		this.style = params.getString(TreebolicIface.ARG_STYLE);
 		this.urlScheme = params.getString(TreebolicIface.ARG_URLSCHEME);
-		this.parentActivity = params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY);
+		this.parentActivity = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU ? //
+				params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY, Intent.class) : //
+				params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY);
 	}
 
 	// T R E E B O L I C C O N T E X T

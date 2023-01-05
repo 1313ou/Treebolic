@@ -86,18 +86,15 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			final boolean isSerialized = params.getBoolean(TreebolicIface.ARG_SERIALIZED);
 			if (isSerialized)
 			{
-				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
-				{
-					this.model = params.getSerializable(TreebolicIface.ARG_MODEL, Model.class);
-				}
-				else
-				{
-					this.model = (Model) params.getSerializable(TreebolicIface.ARG_MODEL);
-				}
+				this.model = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? //
+						params.getSerializable(TreebolicIface.ARG_MODEL, Model.class) : //
+						(Model) params.getSerializable(TreebolicIface.ARG_MODEL);
 			}
 			else
 			{
-				final ParcelableModel parcelModel = params.getParcelable(TreebolicIface.ARG_MODEL);
+				final ParcelableModel parcelModel = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? //
+						params.getParcelable(TreebolicIface.ARG_MODEL, ParcelableModel.class) : //
+						params.getParcelable(TreebolicIface.ARG_MODEL);
 				if (parcelModel != null)
 				{
 					this.model = parcelModel.getModel();
@@ -108,7 +105,9 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		Log.d(TreebolicModelActivity.TAG, "model=" + ModelDump.toString(this.model));
 
 		// retrieve other parameters
-		this.serializedModel = params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI);
+		this.serializedModel = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? //
+				params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI, Uri.class) : //
+				params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI);
 
 		// super
 		super.unmarshalArgs(intent);

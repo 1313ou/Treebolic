@@ -72,10 +72,12 @@ public class Providers
 	@SuppressWarnings({"boxing"})
 	static private void makeProviders(@NonNull final Context context, @NonNull @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
 	{
-		final PackageManager packageManager = context.getPackageManager();
+		final PackageManager pm = context.getPackageManager();
 
 		// process name
-		final ApplicationInfo info = packageManager.getApplicationInfo(parentPackageName, PackageManager.GET_META_DATA);
+		final ApplicationInfo info = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU ? //
+				pm.getApplicationInfo(parentPackageName, PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA)) : //
+				pm.getApplicationInfo(parentPackageName, PackageManager.GET_META_DATA);
 		final String processName = info.processName;
 
 		// process uid
@@ -85,7 +87,7 @@ public class Providers
 		Providers.addBuiltInProviders(context, parentPackageName, processName);
 
 		// scan processes with same uid
-		final String[] pkgs = packageManager.getPackagesForUid(uid);
+		final String[] pkgs = pm.getPackagesForUid(uid);
 		for (final String pkg : pkgs)
 		{
 			// special case of parent package (already processed)
