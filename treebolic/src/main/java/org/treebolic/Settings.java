@@ -180,7 +180,7 @@ public class Settings
 	 * @param value   value
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void putStringPref(final Context context, @SuppressWarnings("SameParameterValue") final String key, final String value)
+	static public void putStringPref(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final String key, final String value)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		sharedPref.edit().putString(key, value).commit();
@@ -194,7 +194,7 @@ public class Settings
 	 * @param value   value
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void putIntPref(final Context context, final String key, final int value)
+	static public void putIntPref(@NonNull final Context context, final String key, final int value)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		sharedPref.edit().putInt(key, value).commit();
@@ -208,7 +208,7 @@ public class Settings
 	 * @return value
 	 */
 	@Nullable
-	static public String getStringPref(final Context context, final String key)
+	static public String getStringPref(@NonNull final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		return sharedPref.getString(key, null);
@@ -221,7 +221,7 @@ public class Settings
 	 * @param key     key
 	 * @return value
 	 */
-	static public int getIntPref(final Context context, final String key)
+	static public int getIntPref(@NonNull final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		return sharedPref.getInt(key, 0);
@@ -235,7 +235,7 @@ public class Settings
 	 * @return preference value as
 	 */
 	@Nullable
-	static public URL getURLPref(final Context context, final String key)
+	static public URL getURLPref(@NonNull final Context context, final String key)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		final String result = sharedPref.getString(key, null);

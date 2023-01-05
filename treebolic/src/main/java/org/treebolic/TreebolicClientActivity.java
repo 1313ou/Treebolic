@@ -265,12 +265,14 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	// T R E E B O L I C C O N T E X T
 
+	@Nullable
 	@Override
 	public URL getBase()
 	{
 		return Settings.getURLPref(this, TreebolicIface.PREF_BASE);
 	}
 
+	@Nullable
 	@Override
 	public URL getImagesBase()
 	{
@@ -287,6 +289,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return this.parameters;
 	}
 
+	@NonNull
 	@SuppressWarnings("SameReturnValue")
 	@Override
 	public String getStyle()
@@ -324,6 +327,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return false;
 	}
 
+	@NonNull
 	@Override
 	public String getInput()
 	{
@@ -636,7 +640,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 *
 	 * @param context locatorContext
 	 */
-	static public void initializeSearchPrefs(final Context context)
+	static public void initializeSearchPrefs(@NonNull final Context context)
 	{
 		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
 		final SharedPreferences.Editor editor = sharedPref.edit();

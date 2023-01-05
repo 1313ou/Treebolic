@@ -337,6 +337,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		}
 	}
 
+	@Nullable
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	@Override
 	public Intent getParentActivityIntent()
@@ -380,6 +381,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 
 	// T R E E B O L I C C O N T E X T
 
+	@Nullable
 	@Override
 	public URL getBase()
 	{
@@ -397,6 +399,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		return Settings.getURLPref(this, TreebolicIface.PREF_BASE);
 	}
 
+	@Nullable
 	@Override
 	public URL getImagesBase()
 	{
@@ -420,6 +423,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 		return this.parameters;
 	}
 
+	@Nullable
 	@Override
 	public String getStyle()
 	{
