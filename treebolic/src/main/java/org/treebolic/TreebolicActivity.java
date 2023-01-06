@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
+ * Copyright (c) 2023. Bernard Bou
  */
 
 package org.treebolic;
