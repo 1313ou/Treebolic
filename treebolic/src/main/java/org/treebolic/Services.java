@@ -66,7 +66,7 @@ public class Services
 	 *
 	 * @param packageManager package manager
 	 * @param packageName    package name
-	 * @param iconRes         icon id
+	 * @param iconRes        icon id
 	 * @return drawable
 	 */
 	static public Drawable loadIcon(@NonNull final PackageManager packageManager, final String packageName, @DrawableRes final int iconRes)
@@ -82,7 +82,7 @@ public class Services
 	 * Load label
 	 *
 	 * @param packageName package name
-	 * @param labelRes     label id
+	 * @param labelRes    label id
 	 * @return label
 	 */
 	@NonNull
@@ -107,8 +107,7 @@ public class Services
 	{
 		final PackageManager packageManager = context.getPackageManager();
 
-		@SuppressLint("QueryPermissionsNeeded")
-		final List<PackageInfo> pkgs = packageManager.getInstalledPackages(PackageManager.GET_SERVICES);
+		@SuppressLint("QueryPermissionsNeeded") final List<PackageInfo> pkgs = packageManager.getInstalledPackages(PackageManager.GET_SERVICES);
 		for (final PackageInfo pkg : pkgs)
 		{
 			final ServiceInfo[] services = pkg.services;
@@ -116,7 +115,7 @@ public class Services
 			{
 				for (final ServiceInfo service : services)
 				{
-					if(filter == null || service.name.matches(filter))
+					if (filter == null || service.name.matches(filter))
 					{
 						final HashMap<String, Object> map = new HashMap<>();
 						map.put(Services.NAME, service.name);
@@ -147,10 +146,10 @@ public class Services
 	/**
 	 * Make adapter
 	 *
-	 * @param context locatorContext
+	 * @param context       locatorContext
 	 * @param itemLayoutRes item layout
-	 * @param from    from key
-	 * @param to      to res id
+	 * @param from          from key
+	 * @param to            to res id
 	 * @return base adapter
 	 */
 	@Nullable

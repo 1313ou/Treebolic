@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
@@ -7,7 +6,7 @@
 
 	<!-- Active settings -->
 	<string name="pref_header_active" tools:keep="@string/pref_header_active">Active</string>
-<!--	<string name="pref_summary_header_active">Settings for active provider</string>-->
+	<!--	<string name="pref_summary_header_active">Settings for active provider</string>-->
 
 	<!-- active built-in provider -->
 	<string name="pref_title_provider_name">Name</string>
@@ -32,8 +31,8 @@
 	<string name="pref_description_provider_settings">Access to provider settings</string>
 
 	<!-- active plugin provider -->
-<!--	<string name="pref_title_plugin">Plugin</string>-->
-<!--	<string name="pref_description_plugin">Plugins have their own settings page</string>-->
+	<!--	<string name="pref_title_plugin">Plugin</string>-->
+	<!--	<string name="pref_description_plugin">Plugins have their own settings page</string>-->
 
 	<!-- built-in providers settings -->
 	<string name="pref_header_xml_sax" tools:keep="@string/pref_header_xml_sax">XML (SAX)</string>
@@ -41,10 +40,10 @@
 	<string name="pref_header_text_indent" tools:keep="@string/pref_header_text_indent">Text (indent)</string>
 	<string name="pref_header_text_indent_tre" tools:keep="@string/pref_header_text_indent_tre">Text (indent-tre)</string>
 	<string name="pref_header_text_pair" tools:keep="@string/pref_header_text_pair">Text (pairs)</string>
-<!--	<string name="pref_summary_header_xml">Settings for XML provider</string>-->
-<!--	<string name="pref_summary_header_text_indent">Settings for Text (indent) provider</string>-->
-<!--	<string name="pref_summary_header_text_indent_tre">Settings for Text (indent-tre) provider</string>-->
-<!--	<string name="pref_summary_header_text_pair">Settings for Text (pairs) provider</string>-->
+	<!--	<string name="pref_summary_header_xml">Settings for XML provider</string>-->
+	<!--	<string name="pref_summary_header_text_indent">Settings for Text (indent) provider</string>-->
+	<!--	<string name="pref_summary_header_text_indent_tre">Settings for Text (indent-tre) provider</string>-->
+	<!--	<string name="pref_summary_header_text_pair">Settings for Text (pairs) provider</string>-->
 
 	<!-- builtin providers -->
 	<string-array name="pref_providers_list_titles">
@@ -57,7 +56,7 @@
 
 	<!-- Service settings -->
 	<string name="pref_header_service" tools:keep="@string/pref_header_service">Service</string>
-<!--	<string name="pref_summary_header_service">Settings for service</string>-->
+	<!--	<string name="pref_summary_header_service">Settings for service</string>-->
 	<string name="pref_title_service">Service</string>
 	<string name="pref_description_service">Service type</string>
 

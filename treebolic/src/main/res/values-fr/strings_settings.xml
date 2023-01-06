@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
@@ -7,7 +6,7 @@
 
 	<!-- Active settings -->
 	<string name="pref_header_active" tools:keep="@string/pref_header_active">Actif</string>
-<!--	<string name="pref_summary_header_active">Paramètres du fournisseur actif</string>-->
+	<!--	<string name="pref_summary_header_active">Paramètres du fournisseur actif</string>-->
 
 	<!-- active built-in provider -->
 	<string name="pref_title_provider_name">Nom</string>
@@ -32,8 +31,8 @@
 	<string name="pref_description_provider_settings">Accès aux paramètres du fournisseur de données</string>
 
 	<!-- active plugin provider -->
-<!--	<string name="pref_title_plugin">Module</string>-->
-<!--	<string name="pref_description_plugin">Les modules ont leur propre page de paramètres</string>-->
+	<!--	<string name="pref_title_plugin">Module</string>-->
+	<!--	<string name="pref_description_plugin">Les modules ont leur propre page de paramètres</string>-->
 
 	<!-- built-in providers settings -->
 	<string name="pref_header_xml_sax" tools:keep="@string/pref_header_xml_sax">XML (SAX)</string>
@@ -41,10 +40,10 @@
 	<string name="pref_header_text_indent" tools:keep="@string/pref_header_text_indent">Text (indenté)</string>
 	<string name="pref_header_text_indent_tre" tools:keep="@string/pref_header_text_indent_tre">Text (indenté-arbre)</string>
 	<string name="pref_header_text_pair" tools:keep="@string/pref_header_text_pair">Text (paires)</string>
-<!--	<string name="pref_summary_header_xml">Paramètres du fournisseur XML</string>-->
-<!--	<string name="pref_summary_header_text_indent">Paramètres du fournisseur Texte (indenté)</string>-->
-<!--	<string name="pref_summary_header_text_indent_tre">Paramètres du fournisseur Texte (indenté-arbre)</string>-->
-<!--	<string name="pref_summary_header_text_pair">Paramètres du fournisseur Texte (paires)</string>-->
+	<!--	<string name="pref_summary_header_xml">Paramètres du fournisseur XML</string>-->
+	<!--	<string name="pref_summary_header_text_indent">Paramètres du fournisseur Texte (indenté)</string>-->
+	<!--	<string name="pref_summary_header_text_indent_tre">Paramètres du fournisseur Texte (indenté-arbre)</string>-->
+	<!--	<string name="pref_summary_header_text_pair">Paramètres du fournisseur Texte (paires)</string>-->
 
 	<!-- builtin providers -->
 	<string-array name="pref_providers_list_titles">
@@ -57,7 +56,7 @@
 
 	<!-- Service settings -->
 	<string name="pref_header_service" tools:keep="@string/pref_header_service">Service</string>
-<!--	<string name="pref_summary_header_service">Paramètres du service</string>-->
+	<!--	<string name="pref_summary_header_service">Paramètres du service</string>-->
 	<string name="pref_title_service">Service</string>
 	<string name="pref_description_service">Type du Service</string>
 

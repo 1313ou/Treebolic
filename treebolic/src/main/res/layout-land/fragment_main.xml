@@ -3,11 +3,11 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context="org.treebolic.MainActivity$PlaceholderFragment">
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="org.treebolic.MainActivity$PlaceholderFragment">
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
 		android:layout_gravity="center_horizontal"
 		android:contentDescription="@string/treebolic"
 		android:paddingTop="20dp"
-		android:src="@drawable/ic_splash_text"/>
+		android:src="@drawable/ic_splash_text" />
 
 	<ImageView
 		android:id="@+id/imageView"
@@ -24,6 +24,6 @@
 		android:layout_gravity="top|center_horizontal"
 		android:contentDescription="@string/treebolic"
 		android:paddingTop="20dp"
-		android:src="@drawable/ic_splash"/>
+		android:src="@drawable/ic_splash" />
 
 </LinearLayout>

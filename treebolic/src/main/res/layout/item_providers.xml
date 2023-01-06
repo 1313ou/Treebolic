@@ -1,12 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:orientation="vertical">
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
 
 	<LinearLayout
 		android:layout_width="fill_parent"
@@ -18,12 +17,12 @@
 			android:id="@+id/icon"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:contentDescription="@string/provider"/>
+			android:contentDescription="@string/provider" />
 
 		<View
 			android:layout_width="0dp"
 			android:layout_height="0dp"
-			android:layout_weight="1"/>
+			android:layout_weight="1" />
 
 		<CheckBox
 			android:id="@+id/plugin"
@@ -31,14 +30,14 @@
 			android:layout_height="wrap_content"
 			android:clickable="false"
 			android:gravity="center_vertical|end"
-			android:text="@string/plugin"/>
+			android:text="@string/plugin" />
 	</LinearLayout>
 
 	<TextView
 		android:id="@+id/provider"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:textStyle="bold"/>
+		android:textStyle="bold" />
 
 	<LinearLayout
 		android:layout_width="fill_parent"
@@ -53,12 +52,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/name"/>
+			android:text="@string/name" />
 
 		<TextView
 			android:id="@+id/name"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -74,13 +73,13 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/pkg"/>
+			android:text="@string/pkg" />
 
 		<TextView
 			android:id="@+id/pkg"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:textStyle="italic"/>
+			android:textStyle="italic" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -96,12 +95,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/process"/>
+			android:text="@string/process" />
 
 		<TextView
 			android:id="@+id/process"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -117,12 +116,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/mimetype"/>
+			android:text="@string/mimetype" />
 
 		<TextView
 			android:id="@+id/mimetype"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -138,12 +137,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/extension"/>
+			android:text="@string/extension" />
 
 		<TextView
 			android:id="@+id/extension"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -159,12 +158,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/scheme"/>
+			android:text="@string/scheme" />
 
 		<TextView
 			android:id="@+id/urlScheme"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -180,12 +179,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/source"/>
+			android:text="@string/source" />
 
 		<TextView
 			android:id="@+id/source"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -201,12 +200,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/base"/>
+			android:text="@string/base" />
 
 		<TextView
 			android:id="@+id/base"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -222,12 +221,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/imagebase"/>
+			android:text="@string/imagebase" />
 
 		<TextView
 			android:id="@+id/imagebase"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -243,17 +242,17 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/settings"/>
+			android:text="@string/settings" />
 
 		<TextView
 			android:id="@+id/settings"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<View
 		android:layout_width="fill_parent"
 		android:layout_height="2dp"
-		android:background="@android:color/darker_gray"/>
+		android:background="@android:color/darker_gray" />
 
 </LinearLayout>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
@@ -8,7 +7,7 @@
 	<Preference
 		android:key="pref_provider"
 		android:summary="@string/pref_description_provider"
-		android:title="@string/pref_title_provider"/>
+		android:title="@string/pref_title_provider" />
 
 	<EditTextPreference
 		android:inputType="textUri"
@@ -17,7 +16,7 @@
 		android:selectAllOnFocus="true"
 		android:singleLine="true"
 		android:summary="@string/pref_description_source"
-		android:title="@string/pref_title_source"/>
+		android:title="@string/pref_title_source" />
 
 	<EditTextPreference
 		android:inputType="textUri"
@@ -26,7 +25,7 @@
 		android:selectAllOnFocus="true"
 		android:singleLine="true"
 		android:summary="@string/pref_description_base"
-		android:title="@string/pref_title_base"/>
+		android:title="@string/pref_title_base" />
 
 	<EditTextPreference
 		android:inputType="textUri"
@@ -35,7 +34,7 @@
 		android:selectAllOnFocus="true"
 		android:singleLine="true"
 		android:summary="@string/pref_description_imagebase"
-		android:title="@string/pref_title_imagebase"/>
+		android:title="@string/pref_title_imagebase" />
 
 	<EditTextPreference
 		android:inputType="textUri"
@@ -44,6 +43,6 @@
 		android:selectAllOnFocus="true"
 		android:singleLine="true"
 		android:summary="@string/pref_description_settings"
-		android:title="@string/pref_title_settings"/>
+		android:title="@string/pref_title_settings" />
 
 </PreferenceScreen>

@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:orientation="vertical">
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
 
 	<ImageView
 		android:id="@+id/icon"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/service"/>
+		android:contentDescription="@string/service" />
 
 	<TextView
 		android:id="@+id/service"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:textStyle="bold"/>
+		android:textStyle="bold" />
 
 	<LinearLayout
 		android:layout_width="fill_parent"
@@ -33,13 +32,13 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/pkg"/>
+			android:text="@string/pkg" />
 
 		<TextView
 			android:id="@+id/pkg"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:textStyle="italic"/>
+			android:textStyle="italic" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -55,12 +54,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/process"/>
+			android:text="@string/process" />
 
 		<TextView
 			android:id="@+id/process"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -76,12 +75,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/permission"/>
+			android:text="@string/permission" />
 
 		<TextView
 			android:id="@+id/permission"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -97,12 +96,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/flags"/>
+			android:text="@string/flags" />
 
 		<TextView
 			android:id="@+id/flags"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -118,12 +117,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/label"/>
+			android:text="@string/label" />
 
 		<TextView
 			android:id="@+id/label"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -139,12 +138,12 @@
 			android:minEms="7"
 			android:paddingLeft="10dp"
 			android:paddingRight="10dp"
-			android:text="@string/description"/>
+			android:text="@string/description" />
 
 		<TextView
 			android:id="@+id/description"
 			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"/>
+			android:layout_height="wrap_content" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -158,7 +157,7 @@
 			android:layout_height="wrap_content"
 			android:clickable="false"
 			android:gravity="center_vertical"
-			android:text="@string/enabled"/>
+			android:text="@string/enabled" />
 
 		<CheckBox
 			android:id="@+id/exported"
@@ -166,12 +165,12 @@
 			android:layout_height="wrap_content"
 			android:clickable="false"
 			android:gravity="center_vertical"
-			android:text="@string/exported"/>
+			android:text="@string/exported" />
 	</LinearLayout>
 
 	<View
 		android:layout_width="fill_parent"
 		android:layout_height="2dp"
-		android:background="@android:color/darker_gray"/>
+		android:background="@android:color/darker_gray" />
 
 </LinearLayout>

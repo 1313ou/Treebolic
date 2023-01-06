@@ -3,9 +3,9 @@
   -->
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context="org.treebolic.MainActivity">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="org.treebolic.MainActivity">
 
 	<item
 		android:id="@+id/action_search"
@@ -13,43 +13,43 @@
 		android:title="@string/title_search"
 		app:actionViewClass="androidx.appcompat.widget.SearchView"
 		app:showAsAction="always"
-		tools:ignore="AlwaysShowAction"/>
+		tools:ignore="AlwaysShowAction" />
 	<item
 		android:id="@+id/action_search_run"
 		android:icon="@drawable/ic_action_search_run"
 		android:title="@string/title_search_run"
 		app:showAsAction="always"
-		tools:ignore="AlwaysShowAction"/>
+		tools:ignore="AlwaysShowAction" />
 	<item
 		android:id="@+id/action_search_reset"
 		android:icon="@drawable/ic_action_search_reset"
 		android:title="@string/title_search_reset"
 		app:showAsAction="always"
-		tools:ignore="AlwaysShowAction"/>
+		tools:ignore="AlwaysShowAction" />
 	<item
 		android:id="@+id/action_search_settings"
 		android:icon="@drawable/ic_action_search_settings"
 		android:title="@string/title_search_settings"
-		app:showAsAction="ifRoom"/>
+		app:showAsAction="ifRoom" />
 	<item
 		android:id="@+id/action_query"
 		android:title="@string/title_query"
-		app:showAsAction="never"/>
+		app:showAsAction="never" />
 	<item
 		android:id="@+id/action_tips"
 		android:title="@string/title_tips"
-		app:showAsAction="never"/>
+		app:showAsAction="never" />
 	<item
 		android:id="@+id/action_help"
 		android:title="@string/title_help"
-		app:showAsAction="never"/>
+		app:showAsAction="never" />
 	<item
 		android:id="@+id/action_finish"
 		android:title="@string/title_finish"
-		app:showAsAction="never"/>
+		app:showAsAction="never" />
 	<item
 		android:id="@+id/action_kill"
 		android:title="@string/title_kill"
-		app:showAsAction="never"/>
+		app:showAsAction="never" />
 
 </menu>

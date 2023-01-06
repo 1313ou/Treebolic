@@ -1,29 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
-              android:orientation="vertical">
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
 
 	<ImageView
 		android:id="@+id/icon"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:contentDescription="@string/provider"/>
+		android:contentDescription="@string/provider" />
 
 	<TextView
 		android:id="@+id/provider"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:textColor="?attr/colorForePrimary"
-		android:textStyle="bold"/>
+		android:textStyle="bold" />
 
 	<View
 		android:layout_width="fill_parent"
 		android:layout_height="1dp"
-		android:background="@android:color/darker_gray"/>
+		android:background="@android:color/darker_gray" />
 
 </LinearLayout>
