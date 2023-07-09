@@ -103,8 +103,7 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="jetifier off&#10;configuration cache on&#10;explicit defaults">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,15 +170,16 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/mnt/data2/devel/android-treebolic-as/Treebolic/build.gradle"
   }
-}</component>
+}]]></component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Signing Configs" />
     <option name="LAST_EDITED_SIGNING_CONFIG" value="debug" />
@@ -525,7 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1688796172652</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="project homekeeping">
+      <created>1688796233988</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1688796233988</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update lib deps">
+      <created>1688796253840</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1688796253840</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -588,12 +602,12 @@
     <MESSAGE value="lint" />
     <MESSAGE value="project settings" />
     <MESSAGE value="various adjusts" />
-    <MESSAGE value="project homekeeping" />
     <MESSAGE value="jetifier off&#10;configuration cache on&#10;explicit defaults" />
     <MESSAGE value="AGP upgrade" />
-    <MESSAGE value="update lib deps" />
     <MESSAGE value="compile upgrade" />
-    <option name="LAST_COMMIT_MESSAGE" value="compile upgrade" />
+    <MESSAGE value="project homekeeping" />
+    <MESSAGE value="update lib deps" />
+    <option name="LAST_COMMIT_MESSAGE" value="update lib deps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
