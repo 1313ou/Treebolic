@@ -5,9 +5,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
+	android:divider="@drawable/divider"
 	android:orientation="vertical">
 
-	<LinearLayout
+	<RelativeLayout
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:layout_gravity="end"
@@ -17,21 +18,20 @@
 			android:id="@+id/icon"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:contentDescription="@string/provider" />
-
-		<View
-			android:layout_width="0dp"
-			android:layout_height="0dp"
-			android:layout_weight="1" />
+			android:contentDescription="@string/provider"
+			android:src="@drawable/ic_textpair" />
 
 		<CheckBox
 			android:id="@+id/plugin"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
 			android:clickable="false"
 			android:gravity="center_vertical|end"
 			android:text="@string/plugin" />
-	</LinearLayout>
+
+	</RelativeLayout>
 
 	<TextView
 		android:id="@+id/provider"
@@ -249,10 +249,5 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content" />
 	</LinearLayout>
-
-	<View
-		android:layout_width="fill_parent"
-		android:layout_height="2dp"
-		android:background="@android:color/darker_gray" />
 
 </LinearLayout>
