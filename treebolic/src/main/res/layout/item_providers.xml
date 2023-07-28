@@ -18,8 +18,7 @@
 			android:id="@+id/icon"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:contentDescription="@string/provider"
-			android:src="@drawable/ic_textpair" />
+			android:contentDescription="@string/provider" />
 
 		<CheckBox
 			android:id="@+id/plugin"
