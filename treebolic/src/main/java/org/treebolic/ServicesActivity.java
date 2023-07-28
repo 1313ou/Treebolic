@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -46,9 +45,10 @@ public class ServicesActivity extends AppCompatCommonActivity
 		}
 
 		// adapter
-		final SimpleAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
+		final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
 		final ListView listView = findViewById(R.id.services);
 		listView.setAdapter(adapter);
+		//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
 	}
 
 	@SuppressWarnings("SameReturnValue")
@@ -68,6 +68,7 @@ public class ServicesActivity extends AppCompatCommonActivity
 			final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
 			final ListView listView = findViewById(R.id.services);
 			listView.setAdapter(adapter);
+			//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

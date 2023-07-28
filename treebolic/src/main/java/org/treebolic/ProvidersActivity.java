@@ -48,6 +48,7 @@ public class ProvidersActivity extends AppCompatCommonActivity
 		final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
 		final ListView listView = findViewById(R.id.providers);
 		listView.setAdapter(adapter);
+		//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
 	}
 
 	@SuppressWarnings("SameReturnValue")
@@ -67,6 +68,7 @@ public class ProvidersActivity extends AppCompatCommonActivity
 			final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
 			final ListView listView = findViewById(R.id.providers);
 			listView.setAdapter(adapter);
+			//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
