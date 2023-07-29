@@ -15,7 +15,6 @@
 		android:layout_gravity="start"
 		android:layout_marginLeft="20dp"
 		android:layout_marginRight="20dp"
-		android:gravity="start"
-		app:popupTheme="@style/MySpinnerDividedDropDownStyle" />
+		android:gravity="start" />
 
 </LinearLayout>
