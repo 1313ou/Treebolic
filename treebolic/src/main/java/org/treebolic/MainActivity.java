@@ -8,7 +8,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -57,7 +56,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.ThemedSpinnerAdapter;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.preference.PreferenceManager;
@@ -605,8 +603,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		// adapter
 		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemLayoutRes, from, to)
 		{
-			private final ThemedSpinnerAdapter.Helper dropDownHelper = new ThemedSpinnerAdapter.Helper(MainActivity.this);
-
 			@Override
 			public void setViewImage(@NonNull final ImageView imageView, final String pkg)
 			{
@@ -620,31 +616,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				{
 					//
 				}
-			}
-
-			@Override
-			public View getDropDownView(int position, View convertView, ViewGroup parent)
-			{
-				View view = null;
-				if (convertView == null)
-				{
-					// Inflate the drop down using the helper's LayoutInflater
-					LayoutInflater inflater = dropDownHelper.getDropDownViewInflater();
-					view = inflater.inflate(R.layout.spinner_item_providers_dropdown, parent, false);
-				}
-				return view;
-			}
-
-			@Override
-			public void setDropDownViewTheme(Resources.Theme theme)
-			{
-				dropDownHelper.setDropDownViewTheme(theme);
-			}
-
-			@Override
-			public Resources.Theme getDropDownViewTheme()
-			{
-				return dropDownHelper.getDropDownViewTheme();
 			}
 		};
 
