@@ -315,6 +315,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		// search view
 		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
 		final SearchView searchView = (SearchView) searchMenuItem.getActionView();
+		assert searchView != null;
 		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
 		{
 			@Override

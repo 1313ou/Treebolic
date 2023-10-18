@@ -88,157 +88,160 @@ public class Providers
 
 		// scan processes with same uid
 		final String[] pkgs = pm.getPackagesForUid(uid);
-		for (final String pkg : pkgs)
+		if (pkgs != null)
 		{
-			// special case of parent package (already processed)
-			if (parentPackageName.equals(pkg))
+			for (final String pkg : pkgs)
 			{
-				continue;
-			}
-
-			// special case of app package
-			if (pkg.endsWith(".app") || pkg.endsWith(".service"))
-			{
-				continue;
-			}
-
-			// plugin name
-			final String[] components = pkg.split("\\.");
-			final String name = components[components.length - 1];
-
-			// plugin locatorContext
-			Context pluginContext;
-			try
-			{
-				pluginContext = context.createPackageContext(pkg, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
-			}
-			catch (@NonNull final NameNotFoundException e1)
-			{
-				Log.d(Providers.TAG, "Error while creating package locatorContext for " + pkg + ' ' + e1.getMessage());
-				continue;
-			}
-
-			// preferences from plugin locatorContext
-			final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(pluginContext);
-			final String source = sharedPref.getString(TreebolicIface.PREF_SOURCE, null);
-			final String base = sharedPref.getString(TreebolicIface.PREF_BASE, null);
-			final String imagebase = sharedPref.getString(TreebolicIface.PREF_IMAGEBASE, null);
-			final String settings = sharedPref.getString(TreebolicIface.PREF_SETTINGS, null);
-
-			// plugin class loader
-			final ClassLoader pluginClassLoader = pluginContext.getClassLoader();
-
-			try
-			{
-				// plugin description
-				final Class<?> pluginProviderDataClass = pluginClassLoader.loadClass(pkg + ".ProviderData");
-				Log.d(Providers.TAG, "Plugin access class has been loaded " + pluginProviderDataClass.toString());
-
-				// plugin classes
-				final Method getClassesMethod;
-				try
-				{
-					getClassesMethod = pluginProviderDataClass.getMethod("getProviderClasses", (Class<?>[]) null);
-				}
-				catch (@NonNull final NoSuchMethodException ignored)
+				// special case of parent package (already processed)
+				if (parentPackageName.equals(pkg))
 				{
 					continue;
 				}
-				final String[] providerNames = (String[]) getClassesMethod.invoke(null, (Object[]) null);
 
-				// plugin mimetype
-				String mimetype = null;
+				// special case of app package
+				if (pkg.endsWith(".app") || pkg.endsWith(".service"))
+				{
+					continue;
+				}
+
+				// plugin name
+				final String[] components = pkg.split("\\.");
+				final String name = components[components.length - 1];
+
+				// plugin locatorContext
+				Context pluginContext;
 				try
 				{
-					final Method getMimetypeMethod = pluginProviderDataClass.getMethod("getMimetype", (Class<?>[]) null);
-					mimetype = (String) getMimetypeMethod.invoke(null, (Object[]) null);
+					pluginContext = context.createPackageContext(pkg, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
 				}
-				catch (@NonNull final NoSuchMethodException ignored)
+				catch (@NonNull final NameNotFoundException e1)
 				{
-					//
+					Log.d(Providers.TAG, "Error while creating package locatorContext for " + pkg + ' ' + e1.getMessage());
+					continue;
 				}
 
-				// plugin extensions
-				String extensions = null;
+				// preferences from plugin locatorContext
+				final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(pluginContext);
+				final String source = sharedPref.getString(TreebolicIface.PREF_SOURCE, null);
+				final String base = sharedPref.getString(TreebolicIface.PREF_BASE, null);
+				final String imagebase = sharedPref.getString(TreebolicIface.PREF_IMAGEBASE, null);
+				final String settings = sharedPref.getString(TreebolicIface.PREF_SETTINGS, null);
+
+				// plugin class loader
+				final ClassLoader pluginClassLoader = pluginContext.getClassLoader();
+
 				try
 				{
-					final Method getExtensionsMethod = pluginProviderDataClass.getMethod("getExtensions", (Class<?>[]) null);
-					extensions = (String) getExtensionsMethod.invoke(null, (Object[]) null);
-				}
-				catch (@NonNull final NoSuchMethodException ignored)
-				{
-					//
-				}
+					// plugin description
+					final Class<?> pluginProviderDataClass = pluginClassLoader.loadClass(pkg + ".ProviderData");
+					Log.d(Providers.TAG, "Plugin access class has been loaded " + pluginProviderDataClass.toString());
 
-				// plugin urlScheme
-				String urlScheme = "treebolic:";
-				try
-				{
-					final Method getSchemeMethod = pluginProviderDataClass.getMethod("getUrlScheme", (Class<?>[]) null);
-					urlScheme = (String) getSchemeMethod.invoke(null, (Object[]) null);
-				}
-				catch (@NonNull final NoSuchMethodException ignored)
-				{
-					//
-				}
-
-				// plugin style
-				String style = null;
-				try
-				{
-					final Method getStyleMethod = pluginProviderDataClass.getMethod("getStyle", (Class<?>[]) null);
-					style = (String) getStyleMethod.invoke(null, (Object[]) null);
-				}
-				catch (@NonNull final NoSuchMethodException ignored)
-				{
-					//
-				}
-
-				// enter
-				if (providerNames != null)
-				{
-					int ith = 0;
-					for (final String providerName : providerNames)
+					// plugin classes
+					final Method getClassesMethod;
+					try
 					{
-						String uniqueName;
-						if (providerNames.length == 1)
+						getClassesMethod = pluginProviderDataClass.getMethod("getProviderClasses", (Class<?>[]) null);
+					}
+					catch (@NonNull final NoSuchMethodException ignored)
+					{
+						continue;
+					}
+					final String[] providerNames = (String[]) getClassesMethod.invoke(null, (Object[]) null);
+
+					// plugin mimetype
+					String mimetype = null;
+					try
+					{
+						final Method getMimetypeMethod = pluginProviderDataClass.getMethod("getMimetype", (Class<?>[]) null);
+						mimetype = (String) getMimetypeMethod.invoke(null, (Object[]) null);
+					}
+					catch (@NonNull final NoSuchMethodException ignored)
+					{
+						//
+					}
+
+					// plugin extensions
+					String extensions = null;
+					try
+					{
+						final Method getExtensionsMethod = pluginProviderDataClass.getMethod("getExtensions", (Class<?>[]) null);
+						extensions = (String) getExtensionsMethod.invoke(null, (Object[]) null);
+					}
+					catch (@NonNull final NoSuchMethodException ignored)
+					{
+						//
+					}
+
+					// plugin urlScheme
+					String urlScheme = "treebolic:";
+					try
+					{
+						final Method getSchemeMethod = pluginProviderDataClass.getMethod("getUrlScheme", (Class<?>[]) null);
+						urlScheme = (String) getSchemeMethod.invoke(null, (Object[]) null);
+					}
+					catch (@NonNull final NoSuchMethodException ignored)
+					{
+						//
+					}
+
+					// plugin style
+					String style = null;
+					try
+					{
+						final Method getStyleMethod = pluginProviderDataClass.getMethod("getStyle", (Class<?>[]) null);
+						style = (String) getStyleMethod.invoke(null, (Object[]) null);
+					}
+					catch (@NonNull final NoSuchMethodException ignored)
+					{
+						//
+					}
+
+					// enter
+					if (providerNames != null)
+					{
+						int ith = 0;
+						for (final String providerName : providerNames)
 						{
-							uniqueName = name;
+							String uniqueName;
+							if (providerNames.length == 1)
+							{
+								uniqueName = name;
+							}
+							else
+							{
+								final String[] fields = providerName.split("\\.");
+								uniqueName = name + (fields.length < 2 ? ++ith : '-' + fields[fields.length - 2]);
+							}
+
+							final HashMap<String, Object> provider = new HashMap<>();
+
+							// structural
+							provider.put(Providers.PROVIDER, providerName);
+							provider.put(Providers.NAME, uniqueName);
+							provider.put(Providers.PACKAGE, pkg);
+							provider.put(Providers.PROCESS, processName);
+							provider.put(Providers.MIMETYPE, mimetype);
+							provider.put(Providers.EXTENSIONS, extensions);
+							provider.put(Providers.URLSCHEME, urlScheme);
+							provider.put(Providers.ISPLUGIN, true);
+							provider.put(Providers.ICON, pkg);
+							provider.put(Providers.STYLE, style);
+
+							// settings
+							provider.put(Providers.SOURCE, source);
+							provider.put(Providers.BASE, base);
+							provider.put(Providers.IMAGEBASE, imagebase);
+							provider.put(Providers.SETTINGS, settings);
+
+							assert Providers.data != null;
+							Providers.data.add(provider);
 						}
-						else
-						{
-							final String[] fields = providerName.split("\\.");
-							uniqueName = name + (fields.length < 2 ? ++ith : '-' + fields[fields.length - 2]);
-						}
-
-						final HashMap<String, Object> provider = new HashMap<>();
-
-						// structural
-						provider.put(Providers.PROVIDER, providerName);
-						provider.put(Providers.NAME, uniqueName);
-						provider.put(Providers.PACKAGE, pkg);
-						provider.put(Providers.PROCESS, processName);
-						provider.put(Providers.MIMETYPE, mimetype);
-						provider.put(Providers.EXTENSIONS, extensions);
-						provider.put(Providers.URLSCHEME, urlScheme);
-						provider.put(Providers.ISPLUGIN, true);
-						provider.put(Providers.ICON, pkg);
-						provider.put(Providers.STYLE, style);
-
-						// settings
-						provider.put(Providers.SOURCE, source);
-						provider.put(Providers.BASE, base);
-						provider.put(Providers.IMAGEBASE, imagebase);
-						provider.put(Providers.SETTINGS, settings);
-
-						assert Providers.data != null;
-						Providers.data.add(provider);
 					}
 				}
-			}
-			catch (@NonNull final Exception e)
-			{
-				Log.d(Providers.TAG, "Error while scanning for provider " + pkg + ' ' + e.getMessage());
+				catch (@NonNull final Exception e)
+				{
+					Log.d(Providers.TAG, "Error while scanning for provider " + pkg + ' ' + e.getMessage());
+				}
 			}
 		}
 	}
