@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
     <entry_points version="2.0">
@@ -156,6 +157,7 @@
       <entry_point TYPE="field" FQNAME="org.treebolic.services.TreebolicAIDLBoundService binder" />
       <entry_point TYPE="method" FQNAME="org.treebolic.services.TreebolicAIDLBoundService$1 void makeAndForwardModel(java.lang.String source, java.lang.String base, java.lang.String imageBase, java.lang.String settings, android.content.Intent forward)" />
       <entry_point TYPE="method" FQNAME="org.treebolic.services.TreebolicAIDLBoundService$1 void makeModel(java.lang.String source, java.lang.String base, java.lang.String imageBase, java.lang.String settings, android.os.ResultReceiver resultReceiver)" />
+      <entry_point TYPE="field" FQNAME="org.treebolic.search.SearchSettings.Adapter.Type SCOPE" />
     </entry_points>
     <pattern value="org.treebolic.guide.AboutActivity" />
     <pattern value="treebolic.core.AbstractLayerOut" />
@@ -809,6 +811,13 @@
     <pattern value="com.bbou.donate.billing.BillingManager" method="purchasesToProductIds" />
     <pattern value="com.bbou.donate.billing.BillingManager" method="queryDetailsProductDetails" />
     <pattern value="com.bbou.donate.DonateActivity" method="onConsume" />
+    <pattern value="org.treebolic.search.SearchSettings.Adapter" method="Adapter" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="addChangingListener" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="addScrollingListener" />
+    <pattern value="org.treebolic.filechooser.FileChooserActivity.Entry" method="Entry" />
+    <pattern value="org.treebolic.filechooser.EntryChooser" method="EntryChooser" />
+    <pattern value="org.treebolic.clients.TreebolicMessengerClient.IncomingHandler" method="IncomingHandler" />
+    <pattern value="org.treebolic.wheel.AbstractWheel" method="setVisibleItems" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
 </project>
