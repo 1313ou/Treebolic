@@ -818,6 +818,11 @@
     <pattern value="org.treebolic.filechooser.EntryChooser" method="EntryChooser" />
     <pattern value="org.treebolic.clients.TreebolicMessengerClient.IncomingHandler" method="IncomingHandler" />
     <pattern value="org.treebolic.wheel.AbstractWheel" method="setVisibleItems" />
+    <pattern value="org.treebolic.clients.TreebolicAIDLBoundClient" method="requestModel" />
+    <pattern value="org.treebolic.clients.TreebolicBoundClient" method="requestModel" />
+    <pattern value="org.treebolic.clients.TreebolicIntentClient" method="requestModel" />
+    <pattern value="org.treebolic.services.iface.ITreebolicServiceBinder" method="makeModel" />
+    <pattern value="org.treebolic.services.TreebolicBoundService.TreebolicServiceBinder" method="makeModel" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
 </project>

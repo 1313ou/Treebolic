@@ -105,36 +105,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicLib/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicLib/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicDotPlugin/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicDotPlugin/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicFilesPlugin/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicFilesPlugin/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicOwlPlugin/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicOwlPlugin/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicPluginLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicPluginLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicParcel/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicParcel/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/downloadLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/fileChooserLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/fileChooserLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/guideLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/preferenceLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/searchLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/storageLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/storageLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/testLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/testLib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/wheelLib/src/main/java/org/treebolic/wheel/AbstractWheelView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/wheelLib/src/main/java/org/treebolic/wheel/AbstractWheelView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/wheelLib/src/main/java/org/treebolic/wheel/WheelScroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/wheelLib/src/main/java/org/treebolic/wheel/WheelScroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +176,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
     "last_opened_file_path": "/mnt/data2/devel/android-treebolic-as/Treebolic/build.gradle",
     "run.code.analysis.last.selected.profile": "pProject Default"
@@ -578,7 +548,35 @@
       <option name="project" value="LOCAL" />
       <updated>1688796253840</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="upgrade dependencies">
+      <created>1697640866715</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640866715</updated>
+    </task>
+    <task id="LOCAL-00041" summary="project house keeping">
+      <created>1697640912430</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640912430</updated>
+    </task>
+    <task id="LOCAL-00042" summary="lint">
+      <created>1697640933894</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1697640933894</updated>
+    </task>
+    <task id="LOCAL-00043" summary="lint">
+      <created>1697641125521</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1697641125521</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -621,8 +619,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="lint simplification" />
-    <MESSAGE value="remove XML onClick&#10;remove startActivityForResult" />
     <MESSAGE value="update libs" />
     <MESSAGE value="update libs and tools" />
     <MESSAGE value="exported activities" />
@@ -638,7 +634,6 @@
     <MESSAGE value="remove xml-dom" />
     <MESSAGE value="desugaring&#10;multidex&#10;import android glue" />
     <MESSAGE value="preferences and provider combo" />
-    <MESSAGE value="lint" />
     <MESSAGE value="project settings" />
     <MESSAGE value="various adjusts" />
     <MESSAGE value="jetifier off&#10;configuration cache on&#10;explicit defaults" />
@@ -646,7 +641,10 @@
     <MESSAGE value="compile upgrade" />
     <MESSAGE value="project homekeeping" />
     <MESSAGE value="update lib deps" />
-    <option name="LAST_COMMIT_MESSAGE" value="update lib deps" />
+    <MESSAGE value="upgrade dependencies" />
+    <MESSAGE value="project house keeping" />
+    <MESSAGE value="lint" />
+    <option name="LAST_COMMIT_MESSAGE" value="lint" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
