@@ -50,15 +50,15 @@ android {
 }
 
 dependencies {
-    implementation 'io.github.treebolic:treebolic-graph:4.1-1'
-    implementation 'io.github.treebolic:treebolic-mutable:4.1-1'
-    implementation 'io.github.treebolic:treebolic-model:4.1-1'
-    implementation 'io.github.treebolic:treebolic-view:4.1-1'
-    implementation 'io.github.treebolic:provider-xml-dom:4.1-1'
-    implementation 'io.github.treebolic:provider-xml-sax:4.1-1'
-    implementation 'io.github.treebolic:provider-text-indent-tree:4.1-1'
-    implementation 'io.github.treebolic:provider-text-indent:4.1-1'
-    implementation 'io.github.treebolic:provider-text-pair:4.1-1'
+    implementation 'io.github.treebolic:treebolic-graph:4.1-3'
+    implementation 'io.github.treebolic:treebolic-mutable:4.1-3'
+    implementation 'io.github.treebolic:treebolic-model:4.1-3'
+    implementation 'io.github.treebolic:treebolic-view:4.1-3'
+    implementation 'io.github.treebolic:provider-xml-dom:4.1-3'
+    implementation 'io.github.treebolic:provider-xml-sax:4.1-3'
+    implementation 'io.github.treebolic:provider-text-indent-tree:4.1-3'
+    implementation 'io.github.treebolic:provider-text-indent:4.1-3'
+    implementation 'io.github.treebolic:provider-text-pair:4.1-3'
 
     implementation project(':treebolicGlue')
     implementation project(':treebolicParcel')
