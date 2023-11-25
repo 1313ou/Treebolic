@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 
 import org.treebolic.preference.OpenEditTextPreference;
@@ -54,7 +55,10 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		final String action = getIntent().getAction();
 		if (action == null)
 		{
-			SettingsActivity.provider = (HashMap<String, Object>) getIntent().getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
+			Intent intent = getIntent();
+			SettingsActivity.provider = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ?
+					intent.getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED, HashMap.class) :
+					(HashMap<String, Object>) intent.getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
 		}
 	}
 
