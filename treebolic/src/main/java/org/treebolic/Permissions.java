@@ -7,7 +7,6 @@ package org.treebolic;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.os.Build;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -44,10 +43,7 @@ class Permissions
 			{
 				// No explanation needed, we can request the permission.
 				// PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE is an app-defined int constant. The callback method gets the result of the request.
-				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
-				{
-					ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
-				}
+				ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE);
 			}
 			return false;
 		}
