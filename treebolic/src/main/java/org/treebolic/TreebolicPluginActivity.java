@@ -158,7 +158,7 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 				//Thread.currentThread().setContextClassLoader(clazz.getClassLoader());
 
 				// the class instance is cast to an interface through which the method is called directly
-				this.provider = (IProvider) clazz.newInstance();
+				this.provider = (IProvider) clazz.getDeclaredConstructor().newInstance();
 				Log.i(TreebolicPluginActivity.TAG, "Loaded provider " + this.provider);
 			}
 
