@@ -139,16 +139,16 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 		try
 		{
 			// class loader
-			if (TreebolicPluginActivity.this.classLoader == null)
+			if (this.classLoader == null)
 			{
-				TreebolicPluginActivity.this.classLoader = TreebolicPluginActivity.getPluginClassLoader(TreebolicPluginActivity.this, TreebolicPluginActivity.this.pluginPkg);
+				this.classLoader = TreebolicPluginActivity.getPluginClassLoader(this, this.pluginPkg);
 			}
 
 			// provider
 			if (this.provider == null)
 			{
 				// load class
-				final Class<?> clazz = TreebolicPluginActivity.this.classLoader.loadClass(TreebolicPluginActivity.this.providerName);
+				final Class<?> clazz = this.classLoader.loadClass(this.providerName);
 				Log.d(TreebolicPluginActivity.TAG, "Class has been loaded " + clazz.toString());
 
 				// ClassLoader.loadClass:
@@ -163,11 +163,11 @@ public class TreebolicPluginActivity extends TreebolicSourceActivity
 			}
 
 			// init widget with provider
-			TreebolicPluginActivity.this.widget.init(this.provider, this.source);
+			this.widget.init(this.provider, this.source);
 		}
 		catch (@NonNull final Exception e)
 		{
-			Toast.makeText(TreebolicPluginActivity.this, R.string.error_query, Toast.LENGTH_LONG).show();
+			Toast.makeText(this, R.string.error_query, Toast.LENGTH_LONG).show();
 			Log.e(TreebolicPluginActivity.TAG, "Exception while making provider", e);
 		}
 	}
