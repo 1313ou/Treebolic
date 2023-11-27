@@ -13,7 +13,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.2'
+        classpath 'com.android.tools.build:gradle:8.1.4'
         classpath 'com.google.gms:google-services:4.4.0'
     }
 }
@@ -29,7 +29,7 @@ allprojects {
     ext {
         versionCode = 1
         versionName = '0.1'
-        minSdkVersion = 14
+        minSdkVersion = 19
         targetSdkVersion = 33
         compileSdk = 34
         multiDexEnabled = true
