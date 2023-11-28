@@ -30,10 +30,6 @@
 	<string name="pref_title_provider_settings">Settings</string>
 	<string name="pref_description_provider_settings">Access to provider settings</string>
 
-	<!-- active plugin provider -->
-	<!--	<string name="pref_title_plugin">Plugin</string>-->
-	<!--	<string name="pref_description_plugin">Plugins have their own settings page</string>-->
-
 	<!-- built-in providers settings -->
 	<string name="pref_header_xml_sax" tools:keep="@string/pref_header_xml_sax">XML (SAX)</string>
 	<string name="pref_header_xml_dom" tools:keep="@string/pref_header_xml_dom">XML (DOM)</string>

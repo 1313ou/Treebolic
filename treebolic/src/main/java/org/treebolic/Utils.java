@@ -6,6 +6,8 @@ package org.treebolic;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 
@@ -16,6 +18,23 @@ import androidx.preference.PreferenceManager;
 @SuppressWarnings("WeakerAccess")
 public class Utils
 {
+	/**
+	 * Get process name
+	 *
+	 * @param context context
+	 * @param pkgName package name
+	 * @return process name
+	 * @throws NameNotFoundException
+	 */
+	static String getProcessName(@NonNull final Context context, @NonNull final String pkgName) throws NameNotFoundException
+	{
+		final PackageManager pm = context.getPackageManager();
+		final ApplicationInfo info = android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU ? //
+				pm.getApplicationInfo(pkgName, PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA)) : //
+				pm.getApplicationInfo(pkgName, PackageManager.GET_META_DATA);
+		return info.processName;
+	}
+
 	/**
 	 * Get package class loader
 	 *
@@ -42,27 +61,5 @@ public class Utils
 	{
 		final Context providerContext = context.createPackageContext(pkgName, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
 		return providerContext.getResources();
-	}
-
-	/**
-	 * Get plugin default shared preferences
-	 *
-	 * @param context current locatorContext
-	 * @param pkg     package name
-	 * @return default shared preferences
-	 */
-	@Nullable
-	static SharedPreferences getPluginDefaultSharedPreferences(@NonNull final Context context, final String pkg)
-	{
-		try
-		{
-			final Context pluginContext = context.createPackageContext(pkg, Context.CONTEXT_INCLUDE_CODE | Context.CONTEXT_IGNORE_SECURITY);
-			return PreferenceManager.getDefaultSharedPreferences(pluginContext);
-		}
-		catch (@NonNull final NameNotFoundException ignored)
-		{
-			//
-		}
-		return null;
 	}
 }

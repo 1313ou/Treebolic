@@ -104,29 +104,23 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_billingclient_billing_6_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_18_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_18_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_location_19_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_places_placereport_17_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_18_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_provider_text_indent_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_provider_text_indent_tree_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_provider_text_pair_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_provider_xml_dom_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_provider_xml_sax_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_treebolic_annotations_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_treebolic_glue_iface_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_treebolic_graph_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_treebolic_model_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_treebolic_mutable_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_github_treebolic_treebolic_view_4_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apache_commons_commons_compress_1_25_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicDotPlugin/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicDotPlugin/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicFilesPlugin/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicFilesPlugin/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicPlugins/treebolicOwlPlugin/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicPlugins/treebolicOwlPlugin/src/main/AndroidManifest.xml" afterDir="false" />
+    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="upgrade">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +157,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -696,16 +690,6 @@
           <url>jar://$USER_HOME$/.m2/repository/io/github/treebolic/treebolic-view/4.0-1/treebolic-view-4.0-1-sources.jar!/treebolic/view/Painter.java</url>
           <line>842</line>
           <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java</url>
-          <line>224</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

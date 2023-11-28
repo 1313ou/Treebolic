@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	static private final int[] to = new int[]{R.id.icon, R.id.provider};
 
 	/**
-	 * Selected pluginProvider
+	 * Selected provider
 	 */
-	private HashMap<String, Object> pluginProvider;
+	private HashMap<String, Object> provider;
 
 	/**
 	 * Provider spinner
@@ -246,11 +246,11 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 						return;
 					}
 
-					MainActivity.this.pluginProvider = provider;
+					MainActivity.this.provider = provider;
 
-					final String name = (String) MainActivity.this.pluginProvider.get(Providers.NAME);
+					final String name = (String) MainActivity.this.provider.get(Providers.NAME);
 					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
-					Settings.setActivePrefs(MainActivity.this, MainActivity.this.pluginProvider);
+					Settings.setActivePrefs(MainActivity.this, MainActivity.this.provider);
 					Log.d(MainActivity.TAG, name == null ? "null" : name);
 
 					updateButton();
@@ -752,11 +752,11 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void requestTreebolicSource()
 	{
-		final String extensions = (String) this.pluginProvider.get(Providers.EXTENSIONS);
+		final String extensions = (String) this.provider.get(Providers.EXTENSIONS);
 
 		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
-		intent.setType((String) this.pluginProvider.get(Providers.MIMETYPE));
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.pluginProvider.get(Providers.BASE));
+		intent.setType((String) this.provider.get(Providers.MIMETYPE));
+		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.provider.get(Providers.BASE));
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, extensions == null ? null : extensions.split(","));
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
 		this.activityFileResultLauncher.launch(intent); // MainActivity.REQUEST_FILE_CODE
@@ -769,7 +769,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	{
 		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
 		intent.setType("application/zip");
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.pluginProvider.get(Providers.BASE));
+		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.provider.get(Providers.BASE));
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, new String[]{"zip", "jar"});
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
 		this.activityBundleResultLauncher.launch(intent); // MainActivity.REQUEST_BUNDLE_CODE
@@ -797,17 +797,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void tryStartTreebolic(final String source0)
 	{
-		if (this.pluginProvider == null)
-		{
-			return;
-		}
-		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool != null && isPluginBool;
-		if (isPlugin)
-		{
-			tryStartTreebolicPlugin(source0);
-			return;
-		}
 		tryStartTreebolicBuiltin(source0);
 	}
 
@@ -818,7 +807,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void tryStartTreebolicBuiltin(@Nullable final String source0)
 	{
-		final String provider = (String) this.pluginProvider.get(Providers.PROVIDER);
+		final String provider = (String) this.provider.get(Providers.PROVIDER);
 		if (provider == null || provider.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
@@ -840,53 +829,13 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	}
 
 	/**
-	 * Try to start Treebolic plugin provider activity
-	 *
-	 * @param source0 source
-	 */
-	private void tryStartTreebolicPlugin(@Nullable final String source0)
-	{
-		if (this.pluginProvider == null)
-		{
-			return;
-		}
-		final String pluginPkg = (String) this.pluginProvider.get(Providers.PACKAGE);
-		if (pluginPkg == null || pluginPkg.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_plugin, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String provider = (String) this.pluginProvider.get(Providers.PROVIDER);
-		if (provider == null || provider.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
-		final String source = source0 != null ? source0 : (String) this.pluginProvider.get(Providers.SOURCE);
-		if (source == null || source.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String base = (String) this.pluginProvider.get(Providers.BASE);
-		final String imageBase = (String) this.pluginProvider.get(Providers.IMAGEBASE);
-		final String settings = (String) this.pluginProvider.get(Providers.SETTINGS);
-		final String style = (String) this.pluginProvider.get(Providers.STYLE);
-
-		final Intent intent = TreebolicPluginActivity.makeTreebolicIntent(this, pluginPkg, provider, urlScheme, source, base, imageBase, settings, style);
-		Log.d(MainActivity.TAG, "Start treebolic from pluginProvider " + pluginPkg + " provider:" + provider + " source:" + source);
-		startActivity(intent);
-	}
-
-	/**
 	 * Try to start Treebolic activity from source file
 	 *
 	 * @param fileUri XML file uri
 	 */
 	private void tryStartTreebolic(@NonNull final Uri fileUri)
 	{
-		if (this.pluginProvider == null)
+		if (this.provider == null)
 		{
 			return;
 		}
@@ -896,7 +845,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
 			return;
 		}
-		final String provider = (String) this.pluginProvider.get(Providers.PROVIDER);
+		final String provider = (String) this.provider.get(Providers.PROVIDER);
 		if (provider == null || provider.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
@@ -905,15 +854,9 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
+		final String style = (String) this.provider.get(Providers.STYLE);
 
-		final String pkg = (String) this.pluginProvider.get(Providers.PACKAGE);
-		final String style = (String) this.pluginProvider.get(Providers.STYLE);
-		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
-		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool != null && isPluginBool;
-
-		final Intent intent = isPlugin ? //
-				TreebolicPluginActivity.makeTreebolicIntent(this, pkg, provider, urlScheme, source, base, imageBase, settings, style) : TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
+		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
 		Log.d(MainActivity.TAG, "Start treebolic from uri " + fileUri);
 		startActivity(intent);
 	}
@@ -956,7 +899,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
 			return;
 		}
-		final String provider = (String) this.pluginProvider.get(Providers.PROVIDER);
+		final String provider = (String) this.provider.get(Providers.PROVIDER);
 		if (provider == null || provider.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
@@ -966,15 +909,9 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String base = "jar:" + archiveUri + "!/";
 		final String imageBase = base;
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
+		final String style = (String) this.provider.get(Providers.STYLE);
 
-		final String pkg = (String) this.pluginProvider.get(Providers.PACKAGE);
-		final String style = (String) this.pluginProvider.get(Providers.STYLE);
-		final String urlScheme = (String) this.pluginProvider.get(Providers.URLSCHEME);
-		final Boolean isPluginBool = (Boolean) this.pluginProvider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool != null && isPluginBool;
-
-		final Intent intent = isPlugin ? //
-				TreebolicPluginActivity.makeTreebolicIntent(this, pkg, provider, urlScheme, source, base, imageBase, settings, style) : TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
+		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
 		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri);
 		startActivity(intent);
 	}
@@ -1027,9 +964,9 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	private void tryStartTreebolicSettings()
 	{
 		final Intent intent = new Intent(this, SettingsActivity.class);
-		if (this.pluginProvider != null)
+		if (this.provider != null)
 		{
-			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.pluginProvider);
+			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.provider);
 		}
 		startActivity(intent);
 	}

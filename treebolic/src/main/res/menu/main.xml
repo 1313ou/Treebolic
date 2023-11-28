@@ -45,19 +45,13 @@
 		</menu>
 	</item>
 	<item
-		android:title="@string/title_menu_data"
-		app:showAsAction="never">
-		<menu>
-			<item
-				android:id="@+id/action_download"
-				android:title="@string/title_download"
-				app:showAsAction="never" />
-			<item
-				android:id="@+id/action_providers"
-				android:title="@string/title_activity_providers"
-				app:showAsAction="never" />
-		</menu>
-	</item>
+		android:id="@+id/action_download"
+		android:title="@string/title_download"
+		app:showAsAction="never" />
+	<item
+		android:id="@+id/action_providers"
+		android:title="@string/title_activity_providers"
+		app:showAsAction="never" />
 	<item
 		android:title="@string/title_menu_service"
 		app:showAsAction="never">

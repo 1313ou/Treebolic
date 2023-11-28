@@ -4,12 +4,9 @@
 
 package org.treebolic;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -91,16 +88,11 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			{
 				// shared preferences
 				final PreferenceManager prefManager = getPreferenceManager();
-				final Boolean isPluginBool = (Boolean) SettingsActivity.provider.get(Providers.ISPLUGIN);
-				final boolean isPlugin = isPluginBool != null && isPluginBool;
-				if (!isPlugin)
-				{
-					prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + SettingsActivity.provider.get(Providers.NAME));
-					prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
-				}
+				prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + SettingsActivity.provider.get(Providers.NAME));
+				prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 
 				// resource
-				addPreferencesFromResource(isPlugin ? R.xml.pref_active_plugin : R.xml.pref_active_builtin);
+				addPreferencesFromResource(R.xml.pref_active_builtin);
 
 				// bind
 				// active name
@@ -115,25 +107,9 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 				final Preference iconPref = findPreference(Settings.PREF_PROVIDER_ICON);
 				if (iconPref != null)
 				{
-					try
-					{
-						if (isPlugin)
-						{
-							final String pack = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-							final Drawable drawable = pack == null ? null : activity.getPackageManager().getApplicationIcon(pack);
-							iconPref.setIcon(drawable);
-						}
-						else
-						{
-							final Integer resIdInt = (Integer) SettingsActivity.provider.get(Providers.ICON);
-							final int resId = resIdInt == null ? 0 : resIdInt;
-							iconPref.setIcon(resId);
-						}
-					}
-					catch (@NonNull final NameNotFoundException ignored)
-					{
-						iconPref.setIcon(R.drawable.ic_treebolic);
-					}
+					final Integer resIdInt = (Integer) SettingsActivity.provider.get(Providers.ICON);
+					final int resId = resIdInt == null ? 0 : resIdInt;
+					iconPref.setIcon(resId);
 				}
 
 				// active preferences
@@ -144,22 +120,6 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 					{
 						preference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
 					}
-				}
-
-				// forward button to plugin provider settings activity
-				if (isPlugin)
-				{
-					final Preference button = findPreference("button_provider_settings");
-					assert button != null;
-					button.setOnPreferenceClickListener(arg0 -> {
-						final String pkg = (String) SettingsActivity.provider.get(Providers.PACKAGE);
-						assert pkg != null;
-						final String activityName = pkg + ".SettingsActivity";
-						final Intent intent = new Intent();
-						intent.setComponent(new ComponentName(pkg, activityName));
-						startActivity(intent);
-						return true;
-					});
 				}
 			}
 		}

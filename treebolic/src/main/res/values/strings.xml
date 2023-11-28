@@ -17,7 +17,6 @@
 	<!-- activity -->
 	<string name="title_activity_main">Treebolic</string>
 	<string name="title_activity_treebolic">Treebolic</string>
-	<string name="title_activity_treebolic_plugin">Treebolic (plugin)</string>
 	<string name="title_activity_treebolic_model">Treebolic (model)</string>
 	<string name="title_activity_treebolic_client">Treebolic (client)</string>
 	<string name="title_activity_services">Services</string>
@@ -56,7 +55,6 @@
 	<!-- errors -->
 	<string name="error_null_source">Null source</string>
 	<string name="error_null_provider">Null provider</string>
-	<string name="error_null_plugin">Null plugin</string>
 	<string name="error_null_model">Null model received</string>
 	<string name="error_null_data">Unknown source, provider or model</string>
 	<string name="error_link">Link error</string>
@@ -80,7 +78,6 @@
 	<string name="flags">flags</string>
 	<string name="label">label</string>
 	<string name="description">description</string>
-	<string name="plugin">plugin</string>
 	<string name="mimetype">mimetype</string>
 	<string name="extension">extension</string>
 	<string name="scheme">scheme</string>

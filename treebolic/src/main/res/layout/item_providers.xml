@@ -20,16 +20,6 @@
 			android:layout_height="wrap_content"
 			android:contentDescription="@string/provider" />
 
-		<CheckBox
-			android:id="@+id/plugin"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentEnd="true"
-			android:layout_alignParentRight="true"
-			android:clickable="false"
-			android:gravity="center_vertical|end"
-			android:text="@string/plugin" />
-
 	</RelativeLayout>
 
 	<TextView

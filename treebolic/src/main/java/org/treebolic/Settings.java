@@ -106,12 +106,6 @@ public class Settings
 			for (int i = 0; i < providers.size(); i++)
 			{
 				final HashMap<String, Object> provider = providers.get(i);
-				final Boolean isPluginBool = (Boolean) provider.get(Providers.ISPLUGIN);
-				final boolean isPlugin = isPluginBool != null && isPluginBool;
-				if (isPlugin)
-				{
-					continue;
-				}
 
 				// provider shared preferences
 				final SharedPreferences providerSharedPrefs = context.getSharedPreferences(Settings.PREF_FILE_PREFIX + provider.get(Providers.NAME), Context.MODE_PRIVATE);
@@ -144,30 +138,15 @@ public class Settings
 	{
 		final SharedPreferences defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 		final Editor defaultEditor = defaultSharedPrefs.edit();
-		SharedPreferences providerSharedPrefs;
+		SharedPreferences providerSharedPrefs = context.getSharedPreferences(Settings.PREF_FILE_PREFIX + provider.get(Providers.NAME), Context.MODE_PRIVATE);
+		final String providerClass = providerSharedPrefs.getString(Settings.PREF_PROVIDER, null);
+		defaultEditor.putString(Settings.PREF_PROVIDER, providerClass);
 
-		final Boolean isPluginBool = (Boolean) provider.get(Providers.ISPLUGIN);
-		final boolean isPlugin = isPluginBool != null && isPluginBool;
-		if (isPlugin)
+		final String[] keys = new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS};
+		for (final String key : keys)
 		{
-			final String pkg = (String) provider.get(Providers.PACKAGE);
-			providerSharedPrefs = Utils.getPluginDefaultSharedPreferences(context, pkg);
-			defaultEditor.putString(Settings.PREF_PROVIDER, (String) provider.get(Providers.PROVIDER));
-		}
-		else
-		{
-			providerSharedPrefs = context.getSharedPreferences(Settings.PREF_FILE_PREFIX + provider.get(Providers.NAME), Context.MODE_PRIVATE);
-			final String providerClass = providerSharedPrefs.getString(Settings.PREF_PROVIDER, null);
-			defaultEditor.putString(Settings.PREF_PROVIDER, providerClass);
-		}
-		if (providerSharedPrefs != null)
-		{
-			final String[] keys = new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS};
-			for (final String key : keys)
-			{
-				final String value = providerSharedPrefs.getString(key, null);
-				defaultEditor.putString(key, value);
-			}
+			final String value = providerSharedPrefs.getString(key, null);
+			defaultEditor.putString(key, value);
 		}
 		defaultEditor.commit();
 	}

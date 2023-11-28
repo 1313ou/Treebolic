@@ -30,10 +30,6 @@
 	<string name="pref_title_provider_settings">Paramètres</string>
 	<string name="pref_description_provider_settings">Accès aux paramètres du fournisseur de données</string>
 
-	<!-- active plugin provider -->
-	<!--	<string name="pref_title_plugin">Module</string>-->
-	<!--	<string name="pref_description_plugin">Les modules ont leur propre page de paramètres</string>-->
-
 	<!-- built-in providers settings -->
 	<string name="pref_header_xml_sax" tools:keep="@string/pref_header_xml_sax">XML (SAX)</string>
 	<string name="pref_header_xml_dom" tools:keep="@string/pref_header_xml_dom">XML (DOM)</string>
