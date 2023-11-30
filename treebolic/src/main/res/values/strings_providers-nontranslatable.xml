@@ -4,29 +4,6 @@
 
 <resources>
 
-	<!-- download locations -->
-	<string name="pref_download_base_default" translatable="false">http://treebolic.sourceforge.net/data/zipped</string>
-	<string-array name="pref_download_bases" translatable="false">
-		<item>@string/pref_download_base_default</item>
-	</string-array>
-
-	<!-- download files -->
-	<string name="pref_download_file_default" translatable="false">extra.zip</string>
-	<string-array name="pref_download_files" translatable="false">
-		<item>@string/pref_download_file_default</item>
-		<item>demo.zip</item>
-		<item>serialized.zip</item>
-		<item>animals.zip</item>
-		<item>plantae.zip</item>
-		<item>monarchy.zip</item>
-		<item>sumo.zip</item>
-		<item>graphnet.zip</item>
-		<item>misc.zip</item>
-		<item>wordnet.zip</item>
-		<item>pizza-xml.zip</item>
-		<item>robots-xml.zip</item>
-	</string-array>
-
 	<!-- builtin providers -->
 	<string-array name="pref_providers_list_values" translatable="false">
 		<item>treebolic.provider.xml.sax.Provider</item>
@@ -34,17 +11,12 @@
 		<item>treebolic.provider.text.indent.Provider</item>
 		<item>treebolic.provider.text.indent.tre.Provider</item>
 		<item>treebolic.provider.text.pair.Provider</item>
-	</string-array>
-	<string-array name="pref_providers_list_icons" translatable="false">
-		<item>@drawable/ic_xml</item>
-		<item>@drawable/ic_xml</item>
-		<item>@drawable/ic_textindent</item>
-		<item>@drawable/ic_textindenttre</item>
-		<item>@drawable/ic_textpair</item>
+		<item>treebolic.provider.graphviz.Provider</item>
 	</string-array>
 	<string-array name="pref_providers_list_mimetypes" translatable="false">
 		<item>application/xml</item>
 		<item>application/xml</item>
+		<item>text/plain</item>
 		<item>text/plain</item>
 		<item>text/plain</item>
 		<item>text/plain</item>
@@ -55,6 +27,7 @@
 		<item>txt,text</item>
 		<item>tre</item>
 		<item>txt2,text2</item>
+		<item>dot</item>
 	</string-array>
 	<string-array name="pref_providers_list_schemes" translatable="false">
 		<item>xml:</item>
@@ -62,13 +35,25 @@
 		<item>text:</item>
 		<item>tre:</item>
 		<item>text2:</item>
+		<item>dot:</item>
 	</string-array>
+
+	<string-array name="pref_providers_list_icons" translatable="false">
+		<item>@drawable/ic_xml</item>
+		<item>@drawable/ic_xml</item>
+		<item>@drawable/ic_textindent</item>
+		<item>@drawable/ic_textindenttre</item>
+		<item>@drawable/ic_textpair</item>
+		<item>@drawable/ic_dot</item>
+	</string-array>
+
 	<string-array name="pref_providers_list_sources" translatable="false">
 		<item>test.xml</item>
 		<item>test.xml</item>
 		<item>test.txt</item>
 		<item>test.tre</item>
 		<item>test.txt2</item>
+		<item>test.dot</item>
 	</string-array>
 	<string-array name="pref_providers_list_settings" translatable="false">
 		<item />
@@ -76,6 +61,7 @@
 		<item>test.properties</item>
 		<item>test.properties</item>
 		<item>test.properties</item>
+		<item />
 	</string-array>
 
 </resources>
