@@ -180,6 +180,17 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	}
 
 	@SuppressWarnings("WeakerAccess")
+	public static class DotPreferenceFragment extends ProviderPreferenceFragment
+	{
+		@Nullable
+		@Override
+		protected String getName()
+		{
+			return getName(5);
+		}
+	}
+
+	@SuppressWarnings("WeakerAccess")
 	abstract public static class ProviderPreferenceFragment extends PreferenceFragmentCompat
 	{
 		@Nullable
