@@ -104,22 +104,51 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="upgrade">
+    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/treebolic/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Providers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ProvidersActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/SettingsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicPluginActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/layout/item_providers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/menu/main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values-fr/strings_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/res/values/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ServicesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/ServicesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicClientActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/treebolic/src/main/java/org/treebolic/TreebolicModelActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/Graphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/Graphics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicAIDLBoundClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicAIDLBoundClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicIntentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicClientsLib/src/main/java/org/treebolic/clients/TreebolicBroadcastClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/TreebolicFilesIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/TreebolicFilesBroadcastService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/client/TreebolicFilesIntentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/java/org/treebolic/files/service/client/TreebolicFilesBroadcastClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values-fr/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values-fr/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values/strings_nontranslatable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values/strings_nontranslatable.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicFilesServices/src/main/res/values/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/TreebolicOwlIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/TreebolicOwlBroadcastService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/client/TreebolicOwlIntentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/java/org/treebolic/owl/service/client/TreebolicOwlIntentClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/menu/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/menu/main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values-fr/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values-fr/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values/strings_nontranslatable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values/strings_nontranslatable.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicOwlServices/src/main/res/values/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface/src/main/java/org/treebolic/services/iface/ITreebolicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesIface/src/main/java/org/treebolic/services/iface/ITreebolicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicServicesLib/src/main/java/org/treebolic/services/TreebolicBroadcastService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/TreebolicWordNetIntentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/TreebolicWordNetBroadcastService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/client/TreebolicWordNetIntentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/java/org/treebolic/wordnet/service/client/TreebolicWordNetBroadcastClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values-fr/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values-fr/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values-fr/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values-fr/strings_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values/strings_nontranslatable.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values/strings_nontranslatable.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values/strings_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicServices/treebolicWordNetServices/src/main/res/values/strings_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,6 +220,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;android-custom-view/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/wheelLib/src/main/java/org/treebolic/wheel/WheelHorizontalView.java_SELECTED&quot;: &quot;WheelHorizontalView&quot;,
+    &quot;android-custom-view/mnt/data2/devel/android-treebolic-as/TreebolicSupportLibs/wheelLib/src/main/java/org/treebolic/wheel/WheelView.java_SELECTED&quot;: &quot;WheelView&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/mnt/data2/devel/android-treebolic-as/Treebolic/build.gradle&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
@@ -598,7 +629,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701106758546</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="removed plugin facility">
+      <created>1701157819471</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1701157819471</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="UnloadedModulesList">
@@ -641,7 +679,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="update libs and tools" />
     <MESSAGE value="exported activities" />
     <MESSAGE value="key store" />
     <MESSAGE value="build with maven" />
@@ -666,19 +703,15 @@
     <MESSAGE value="project house keeping" />
     <MESSAGE value="lint" />
     <MESSAGE value="upgrade" />
-    <option name="LAST_COMMIT_MESSAGE" value="upgrade" />
+    <MESSAGE value="removed plugin facility" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed plugin facility" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/Graphics.java</url>
-          <line>112</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/Graphics.java</url>
-          <line>340</line>
+          <line>345</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -687,9 +720,9 @@
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.m2/repository/io/github/treebolic/treebolic-view/4.0-1/treebolic-view-4.0-1-sources.jar!/treebolic/view/Painter.java</url>
-          <line>842</line>
-          <option name="timeStamp" value="28" />
+          <url>file://$PROJECT_DIR$/../TreebolicLib/treebolicGlue/src/main/java/treebolic/glue/Graphics.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
