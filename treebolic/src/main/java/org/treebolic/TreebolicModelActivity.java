@@ -22,7 +22,8 @@ import treebolic.model.ModelDump;
 import treebolic.model.ModelReader;
 
 /**
- * Treebolic server activity (display server)
+ * Treebolic model-rendering activity (display server).
+ * This activity receives a model in its intent and visualizes it.
  *
  * @author Bernard Bou
  */
@@ -86,9 +87,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 			final boolean isSerialized = params.getBoolean(TreebolicIface.ARG_SERIALIZED);
 			if (isSerialized)
 			{
-				this.model = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? //
-						params.getSerializable(TreebolicIface.ARG_MODEL, Model.class) : //
-						(Model) params.getSerializable(TreebolicIface.ARG_MODEL);
+				this.model = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? params.getSerializable(TreebolicIface.ARG_MODEL, Model.class) : (Model) params.getSerializable(TreebolicIface.ARG_MODEL);
 			}
 			else
 			{
