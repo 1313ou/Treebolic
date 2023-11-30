@@ -65,6 +65,11 @@ public class Settings
 	public static final String PREF_SERVICE = "pref_service";
 
 	/**
+	 * Service source preference
+	 */
+	public static final String PREF_SERVICE_SOURCE = "pref_service_source";
+
+	/**
 	 * Preference file prefix
 	 */
 	public static final String PREF_FILE_PREFIX = "org.treebolic_preferences_";

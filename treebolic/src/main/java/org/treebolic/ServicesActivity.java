@@ -48,6 +48,8 @@ public class ServicesActivity extends AppCompatCommonActivity
 		final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
 		final ListView listView = findViewById(R.id.services);
 		listView.setAdapter(adapter);
+
+		// view
 		//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
 	}
 

@@ -11,4 +11,13 @@
 		android:summary="@string/pref_description_service"
 		android:title="@string/pref_title_service" />
 
+	<EditTextPreference
+		android:inputType="textUri"
+		android:key="pref_service_source"
+		android:maxLines="1"
+		android:selectAllOnFocus="true"
+		android:singleLine="true"
+		android:summary="@string/pref_description_service_source"
+		android:title="@string/pref_title_service_source" />
+
 </PreferenceScreen>

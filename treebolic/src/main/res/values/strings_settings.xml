@@ -36,10 +36,12 @@
 	<string name="pref_header_text_indent" tools:keep="@string/pref_header_text_indent">Text (indent)</string>
 	<string name="pref_header_text_indent_tre" tools:keep="@string/pref_header_text_indent_tre">Text (indent-tre)</string>
 	<string name="pref_header_text_pair" tools:keep="@string/pref_header_text_pair">Text (pairs)</string>
+	<string name="pref_header_dot" tools:keep="@string/pref_header_dot">Dot</string>
 	<!--	<string name="pref_summary_header_xml">Settings for XML provider</string>-->
 	<!--	<string name="pref_summary_header_text_indent">Settings for Text (indent) provider</string>-->
 	<!--	<string name="pref_summary_header_text_indent_tre">Settings for Text (indent-tre) provider</string>-->
 	<!--	<string name="pref_summary_header_text_pair">Settings for Text (pairs) provider</string>-->
+	<!--	<string name="pref_summary_header_dot">Settings for Dot</string>-->
 
 	<!-- builtin providers -->
 	<string-array name="pref_providers_list_titles">
@@ -48,6 +50,7 @@
 		<item>text (indented)</item>
 		<item>text (indented, tre)</item>
 		<item>text (pairs)</item>
+		<item>dot</item>
 	</string-array>
 
 	<!-- Service settings -->
@@ -55,5 +58,7 @@
 	<!--	<string name="pref_summary_header_service">Settings for service</string>-->
 	<string name="pref_title_service">Service</string>
 	<string name="pref_description_service">Service type</string>
+	<string name="pref_title_service_source">Source</string>
+	<string name="pref_description_service_source">Source interpreted by service</string>
 
 </resources>
