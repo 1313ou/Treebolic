@@ -18,12 +18,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.treebolic.clients.TreebolicAIDLBoundClient;
 import org.treebolic.clients.TreebolicBoundClient;
+import org.treebolic.clients.TreebolicBroadcastClient;
 import org.treebolic.clients.TreebolicClientActivityStub;
-import org.treebolic.clients.TreebolicIntentClient;
 import org.treebolic.clients.TreebolicMessengerClient;
 import org.treebolic.clients.iface.ITreebolicClient;
 import org.treebolic.guide.AboutActivity;
@@ -48,7 +49,8 @@ import treebolic.model.Model;
 import treebolic.view.View;
 
 /**
- * Treebolic client activity (requests model from server) and displays returned model
+ * Treebolic client activity (requests model from server) and dispatches returned model to display.
+ * May instruct server to forward model directly to rendering activity.
  *
  * @author Bernard Bou
  */
@@ -96,7 +98,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		this.widget = new Widget(this, this);
 
 		// content view
-		setContentView(R.layout.activity_treebolic);
+		setContentView(R.layout.activity_treebolic_client);
 		final ViewGroup container = findViewById(R.id.container);
 		container.addView(this.widget);
 
@@ -111,6 +113,12 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			actionBar.setElevation(0);
 			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
 		}
+
+		// floating action button
+		final FloatingActionButton fab = findViewById(R.id.fab);
+		fab.setOnClickListener((v) -> {
+			handleQuery();
+		});
 
 		// init widget with model is asynchronous
 	}
@@ -398,10 +406,10 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		if (service != null && !service.isEmpty())
 		{
-			if (service.contains("Intent"))
+			if (service.contains("Broadcast"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to intent service" + service);
-				return new TreebolicIntentClient(this, service, this, this);
+				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to broadcast service" + service);
+				return new TreebolicBroadcastClient(this, service, this, this);
 			}
 			else if (service.contains("AIDL"))
 			{
@@ -438,11 +446,13 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			Log.d(TreebolicClientActivity.TAG, "Null client");
 			return;
 		}
+		/* TODO
 		if (source == null || source.isEmpty())
 		{
 			Log.d(TreebolicClientActivity.TAG, "Null source");
 			return;
 		}
+		*/
 		Log.d(TreebolicClientActivity.TAG, "Requesting model for source " + source);
 		/*
 		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
@@ -477,8 +487,6 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	static private final String CMD_RESET = "RESET";
 
 	static private final String CMD_CONTINUE = "CONTINUE";
-
-	static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
 
 	/**
 	 * Search pending flag
@@ -549,6 +557,25 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		else
 		{
 			continueSearch();
+		}
+	}
+
+	/**
+	 * Tree query handler
+	 */
+	@SuppressWarnings("WeakerAccess")
+	protected void handleQuery()
+	{
+		// clear keyboard out of the way
+		closeKeyboard();
+
+		// new or continued search
+		if (!this.searchPending)
+		{
+			final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+			final String query = sharedPrefs.getString(Settings.PREF_SERVICE_SOURCE, "dummy");
+			Log.d(TAG, "Source" + ' ' + '"' + query + '"');
+			query(query);
 		}
 	}
 
