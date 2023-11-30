@@ -37,6 +37,11 @@
 		app:key="pref_provider_textpair"
 		app:title="@string/pref_header_text_pair" />
 	<Preference
+		app:fragment="org.treebolic.SettingsActivity$DotPreferenceFragment"
+		app:icon="@null"
+		app:key="pref_provider_dot"
+		app:title="@string/pref_header_dot" />
+	<Preference
 		app:fragment="org.treebolic.SettingsActivity$ServicePreferenceFragment"
 		app:icon="@null"
 		app:key="pref_service"

@@ -59,6 +59,7 @@ dependencies {
     implementation 'io.github.treebolic:provider-text-indent-tree:4.1-3'
     implementation 'io.github.treebolic:provider-text-indent:4.1-3'
     implementation 'io.github.treebolic:provider-text-pair:4.1-3'
+    implementation 'io.github.treebolic:provider-graphviz:4.1-3'
 
     implementation project(':treebolicGlue')
     implementation project(':treebolicParcel')

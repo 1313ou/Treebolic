@@ -8,7 +8,7 @@ logo="logo_app.svg"
 
 icon="ic_treebolic.svg"
 status="ic_status_*.svg"
-provider="ic_xml.svg ic_textindent.svg ic_textindenttre.svg ic_textpair.svg ic_refresh.svg"
+provider="ic_xml.svg ic_textindent.svg ic_textindenttre.svg ic_textpair.svg ic_dot.svg ic_refresh.svg"
 splash="ic_splash.svg"
 splash_text="ic_splash_text.svg"
 
