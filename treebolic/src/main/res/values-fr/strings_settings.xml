@@ -27,8 +27,6 @@
 	<string name="pref_title_provider">Classe</string>
 	<string name="pref_description_provider">Classe du fournisseur de données</string>
 	<!-- button -->
-	<string name="pref_title_provider_settings">Paramètres</string>
-	<string name="pref_description_provider_settings">Accès aux paramètres du fournisseur de données</string>
 
 	<!-- built-in providers settings -->
 	<string name="pref_header_xml_sax" tools:keep="@string/pref_header_xml_sax">XML (SAX)</string>

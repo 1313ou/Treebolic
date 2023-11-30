@@ -116,9 +116,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 		// floating action button
 		final FloatingActionButton fab = findViewById(R.id.fab);
-		fab.setOnClickListener((v) -> {
-			handleQuery();
-		});
+		fab.setOnClickListener((v) -> handleQuery());
 
 		// init widget with model is asynchronous
 	}

@@ -5,15 +5,12 @@
 package org.treebolic;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.preference.PreferenceManager;
 
 @SuppressWarnings("WeakerAccess")
 public class Utils
@@ -24,7 +21,7 @@ public class Utils
 	 * @param context context
 	 * @param pkgName package name
 	 * @return process name
-	 * @throws NameNotFoundException
+	 * @throws NameNotFoundException name not found
 	 */
 	static String getProcessName(@NonNull final Context context, @NonNull final String pkgName) throws NameNotFoundException
 	{

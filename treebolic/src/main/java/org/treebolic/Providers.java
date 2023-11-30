@@ -63,7 +63,6 @@ public class Providers
 	 * @param parentPackageName package name
 	 * @throws NameNotFoundException name not found exception
 	 */
-	@SuppressWarnings({"boxing"})
 	static private void makeProviders(@NonNull final Context context, @NonNull @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
 	{
 		final String processName = Utils.getProcessName(context, parentPackageName);
