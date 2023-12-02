@@ -22,7 +22,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
@@ -44,8 +43,6 @@ import org.treebolic.storage.Storage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -78,18 +75,19 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	private static final String STATE_SELECTED_PROVIDER_ITEM = "org.treebolic.provider.selected";
 
 	/**
-	 * Rescan key
-	 */
-	private static final String RESCAN_KEY = "rescan";
+	 * Adapter - Key
+	 **/
+	static private final String[] from = new String[]{Provider.ICON, Provider.NAME};
 
-	// Adapter Key - Res id mapping
-	static private final String[] from = new String[]{Providers.ICON, Providers.NAME};
+	/**
+	 * Adapter - ... mapped to res id
+	 **/
 	static private final int[] to = new int[]{R.id.icon, R.id.provider};
 
 	/**
 	 * Selected provider
 	 */
-	private HashMap<String, Object> provider;
+	private Provider provider;
 
 	/**
 	 * Provider spinner
@@ -239,16 +237,11 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				public void onItemSelected(final AdapterView<?> parentView, final View selectedItemView, final int position, final long id)
 				{
 					assert MainActivity.this.adapter != null;
-					final HashMap<String, Object> provider = (HashMap<String, Object>) MainActivity.this.adapter.getItem(position);
-					if (provider.containsKey(RESCAN_KEY))
-					{
-						setAdapter();
-						return;
-					}
 
+					final Provider provider = (Provider) MainActivity.this.adapter.getItem(position);
 					MainActivity.this.provider = provider;
 
-					final String name = (String) MainActivity.this.provider.get(Providers.NAME);
+					final String name = (String) MainActivity.this.provider.get(Provider.NAME);
 					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
 					Settings.setActivePrefs(MainActivity.this, MainActivity.this.provider);
 					Log.d(MainActivity.TAG, name == null ? "null" : name);
@@ -495,7 +488,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		if (!initialized)
 		{
 			// default settings
-			Settings.setDefaults(this);
+			Settings.setProviderDefaultSettings(this);
 
 			// flag as initialized
 			sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit();
@@ -510,7 +503,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			{
 				// deploy
 				Deployer.expandZipAssetFile(this, "tests.zip");
-				// StorageUtils.expandZipAssetFile(this, "serialized.zip");
+				// Deployer.expandZipAssetFile(this, "serialized.zip");
 			}
 		}
 	}
@@ -571,8 +564,8 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		{
 			for (int position = 0; position < this.adapter.getCount(); position++)
 			{
-				@SuppressWarnings("unchecked") final HashMap<String, Object> provider = (HashMap<String, Object>) this.adapter.getItem(position);
-				if (name.equals(provider.get(Providers.NAME)))
+				@SuppressWarnings("unchecked") final Provider provider = (Provider) this.adapter.getItem(position);
+				if (name.equals(provider.get(Provider.NAME)))
 				{
 					this.spinner.setSelection(position);
 				}
@@ -591,56 +584,13 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	@NonNull
 	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
 	{
-		// data
-		List<HashMap<String, Object>> providers0 = Providers.getProviders(this, true);
-		if (providers0 == null)
-		{
-			providers0 = new ArrayList<>();
-		}
-
-		final List<HashMap<String, Object>> providers = new ArrayList<>(providers0);
-		providers.add(makeRescanDummy());
-
 		// adapter
-		final SimpleAdapter adapter = new SimpleAdapter(this, providers, itemLayoutRes, from, to)
-		{
-			@Override
-			public void setViewImage(@NonNull final ImageView imageView, final String pkg)
-			{
-				try
-				{
-					// icon
-					final Drawable drawable = getPackageManager().getApplicationIcon(pkg);
-					imageView.setImageDrawable(drawable);
-				}
-				catch (@NonNull final Exception ignored)
-				{
-					//
-				}
-			}
-		};
+		final SimpleAdapter adapter = Providers.makeAdapter(this, itemLayoutRes, from, to);
 
 		// drop down
 		adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown);
 
 		return adapter;
-	}
-
-	/**
-	 * Dummy provider for rescan action
-	 *
-	 * @return dummy provider
-	 */
-	@NonNull
-	private HashMap<String, Object> makeRescanDummy()
-	{
-		final HashMap<String, Object> result = new HashMap<>();
-		final String name = getString(R.string.title_rescan);
-		result.put(Providers.NAME, name);
-		result.put(Providers.ICON, R.drawable.ic_refresh);
-		result.put(Providers.PACKAGE, null);
-		result.put(RESCAN_KEY, true);
-		return result;
 	}
 
 	// A C T I O N   B U T T O N
@@ -696,7 +646,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void tryStartOneOfTreebolicClients()
 	{
-		final List<HashMap<String, Object>> services = Services.getServices(this, true);
+		final List<Service> services = Services.getServices(this, true);
 
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle(R.string.title_services);
@@ -705,7 +655,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final RadioGroup input = new RadioGroup(this);
 		if (services != null)
 		{
-			for (HashMap<String, Object> service : services)
+			for (Service service : services)
 			{
 				final RadioButton radioButton = new RadioButton(this);
 				radioButton.setText((String) service.get(Services.LABEL));
@@ -737,7 +687,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				final RadioButton radioButton = (RadioButton) input.getChildAt(i);
 				if (radioButton.getId() == input.getCheckedRadioButtonId())
 				{
-					@SuppressWarnings("unchecked") final HashMap<String, Object> service = (HashMap<String, Object>) radioButton.getTag();
+					@SuppressWarnings("unchecked") final Service service = (Service) radioButton.getTag();
 					tryStartTreebolicClient(service);
 				}
 			}
@@ -752,11 +702,11 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void requestTreebolicSource()
 	{
-		final String extensions = (String) this.provider.get(Providers.EXTENSIONS);
+		final String extensions = (String) this.provider.get(Provider.EXTENSIONS);
 
 		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
-		intent.setType((String) this.provider.get(Providers.MIMETYPE));
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.provider.get(Providers.BASE));
+		intent.setType((String) this.provider.get(Provider.MIMETYPE));
+		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.provider.get(Provider.BASE));
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, extensions == null ? null : extensions.split(","));
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
 		this.activityFileResultLauncher.launch(intent); // MainActivity.REQUEST_FILE_CODE
@@ -769,7 +719,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	{
 		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
 		intent.setType("application/zip");
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.provider.get(Providers.BASE));
+		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, (String) this.provider.get(Provider.BASE));
 		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, new String[]{"zip", "jar"});
 		intent.addCategory(Intent.CATEGORY_OPENABLE);
 		this.activityBundleResultLauncher.launch(intent); // MainActivity.REQUEST_BUNDLE_CODE
@@ -807,7 +757,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void tryStartTreebolicBuiltin(@Nullable final String source0)
 	{
-		final String provider = (String) this.provider.get(Providers.PROVIDER);
+		final String provider = (String) this.provider.get(Provider.PROVIDER);
 		if (provider == null || provider.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
@@ -845,7 +795,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
 			return;
 		}
-		final String provider = (String) this.provider.get(Providers.PROVIDER);
+		final String provider = (String) this.provider.get(Provider.PROVIDER);
 		if (provider == null || provider.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
@@ -854,7 +804,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
-		final String style = (String) this.provider.get(Providers.STYLE);
+		final String style = (String) this.provider.get(Provider.STYLE);
 
 		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
 		Log.d(MainActivity.TAG, "Start treebolic from uri " + fileUri);
@@ -899,7 +849,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
 			return;
 		}
-		final String provider = (String) this.provider.get(Providers.PROVIDER);
+		final String provider = (String) this.provider.get(Provider.PROVIDER);
 		if (provider == null || provider.isEmpty())
 		{
 			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
@@ -909,7 +859,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String base = "jar:" + archiveUri + "!/";
 		final String imageBase = base;
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
-		final String style = (String) this.provider.get(Providers.STYLE);
+		final String style = (String) this.provider.get(Provider.STYLE);
 
 		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
 		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri);
@@ -947,7 +897,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	/**
 	 * Try to start Treebolic client activity
 	 */
-	private void tryStartTreebolicClient(@NonNull final HashMap<String, Object> service)
+	private void tryStartTreebolicClient(@NonNull final Service service)
 	{
 		final String argService = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
 
@@ -966,7 +916,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final Intent intent = new Intent(this, SettingsActivity.class);
 		if (this.provider != null)
 		{
-			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.provider);
+			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.provider.get(Provider.PROVIDER));
 		}
 		startActivity(intent);
 	}

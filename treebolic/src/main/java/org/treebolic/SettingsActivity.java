@@ -7,12 +7,11 @@ package org.treebolic;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import org.treebolic.preference.OpenEditTextPreference;
 
-import java.util.HashMap;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -37,11 +36,10 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	/**
 	 * Selected provider
 	 */
-	private static HashMap<String, Object> provider;
+	private static Provider provider;
 
 	// L I F E C Y C L E
 
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
 	{
@@ -53,9 +51,8 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		if (action == null)
 		{
 			Intent intent = getIntent();
-			SettingsActivity.provider = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ?
-					intent.getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED, HashMap.class) :
-					(HashMap<String, Object>) intent.getSerializableExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
+			String key = intent.getStringExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
+			SettingsActivity.provider = Providers.get(key);
 		}
 	}
 
@@ -88,7 +85,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			{
 				// shared preferences
 				final PreferenceManager prefManager = getPreferenceManager();
-				prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + SettingsActivity.provider.get(Providers.NAME));
+				prefManager.setSharedPreferencesName(SettingsActivity.provider.getSharedPreferencesName());
 				prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
 
 				// resource
@@ -107,9 +104,9 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 				final Preference iconPref = findPreference(Settings.PREF_PROVIDER_ICON);
 				if (iconPref != null)
 				{
-					final Integer resIdInt = (Integer) SettingsActivity.provider.get(Providers.ICON);
-					final int resId = resIdInt == null ? 0 : resIdInt;
-					iconPref.setIcon(resId);
+					final String imageFile = (String) SettingsActivity.provider.get(Provider.ICON);
+					final Drawable drawable = imageFile == null ? null : Providers.readAssetDrawable(getContext(), imageFile);
+					iconPref.setIcon(drawable);
 				}
 
 				// active preferences
@@ -132,7 +129,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return getName(0);
+			return "treebolic.provider.xml.sax.Provider";
 		}
 	}
 
@@ -142,7 +139,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return getName(1);
+			return "treebolic.provider.xml.dom.Provider";
 		}
 	}
 
@@ -153,7 +150,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return getName(2);
+			return "treebolic.provider.text.indent.Provider";
 		}
 	}
 
@@ -164,7 +161,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return getName(3);
+			return "treebolic.provider.text.indent.tre.Provider";
 		}
 	}
 
@@ -175,7 +172,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return getName(4);
+			return "treebolic.provider.text.pair.Provider";
 		}
 	}
 
@@ -186,7 +183,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		@Override
 		protected String getName()
 		{
-			return getName(5);
+			return "treebolic.provider.graphviz.Provider";
 		}
 	}
 
@@ -227,22 +224,6 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			final Preference providerPreference = findPreference(Settings.PREF_PROVIDER);
 			assert providerPreference != null;
 			providerPreference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
-		}
-
-		@SuppressWarnings("WeakerAccess")
-		@Nullable
-		protected String getName(final int index)
-		{
-			final List<HashMap<String, Object>> providers = Providers.getProviders(requireContext(), false);
-			if (providers != null)
-			{
-				final HashMap<String, Object> provider = providers.get(index);
-				if (provider != null)
-				{
-					return (String) provider.get(Providers.NAME);
-				}
-			}
-			return null;
 		}
 	}
 
@@ -308,7 +289,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	 */
 	private void fillWithServiceData(@NonNull final ListPreference listPreference)
 	{
-		final List<HashMap<String, Object>> services = Services.getServices(this, true);
+		final List<Service> services = Services.getServices(this, true);
 		if (services != null)
 		{
 			final int n = services.size();
@@ -316,7 +297,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 			final String[] values = new String[n];
 			for (int i = 0; i < n; i++)
 			{
-				final HashMap<String, Object> service = services.get(i);
+				final Service service = services.get(i);
 				entries[i] = (String) service.get(Services.LABEL);
 				values[i] = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
 			}

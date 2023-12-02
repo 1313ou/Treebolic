@@ -16,7 +16,6 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import androidx.annotation.DrawableRes;
@@ -33,6 +32,7 @@ import androidx.annotation.StringRes;
 @SuppressWarnings("WeakerAccess")
 public class Services
 {
+
 	/**
 	 * Log tag
 	 */
@@ -42,7 +42,7 @@ public class Services
 	 * Data
 	 */
 	@Nullable
-	static private List<HashMap<String, Object>> data = null;
+	static private List<Service> data = null;
 
 	/**
 	 * Keys
@@ -117,22 +117,22 @@ public class Services
 				{
 					if (filter == null || service.name.matches(filter))
 					{
-						final HashMap<String, Object> map = new HashMap<>();
-						map.put(Services.NAME, service.name);
-						map.put(Services.PACKAGE, pkg.packageName);
-						map.put(Services.PROCESS, service.processName);
-						map.put(Services.ENABLED, service.enabled);
-						map.put(Services.EXPORTED, service.exported);
-						map.put(Services.FLAGS, Integer.toHexString(service.flags));
-						map.put(Services.PERMISSION, service.permission);
-						map.put(Services.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
-						map.put(Services.DESCRIPTION, Services.loadText(packageManager, pkg.packageName, service.descriptionRes));
-						map.put(Services.LOGO, service.logo);
-						map.put(Services.ICON, service.icon);
-						map.put(Services.DRAWABLE, pkg.packageName + '#' + service.icon);
+						final Service service2 = new Service();
+						service2.put(Services.NAME, service.name);
+						service2.put(Services.PACKAGE, pkg.packageName);
+						service2.put(Services.PROCESS, service.processName);
+						service2.put(Services.ENABLED, service.enabled);
+						service2.put(Services.EXPORTED, service.exported);
+						service2.put(Services.FLAGS, Integer.toHexString(service.flags));
+						service2.put(Services.PERMISSION, service.permission);
+						service2.put(Services.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
+						service2.put(Services.DESCRIPTION, Services.loadText(packageManager, pkg.packageName, service.descriptionRes));
+						service2.put(Services.LOGO, service.logo);
+						service2.put(Services.ICON, service.icon);
+						service2.put(Services.DRAWABLE, pkg.packageName + '#' + service.icon);
 
 						assert data != null;
-						data.add(map);
+						data.add(service2);
 					}
 					else
 					{
@@ -156,7 +156,7 @@ public class Services
 	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
 	{
 		// data
-		final List<HashMap<String, Object>> services = Services.getServices(context, rescan);
+		final List<Service> services = Services.getServices(context, rescan);
 		if (services == null)
 		{
 			return null;
@@ -195,7 +195,7 @@ public class Services
 	 * @return list of services
 	 */
 	@Nullable
-	static public List<HashMap<String, Object>> getServices(@NonNull final Context context, final boolean rescan)
+	static public List<Service> getServices(@NonNull final Context context, final boolean rescan)
 	{
 		boolean scan = rescan;
 		if (data == null)

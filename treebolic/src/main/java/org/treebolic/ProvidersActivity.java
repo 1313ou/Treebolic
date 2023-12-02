@@ -22,8 +22,8 @@ import androidx.appcompat.widget.Toolbar;
 public class ProvidersActivity extends AppCompatCommonActivity
 {
 	// Adapter Key - Res id mapping
-	private static final String[] from = new String[]{Providers.ICON, Providers.NAME, Providers.PROVIDER, Providers.PACKAGE, Providers.PROCESS, Providers.MIMETYPE, Providers.EXTENSIONS, Providers.URLSCHEME, Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS};
-	private static final int[] to = new int[]{R.id.icon, R.id.name, R.id.provider, R.id.pkg, R.id.process, R.id.mimetype, R.id.extension, R.id.urlScheme, R.id.source, R.id.base, R.id.imagebase, R.id.settings};
+	private static final String[] from = new String[]{Provider.ICON, Provider.NAME, Provider.PROVIDER, Provider.DESCRIPTION, Provider.PACKAGE, Provider.PROCESS, Provider.MIMETYPE, Provider.EXTENSIONS, Provider.URLSCHEME, Provider.SOURCE, Provider.BASE, Provider.IMAGEBASE, Provider.SETTINGS};
+	private static final int[] to = new int[]{R.id.icon, R.id.name, R.id.provider, R.id.description, R.id.pkg, R.id.process, R.id.mimetype, R.id.extension, R.id.urlScheme, R.id.source, R.id.base, R.id.imagebase, R.id.settings};
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState)
@@ -45,32 +45,9 @@ public class ProvidersActivity extends AppCompatCommonActivity
 		}
 
 		// adapter
-		final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
+		final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to);
 		final ListView listView = findViewById(R.id.providers);
 		listView.setAdapter(adapter);
 		//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
-	}
-
-	@SuppressWarnings("SameReturnValue")
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu)
-	{
-		// inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.providers, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
-	{
-		if (item.getItemId() == R.id.action_rescan)
-		{
-			final BaseAdapter adapter = Providers.makeAdapter(this, R.layout.item_providers, from, to, true);
-			final ListView listView = findViewById(R.id.providers);
-			listView.setAdapter(adapter);
-			//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 }
