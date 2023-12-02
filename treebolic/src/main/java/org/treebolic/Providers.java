@@ -5,9 +5,8 @@
 package org.treebolic;
 
 import android.content.Context;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.Log;
@@ -17,9 +16,14 @@ import android.widget.SimpleAdapter;
 import org.treebolic.storage.Storage;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Properties;
+import java.util.TreeMap;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
@@ -37,111 +41,76 @@ public class Providers
 	 * Data
 	 */
 	@Nullable
-	static private List<HashMap<String, Object>> data = null;
+	static private Map<String, Provider> providerMap = null;
 
-	/**
-	 * Keys
-	 */
-	static public final String NAME = "name";
-	static public final String PROCESS = "process";
-	static public final String PACKAGE = "package";
-	static public final String PROVIDER = "provider";
-	static public final String MIMETYPE = "mimetype";
-	static public final String EXTENSIONS = "extensions";
-	static public final String URLSCHEME = "urlscheme";
-	static public final String STYLE = "style";
-	static public final String ICON = "icon";
-	static public final String SOURCE = "source";
-	static public final String BASE = "base";
-	static public final String IMAGEBASE = "imagebase";
-	static public final String SETTINGS = "settings";
+	private static final String ASSET_DIR = "providers";
+	private static final String ASSET_IMAGE_DIR = "providers_images";
 
-	/**
-	 * List providers
-	 *
-	 * @param context           locatorContext
-	 * @param parentPackageName package name
-	 * @throws NameNotFoundException name not found exception
-	 */
-	static private void makeProviders(@NonNull final Context context, @NonNull @SuppressWarnings("SameParameterValue") final String parentPackageName) throws NameNotFoundException
+	public static @Nullable Map<String, Provider> buildProvidersFromManifests(final Context context)
 	{
-		final String processName = Utils.getProcessName(context, parentPackageName);
-		Providers.addBuiltInProviders(context, parentPackageName, processName);
-	}
+		Map<String, Provider> result = null;
 
-	/**
-	 * Add builtin providers to list
-	 *
-	 * @param context       locatorContext
-	 * @param parentPackage parent package
-	 * @param processName   process name
-	 * @return number of built-in providers
-	 */
-	@SuppressWarnings({"boxing", "UnnecessaryLocalVariable", "UnusedReturnValue"})
-	static private int addBuiltInProviders(@NonNull final Context context, final String parentPackage, final String processName)
-	{
 		// base and image base in external storage
 		final File treebolicStorage = Storage.getTreebolicStorage(context);
 		final String base = Uri.fromFile(treebolicStorage).toString() + '/';
-		final String imagebase = base;
 
-		// resources
-		final Resources resources = context.getResources();
-		final String[] titles = resources.getStringArray(R.array.pref_providers_list_titles);
-		final String[] values = resources.getStringArray(R.array.pref_providers_list_values);
-		final String[] mimetypes = resources.getStringArray(R.array.pref_providers_list_mimetypes);
-		final String[] extensions = resources.getStringArray(R.array.pref_providers_list_extensions);
-		final String[] urlSchemes = resources.getStringArray(R.array.pref_providers_list_schemes);
-		final String[] sources = resources.getStringArray(R.array.pref_providers_list_sources);
-		final String[] settings = resources.getStringArray(R.array.pref_providers_list_settings);
-		TypedArray icons = null;
 		try
 		{
-			icons = resources.obtainTypedArray(R.array.pref_providers_list_icons);
+			final String process = Utils.getProcessName(context);
 
-			// lowest array length
-			int lowest = Integer.MAX_VALUE;
-			for (final int l : new int[]{titles.length, values.length, mimetypes.length, urlSchemes.length, settings.length, icons.length()})
+			final AssetManager assetManager = context.getAssets();
+			String[] manifests = assetManager.list(ASSET_DIR);
+			assert manifests != null;
+			for (String manifest : manifests)
 			{
-				if (lowest > l)
+				Log.i(TAG, "Reading " + manifest);
+				try (InputStream is = assetManager.open(ASSET_DIR + '/' + manifest))
 				{
-					lowest = l;
+					final Properties props = new Properties();
+					props.load(is);
+					final Provider provider = new Provider(props, base, base, process);
+
+					// record
+					if (result == null)
+					{
+						result = new TreeMap<>(Comparator.reverseOrder());
+					}
+					String key = provider.get(Provider.PROVIDER);
+					assert key != null;
+					result.put(key, provider);
+				}
+				catch (IOException e)
+				{
+					Log.e(TAG, "Error while reading " + manifest, e);
 				}
 			}
-
-			// add array data
-			for (int i = 0; i < lowest; i++)
-			{
-				final HashMap<String, Object> provider = new HashMap<>();
-
-				// structural
-				provider.put(Providers.PROVIDER, values[i]);
-				provider.put(Providers.NAME, titles[i]);
-				provider.put(Providers.PACKAGE, parentPackage);
-				provider.put(Providers.PROCESS, processName);
-				provider.put(Providers.ICON, icons.getResourceId(i, -1));
-				provider.put(Providers.MIMETYPE, mimetypes[i]);
-				provider.put(Providers.EXTENSIONS, extensions[i]);
-				provider.put(Providers.URLSCHEME, urlSchemes[i]);
-
-				// settings
-				provider.put(Providers.SOURCE, sources[i]);
-				provider.put(Providers.BASE, base);
-				provider.put(Providers.IMAGEBASE, imagebase);
-				provider.put(Providers.SETTINGS, settings[i]);
-
-				assert data != null;
-				data.add(provider);
-			}
-			return lowest;
+			return result;
 		}
-		finally
+		catch (IOException e)
 		{
-			if (icons != null)
-			{
-				icons.recycle();
-			}
+			Log.e(TAG, "Error while listing assets", e);
 		}
+		catch (PackageManager.NameNotFoundException e)
+		{
+			Log.e(TAG, "Error while getting process name", e);
+		}
+		return null;
+	}
+
+	public static @Nullable Drawable readAssetDrawable(@NonNull final Context context, @NonNull final String imageFile)
+	{
+		try (InputStream is = context.getAssets().open(ASSET_IMAGE_DIR + '/' + imageFile))
+		{
+			//	DisplayMetrics dm = context.getResources().getDisplayMetrics();
+			//	TypedValue value = new TypedValue();
+			//	value.density = dm.densityDpi;
+
+			return Drawable.createFromResourceStream(context.getResources(), null, is, null);
+		}
+		catch (IOException ignored)
+		{
+		}
+		return null;
 	}
 
 	/**
@@ -151,17 +120,16 @@ public class Providers
 	 * @param itemLayoutRes item layout
 	 * @param from          from key
 	 * @param to            to res id
-	 * @param rescan        rescan list
 	 * @return base adapter
 	 */
 	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @LayoutRes final int itemLayoutRes, final String[] from, final int[] to)
 	{
 		// data
-		final List<HashMap<String, Object>> providers = Providers.getProviders(context, rescan);
+		final Map<String, Provider> providers = Providers.getProviders(context);
 
 		// adapter
-		return makeAdapter(context, providers, itemLayoutRes, from, to);
+		return makeAdapter(context, providers == null ? null : providers.values(), itemLayoutRes, from, to);
 	}
 
 	/**
@@ -175,7 +143,7 @@ public class Providers
 	 * @return base adapter
 	 */
 	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @Nullable final List<HashMap<String, Object>> providers, final int itemRes, final String[] from, final int[] to)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @Nullable final Collection<Provider> providers, final int itemRes, final String[] from, final int[] to)
 	{
 		// data
 		if (providers == null)
@@ -184,15 +152,14 @@ public class Providers
 		}
 
 		// fill in the grid_item layout
-		return new SimpleAdapter(context, providers, itemRes, from, to)
+		return new SimpleAdapter(context, new ArrayList<>(providers), itemRes, from, to)
 		{
 			@Override
-			public void setViewImage(@NonNull final ImageView imageView, final String pkg)
+			public void setViewImage(@NonNull final ImageView imageView, final String value)
 			{
 				try
 				{
-					// icon
-					final Drawable drawable = context.getPackageManager().getApplicationIcon(pkg);
+					final Drawable drawable = readAssetDrawable(context, value);
 					imageView.setImageDrawable(drawable);
 				}
 				catch (@NonNull final Exception ignored)
@@ -204,34 +171,33 @@ public class Providers
 	}
 
 	/**
-	 * Get (possibly cached) list of providers
+	 * Get (possibly cached) map of providers
 	 *
 	 * @param context locatorContext
-	 * @param rescan  rescan, do not use cache
-	 * @return list of providers
+	 * @return map of providers
 	 */
 	@Nullable
-	static public List<HashMap<String, Object>> getProviders(@NonNull final Context context, final boolean rescan)
+	static public Map<String, Provider> getProviders(@NonNull final Context context)
 	{
-		boolean scan = rescan;
-		if (data == null)
+		if (providerMap != null)
 		{
-			data = new ArrayList<>();
-			scan = true;
+			return providerMap;
 		}
-		if (scan)
+
+		try
 		{
-			data.clear();
-			try
-			{
-				Providers.makeProviders(context, "org.treebolic");
-			}
-			catch (@NonNull final Exception e)
-			{
-				Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
-				return null;
-			}
+			providerMap = buildProvidersFromManifests(context);
+			return providerMap;
 		}
-		return data;
+		catch (@NonNull final Exception e)
+		{
+			Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
+			return null;
+		}
+	}
+
+	public static Provider get(final String key)
+	{
+		return providerMap.get(key);
 	}
 }
