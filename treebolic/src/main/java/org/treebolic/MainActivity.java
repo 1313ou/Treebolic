@@ -43,7 +43,7 @@ import org.treebolic.storage.Storage;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import java.util.Collection;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	// L I F E C Y C L E O V E R R I D E S
 
 	@SuppressLint("InflateParams")
-	@SuppressWarnings("unchecked")
 	@Override
 	protected void onCreate(@Nullable final Bundle savedInstanceState)
 	{
@@ -238,8 +237,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				{
 					assert MainActivity.this.adapter != null;
 
-					final Provider provider = (Provider) MainActivity.this.adapter.getItem(position);
-					MainActivity.this.provider = provider;
+					MainActivity.this.provider = (Provider) MainActivity.this.adapter.getItem(position);
 
 					final String name = (String) MainActivity.this.provider.get(Provider.NAME);
 					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
@@ -564,7 +562,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		{
 			for (int position = 0; position < this.adapter.getCount(); position++)
 			{
-				@SuppressWarnings("unchecked") final Provider provider = (Provider) this.adapter.getItem(position);
+				final Provider provider = (Provider) this.adapter.getItem(position);
 				if (name.equals(provider.get(Provider.NAME)))
 				{
 					this.spinner.setSelection(position);
@@ -588,6 +586,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final SimpleAdapter adapter = Providers.makeAdapter(this, itemLayoutRes, from, to);
 
 		// drop down
+		assert adapter != null;
 		adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown);
 
 		return adapter;
@@ -646,7 +645,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void tryStartOneOfTreebolicClients()
 	{
-		final List<Service> services = Services.getServices(this, true);
+		final Collection<Service> services = Services.getServices(this);
 
 		final AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle(R.string.title_services);
@@ -658,8 +657,8 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			for (Service service : services)
 			{
 				final RadioButton radioButton = new RadioButton(this);
-				radioButton.setText((String) service.get(Services.LABEL));
-				final String drawableRef = (String) service.get(Services.DRAWABLE);
+				radioButton.setText((String) service.get(Service.LABEL));
+				final String drawableRef = (String) service.get(Service.DRAWABLE);
 				if (drawableRef != null)
 				{
 					final String[] fields = drawableRef.split("#");
@@ -687,7 +686,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 				final RadioButton radioButton = (RadioButton) input.getChildAt(i);
 				if (radioButton.getId() == input.getCheckedRadioButtonId())
 				{
-					@SuppressWarnings("unchecked") final Service service = (Service) radioButton.getTag();
+					final Service service = (Service) radioButton.getTag();
 					tryStartTreebolicClient(service);
 				}
 			}
@@ -899,7 +898,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	 */
 	private void tryStartTreebolicClient(@NonNull final Service service)
 	{
-		final String argService = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
+		final String argService = (String) service.get(Service.PACKAGE) + '/' + service.get(Service.NAME);
 
 		final Intent intent = new Intent();
 		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);

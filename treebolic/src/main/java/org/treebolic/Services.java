@@ -16,6 +16,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import androidx.annotation.DrawableRes;
@@ -42,24 +43,7 @@ public class Services
 	 * Data
 	 */
 	@Nullable
-	static private List<Service> data = null;
-
-	/**
-	 * Keys
-	 */
-	static public final String NAME = "name";
-	static public final String PROCESS = "process";
-	static public final String PACKAGE = "package";
-	static public final String FLAGS = "flags";
-	static public final String EXPORTED = "exported";
-	static public final String ENABLED = "enabled";
-	static public final String PERMISSION = "permission";
-	static public final String LABEL = "label";
-	static public final String DESCRIPTION = "description";
-	static public final String ICON = "icon";
-	static public final String LOGO = "logo";
-	static public final String DRAWABLE = "drawable";
-
+	static private Collection<Service> services = null;
 
 	/**
 	 * Load icon
@@ -101,10 +85,11 @@ public class Services
 	 *
 	 * @param context locatorContext
 	 * @param filter  positive filter
+	 * @return collection of services
 	 */
-	@SuppressWarnings("boxing")
-	static private void makeServices(@NonNull final Context context, @Nullable @SuppressWarnings("SameParameterValue") final String filter)
+	static private Collection<Service> collectServices(@NonNull final Context context, @Nullable @SuppressWarnings("SameParameterValue") final String filter)
 	{
+		final Collection<Service> services2 = new ArrayList<>();
 		final PackageManager packageManager = context.getPackageManager();
 
 		@SuppressLint("QueryPermissionsNeeded") final List<PackageInfo> pkgs = packageManager.getInstalledPackages(PackageManager.GET_SERVICES);
@@ -118,21 +103,20 @@ public class Services
 					if (filter == null || service.name.matches(filter))
 					{
 						final Service service2 = new Service();
-						service2.put(Services.NAME, service.name);
-						service2.put(Services.PACKAGE, pkg.packageName);
-						service2.put(Services.PROCESS, service.processName);
-						service2.put(Services.ENABLED, service.enabled);
-						service2.put(Services.EXPORTED, service.exported);
-						service2.put(Services.FLAGS, Integer.toHexString(service.flags));
-						service2.put(Services.PERMISSION, service.permission);
-						service2.put(Services.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
-						service2.put(Services.DESCRIPTION, Services.loadText(packageManager, pkg.packageName, service.descriptionRes));
-						service2.put(Services.LOGO, service.logo);
-						service2.put(Services.ICON, service.icon);
-						service2.put(Services.DRAWABLE, pkg.packageName + '#' + service.icon);
+						service2.put(Service.NAME, service.name);
+						service2.put(Service.PACKAGE, pkg.packageName);
+						service2.put(Service.PROCESS, service.processName);
+						service2.put(Service.ENABLED, service.enabled);
+						service2.put(Service.EXPORTED, service.exported);
+						service2.put(Service.FLAGS, Integer.toHexString(service.flags));
+						service2.put(Service.PERMISSION, service.permission);
+						service2.put(Service.LABEL, Services.loadText(packageManager, pkg.packageName, service.labelRes));
+						service2.put(Service.DESCRIPTION, Services.loadText(packageManager, pkg.packageName, service.descriptionRes));
+						service2.put(Service.LOGO, service.logo);
+						service2.put(Service.ICON, service.icon);
+						service2.put(Service.DRAWABLE, pkg.packageName + '#' + service.icon);
 
-						assert data != null;
-						data.add(service2);
+						services2.add(service2);
 					}
 					else
 					{
@@ -141,6 +125,7 @@ public class Services
 				}
 			}
 		}
+		return services2;
 	}
 
 	/**
@@ -153,10 +138,10 @@ public class Services
 	 * @return base adapter
 	 */
 	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, final String[] from, final int[] to, @SuppressWarnings("SameParameterValue") final boolean rescan)
+	static public SimpleAdapter makeAdapter(@NonNull final Context context, @SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, final String[] from, final int[] to)
 	{
 		// data
-		final List<Service> services = Services.getServices(context, rescan);
+		final Collection<Service> services = Services.getServices(context);
 		if (services == null)
 		{
 			return null;
@@ -167,7 +152,7 @@ public class Services
 		}
 
 		// fill in the grid_item layout
-		return new SimpleAdapter(context, services, itemLayoutRes, from, to)
+		return new SimpleAdapter(context, new ArrayList<>(services), itemLayoutRes, from, to)
 		{
 			@Override
 			public void setViewImage(@NonNull final ImageView v, @NonNull final String value)
@@ -191,31 +176,36 @@ public class Services
 	 * Get (possibly cached) list of services
 	 *
 	 * @param context locatorContext
-	 * @param rescan  rescan, do not use cache
 	 * @return list of services
 	 */
 	@Nullable
-	static public List<Service> getServices(@NonNull final Context context, final boolean rescan)
+	static public Collection<Service> getServices(@NonNull final Context context)
 	{
-		boolean scan = rescan;
-		if (data == null)
+		if (services != null)
 		{
-			data = new ArrayList<>();
-			scan = true;
+			return services;
 		}
-		if (scan)
+		services = buildServices(context);
+		return services;
+	}
+
+	/**
+	 * Build collection of services
+	 *
+	 * @param context locatorContext
+	 * @return collection of services
+	 */
+	@Nullable
+	static public Collection<Service> buildServices(@NonNull final Context context)
+	{
+		try
 		{
-			data.clear();
-			try
-			{
-				Services.makeServices(context, "org.treebolic\\..*");
-			}
-			catch (@NonNull final Exception e)
-			{
-				Log.e(Services.TAG, "Error when scanning for services", e);
-				return null;
-			}
+			return Services.collectServices(context, "org.treebolic\\..*");
 		}
-		return data;
+		catch (@NonNull final Exception e)
+		{
+			Log.e(Services.TAG, "Error when scanning for services", e);
+			return null;
+		}
 	}
 }

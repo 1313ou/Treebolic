@@ -12,7 +12,7 @@ import android.os.Bundle;
 
 import org.treebolic.preference.OpenEditTextPreference;
 
-import java.util.List;
+import java.util.Collection;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -289,17 +289,18 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	 */
 	private void fillWithServiceData(@NonNull final ListPreference listPreference)
 	{
-		final List<Service> services = Services.getServices(this, true);
+		final Collection<Service> services = Services.getServices(this);
 		if (services != null)
 		{
 			final int n = services.size();
 			final String[] entries = new String[n];
 			final String[] values = new String[n];
-			for (int i = 0; i < n; i++)
+			int i = 0;
+			for (final Service service : services)
 			{
-				final Service service = services.get(i);
-				entries[i] = (String) service.get(Services.LABEL);
-				values[i] = (String) service.get(Services.PACKAGE) + '/' + service.get(Services.NAME);
+				entries[i] = (String) service.get(Service.LABEL);
+				values[i] = (String) service.get(Service.PACKAGE) + '/' + service.get(Service.NAME);
+				i++;
 			}
 			listPreference.setEntries(entries);
 			listPreference.setEntryValues(values);

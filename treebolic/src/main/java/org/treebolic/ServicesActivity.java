@@ -22,7 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 public class ServicesActivity extends AppCompatCommonActivity
 {
 	// Adapter Key - Res id mapping
-	private final String[] from = new String[]{Services.DRAWABLE, Services.NAME, Services.PACKAGE, Services.PROCESS, Services.ENABLED, Services.EXPORTED, Services.PERMISSION, Services.FLAGS, Services.LABEL, Services.DESCRIPTION};
+	private final String[] from = new String[]{Service.DRAWABLE, Service.NAME, Service.PACKAGE, Service.PROCESS, Service.ENABLED, Service.EXPORTED, Service.PERMISSION, Service.FLAGS, Service.LABEL, Service.DESCRIPTION};
 	private final int[] to = new int[]{R.id.icon, R.id.service, R.id.pkg, R.id.process, R.id.enabled, R.id.exported, R.id.permission, R.id.flags, R.id.label, R.id.description};
 
 	@Override
@@ -45,7 +45,7 @@ public class ServicesActivity extends AppCompatCommonActivity
 		}
 
 		// adapter
-		final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
+		final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to);
 		final ListView listView = findViewById(R.id.services);
 		listView.setAdapter(adapter);
 
@@ -67,7 +67,7 @@ public class ServicesActivity extends AppCompatCommonActivity
 	{
 		if (item.getItemId() == R.id.action_rescan)
 		{
-			final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to, true);
+			final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to);
 			final ListView listView = findViewById(R.id.services);
 			listView.setAdapter(adapter);
 			//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
