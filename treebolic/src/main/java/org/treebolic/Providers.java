@@ -41,7 +41,60 @@ public class Providers
 	 * Data
 	 */
 	@Nullable
-	static private Map<String, Provider> providerMap = null;
+	static private Map<String, Provider> providersByClass = null;
+
+	/**
+	 * Get provider from class name key
+	 *
+	 * @param key class name key
+	 * @return provider
+	 */
+	public static Provider get(final String key)
+	{
+		assert providersByClass != null;
+		return providersByClass.get(key);
+	}
+
+	/**
+	 * Get (possibly cached) map of providers
+	 *
+	 * @param context context
+	 * @return map of providers
+	 */
+	@Nullable
+	static public Map<String, Provider> getProvidersByClass(@NonNull final Context context)
+	{
+		if (providersByClass != null)
+		{
+			return providersByClass;
+		}
+
+		try
+		{
+			providersByClass = buildProvidersFromManifests(context);
+			return providersByClass;
+		}
+		catch (@NonNull final Exception e)
+		{
+			Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
+			return null;
+		}
+	}
+
+	/**
+	 * Get (possibly cached) list of providers
+	 *
+	 * @param context context
+	 * @return list of providers
+	 */
+	@Nullable
+	static public Collection<Provider> getProviders(@NonNull final Context context)
+	{
+		final Map<String, Provider> providersMap = Providers.getProvidersByClass(context);
+		return providersMap == null ? null : providersMap.values();
+	}
+
+	// F R O M   M A N I F E S T S
 
 	private static final String ASSET_DIR = "providers";
 	private static final String ASSET_IMAGE_DIR = "providers_images";
@@ -97,6 +150,8 @@ public class Providers
 		return null;
 	}
 
+	// D R A W A B L E
+
 	public static @Nullable Drawable readAssetDrawable(@NonNull final Context context, @NonNull final String imageFile)
 	{
 		try (InputStream is = context.getAssets().open(ASSET_IMAGE_DIR + '/' + imageFile))
@@ -113,10 +168,12 @@ public class Providers
 		return null;
 	}
 
+	// A D A P T E R   F A C T O R Y
+
 	/**
 	 * Make adapter
 	 *
-	 * @param context       locatorContext
+	 * @param context       context
 	 * @param itemLayoutRes item layout
 	 * @param from          from key
 	 * @param to            to res id
@@ -126,16 +183,16 @@ public class Providers
 	static public SimpleAdapter makeAdapter(@NonNull final Context context, @LayoutRes final int itemLayoutRes, final String[] from, final int[] to)
 	{
 		// data
-		final Map<String, Provider> providers = Providers.getProviders(context);
+		final Collection<Provider> providers = Providers.getProviders(context);
 
 		// adapter
-		return makeAdapter(context, providers == null ? null : providers.values(), itemLayoutRes, from, to);
+		return makeAdapter(context, providers, itemLayoutRes, from, to);
 	}
 
 	/**
 	 * Make adapter
 	 *
-	 * @param context   locatorContext
+	 * @param context   context
 	 * @param providers providers
 	 * @param itemRes   item layout
 	 * @param from      from key
@@ -168,36 +225,5 @@ public class Providers
 				}
 			}
 		};
-	}
-
-	/**
-	 * Get (possibly cached) map of providers
-	 *
-	 * @param context locatorContext
-	 * @return map of providers
-	 */
-	@Nullable
-	static public Map<String, Provider> getProviders(@NonNull final Context context)
-	{
-		if (providerMap != null)
-		{
-			return providerMap;
-		}
-
-		try
-		{
-			providerMap = buildProvidersFromManifests(context);
-			return providerMap;
-		}
-		catch (@NonNull final Exception e)
-		{
-			Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
-			return null;
-		}
-	}
-
-	public static Provider get(final String key)
-	{
-		return providerMap.get(key);
 	}
 }

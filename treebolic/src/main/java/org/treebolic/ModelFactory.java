@@ -55,7 +55,7 @@ public class ModelFactory
 	 * Constructor
 	 *
 	 * @param provider0           provider
-	 * @param providerContext0    provider locatorContext
+	 * @param providerContext0    provider locator context
 	 * @param locatorContext0     locator context to get provider data
 	 * @param applicationContext0 context
 	 */

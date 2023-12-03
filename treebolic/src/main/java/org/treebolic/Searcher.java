@@ -43,7 +43,7 @@ public class Searcher
 	/**
 	 * Constructor
 	 *
-	 * @param context0 locatorContext
+	 * @param context0 context
 	 * @param widget0  widget
 	 */
 	public Searcher(final Context context0, final IWidget widget0)

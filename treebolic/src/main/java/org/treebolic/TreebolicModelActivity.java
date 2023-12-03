@@ -188,7 +188,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	/**
 	 * Make Treebolic serialized model activity intent
 	 *
-	 * @param context    locatorContext
+	 * @param context    context
 	 * @param serialized serialized model uti
 	 * @return intent
 	 */

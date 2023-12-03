@@ -41,16 +41,6 @@
 	<!--	<string name="pref_summary_header_text_pair">Paramètres du fournisseur Texte (paires)</string>-->
 	<!--	<string name="pref_summary_header_dot">Paramètres du fournisseur Dot</string>-->
 
-	<!-- builtin providers -->
-	<string-array name="pref_providers_list_titles">
-		<item>xml (sax)</item>
-		<item>xml (dom)</item>
-		<item>texte (indenté)</item>
-		<item>texte (indenté, arbre)</item>
-		<item>texte (paires)</item>
-		<item>dot</item>
-	</string-array>
-
 	<!-- Service settings -->
 	<string name="pref_header_service" tools:keep="@string/pref_header_service">Service</string>
 	<!--	<string name="pref_summary_header_service">Paramètres du service</string>-->

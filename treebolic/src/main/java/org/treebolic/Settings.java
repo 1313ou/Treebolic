@@ -98,10 +98,11 @@ public class Settings
 	 *
 	 * @param context context
 	 */
+	@SuppressLint("ApplySharedPref")
 	public static void clearProviderSettings(@NonNull final Context context)
 	{
 		// providers
-		final Collection<Provider> providers = Providers.getProviders(context).values();
+		final Collection<Provider> providers = Providers.getProviders(context);
 
 		// clear prefs for providers
 		if (providers != null)
@@ -118,13 +119,13 @@ public class Settings
 	/**
 	 * Set providers default settings from provider data
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
 	static public void setProviderDefaultSettings(@NonNull final Context context)
 	{
 		// providers
-		final Collection<Provider> providers = Providers.getProviders(context).values();
+		final Collection<Provider> providers = Providers.getProviders(context);
 
 		// create prefs for built-in providers
 		if (providers != null)
@@ -155,7 +156,7 @@ public class Settings
 	/**
 	 * Set active provider settings (copied into default preferences)
 	 *
-	 * @param context  locatorContext
+	 * @param context  context
 	 * @param provider active provider
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
@@ -179,7 +180,7 @@ public class Settings
 	/**
 	 * Put string preference
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param key     key
 	 * @param value   value
 	 */
@@ -193,7 +194,7 @@ public class Settings
 	/**
 	 * Put integer preference
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param key     key
 	 * @param value   value
 	 */
@@ -207,7 +208,7 @@ public class Settings
 	/**
 	 * Get string preference
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param key     key
 	 * @return value
 	 */
@@ -221,7 +222,7 @@ public class Settings
 	/**
 	 * Get int preference
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param key     key
 	 * @return value
 	 */
@@ -234,7 +235,7 @@ public class Settings
 	/**
 	 * Get preference value as url
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param key     key
 	 * @return preference value as
 	 */
@@ -270,7 +271,7 @@ public class Settings
 	/**
 	 * Application settings
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param pkgName package name
 	 */
 	static public void applicationSettings(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final String pkgName)

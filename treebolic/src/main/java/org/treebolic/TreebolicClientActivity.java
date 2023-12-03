@@ -663,7 +663,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	/**
 	 * Initialize search preferences
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 */
 	static public void initializeSearchPrefs(@NonNull final Context context)
 	{

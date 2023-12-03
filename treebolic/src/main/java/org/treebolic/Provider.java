@@ -29,7 +29,7 @@ public class Provider extends HashMap<String, String> implements Serializable
 	static public final String SETTINGS = "settings";
 	static public final String STYLE = "style";
 
-	public Provider(@NonNull final Properties props, final String base, final String imgbase, final String process)
+	public Provider(@NonNull final Properties props, final String base, final String imageBase, final String process)
 	{
 		super();
 
@@ -57,7 +57,7 @@ public class Provider extends HashMap<String, String> implements Serializable
 		put(Provider.SOURCE, source);
 		put(Provider.SETTINGS, settings);
 		put(Provider.BASE, base);
-		put(Provider.IMAGEBASE, imgbase);
+		put(Provider.IMAGEBASE, imageBase);
 	}
 
 	public String getSharedPreferencesName()

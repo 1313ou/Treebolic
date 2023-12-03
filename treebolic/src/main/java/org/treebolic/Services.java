@@ -83,7 +83,7 @@ public class Services
 	/**
 	 * List services
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @param filter  positive filter
 	 * @return collection of services
 	 */
@@ -131,7 +131,7 @@ public class Services
 	/**
 	 * Make adapter
 	 *
-	 * @param context       locatorContext
+	 * @param context       context
 	 * @param itemLayoutRes item layout
 	 * @param from          from key
 	 * @param to            to res id
@@ -175,7 +175,7 @@ public class Services
 	/**
 	 * Get (possibly cached) list of services
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @return list of services
 	 */
 	@Nullable
@@ -192,7 +192,7 @@ public class Services
 	/**
 	 * Build collection of services
 	 *
-	 * @param context locatorContext
+	 * @param context context
 	 * @return collection of services
 	 */
 	@Nullable

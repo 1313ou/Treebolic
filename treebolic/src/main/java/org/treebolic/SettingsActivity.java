@@ -105,7 +105,9 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 				if (iconPref != null)
 				{
 					final String imageFile = (String) SettingsActivity.provider.get(Provider.ICON);
-					final Drawable drawable = imageFile == null ? null : Providers.readAssetDrawable(getContext(), imageFile);
+					final Context context = getContext();
+					assert context != null;
+					final Drawable drawable = imageFile == null ? null : Providers.readAssetDrawable(context, imageFile);
 					iconPref.setIcon(drawable);
 				}
 
