@@ -57,16 +57,16 @@
 		app:showAsAction="never">
 		<menu>
 			<item
+				android:id="@+id/action_services"
+				android:title="@string/title_activity_services"
+				app:showAsAction="never" />
+			<item
 				android:id="@+id/action_treebolic_default_client"
 				android:title="@string/title_treebolic_default_client"
 				app:showAsAction="never" />
 			<item
 				android:id="@+id/action_treebolic_client"
 				android:title="@string/title_treebolic_client"
-				app:showAsAction="never" />
-			<item
-				android:id="@+id/action_services"
-				android:title="@string/title_activity_services"
 				app:showAsAction="never" />
 		</menu>
 	</item>

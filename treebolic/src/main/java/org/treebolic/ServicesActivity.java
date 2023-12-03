@@ -52,27 +52,4 @@ public class ServicesActivity extends AppCompatCommonActivity
 		// view
 		//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
 	}
-
-	@SuppressWarnings("SameReturnValue")
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu)
-	{
-		// inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.services, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
-	{
-		if (item.getItemId() == R.id.action_rescan)
-		{
-			final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to);
-			final ListView listView = findViewById(R.id.services);
-			listView.setAdapter(adapter);
-			//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }

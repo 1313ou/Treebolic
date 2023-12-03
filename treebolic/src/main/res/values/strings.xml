@@ -36,7 +36,7 @@
 	<string name="title_treebolic_default_client">Start default client</string>
 	<string name="title_treebolic_client_toggle">Toggle client</string>
 	<string name="title_query">Run</string>
-	<string name="title_start" tools:keep="@string/title_start">Start</string>
+	<string name="title_start">Start</string>
 	<string name="title_finish">Finish</string>
 	<string name="title_kill">Kill</string>
 	<string name="title_demo">Demo</string>
