@@ -2,7 +2,7 @@
   ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
 	<string name="app_name">Treebolic</string>
 	<string name="treebolic">Treebolic</string>
@@ -36,11 +36,10 @@
 	<string name="title_treebolic_default_client">Lancer client par défaut</string>
 	<string name="title_treebolic_client_toggle">Basculer client</string>
 	<string name="title_query">Lancer</string>
-	<string name="title_start">Démarrer</string>
+	<string name="title_start" tools:ignore="UnusedResources">Démarrer</string>
 	<string name="title_finish">Finir</string>
 	<string name="title_kill">Terminer</string>
 	<string name="title_demo">Démo</string>
-	<string name="title_rescan">Actualiser</string>
 	<string name="title_settings">Paramètres</string>
 	<string name="title_client_status">État client</string>
 
