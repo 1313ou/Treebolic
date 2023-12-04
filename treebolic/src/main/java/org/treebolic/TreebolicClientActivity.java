@@ -653,8 +653,11 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		}
 
 		// fab
-		final FloatingActionButton fab = findViewById(R.id.fab);
-		fab.setVisibility(View.VISIBLE);
+		if (flag)
+		{
+			final FloatingActionButton fab = findViewById(R.id.fab);
+			fab.setVisibility(View.VISIBLE);
+		}
 	}
 
 	// H E L P E R S
