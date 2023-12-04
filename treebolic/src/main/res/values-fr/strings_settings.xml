@@ -47,6 +47,6 @@
 	<string name="pref_title_service">Service</string>
 	<string name="pref_description_service">Type du Service</string>
 	<string name="pref_title_service_source">Source</string>
-	<string name="pref_description_service_source">Source interpretée poar le service</string>
+	<string name="pref_description_service_source">Source interprétée par le service</string>
 
 </resources>
