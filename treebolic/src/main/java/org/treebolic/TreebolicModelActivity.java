@@ -100,8 +100,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 				}
 			}
 		}
-		Log.d(TAG, "model=" + this.model);
-		Log.d(TAG, "model=" + ModelDump.toString(this.model));
+		Log.d(TAG, "Unmarshalled Model" + (BuildConfig.DEBUG ? '\n' + ModelDump.toString(model) : ' ' + model.toString()));
 
 		// retrieve other parameters
 		this.serializedModel = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? //

@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	/**
 	 * Log tag
 	 */
-	private static final String TAG = "TreebolicMainA";
+	private static final String TAG = "MainA";
 
 	/**
 	 * State
@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 					final String name = (String) MainActivity.this.provider.get(Provider.NAME);
 					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
 					Settings.setActivePrefs(MainActivity.this, MainActivity.this.provider);
-					Log.d(TAG, name == null ? "null" : name);
+					Log.d(TAG, "Selected provider " + (name == null ? "null" : name));
 
 					updateButton();
 				}

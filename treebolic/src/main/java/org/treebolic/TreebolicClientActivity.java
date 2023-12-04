@@ -46,6 +46,7 @@ import treebolic.IContext;
 import treebolic.Widget;
 import treebolic.glue.component.TreebolicThread;
 import treebolic.model.Model;
+import treebolic.model.ModelDump;
 import treebolic.view.View;
 
 /**
@@ -116,6 +117,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 		// floating action button
 		final FloatingActionButton fab = findViewById(R.id.fab);
+		fab.setVisibility(View.GONE);
 		fab.setOnClickListener((v) -> {
 			fab.setVisibility(View.GONE);
 			handleQuery();
@@ -454,7 +456,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onModel(@Nullable final Model model, final String urlScheme0)
 	{
-		Log.d(TAG, "Receiving model from service " + model);
+		Log.d(TAG, "Receiving model" + (BuildConfig.DEBUG ? '\n' + ModelDump.toString(model) : ' ' + model.toString()));
 
 		// abort
 		if (model == null)
@@ -632,6 +634,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 	private void updateClientStatus(final boolean flag)
 	{
+		// snackbar
 		final String[] fields = this.argService == null ? null : this.argService.split("/");
 		final String message = getString(flag ? R.string.status_client_connected : R.string.error_client_not_connected) + ' ' + (fields != null ? fields[1] : "");
 		if (flag)
@@ -643,10 +646,15 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			stickySnackbar(message);
 		}
 
+		// status icon
 		if (this.clientStatusMenuItem != null)
 		{
 			this.clientStatusMenuItem.setIcon(flag ? R.drawable.ic_status_up : R.drawable.ic_status_down);
 		}
+
+		// fab
+		final FloatingActionButton fab = findViewById(R.id.fab);
+		fab.setVisibility(View.VISIBLE);
 	}
 
 	// H E L P E R S
