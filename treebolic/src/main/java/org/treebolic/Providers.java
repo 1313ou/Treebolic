@@ -76,7 +76,7 @@ public class Providers
 		}
 		catch (@NonNull final Exception e)
 		{
-			Log.d(Providers.TAG, "When scanning for providers: " + e.getMessage());
+			Log.d(TAG, "When scanning for providers: " + e.getMessage());
 			return null;
 		}
 	}

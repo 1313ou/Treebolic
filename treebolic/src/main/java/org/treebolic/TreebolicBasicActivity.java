@@ -183,18 +183,27 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	}
 
 	@Override
-	protected void onResume()
+	protected void onStart()
 	{
-		Log.d(TreebolicBasicActivity.TAG, "Activity resumed");
+		Log.d(TAG, "Activity started");
 
 		// super
-		super.onResume();
+		super.onStart();
 
 		// retrieve arguments
 		unmarshalArgs(getIntent());
 
 		// make parameters
 		this.parameters = makeParameters();
+	}
+
+	@Override
+	protected void onResume()
+	{
+		Log.d(TAG, "Activity resumed");
+
+		// super
+		super.onResume();
 
 		// query
 		query();
@@ -217,7 +226,7 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 	@Override
 	protected void onPause()
 	{
-		Log.d(TreebolicBasicActivity.TAG, "Activity paused, terminating surface drawing thread");
+		Log.d(TAG, "Activity paused, terminating surface drawing thread");
 
 		// terminate thread
 		final View view = this.widget.getView();

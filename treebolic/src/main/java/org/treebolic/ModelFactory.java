@@ -86,7 +86,7 @@ public class ModelFactory
 
 		// model
 		final Model model = this.provider.makeModel(source, ModelFactory.makeBaseURL(base), ModelFactory.makeParameters(source, base, imageBase, settings));
-		Log.d(ModelFactory.TAG, "model=" + model);
+		Log.d(TAG, "model=" + model);
 		return model;
 	}
 

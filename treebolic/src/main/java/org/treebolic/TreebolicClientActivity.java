@@ -116,27 +116,18 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 
 		// floating action button
 		final FloatingActionButton fab = findViewById(R.id.fab);
-		fab.setOnClickListener((v) -> handleQuery());
+		fab.setOnClickListener((v) -> {
+			fab.setVisibility(View.GONE);
+			handleQuery();
+		});
 
 		// init widget with model is asynchronous
 	}
 
 	@Override
-	protected void onResume()
-	{
-		Log.d(TreebolicClientActivity.TAG, "Activity resumed");
-
-		// retrieve arguments
-		unmarshalArgs(getIntent());
-
-		// super
-		super.onResume();
-	}
-
-	@Override
 	protected void onPause()
 	{
-		Log.d(TreebolicClientActivity.TAG, "Activity paused, terminating surface drawing thread");
+		Log.d(TAG, "Activity paused, terminating surface drawing thread");
 
 		// terminate thread
 		final View view = this.widget.getView();
@@ -406,26 +397,26 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		{
 			if (service.contains("Broadcast"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to broadcast service" + service);
+				Log.d(TAG, "Making treebolic client to broadcast service" + service);
 				return new TreebolicBroadcastClient(this, service, this, this);
 			}
 			else if (service.contains("AIDL"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to AIDL bound service " + service);
+				Log.d(TAG, "Making treebolic client to AIDL bound service " + service);
 				return new TreebolicAIDLBoundClient(this, service, this, this);
 			}
 			else if (service.contains("Bound"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to bound service " + service);
+				Log.d(TAG, "Making treebolic client to bound service " + service);
 				return new TreebolicBoundClient(this, service, this, this);
 			}
 			else if (service.contains("Messenger"))
 			{
-				Log.d(TreebolicClientActivity.TAG, "Making treebolic client to messenger service " + service);
+				Log.d(TAG, "Making treebolic client to messenger service " + service);
 				return new TreebolicMessengerClient(this, service, this, this);
 			}
 		}
-		Log.d(TreebolicClientActivity.TAG, "Null service");
+		Log.d(TAG, "Null service");
 		return null;
 	}
 
@@ -438,20 +429,20 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	 */
 	private void query(@Nullable final String source)
 	{
-		Log.d(TreebolicClientActivity.TAG, "Query " + source);
+		Log.d(TAG, "Query " + source);
 		if (this.client == null)
 		{
-			Log.d(TreebolicClientActivity.TAG, "Null client");
+			Log.d(TAG, "Null client");
 			return;
 		}
 		/* TODO
 		if (source == null || source.isEmpty())
 		{
-			Log.d(TreebolicClientActivity.TAG, "Null source");
+			Log.d(TAG, "Null source");
 			return;
 		}
 		*/
-		Log.d(TreebolicClientActivity.TAG, "Requesting model for source " + source);
+		Log.d(TAG, "Requesting model for source " + source);
 		/*
 		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
@@ -463,7 +454,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onModel(@Nullable final Model model, final String urlScheme0)
 	{
-		Log.d(TreebolicClientActivity.TAG, "Receiving model from service " + model);
+		Log.d(TAG, "Receiving model from service " + model);
 
 		// abort
 		if (model == null)

@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 					final String name = (String) MainActivity.this.provider.get(Provider.NAME);
 					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
 					Settings.setActivePrefs(MainActivity.this, MainActivity.this.provider);
-					Log.d(MainActivity.TAG, name == null ? "null" : name);
+					Log.d(TAG, name == null ? "null" : name);
 
 					updateButton();
 				}
@@ -490,18 +490,18 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 
 			// flag as initialized
 			sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit();
-		}
 
-		// deploy
-		final File dir = Storage.getTreebolicStorage(this);
-		if (dir.isDirectory())
-		{
-			final String[] dirContent = dir.list();
-			if (dirContent == null || dirContent.length == 0)
+			// deploy
+			final File dir = Storage.getTreebolicStorage(this);
+			if (dir.isDirectory())
 			{
-				// deploy
-				Deployer.expandZipAssetFile(this, "tests.zip");
-				// Deployer.expandZipAssetFile(this, "serialized.zip");
+				final String[] dirContent = dir.list();
+				if (dirContent == null || dirContent.length == 0)
+				{
+					// deploy
+					Deployer.expandZipAssetFile(this, "tests.zip");
+					// Deployer.expandZipAssetFile(this, "serialized.zip");
+				}
 			}
 		}
 	}
@@ -626,13 +626,13 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
 			final File baseFile = base == null ? null : new File(Uri.parse(base).getPath());
 			final File file = new File(baseFile, source);
-			Log.d(MainActivity.TAG, "file=" + file);
+			Log.d(TAG, "file=" + file);
 			return file.exists();
 			 */
 
 			/*
 			final File file = new File(source);
-			Log.d(MainActivity.TAG, "file=" + file);
+			Log.d(TAG, "file=" + file);
 			return file.exists() && file.isDirectory();
 			 */
 			return true;
@@ -773,7 +773,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
 
 		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, null);
-		Log.d(MainActivity.TAG, "Start treebolic from provider:" + provider + " source:" + source);
+		Log.d(TAG, "Start treebolic from provider:" + provider + " source:" + source);
 		startActivity(intent);
 	}
 
@@ -806,7 +806,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String style = (String) this.provider.get(Provider.STYLE);
 
 		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
-		Log.d(MainActivity.TAG, "Start treebolic from uri " + fileUri);
+		Log.d(TAG, "Start treebolic from uri " + fileUri);
 		startActivity(intent);
 	}
 
@@ -828,7 +828,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		}
 		catch (@NonNull final IOException e)
 		{
-			Log.d(MainActivity.TAG, "Failed to start treebolic from bundle uri " + archiveUri, e);
+			Log.d(TAG, "Failed to start treebolic from bundle uri " + archiveUri, e);
 		}
 	}
 
@@ -841,7 +841,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	@SuppressWarnings({"UnnecessaryLocalVariable"})
 	private void tryStartTreebolicBundle(@NonNull final Uri archiveUri, final String zipEntry)
 	{
-		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri + " and zip entry " + zipEntry);
+		Log.d(TAG, "Start treebolic from bundle uri " + archiveUri + " and zip entry " + zipEntry);
 		final String source = zipEntry; // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry;
 		if (source == null)
 		{
@@ -861,7 +861,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final String style = (String) this.provider.get(Provider.STYLE);
 
 		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
-		Log.d(MainActivity.TAG, "Start treebolic from bundle uri " + archiveUri);
+		Log.d(TAG, "Start treebolic from bundle uri " + archiveUri);
 		startActivity(intent);
 	}
 
@@ -878,7 +878,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			return;
 		}
 		final Intent intent = TreebolicModelActivity.makeTreebolicSerializedIntent(this, archiveUri);
-		Log.d(MainActivity.TAG, "Start treebolic from serialized uri " + archiveUri);
+		Log.d(TAG, "Start treebolic from serialized uri " + archiveUri);
 		startActivity(intent);
 	}
 
@@ -889,7 +889,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 	{
 		final Intent intent = new Intent();
 		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
-		Log.d(MainActivity.TAG, "Start  treebolic default client");
+		Log.d(TAG, "Start  treebolic default client");
 		startActivity(intent);
 	}
 
@@ -903,7 +903,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		final Intent intent = new Intent();
 		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
 		intent.putExtra(TreebolicIface.ARG_SERVICE, argService);
-		Log.d(MainActivity.TAG, "Start treebolic client for " + argService);
+		Log.d(TAG, "Start treebolic client for " + argService);
 		startActivity(intent);
 	}
 

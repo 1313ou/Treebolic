@@ -204,7 +204,7 @@ public class Services
 		}
 		catch (@NonNull final Exception e)
 		{
-			Log.e(Services.TAG, "Error when scanning for services", e);
+			Log.e(TAG, "Error when scanning for services", e);
 			return null;
 		}
 	}

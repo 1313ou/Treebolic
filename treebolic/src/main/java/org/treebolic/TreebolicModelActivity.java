@@ -100,8 +100,8 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 				}
 			}
 		}
-		Log.d(TreebolicModelActivity.TAG, "model=" + this.model);
-		Log.d(TreebolicModelActivity.TAG, "model=" + ModelDump.toString(this.model));
+		Log.d(TAG, "model=" + this.model);
+		Log.d(TAG, "model=" + ModelDump.toString(this.model));
 
 		// retrieve other parameters
 		this.serializedModel = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU ? //
@@ -129,7 +129,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		// init widget with model
 		if (this.serializedModel != null)
 		{
-			Log.d(TreebolicModelActivity.TAG, "Using serialized model");
+			Log.d(TAG, "Using serialized model");
 			final Model model = deserializeGuarded(new ModelReader(this.serializedModel.getPath()));
 			this.widget.init(model);
 		}
@@ -144,7 +144,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 	{
 		if (this.parentActivity != null)
 		{
-			Log.d(TreebolicModelActivity.TAG, "Requesting model from " + source);
+			Log.d(TAG, "Requesting model from " + source);
 			try
 			{
 				this.parentActivity.putExtra(TreebolicIface.ARG_SOURCE, source);
@@ -172,12 +172,12 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 		}
 		catch (@NonNull final ClassNotFoundException e)
 		{
-			Log.d(TreebolicModelActivity.TAG, "Class not found while deserializing", e);
+			Log.d(TAG, "Class not found while deserializing", e);
 			Toast.makeText(TreebolicModelActivity.this, R.string.error_deserialize, Toast.LENGTH_SHORT).show();
 		}
 		catch (@NonNull final IOException e)
 		{
-			Log.d(TreebolicModelActivity.TAG, "IOException while deserializing", e);
+			Log.d(TAG, "IOException while deserializing", e);
 			Toast.makeText(TreebolicModelActivity.this, R.string.error_deserialize, Toast.LENGTH_SHORT).show();
 		}
 		return null;
