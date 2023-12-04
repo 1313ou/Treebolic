@@ -41,6 +41,7 @@
 	<string name="title_kill">Terminer</string>
 	<string name="title_demo">Démo</string>
 	<string name="title_settings">Paramètres</string>
+	<string name="title_settings_service">Paramètres pour service</string>
 	<string name="title_client_status">État client</string>
 
 	<!-- choose services -->

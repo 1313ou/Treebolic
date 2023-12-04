@@ -403,6 +403,13 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 			tryStartTreebolicSettings();
 			return true;
 		}
+		else if (R.id.action_settings_service == id)
+		{
+			Intent intent = new Intent(this, SettingsActivity.class);
+			intent.putExtra(SettingsActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment.class.getName());
+			startActivity(intent);
+			return true;
+		}
 		else if (R.id.action_help == id)
 		{
 			startActivity(new Intent(this, HelpActivity.class));
@@ -445,7 +452,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		}
 		else if (R.id.action_app_settings == id)
 		{
-			Settings.applicationSettings(this, "org.treebolic");
+			Settings.applicationSettings(this, BuildConfig.APPLICATION_ID);
 			return true;
 		}
 		else

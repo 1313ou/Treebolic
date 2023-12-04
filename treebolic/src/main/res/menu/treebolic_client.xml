@@ -35,6 +35,10 @@
 		android:title="@string/title_search_settings"
 		app:showAsAction="ifRoom" />
 	<item
+		android:id="@+id/action_settings_service"
+		android:title="@string/title_settings_service"
+		app:showAsAction="ifRoom" />
+	<item
 		android:id="@+id/action_treebolic_client_toggle"
 		android:title="@string/title_treebolic_client_toggle"
 		app:showAsAction="never" />

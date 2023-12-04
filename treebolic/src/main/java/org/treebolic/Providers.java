@@ -49,7 +49,7 @@ public class Providers
 	 * @param key class name key
 	 * @return provider
 	 */
-	public static Provider get(final String key)
+	public static Provider get(@NonNull final String key)
 	{
 		assert providersByClass != null;
 		return providersByClass.get(key);

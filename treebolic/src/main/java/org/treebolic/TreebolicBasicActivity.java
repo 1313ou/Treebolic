@@ -338,6 +338,13 @@ abstract public class TreebolicBasicActivity extends AppCompatCommonActivity imp
 			SearchSettings.show(getSupportFragmentManager());
 			return true;
 		}
+		else if (R.id.action_settings_service == id)
+		{
+			Intent intent = new Intent(this, SettingsActivity.class);
+			intent.putExtra(SettingsActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment.class.getName());
+			startActivity(intent);
+			return true;
+		}
 		else
 		{
 			return false;

@@ -61,6 +61,10 @@
 				android:title="@string/title_activity_services"
 				app:showAsAction="never" />
 			<item
+				android:id="@+id/action_settings_service"
+				android:title="@string/title_settings_service"
+				app:showAsAction="ifRoom" />
+			<item
 				android:id="@+id/action_treebolic_default_client"
 				android:title="@string/title_treebolic_default_client"
 				app:showAsAction="never" />

@@ -51,8 +51,9 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 		if (action == null)
 		{
 			Intent intent = getIntent();
+
 			String key = intent.getStringExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
-			SettingsActivity.provider = Providers.get(key);
+			SettingsActivity.provider = key == null ? null : Providers.get(key);
 		}
 	}
 
