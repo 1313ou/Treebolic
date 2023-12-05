@@ -144,7 +144,7 @@ public class Settings
 				for (int j = 0; j < keys.length; j++)
 				{
 					final String key = keys[j];
-					final String value = (String) provider.get(providerKeys[j]);
+					final String value = provider.get(providerKeys[j]);
 					editor.putString(key, value);
 				}
 
