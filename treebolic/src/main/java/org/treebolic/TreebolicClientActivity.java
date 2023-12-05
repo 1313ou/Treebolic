@@ -444,7 +444,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 			Log.d(TAG, "Null client");
 			return;
 		}
-		/* TODO
+		/* TODO allow null source
 		if (source == null || source.isEmpty())
 		{
 			Log.d(TAG, "Null source");
@@ -463,7 +463,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	@Override
 	public void onModel(@Nullable final Model model, final String urlScheme0)
 	{
-		Log.d(TAG, "Receiving model" + (BuildConfig.DEBUG ? '\n' + ModelDump.toString(model) : ' ' + model.toString()));
+		Log.d(TAG, "Receiving model" + (BuildConfig.DEBUG ? '\n' + ModelDump.toString(model) : ' ' + (model == null ? "null" : model.toString())));
 
 		// abort
 		if (model == null)
