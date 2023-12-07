@@ -131,11 +131,11 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		// rate
 		AppRate.invoke(this);
 
-		// layout
-		setContentView(R.layout.activity_main);
-
 		// init preferences
 		initialize();
+
+		// layout
+		setContentView(R.layout.activity_main);
 
 		// activity file result launcher
 		this.activityFileResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -476,7 +476,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		}
 	}
 
-	// P R E F E R E N C E S
+	// P R E F E R E N C E S   A N D   D A T A
 
 	/**
 	 * Initialize
@@ -493,7 +493,7 @@ public class MainActivity extends AppCompatCommonActivity implements OnClickList
 		if (!initialized)
 		{
 			// default settings
-			Settings.setProviderDefaultSettings(this);
+			Settings.setDefaults(this);
 
 			// flag as initialized
 			sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit();
