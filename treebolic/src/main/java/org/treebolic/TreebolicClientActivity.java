@@ -31,6 +31,7 @@ import org.treebolic.guide.AboutActivity;
 import org.treebolic.guide.HelpActivity;
 import org.treebolic.guide.Tip;
 import org.treebolic.search.SearchSettings;
+import org.treebolic.services.iface.ITreebolicService;
 
 import java.net.URL;
 import java.util.Properties;
@@ -404,22 +405,22 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 	{
 		if (service != null && !service.isEmpty())
 		{
-			if (service.contains("Broadcast"))
+			if (service.contains(ITreebolicService.TYPE_BROADCAST))
 			{
 				Log.d(TAG, "Making treebolic client to broadcast service" + service);
 				return new TreebolicBroadcastClient(this, service, this, this);
 			}
-			else if (service.contains("AIDL"))
+			else if (service.contains(ITreebolicService.TYPE_AIDL_BOUND))
 			{
 				Log.d(TAG, "Making treebolic client to AIDL bound service " + service);
 				return new TreebolicAIDLBoundClient(this, service, this, this);
 			}
-			else if (service.contains("Bound"))
+			else if (service.contains(ITreebolicService.TYPE_BOUND))
 			{
 				Log.d(TAG, "Making treebolic client to bound service " + service);
 				return new TreebolicBoundClient(this, service, this, this);
 			}
-			else if (service.contains("Messenger"))
+			else if (service.contains(ITreebolicService.TYPE_MESSENGER))
 			{
 				Log.d(TAG, "Making treebolic client to messenger service " + service);
 				return new TreebolicMessengerClient(this, service, this, this);
