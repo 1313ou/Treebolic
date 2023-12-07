@@ -122,7 +122,7 @@ public class Settings
 	 * @param context context
 	 */
 	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void setProviderDefaultSettings(@NonNull final Context context)
+	static public void setDefaults(@NonNull final Context context)
 	{
 		// providers
 		final Collection<Provider> providers = Providers.getProviders(context);
