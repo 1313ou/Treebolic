@@ -32,7 +32,10 @@ allprojects {
         minSdkVersion = 19
         targetSdkVersion = 33
         compileSdk = 34
+        treebolicVersion = "4.1-4"
         multiDexEnabled = true
+        desugaringVersion = "2.0.4"
+        multiDexVersion = "2.0.1"
     }
 
     gradle.projectsEvaluated {

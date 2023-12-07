@@ -50,16 +50,16 @@ android {
 }
 
 dependencies {
-    implementation 'io.github.treebolic:treebolic-graph:4.1-3'
-    implementation 'io.github.treebolic:treebolic-mutable:4.1-3'
-    implementation 'io.github.treebolic:treebolic-model:4.1-3'
-    implementation 'io.github.treebolic:treebolic-view:4.1-3'
-    implementation 'io.github.treebolic:provider-xml-dom:4.1-3'
-    implementation 'io.github.treebolic:provider-xml-sax:4.1-3'
-    implementation 'io.github.treebolic:provider-text-indent-tree:4.1-3'
-    implementation 'io.github.treebolic:provider-text-indent:4.1-3'
-    implementation 'io.github.treebolic:provider-text-pair:4.1-3'
-    implementation 'io.github.treebolic:provider-graphviz:4.1-3'
+    implementation "io.github.treebolic:treebolic-graph:${treebolicVersion}"
+    implementation "io.github.treebolic:treebolic-mutable:${treebolicVersion}"
+    implementation "io.github.treebolic:treebolic-model:${treebolicVersion}"
+    implementation "io.github.treebolic:treebolic-view:${treebolicVersion}"
+    implementation "io.github.treebolic:provider-xml-dom:${treebolicVersion}"
+    implementation "io.github.treebolic:provider-xml-sax:${treebolicVersion}"
+    implementation "io.github.treebolic:provider-text-indent-tree:${treebolicVersion}"
+    implementation "io.github.treebolic:provider-text-indent:${treebolicVersion}"
+    implementation "io.github.treebolic:provider-text-pair:${treebolicVersion}"
+    implementation "io.github.treebolic:provider-graphviz:${treebolicVersion}"
 
     implementation project(':treebolicGlue')
     implementation project(':treebolicParcel')
@@ -83,6 +83,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.10.0'
 
     implementation "androidx.multidex:multidex:${multiDexVersion}"
+    implementation project(':treebolicServicesIface')
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:${desugaringVersion}"
 
     testImplementation 'androidx.test.ext:junit:1.1.5'
