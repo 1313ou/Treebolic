@@ -66,6 +66,7 @@ dependencies {
     implementation project(':treebolicIface')
     implementation project(':treebolicClientsIface')
     implementation project(':treebolicClientsLib')
+    implementation project(':treebolicServicesIface')
 
     implementation project(':commonLib')
     implementation project(':storageLib')
@@ -83,7 +84,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.10.0'
 
     implementation "androidx.multidex:multidex:${multiDexVersion}"
-    implementation project(':treebolicServicesIface')
     coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:${desugaringVersion}"
 
     testImplementation 'androidx.test.ext:junit:1.1.5'
