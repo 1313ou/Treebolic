@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "./lib-artwork.sh"
+source "lib-artwork.sh"
 
 launch="ic_launcher.svg ic_launcher_round.svg"
 app="ic_launcher.svg"
