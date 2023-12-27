@@ -286,6 +286,7 @@ public class TreebolicClientActivity extends TreebolicClientActivityStub impleme
 		return Settings.getURLPref(this, TreebolicIface.PREF_IMAGEBASE);
 	}
 
+	@NonNull
 	@Override
 	public Properties getParameters()
 	{

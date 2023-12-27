@@ -36,6 +36,7 @@ public class SettingsActivity extends AppCompatCommonPreferenceActivity
 	/**
 	 * Selected provider
 	 */
+	@Nullable
 	private static Provider provider;
 
 	// L I F E C Y C L E

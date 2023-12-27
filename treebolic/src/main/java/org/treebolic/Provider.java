@@ -60,6 +60,7 @@ public class Provider extends HashMap<String, String> implements Serializable
 		put(Provider.IMAGEBASE, imageBase);
 	}
 
+	@NonNull
 	public String getSharedPreferencesName()
 	{
 		return Settings.PREF_FILE_PREFIX + get(Provider.PROVIDER);

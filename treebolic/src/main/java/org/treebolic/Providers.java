@@ -49,6 +49,7 @@ public class Providers
 	 * @param key class name key
 	 * @return provider
 	 */
+	@Nullable
 	public static Provider get(@NonNull final String key)
 	{
 		assert providersByClass != null;
@@ -99,7 +100,7 @@ public class Providers
 	private static final String ASSET_DIR = "providers";
 	private static final String ASSET_IMAGE_DIR = "providers_images";
 
-	public static @Nullable Map<String, Provider> buildProvidersFromManifests(final Context context)
+	public static @Nullable Map<String, Provider> buildProvidersFromManifests(@NonNull final Context context)
 	{
 		Map<String, Provider> result = null;
 
@@ -212,7 +213,7 @@ public class Providers
 		return new SimpleAdapter(context, new ArrayList<>(providers), itemRes, from, to)
 		{
 			@Override
-			public void setViewImage(@NonNull final ImageView imageView, final String value)
+			public void setViewImage(@NonNull final ImageView imageView, @NonNull final String value)
 			{
 				try
 				{

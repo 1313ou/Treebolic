@@ -87,6 +87,7 @@ public class Services
 	 * @param filter  positive filter
 	 * @return collection of services
 	 */
+	@NonNull
 	static private Collection<Service> collectServices(@NonNull final Context context, @Nullable @SuppressWarnings("SameParameterValue") final String filter)
 	{
 		final Collection<Service> services2 = new ArrayList<>();
