@@ -147,7 +147,7 @@ public class Services
 		{
 			return null;
 		}
-		if (services.size() == 0)
+		if (services.isEmpty())
 		{
 			Toast.makeText(context, R.string.error_no_services, Toast.LENGTH_SHORT).show();
 		}
