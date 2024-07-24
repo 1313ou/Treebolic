@@ -3,8 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../TreebolicLib" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../TreebolicPlugins" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../TreebolicServices" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../TreebolicSponsorLibs" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../TreebolicSupportLibs" vcs="Git" />
   </component>
 </project>
