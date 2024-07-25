@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:treebolic-model:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="treebolic-model" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/io/github/treebolic/treebolic-model/4.1-10/treebolic-model-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-model/4.1-10/d2c856ea17edb3d1c9132c85e41eb0a5c50d6026/treebolic-model-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-model/4.1-10/20277ce56fc3f1077cf2f377af330f4d96b7d985/treebolic-model-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

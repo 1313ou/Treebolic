@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:treebolic-annotations:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="treebolic-annotations" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/io/github/treebolic/treebolic-annotations/4.1-10/treebolic-annotations-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-annotations/4.1-10/b5ef6c9ad7e07a2cf82c4324d052d1d33063a167/treebolic-annotations-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-annotations/4.1-10/8e0a89dd3bee52fd3b07370e197d3282952a302b/treebolic-annotations-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

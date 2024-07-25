@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:provider-text-indent:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="provider-text-indent" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-text-indent/4.1-10/bde3ce98b442a3a269459538532fb09149f51f81/provider-text-indent-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-text-indent/4.1-10/740a7bf682682f96a775bdd8c42a44c68a4c04f1/provider-text-indent-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-text-indent/4.1-10/76bd94dec58cf936e0b3022a6330fd08def76ae3/provider-text-indent-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
