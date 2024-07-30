@@ -98,7 +98,7 @@ public class TreebolicModelActivity extends TreebolicBasicActivity
 						params.getParcelable(TreebolicIface.ARG_MODEL);
 				if (parcelModel != null)
 				{
-					this.model = parcelModel.getModel();
+					this.model = parcelModel.model;
 				}
 			}
 		}
