@@ -1,929 +1,753 @@
 /*
  * Copyright (c) 2023. Bernard Bou
  */
+package org.treebolic
 
-package org.treebolic;
-
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Process;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ImageButton;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.SimpleAdapter;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.bbou.donate.DonateActivity;
-import com.bbou.others.OthersActivity;
-import com.bbou.rate.AppRate;
-
-import org.treebolic.filechooser.EntryChooser;
-import org.treebolic.filechooser.FileChooserActivity;
-import org.treebolic.guide.AboutActivity;
-import org.treebolic.guide.HelpActivity;
-import org.treebolic.guide.Tip;
-import org.treebolic.storage.Deployer;
-import org.treebolic.storage.Storage;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Collection;
-
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.preference.PreferenceManager;
+import android.annotation.SuppressLint
+import android.content.DialogInterface
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.os.Process
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ImageButton
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.SimpleAdapter
+import android.widget.Spinner
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.LayoutRes
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
+import com.bbou.donate.DonateActivity
+import com.bbou.others.OthersActivity
+import com.bbou.rate.AppRate.invoke
+import com.bbou.rate.AppRate.rate
+import org.treebolic.Services.getServices
+import org.treebolic.Services.loadIcon
+import org.treebolic.filechooser.EntryChooser.Companion.choose
+import org.treebolic.filechooser.FileChooserActivity
+import org.treebolic.filechooser.FileChooserActivity.Companion.getFolder
+import org.treebolic.filechooser.FileChooserActivity.Companion.setFolder
+import org.treebolic.guide.AboutActivity
+import org.treebolic.guide.HelpActivity
+import org.treebolic.guide.Tip.Companion.show
+import org.treebolic.storage.Deployer.copyAssetFile
+import org.treebolic.storage.Deployer.expandZipAssetFile
+import org.treebolic.storage.Storage.getTreebolicStorage
+import java.io.File
+import java.io.IOException
 
 /**
  * Treebolic main activity (home)
  *
  * @author Bernard Bou
  */
-public class MainActivity extends AppCompatCommonActivity implements OnClickListener
-{
-	/**
-	 * Log tag
-	 */
-	private static final String TAG = "MainA";
-
-	/**
-	 * State
-	 */
-	private static final String STATE_SELECTED_PROVIDER_ITEM = "org.treebolic.provider.selected";
-
-	/**
-	 * Adapter - Key
-	 **/
-	static private final String[] from = new String[]{Provider.ICON, Provider.NAME};
-
-	/**
-	 * Adapter - ... mapped to res id
-	 **/
-	static private final int[] to = new int[]{R.id.icon, R.id.provider};
-
-	/**
-	 * Selected provider
-	 */
-	private Provider provider;
-
-	/**
-	 * Provider spinner
-	 */
-	private Spinner spinner;
-
-	/**
-	 * Provider adapter
-	 */
-	@Nullable
-	private SimpleAdapter adapter;
-
-	/**
-	 * Activity file result launcher
-	 */
-	protected ActivityResultLauncher<Intent> activityFileResultLauncher;
-
-	/**
-	 * Activity bundle result launcher
-	 */
-	protected ActivityResultLauncher<Intent> activityBundleResultLauncher;
-
-	/**
-	 * Activity serialized result launcher
-	 */
-	protected ActivityResultLauncher<Intent> activitySerializedResultLauncher;
-
-	/**
-	 * Activity download result launcher
-	 */
-	protected ActivityResultLauncher<Intent> activityDownloadResultLauncher;
-
-	// L I F E C Y C L E O V E R R I D E S
-
-	@SuppressLint("InflateParams")
-	@Override
-	protected void onCreate(@Nullable final Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
-
-		// rate
-		AppRate.invoke(this);
-
-		// init preferences
-		initialize();
-
-		// layout
-		setContentView(R.layout.activity_main);
-
-		// activity file result launcher
-		this.activityFileResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-
-			boolean success = result.getResultCode() == Activity.RESULT_OK;
-			if (success)
-			{
-				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
-				Intent returnIntent = result.getData();
-				if (returnIntent != null)
-				{
-					final Uri fileUri = returnIntent.getData();
-					if (fileUri != null)
-					{
-						Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
-						setFolder(fileUri);
-						tryStartTreebolic(fileUri);
-					}
-				}
-			}
-		});
-
-		// activity bundle result launcher
-		this.activityBundleResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-
-			boolean success = result.getResultCode() == Activity.RESULT_OK;
-			if (success)
-			{
-				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
-				Intent returnIntent = result.getData();
-				if (returnIntent != null)
-				{
-					final Uri fileUri = returnIntent.getData();
-					if (fileUri != null)
-					{
-						Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
-						setFolder(fileUri);
-						tryStartTreebolicBundle(fileUri);
-					}
-				}
-			}
-		});
-
-		// activity serialized  result launcher
-		this.activitySerializedResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-
-			boolean success = result.getResultCode() == Activity.RESULT_OK;
-			if (success)
-			{
-				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
-				Intent returnIntent = result.getData();
-				if (returnIntent != null)
-				{
-					final Uri fileUri = returnIntent.getData();
-					if (fileUri != null)
-					{
-						Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show();
-						setFolder(fileUri);
-						tryStartTreebolicSerialized(fileUri);
-					}
-				}
-			}
-		});
-
-		// activity download result launcher
-		this.activityDownloadResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
-
-			//			boolean success = result.getResultCode() == Activity.RESULT_OK;
-			//			if (success)
-			//			{
-			//				// handle selection of input by other activity which returns selected input (source, bundle, serialized)
-			//				Intent returnIntent = result.getData();
-			//			}
-		});
-
-		// toolbar
-		final Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
-
-		// action bar
-		final ActionBar actionBar = getSupportActionBar();
-		if (actionBar != null)
-		{
-			// custom layout
-			final View actionBarView = getLayoutInflater().inflate(R.layout.actionbar_custom, null);
-
-			// set up action bar
-			actionBar.setCustomView(actionBarView);
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_USE_LOGO);
-
-			// spinner
-			this.spinner = actionBarView.findViewById(R.id.spinner);
-
-			// set up the dropdown list navigation in the action bar.
-			this.spinner.setOnItemSelectedListener(new OnItemSelectedListener()
-			{
-				@Override
-				public void onItemSelected(final AdapterView<?> parentView, final View selectedItemView, final int position, final long id)
-				{
-					assert MainActivity.this.adapter != null;
-
-					MainActivity.this.provider = (Provider) MainActivity.this.adapter.getItem(position);
-
-					final String name = MainActivity.this.provider.get(Provider.NAME);
-					Settings.putStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME, name);
-					Settings.setActivePrefs(MainActivity.this, MainActivity.this.provider);
-					Log.d(TAG, "Selected provider " + (name == null ? "null" : name));
-
-					updateButton();
-				}
-
-				@Override
-				public void onNothingSelected(final AdapterView<?> parentView)
-				{
-					//
-				}
-			});
-
-			// adapter
-			setAdapter();
-		}
-
-		// fragment
-		if (savedInstanceState == null)
-		{
-			getSupportFragmentManager().beginTransaction().add(R.id.container, new PlaceholderFragment()).commit();
-		}
-	}
-
-	@Override
-	protected void onResume()
-	{
-		super.onResume();
-
-		updateButton();
-	}
-
-	@Override
-	public void onSaveInstanceState(@NonNull final Bundle savedInstanceState)
-	{
-		// serialize the current dropdown position
-		final int position = this.spinner.getSelectedItemPosition();
-		savedInstanceState.putInt(MainActivity.STATE_SELECTED_PROVIDER_ITEM, position);
-
-		// always call the superclass so it can save the view hierarchy state
-		super.onSaveInstanceState(savedInstanceState);
-	}
-
-	@Override
-	public void onRestoreInstanceState(@NonNull final Bundle savedInstanceState)
-	{
-		// always call the superclass so it can restore the view hierarchy
-		super.onRestoreInstanceState(savedInstanceState);
-
-		// restore the previously serialized current dropdown position.
-		if (savedInstanceState.containsKey(MainActivity.STATE_SELECTED_PROVIDER_ITEM))
-		{
-			this.spinner.setSelection(savedInstanceState.getInt(MainActivity.STATE_SELECTED_PROVIDER_ITEM));
-		}
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(@NonNull final Menu menu)
-	{
-		// inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-
-		// search view
-		final MenuItem searchMenuItem = menu.findItem(R.id.action_search);
-		final SearchView searchView = (SearchView) searchMenuItem.getActionView();
-		assert searchView != null;
-		searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
-		{
-			@Override
-			public boolean onQueryTextSubmit(@NonNull final String query)
-			{
-				searchView.clearFocus();
-				searchView.setQuery("", false);
-				tryStartTreebolic(query);
-				return true;
-			}
-
-			@Override
-			public boolean onQueryTextChange(final String newText)
-			{
-				return false;
-			}
-		});
-
-		return true;
-	}
-
-	@Override
-	public void onClick(final View arg0)
-	{
-		tryStartTreebolic((String) null);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(@NonNull final MenuItem item)
-	{
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (R.id.action_treebolic == id)
-		{
-			tryStartTreebolic((String) null);
-			return true;
-		}
-		else if (R.id.action_treebolic_source == id)
-		{
-			requestTreebolicSource();
-			return true;
-		}
-		else if (R.id.action_treebolic_bundle == id)
-		{
-			requestTreebolicBundle();
-			return true;
-		}
-		else if (R.id.action_treebolic_serialized == id)
-		{
-			requestTreebolicSerialized();
-			return true;
-		}
-		else if (R.id.action_treebolic_client == id)
-		{
-			TreebolicClientActivity.initializeSearchPrefs(this);
-			tryStartOneOfTreebolicClients();
-			return true;
-		}
-		else if (R.id.action_treebolic_default_client == id)
-		{
-			TreebolicClientActivity.initializeSearchPrefs(this);
-			tryStartTreebolicDefaultClient();
-			return true;
-		}
-		else if (R.id.action_demo == id)
-		{
-			final Uri archiveUri = Deployer.copyAssetFile(this, Settings.DEMO);
-			this.spinner.setSelection(0);
-			assert archiveUri != null;
-			tryStartTreebolicBundle(archiveUri);
-			return true;
-		}
-		else if (R.id.action_download == id)
-		{
-			final Intent intent = new Intent(this, DownloadActivity.class);
-			intent.putExtra(org.treebolic.download.DownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true);
-			this.activityDownloadResultLauncher.launch(intent);
-			return true;
-		}
-		else if (R.id.action_services == id)
-		{
-			startActivity(new Intent(this, ServicesActivity.class));
-			return true;
-		}
-		else if (R.id.action_providers == id)
-		{
-			startActivity(new Intent(this, ProvidersActivity.class));
-			return true;
-		}
-		else if (R.id.action_settings == id)
-		{
-			tryStartTreebolicSettings();
-			return true;
-		}
-		else if (R.id.action_settings_service == id)
-		{
-			Intent intent = new Intent(this, SettingsActivity.class);
-			intent.putExtra(SettingsActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment.class.getName());
-			startActivity(intent);
-			return true;
-		}
-		else if (R.id.action_help == id)
-		{
-			startActivity(new Intent(this, HelpActivity.class));
-			return true;
-		}
-		else if (R.id.action_tips == id)
-		{
-			Tip.show(getSupportFragmentManager());
-			return true;
-		}
-		else if (R.id.action_about == id)
-		{
-			startActivity(new Intent(this, AboutActivity.class));
-			return true;
-		}
-		else if (R.id.action_others == id)
-		{
-			startActivity(new Intent(this, OthersActivity.class));
-			return true;
-		}
-		else if (R.id.action_donate == id)
-		{
-			startActivity(new Intent(this, DonateActivity.class));
-			return true;
-		}
-		else if (R.id.action_rate == id)
-		{
-			AppRate.rate(this);
-			return true;
-		}
-		else if (R.id.action_finish == id)
-		{
-			finish();
-			return true;
-		}
-		else if (R.id.action_kill == id)
-		{
-			Process.killProcess(Process.myPid());
-			return true;
-		}
-		else if (R.id.action_app_settings == id)
-		{
-			Settings.applicationSettings(this, BuildConfig.APPLICATION_ID);
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-
-	// F R A G M E N T
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	@SuppressWarnings("WeakerAccess")
-	public static class PlaceholderFragment extends Fragment
-	{
-		@Override
-		public View onCreateView(@NonNull final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState)
-		{
-			return inflater.inflate(R.layout.fragment_main, container, false);
-		}
-	}
-
-	// P R E F E R E N C E S   A N D   D A T A
-
-	/**
-	 * Initialize
-	 */
-	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	private void initialize()
-	{
-		// permissions
-		Permissions.check(this);
-
-		// test if initialized
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-		final boolean initialized = sharedPref.getBoolean(Settings.PREF_INITIALIZED, false);
-		if (!initialized)
-		{
-			// default settings
-			Settings.setDefaults(this);
-
-			// flag as initialized
-			sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit();
-
-			// deploy
-			final File dir = Storage.getTreebolicStorage(this);
-			if (dir.isDirectory())
-			{
-				final String[] dirContent = dir.list();
-				if (dirContent == null || dirContent.length == 0)
-				{
-					// deploy
-					Deployer.expandZipAssetFile(this, "tests.zip");
-					// Deployer.expandZipAssetFile(this, "serialized.zip");
-				}
-			}
-		}
-	}
-
-	// folder preference
-
-	private static final String PREF_CURRENTFOLDER = "org.treebolic.folder";
-
-	/**
-	 * Get initial folder
-	 *
-	 * @return initial folder
-	 */
-	@NonNull
-	private String getFolder()
-	{
-		final File folder = FileChooserActivity.getFolder(this, MainActivity.PREF_CURRENTFOLDER);
-		if (folder != null)
-		{
-			return folder.getPath();
-		}
-		return Storage.getTreebolicStorage(this).getAbsolutePath();
-	}
-
-	/**
-	 * Set folder to parent of given uri
-	 *
-	 * @param fileUri uri
-	 */
-	private void setFolder(@NonNull final Uri fileUri)
-	{
-		final String path = fileUri.getPath();
-		if (path != null)
-		{
-			final String parentPath = new File(path).getParent();
-			FileChooserActivity.setFolder(this, MainActivity.PREF_CURRENTFOLDER, parentPath);
-		}
-	}
-
-	// S P I N N E R
-
-	/**
-	 * Set spinner adapter
-	 */
-	private void setAdapter()
-	{
-		// spinner adapter
-		this.adapter = makeAdapter(R.layout.spinner_item_providers, from, to);
-
-		// set spinner adapter
-		this.spinner.setAdapter(this.adapter);
-
-		// saved name
-		final String name = Settings.getStringPref(MainActivity.this, Settings.PREF_PROVIDER_NAME);
-
-		// position
-		if (name != null)
-		{
-			for (int position = 0; position < this.adapter.getCount(); position++)
-			{
-				final Provider provider = (Provider) this.adapter.getItem(position);
-				if (name.equals(provider.get(Provider.NAME)))
-				{
-					this.spinner.setSelection(position);
-				}
-			}
-		}
-	}
-
-	/**
-	 * Make adapter
-	 *
-	 * @param itemLayoutRes item layout
-	 * @param from          from key
-	 * @param to            to res id
-	 * @return base adapter
-	 */
-	@NonNull
-	private SimpleAdapter makeAdapter(@SuppressWarnings("SameParameterValue") @LayoutRes final int itemLayoutRes, @SuppressWarnings("SameParameterValue") final String[] from, @SuppressWarnings("SameParameterValue") final int[] to)
-	{
-		// adapter
-		final SimpleAdapter adapter = Providers.makeAdapter(this, itemLayoutRes, from, to);
-
-		// drop down
-		assert adapter != null;
-		adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown);
-
-		return adapter;
-	}
-
-	// A C T I O N   B U T T O N
-
-	/**
-	 * Update button visibility
-	 */
-	private void updateButton()
-	{
-		final ImageButton button = findViewById(R.id.treebolicButton);
-		button.setOnClickListener(this);
-		final TextView sourceText = findViewById(R.id.treebolicSource);
-		final String source = Settings.getStringPref(this, TreebolicIface.PREF_SOURCE);
-		final boolean qualifies = sourceQualifies(source);
-		button.setVisibility(qualifies ? View.VISIBLE : View.INVISIBLE);
-		sourceText.setVisibility(qualifies ? View.VISIBLE : View.INVISIBLE);
-		if (qualifies)
-		{
-			sourceText.setText(source);
-		}
-	}
-
-	/**
-	 * Whether source qualifies
-	 *
-	 * @return true if source qualifies
-	 */
-	private boolean sourceQualifies(@Nullable final String source)
-	{
-		//noinspection RedundantIfStatement
-		if (source != null && !source.isEmpty())
-		{
-			/*
-			final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
-			final File baseFile = base == null ? null : new File(Uri.parse(base).getPath());
-			final File file = new File(baseFile, source);
-			Log.d(TAG, "file=" + file);
-			return file.exists();
-			 */
-
-			/*
-			final File file = new File(source);
-			Log.d(TAG, "file=" + file);
-			return file.exists() && file.isDirectory();
-			 */
-			return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Choose service
-	 */
-	private void tryStartOneOfTreebolicClients()
-	{
-		final Collection<Service> services = Services.getServices(this);
-
-		final AlertDialog.Builder alert = new AlertDialog.Builder(this);
-		alert.setTitle(R.string.title_services);
-		alert.setMessage(R.string.title_choose_service);
-
-		final RadioGroup input = new RadioGroup(this);
-		if (services != null)
-		{
-			for (Service service : services)
-			{
-				final RadioButton radioButton = new RadioButton(this);
-				radioButton.setText((String) service.get(Service.LABEL));
-				final String drawableRef = (String) service.get(Service.DRAWABLE);
-				if (drawableRef != null)
-				{
-					final String[] fields = drawableRef.split("#");
-					final int index = Integer.parseInt(fields[1]);
-					final Drawable drawable = Services.loadIcon(getPackageManager(), fields[0], index);
-					radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null);
-				}
-				radioButton.setCompoundDrawablePadding(10);
-				radioButton.setTag(service);
-				input.addView(radioButton);
-			}
-		}
-		alert.setView(input);
-		alert.setNegativeButton(R.string.action_cancel, (dialog, whichButton) -> {
-			// canceled.
-		});
-
-		final AlertDialog dialog = alert.create();
-		input.setOnCheckedChangeListener((group, checkedId) -> {
-			dialog.dismiss();
-
-			int childCount = input.getChildCount();
-			for (int i = 0; i < childCount; i++)
-			{
-				final RadioButton radioButton = (RadioButton) input.getChildAt(i);
-				if (radioButton.getId() == input.getCheckedRadioButtonId())
-				{
-					final Service service = (Service) radioButton.getTag();
-					tryStartTreebolicClient(service);
-				}
-			}
-		});
-		dialog.show();
-	}
-
-	// R E Q U E S T S ( S T A R T A C T I V I T Y F O R R E S U L T )
-
-	/**
-	 * Request Treebolic source
-	 */
-	private void requestTreebolicSource()
-	{
-		final String extensions = this.provider.get(Provider.EXTENSIONS);
-
-		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
-		intent.setType(this.provider.get(Provider.MIMETYPE));
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, this.provider.get(Provider.BASE));
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, extensions == null ? null : extensions.split(","));
-		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		this.activityFileResultLauncher.launch(intent); // MainActivity.REQUEST_FILE_CODE
-	}
-
-	/**
-	 * Request Treebolic bundle
-	 */
-	private void requestTreebolicBundle()
-	{
-		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
-		intent.setType("application/zip");
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, this.provider.get(Provider.BASE));
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, new String[]{"zip", "jar"});
-		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		this.activityBundleResultLauncher.launch(intent); // MainActivity.REQUEST_BUNDLE_CODE
-	}
-
-	/**
-	 * Request Treebolic activity
-	 */
-	private void requestTreebolicSerialized()
-	{
-		final Intent intent = new Intent(this, org.treebolic.filechooser.FileChooserActivity.class);
-		intent.setType("application/x-java-serialized-object");
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, getFolder());
-		intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, new String[]{"ser"});
-		intent.addCategory(Intent.CATEGORY_OPENABLE);
-		this.activitySerializedResultLauncher.launch(intent); // MainActivity.REQUEST_SERIALIZED_CODE);
-	}
-
-	// R E Q U E S T S ( S T A R T A C T I V I T Y )
-
-	/**
-	 * Try to start Treebolic activity from source
-	 *
-	 * @param source0 source
-	 */
-	private void tryStartTreebolic(final String source0)
-	{
-		tryStartTreebolicBuiltin(source0);
-	}
-
-	/**
-	 * Try to start Treebolic builtin provider activity
-	 *
-	 * @param source0 source
-	 */
-	private void tryStartTreebolicBuiltin(@Nullable final String source0)
-	{
-		final String provider = this.provider.get(Provider.PROVIDER);
-		if (provider == null || provider.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String source = source0 != null ? source0 : Settings.getStringPref(this, TreebolicIface.PREF_SOURCE);
-		if (source == null || source.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
-		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
-		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
-
-		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, null);
-		Log.d(TAG, "Start treebolic from provider:" + provider + " source:" + source);
-		startActivity(intent);
-	}
-
-	/**
-	 * Try to start Treebolic activity from source file
-	 *
-	 * @param fileUri XML file uri
-	 */
-	private void tryStartTreebolic(@NonNull final Uri fileUri)
-	{
-		if (this.provider == null)
-		{
-			return;
-		}
-		final String source = fileUri.toString();
-		if (source.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String provider = this.provider.get(Provider.PROVIDER);
-		if (provider == null || provider.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
-		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
-		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
-		final String style = this.provider.get(Provider.STYLE);
-
-		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
-		Log.d(TAG, "Start treebolic from uri " + fileUri);
-		startActivity(intent);
-	}
-
-	/**
-	 * Try to start Treebolic activity from zipped bundle file
-	 *
-	 * @param archiveUri archive uri
-	 */
-	private void tryStartTreebolicBundle(@NonNull final Uri archiveUri)
-	{
-		try
-		{
-			final String path = archiveUri.getPath();
-			if (path != null)
-			{
-				// choose bundle entry
-				EntryChooser.choose(this, new File(path), zipEntry -> tryStartTreebolicBundle(archiveUri, zipEntry));
-			}
-		}
-		catch (@NonNull final IOException e)
-		{
-			Log.d(TAG, "Failed to start treebolic from bundle uri " + archiveUri, e);
-		}
-	}
-
-	/**
-	 * Try to start Treebolic activity from zip file
-	 *
-	 * @param archiveUri archive file uri
-	 * @param zipEntry   archive entry
-	 */
-	@SuppressWarnings({"UnnecessaryLocalVariable"})
-	private void tryStartTreebolicBundle(@NonNull final Uri archiveUri, final String zipEntry)
-	{
-		Log.d(TAG, "Start treebolic from bundle uri " + archiveUri + " and zip entry " + zipEntry);
-		final String source = zipEntry; // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry;
-		if (source == null)
-		{
-			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final String provider = this.provider.get(Provider.PROVIDER);
-		if (provider == null || provider.isEmpty())
-		{
-			Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show();
-			return;
-		}
-
-		final String base = "jar:" + archiveUri + "!/";
-		final String imageBase = base;
-		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
-		final String style = this.provider.get(Provider.STYLE);
-
-		final Intent intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, style);
-		Log.d(TAG, "Start treebolic from bundle uri " + archiveUri);
-		startActivity(intent);
-	}
-
-	/**
-	 * Try to start Treebolic activity from zipped serialized model file
-	 *
-	 * @param archiveUri zipped serialized model file
-	 */
-	private void tryStartTreebolicSerialized(@Nullable final Uri archiveUri)
-	{
-		if (archiveUri == null)
-		{
-			Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show();
-			return;
-		}
-		final Intent intent = TreebolicModelActivity.makeTreebolicSerializedIntent(this, archiveUri);
-		Log.d(TAG, "Start treebolic from serialized uri " + archiveUri);
-		startActivity(intent);
-	}
-
-	/**
-	 * Try to start Treebolic default client activity
-	 */
-	private void tryStartTreebolicDefaultClient()
-	{
-		final Intent intent = new Intent();
-		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
-		Log.d(TAG, "Start  treebolic default client");
-		startActivity(intent);
-	}
-
-	/**
-	 * Try to start Treebolic client activity
-	 */
-	private void tryStartTreebolicClient(@NonNull final Service service)
-	{
-		final String argService = (String) service.get(Service.PACKAGE) + '/' + service.get(Service.NAME);
-
-		final Intent intent = new Intent();
-		intent.setClass(this, org.treebolic.TreebolicClientActivity.class);
-		intent.putExtra(TreebolicIface.ARG_SERVICE, argService);
-		Log.d(TAG, "Start treebolic client for " + argService);
-		startActivity(intent);
-	}
-
-	/**
-	 * Try to start Treebolic settings activity
-	 */
-	private void tryStartTreebolicSettings()
-	{
-		final Intent intent = new Intent(this, SettingsActivity.class);
-		if (this.provider != null)
-		{
-			intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, this.provider.get(Provider.PROVIDER));
-		}
-		startActivity(intent);
-	}
+class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
+
+    /**
+     * Selected provider
+     */
+    private var provider: Provider? = null
+
+    /**
+     * Provider spinner
+     */
+    private lateinit var spinner: Spinner
+
+    /**
+     * Provider adapter
+     */
+    private var adapter: SimpleAdapter? = null
+
+    /**
+     * Activity file result launcher
+     */
+    private var activityFileResultLauncher: ActivityResultLauncher<Intent>? = null
+
+    /**
+     * Activity bundle result launcher
+     */
+    private var activityBundleResultLauncher: ActivityResultLauncher<Intent>? = null
+
+    /**
+     * Activity serialized result launcher
+     */
+    private var activitySerializedResultLauncher: ActivityResultLauncher<Intent>? = null
+
+    /**
+     * Activity download result launcher
+     */
+    private var activityDownloadResultLauncher: ActivityResultLauncher<Intent>? = null
+
+    // L I F E C Y C L E
+
+    @SuppressLint("InflateParams")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // rate
+        invoke(this)
+
+        // init preferences
+        initialize()
+
+        // layout
+        setContentView(R.layout.activity_main)
+
+        // activity file result launcher
+        activityFileResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            val success = result.resultCode == RESULT_OK
+            if (success) {
+                // handle selection of input by other activity which returns selected input (source, bundle, serialized)
+                val returnIntent = result.data
+                if (returnIntent != null) {
+                    val fileUri = returnIntent.data
+                    if (fileUri != null) {
+                        Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show()
+                        setFolder(fileUri)
+                        tryStartTreebolic(fileUri)
+                    }
+                }
+            }
+        }
+
+        // activity bundle result launcher
+        activityBundleResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            val success = result.resultCode == RESULT_OK
+            if (success) {
+                // handle selection of input by other activity which returns selected input (source, bundle, serialized)
+                val returnIntent = result.data
+                if (returnIntent != null) {
+                    val fileUri = returnIntent.data
+                    if (fileUri != null) {
+                        Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show()
+                        setFolder(fileUri)
+                        tryStartTreebolicBundle(fileUri)
+                    }
+                }
+            }
+        }
+
+        // activity serialized  result launcher
+        activitySerializedResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            val success = result.resultCode == RESULT_OK
+            if (success) {
+                // handle selection of input by other activity which returns selected input (source, bundle, serialized)
+                val returnIntent = result.data
+                if (returnIntent != null) {
+                    val fileUri = returnIntent.data
+                    if (fileUri != null) {
+                        Toast.makeText(this, fileUri.toString(), Toast.LENGTH_SHORT).show()
+                        setFolder(fileUri)
+                        tryStartTreebolicSerialized(fileUri)
+                    }
+                }
+            }
+        }
+
+        // activity download result launcher
+        activityDownloadResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { }
+
+        // toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        // action bar
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+
+            // custom layout
+            val actionBarView = layoutInflater.inflate(R.layout.actionbar_custom, null)
+
+            // set up action bar
+            actionBar.customView = actionBarView
+            actionBar.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM or ActionBar.DISPLAY_SHOW_TITLE or ActionBar.DISPLAY_USE_LOGO
+
+            // spinner
+            spinner = actionBarView.findViewById(R.id.spinner)
+
+            // set up the dropdown list navigation in the action bar.
+            spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View, position: Int, id: Long) {
+                    checkNotNull(this@MainActivity.adapter)
+
+                    @Suppress("UNCHECKED_CAST")
+                    this@MainActivity.provider = adapter!!.getItem(position) as Provider
+
+                    val name = provider!![Providers.NAME]
+                    Settings.putStringPref(this@MainActivity, Settings.PREF_PROVIDER_NAME, name.toString())
+                    Settings.setActivePrefs(this@MainActivity, provider!!)
+                    Log.d(TAG, "Selected provider " + (name ?: "null"))
+
+                    updateButton()
+                }
+
+                override fun onNothingSelected(parentView: AdapterView<*>?) {
+                    //
+                }
+            }
+
+            // adapter
+            setAdapter()
+        }
+
+        // fragment
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction().add(R.id.container, PlaceholderFragment()).commit()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        updateButton()
+    }
+
+    public override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        // serialize the current dropdown position
+        val position = spinner.selectedItemPosition
+        savedInstanceState.putInt(STATE_SELECTED_PROVIDER_ITEM, position)
+
+        // always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState)
+    }
+
+    public override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        // always call the superclass so it can restore the view hierarchy
+        super.onRestoreInstanceState(savedInstanceState)
+
+        // restore the previously serialized current dropdown position.
+        if (savedInstanceState.containsKey(STATE_SELECTED_PROVIDER_ITEM)) {
+            spinner.setSelection(savedInstanceState.getInt(STATE_SELECTED_PROVIDER_ITEM))
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+
+        // search view
+        val searchMenuItem = menu.findItem(R.id.action_search)
+        val searchView = checkNotNull(searchMenuItem.actionView as SearchView?)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                searchView.clearFocus()
+                searchView.setQuery("", false)
+                tryStartTreebolic(query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                return false
+            }
+        })
+
+        return true
+    }
+
+    override fun onClick(arg0: View) {
+        tryStartTreebolic(null as String?)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id = item.itemId
+        if (R.id.action_treebolic == id) {
+            tryStartTreebolic(null as String?)
+            return true
+        } else if (R.id.action_treebolic_source == id) {
+            requestTreebolicSource()
+            return true
+        } else if (R.id.action_treebolic_bundle == id) {
+            requestTreebolicBundle()
+            return true
+        } else if (R.id.action_treebolic_serialized == id) {
+            requestTreebolicSerialized()
+            return true
+        } else if (R.id.action_treebolic_client == id) {
+            TreebolicClientActivity.initializeSearchPrefs(this)
+            tryStartOneOfTreebolicClients()
+            return true
+        } else if (R.id.action_treebolic_default_client == id) {
+            TreebolicClientActivity.initializeSearchPrefs(this)
+            tryStartTreebolicDefaultClient()
+            return true
+        } else if (R.id.action_demo == id) {
+            val archiveUri = copyAssetFile(this, Settings.DEMO)
+            spinner.setSelection(0)
+            checkNotNull(archiveUri)
+            tryStartTreebolicBundle(archiveUri)
+            return true
+        } else if (R.id.action_download == id) {
+            val intent = Intent(this, DownloadActivity::class.java)
+            intent.putExtra(org.treebolic.download.DownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true)
+            activityDownloadResultLauncher!!.launch(intent)
+            return true
+        } else if (R.id.action_services == id) {
+            startActivity(Intent(this, ServicesActivity::class.java))
+            return true
+        } else if (R.id.action_providers == id) {
+            startActivity(Intent(this, ProvidersActivity::class.java))
+            return true
+        } else if (R.id.action_settings == id) {
+            tryStartTreebolicSettings()
+            return true
+        } else if (R.id.action_settings_service == id) {
+            val intent = Intent(this, SettingsActivity::class.java)
+            intent.putExtra(AppCompatCommonPreferenceActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment::class.java.name)
+            startActivity(intent)
+            return true
+        } else if (R.id.action_help == id) {
+            startActivity(Intent(this, HelpActivity::class.java))
+            return true
+        } else if (R.id.action_tips == id) {
+            show(supportFragmentManager)
+            return true
+        } else if (R.id.action_about == id) {
+            startActivity(Intent(this, AboutActivity::class.java))
+            return true
+        } else if (R.id.action_others == id) {
+            startActivity(Intent(this, OthersActivity::class.java))
+            return true
+        } else if (R.id.action_donate == id) {
+            startActivity(Intent(this, DonateActivity::class.java))
+            return true
+        } else if (R.id.action_rate == id) {
+            rate(this)
+            return true
+        } else if (R.id.action_finish == id) {
+            finish()
+            return true
+        } else if (R.id.action_kill == id) {
+            Process.killProcess(Process.myPid())
+            return true
+        } else if (R.id.action_app_settings == id) {
+            Settings.applicationSettings(this, BuildConfig.APPLICATION_ID)
+            return true
+        } else {
+            return false
+        }
+    }
+
+    // F R A G M E N T
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    class PlaceholderFragment : Fragment() {
+
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            return inflater.inflate(R.layout.fragment_main, container, false)
+        }
+    }
+
+    // P R E F E R E N C E S   A N D   D A T A
+
+    /**
+     * Initialize
+     */
+    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
+    private fun initialize() {
+        // permissions
+        Permissions.check(this)
+
+        // test if initialized
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        val initialized = sharedPref.getBoolean(Settings.PREF_INITIALIZED, false)
+        if (!initialized) {
+            // default settings
+            Settings.setDefaults(this)
+
+            // flag as initialized
+            sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit()
+
+            // deploy
+            val dir = getTreebolicStorage(this)
+            if (dir.isDirectory) {
+                val dirContent = dir.list()
+                if (dirContent == null || dirContent.isEmpty()) {
+                    // deploy
+                    expandZipAssetFile(this, "tests.zip")
+                    // Deployer.expandZipAssetFile(this, "serialized.zip");
+                }
+            }
+        }
+    }
+
+    private val folder: String
+        /**
+         * Get initial folder
+         *
+         * @return initial folder
+         */
+        get() {
+            val folder = getFolder(this, PREF_CURRENTFOLDER)
+            if (folder != null) {
+                return folder.path
+            }
+            return getTreebolicStorage(this).absolutePath
+        }
+
+    /**
+     * Set folder to parent of given uri
+     *
+     * @param fileUri uri
+     */
+    private fun setFolder(fileUri: Uri) {
+        val path = fileUri.path
+        if (path != null) {
+            val parentPath = File(path).parent
+            setFolder(this, PREF_CURRENTFOLDER, parentPath)
+        }
+    }
+
+    // S P I N N E R
+
+    /**
+     * Set spinner adapter
+     */
+    private fun setAdapter() {
+        // spinner adapter
+        adapter = makeAdapter(R.layout.spinner_item_providers, from, to)
+
+        // set spinner adapter
+        spinner.adapter = adapter
+
+        // saved name
+        val name = Settings.getStringPref(this@MainActivity, Settings.PREF_PROVIDER_NAME)
+
+        // position
+        if (name != null) {
+            for (position in 0 until adapter!!.count) {
+                @Suppress("UNCHECKED_CAST") val provider = adapter!!.getItem(position) as Provider
+                if (name == provider[Providers.NAME]) {
+                    spinner.setSelection(position)
+                }
+            }
+        }
+    }
+
+    /**
+     * Make adapter
+     *
+     * @param itemLayoutRes item layout
+     * @param from          from key
+     * @param to            to res id
+     * @return base adapter
+     */
+    private fun makeAdapter(@LayoutRes itemLayoutRes: Int, from: Array<String>, to: IntArray): SimpleAdapter {
+        // adapter
+        val adapter = checkNotNull(Providers.makeAdapter(this, itemLayoutRes, from, to))
+
+        adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown)
+
+        return adapter
+    }
+
+    // A C T I O N   B U T T O N
+
+    /**
+     * Update button visibility
+     */
+    private fun updateButton() {
+        val button = findViewById<ImageButton>(R.id.treebolicButton)
+        button.setOnClickListener(this)
+        val sourceText = findViewById<TextView>(R.id.treebolicSource)
+        val source = Settings.getStringPref(this, TreebolicIface.PREF_SOURCE)
+        val qualifies = sourceQualifies(source)
+        button.visibility = if (qualifies) View.VISIBLE else View.INVISIBLE
+        sourceText.visibility = if (qualifies) View.VISIBLE else View.INVISIBLE
+        if (qualifies) {
+            sourceText.text = source
+        }
+    }
+
+    /**
+     * Whether source qualifies
+     *
+     * @return true if source qualifies
+     */
+    private fun sourceQualifies(source: String?): Boolean {
+        return !source.isNullOrEmpty()
+    }
+
+    /**
+     * Choose service
+     */
+    private fun tryStartOneOfTreebolicClients() {
+        val services = getServices(this)
+
+        val alert = AlertDialog.Builder(this)
+        alert.setTitle(R.string.title_services)
+        alert.setMessage(R.string.title_choose_service)
+
+        val input = RadioGroup(this)
+        if (services != null) {
+            for (service in services) {
+                val radioButton = RadioButton(this)
+                radioButton.text = service[ServiceKeys.LABEL] as String?
+                val drawableRef = service[ServiceKeys.DRAWABLE] as String?
+                if (drawableRef != null) {
+                    val fields = drawableRef.split("#".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                    val index = fields[1].toInt()
+                    val drawable = loadIcon(packageManager, fields[0], index)
+                    radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
+                }
+                radioButton.compoundDrawablePadding = 10
+                radioButton.tag = service
+                input.addView(radioButton)
+            }
+        }
+        alert.setView(input)
+        alert.setNegativeButton(R.string.action_cancel) { _: DialogInterface?, _: Int -> }
+
+        val dialog = alert.create()
+        input.setOnCheckedChangeListener { _: RadioGroup?, _: Int ->
+            dialog.dismiss()
+            val childCount = input.childCount
+            for (i in 0 until childCount) {
+                val radioButton = input.getChildAt(i) as RadioButton
+                if (radioButton.id == input.checkedRadioButtonId) {
+                    @Suppress("UNCHECKED_CAST") val service = radioButton.tag as Service
+                    tryStartTreebolicClient(service)
+                }
+            }
+        }
+        dialog.show()
+    }
+
+    // R E Q U E S T S ( S T A R T A C T I V I T Y F O R R E S U L T )
+
+    /**
+     * Request Treebolic source
+     */
+    private fun requestTreebolicSource() {
+        val extensions = provider!![Providers.EXTENSIONS].toString()
+
+        val intent = Intent(this, FileChooserActivity::class.java)
+        intent.setType(provider!![Providers.MIMETYPE].toString())
+        intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, provider!![Providers.BASE].toString())
+        intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, extensions.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        activityFileResultLauncher!!.launch(intent) // MainActivity.REQUEST_FILE_CODE
+    }
+
+    /**
+     * Request Treebolic bundle
+     */
+    private fun requestTreebolicBundle() {
+        val intent = Intent(this, FileChooserActivity::class.java)
+        intent.setType("application/zip")
+        intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, provider!![Providers.BASE].toString())
+        intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, arrayOf("zip", "jar"))
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        activityBundleResultLauncher!!.launch(intent) // MainActivity.REQUEST_BUNDLE_CODE
+    }
+
+    /**
+     * Request Treebolic activity
+     */
+    private fun requestTreebolicSerialized() {
+        val intent = Intent(this, FileChooserActivity::class.java)
+        intent.setType("application/x-java-serialized-object")
+        intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, folder)
+        intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, arrayOf("ser"))
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        activitySerializedResultLauncher!!.launch(intent) // MainActivity.REQUEST_SERIALIZED_CODE);
+    }
+
+    // R E Q U E S T S ( S T A R T A C T I V I T Y )
+
+    /**
+     * Try to start Treebolic activity from source
+     *
+     * @param source0 source
+     */
+    private fun tryStartTreebolic(source0: String?) {
+        tryStartTreebolicBuiltin(source0)
+    }
+
+    /**
+     * Try to start Treebolic builtin provider activity
+     *
+     * @param source0 source
+     */
+    private fun tryStartTreebolicBuiltin(source0: String?) {
+        val provider = provider!![Providers.PROVIDER].toString()
+        if (provider.isEmpty()) {
+            Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show()
+            return
+        }
+        val source = source0 ?: Settings.getStringPref(this, TreebolicIface.PREF_SOURCE)
+        if (source.isNullOrEmpty()) {
+            Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show()
+            return
+        }
+        val base = Settings.getStringPref(this, TreebolicIface.PREF_BASE)
+        val imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE)
+        val settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS)
+
+        val intent = TreebolicActivity.makeTreebolicIntent(this, provider, source, base, imageBase, settings, null)
+        Log.d(TAG, "Start treebolic from provider:$provider source:$source")
+        startActivity(intent)
+    }
+
+    /**
+     * Try to start Treebolic activity from source file
+     *
+     * @param fileUri XML file uri
+     */
+    private fun tryStartTreebolic(fileUri: Uri) {
+        if (provider == null) {
+            return
+        }
+        val source = fileUri.toString()
+        if (source.isEmpty()) {
+            Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show()
+            return
+        }
+        val provider1 = provider!![Providers.PROVIDER].toString()
+        if (provider1.isEmpty()) {
+            Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show()
+            return
+        }
+        val base = Settings.getStringPref(this, TreebolicIface.PREF_BASE)
+        val imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE)
+        val settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS)
+        val style = provider!![Providers.STYLE].toString()
+
+        val intent = TreebolicActivity.makeTreebolicIntent(this, provider1, source, base, imageBase, settings, style)
+        Log.d(TAG, "Start treebolic from uri $fileUri")
+        startActivity(intent)
+    }
+
+    /**
+     * Try to start Treebolic activity from zipped bundle file
+     *
+     * @param archiveUri archive uri
+     */
+    private fun tryStartTreebolicBundle(archiveUri: Uri) {
+        try {
+            val path = archiveUri.path
+            if (path != null) {
+                // choose bundle entry
+                choose(this, File(path)) { zipEntry -> tryStartTreebolicBundle(archiveUri, zipEntry) }
+            }
+        } catch (e: IOException) {
+            Log.d(TAG, "Failed to start treebolic from bundle uri $archiveUri", e)
+        }
+    }
+
+    /**
+     * Try to start Treebolic activity from zip file
+     *
+     * @param archiveUri archive file uri
+     * @param zipEntry   archive entry
+     */
+    private fun tryStartTreebolicBundle(archiveUri: Uri, zipEntry: String) {
+        Log.d(TAG, "Start treebolic from bundle uri $archiveUri and zip entry $zipEntry")
+        val source = zipEntry // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry;
+        val provider1 = provider!![Providers.PROVIDER].toString()
+        if (provider1.isEmpty()) {
+            Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val base = "jar:$archiveUri!/"
+        val settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS)
+        val style = provider!![Providers.STYLE].toString()
+
+        val intent = TreebolicActivity.makeTreebolicIntent(this, provider1, source, base, base, settings, style)
+        Log.d(TAG, "Start treebolic from bundle uri $archiveUri")
+        startActivity(intent)
+    }
+
+    /**
+     * Try to start Treebolic activity from zipped serialized model file
+     *
+     * @param archiveUri zipped serialized model file
+     */
+    private fun tryStartTreebolicSerialized(archiveUri: Uri?) {
+        if (archiveUri == null) {
+            Toast.makeText(this, R.string.error_null_source, Toast.LENGTH_SHORT).show()
+            return
+        }
+        val intent = TreebolicModelActivity.makeTreebolicSerializedIntent(this, archiveUri)
+        Log.d(TAG, "Start treebolic from serialized uri $archiveUri")
+        startActivity(intent)
+    }
+
+    /**
+     * Try to start Treebolic default client activity
+     */
+    private fun tryStartTreebolicDefaultClient() {
+        val intent = Intent()
+        intent.setClass(this, TreebolicClientActivity::class.java)
+        Log.d(TAG, "Start  treebolic default client")
+        startActivity(intent)
+    }
+
+    /**
+     * Try to start Treebolic client activity
+     */
+    private fun tryStartTreebolicClient(service: Service) {
+        val argService = service[ServiceKeys.PACKAGE] as String? + '/' + service[ServiceKeys.NAME]
+
+        val intent = Intent()
+        intent.setClass(this, TreebolicClientActivity::class.java)
+        intent.putExtra(TreebolicIface.ARG_SERVICE, argService)
+        Log.d(TAG, "Start treebolic client for $argService")
+        startActivity(intent)
+    }
+
+    /**
+     * Try to start Treebolic settings activity
+     */
+    private fun tryStartTreebolicSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        if (provider != null) {
+            intent.putExtra(SettingsActivity.ARG_PROVIDER_SELECTED, provider!![Providers.PROVIDER].toString())
+        }
+        startActivity(intent)
+    }
+
+    companion object {
+
+        private const val TAG = "MainA"
+
+        /**
+         * State
+         */
+        private const val STATE_SELECTED_PROVIDER_ITEM = "org.treebolic.provider.selected"
+
+        /**
+         * Adapter - Key
+         */
+        private val from = arrayOf(Providers.ICON, Providers.NAME)
+
+        /**
+         * Adapter - ... mapped to res id
+         */
+        private val to = intArrayOf(R.id.icon, R.id.provider)
+
+        /** Folder preference key*/
+        private const val PREF_CURRENTFOLDER = "org.treebolic.folder"
+    }
 }

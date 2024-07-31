@@ -1,299 +1,272 @@
 /*
  * Copyright (c) 2023. Bernard Bou
  */
+package org.treebolic
 
-package org.treebolic;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.net.Uri;
-import android.os.Build;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Collection;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.preference.PreferenceManager;
+import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
+import android.provider.Settings
+import androidx.preference.PreferenceManager
+import java.net.MalformedURLException
+import java.net.URL
 
 /**
  * Settings
  *
  * @author Bernard Bou
  */
-@SuppressWarnings("WeakerAccess")
-public class Settings
-{
-	/**
-	 * Demo
-	 */
-	public static final String DEMO = "demo.zip";
+object Settings {
 
-	/**
-	 * Initialized preference name
-	 */
-	public static final String PREF_INITIALIZED = "pref_initialized_" + BuildConfig.VERSION_NAME;
+    /**
+     * Demo
+     */
+    const val DEMO: String = "demo.zip"
 
-	/**
-	 * First preference name
-	 */
-	public static final String PREF_FIRSTRUN = "pref_first_run";
+    /**
+     * Initialized preference name
+     */
+    const val PREF_INITIALIZED: String = "pref_initialized_" + BuildConfig.VERSION_NAME
 
-	/**
-	 * Provider preference name
-	 */
-	public static final String PREF_PROVIDER = "pref_provider";
+    /**
+     * First preference name
+     */
+    const val PREF_FIRSTRUN: String = "pref_first_run"
 
-	/**
-	 * Provider icon preference name
-	 */
-	public static final String PREF_PROVIDER_ICON = "pref_provider_icon";
+    /**
+     * Provider preference name
+     */
+    const val PREF_PROVIDER: String = "pref_provider"
 
-	/**
-	 * Active provider preference name
-	 */
-	public static final String PREF_PROVIDER_NAME = "pref_provider_name";
+    /**
+     * Provider icon preference name
+     */
+    const val PREF_PROVIDER_ICON: String = "pref_provider_icon"
 
-	/**
-	 * Service preference name
-	 */
-	public static final String PREF_SERVICE = "pref_service";
+    /**
+     * Active provider preference name
+     */
+    const val PREF_PROVIDER_NAME: String = "pref_provider_name"
 
-	/**
-	 * Service source preference
-	 */
-	public static final String PREF_SERVICE_SOURCE = "pref_service_source";
+    /**
+     * Service preference name
+     */
+    const val PREF_SERVICE: String = "pref_service"
 
-	/**
-	 * Preference file prefix
-	 */
-	public static final String PREF_FILE_PREFIX = "org.treebolic_preferences_";
+    /**
+     * Service source preference
+     */
+    const val PREF_SERVICE_SOURCE: String = "pref_service_source"
 
-	/**
-	 * Download base preference name
-	 */
-	public static final String PREF_DOWNLOAD_BASE = "pref_download_base";
+    /**
+     * Preference file prefix
+     */
+    const val PREF_FILE_PREFIX: String = "org.treebolic_preferences_"
 
-	/**
-	 * Download file preference name
-	 */
-	public static final String PREF_DOWNLOAD_FILE = "pref_download_file";
+    /**
+     * Download base preference name
+     */
+    const val PREF_DOWNLOAD_BASE: String = "pref_download_base"
 
-	/**
-	 * Default CSS
-	 */
-	public static final String STYLE_DEFAULT = ".content { }\n" + //
-			".link {color: #FFA500;font-size: small;}\n" + //
-			".linking {color: #FFA500; font-size: small; }" + //
-			".mount {color: #CD5C5C; font-size: small;}" + //
-			".mounting {color: #CD5C5C; font-size: small; }" + //
-			".searching {color: #FF7F50; font-size: small; }";
+    /**
+     * Download file preference name
+     */
+    const val PREF_DOWNLOAD_FILE: String = "pref_download_file"
 
-	/**
-	 * Clear provider SharedPreferences
-	 *
-	 * @param context context
-	 */
-	@SuppressLint("ApplySharedPref")
-	public static void clearProviderSettings(@NonNull final Context context)
-	{
-		// providers
-		final Collection<Provider> providers = Providers.getProviders(context);
+    /**
+     * Default CSS
+     */
+    const val STYLE_DEFAULT: String = ".content { }\n" +  //
+            ".link {color: #FFA500;font-size: small;}\n" +  //
+            ".linking {color: #FFA500; font-size: small; }" +  //
+            ".mount {color: #CD5C5C; font-size: small;}" +  //
+            ".mounting {color: #CD5C5C; font-size: small; }" +  //
+            ".searching {color: #FF7F50; font-size: small; }"
 
-		// clear prefs for providers
-		if (providers != null)
-		{
-			for (Provider provider : providers)
-			{
-				// provider shared preferences
-				final SharedPreferences providerSharedPrefs = context.getSharedPreferences(provider.getSharedPreferencesName(), Context.MODE_PRIVATE);
-				providerSharedPrefs.edit().clear().commit();
-			}
-		}
-	}
+    /**
+     * Clear provider SharedPreferences
+     *
+     * @param context context
+     */
+    @SuppressLint("ApplySharedPref")
+    fun clearProviderSettings(context: Context) {
+        // providers
+        val providers = Providers.getProviders(context)
 
-	/**
-	 * Set providers default settings from provider data
-	 *
-	 * @param context context
-	 */
-	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void setDefaults(@NonNull final Context context)
-	{
-		// providers
-		final Collection<Provider> providers = Providers.getProviders(context);
+        // clear prefs for providers
+        if (providers != null) {
+            for (provider in providers) {
+                // provider shared preferences
+                val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
+                providerSharedPrefs.edit().clear().commit()
+            }
+        }
+    }
 
-		// create prefs for built-in providers
-		if (providers != null)
-		{
-			for (Provider provider : providers)
-			{
-				// provider shared preferences
-				final SharedPreferences providerSharedPrefs = context.getSharedPreferences(provider.getSharedPreferencesName(), Context.MODE_PRIVATE);
+    /**
+     * Set providers default settings from provider data
+     *
+     * @param context context
+     */
+    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
+    fun setDefaults(context: Context) {
+        // providers
+        val providers = Providers.getProviders(context)
 
-				// commit non existent values
-				final Editor editor = providerSharedPrefs.edit();
-				editor.clear();
+        // create prefs for built-in providers
+        if (providers != null) {
+            for (provider in providers) {
+                // provider shared preferences
+                val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
 
-				final String[] keys = new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER};
-				final String[] providerKeys = new String[]{Provider.SOURCE, Provider.BASE, Provider.IMAGEBASE, Provider.SETTINGS, Provider.PROVIDER};
-				for (int j = 0; j < keys.length; j++)
-				{
-					final String key = keys[j];
-					final String value = provider.get(providerKeys[j]);
-					editor.putString(key, value);
-				}
+                // commit non existent values
+                val editor = providerSharedPrefs.edit()
+                editor.clear()
 
-				editor.commit();
-			}
-		}
-	}
+                val keys = arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, PREF_PROVIDER)
+                val providerKeys = arrayOf(Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS, Providers.PROVIDER)
+                for (j in keys.indices) {
+                    val key = keys[j]
+                    val value = provider[providerKeys[j]]
+                    editor.putString(key, value.toString())
+                }
 
-	/**
-	 * Set active provider settings (copied into default preferences)
-	 *
-	 * @param context  context
-	 * @param provider active provider
-	 */
-	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void setActivePrefs(@NonNull final Context context, @NonNull final Provider provider)
-	{
-		final SharedPreferences defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-		final Editor editor = defaultSharedPrefs.edit();
-		SharedPreferences providerSharedPrefs = context.getSharedPreferences(provider.getSharedPreferencesName(), Context.MODE_PRIVATE);
-		final String providerClass = providerSharedPrefs.getString(Settings.PREF_PROVIDER, null);
-		editor.putString(Settings.PREF_PROVIDER, providerClass);
+                editor.commit()
+            }
+        }
+    }
 
-		final String[] keys = new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS};
-		for (final String key : keys)
-		{
-			final String value = providerSharedPrefs.getString(key, null);
-			editor.putString(key, value);
-		}
-		editor.commit();
-	}
+    /**
+     * Set active provider settings (copied into default preferences)
+     *
+     * @param context  context
+     * @param provider active provider
+     */
+    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
+    fun setActivePrefs(context: Context, provider: Provider) {
+        val defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
+        val editor = defaultSharedPrefs.edit()
+        val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
+        val providerClass = providerSharedPrefs.getString(PREF_PROVIDER, null)
+        editor.putString(PREF_PROVIDER, providerClass)
 
-	/**
-	 * Put string preference
-	 *
-	 * @param context context
-	 * @param key     key
-	 * @param value   value
-	 */
-	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void putStringPref(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final String key, final String value)
-	{
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		sharedPref.edit().putString(key, value).commit();
-	}
+        val keys = arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS)
+        for (key in keys) {
+            val value = providerSharedPrefs.getString(key, null)
+            editor.putString(key, value)
+        }
+        editor.commit()
+    }
 
-	/**
-	 * Put integer preference
-	 *
-	 * @param context context
-	 * @param key     key
-	 * @param value   value
-	 */
-	@SuppressLint({"CommitPrefEdits", "ApplySharedPref"})
-	static public void putIntPref(@NonNull final Context context, final String key, final int value)
-	{
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		sharedPref.edit().putInt(key, value).commit();
-	}
+    /**
+     * Put string preference
+     *
+     * @param context context
+     * @param key     key
+     * @param value   value
+     */
+    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
+    fun putStringPref(context: Context, key: String?, value: String?) {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        sharedPref.edit().putString(key, value).commit()
+    }
 
-	/**
-	 * Get string preference
-	 *
-	 * @param context context
-	 * @param key     key
-	 * @return value
-	 */
-	@Nullable
-	static public String getStringPref(@NonNull final Context context, final String key)
-	{
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		return sharedPref.getString(key, null);
-	}
+    /**
+     * Put integer preference
+     *
+     * @param context context
+     * @param key     key
+     * @param value   value
+     */
+    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
+    fun putIntPref(context: Context, key: String?, value: Int) {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        sharedPref.edit().putInt(key, value).commit()
+    }
 
-	/**
-	 * Get int preference
-	 *
-	 * @param context context
-	 * @param key     key
-	 * @return value
-	 */
-	static public int getIntPref(@NonNull final Context context, final String key)
-	{
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		return sharedPref.getInt(key, 0);
-	}
+    /**
+     * Get string preference
+     *
+     * @param context context
+     * @param key     key
+     * @return value
+     */
+    @JvmStatic
+    fun getStringPref(context: Context, key: String?): String? {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        return sharedPref.getString(key, null)
+    }
 
-	/**
-	 * Get preference value as url
-	 *
-	 * @param context context
-	 * @param key     key
-	 * @return preference value as
-	 */
-	@Nullable
-	static public URL getURLPref(@NonNull final Context context, final String key)
-	{
-		final SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-		final String result = sharedPref.getString(key, null);
-		return Settings.makeURL(result);
-	}
+    /**
+     * Get int preference
+     *
+     * @param context context
+     * @param key     key
+     * @return value
+     */
+    fun getIntPref(context: Context, key: String?): Int {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        return sharedPref.getInt(key, 0)
+    }
 
-	// U T I L S
+    /**
+     * Get preference value as url
+     *
+     * @param context context
+     * @param key     key
+     * @return preference value as
+     */
+    @JvmStatic
+    fun getURLPref(context: Context, key: String?): URL? {
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        val result = sharedPref.getString(key, null)
+        return makeURL(result)
+    }
 
-	/**
-	 * Make URL from string
-	 *
-	 * @param url url string
-	 * @return url
-	 */
-	@Nullable
-	static public URL makeURL(final String url)
-	{
-		try
-		{
-			return new URL(url);
-		}
-		catch (@NonNull final MalformedURLException ignored)
-		{
-			return null;
-		}
-	}
+    // U T I L S
 
-	/**
-	 * Application settings
-	 *
-	 * @param context context
-	 * @param pkgName package name
-	 */
-	static public void applicationSettings(@NonNull final Context context, @SuppressWarnings("SameParameterValue") final String pkgName)
-	{
-		final int apiLevel = Build.VERSION.SDK_INT;
-		final Intent intent = new Intent();
+    /**
+     * Make URL from string
+     *
+     * @param url url string
+     * @return url
+     */
+    private fun makeURL(url: String?): URL? {
+        return try {
+            URL(url)
+        } catch (ignored: MalformedURLException) {
+            null
+        }
+    }
 
-		if (apiLevel >= 9)
-		{
-			intent.setAction(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-			intent.setData(Uri.parse("package:" + pkgName));
-		}
-		else
-		{
-			final String appPkgName = apiLevel == 8 ? "pkg" : "com.android.settings.ApplicationPkgName";
+    /**
+     * Application settings
+     *
+     * @param context context
+     * @param pkgName package name
+     */
+    fun applicationSettings(context: Context, pkgName: String) {
+        val apiLevel = Build.VERSION.SDK_INT
+        val intent = Intent()
 
-			intent.setAction(Intent.ACTION_VIEW);
-			intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
-			intent.putExtra(appPkgName, pkgName);
-		}
+        if (apiLevel >= 9) {
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            intent.setData(Uri.parse("package:$pkgName"))
+        } else {
+            val appPkgName = if (apiLevel == 8) "pkg" else "com.android.settings.ApplicationPkgName"
 
-		// start activity
-		context.startActivity(intent);
-	}
+            intent.setAction(Intent.ACTION_VIEW)
+            intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails")
+            intent.putExtra(appPkgName, pkgName)
+        }
+
+        // start activity
+        context.startActivity(intent)
+    }
+
+    fun getSharedPreferencesName(provider: Provider): String {
+        return PREF_FILE_PREFIX + provider[Providers.PROVIDER]
+    }
 }

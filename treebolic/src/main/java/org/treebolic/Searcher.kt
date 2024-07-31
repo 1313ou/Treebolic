@@ -1,108 +1,81 @@
 /*
  * Copyright (c) 2023. Bernard Bou
  */
+package org.treebolic
 
-package org.treebolic;
+import android.content.Context
+import android.util.Log
+import androidx.preference.PreferenceManager
+import org.treebolic.search.SearchSettings
+import treebolic.IWidget
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.util.Log;
+/**
+ * Constructor
+ *
+ * @param context context
+ * @param widget  widget
+ */
+class Searcher(
+    private val context: Context,
+    private val widget: IWidget
+) {
 
-import org.treebolic.search.SearchSettings;
+    /**
+     * Search pending flag
+     */
+    private var searchPending = false
 
-import androidx.annotation.Nullable;
-import androidx.preference.PreferenceManager;
-import treebolic.IWidget;
+    /**
+     * Search
+     */
+    private fun search(target: String): Boolean {
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.context)
 
-@SuppressWarnings("WeakerAccess")
-public class Searcher
-{
-	private static final String TAG = "Searcher";
+        val scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL) // label, content, link, id
+        val mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_STARTSWITH) // equals, startswith, includes
 
-	static private final String CMD_SEARCH = "SEARCH";
+        Log.d(TAG, "Search for $scope $mode \"$target\"")
+        if ("source" == scope) {
+            return false
+        }
 
-	static private final String CMD_RESET = "RESET";
+        if (!this.searchPending) {
+            runSearch(scope, mode, target)
+        } else {
+            continueSearch()
+        }
+        return true
+    }
 
-	static private final String CMD_CONTINUE = "CONTINUE";
+    private fun runSearch(scope: String?, mode: String?, target: String?) {
+        if (target.isNullOrEmpty()) {
+            return
+        }
 
-	/**
-	 * Search pending flag
-	 */
-	private boolean searchPending;
+        Log.d(TAG, "Search run$scope $mode $target")
+        this.searchPending = true
+        widget.search(CMD_SEARCH, scope, mode, target)
+    }
 
-	/**
-	 * Context
-	 */
-	private final Context context;
+    private fun continueSearch() {
+        Log.d(TAG, "Search continue")
+        widget.search(CMD_CONTINUE)
+    }
 
-	/**
-	 * Widget
-	 */
-	private final IWidget widget;
+    private fun resetSearch() {
+        Log.d(TAG, "Search reset")
+        this.searchPending = false
+        widget.search(CMD_RESET)
+    }
 
-	/**
-	 * Constructor
-	 *
-	 * @param context0 context
-	 * @param widget0  widget
-	 */
-	public Searcher(final Context context0, final IWidget widget0)
-	{
-		this.searchPending = false;
-		this.context = context0;
-		this.widget = widget0;
-	}
+    companion object {
 
-	protected boolean search(final String target)
-	{
-		final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.context);
+        private const val TAG = "Searcher"
 
-		final String scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL); // label, content, link, id
-		final String mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_STARTSWITH); // equals, startswith, includes
+        private const val CMD_SEARCH = "SEARCH"
 
-		Log.d(TAG, "Search for " + scope + ' ' + mode + ' ' + '"' + target + '"');
-		if ("source".equals(scope))
-		{
-			return false;
-		}
+        private const val CMD_RESET = "RESET"
 
-		if (!this.searchPending)
-		{
-			runSearch(scope, mode, target);
-		}
-		else
-		{
-			continueSearch();
-		}
-		return true;
-	}
-
-	// SEARCH INTERFACE
-
-	@SuppressWarnings("WeakerAccess")
-	protected void runSearch(String scope, String mode, @Nullable String target)
-	{
-		if (target == null || target.isEmpty())
-		{
-			return;
-		}
-
-		Log.d(TAG, "Search run" + scope + ' ' + mode + ' ' + target);
-		this.searchPending = true;
-		this.widget.search(CMD_SEARCH, scope, mode, target);
-	}
-
-	@SuppressWarnings("WeakerAccess")
-	protected void continueSearch()
-	{
-		Log.d(TAG, "Search continue");
-		this.widget.search(CMD_CONTINUE);
-	}
-
-	protected void resetSearch()
-	{
-		Log.d(TAG, "Search reset");
-		this.searchPending = false;
-		this.widget.search(CMD_RESET);
-	}
+        private const val CMD_CONTINUE = "CONTINUE"
+    }
 }

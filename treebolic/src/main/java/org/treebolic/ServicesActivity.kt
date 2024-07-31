@@ -1,52 +1,49 @@
 /*
  * Copyright (c) 2023. Bernard Bou
  */
+package org.treebolic
 
-package org.treebolic;
-
-import android.os.Bundle;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
+import android.os.Bundle
+import android.widget.BaseAdapter
+import android.widget.ListView
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.widget.Toolbar
+import org.treebolic.Services.makeAdapter
 
 /**
  * Activity listing services
  *
  * @author Bernard Bou
  */
-public class ServicesActivity extends AppCompatCommonActivity
-{
-	// Adapter Key - Res id mapping
-	private final String[] from = new String[]{Service.DRAWABLE, Service.NAME, Service.PACKAGE, Service.PROCESS, Service.ENABLED, Service.EXPORTED, Service.PERMISSION, Service.FLAGS, Service.LABEL, Service.DESCRIPTION};
-	private final int[] to = new int[]{R.id.icon, R.id.service, R.id.pkg, R.id.process, R.id.enabled, R.id.exported, R.id.permission, R.id.flags, R.id.label, R.id.description};
+class ServicesActivity : AppCompatCommonActivity() {
 
-	@Override
-	protected void onCreate(final Bundle savedInstanceState)
-	{
-		super.onCreate(savedInstanceState);
+    // adapter
+    // key-resid mapping
+    private val from = arrayOf(ServiceKeys.DRAWABLE, ServiceKeys.NAME, ServiceKeys.PACKAGE, ServiceKeys.PROCESS, ServiceKeys.ENABLED, ServiceKeys.EXPORTED, ServiceKeys.PERMISSION, ServiceKeys.FLAGS, ServiceKeys.LABEL, ServiceKeys.DESCRIPTION)
+    private val to = intArrayOf(R.id.icon, R.id.service, R.id.pkg, R.id.process, R.id.enabled, R.id.exported, R.id.permission, R.id.flags, R.id.label, R.id.description)
 
-		// layout
-		setContentView(R.layout.activity_services);
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-		// toolbar
-		final Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+        // layout
+        setContentView(R.layout.activity_services)
 
-		// set up the action bar
-		final ActionBar actionBar = getSupportActionBar();
-		if (actionBar != null)
-		{
-			actionBar.setDisplayOptions(ActionBar.DISPLAY_USE_LOGO | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_HOME | ActionBar.DISPLAY_HOME_AS_UP);
-		}
+        // toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
-		// adapter
-		final BaseAdapter adapter = Services.makeAdapter(this, R.layout.item_services, from, to);
-		final ListView listView = findViewById(R.id.services);
-		listView.setAdapter(adapter);
+        // set up the action bar
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.displayOptions = ActionBar.DISPLAY_USE_LOGO or ActionBar.DISPLAY_SHOW_TITLE or ActionBar.DISPLAY_SHOW_HOME or ActionBar.DISPLAY_HOME_AS_UP
+        }
 
-		// view
-		//listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider));
-	}
+        // adapter
+        val adapter: BaseAdapter? = makeAdapter(this, R.layout.item_services, from, to)
+        val listView = findViewById<ListView>(R.id.services)
+        listView.adapter = adapter
+
+        // view
+        //listView.setDivider(AppCompatResources.getDrawable(this, R.drawable.divider))
+    }
 }

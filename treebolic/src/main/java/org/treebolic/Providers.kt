@@ -1,230 +1,240 @@
 /*
  * Copyright (c) 2023. Bernard Bou
  */
+package org.treebolic
 
-package org.treebolic;
+import android.content.Context
+import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
+import android.net.Uri
+import android.util.Log
+import android.widget.ImageView
+import android.widget.SimpleAdapter
+import androidx.annotation.LayoutRes
+import org.treebolic.storage.Storage.getTreebolicStorage
+import java.io.IOException
+import java.util.Properties
+import java.util.TreeMap
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.util.Log;
-import android.widget.ImageView;
-import android.widget.SimpleAdapter;
+typealias Provider = HashMap<String, Any?>
 
-import org.treebolic.storage.Storage;
+object Providers {
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Properties;
-import java.util.TreeMap;
+    private const val TAG = "Providers"
 
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+    const val NAME: String = "name"
+    const val PROVIDER: String = "provider"
+    const val DESCRIPTION: String = "description"
+    const val ICON: String = "icon"
+    const val MIMETYPE: String = "mimetype"
+    const val URLSCHEME: String = "schema"
+    const val EXTENSIONS: String = "extensions"
 
-@SuppressWarnings("WeakerAccess")
-public class Providers
-{
-	/**
-	 * Log tag
-	 */
-	private static final String TAG = "Providers";
+    const val PROCESS: String = "process"
+    const val PACKAGE: String = "package"
 
-	/**
-	 * Data
-	 */
-	@Nullable
-	static private Map<String, Provider> providersByClass = null;
+    const val SOURCE: String = "source"
+    const val BASE: String = "base"
+    const val IMAGEBASE: String = "imagebase"
+    const val SETTINGS: String = "settings"
 
-	/**
-	 * Get provider from class name key
-	 *
-	 * @param key class name key
-	 * @return provider
-	 */
-	@Nullable
-	public static Provider get(@NonNull final String key)
-	{
-		assert providersByClass != null;
-		return providersByClass.get(key);
-	}
+    const val STYLE: String = "style"
 
-	/**
-	 * Get (possibly cached) map of providers
-	 *
-	 * @param context context
-	 * @return map of providers
-	 */
-	@Nullable
-	static public Map<String, Provider> getProvidersByClass(@NonNull final Context context)
-	{
-		if (providersByClass != null)
-		{
-			return providersByClass;
-		}
+    /**
+     * Make provider
+     *
+     * @param props properties
+     * @param base base
+     * @param imageBase image
+     * @param process process
+     * @return provider
+     */
+    private fun make(props: Properties, base: String?, imageBase: String?, process: String?): Provider {
+        val p = Provider()
 
-		try
-		{
-			providersByClass = buildProvidersFromManifests(context);
-			return providersByClass;
-		}
-		catch (@NonNull final Exception e)
-		{
-			Log.d(TAG, "When scanning for providers: " + e.getMessage());
-			return null;
-		}
-	}
+        // structural
+        val name = props.getProperty(NAME)
+        val provider = props.getProperty(PROVIDER)
+        val description = props.getProperty(DESCRIPTION)
+        val mimeType = props.getProperty(MIMETYPE)
+        val icon = props.getProperty(ICON)
+        val scheme = props.getProperty(URLSCHEME)
+        val extensions = props.getProperty(EXTENSIONS)
+        p[PROVIDER] = provider
+        p[NAME] = name
+        p[DESCRIPTION] = description
+        p[ICON] = icon
+        p[MIMETYPE] = mimeType
+        p[EXTENSIONS] = extensions
+        p[URLSCHEME] = scheme
+        p[PROCESS] = process
+        p[PACKAGE] = BuildConfig.APPLICATION_ID
 
-	/**
-	 * Get (possibly cached) list of providers
-	 *
-	 * @param context context
-	 * @return list of providers
-	 */
-	@Nullable
-	static public Collection<Provider> getProviders(@NonNull final Context context)
-	{
-		final Map<String, Provider> providersMap = Providers.getProvidersByClass(context);
-		return providersMap == null ? null : providersMap.values();
-	}
+        // data
+        val source = props.getProperty(SOURCE)
+        val settings = props.getProperty(SETTINGS)
+        p[SOURCE] = source
+        p[SETTINGS] = settings
+        p[BASE] = base
+        p[IMAGEBASE] = imageBase
+        return p
+    }
 
-	// F R O M   M A N I F E S T S
+    /**
+     * Data
+     */
+    private var providersByClass: Map<String, Provider>? = null
 
-	private static final String ASSET_DIR = "providers";
-	private static final String ASSET_IMAGE_DIR = "providers_images";
+    /**
+     * Get provider from class name key
+     *
+     * @param key class name key
+     * @return provider
+     */
+    fun get(key: String): Provider? {
+        checkNotNull(providersByClass)
+        return providersByClass!![key]
+    }
 
-	public static @Nullable Map<String, Provider> buildProvidersFromManifests(@NonNull final Context context)
-	{
-		Map<String, Provider> result = null;
+    /**
+     * Get (possibly cached) map of providers
+     *
+     * @param context context
+     * @return map of providers
+     */
+    private fun getProvidersByClass(context: Context): Map<String, Provider>? {
+        if (providersByClass != null) {
+            return providersByClass
+        }
+        try {
+            providersByClass = buildProvidersFromManifests(context)
+            return providersByClass
+        } catch (e: Exception) {
+            Log.d(TAG, "When scanning for providers: " + e.message)
+            return null
+        }
+    }
 
-		// base and image base in external storage
-		final File treebolicStorage = Storage.getTreebolicStorage(context);
-		final String base = Uri.fromFile(treebolicStorage).toString() + '/';
+    /**
+     * Get (possibly cached) list of providers
+     *
+     * @param context context
+     * @return list of providers
+     */
+    fun getProviders(context: Context): Collection<Provider>? {
+        val providersMap = getProvidersByClass(context)
+        return providersMap?.values
+    }
 
-		try
-		{
-			final String process = Utils.getProcessName(context);
+    // F R O M   M A N I F E S T S
 
-			final AssetManager assetManager = context.getAssets();
-			String[] manifests = assetManager.list(ASSET_DIR);
-			assert manifests != null;
-			for (String manifest : manifests)
-			{
-				Log.i(TAG, "Reading " + manifest);
-				try (InputStream is = assetManager.open(ASSET_DIR + '/' + manifest))
-				{
-					final Properties props = new Properties();
-					props.load(is);
-					final Provider provider = new Provider(props, base, base, process);
+    private const val ASSET_DIR = "providers"
 
-					// record
-					if (result == null)
-					{
-						result = new TreeMap<>(Comparator.reverseOrder());
-					}
-					String key = provider.get(Provider.PROVIDER);
-					assert key != null;
-					result.put(key, provider);
-				}
-				catch (IOException e)
-				{
-					Log.e(TAG, "Error while reading " + manifest, e);
-				}
-			}
-			return result;
-		}
-		catch (IOException e)
-		{
-			Log.e(TAG, "Error while listing assets", e);
-		}
-		catch (PackageManager.NameNotFoundException e)
-		{
-			Log.e(TAG, "Error while getting process name", e);
-		}
-		return null;
-	}
+    private const val ASSET_IMAGE_DIR = "providers_images"
 
-	// D R A W A B L E
+    private fun buildProvidersFromManifests(context: Context): Map<String, Provider>? {
+        var result: MutableMap<String, Provider>? = null
 
-	public static @Nullable Drawable readAssetDrawable(@NonNull final Context context, @NonNull final String imageFile)
-	{
-		try (InputStream is = context.getAssets().open(ASSET_IMAGE_DIR + '/' + imageFile))
-		{
-			//	DisplayMetrics dm = context.getResources().getDisplayMetrics();
-			//	TypedValue value = new TypedValue();
-			//	value.density = dm.densityDpi;
+        // base and image base in external storage
+        val treebolicStorage = getTreebolicStorage(context)
+        val base = Uri.fromFile(treebolicStorage).toString() + '/'
 
-			return Drawable.createFromResourceStream(context.getResources(), null, is, null);
-		}
-		catch (IOException ignored)
-		{
-		}
-		return null;
-	}
+        try {
+            val process = Utils.getProcessName(context)
 
-	// A D A P T E R   F A C T O R Y
+            val assetManager = context.assets
+            val manifests = checkNotNull(assetManager.list(ASSET_DIR))
+            for (manifest in manifests) {
+                Log.i(TAG, "Reading $manifest")
+                try {
+                    assetManager.open("$ASSET_DIR/$manifest").use { `is` ->
+                        val props = Properties()
+                        props.load(`is`)
+                        val provider = make(props, base, base, process)
 
-	/**
-	 * Make adapter
-	 *
-	 * @param context       context
-	 * @param itemLayoutRes item layout
-	 * @param from          from key
-	 * @param to            to res id
-	 * @return base adapter
-	 */
-	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @LayoutRes final int itemLayoutRes, final String[] from, final int[] to)
-	{
-		// data
-		final Collection<Provider> providers = Providers.getProviders(context);
+                        // record
+                        if (result == null) {
+                            result = TreeMap(Comparator.reverseOrder())
+                        }
+                        val key = checkNotNull(provider[PROVIDER])
+                        result!!.put(key.toString(), provider)
+                    }
+                } catch (e: IOException) {
+                    Log.e(TAG, "Error while reading $manifest", e)
+                }
+            }
+            return result
+        } catch (e: IOException) {
+            Log.e(TAG, "Error while listing assets", e)
+        } catch (e: PackageManager.NameNotFoundException) {
+            Log.e(TAG, "Error while getting process name", e)
+        }
+        return null
+    }
 
-		// adapter
-		return makeAdapter(context, providers, itemLayoutRes, from, to);
-	}
+    // D R A W A B L E
 
-	/**
-	 * Make adapter
-	 *
-	 * @param context   context
-	 * @param providers providers
-	 * @param itemRes   item layout
-	 * @param from      from key
-	 * @param to        to res id
-	 * @return base adapter
-	 */
-	@Nullable
-	static public SimpleAdapter makeAdapter(@NonNull final Context context, @Nullable final Collection<Provider> providers, final int itemRes, final String[] from, final int[] to)
-	{
-		// data
-		if (providers == null)
-		{
-			return null;
-		}
+    fun readAssetDrawable(context: Context, imageFile: String): Drawable? {
+        try {
+            context.assets.open("$ASSET_IMAGE_DIR/$imageFile").use { `is` ->
+                //	DisplayMetrics dm = context.getResources().getDisplayMetrics();
+                //	TypedValue value = new TypedValue();
+                //	value.density = dm.densityDpi;
+                return Drawable.createFromResourceStream(context.resources, null, `is`, null)
+            }
+        } catch (ignored: IOException) {
+        }
+        return null
+    }
 
-		// fill in the grid_item layout
-		return new SimpleAdapter(context, new ArrayList<>(providers), itemRes, from, to)
-		{
-			@Override
-			public void setViewImage(@NonNull final ImageView imageView, @NonNull final String value)
-			{
-				try
-				{
-					final Drawable drawable = readAssetDrawable(context, value);
-					imageView.setImageDrawable(drawable);
-				}
-				catch (@NonNull final Exception ignored)
-				{
-					//
-				}
-			}
-		};
-	}
+    // A D A P T E R   F A C T O R Y
+
+    /**
+     * Make adapter
+     *
+     * @param context       context
+     * @param itemLayoutRes item layout
+     * @param from          from key
+     * @param to            to res id
+     * @return base adapter
+     */
+    @JvmStatic
+    fun makeAdapter(context: Context, @LayoutRes itemLayoutRes: Int, from: Array<String>, to: IntArray?): SimpleAdapter? {
+        // data
+        val providers = getProviders(context)
+
+        // adapter
+        return makeAdapter(context, providers, itemLayoutRes, from, to)
+    }
+
+    /**
+     * Make adapter
+     *
+     * @param context   context
+     * @param providers providers
+     * @param itemRes   item layout
+     * @param from      from key
+     * @param to        to res id
+     * @return base adapter
+     */
+    private fun makeAdapter(context: Context, providers: Collection<Provider>?, itemRes: Int, from: Array<String>, to: IntArray?): SimpleAdapter? {
+        // data
+        if (providers == null) {
+            return null
+        }
+
+        // fill in the grid_item layout
+        return object : SimpleAdapter(
+            context, ArrayList(providers), itemRes, from, to
+        ) {
+            override fun setViewImage(imageView: ImageView, value: String) {
+                try {
+                    val drawable = readAssetDrawable(context, value)
+                    imageView.setImageDrawable(drawable)
+                } catch (ignored: Exception) {
+                    //
+                }
+            }
+        }
+    }
 }

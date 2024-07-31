@@ -1,313 +1,233 @@
 /*
  * Copyright (c) 2023. Bernard Bou
  */
+package org.treebolic
 
-package org.treebolic;
-
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-
-import org.treebolic.preference.OpenEditTextPreference;
-
-import java.util.Collection;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.PreferenceManager;
+import android.os.Bundle
+import androidx.preference.ListPreference
+import androidx.preference.Preference
+import androidx.preference.Preference.SummaryProvider
+import androidx.preference.PreferenceFragmentCompat
+import org.treebolic.Services.getServices
+import org.treebolic.Settings.getSharedPreferencesName
+import org.treebolic.preference.OpenEditTextPreference
+import org.treebolic.preference.OpenEditTextPreference.Companion.onDisplayPreferenceDialog
 
 /**
  * Settings activity
  *
  * @author Bernard Bou
  */
-public class SettingsActivity extends AppCompatCommonPreferenceActivity
-{
-	/**
-	 * Selected provider argument
-	 */
-	public static final String ARG_PROVIDER_SELECTED = "org.treebolic.selected";
+class SettingsActivity : AppCompatCommonPreferenceActivity() {
 
-	/**
-	 * Selected provider
-	 */
-	@Nullable
-	private static Provider provider;
+    // L I F E C Y C L E
+    override fun onCreate(savedInstanceState: Bundle?) {
+        // super
+        super.onCreate(savedInstanceState)
 
-	// L I F E C Y C L E
+        // read args
+        val action = intent.action
+        if (action == null) {
+            val intent = intent
 
-	@Override
-	protected void onCreate(final Bundle savedInstanceState)
-	{
-		// super
-		super.onCreate(savedInstanceState);
+            val key = intent.getStringExtra(ARG_PROVIDER_SELECTED)
+            provider = if (key == null) null else Providers.get(key)
+        }
+    }
 
-		// read args
-		final String action = getIntent().getAction();
-		if (action == null)
-		{
-			Intent intent = getIntent();
+    // F R A G M E N T S
+    class ActivePreferenceFragment : PreferenceFragmentCompat() {
 
-			String key = intent.getStringExtra(SettingsActivity.ARG_PROVIDER_SELECTED);
-			SettingsActivity.provider = key == null ? null : Providers.get(key);
-		}
-	}
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            if (provider == null) {
+                return
+            }
 
-	// S U M M A R Y
+            // activity
+            val activity = activity as SettingsActivity?
+            if (activity != null) {
+                // shared preferences
+                val prefManager = preferenceManager
+                prefManager.sharedPreferencesName = getSharedPreferencesName(provider!!)
+                prefManager.sharedPreferencesMode = MODE_PRIVATE
 
-	private static final Preference.SummaryProvider<Preference> STRING_SUMMARY_PROVIDER = (preference) -> {
+                // resource
+                addPreferencesFromResource(R.xml.pref_active_builtin)
 
-		final SharedPreferences sharedPrefs = preference.getSharedPreferences();
-		assert sharedPrefs != null;
-		final String value = sharedPrefs.getString(preference.getKey(), null);
-		return value == null ? "" : value;
-	};
+                // bind
+                // active name
+                val namePref = findPreference<Preference>(Settings.PREF_PROVIDER_NAME)
+                if (namePref != null) {
+                    val key = namePref.key
+                    namePref.summary = Settings.getStringPref(requireActivity(), key) // default prefs
+                }
 
-	// F R A G M E N T S
+                // active icon
+                val iconPref = findPreference<Preference>(Settings.PREF_PROVIDER_ICON)
+                if (iconPref != null) {
+                    val imageFile = provider!![Providers.ICON]
+                    val context = requireContext()
+                    val drawable = if (imageFile == null) null else Providers.readAssetDrawable(context, imageFile.toString())
+                    iconPref.icon = drawable
+                }
 
-	@SuppressWarnings("WeakerAccess")
-	public static class ActivePreferenceFragment extends PreferenceFragmentCompat
-	{
-		@Override
-		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
-		{
-			if (SettingsActivity.provider == null)
-			{
-				return;
-			}
+                // active preferences
+                for (prefKey in arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER)) {
+                    val preference = findPreference<Preference>(prefKey)
+                    if (preference != null) {
+                        preference.summaryProvider = STRING_SUMMARY_PROVIDER
+                    }
+                }
+            }
+        }
+    }
 
-			// activity
-			final SettingsActivity activity = (SettingsActivity) getActivity();
-			if (activity != null)
-			{
-				// shared preferences
-				final PreferenceManager prefManager = getPreferenceManager();
-				prefManager.setSharedPreferencesName(SettingsActivity.provider.getSharedPreferencesName());
-				prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
+    class XmlSaxPreferenceFragment : ProviderPreferenceFragment() {
 
-				// resource
-				addPreferencesFromResource(R.xml.pref_active_builtin);
+        override val name: String
+            get() = "treebolic.provider.xml.sax.Provider"
+    }
 
-				// bind
-				// active name
-				final Preference namePref = findPreference(Settings.PREF_PROVIDER_NAME);
-				if (namePref != null)
-				{
-					final String key = namePref.getKey();
-					namePref.setSummary(Settings.getStringPref(getActivity(), key)); // default prefs
-				}
+    class XmlDomPreferenceFragment : ProviderPreferenceFragment() {
 
-				// active icon
-				final Preference iconPref = findPreference(Settings.PREF_PROVIDER_ICON);
-				if (iconPref != null)
-				{
-					final String imageFile = SettingsActivity.provider.get(Provider.ICON);
-					final Context context = getContext();
-					assert context != null;
-					final Drawable drawable = imageFile == null ? null : Providers.readAssetDrawable(context, imageFile);
-					iconPref.setIcon(drawable);
-				}
+        override val name: String
+            get() = "treebolic.provider.xml.dom.Provider"
+    }
 
-				// active preferences
-				for (final String prefKey : new String[]{TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER})
-				{
-					final Preference preference = findPreference(prefKey);
-					if (preference != null)
-					{
-						preference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
-					}
-				}
-			}
-		}
-	}
+    class TextIndentPreferenceFragment : ProviderPreferenceFragment() {
 
-	@SuppressWarnings("WeakerAccess")
-	public static class XmlSaxPreferenceFragment extends ProviderPreferenceFragment
-	{
-		@Nullable
-		@Override
-		protected String getName()
-		{
-			return "treebolic.provider.xml.sax.Provider";
-		}
-	}
+        override val name: String
+            get() = "treebolic.provider.text.indent.Provider"
+    }
 
-	public static class XmlDomPreferenceFragment extends ProviderPreferenceFragment
-	{
-		@Nullable
-		@Override
-		protected String getName()
-		{
-			return "treebolic.provider.xml.dom.Provider";
-		}
-	}
+    class TextIndentTrePreferenceFragment : ProviderPreferenceFragment() {
 
-	@SuppressWarnings("WeakerAccess")
-	public static class TextIndentPreferenceFragment extends ProviderPreferenceFragment
-	{
-		@Nullable
-		@Override
-		protected String getName()
-		{
-			return "treebolic.provider.text.indent.Provider";
-		}
-	}
+        override val name: String
+            get() = "treebolic.provider.text.indent.tre.Provider"
+    }
 
-	@SuppressWarnings("WeakerAccess")
-	public static class TextIndentTrePreferenceFragment extends ProviderPreferenceFragment
-	{
-		@Nullable
-		@Override
-		protected String getName()
-		{
-			return "treebolic.provider.text.indent.tre.Provider";
-		}
-	}
+    class TextPairPreferenceFragment : ProviderPreferenceFragment() {
 
-	@SuppressWarnings("WeakerAccess")
-	public static class TextPairPreferenceFragment extends ProviderPreferenceFragment
-	{
-		@Nullable
-		@Override
-		protected String getName()
-		{
-			return "treebolic.provider.text.pair.Provider";
-		}
-	}
+        override val name: String
+            get() = "treebolic.provider.text.pair.Provider"
+    }
 
-	@SuppressWarnings("WeakerAccess")
-	public static class DotPreferenceFragment extends ProviderPreferenceFragment
-	{
-		@Nullable
-		@Override
-		protected String getName()
-		{
-			return "treebolic.provider.graphviz.Provider";
-		}
-	}
+    class DotPreferenceFragment : ProviderPreferenceFragment() {
 
-	@SuppressWarnings("WeakerAccess")
-	abstract public static class ProviderPreferenceFragment extends PreferenceFragmentCompat
-	{
-		@Nullable
-		abstract protected String getName();
+        override val name: String
+            get() = "treebolic.provider.graphviz.Provider"
+    }
 
-		@Override
-		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
-		{
-			// non-default preference manager
-			final PreferenceManager prefManager = getPreferenceManager();
-			prefManager.setSharedPreferencesName(Settings.PREF_FILE_PREFIX + getName());
-			prefManager.setSharedPreferencesMode(Context.MODE_PRIVATE);
+    abstract class ProviderPreferenceFragment : PreferenceFragmentCompat() {
 
-			// inflate
-			addPreferencesFromResource(R.xml.pref_general);
+        protected abstract val name: String?
 
-			// bind
-			final Preference sourcePreference = findPreference(TreebolicIface.PREF_SOURCE);
-			assert sourcePreference != null;
-			sourcePreference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            // non-default preference manager
+            val prefManager = preferenceManager
+            prefManager.sharedPreferencesName = Settings.PREF_FILE_PREFIX + name
+            prefManager.sharedPreferencesMode = MODE_PRIVATE
 
-			final Preference basePreference = findPreference(TreebolicIface.PREF_BASE);
-			assert basePreference != null;
-			basePreference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
+            // inflate
+            addPreferencesFromResource(R.xml.pref_general)
 
-			final Preference imageBasePreference = findPreference(TreebolicIface.PREF_IMAGEBASE);
-			assert imageBasePreference != null;
-			imageBasePreference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
+            // bind
+            val sourcePreference = checkNotNull(findPreference(TreebolicIface.PREF_SOURCE))
+            sourcePreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-			final Preference settingsPreference = findPreference(TreebolicIface.PREF_SETTINGS);
-			assert settingsPreference != null;
-			settingsPreference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
+            val basePreference = checkNotNull(findPreference(TreebolicIface.PREF_BASE))
+            basePreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-			final Preference providerPreference = findPreference(Settings.PREF_PROVIDER);
-			assert providerPreference != null;
-			providerPreference.setSummaryProvider(STRING_SUMMARY_PROVIDER);
-		}
-	}
+            val imageBasePreference = checkNotNull(findPreference(TreebolicIface.PREF_IMAGEBASE))
+            imageBasePreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-	@SuppressWarnings("WeakerAccess")
-	public static class DownloadPreferenceFragment extends PreferenceFragmentCompat
-	{
-		@Override
-		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
-		{
-			// inflate
-			addPreferencesFromResource(R.xml.pref_download);
+            val settingsPreference = checkNotNull(findPreference(TreebolicIface.PREF_SETTINGS))
+            settingsPreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-			// bind
-			final Preference basePreference = findPreference(Settings.PREF_DOWNLOAD_BASE);
-			assert basePreference != null;
-			basePreference.setSummaryProvider(OpenEditTextPreference.SUMMARY_PROVIDER);
+            val providerPreference = checkNotNull(findPreference(Settings.PREF_PROVIDER))
+            providerPreference.summaryProvider = STRING_SUMMARY_PROVIDER
+        }
+    }
 
-			final Preference filePreference = findPreference(Settings.PREF_DOWNLOAD_FILE);
-			assert filePreference != null;
-			filePreference.setSummaryProvider(OpenEditTextPreference.SUMMARY_PROVIDER);
-		}
+    class DownloadPreferenceFragment : PreferenceFragmentCompat() {
 
-		@Override
-		public void onDisplayPreferenceDialog(@NonNull final Preference preference)
-		{
-			if (!OpenEditTextPreference.onDisplayPreferenceDialog(this, preference))
-			{
-				super.onDisplayPreferenceDialog(preference);
-			}
-		}
-	}
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            // inflate
+            addPreferencesFromResource(R.xml.pref_download)
 
-	@SuppressWarnings("WeakerAccess")
-	public static class ServicePreferenceFragment extends PreferenceFragmentCompat
-	{
-		@Override
-		public void onCreatePreferences(final Bundle savedInstanceState, final String rootKey)
-		{
-			// inflate
-			addPreferencesFromResource(R.xml.pref_service);
+            // bind
+            val basePreference = checkNotNull(findPreference(Settings.PREF_DOWNLOAD_BASE))
+            basePreference.summaryProvider = OpenEditTextPreference.SUMMARY_PROVIDER
 
-			// preference
-			final ListPreference listPreference = findPreference(Settings.PREF_SERVICE);
-			assert listPreference != null;
+            val filePreference = checkNotNull(findPreference(Settings.PREF_DOWNLOAD_FILE))
+            filePreference.summaryProvider = OpenEditTextPreference.SUMMARY_PROVIDER
+        }
 
-			// activity
-			final SettingsActivity activity = (SettingsActivity) getActivity();
-			if (activity != null)
-			{
-				// connect to data
-				activity.fillWithServiceData(listPreference);
+        override fun onDisplayPreferenceDialog(preference: Preference) {
+            if (!onDisplayPreferenceDialog(this, preference)) {
+                super.onDisplayPreferenceDialog(preference)
+            }
+        }
+    }
 
-				// bind
-				listPreference.setSummaryProvider(ListPreference.SimpleSummaryProvider.getInstance());
-			}
-		}
-	}
+    class ServicePreferenceFragment : PreferenceFragmentCompat() {
 
-	/**
-	 * Connect list preference to service data
-	 *
-	 * @param listPreference list preference
-	 */
-	private void fillWithServiceData(@NonNull final ListPreference listPreference)
-	{
-		final Collection<Service> services = Services.getServices(this);
-		if (services != null)
-		{
-			final int n = services.size();
-			final String[] entries = new String[n];
-			final String[] values = new String[n];
-			int i = 0;
-			for (final Service service : services)
-			{
-				entries[i] = (String) service.get(Service.LABEL);
-				values[i] = (String) service.get(Service.PACKAGE) + '/' + service.get(Service.NAME);
-				i++;
-			}
-			listPreference.setEntries(entries);
-			listPreference.setEntryValues(values);
-		}
-	}
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            // inflate
+            addPreferencesFromResource(R.xml.pref_service)
+
+            // preference
+            val listPreference = checkNotNull(findPreference<ListPreference>(Settings.PREF_SERVICE))
+            // activity
+            val activity = activity as SettingsActivity?
+            if (activity != null) {
+                // connect to data
+                activity.fillWithServiceData(listPreference)
+
+                // bind
+                listPreference.summaryProvider = ListPreference.SimpleSummaryProvider.getInstance()
+            }
+        }
+    }
+
+    /**
+     * Connect list preference to service data
+     *
+     * @param listPreference list preference
+     */
+    private fun fillWithServiceData(listPreference: ListPreference) {
+        val services: Collection<Service>? = getServices(this)
+        if (services != null) {
+            val n = services.size
+            val entries = arrayOfNulls<String>(n)
+            val values = arrayOfNulls<String>(n)
+            for ((i, service) in services.withIndex()) {
+                entries[i] = service[ServiceKeys.LABEL] as String?
+                values[i] = service[ServiceKeys.PACKAGE] as String? + '/' + service[ServiceKeys.NAME]
+            }
+            listPreference.entries = entries
+            listPreference.entryValues = values
+        }
+    }
+
+    companion object {
+
+        /**
+         * Selected provider argument
+         */
+        const val ARG_PROVIDER_SELECTED: String = "org.treebolic.selected"
+
+        /**
+         * Selected provider
+         */
+        private var provider: Provider? = null
+
+        // S U M M A R Y
+
+        private val STRING_SUMMARY_PROVIDER = SummaryProvider { preference: Preference ->
+            val sharedPrefs = checkNotNull(preference.sharedPreferences)
+            val value = sharedPrefs.getString(preference.key, null)
+            value ?: ""
+        }
+    }
 }
