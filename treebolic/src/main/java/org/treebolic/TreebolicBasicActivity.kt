@@ -11,6 +11,7 @@ import android.os.Process
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.webkit.MimeTypeMap
@@ -31,7 +32,6 @@ import org.treebolic.search.ColorUtils.tint
 import org.treebolic.search.SearchSettings
 import treebolic.IContext
 import treebolic.Widget
-import treebolic.glue.component.TreebolicThread
 import treebolic.glue.component.Utils
 import java.net.MalformedURLException
 import java.net.URL
@@ -116,7 +116,7 @@ abstract class TreebolicBasicActivity protected constructor(
         setContentView(R.layout.activity_treebolic)
         val container = findViewById<ViewGroup>(R.id.container)
         val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1f)
-        container.addView(widget as android.view.View, params)
+        container.addView(widget?.view as View, params)
 
         // toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -178,15 +178,7 @@ abstract class TreebolicBasicActivity protected constructor(
         Log.d(TAG, "Activity paused, terminating surface drawing thread")
 
         // terminate thread
-
-        // terminate thread
-        val view:treebolic.view.View? = widget!!.view
-        if (view != null) {
-            val thread: TreebolicThread? = view.getThread()
-            if (thread != null) {
-                thread.terminate()
-            }
-        }
+        widget?.view?.getThread()?.terminate()
 
         // super
         super.onPause()
@@ -504,6 +496,7 @@ abstract class TreebolicBasicActivity protected constructor(
     }
 
     // H E L P E R S
+
     /**
      * Make parameters from bundle
      *
@@ -542,7 +535,7 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     private fun snackbar(message: String, duration: Int) {
         runOnUiThread {
-            val snack: Snackbar = Snackbar.make(widget?.view as android.view.View, message, duration)
+            val snack: Snackbar = Snackbar.make(widget?.view as View, message, duration)
             val view = snack.view
             view.setBackgroundColor(ContextCompat.getColor(this@TreebolicBasicActivity, R.color.snackbar_color))
             snack.show()
