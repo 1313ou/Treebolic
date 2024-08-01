@@ -5,27 +5,28 @@
 <resources>
 
 	<!-- download locations -->
-	<string name="pref_download_base_default" translatable="false">http://treebolic.sourceforge.net/data/zipped</string>
+	<string name="pref_download_base_default" translatable="false">https://sourceforge.net/projects/treebolic/files/data/</string>
+
 	<string-array name="pref_download_bases" translatable="false">
 		<item>@string/pref_download_base_default</item>
 	</string-array>
 
 	<!-- download files -->
-	<string name="pref_download_file_default" translatable="false">extra.zip</string>
+	<string name="pref_download_file_default" translatable="false">extra.xml.zip</string>
 	<string-array name="pref_download_files" translatable="false">
 		<item>@string/pref_download_file_default</item>
 		<item>demo.zip</item>
-		<item>serialized.zip</item>
-		<item>animals.zip</item>
-		<item>plantae.zip</item>
-		<item>monarchy.zip</item>
-		<item>sumo.zip</item>
-		<item>graphnet.zip</item>
-		<item>misc.zip</item>
-		<item>wordnet.zip</item>
-		<item>pizza-xml.zip</item>
-		<item>robots-xml.zip</item>
-		<item>dot.zip</item>
+		<item>animals.xml.zip</item>
+		<item>plantae.xml.zip</item>
+		<item>fungi.xml.zip</item>
+		<item>monarchy.xml.zip</item>
+		<item>graphnet.xml.zip</item>
+		<item>misc.xml.zip</item>
+		<item>wordnet.xml.zip</item>
+		<item>test.xml.zip</item>
+		<item>test.dot.zip</item>
+		<item>owl.owl.zip</item>
+		<item>serialized.ser.zip</item>
 	</string-array>
 
 </resources>
