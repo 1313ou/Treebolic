@@ -32,6 +32,7 @@ import org.treebolic.search.ColorUtils.tint
 import org.treebolic.search.SearchSettings
 import treebolic.IContext
 import treebolic.Widget
+import treebolic.glue.component.Surface
 import treebolic.glue.component.Utils
 import java.net.MalformedURLException
 import java.net.URL
@@ -116,7 +117,8 @@ abstract class TreebolicBasicActivity protected constructor(
         setContentView(R.layout.activity_treebolic)
         val container = findViewById<ViewGroup>(R.id.container)
         val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1f)
-        container.addView(widget?.view as View, params)
+        val view: View = widget?.view!! as View
+        container.addView(view, params)
 
         // toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -178,7 +180,8 @@ abstract class TreebolicBasicActivity protected constructor(
         Log.d(TAG, "Activity paused, terminating surface drawing thread")
 
         // terminate thread
-        widget?.view?.getThread()?.terminate()
+        val surface: Surface? = widget?.view
+        surface?.thread?.terminate()
 
         // super
         super.onPause()
