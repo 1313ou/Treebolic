@@ -325,7 +325,7 @@ abstract class TreebolicBasicActivity protected constructor(
             Settings.STYLE_DEFAULT
     }
 
-    override fun linkTo(url: String, target: String): Boolean {
+    override fun linkTo(url: String, target: String?): Boolean {
         // if url is handled by client, return query to client, which will handle it by initiating another query
         if (this.urlScheme != null && url.startsWith(urlScheme!!)) {
             val source2 = url.substring(urlScheme!!.length)
