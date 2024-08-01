@@ -17,8 +17,9 @@ class TreebolicActivity : TreebolicSourceActivity(R.menu.treebolic) {
     // Q U E R Y
 
     override fun query() {
+
         // sanity check
-        if (this.providerName == null && this.source == null) {
+        if (providerName == null && source == null) {
             Toast.makeText(this, R.string.error_null_data, Toast.LENGTH_LONG).show()
             finish()
             return
@@ -28,16 +29,14 @@ class TreebolicActivity : TreebolicSourceActivity(R.menu.treebolic) {
         widget!!.init(this.providerName, this.source)
     }
 
-    override fun requery(source: String?) {
-        this.source = source
+    override fun requery(source0: String?) {
+        source = source0
         widget!!.reinit(source)
     }
 
     companion object {
 
-        // I N T E N T
-
-        /**
+         /**
          * Make Treebolic activity intent
          *
          * @param context      context

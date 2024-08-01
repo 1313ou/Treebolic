@@ -54,10 +54,32 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     protected var base: String? = null
 
+    override fun getBase(): URL? {
+        if (base != null) {
+            try {
+                return URL(base)
+            } catch (ignored: MalformedURLException) {
+                //
+            }
+        }
+        return getURLPref(this, TreebolicIface.PREF_BASE)
+    }
+
     /**
      * Parameter : Image base
      */
-    private var imageBase: String? = null
+    private var imagesBase: String? = null
+
+    override fun getImagesBase(): URL? {
+        if (imagesBase != null) {
+            try {
+                return URL(imagesBase)
+            } catch (ignored: MalformedURLException) {
+                //
+            }
+        }
+        return getURLPref(this, TreebolicIface.PREF_IMAGEBASE)
+    }
 
     /**
      * Parameter : Settings
@@ -69,6 +91,10 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     private var style: String? = null
 
+    override fun getStyle(): String {
+        return if (style != null) style!! else Settings.STYLE_DEFAULT
+    }
+
     /**
      * Parameter : Returned URL urlScheme that is handled
      */
@@ -78,6 +104,10 @@ abstract class TreebolicBasicActivity protected constructor(
      * Parameter : parameters
      */
     private var parameters: Properties? = null
+
+    override fun getParameters(): Properties {
+        return parameters!!
+    }
 
     // components
 
@@ -92,10 +122,16 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     protected var searchView: SearchView? = null
 
+    // input
+
     /**
      * Input
      */
     private val input: String? = null
+
+    override fun getInput(): String? {
+        return input
+    }
 
     // parent
 
@@ -150,7 +186,7 @@ abstract class TreebolicBasicActivity protected constructor(
         unmarshalArgs(intent)
 
         // make parameters
-        this.parameters = makeParameters()
+        parameters = makeParameters()
     }
 
     override fun onResume() {
@@ -188,14 +224,15 @@ abstract class TreebolicBasicActivity protected constructor(
     }
 
     // M E N U
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // inflate
-        menuInflater.inflate(this.menuId, menu)
+        menuInflater.inflate(menuId, menu)
 
         // search view
         val searchMenuItem = menu.findItem(R.id.action_search)
         searchMenuItem.expandActionView()
-        this.searchView = searchMenuItem.actionView as SearchView?
+        searchView = searchMenuItem.actionView as SearchView?
 
         // search view width
         val screenWidth = Utils.screenWidth(this)
@@ -224,53 +261,75 @@ abstract class TreebolicBasicActivity protected constructor(
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (R.id.action_settings == id) {
-            val intent = Intent(this, SettingsActivity::class.java)
-            startActivity(intent)
-            return true
-        } else if (R.id.action_finish == id) {
-            finish()
-            return true
-        } else if (R.id.action_kill == id) {
-            Process.killProcess(Process.myPid())
-            return true
-        } else if (R.id.action_tips == id) {
-            Tip.show(supportFragmentManager)
-            return true
-        } else if (R.id.action_help == id) {
-            startActivity(Intent(this, HelpActivity::class.java))
-            return true
-        } else if (R.id.action_about == id) {
-            startActivity(Intent(this, AboutActivity::class.java))
-            return true
-        } else if (R.id.action_search_run == id) {
-            handleSearchRun()
-            return true
-        } else if (R.id.action_search_reset == id) {
-            handleSearchReset()
-            return true
-        } else if (R.id.action_search_settings == id) {
-            SearchSettings.show(supportFragmentManager)
-            return true
-        } else if (R.id.action_settings_service == id) {
-            val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra(AppCompatCommonPreferenceActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment::class.java.name)
-            startActivity(intent)
-            return true
-        } else {
-            return false
+        when (item.itemId) {
+            R.id.action_settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                return true
+            }
+
+            R.id.action_finish -> {
+                finish()
+                return true
+            }
+
+            R.id.action_kill -> {
+                Process.killProcess(Process.myPid())
+                return true
+            }
+
+            R.id.action_tips -> {
+                Tip.show(supportFragmentManager)
+                return true
+            }
+
+            R.id.action_help -> {
+                startActivity(Intent(this, HelpActivity::class.java))
+                return true
+            }
+
+            R.id.action_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
+                return true
+            }
+
+            R.id.action_search_run -> {
+                handleSearchRun()
+                return true
+            }
+
+            R.id.action_search_reset -> {
+                handleSearchReset()
+                return true
+            }
+
+            R.id.action_search_settings -> {
+                SearchSettings.show(supportFragmentManager)
+                return true
+            }
+
+            R.id.action_settings_service -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra(AppCompatCommonPreferenceActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment::class.java.name)
+                startActivity(intent)
+                return true
+            }
+
+            else -> {
+                return false
+            }
         }
     }
 
     override fun getParentActivityIntent(): Intent? {
-        if (this.parentActivity != null) {
-            return this.parentActivity
+        if (parentActivity != null) {
+            return parentActivity
         }
         return super.getParentActivityIntent()
     }
 
-    // T R E E B O L I C M O D E L
+    // T R E E B O L I C   M O D E L
+
     /**
      * Unmarshal model and parameters from intent
      *
@@ -282,52 +341,22 @@ abstract class TreebolicBasicActivity protected constructor(
         params.classLoader = classLoader
 
         // retrieve arguments
-        this.base = params.getString(TreebolicIface.ARG_BASE)
-        this.imageBase = params.getString(TreebolicIface.ARG_IMAGEBASE)
-        this.settings = params.getString(TreebolicIface.ARG_SETTINGS)
-        this.style = params.getString(TreebolicIface.ARG_STYLE)
-        this.urlScheme = params.getString(TreebolicIface.ARG_URLSCHEME)
+        base = params.getString(TreebolicIface.ARG_BASE)
+        imagesBase = params.getString(TreebolicIface.ARG_IMAGEBASE)
+        settings = params.getString(TreebolicIface.ARG_SETTINGS)
+        style = params.getString(TreebolicIface.ARG_STYLE)
+        urlScheme = params.getString(TreebolicIface.ARG_URLSCHEME)
         @Suppress("DEPRECATION")
-        this.parentActivity = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
+        parentActivity = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
             params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY, Intent::class.java) else  //
             params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY)
     }
 
-    // T R E E B O L I C C O N T E X T
-    override fun getBase(): URL? {
-        if (this.base != null) {
-            try {
-                return URL(this.base)
-            } catch (ignored: MalformedURLException) {
-                //
-            }
-        }
-        return getURLPref(this, TreebolicIface.PREF_BASE)
-    }
-
-    override fun getImagesBase(): URL? {
-        if (this.imageBase != null) {
-            try {
-                return URL(this.imageBase)
-            } catch (ignored: MalformedURLException) {
-                //
-            }
-        }
-        return getURLPref(this, TreebolicIface.PREF_IMAGEBASE)
-    }
-
-    override fun getParameters(): Properties {
-        return parameters!!
-    }
-
-    override fun getStyle(): String? {
-        return if (this.style != null) this.style else  //
-            Settings.STYLE_DEFAULT
-    }
+    // T R E E B O L I C   C O N T E X T
 
     override fun linkTo(url: String, target: String?): Boolean {
         // if url is handled by client, return query to client, which will handle it by initiating another query
-        if (this.urlScheme != null && url.startsWith(urlScheme!!)) {
+        if (urlScheme != null && url.startsWith(urlScheme!!)) {
             val source2 = url.substring(urlScheme!!.length)
             requery(source2)
             return true
@@ -353,10 +382,6 @@ abstract class TreebolicBasicActivity protected constructor(
         return false
     }
 
-    override fun getInput(): String? {
-        return this.input
-    }
-
     override fun warn(message: String) {
         // toast(message, Toast.LENGTH_LONG);
         snackbar(message, Snackbar.LENGTH_LONG)
@@ -368,6 +393,7 @@ abstract class TreebolicBasicActivity protected constructor(
     }
 
     // Q U E R Y
+
     /**
      * Initial query
      */
@@ -429,7 +455,7 @@ abstract class TreebolicBasicActivity protected constructor(
         closeKeyboard()
 
         // new or continued search
-        if (!this.searchPending) {
+        if (!searchPending) {
             val query = searchView!!.query.toString()
             val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
             val scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL) // label, content, link, id
@@ -469,7 +495,7 @@ abstract class TreebolicBasicActivity protected constructor(
     }
 
     private fun closeKeyboard() {
-        val view = this.currentFocus
+        val view = currentFocus
         if (view != null) {
             val imm = checkNotNull(getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager)
             imm.hideSoftInputFromWindow(view.windowToken, 0)
@@ -483,7 +509,7 @@ abstract class TreebolicBasicActivity protected constructor(
         }
 
         Log.d(TAG, "Search run$scope $mode $target")
-        this.searchPending = true
+        searchPending = true
         widget!!.search(CMD_SEARCH, scope, mode, target)
     }
 
@@ -494,7 +520,7 @@ abstract class TreebolicBasicActivity protected constructor(
 
     private fun resetSearch() {
         Log.d(TAG, "Search reset")
-        this.searchPending = false
+        searchPending = false
         widget!!.search(CMD_RESET)
     }
 
@@ -507,14 +533,14 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     protected open fun makeParameters(): Properties? {
         val parameters = Properties()
-        if (this.base != null) {
-            parameters.setProperty("base", this.base)
+        if (base != null) {
+            parameters.setProperty("base", base)
         }
-        if (this.imageBase != null) {
-            parameters.setProperty("imagebase", this.imageBase)
+        if (imagesBase != null) {
+            parameters.setProperty("imagebase", imagesBase)
         }
-        if (this.settings != null) {
-            parameters.setProperty("settings", this.settings)
+        if (settings != null) {
+            parameters.setProperty("settings", settings)
         }
         parameters.setProperty("debug", BuildConfig.DEBUG.toString())
         return parameters

@@ -214,7 +214,6 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
 
     override fun onResume() {
         super.onResume()
-
         updateButton()
     }
 
@@ -363,7 +362,6 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
     /**
      * Initialize
      */
-    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
     private fun initialize() {
         // permissions
         Permissions.check(this)

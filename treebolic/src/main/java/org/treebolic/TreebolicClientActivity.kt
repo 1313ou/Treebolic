@@ -38,6 +38,7 @@ import org.treebolic.search.SearchSettings
 import org.treebolic.services.iface.ITreebolicService
 import treebolic.IContext
 import treebolic.Widget
+import treebolic.glue.component.Surface
 import treebolic.glue.component.Utils
 import treebolic.model.Model
 import treebolic.model.ModelDump
@@ -116,7 +117,8 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         Log.d(TAG, "Activity paused, terminating surface drawing thread")
 
         // terminate thread
-        widget?.view?.getThread()?.terminate()
+        val surface: Surface? = widget?.view
+        surface?.thread?.terminate()
 
         // super
         super.onPause()

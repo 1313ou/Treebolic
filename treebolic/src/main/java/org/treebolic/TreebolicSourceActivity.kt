@@ -33,7 +33,7 @@ abstract class TreebolicSourceActivity(@MenuRes menuRes: Int) : TreebolicBasicAc
         super.onCreate(savedInstanceState)
 
         // restoring status
-        this.restoring = savedInstanceState != null
+        restoring = savedInstanceState != null
     }
 
     public override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -41,12 +41,12 @@ abstract class TreebolicSourceActivity(@MenuRes menuRes: Int) : TreebolicBasicAc
         super.onRestoreInstanceState(savedInstanceState)
 
         // restore
-        this.source = savedInstanceState.getString(TreebolicIface.ARG_SOURCE)
+        source = savedInstanceState.getString(TreebolicIface.ARG_SOURCE)
     }
 
     public override fun onSaveInstanceState(savedInstanceState: Bundle) {
         // save
-        savedInstanceState.putString(TreebolicIface.ARG_SOURCE, this.source)
+        savedInstanceState.putString(TreebolicIface.ARG_SOURCE, source)
 
         // always call the superclass so it can save the view hierarchy state
         super.onSaveInstanceState(savedInstanceState)
@@ -57,12 +57,12 @@ abstract class TreebolicSourceActivity(@MenuRes menuRes: Int) : TreebolicBasicAc
     override fun makeParameters(): Properties? {
         val parameters = super.makeParameters()
 
-        if (this.source != null) {
-            parameters!!.setProperty("source", this.source)
-            parameters.setProperty("doc", this.source)
+        if (source != null) {
+            parameters!!.setProperty("source", source)
+            parameters.setProperty("doc", source)
         }
-        if (this.providerName != null) {
-            parameters!!.setProperty("provider", this.providerName)
+        if (providerName != null) {
+            parameters!!.setProperty("provider", providerName)
         }
         return parameters
     }
@@ -75,10 +75,10 @@ abstract class TreebolicSourceActivity(@MenuRes menuRes: Int) : TreebolicBasicAc
      * @param intent intent
      */
     override fun unmarshalArgs(intent: Intent) {
-        val params = checkNotNull(intent.extras)
-        this.providerName = params.getString(TreebolicIface.ARG_PROVIDER)
-        if (!this.restoring) {
-            this.source = params.getString(TreebolicIface.ARG_SOURCE)
+        val args = checkNotNull(intent.extras)
+        providerName = args.getString(TreebolicIface.ARG_PROVIDER)
+        if (!restoring) {
+            source = args.getString(TreebolicIface.ARG_SOURCE)
         }
 
         // super

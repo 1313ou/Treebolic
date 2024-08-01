@@ -144,7 +144,6 @@ object Settings {
      * @param context  context
      * @param provider active provider
      */
-    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
     fun setActivePrefs(context: Context, provider: Provider) {
         val defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
         val editor = defaultSharedPrefs.edit()
@@ -167,7 +166,6 @@ object Settings {
      * @param key     key
      * @param value   value
      */
-    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
     fun putStringPref(context: Context, key: String?, value: String?) {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref.edit().putString(key, value).commit()
@@ -180,8 +178,7 @@ object Settings {
      * @param key     key
      * @param value   value
      */
-    @SuppressLint("CommitPrefEdits", "ApplySharedPref")
-    fun putIntPref(context: Context, key: String?, value: Int) {
+     fun putIntPref(context: Context, key: String?, value: Int) {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref.edit().putInt(key, value).commit()
     }

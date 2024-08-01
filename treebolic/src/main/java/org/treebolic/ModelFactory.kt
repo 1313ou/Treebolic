@@ -16,10 +16,10 @@ import java.util.Properties
 /**
  * Model factory
  *
- * @param provider           provider
- * @param providerContext    provider locator context
- * @param locatorContext     locator context to get provider data
- * @param applicationContext context
+ * @property provider           provider
+ * @property providerContext    provider context
+ * @property locatorContext     locator context
+ * @property applicationContext application context
  *
  * @author Bernard Bou
  */
