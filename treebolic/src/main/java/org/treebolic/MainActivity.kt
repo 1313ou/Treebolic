@@ -183,7 +183,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
 
             // set up the dropdown list navigation in the action bar.
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View, position: Int, id: Long) {
+                override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View?, position: Int, id: Long) {
                     checkNotNull(this@MainActivity.adapter)
 
                     @Suppress("UNCHECKED_CAST")
