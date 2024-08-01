@@ -111,13 +111,13 @@ abstract class TreebolicBasicActivity protected constructor(
         super.onCreate(savedInstanceState)
 
         // widget
-        this.widget = Widget(this, this)
+        widget = Widget(this, this)
 
         // content view
         setContentView(R.layout.activity_treebolic)
         val container = findViewById<ViewGroup>(R.id.container)
         val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1f)
-        val view: View = widget?.view!! as View
+        val view: View = widget as View
         container.addView(view, params)
 
         // toolbar
@@ -538,9 +538,8 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     private fun snackbar(message: String, duration: Int) {
         runOnUiThread {
-            val snack: Snackbar = Snackbar.make(widget?.view as View, message, duration)
-            val view = snack.view
-            view.setBackgroundColor(ContextCompat.getColor(this@TreebolicBasicActivity, R.color.snackbar_color))
+            val snack: Snackbar = Snackbar.make(widget as View, message, duration)
+            snack.view.setBackgroundColor(ContextCompat.getColor(this@TreebolicBasicActivity, R.color.snackbar_color))
             snack.show()
         }
     }
