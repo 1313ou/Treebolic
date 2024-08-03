@@ -90,10 +90,10 @@ abstract class TreebolicBasicActivity protected constructor(
     /**
      * Parameter : CSS style for WebViews
      */
-    private var style: String? = null
+    private var cssStyle: String? = null
 
     override fun getStyle(): String {
-        return if (style != null) style!! else Settings.STYLE_DEFAULT
+        return if (cssStyle != null) cssStyle!! else Settings.STYLE_DEFAULT
     }
 
     /**
@@ -345,7 +345,7 @@ abstract class TreebolicBasicActivity protected constructor(
         base = params.getString(TreebolicIface.ARG_BASE)
         imagesBase = params.getString(TreebolicIface.ARG_IMAGEBASE)
         settings = params.getString(TreebolicIface.ARG_SETTINGS)
-        style = params.getString(TreebolicIface.ARG_STYLE)
+        cssStyle = params.getString(TreebolicIface.ARG_STYLE)
         urlScheme = params.getString(TreebolicIface.ARG_URLSCHEME)
         @Suppress("DEPRECATION")
         parentActivityIntentArg = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
