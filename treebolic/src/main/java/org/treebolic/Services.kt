@@ -40,9 +40,6 @@ object ServiceKeys {
  */
 object Services {
 
-    /**
-     * Log tag
-     */
     private const val TAG = "Services"
 
     /**

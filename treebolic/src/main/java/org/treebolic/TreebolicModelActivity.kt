@@ -137,12 +137,10 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
 
     companion object {
 
-        /**
-         * Log tag
-         */
         private const val TAG = "TreebolicModelA"
 
         // I N T E N T
+
         /**
          * Make Treebolic serialized model activity intent
          *

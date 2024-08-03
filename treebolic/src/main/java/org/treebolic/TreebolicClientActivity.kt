@@ -557,12 +557,10 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
     companion object {
 
-        /**
-         * Log tag
-         */
         private const val TAG = "TreebolicClientA"
 
         // S E A R C H
+
         private const val CMD_SEARCH = "SEARCH"
 
         private const val CMD_RESET = "RESET"
@@ -570,6 +568,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         private const val CMD_CONTINUE = "CONTINUE"
 
         // H E L P E R S
+
         /**
          * Initialize search preferences
          *
