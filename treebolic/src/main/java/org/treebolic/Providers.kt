@@ -147,9 +147,9 @@ object Providers {
             for (manifest in manifests) {
                 Log.i(TAG, "Reading $manifest")
                 try {
-                    assetManager.open("$ASSET_DIR/$manifest").use { `is` ->
+                    assetManager.open("$ASSET_DIR/$manifest").use { input ->
                         val props = Properties()
-                        props.load(`is`)
+                        props.load(input)
                         val provider = make(props, base, base, process)
 
                         // record
@@ -176,11 +176,8 @@ object Providers {
 
     fun readAssetDrawable(context: Context, imageFile: String): Drawable? {
         try {
-            context.assets.open("$ASSET_IMAGE_DIR/$imageFile").use { `is` ->
-                //	DisplayMetrics dm = context.getResources().getDisplayMetrics();
-                //	TypedValue value = new TypedValue();
-                //	value.density = dm.densityDpi;
-                return Drawable.createFromResourceStream(context.resources, null, `is`, null)
+            context.assets.open("$ASSET_IMAGE_DIR/$imageFile").use { input ->
+                return Drawable.createFromResourceStream(context.resources, null, input, null)
             }
         } catch (ignored: IOException) {
         }
