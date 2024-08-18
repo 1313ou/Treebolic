@@ -85,6 +85,7 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
     }
 
     // Q U E R Y
+
     override fun query() {
         // sanity check
         if (this.model == null && this.serializedModel == null) {

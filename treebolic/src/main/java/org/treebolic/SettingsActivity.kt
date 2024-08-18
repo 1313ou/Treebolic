@@ -21,6 +21,7 @@ import org.treebolic.preference.OpenEditTextPreference.Companion.onDisplayPrefer
 class SettingsActivity : AppCompatCommonPreferenceActivity() {
 
     // L I F E C Y C L E
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // super
         super.onCreate(savedInstanceState)
@@ -36,6 +37,7 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
     }
 
     // F R A G M E N T S
+
     class ActivePreferenceFragment : PreferenceFragmentCompat() {
 
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
