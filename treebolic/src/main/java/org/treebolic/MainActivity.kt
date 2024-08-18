@@ -450,7 +450,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
      * @param to            to res id
      * @return base adapter
      */
-    private fun makeAdapter(@LayoutRes itemLayoutRes: Int, from: Array<String>, to: IntArray): SimpleAdapter {
+    private fun makeAdapter(@Suppress("SameParameterValue") @LayoutRes itemLayoutRes: Int, @Suppress("SameParameterValue") from: Array<String>, @Suppress("SameParameterValue") to: IntArray): SimpleAdapter {
         // adapter
         val adapter = checkNotNull(Providers.makeAdapter(this, itemLayoutRes, from, to))
 

@@ -85,7 +85,7 @@ object Services {
      * @param filter  positive filter
      * @return collection of services
      */
-    private fun collectServices(context: Context, filter: String?): Collection<Service> {
+    private fun collectServices(context: Context, @Suppress("SameParameterValue") filter: String?): Collection<Service> {
         val services2: MutableCollection<Service> = ArrayList()
         val packageManager = context.packageManager
 
