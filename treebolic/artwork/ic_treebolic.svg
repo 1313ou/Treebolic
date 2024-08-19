@@ -1,1 +1,670 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" version="1.0"><desc>Picture of a blue sphere (circle with 3D highlighting)</desc><defs><linearGradient id="a"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="b"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="c"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="d"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="e"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="f"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="g"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="h"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="i"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="j"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="k"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="l"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="m"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="n"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="o"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="p"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="q"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="r"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="s"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="t"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="u"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="v"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="w"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="x"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="y"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="z"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="A"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="B"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="C"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="D"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="E"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="F"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="G"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="H"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="I"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="J"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="K"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="L"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="M"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="N"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="O"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="P"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="Q"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="R"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="S"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="T"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="U"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="V"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="W"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="X"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="Y"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="Z"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aa"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="ab"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="ac"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="ad"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="ae"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="af"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="ag"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="ah"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="ai"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aj"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="ak"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="al"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="am"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="an"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="ao"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="ap"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aq"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="ar"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="as"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="at"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="au"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="av"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aw"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="ax"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="ay"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="az"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aA"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aB"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aC"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aD"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aE"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aF"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aG"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aH"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aI"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aJ"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aK"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aL"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aM"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aN"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aO"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aP"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aQ"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aR"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aS"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aT"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aU"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aV"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aW"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="aX"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="aY"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="aZ"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="ba"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bb"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bc"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bd"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="be"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bf"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bg"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bh"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bi"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bj"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bk"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bl"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bm"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bn"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bo"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bp"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bq"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="br"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bs"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bt"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bu"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="bv"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient><linearGradient id="bw"><stop offset="0" style="stop-color:#999;stop-opacity:1"/><stop offset="1" style="stop-color:#999;stop-opacity:0"/></linearGradient><linearGradient id="bx"><stop offset="0" style="stop-color:#000;stop-opacity:1"/><stop offset=".5" style="stop-color:#000;stop-opacity:1"/><stop offset=".75" style="stop-color:#000;stop-opacity:1"/><stop offset=".938" style="stop-color:#000;stop-opacity:.6156863"/><stop offset="1" style="stop-color:#000;stop-opacity:.21568628"/></linearGradient><linearGradient id="by"><stop offset="0" style="stop-color:#fff;stop-opacity:1"/><stop offset="1" style="stop-color:#fff;stop-opacity:0"/></linearGradient></defs><path d="M226.13 290.992c-55.122 73.603-120.78 95.456-150.606 94.416M344.205 71.898C191.587 190.858 114.13 218.29 67.09 208.68" style="fill:none;stroke:#fff;stroke-width:10.18983173;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/><path d="M445.412 293.413C388.36 264.81 338.91 253.613 340.59 74.319c-33.712 70.8-57.038 136.383-114.46 219.094-27.03 104.247-14.362 143.686 9.638 164.623" style="fill:none;stroke:#fff;stroke-width:10.18983173;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/><g style="fill:#fff;stroke:#6c5d53"><path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53" transform="matrix(-.1041 -.11495 .11442 -.10458 212.338 551.013)"/></g><path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53" transform="matrix(-.1041 -.11495 .11442 -.10458 421.32 392.442)"/><path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53" transform="matrix(-.1041 -.11495 .11442 -.10458 53.84 480.806)"/><path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53" transform="matrix(-.1041 -.11495 .11442 -.10458 203.242 391.232)"/><path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53" transform="matrix(-.1041 -.11495 .11442 -.10458 40.587 300.447)"/><g style="fill:#fff;stroke:#6c5d53"><path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53" transform="matrix(-.1041 -.11495 .11442 -.10458 326.118 147.804)"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" version="1.0">
+	<desc>Picture of a blue sphere (circle with 3D highlighting)</desc>
+	<defs>
+		<linearGradient id="a">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="b">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="c">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="d">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="e">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="f">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="g">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="h">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="i">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="j">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="k">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="l">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="m">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="n">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="o">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="p">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="q">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="r">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="s">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="t">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="u">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="v">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="w">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="x">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="y">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="z">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="A">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="B">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="C">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="D">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="E">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="F">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="G">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="H">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="I">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="J">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="K">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="L">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="M">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="N">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="O">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="P">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="Q">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="R">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="S">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="T">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="U">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="V">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="W">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="X">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="Y">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="Z">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aa">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="ab">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ac">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ad">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="ae">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="af">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ag">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="ah">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ai">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aj">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="ak">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="al">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="am">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="an">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ao">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ap">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aq">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ar">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="as">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="at">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="au">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="av">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aw">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ax">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="ay">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="az">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aA">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aB">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aC">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aD">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aE">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aF">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aG">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aH">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aI">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aJ">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aK">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aL">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aM">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aN">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aO">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aP">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aQ">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aR">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aS">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aT">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aU">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aV">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aW">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="aX">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aY">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="aZ">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="ba">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bb">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bc">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bd">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="be">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bf">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bg">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bh">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bi">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bj">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bk">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bl">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bm">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bn">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bo">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bp">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bq">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="br">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bs">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bt">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bu">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="bv">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bw">
+			<stop offset="0" style="stop-color:#999;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#999;stop-opacity:0" />
+		</linearGradient>
+		<linearGradient id="bx">
+			<stop offset="0" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".5" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".75" style="stop-color:#000;stop-opacity:1" />
+			<stop offset=".938" style="stop-color:#000;stop-opacity:.6156863" />
+			<stop offset="1" style="stop-color:#000;stop-opacity:.21568628" />
+		</linearGradient>
+		<linearGradient id="by">
+			<stop offset="0" style="stop-color:#fff;stop-opacity:1" />
+			<stop offset="1" style="stop-color:#fff;stop-opacity:0" />
+		</linearGradient>
+	</defs>
+	<path d="M226.13 290.992c-55.122 73.603-120.78 95.456-150.606 94.416M344.205 71.898C191.587 190.858 114.13 218.29 67.09 208.68"
+		style="fill:none;stroke:#fff;stroke-width:10.18983173;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+	<path d="M445.412 293.413C388.36 264.81 338.91 253.613 340.59 74.319c-33.712 70.8-57.038 136.383-114.46 219.094-27.03 104.247-14.362 143.686 9.638 164.623"
+		style="fill:none;stroke:#fff;stroke-width:10.18983173;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+	<g style="fill:#fff;stroke:#6c5d53">
+		<path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53"
+			transform="matrix(-.1041 -.11495 .11442 -.10458 212.338 551.013)" />
+	</g>
+	<path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53"
+		transform="matrix(-.1041 -.11495 .11442 -.10458 421.32 392.442)" />
+	<path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53"
+		transform="matrix(-.1041 -.11495 .11442 -.10458 53.84 480.806)" />
+	<path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53"
+		transform="matrix(-.1041 -.11495 .11442 -.10458 203.242 391.232)" />
+	<path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53"
+		transform="matrix(-.1041 -.11495 .11442 -.10458 40.587 300.447)" />
+	<g style="fill:#fff;stroke:#6c5d53">
+		<path d="M605.714 535.22c0 124.658-101.055 225.714-225.714 225.714-124.659 0-225.714-101.056-225.714-225.715 0-124.658 101.055-225.714 225.714-225.714 124.659 0 225.714 101.056 225.714 225.714z" style="fill:#fff;fill-opacity:1;stroke:#6c5d53"
+			transform="matrix(-.1041 -.11495 .11442 -.10458 326.118 147.804)" />
+	</g>
+</svg>
