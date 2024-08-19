@@ -178,7 +178,7 @@ object Settings {
      * @param key     key
      * @param value   value
      */
-     fun putIntPref(context: Context, key: String?, value: Int) {
+    fun putIntPref(context: Context, key: String?, value: Int) {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         sharedPref.edit().putInt(key, value).commit()
     }

@@ -36,7 +36,7 @@ class TreebolicActivity : TreebolicSourceActivity(R.menu.treebolic) {
 
     companion object {
 
-         /**
+        /**
          * Make Treebolic activity intent
          *
          * @param context      context
