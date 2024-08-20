@@ -383,7 +383,6 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
                 if (dirContent == null || dirContent.isEmpty()) {
                     // deploy
                     expandZipAssetFile(this, "tests.zip")
-                    // Deployer.expandZipAssetFile(this, "serialized.zip");
                 }
             }
         }
@@ -568,7 +567,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, folder)
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, arrayOf("ser"))
         intent.addCategory(Intent.CATEGORY_OPENABLE)
-        activitySerializedResultLauncher!!.launch(intent) // MainActivity.REQUEST_SERIALIZED_CODE);
+        activitySerializedResultLauncher!!.launch(intent)
     }
 
     // R E Q U E S T S ( S T A R T A C T I V I T Y )
@@ -661,7 +660,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
      */
     private fun tryStartTreebolicBundle(archiveUri: Uri, zipEntry: String) {
         Log.d(TAG, "Start treebolic from bundle uri $archiveUri and zip entry $zipEntry")
-        val source = zipEntry // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry;
+        val source = zipEntry // alternatively: "jar:" + fileUri.toString() + "!/" + zipEntry
         val provider1 = provider!![Providers.PROVIDER].toString()
         if (provider1.isEmpty()) {
             Toast.makeText(this, R.string.error_null_provider, Toast.LENGTH_SHORT).show()

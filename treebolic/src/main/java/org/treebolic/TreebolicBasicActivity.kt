@@ -384,12 +384,12 @@ abstract class TreebolicBasicActivity protected constructor(
     }
 
     override fun warn(message: String) {
-        // toast(message, Toast.LENGTH_LONG);
+        // toast(message, Toast.LENGTH_LONG)
         snackbar(message, Snackbar.LENGTH_LONG)
     }
 
     override fun status(message: String) {
-        // toast(message, Toast.LENGTH_SHORT);
+        // toast(message, Toast.LENGTH_SHORT)
         snackbar(message, Snackbar.LENGTH_SHORT)
     }
 
@@ -407,7 +407,6 @@ abstract class TreebolicBasicActivity protected constructor(
      */
     protected abstract fun requery(source: String?)
 
-    // static private final int SEARCH_TRIGGER_LEVEL = Integer.MAX_VALUE;
     /**
      * Search pending flag
      */

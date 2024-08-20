@@ -262,12 +262,12 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     }
 
     override fun warn(message: String) {
-        // toast(message, Toast.LENGTH_LONG);
+        // toast(message, Toast.LENGTH_LONG)
         snackbar(message, Snackbar.LENGTH_LONG)
     }
 
     override fun status(message: String) {
-        // toast(message, Toast.LENGTH_SHORT);
+        // toast(message, Toast.LENGTH_SHORT)
         snackbar(message, Snackbar.LENGTH_SHORT)
     }
 
@@ -340,19 +340,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
             Log.d(TAG, "Null client")
             return
         }
-        /* TODO allow null source
-		if (source == null || source.isEmpty())
-		{
-			Log.d(TAG, "Null source");
-			return;
-		}
-		*/
         Log.d(TAG, "Requesting model for source $source")
-        /*
-		final String base = Settings.getStringPref(this, TreebolicIface.PREF_BASE);
-		final String imageBase = Settings.getStringPref(this, TreebolicIface.PREF_IMAGEBASE);
-		final String settings = Settings.getStringPref(this, TreebolicIface.PREF_SETTINGS);
-		*/
         client!!.requestModel(source!!, null, null, null, null)
     }
 
