@@ -15,6 +15,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.webkit.MimeTypeMap
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.SearchView
@@ -76,7 +77,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     /**
      * Client status indicator
      */
-    private lateinit var clientStatusMenuItem: MenuItem
+    private var clientStatusMenuItem: MenuItem? = null
 
     // L I F E C Y C L E
 
@@ -84,12 +85,14 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         super.onCreate(savedInstanceState)
 
         // widget
-        this.widget = Widget(this, this)
+        widget = Widget(this, this)
 
         // content view
         setContentView(R.layout.activity_treebolic_client)
         val container = findViewById<ViewGroup>(R.id.container)
-        container.addView(widget?.view as View)
+        val params = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, 1f)
+        val view: View = widget as View
+        container.addView(view, params)
 
         // toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -131,17 +134,17 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         menuInflater.inflate(R.menu.treebolic_client, menu)
 
         // client status
-        this.clientStatusMenuItem = menu.findItem(R.id.action_client_status)
-        clientStatusMenuItem.setOnMenuItemClickListener {
-            Toast.makeText(this@TreebolicClientActivity, if (this.clientStatus) R.string.client_up else R.string.client_down, Toast.LENGTH_SHORT).show()
+        clientStatusMenuItem = menu.findItem(R.id.action_client_status)
+        clientStatusMenuItem!!.setOnMenuItemClickListener {
+            Toast.makeText(this@TreebolicClientActivity, if (clientStatus) R.string.client_up else R.string.client_down, Toast.LENGTH_SHORT).show()
             true
         }
-        updateClientStatus(this.clientStatus)
+        updateClientStatus(clientStatus)
 
         // search view
         val searchMenuItem = menu.findItem(R.id.action_search)
         searchMenuItem.expandActionView()
-        this.searchView = searchMenuItem.actionView as SearchView?
+        searchView = searchMenuItem.actionView as SearchView?
 
         // search view width
         val screenWidth = Utils.screenWidth(this)
@@ -168,7 +171,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (R.id.action_treebolic_client_toggle == id) {
-            if (this.clientStatus) {
+            if (clientStatus) {
                 stop()
             } else {
                 start()
@@ -223,8 +226,8 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     }
 
     override fun getParameters(): Properties {
-        if (this.parameters == null) {
-            this.parameters = makeParameters()
+        if (parameters == null) {
+            parameters = makeParameters()
         }
         return parameters!!
     }
@@ -235,7 +238,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
     override fun linkTo(url: String, target: String): Boolean {
         // if we handle url, initiate another query/response cycle
-        if (this.urlScheme != null && url.startsWith(urlScheme!!)) {
+        if (urlScheme != null && url.startsWith(urlScheme!!)) {
             val source2 = url.substring(urlScheme!!.length)
             query(source2)
             return true
@@ -287,18 +290,18 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     // U N M A R S H A L
 
     private fun unmarshalArgs(intent: Intent) {
-        this.argService = intent.getStringExtra(TreebolicIface.ARG_SERVICE)
+        argService = intent.getStringExtra(TreebolicIface.ARG_SERVICE)
     }
 
     // C L I E N T
 
     override fun makeClient(): ITreebolicClient? {
-        if (this.argService == null || argService!!.isEmpty()) {
+        if (argService == null || argService!!.isEmpty()) {
             // default
-            this.argService = getStringPref(this, Settings.PREF_SERVICE)
+            argService = getStringPref(this, Settings.PREF_SERVICE)
         }
 
-        return service2Client(this.argService)
+        return service2Client(argService)
     }
 
     /**
@@ -336,7 +339,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
      */
     private fun query(source: String?) {
         Log.d(TAG, "Query $source")
-        if (this.client == null) {
+        if (client == null) {
             Log.d(TAG, "Null client")
             return
         }
@@ -403,7 +406,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         closeKeyboard()
 
         // new or continued search
-        if (!this.searchPending) {
+        if (!searchPending) {
             val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
             val query = searchView!!.query.toString()
             val scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL) // label, content, link, id
@@ -428,9 +431,9 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         closeKeyboard()
 
         // new or continued search
-        if (!this.searchPending) {
+        if (!searchPending) {
             val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this)
-            val query = sharedPrefs.getString(Settings.PREF_SERVICE_SOURCE, "dummy")
+            val query = sharedPrefs.getString(Settings.PREF_SERVICE_SOURCE, "")
             Log.d(TAG, "Source \"$query\"")
             query(query)
         }
@@ -450,7 +453,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     }
 
     private fun closeKeyboard() {
-        val view = this.currentFocus
+        val view = currentFocus
         if (view != null) {
             val imm = checkNotNull(getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager)
             imm.hideSoftInputFromWindow(view.windowToken, 0)
@@ -461,7 +464,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
     private fun runSearch(scope: String?, mode: String?, target: String) {
         Log.d(TAG, "Search run$scope $mode $target")
-        this.searchPending = true
+        searchPending = true
         widget!!.search(CMD_SEARCH, scope, mode, target)
     }
 
@@ -472,7 +475,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
     private fun resetSearch() {
         Log.d(TAG, "Search reset")
-        this.searchPending = false
+        searchPending = false
         widget!!.search(CMD_RESET)
     }
 
@@ -487,7 +490,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
     private fun updateClientStatus(flag: Boolean) {
         // snackbar
-        val fields = if (this.argService == null) null else argService!!.split("/".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val fields = if (argService == null) null else argService!!.split("/".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         val message = getString(if (flag) R.string.status_client_connected else R.string.error_client_not_connected) + ' ' + (fields?.get(1) ?: "")
         if (flag) {
             snackbar(message, Snackbar.LENGTH_LONG)
@@ -496,7 +499,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         }
 
         // status icon
-        clientStatusMenuItem.setIcon(if (flag) R.drawable.ic_status_up else R.drawable.ic_status_down)
+        clientStatusMenuItem?.setIcon(if (flag) R.drawable.ic_status_up else R.drawable.ic_status_down)
 
         // fab
         if (flag) {
@@ -523,7 +526,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
      */
     private fun snackbar(message: String, duration: Int) {
         runOnUiThread {
-            val snack: Snackbar = Snackbar.make(widget?.view as View, message, duration)
+            val snack: Snackbar = Snackbar.make(widget as View, message, duration)
             val view = snack.view
             view.setBackgroundColor(ContextCompat.getColor(this@TreebolicClientActivity, R.color.snackbar_color))
             snack.show()
@@ -537,7 +540,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
      */
     private fun stickySnackbar(message: String) {
         runOnUiThread {
-            val snack: Snackbar = Snackbar.make(widget?.view as View, message, Snackbar.LENGTH_INDEFINITE)
+            val snack: Snackbar = Snackbar.make(widget as View, message, Snackbar.LENGTH_INDEFINITE)
             snack.setAction(android.R.string.ok) { snack.dismiss() }
             snack.show()
         }
