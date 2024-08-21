@@ -21,9 +21,9 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import androidx.multidex.BuildConfig
 import androidx.preference.PreferenceManager
 import com.google.android.material.snackbar.Snackbar
+import org.treebolic.BuildConfig
 import org.treebolic.Settings.getURLPref
 import org.treebolic.guide.AboutActivity
 import org.treebolic.guide.HelpActivity
