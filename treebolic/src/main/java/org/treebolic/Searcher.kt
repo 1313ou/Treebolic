@@ -29,7 +29,7 @@ class Searcher(
      * Search
      */
     private fun search(target: String): Boolean {
-        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this.context)
+        val sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
 
         val scope = sharedPrefs.getString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_LABEL) // label, content, link, id
         val mode = sharedPrefs.getString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_STARTSWITH) // equals, startswith, includes
@@ -39,7 +39,7 @@ class Searcher(
             return false
         }
 
-        if (!this.searchPending) {
+        if (!searchPending) {
             runSearch(scope, mode, target)
         } else {
             continueSearch()
@@ -53,7 +53,7 @@ class Searcher(
         }
 
         Log.d(TAG, "Search run$scope $mode $target")
-        this.searchPending = true
+        searchPending = true
         widget.search(CMD_SEARCH, scope, mode, target)
     }
 
@@ -64,7 +64,7 @@ class Searcher(
 
     private fun resetSearch() {
         Log.d(TAG, "Search reset")
-        this.searchPending = false
+        searchPending = false
         widget.search(CMD_RESET)
     }
 
