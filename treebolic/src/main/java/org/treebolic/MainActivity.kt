@@ -217,13 +217,13 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         updateButton()
     }
 
-    public override fun onSaveInstanceState(savedInstanceState: Bundle) {
+    public override fun onSaveInstanceState(outState: Bundle) {
         // serialize the current dropdown position
         val position = spinner.selectedItemPosition
-        savedInstanceState.putInt(STATE_SELECTED_PROVIDER_ITEM, position)
+        outState.putInt(STATE_SELECTED_PROVIDER_ITEM, position)
 
         // always call the superclass so it can save the view hierarchy state
-        super.onSaveInstanceState(savedInstanceState)
+        super.onSaveInstanceState(outState)
     }
 
     public override fun onRestoreInstanceState(savedInstanceState: Bundle) {
