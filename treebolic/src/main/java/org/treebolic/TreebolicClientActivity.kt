@@ -236,7 +236,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         return Settings.STYLE_DEFAULT
     }
 
-    override fun linkTo(url: String, target: String): Boolean {
+    override fun linkTo(url: String, target: String?): Boolean {
         // if we handle url, initiate another query/response cycle
         if (urlScheme != null && url.startsWith(urlScheme!!)) {
             val source2 = url.substring(urlScheme!!.length)
