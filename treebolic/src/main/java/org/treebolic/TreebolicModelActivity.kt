@@ -49,15 +49,15 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
         val key = params.getLong(TreebolicIface.ARG_MODEL_REFERENCE, -1L)
         if (key != -1L) {
             try {
-                this.model = get(key)
+                model = get(key)
             } catch (ignored: NoSuchElementException) {
-                this.model = null
+                model = null
             }
         } else {
             val isSerialized = params.getBoolean(TreebolicIface.ARG_SERIALIZED)
             if (isSerialized) {
                 @Suppress("DEPRECATION")
-                this.model = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+                model = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
                     params.getSerializable(TreebolicIface.ARG_MODEL, Model::class.java) else
                     params.getSerializable(TreebolicIface.ARG_MODEL) as Model?
             } else {
@@ -66,7 +66,7 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
                     params.getParcelable(TreebolicIface.ARG_MODEL, ParcelableModel::class.java) else
                     params.getParcelable(TreebolicIface.ARG_MODEL)
                 if (parcelModel != null) {
-                    this.model = parcelModel.model
+                    model = parcelModel.model
                 }
             }
         }
@@ -76,7 +76,7 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
 
         // retrieve other parameters
         @Suppress("DEPRECATION")
-        this.serializedModel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
+        serializedModel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
             params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI, Uri::class.java) else  //
             params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI)
 
@@ -88,7 +88,7 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
 
     override fun query() {
         // sanity check
-        if (this.model == null && this.serializedModel == null) {
+        if (model == null && serializedModel == null) {
             Toast.makeText(this, R.string.error_null_model, Toast.LENGTH_LONG).show()
             finish()
             return
@@ -96,21 +96,21 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
 
         // query
         // init widget with model
-        if (this.serializedModel != null) {
+        if (serializedModel != null) {
             Log.d(TAG, "Using serialized model")
             val model = deserializeGuarded(ModelReader(serializedModel!!.path))
             widget!!.init(model)
         } else {
-            widget!!.init(this.model)
+            widget!!.init(model)
         }
     }
 
     override fun requery(source: String?) {
-        if (this.parentActivityIntentArg != null) {
+        if (parentActivityIntentArg != null) {
             Log.d(TAG, "Requesting model from $source")
             try {
                 parentActivityIntentArg!!.putExtra(TreebolicIface.ARG_SOURCE, source)
-                startActivity(this.parentActivityIntentArg)
+                startActivity(parentActivityIntentArg)
             } catch (ignored: Exception) {
                 Toast.makeText(this, R.string.error_query, Toast.LENGTH_LONG).show()
             }
