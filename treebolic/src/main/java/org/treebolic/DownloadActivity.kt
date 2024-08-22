@@ -51,11 +51,11 @@ class DownloadActivity : org.treebolic.download.DownloadActivity() {
     override fun process(inputStream: InputStream): Boolean {
         val storage = getTreebolicStorage(this)
 
-        if (this.expandArchive) {
+        if (expandArchive) {
             expand(inputStream, storage, false)
             return true
         }
-        val downloadUri = Uri.parse(this.downloadUrl)
+        val downloadUri = Uri.parse(downloadUrl)
         val lastSegment = downloadUri.lastPathSegment ?: return false
         val destFile = File(storage, lastSegment)
         copy(inputStream, destFile)
