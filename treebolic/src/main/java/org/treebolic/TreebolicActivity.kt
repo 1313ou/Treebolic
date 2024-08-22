@@ -29,9 +29,9 @@ class TreebolicActivity : TreebolicSourceActivity(R.menu.treebolic) {
         widget!!.init(providerName, source)
     }
 
-    override fun requery(source0: String?) {
-        source = source0
-        widget!!.reinit(source)
+    override fun requery(newSource: String?) {
+        source = newSource
+        widget!!.reinit(newSource)
     }
 
     companion object {

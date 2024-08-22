@@ -402,9 +402,9 @@ abstract class TreebolicBasicActivity protected constructor(
     /**
      * Requery (linkTo, or searchView)
      *
-     * @param source source
+     * @param newSource new source
      */
-    protected abstract fun requery(source: String?)
+    protected abstract fun requery(newSource: String?)
 
     /**
      * Search pending flag

@@ -105,11 +105,11 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
         }
     }
 
-    override fun requery(source: String?) {
+    override fun requery(newSource: String?) {
         if (parentActivityIntentArg != null) {
-            Log.d(TAG, "Requesting model from $source")
+            Log.d(TAG, "Requesting model from $newSource")
             try {
-                parentActivityIntentArg!!.putExtra(TreebolicIface.ARG_SOURCE, source)
+                parentActivityIntentArg!!.putExtra(TreebolicIface.ARG_SOURCE, newSource)
                 startActivity(parentActivityIntentArg)
             } catch (ignored: Exception) {
                 Toast.makeText(this, R.string.error_query, Toast.LENGTH_LONG).show()

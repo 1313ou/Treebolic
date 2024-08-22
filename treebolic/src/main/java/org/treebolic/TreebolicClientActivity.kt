@@ -347,7 +347,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         client!!.requestModel(source!!, null, null, null, null)
     }
 
-    override fun onModel(model: Model?, urlScheme: String?) {
+    override fun onModel(model: Model?, modelUrlScheme: String?) {
         Log.d(TAG, "Receiving model" + (if (BuildConfig.DEBUG) "\n${ModelDump.toString(model)}\n" else ' '.toString() + (model?.toString() ?: "null")))
 
         // abort
@@ -358,7 +358,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         }
 
         // init widget with model
-        this.urlScheme = urlScheme
+        urlScheme = modelUrlScheme
         widget!!.init(model)
     }
 
