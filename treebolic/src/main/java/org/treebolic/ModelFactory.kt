@@ -41,9 +41,9 @@ class ModelFactory(
      */
     fun make(source: String?, base: String?, imageBase: String?, settings: String?): Model? {
         // provider
-        provider.setContext(this.providerContext)
-        provider.setLocator(this.locatorContext)
-        provider.setHandle(this.applicationContext)
+        provider.setContext(providerContext)
+        provider.setLocator(locatorContext)
+        provider.setHandle(applicationContext)
 
         // model
         val model = provider.makeModel(source, makeBaseURL(base), makeParameters(source, base, imageBase, settings))
