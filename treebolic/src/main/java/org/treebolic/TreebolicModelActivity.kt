@@ -42,7 +42,7 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
      */
     override fun unmarshalArgs(intent: Intent) {
         // retrieve arguments
-        val params = checkNotNull(intent.extras)
+        val params = intent.extras!!
         params.classLoader = classLoader
 
         // retrieve model

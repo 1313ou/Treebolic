@@ -184,10 +184,8 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             // set up the dropdown list navigation in the action bar.
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parentView: AdapterView<*>?, selectedItemView: View?, position: Int, id: Long) {
-                    checkNotNull(this@MainActivity.adapter)
-
                     @Suppress("UNCHECKED_CAST")
-                    this@MainActivity.provider = adapter!!.getItem(position) as Provider
+                    provider = adapter!!.getItem(position) as Provider
 
                     val name = provider!![Providers.NAME]
                     Settings.putStringPref(this@MainActivity, Settings.PREF_PROVIDER_NAME, name.toString())
@@ -242,7 +240,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
 
         // search view
         val searchMenuItem = menu.findItem(R.id.action_search)
-        val searchView = checkNotNull(searchMenuItem.actionView as SearchView?)
+        val searchView = searchMenuItem.actionView as SearchView
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 searchView.clearFocus()
@@ -289,9 +287,8 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             tryStartTreebolicDefaultClient()
             return true
         } else if (R.id.action_demo == id) {
-            val archiveUri = copyAssetFile(this, Settings.DEMO)
             spinner.setSelection(0)
-            checkNotNull(archiveUri)
+            val archiveUri = copyAssetFile(this, Settings.DEMO)!!
             tryStartTreebolicBundle(archiveUri)
             return true
         } else if (R.id.action_download == id) {
@@ -450,11 +447,8 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
      * @return base adapter
      */
     private fun makeAdapter(@Suppress("SameParameterValue") @LayoutRes itemLayoutRes: Int, @Suppress("SameParameterValue") from: Array<String>, @Suppress("SameParameterValue") to: IntArray): SimpleAdapter {
-        // adapter
-        val adapter = checkNotNull(Providers.makeAdapter(this, itemLayoutRes, from, to))
-
+        val adapter = Providers.makeAdapter(this, itemLayoutRes, from, to)!!
         adapter.setDropDownViewResource(R.layout.spinner_item_providers_dropdown)
-
         return adapter
     }
 

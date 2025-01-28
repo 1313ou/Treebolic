@@ -92,8 +92,7 @@ object Providers {
      * @return provider
      */
     fun get(key: String): Provider? {
-        checkNotNull(providersByClass)
-        return providersByClass!![key]
+         return providersByClass!![key]
     }
 
     /**
@@ -143,7 +142,7 @@ object Providers {
             val process = Utils.getProcessName(context)
 
             val assetManager = context.assets
-            val manifests = checkNotNull(assetManager.list(ASSET_DIR))
+            val manifests = assetManager.list(ASSET_DIR)!!
             for (manifest in manifests) {
                 Log.i(TAG, "Reading $manifest")
                 try {
@@ -156,8 +155,8 @@ object Providers {
                         if (result == null) {
                             result = TreeMap(Comparator.reverseOrder())
                         }
-                        val key = checkNotNull(provider[PROVIDER])
-                        result!!.put(key.toString(), provider)
+                        val key = provider[PROVIDER].toString()
+                        result.put(key, provider)
                     }
                 } catch (e: IOException) {
                     Log.e(TAG, "Error while reading $manifest", e)
@@ -179,7 +178,7 @@ object Providers {
             context.assets.open("$ASSET_IMAGE_DIR/$imageFile").use { input ->
                 return Drawable.createFromResourceStream(context.resources, null, input, null)
             }
-        } catch (ignored: IOException) {
+        } catch (_: IOException) {
         }
         return null
     }
@@ -228,7 +227,7 @@ object Providers {
                 try {
                     val drawable = readAssetDrawable(context, value)
                     imageView.setImageDrawable(drawable)
-                } catch (ignored: Exception) {
+                } catch (_: Exception) {
                     //
                 }
             }

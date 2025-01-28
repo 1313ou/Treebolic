@@ -58,14 +58,14 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
 
                 // bind
                 // active name
-                val namePref = findPreference<Preference>(Settings.PREF_PROVIDER_NAME)
+                val namePref: Preference? = findPreference(Settings.PREF_PROVIDER_NAME)
                 if (namePref != null) {
                     val key = namePref.key
                     namePref.summary = Settings.getStringPref(requireActivity(), key) // default prefs
                 }
 
                 // active icon
-                val iconPref = findPreference<Preference>(Settings.PREF_PROVIDER_ICON)
+                val iconPref: Preference? = findPreference(Settings.PREF_PROVIDER_ICON)
                 if (iconPref != null) {
                     val imageFile = provider!![Providers.ICON]
                     val context = requireContext()
@@ -75,7 +75,7 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
 
                 // active preferences
                 for (prefKey in arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, Settings.PREF_PROVIDER)) {
-                    val preference = findPreference<Preference>(prefKey)
+                    val preference: Preference? = findPreference(prefKey)
                     if (preference != null) {
                         preference.summaryProvider = STRING_SUMMARY_PROVIDER
                     }
@@ -134,19 +134,19 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
             addPreferencesFromResource(R.xml.pref_general)
 
             // bind
-            val sourcePreference = checkNotNull(findPreference(TreebolicIface.PREF_SOURCE))
+            val sourcePreference: Preference = findPreference(TreebolicIface.PREF_SOURCE)!!
             sourcePreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-            val basePreference = checkNotNull(findPreference(TreebolicIface.PREF_BASE))
+            val basePreference: Preference = findPreference(TreebolicIface.PREF_BASE)!!
             basePreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-            val imageBasePreference = checkNotNull(findPreference(TreebolicIface.PREF_IMAGEBASE))
+            val imageBasePreference: Preference = findPreference(TreebolicIface.PREF_IMAGEBASE)!!
             imageBasePreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-            val settingsPreference = checkNotNull(findPreference(TreebolicIface.PREF_SETTINGS))
+            val settingsPreference: Preference = findPreference(TreebolicIface.PREF_SETTINGS)!!
             settingsPreference.summaryProvider = STRING_SUMMARY_PROVIDER
 
-            val providerPreference = checkNotNull(findPreference(Settings.PREF_PROVIDER))
+            val providerPreference: Preference = findPreference(Settings.PREF_PROVIDER)!!
             providerPreference.summaryProvider = STRING_SUMMARY_PROVIDER
         }
     }
@@ -158,10 +158,10 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
             addPreferencesFromResource(R.xml.pref_download)
 
             // bind
-            val basePreference = checkNotNull(findPreference(Settings.PREF_DOWNLOAD_BASE))
+            val basePreference: Preference = findPreference(Settings.PREF_DOWNLOAD_BASE)!!
             basePreference.summaryProvider = OpenEditTextPreference.SUMMARY_PROVIDER
 
-            val filePreference = checkNotNull(findPreference(Settings.PREF_DOWNLOAD_FILE))
+            val filePreference: Preference = findPreference(Settings.PREF_DOWNLOAD_FILE)!!
             filePreference.summaryProvider = OpenEditTextPreference.SUMMARY_PROVIDER
         }
 
@@ -179,7 +179,8 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
             addPreferencesFromResource(R.xml.pref_service)
 
             // preference
-            val listPreference = checkNotNull(findPreference<ListPreference>(Settings.PREF_SERVICE))
+            val listPreference: ListPreference = findPreference(Settings.PREF_SERVICE)!!
+
             // activity
             val activity = activity as SettingsActivity?
             if (activity != null) {
@@ -227,8 +228,7 @@ class SettingsActivity : AppCompatCommonPreferenceActivity() {
         // S U M M A R Y
 
         private val STRING_SUMMARY_PROVIDER = SummaryProvider { preference: Preference ->
-            val sharedPrefs = checkNotNull(preference.sharedPreferences)
-            val value = sharedPrefs.getString(preference.key, null)
+            val value = preference.sharedPreferences!!.getString(preference.key, null)
             value ?: ""
         }
     }

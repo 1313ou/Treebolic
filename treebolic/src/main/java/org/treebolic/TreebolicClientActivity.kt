@@ -455,7 +455,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
     private fun closeKeyboard() {
         val view = currentFocus
         if (view != null) {
-            val imm = checkNotNull(getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager)
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
