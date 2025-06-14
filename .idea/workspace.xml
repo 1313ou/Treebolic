@@ -104,14 +104,7 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../TreebolicSupportLibs/commonLib/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="7d56a1c1-1320-47b6-947b-37820b1ca4fa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
