@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="Treebolic.commonLib" target="21" />
+      <module name="Treebolic.donateLib" target="21" />
+      <module name="Treebolic.downloadLib" target="21" />
+      <module name="Treebolic.fileChooserLib" target="21" />
+      <module name="Treebolic.guideLib" target="21" />
+      <module name="Treebolic.othersLib" target="21" />
+      <module name="Treebolic.preferenceLib" target="21" />
+      <module name="Treebolic.rateLib" target="21" />
+      <module name="Treebolic.searchLib" target="21" />
+      <module name="Treebolic.storageLib" target="21" />
+      <module name="Treebolic.treebolic" target="21" />
+      <module name="Treebolic.treebolicAidl" target="21" />
+      <module name="Treebolic.treebolicClientsIface" target="21" />
+      <module name="Treebolic.treebolicClientsLib" target="21" />
+      <module name="Treebolic.treebolicGlue" target="21" />
+      <module name="Treebolic.treebolicIface" target="21" />
+      <module name="Treebolic.treebolicParcel" target="21" />
+      <module name="Treebolic.treebolicServicesIface" target="21" />
+      <module name="Treebolic.treebolicServicesLib" target="21" />
+      <module name="Treebolic.wheelLib" target="21" />
+    </bytecodeTargetLevel>
   </component>
 </project>
