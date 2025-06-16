@@ -481,9 +481,9 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
     // C O N N E C T I O N L I S T E N E R
 
-    override fun onConnected(flag: Boolean) {
-        updateClientStatus(flag)
-        super.onConnected(flag)
+    override fun onConnected(success: Boolean) {
+        updateClientStatus(success)
+        super.onConnected(success)
     }
 
     // S T A T U S
