@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="213.333" height="213.333" version="1.0"><desc>Picture of a blue sphere (circle with 3D highlighting)</desc><defs><clipPath id="a"><path d="M5.39 28.193h21.807V3.864H5.39v24.329z"/></clipPath></defs><g style="fill:#d3d3d3"><g style="fill:#d3d3d3"><g clip-path="url(#a)" style="opacity:.80000299;fill:#d3d3d3" transform="matrix(7.41995 0 0 -7.41995 -14.228 225.598)"><g style="fill:#d3d3d3"><path d="M0 0a10.933 10.933 0 0 0-3.269-.503c-1.789 0-3.564.462-5.169 1.324l-2.422-2.588-.644 7.171 7.592.256-2.73-2.922a8.378 8.378 0 0 1 5.884-.326 8.354 8.354 0 0 1 5.842 8.525l2.521.165A10.875 10.875 0 0 0 0 0m.094 18.057a8.347 8.347 0 0 1-5.886.327 8.352 8.352 0 0 1-5.844-8.526l-2.52-.165a10.88 10.88 0 0 0 7.602 11.103c2.814.887 5.86.58 8.448-.818l2.418 2.584.645-7.17-7.596-.253z" style="fill:#d3d3d3;fill-opacity:1;fill-rule:evenodd;stroke:none" transform="translate(19.568 5.63)"/></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="213.333" height="213.333" version="1.0">
+	<desc>Picture of a blue sphere (circle with 3D highlighting)</desc>
+	<defs>
+		<clipPath id="a">
+			<path d="M5.39 28.193h21.807V3.864H5.39v24.329z" />
+		</clipPath>
+	</defs>
+	<g style="fill:#d3d3d3">
+		<g style="fill:#d3d3d3">
+			<g clip-path="url(#a)" style="opacity:.80000299;fill:#d3d3d3" transform="matrix(7.41995 0 0 -7.41995 -14.228 225.598)">
+				<g style="fill:#d3d3d3">
+					<path
+						d="M0 0a10.933 10.933 0 0 0-3.269-.503c-1.789 0-3.564.462-5.169 1.324l-2.422-2.588-.644 7.171 7.592.256-2.73-2.922a8.378 8.378 0 0 1 5.884-.326 8.354 8.354 0 0 1 5.842 8.525l2.521.165A10.875 10.875 0 0 0 0 0m.094 18.057a8.347 8.347 0 0 1-5.886.327 8.352 8.352 0 0 1-5.844-8.526l-2.52-.165a10.88 10.88 0 0 0 7.602 11.103c2.814.887 5.86.58 8.448-.818l2.418 2.584.645-7.17-7.596-.253z"
+						style="fill:#d3d3d3;fill-opacity:1;fill-rule:evenodd;stroke:none" transform="translate(19.568 5.63)" />
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>

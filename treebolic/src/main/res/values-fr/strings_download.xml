@@ -24,16 +24,17 @@
 	<string-array name="pref_download_file_labels">
 		<item>Extras</item>
 		<item>Demos</item>
-		<item>Sérialisés</item>
 		<item>Animaux</item>
-		<item>Plantae</item>
+		<item>Plantes</item>
+		<item>Champignons</item>
 		<item>Monarchie britannique</item>
-		<item>SUMO</item>
 		<item>Graphnet</item>
 		<item>Divers</item>
 		<item>WordNet (xml)</item>
-		<item>Pizza (xml)</item>
-		<item>Robots (xml)</item>
+		<item>Test (xml)</item>
+		<item>Test (dot)</item>
+		<item>Owl (owl)</item>
+		<item>Sérialisés</item>
 	</string-array>
 
 </resources>
