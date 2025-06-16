@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.commons:commons-lang3:3.16.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.apache.commons" artifactId="commons-lang3" version="3.16.0" baseVersion="3.16.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.16.0/3eb54effe40946dfb06dc5cd6c7ce4116cd51ea4/commons-lang3-3.16.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.16.0/3ab794da9f9417fe5b1206d747169746efb076d3/commons-lang3-3.16.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.16.0/1178f62ed2aec3d255e2859d367f98ef6541026d/commons-lang3-3.16.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
