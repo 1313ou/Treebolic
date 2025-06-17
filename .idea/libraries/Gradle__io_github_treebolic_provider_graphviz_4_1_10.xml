@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:provider-graphviz:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="provider-graphviz" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-graphviz/4.1-10/cf6878cdfee71db6f56ac83a1d46201efa1d5ca9/provider-graphviz-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-graphviz/4.1-10/7f377259cfbbbb50f94987d38866cebd65bcc1e9/provider-graphviz-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-graphviz/4.1-10/69893039c78658a235da59f88955029fbd7a9717/provider-graphviz-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

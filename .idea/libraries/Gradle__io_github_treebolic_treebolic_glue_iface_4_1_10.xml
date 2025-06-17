@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:treebolic-glue-iface:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="treebolic-glue-iface" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/io/github/treebolic/treebolic-glue-iface/4.1-10/treebolic-glue-iface-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-glue-iface/4.1-10/34cbb9fc9ff154e8e3a96b3e56c7afad7df8f0fc/treebolic-glue-iface-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/treebolic-glue-iface/4.1-10/ce19adf072b82829c0b4e62777c61e8602c3f720/treebolic-glue-iface-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

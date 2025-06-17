@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:provider-xml-dom:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="provider-xml-dom" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-xml-dom/4.1-10/5f464c2f9b721faedbfca8ecda91c1b5d844cfe6/provider-xml-dom-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-xml-dom/4.1-10/ca2692b1cdd30ebca9a13d2ff08593027f1b41e5/provider-xml-dom-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-xml-dom/4.1-10/a7a92d001f78415a51273c050a571724a3315c42/provider-xml-dom-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

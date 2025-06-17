@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: io.github.treebolic:provider-text-pair:4.1-10" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.github.treebolic" artifactId="provider-text-pair" version="4.1-10" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-text-pair/4.1-10/5887355412bd073fd8eab9bb3a78ffc636b08580/provider-text-pair-4.1-10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-text-pair/4.1-10/8d9598448df3a4caec0d769467dc7c36fed055d1/provider-text-pair-4.1-10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.treebolic/provider-text-pair/4.1-10/113ec8f401bb610fdf115cd32cf3547691106109/provider-text-pair-4.1-10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
