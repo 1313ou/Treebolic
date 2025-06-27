@@ -150,7 +150,7 @@ object Services {
                     val drawable = loadIcon(context.packageManager, fields[0], index)
                     v.setImageDrawable(drawable)
                 } catch (ignored: Exception) {
-                    //
+                    
                 }
             }
         }

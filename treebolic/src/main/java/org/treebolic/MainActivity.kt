@@ -51,6 +51,7 @@ import org.treebolic.storage.Deployer.expandZipAssetFile
 import org.treebolic.storage.Storage.getTreebolicStorage
 import java.io.File
 import java.io.IOException
+import androidx.core.content.edit
 
 /**
  * Treebolic main activity (home)
@@ -196,7 +197,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
                 }
 
                 override fun onNothingSelected(parentView: AdapterView<*>?) {
-                    //
+                    
                 }
             }
 
@@ -371,7 +372,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             Settings.setDefaults(this)
 
             // flag as initialized
-            sharedPref.edit().putBoolean(Settings.PREF_INITIALIZED, true).commit()
+            sharedPref.edit(commit = true) { putBoolean(Settings.PREF_INITIALIZED, true) }
 
             // deploy
             val dir = getTreebolicStorage(this)
@@ -533,7 +534,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         val extensions = provider!![Providers.EXTENSIONS].toString()
 
         val intent = Intent(this, FileChooserActivity::class.java)
-        intent.setType(provider!![Providers.MIMETYPE].toString())
+        intent.type = provider!![Providers.MIMETYPE].toString()
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, provider!![Providers.BASE].toString())
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, extensions.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
         intent.addCategory(Intent.CATEGORY_OPENABLE)
@@ -545,7 +546,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
      */
     private fun requestTreebolicBundle() {
         val intent = Intent(this, FileChooserActivity::class.java)
-        intent.setType("application/zip")
+        intent.type = "application/zip"
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, provider!![Providers.BASE].toString())
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, arrayOf("zip", "jar"))
         intent.addCategory(Intent.CATEGORY_OPENABLE)
@@ -557,7 +558,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
      */
     private fun requestTreebolicSerialized() {
         val intent = Intent(this, FileChooserActivity::class.java)
-        intent.setType("application/x-java-serialized-object")
+        intent.type = "application/x-java-serialized-object"
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_INITIAL_DIR, folder)
         intent.putExtra(FileChooserActivity.ARG_FILECHOOSER_EXTENSION_FILTER, arrayOf("ser"))
         intent.addCategory(Intent.CATEGORY_OPENABLE)

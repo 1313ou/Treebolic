@@ -3,10 +3,10 @@
  */
 package org.treebolic
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.net.toUri
 import org.treebolic.Settings.getStringPref
 import org.treebolic.download.Deploy.copy
 import org.treebolic.download.Deploy.expand
@@ -55,8 +55,8 @@ class DownloadActivity : org.treebolic.download.DownloadActivity() {
             expand(inputStream, storage, false)
             return true
         }
-        val downloadUri = Uri.parse(downloadUrl)
-        val lastSegment = downloadUri.lastPathSegment ?: return false
+        val downloadUri = downloadUrl?.toUri()
+        val lastSegment = downloadUri?.lastPathSegment ?: return false
         val destFile = File(storage, lastSegment)
         copy(inputStream, destFile)
         return true

@@ -19,8 +19,8 @@ object Utils {
     fun getProcessName(context: Context): String {
         val pkgName = BuildConfig.APPLICATION_ID
         val pm = context.packageManager
-        val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
-            pm.getApplicationInfo(pkgName, PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())) else  //
+        val info = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) 
+            pm.getApplicationInfo(pkgName, PackageManager.ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong())) else  
             pm.getApplicationInfo(pkgName, PackageManager.GET_META_DATA)
         return info.processName
     }

@@ -228,7 +228,7 @@ object Providers {
                     val drawable = readAssetDrawable(context, value)
                     imageView.setImageDrawable(drawable)
                 } catch (_: Exception) {
-                    //
+                    
                 }
             }
         }

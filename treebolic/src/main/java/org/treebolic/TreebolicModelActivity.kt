@@ -48,10 +48,10 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
         // retrieve model
         val key = params.getLong(TreebolicIface.ARG_MODEL_REFERENCE, -1L)
         if (key != -1L) {
-            try {
-                model = get(key)
-            } catch (ignored: NoSuchElementException) {
-                model = null
+            model = try {
+                get(key)
+            } catch (_: NoSuchElementException) {
+                null
             }
         } else {
             val isSerialized = params.getBoolean(TreebolicIface.ARG_SERIALIZED)
@@ -71,13 +71,13 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
             }
         }
         Log.d(
-            TAG, "Unmarshalled Model" + (if (BuildConfig.DEBUG) "\n${ModelDump.toString(model)}\n".trimIndent() else ' '.toString() + (if (model == null) "null" else model.toString()))
+            TAG, "Unmarshalled Model" + (if (BuildConfig.DEBUG) "\n${ModelDump.toString(model)}\n".trimIndent() else ' '.toString() + (model?.toString() ?: "null"))
         )
 
         // retrieve other parameters
         @Suppress("DEPRECATION")
-        serializedModel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
-            params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI, Uri::class.java) else  //
+        serializedModel = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) 
+            params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI, Uri::class.java) else  
             params.getParcelable(TreebolicIface.ARG_SERIALIZED_MODEL_URI)
 
         // super
@@ -111,7 +111,7 @@ class TreebolicModelActivity : TreebolicBasicActivity(R.menu.treebolic) {
             try {
                 parentActivityIntentArg!!.putExtra(TreebolicIface.ARG_SOURCE, newSource)
                 startActivity(parentActivityIntentArg)
-            } catch (ignored: Exception) {
+            } catch (_: Exception) {
                 Toast.makeText(this, R.string.error_query, Toast.LENGTH_LONG).show()
             }
         }

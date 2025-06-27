@@ -6,12 +6,13 @@ package org.treebolic
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import androidx.preference.PreferenceManager
 import java.net.MalformedURLException
 import java.net.URL
+import androidx.core.net.toUri
+import androidx.core.content.edit
 
 /**
  * Settings
@@ -78,11 +79,11 @@ object Settings {
     /**
      * Default CSS
      */
-    const val STYLE_DEFAULT: String = ".content { }\n" +  //
-            ".link {color: #FFA500;font-size: small;}\n" +  //
-            ".linking {color: #FFA500; font-size: small; }" +  //
-            ".mount {color: #CD5C5C; font-size: small;}" +  //
-            ".mounting {color: #CD5C5C; font-size: small; }" +  //
+    const val STYLE_DEFAULT: String = ".content { }\n" +  
+            ".link {color: #FFA500;font-size: small;}\n" +  
+            ".linking {color: #FFA500; font-size: small; }" +  
+            ".mount {color: #CD5C5C; font-size: small;}" +  
+            ".mounting {color: #CD5C5C; font-size: small; }" +  
             ".searching {color: #FF7F50; font-size: small; }"
 
     /**
@@ -100,7 +101,7 @@ object Settings {
             for (provider in providers) {
                 // provider shared preferences
                 val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
-                providerSharedPrefs.edit().clear().commit()
+                providerSharedPrefs.edit(commit = true) { clear() }
             }
         }
     }
@@ -122,18 +123,17 @@ object Settings {
                 val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
 
                 // commit non existent values
-                val editor = providerSharedPrefs.edit()
-                editor.clear()
+                providerSharedPrefs.edit(commit = true) {
+                    clear()
 
-                val keys = arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, PREF_PROVIDER)
-                val providerKeys = arrayOf(Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS, Providers.PROVIDER)
-                for (j in keys.indices) {
-                    val key = keys[j]
-                    val value = provider[providerKeys[j]]
-                    editor.putString(key, value.toString())
+                    val keys = arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS, PREF_PROVIDER)
+                    val providerKeys = arrayOf(Providers.SOURCE, Providers.BASE, Providers.IMAGEBASE, Providers.SETTINGS, Providers.PROVIDER)
+                    for (j in keys.indices) {
+                        val key = keys[j]
+                        val value = provider[providerKeys[j]]
+                        putString(key, value.toString())
+                    }
                 }
-
-                editor.commit()
             }
         }
     }
@@ -146,17 +146,17 @@ object Settings {
      */
     fun setActivePrefs(context: Context, provider: Provider) {
         val defaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
-        val editor = defaultSharedPrefs.edit()
-        val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
-        val providerClass = providerSharedPrefs.getString(PREF_PROVIDER, null)
-        editor.putString(PREF_PROVIDER, providerClass)
+        defaultSharedPrefs.edit(commit = true) {
+            val providerSharedPrefs = context.getSharedPreferences(getSharedPreferencesName(provider), Context.MODE_PRIVATE)
+            val providerClass = providerSharedPrefs.getString(PREF_PROVIDER, null)
+            putString(PREF_PROVIDER, providerClass)
 
-        val keys = arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS)
-        for (key in keys) {
-            val value = providerSharedPrefs.getString(key, null)
-            editor.putString(key, value)
+            val keys = arrayOf(TreebolicIface.PREF_SOURCE, TreebolicIface.PREF_BASE, TreebolicIface.PREF_IMAGEBASE, TreebolicIface.PREF_SETTINGS)
+            for (key in keys) {
+                val value = providerSharedPrefs.getString(key, null)
+                putString(key, value)
+            }
         }
-        editor.commit()
     }
 
     /**
@@ -168,7 +168,7 @@ object Settings {
      */
     fun putStringPref(context: Context, key: String?, value: String?) {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
-        sharedPref.edit().putString(key, value).commit()
+        sharedPref.edit(commit = true) { putString(key, value) }
     }
 
     /**
@@ -180,7 +180,7 @@ object Settings {
      */
     fun putIntPref(context: Context, key: String?, value: Int) {
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
-        sharedPref.edit().putInt(key, value).commit()
+        sharedPref.edit(commit = true) { putInt(key, value) }
     }
 
     /**
@@ -233,7 +233,7 @@ object Settings {
     private fun makeURL(url: String?): URL? {
         return try {
             URL(url)
-        } catch (ignored: MalformedURLException) {
+        } catch (_: MalformedURLException) {
             null
         }
     }
@@ -249,12 +249,12 @@ object Settings {
         val intent = Intent()
 
         if (apiLevel >= 9) {
-            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-            intent.setData(Uri.parse("package:$pkgName"))
+            intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+            intent.data = "package:$pkgName".toUri()
         } else {
             val appPkgName = if (apiLevel == 8) "pkg" else "com.android.settings.ApplicationPkgName"
 
-            intent.setAction(Intent.ACTION_VIEW)
+            intent.action = Intent.ACTION_VIEW
             intent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails")
             intent.putExtra(appPkgName, pkgName)
         }

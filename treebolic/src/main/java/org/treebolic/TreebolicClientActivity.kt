@@ -5,7 +5,6 @@ package org.treebolic
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Process
 import android.util.Log
@@ -21,6 +20,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.content.edit
+import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -247,7 +248,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         // standard handling
         try {
             val intent = Intent(Intent.ACTION_VIEW)
-            val uri = Uri.parse(url)
+            val uri = url.toUri()
             val extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString())
             val mimetype = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
             intent.setDataAndType(uri, mimetype)
@@ -567,10 +568,10 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
          */
         fun initializeSearchPrefs(context: Context) {
             val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
-            val editor = sharedPref.edit()
-            editor.putString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_SOURCE)
-            editor.putString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_IS)
-            editor.apply()
+            sharedPref.edit {
+                putString(SearchSettings.PREF_SEARCH_SCOPE, SearchSettings.SCOPE_SOURCE)
+                putString(SearchSettings.PREF_SEARCH_MODE, SearchSettings.MODE_IS)
+            }
         }
     }
 }

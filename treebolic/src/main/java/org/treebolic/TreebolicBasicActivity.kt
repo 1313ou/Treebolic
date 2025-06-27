@@ -4,7 +4,6 @@
 package org.treebolic
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Process
@@ -37,6 +36,8 @@ import treebolic.glue.component.Utils
 import java.net.MalformedURLException
 import java.net.URL
 import java.util.Properties
+import androidx.core.net.toUri
+import androidx.core.content.edit
 
 /**
  * Treebolic basic activity
@@ -58,8 +59,8 @@ abstract class TreebolicBasicActivity protected constructor(
         if (base != null) {
             try {
                 return URL(base)
-            } catch (ignored: MalformedURLException) {
-                //
+            } catch (_: MalformedURLException) {
+                
             }
         }
         return getURLPref(this, TreebolicIface.PREF_BASE)
@@ -74,8 +75,8 @@ abstract class TreebolicBasicActivity protected constructor(
         if (imagesBase != null) {
             try {
                 return URL(imagesBase)
-            } catch (ignored: MalformedURLException) {
-                //
+            } catch (_: MalformedURLException) {
+                
             }
         }
         return getURLPref(this, TreebolicIface.PREF_IMAGEBASE)
@@ -209,10 +210,11 @@ abstract class TreebolicBasicActivity protected constructor(
         val prefs = PreferenceManager.getDefaultSharedPreferences(this)
         val hasRun = prefs.getBoolean(Settings.PREF_FIRSTRUN, false)
         if (!hasRun) {
-            val edit = prefs.edit()
+            prefs.edit {
 
-            // flag as 'has run'
-            edit.putBoolean(Settings.PREF_FIRSTRUN, true).apply()
+                // flag as 'has run'
+                putBoolean(Settings.PREF_FIRSTRUN, true)
+            }
 
             // tips
             Tip.show(supportFragmentManager)
@@ -347,8 +349,8 @@ abstract class TreebolicBasicActivity protected constructor(
         cssStyle = params.getString(TreebolicIface.ARG_STYLE)
         urlScheme = params.getString(TreebolicIface.ARG_URLSCHEME)
         @Suppress("DEPRECATION")
-        parentActivityIntentArg = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) //
-            params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY, Intent::class.java) else  //
+        parentActivityIntentArg = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) 
+            params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY, Intent::class.java) else  
             params.getParcelable(TreebolicIface.ARG_PARENTACTIVITY)
     }
 
@@ -365,11 +367,11 @@ abstract class TreebolicBasicActivity protected constructor(
         // standard handling
         try {
             val intent = Intent(Intent.ACTION_VIEW)
-            val uri = Uri.parse(url)
+            val uri = url.toUri()
             val extension = MimeTypeMap.getFileExtensionFromUrl(uri.toString())
             val mimetype = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension)
             if (mimetype == null) {
-                intent.setData(uri)
+                intent.data = uri
             } else {
                 intent.setDataAndType(uri, mimetype)
             }
