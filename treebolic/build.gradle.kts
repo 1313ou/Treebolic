@@ -103,10 +103,8 @@ dependencies {
     implementation(libs.preference.ktx)
     implementation(libs.material)
 
-    implementation(libs.multidex)
     implementation(libs.core.ktx)
+    coreLibraryDesugaring(libs.desugar)
 
     testImplementation(libs.junit)
-
-    coreLibraryDesugaring(libs.desugar)
 }
