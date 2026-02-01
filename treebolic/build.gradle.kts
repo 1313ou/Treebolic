@@ -103,6 +103,8 @@ dependencies {
     implementation(libs.material)
 
     implementation(libs.core.ktx)
+    implementation(platform(libs.kotlin.bom))
+    implementation(kotlin("stdlib"))
     coreLibraryDesugaring(libs.desugar)
 
     testImplementation(libs.junit)
