@@ -36,6 +36,9 @@ project(":treebolicIface").projectDir = File("../TreebolicLib/treebolicIface/")
 
 // LIBS
 
+include(":theming")
+project(":theming").projectDir = File("../TreebolicSupportLibs/theming/")
+
 include(":commonLib")
 project(":commonLib").projectDir = File("../TreebolicSupportLibs/commonLib/")
 
