@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) Treebolic 2019. Bernard Bou <1313ou@gmail.com>
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<!-- snackbar -->
-	<item name="snackbar_color" type="color">#FF3765b1</item>
+	<color name="snackbar_color">#3765b1</color>
 
 </resources>
