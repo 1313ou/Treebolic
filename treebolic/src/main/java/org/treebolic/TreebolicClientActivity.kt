@@ -19,12 +19,12 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import org.treebolic.ColorUtils.fetchColors
 import org.treebolic.Settings.getStringPref
 import org.treebolic.Settings.getURLPref
 import org.treebolic.clients.TreebolicAIDLBoundClient
@@ -46,6 +46,7 @@ import treebolic.model.Model
 import treebolic.model.ModelDump
 import java.net.URL
 import java.util.Properties
+import com.google.android.material.R as MaterialR
 
 /**
  * Treebolic client activity (requests model from server) and dispatches returned model to display.
@@ -527,10 +528,11 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
      */
     private fun snackbar(message: String, duration: Int) {
         runOnUiThread {
-            val snack: Snackbar = Snackbar.make(widget as View, message, duration)
-            val view = snack.view
-            view.setBackgroundColor(ContextCompat.getColor(this@TreebolicClientActivity, R.color.snackbar_color))
-            snack.show()
+            val colors = fetchColors(this, MaterialR.attr.colorPrimaryContainer, MaterialR.attr.colorOnPrimaryContainer)
+            Snackbar.make(widget as View, message, duration)
+                .setBackgroundTint(colors[0])
+                .setTextColor(colors[1])
+                .show()
         }
     }
 
