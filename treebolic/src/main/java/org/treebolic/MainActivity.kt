@@ -6,10 +6,13 @@ package org.treebolic
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.res.Resources
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.util.Log
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
@@ -27,6 +30,7 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
@@ -97,9 +101,47 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
 
     // L I F E C Y C L E
 
+    @RequiresApi(Build.VERSION_CODES.Q)
+    private fun traceResolveThemeWith(theme: Resources.Theme, vararg attrIds: Int) {
+        val outValue = TypedValue()
+
+        attrIds.forEach {
+
+            // Look up the attribute
+            val v = theme.resolveAttribute(it, outValue, true);
+
+            // This will print the name of the style where the value was ACTUALLY found
+            if (outValue.type != TypedValue.TYPE_NULL) {
+                val styleName = resources.getResourceName(outValue.sourceResourceId)
+                Log.d("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} found in $styleName value = ${outValue.data.toHexString()}")
+            } else {
+                Log.e("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} NOT FOUND in the hierarchy!");
+            }
+        }
+    }
+
+     private fun traceThemeWith(theme: Resources.Theme, vararg attrIds: Int) {
+        val outValue = TypedValue()
+
+        attrIds.forEach {
+
+            // Look up the attribute
+            val b = theme.resolveAttribute(it, outValue, true)
+
+            // This will print the name of the style where the value was ACTUALLY found
+            if (outValue.type != TypedValue.TYPE_NULL) {
+                Log.d("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} found : value = ${outValue.data.toHexString()}")
+            } else {
+                Log.e("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} NOT FOUND in the hierarchy!");
+            }
+        }
+    }
+
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        traceThemeWith(theme, /* com.google.android.material.R.attr.colorPrimaryContainer, */ org.treebolic.theme.R.attr.colorCustom, )
 
         // rate
         promptRate(this)
@@ -197,7 +239,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
                 }
 
                 override fun onNothingSelected(parentView: AdapterView<*>?) {
-                    
+
                 }
             }
 
