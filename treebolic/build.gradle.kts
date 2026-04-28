@@ -87,6 +87,7 @@ dependencies {
     implementation(project(":treebolicClientsLib"))
     implementation(project(":treebolicServicesIface"))
 
+    implementation(project(":theming"))
     implementation(project(":commonLib"))
     implementation(project(":storageLib"))
     implementation(project(":searchLib"))
