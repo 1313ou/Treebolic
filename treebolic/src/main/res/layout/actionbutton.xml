@@ -32,9 +32,10 @@
 		android:elevation="4dp"
 		android:tint="#FFFFFF"
 		android:visibility="visible"
+		app:backgroundTint="?attr/colorPrimary"
+		app:tint="?attr/colorOnPrimary"
 		app:fabSize="normal"
 		app:srcCompat="@drawable/ic_treebolic"
-		app:tint="@android:color/white"
 		app:useCompatPadding="true"
 		tools:ignore="UnusedAttribute" />
 

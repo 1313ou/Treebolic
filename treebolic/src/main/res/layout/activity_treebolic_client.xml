@@ -32,6 +32,8 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:contentDescription="@string/title_search_run"
+        app:backgroundTint="?attr/colorPrimary"
+        app:tint="?attr/colorOnPrimary"
         app:elevation="12dp"
         app:layout_anchor="@id/container"
         app:layout_anchorGravity="bottom|right|end"
