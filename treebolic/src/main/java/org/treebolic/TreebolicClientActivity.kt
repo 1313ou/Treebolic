@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.webkit.MimeTypeMap
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
@@ -22,7 +23,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.edit
 import androidx.core.net.toUri
 import androidx.preference.PreferenceManager
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import org.treebolic.ColorUtils.fetchColors
 import org.treebolic.Settings.getStringPref
@@ -108,7 +108,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
         }
 
         // floating action button
-        val fab = findViewById<FloatingActionButton>(R.id.fab)
+        val fab = findViewById<Button>(R.id.fab)
         fab.visibility = View.GONE
         fab.setOnClickListener {
             fab.visibility = View.GONE
@@ -505,7 +505,7 @@ class TreebolicClientActivity : TreebolicClientActivityStub(), IContext {
 
         // fab
         if (flag) {
-            val fab = findViewById<FloatingActionButton>(R.id.fab)
+            val fab = findViewById<Button>(R.id.fab)
             fab.visibility = View.VISIBLE
         }
     }
