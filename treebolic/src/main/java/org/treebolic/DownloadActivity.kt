@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.core.net.toUri
 import org.treebolic.Settings.getStringPref
+import org.treebolic.download.BaseDownloadActivity
 import org.treebolic.download.Deploy.copy
 import org.treebolic.download.Deploy.expand
 import org.treebolic.storage.Storage.getTreebolicStorage
@@ -21,7 +22,7 @@ import org.treebolic.download.R as DownloadR
  *
  * @author Bernard Bou
  */
-class DownloadActivity : org.treebolic.download.DownloadActivity() {
+class DownloadActivity : BaseDownloadActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

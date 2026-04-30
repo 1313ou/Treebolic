@@ -336,7 +336,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             return true
         } else if (R.id.action_download == id) {
             val intent = Intent(this, DownloadActivity::class.java)
-            intent.putExtra(org.treebolic.download.DownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true)
+            intent.putExtra(org.treebolic.download.BaseDownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true)
             activityDownloadResultLauncher!!.launch(intent)
             return true
         } else if (R.id.action_services == id) {
