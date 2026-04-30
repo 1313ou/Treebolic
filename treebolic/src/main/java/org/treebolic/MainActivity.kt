@@ -6,13 +6,10 @@ package org.treebolic
 import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.res.Resources
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.util.Log
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
@@ -30,11 +27,11 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.bbou.donate.DonateActivity
@@ -43,6 +40,7 @@ import com.bbou.rate.AppRate.promptRate
 import com.bbou.rate.AppRate.rate
 import org.treebolic.Services.getServices
 import org.treebolic.Services.loadIcon
+import org.treebolic.Version.appVersion
 import org.treebolic.filechooser.EntryChooser.Companion.choose
 import org.treebolic.filechooser.FileChooserActivity
 import org.treebolic.filechooser.FileChooserActivity.Companion.getFolder
@@ -55,7 +53,7 @@ import org.treebolic.storage.Deployer.expandZipAssetFile
 import org.treebolic.storage.Storage.getTreebolicStorage
 import java.io.File
 import java.io.IOException
-import androidx.core.content.edit
+import org.treebolic.common.R as CommonR
 
 /**
  * Treebolic main activity (home)
@@ -101,47 +99,9 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
 
     // L I F E C Y C L E
 
-    @RequiresApi(Build.VERSION_CODES.Q)
-    private fun traceResolveThemeWith(theme: Resources.Theme, vararg attrIds: Int) {
-        val outValue = TypedValue()
-
-        attrIds.forEach {
-
-            // Look up the attribute
-            val v = theme.resolveAttribute(it, outValue, true);
-
-            // This will print the name of the style where the value was ACTUALLY found
-            if (outValue.type != TypedValue.TYPE_NULL) {
-                val styleName = resources.getResourceName(outValue.sourceResourceId)
-                Log.d("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} found in $styleName value = ${outValue.data.toHexString()}")
-            } else {
-                Log.e("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} NOT FOUND in the hierarchy!");
-            }
-        }
-    }
-
-     private fun traceThemeWith(theme: Resources.Theme, vararg attrIds: Int) {
-        val outValue = TypedValue()
-
-        attrIds.forEach {
-
-            // Look up the attribute
-            val b = theme.resolveAttribute(it, outValue, true)
-
-            // This will print the name of the style where the value was ACTUALLY found
-            if (outValue.type != TypedValue.TYPE_NULL) {
-                Log.d("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} found : value = ${outValue.data.toHexString()}")
-            } else {
-                Log.e("INHERITANCE_CHECK", "Attribute 0x${it.toHexString()} NOT FOUND in the hierarchy!");
-            }
-        }
-    }
-
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        traceThemeWith(theme, /* com.google.android.material.R.attr.colorPrimaryContainer, */ org.treebolic.theme.R.attr.colorCustom, )
 
         // rate
         promptRate(this)
@@ -348,7 +308,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         } else if (R.id.action_settings == id) {
             tryStartTreebolicSettings()
             return true
-        } else if (R.id.action_settings_service == id) {
+        }  else if (R.id.action_settings_service == id) {
             val intent = Intent(this, SettingsActivity::class.java)
             intent.putExtra(AppCompatCommonPreferenceActivity.ARG_FRAGMENT, SettingsActivity.ServicePreferenceFragment::class.java.name)
             startActivity(intent)
@@ -362,7 +322,15 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         } else if (R.id.action_about == id) {
             startActivity(Intent(this, AboutActivity::class.java))
             return true
-        } else if (R.id.action_others == id) {
+        } else if (R.id.action_version == id) {
+            AlertDialog.Builder(this)
+                .setTitle(R.string.app_name)
+                .setIcon(CommonR.drawable.logo_app_mono)
+                .setMessage(appVersion(this))
+                .setNegativeButton(R.string.title_dismiss) { d, _ -> d.cancel() }
+                .show()
+            return true
+        }else if (R.id.action_others == id) {
             startActivity(Intent(this, OthersActivity::class.java))
             return true
         } else if (R.id.action_donate == id) {

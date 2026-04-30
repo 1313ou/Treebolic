@@ -23,10 +23,6 @@
 		android:title="@string/title_treebolic"
 		app:showAsAction="never" />
 	<item
-		android:id="@+id/action_demo"
-		android:title="@string/title_demo"
-		app:showAsAction="never" />
-	<item
 		android:title="@string/title_menu_open"
 		app:showAsAction="never">
 		<menu>
@@ -44,6 +40,10 @@
 				app:showAsAction="never" />
 		</menu>
 	</item>
+	<item
+		android:id="@+id/action_demo"
+		android:title="@string/title_demo"
+		app:showAsAction="never" />
 	<item
 		android:id="@+id/action_download"
 		android:title="@string/title_download"
@@ -115,6 +115,10 @@
 		app:showAsAction="never">
 		<menu>
 			<item
+				android:id="@+id/action_version"
+				android:title="@string/title_version"
+				app:showAsAction="never" />
+			<item
 				android:id="@+id/action_app_settings"
 				android:title="@string/title_activity_app_settings"
 				app:showAsAction="never" />
@@ -128,9 +132,5 @@
 				app:showAsAction="never" />
 		</menu>
 	</item>
-	<!--     <item -->
-	<!--         android:id="@+id/action_test" -->
-	<!--         app:showAsAction="never" -->
-	<!--         android:title="@string/action_test"/> -->
 
 </menu>

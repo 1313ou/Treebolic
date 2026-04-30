@@ -43,6 +43,8 @@
 	<string name="title_settings">Paramètres</string>
 	<string name="title_settings_service">Paramètres pour service</string>
 	<string name="title_client_status">État client</string>
+	<string name="title_version">Version</string>
+	<string name="title_dismiss">Ok</string>
 
 	<!-- choose services -->
 	<string name="title_services">Services</string>
