@@ -350,7 +350,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             return true
         } else if (R.id.action_settings_service == id) {
             val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra(AppCompatCommonPreferenceActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment::class.java.name)
+            intent.putExtra(AppCompatCommonPreferenceActivity.ARG_FRAGMENT, SettingsActivity.ServicePreferenceFragment::class.java.name)
             startActivity(intent)
             return true
         } else if (R.id.action_help == id) {

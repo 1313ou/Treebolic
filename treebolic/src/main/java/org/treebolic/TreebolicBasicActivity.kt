@@ -320,7 +320,7 @@ abstract class TreebolicBasicActivity protected constructor(
 
             R.id.action_settings_service -> {
                 val intent = Intent(this, SettingsActivity::class.java)
-                intent.putExtra(AppCompatCommonPreferenceActivity.INITIAL_ARG, SettingsActivity.ServicePreferenceFragment::class.java.name)
+                intent.putExtra(AppCompatCommonPreferenceActivity.ARG_FRAGMENT, SettingsActivity.ServicePreferenceFragment::class.java.name)
                 startActivity(intent)
                 return true
             }
