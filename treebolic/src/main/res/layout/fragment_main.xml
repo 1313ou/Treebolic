@@ -6,9 +6,9 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:layout_weight="1"
-	android:orientation="vertical"
-	tools:context="org.treebolic.MainActivity$PlaceholderFragment">
+	android:orientation="vertical">
 
 	<ImageView
 		android:layout_width="wrap_content"
@@ -16,6 +16,7 @@
 		android:layout_gravity="top|center_horizontal"
 		android:contentDescription="@string/treebolic"
 		android:paddingTop="20dp"
+		app:tint="?attr/colorOnCustom"
 		android:src="@drawable/ic_splash_text" />
 
 	<ImageView
