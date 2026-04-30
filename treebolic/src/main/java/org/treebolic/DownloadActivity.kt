@@ -3,10 +3,12 @@
  */
 package org.treebolic
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.net.toUri
+import org.treebolic.AppCompatCommonPreferenceActivity.Companion.ARG_FRAGMENT
 import org.treebolic.Settings.getStringPref
 import org.treebolic.download.BaseDownloadActivity
 import org.treebolic.download.Deploy.copy
@@ -35,7 +37,10 @@ class DownloadActivity : BaseDownloadActivity() {
         }
         if (downloadUrl == null || downloadUrl!!.isEmpty()) {
             Toast.makeText(this, DownloadR.string.error_null_download_url, Toast.LENGTH_SHORT).show()
-            finish()
+            val intent = Intent(this, SettingsActivity::class.java).apply {
+                putExtra(ARG_FRAGMENT, SettingsActivity.DownloadPreferenceFragment::class.java.name)
+            }
+            startActivity(intent)
         }
     }
 
