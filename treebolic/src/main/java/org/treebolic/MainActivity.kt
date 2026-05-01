@@ -28,7 +28,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.edit
@@ -531,45 +530,45 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
      * Choose service
      */
     private fun tryStartOneOfTreebolicClients() {
-        val services = getServices(this)
-
-        val alert = AlertDialog.Builder(this)
-        alert.setTitle(R.string.title_services)
-        alert.setMessage(R.string.title_choose_service)
-
-        val input = RadioGroup(this)
-        if (services != null) {
-            for (service in services) {
-                val radioButton = RadioButton(this)
-                radioButton.text = service[ServiceKeys.LABEL] as String?
-                val drawableRef = service[ServiceKeys.DRAWABLE] as String?
-                if (drawableRef != null) {
-                    val fields = drawableRef.split("#".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-                    val index = fields[1].toInt()
-                    val drawable = loadIcon(packageManager, fields[0], index)
-                    radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
-                }
-                radioButton.compoundDrawablePadding = 10
-                radioButton.tag = service
-                input.addView(radioButton)
-            }
-        }
-        alert.setView(input)
-        alert.setNegativeButton(R.string.action_cancel) { _: DialogInterface?, _: Int -> }
-
-        val dialog = alert.create()
-        input.setOnCheckedChangeListener { _: RadioGroup?, _: Int ->
-            dialog.dismiss()
-            val childCount = input.childCount
-            for (i in 0 until childCount) {
-                val radioButton = input.getChildAt(i) as RadioButton
-                if (radioButton.id == input.checkedRadioButtonId) {
-                    @Suppress("UNCHECKED_CAST") val service = radioButton.tag as Service
-                    tryStartTreebolicClient(service)
+        val input = RadioGroup(this).apply {
+            val services = getServices(this@MainActivity)
+            if (services != null) {
+                for (service in services) {
+                    RadioButton(this@MainActivity).apply {
+                        text = service[ServiceKeys.LABEL] as String?
+                        compoundDrawablePadding = 10
+                        tag = service
+                        val drawableRef = service[ServiceKeys.DRAWABLE] as String?
+                        if (drawableRef != null) {
+                            val fields = drawableRef.split("#".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+                            val index = fields[1].toInt()
+                            val drawable = loadIcon(packageManager, fields[0], index)
+                            setCompoundDrawablesWithIntrinsicBounds(drawable, null, null, null)
+                        }
+                        addView(this)
+                    }
                 }
             }
         }
-        dialog.show()
+        makeDialog(this)
+            .setTitle(R.string.title_services)
+            .setMessage(R.string.title_choose_service)
+            .setView(input)
+            .setNegativeButton(R.string.action_cancel) { _: DialogInterface?, _: Int -> }
+            .create()
+            .apply {
+                input.setOnCheckedChangeListener { _: RadioGroup?, _: Int ->
+                    dismiss()
+                    for (i in 0 until input.childCount) {
+                        val radioButton = input.getChildAt(i) as RadioButton
+                        if (radioButton.id == input.checkedRadioButtonId) {
+                            @Suppress("UNCHECKED_CAST") val service = radioButton.tag as Service
+                            tryStartTreebolicClient(service)
+                        }
+                    }
+                }
+            }
+            .show()
     }
 
     // R E Q U E S T S ( S T A R T A C T I V I T Y F O R R E S U L T )
