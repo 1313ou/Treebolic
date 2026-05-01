@@ -554,7 +554,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             .setTitle(R.string.title_services)
             .setMessage(R.string.title_choose_service)
             .setView(input)
-            .setNegativeButton(R.string.action_cancel) { _: DialogInterface?, _: Int -> }
+            .setNegativeButton(R.string.action_cancel) { _, _ -> }
             .create()
             .apply {
                 input.setOnCheckedChangeListener { _: RadioGroup?, _: Int ->
