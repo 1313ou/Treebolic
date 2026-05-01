@@ -53,7 +53,6 @@ import org.treebolic.storage.Deployer.expandZipAssetFile
 import org.treebolic.storage.Storage.getTreebolicStorage
 import java.io.File
 import java.io.IOException
-import org.treebolic.common.R as CommonR
 
 /**
  * Treebolic main activity (home)
@@ -268,83 +267,126 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        val id = item.itemId
-        if (R.id.action_treebolic == id) {
-            tryStartTreebolic(null as String?)
-            return true
-        } else if (R.id.action_treebolic_source == id) {
-            requestTreebolicSource()
-            return true
-        } else if (R.id.action_treebolic_bundle == id) {
-            requestTreebolicBundle()
-            return true
-        } else if (R.id.action_treebolic_serialized == id) {
-            requestTreebolicSerialized()
-            return true
-        } else if (R.id.action_treebolic_client == id) {
-            TreebolicClientActivity.initializeSearchPrefs(this)
-            tryStartOneOfTreebolicClients()
-            return true
-        } else if (R.id.action_treebolic_default_client == id) {
-            TreebolicClientActivity.initializeSearchPrefs(this)
-            tryStartTreebolicDefaultClient()
-            return true
-        } else if (R.id.action_demo == id) {
-            spinner.setSelection(0)
-            val archiveUri = copyAssetFile(this, Settings.DEMO)!!
-            tryStartTreebolicBundle(archiveUri)
-            return true
-        } else if (R.id.action_download == id) {
-            val intent = Intent(this, DownloadActivity::class.java)
-            intent.putExtra(org.treebolic.download.BaseDownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true)
-            activityDownloadResultLauncher!!.launch(intent)
-            return true
-        } else if (R.id.action_services == id) {
-            startActivity(Intent(this, ServicesActivity::class.java))
-            return true
-        } else if (R.id.action_providers == id) {
-            startActivity(Intent(this, ProvidersActivity::class.java))
-            return true
-        } else if (R.id.action_settings == id) {
-            tryStartTreebolicSettings()
-            return true
-        } else if (R.id.action_settings_service == id) {
-            val intent = Intent(this, SettingsActivity::class.java)
-            intent.putExtra(AppCompatCommonPreferenceActivity.ARG_FRAGMENT, SettingsActivity.ServicePreferenceFragment::class.java.name)
-            startActivity(intent)
-            return true
-        } else if (R.id.action_help == id) {
-            startActivity(Intent(this, HelpActivity::class.java))
-            return true
-        } else if (R.id.action_tips == id) {
-            show(supportFragmentManager)
-            return true
-        } else if (R.id.action_about == id) {
-            startActivity(Intent(this, AboutActivity::class.java))
-            return true
-        } else if (R.id.action_version == id) {
-            dialog(appVersion(this), this)
-            return true
-        } else if (R.id.action_others == id) {
-            startActivity(Intent(this, OthersActivity::class.java))
-            return true
-        } else if (R.id.action_donate == id) {
-            startActivity(Intent(this, DonateActivity::class.java))
-            return true
-        } else if (R.id.action_rate == id) {
-            rate(this)
-            return true
-        } else if (R.id.action_finish == id) {
-            finish()
-            return true
-        } else if (R.id.action_kill == id) {
-            Process.killProcess(Process.myPid())
-            return true
-        } else if (R.id.action_app_settings == id) {
-            Settings.applicationSettings(this, BuildConfig.APPLICATION_ID)
-            return true
-        } else {
-            return false
+        return when (item.itemId) {
+            R.id.action_treebolic -> {
+                tryStartTreebolic(null as String?)
+                true
+            }
+
+            R.id.action_treebolic_source -> {
+                requestTreebolicSource()
+                true
+            }
+
+            R.id.action_treebolic_bundle -> {
+                requestTreebolicBundle()
+                true
+            }
+
+            R.id.action_treebolic_serialized -> {
+                requestTreebolicSerialized()
+                true
+            }
+
+            R.id.action_treebolic_client -> {
+                TreebolicClientActivity.initializeSearchPrefs(this)
+                tryStartOneOfTreebolicClients()
+                true
+            }
+
+            R.id.action_treebolic_default_client -> {
+                TreebolicClientActivity.initializeSearchPrefs(this)
+                tryStartTreebolicDefaultClient()
+                true
+            }
+
+            R.id.action_demo -> {
+                spinner.setSelection(0)
+                val archiveUri = copyAssetFile(this, Settings.DEMO)!!
+                tryStartTreebolicBundle(archiveUri)
+                true
+            }
+
+            R.id.action_download -> {
+                val intent = Intent(this, DownloadActivity::class.java)
+                intent.putExtra(org.treebolic.download.BaseDownloadActivity.ARG_ALLOW_EXPAND_ARCHIVE, true)
+                activityDownloadResultLauncher!!.launch(intent)
+                true
+            }
+
+            R.id.action_services -> {
+                startActivity(Intent(this, ServicesActivity::class.java))
+                true
+            }
+
+            R.id.action_providers -> {
+                startActivity(Intent(this, ProvidersActivity::class.java))
+                true
+            }
+
+            R.id.action_settings -> {
+                tryStartTreebolicSettings()
+                true
+            }
+
+            R.id.action_settings_service -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                intent.putExtra(AppCompatCommonPreferenceActivity.ARG_FRAGMENT, SettingsActivity.ServicePreferenceFragment::class.java.name)
+                startActivity(intent)
+                true
+            }
+
+            R.id.action_help -> {
+                startActivity(Intent(this, HelpActivity::class.java))
+                true
+            }
+
+            R.id.action_tips -> {
+                show(supportFragmentManager)
+                true
+            }
+
+            R.id.action_about -> {
+                startActivity(Intent(this, AboutActivity::class.java))
+                true
+            }
+
+            R.id.action_version -> {
+                dialog(appVersion(this), this)
+                true
+            }
+
+            R.id.action_others -> {
+                startActivity(Intent(this, OthersActivity::class.java))
+                true
+            }
+
+            R.id.action_donate -> {
+                startActivity(Intent(this, DonateActivity::class.java))
+                true
+            }
+
+            R.id.action_rate -> {
+                rate(this)
+                true
+            }
+
+            R.id.action_finish -> {
+                finish()
+                true
+            }
+
+            R.id.action_kill -> {
+                Process.killProcess(Process.myPid())
+                true
+            }
+
+            R.id.action_app_settings -> {
+                Settings.applicationSettings(this, BuildConfig.APPLICATION_ID)
+                true
+            }
+
+            else -> false
         }
     }
 
