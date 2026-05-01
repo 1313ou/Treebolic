@@ -308,7 +308,7 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
         } else if (R.id.action_settings == id) {
             tryStartTreebolicSettings()
             return true
-        }  else if (R.id.action_settings_service == id) {
+        } else if (R.id.action_settings_service == id) {
             val intent = Intent(this, SettingsActivity::class.java)
             intent.putExtra(AppCompatCommonPreferenceActivity.ARG_FRAGMENT, SettingsActivity.ServicePreferenceFragment::class.java.name)
             startActivity(intent)
@@ -323,14 +323,9 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
             return true
         } else if (R.id.action_version == id) {
-            AlertDialog.Builder(this)
-                .setTitle(R.string.app_name)
-                .setIcon(CommonR.drawable.logo_app_mono)
-                .setMessage(appVersion(this))
-                .setNegativeButton(R.string.title_dismiss) { d, _ -> d.cancel() }
-                .show()
+            dialog(appVersion(this), this)
             return true
-        }else if (R.id.action_others == id) {
+        } else if (R.id.action_others == id) {
             startActivity(Intent(this, OthersActivity::class.java))
             return true
         } else if (R.id.action_donate == id) {

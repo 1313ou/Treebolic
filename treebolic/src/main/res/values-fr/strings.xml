@@ -32,7 +32,7 @@
 	<string name="title_treebolic_source">Ouvrir source</string>
 	<string name="title_treebolic_bundle">Ouvrir archive</string>
 	<string name="title_treebolic_serialized">Ouvrir modèle sérialisé</string>
-	<string name="title_treebolic_client">Lancer client &#8230;</string>
+	<string name="title_treebolic_client">Lancer client …</string>
 	<string name="title_treebolic_default_client">Lancer client par défaut</string>
 	<string name="title_treebolic_client_toggle">Basculer client</string>
 	<string name="title_query">Lancer</string>
@@ -43,8 +43,6 @@
 	<string name="title_settings">Paramètres</string>
 	<string name="title_settings_service">Paramètres pour service</string>
 	<string name="title_client_status">État client</string>
-	<string name="title_version">Version</string>
-	<string name="title_dismiss">Ok</string>
 
 	<!-- choose services -->
 	<string name="title_services">Services</string>
