@@ -4,7 +4,6 @@
 package org.treebolic
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -40,10 +39,13 @@ import com.bbou.rate.AppRate.rate
 import org.treebolic.Services.getServices
 import org.treebolic.Services.loadIcon
 import org.treebolic.Version.appVersion
+import org.treebolic.Version.buildTime
+import org.treebolic.Version.gitHash
 import org.treebolic.filechooser.EntryChooser.Companion.choose
 import org.treebolic.filechooser.FileChooserActivity
 import org.treebolic.filechooser.FileChooserActivity.Companion.getFolder
 import org.treebolic.filechooser.FileChooserActivity.Companion.setFolder
+import org.treebolic.glue.BuildConfig
 import org.treebolic.guide.AboutActivity
 import org.treebolic.guide.HelpActivity
 import org.treebolic.guide.Tip.Companion.show
@@ -52,6 +54,7 @@ import org.treebolic.storage.Deployer.expandZipAssetFile
 import org.treebolic.storage.Storage.getTreebolicStorage
 import java.io.File
 import java.io.IOException
+import org.treebolic.glue.BuildConfig as GlueBuildConfig
 
 /**
  * Treebolic main activity (home)
@@ -351,7 +354,12 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
             }
 
             R.id.action_version -> {
-                dialog(appVersion(this), this)
+                val v = appVersion(this.applicationContext)
+                    .append(buildTime(BuildConfig.BUILD_TIME, "app"))
+                    .append(gitHash(BuildConfig.GIT_HASH, "app"))
+                    .append(buildTime(GlueBuildConfig.BUILD_TIME, "glue"))
+                    .append(gitHash(GlueBuildConfig.GIT_HASH, "glue"))
+                dialog(v, this)
                 true
             }
 
