@@ -10,13 +10,18 @@ import java.util.Scanner
 
 val buildTime: String = SimpleDateFormat("yyyy-MM-dd_HH:mm").format(Date())
 
-fun getGitHash(): String {
+fun getGitHash(workingDir: File): String? {
     return try {
-        val process = Runtime.getRuntime().exec("git rev-parse --short HEAD")
-        val scanner = Scanner(process.inputStream).useDelimiter("\\A")
-        if (scanner.hasNext()) scanner.next().trim() else "unknown"
+        val process = ProcessBuilder("git", "rev-parse", "--short", "HEAD")
+            .directory(workingDir)
+            .redirectErrorStream(true)
+            .start()
+        val result = process.inputStream.bufferedReader().use { it.readText() }.trim()
+        val exitCode = process.waitFor()
+        if (exitCode == 0) result else null
     } catch (e: Exception) {
-        "unknown"
+        e.printStackTrace()
+        null
     }
 }
 
@@ -53,7 +58,7 @@ android {
         buildConfigField("int", "VERSION_CODE", vCode.toString())
         buildConfigField("String", "VERSION_NAME", "\"$vName\"")
         buildConfigField("String", "BUILD_TIME", "\"$buildTime\"")
-        buildConfigField("String", "GIT_HASH", "\"${getGitHash()}\"")
+        buildConfigField("String", "GIT_HASH", "\"${getGitHash(File("Treebolic"))}\"")
     }
 
     signingConfigs {
