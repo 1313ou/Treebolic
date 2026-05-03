@@ -45,7 +45,6 @@ import org.treebolic.filechooser.EntryChooser.Companion.choose
 import org.treebolic.filechooser.FileChooserActivity
 import org.treebolic.filechooser.FileChooserActivity.Companion.getFolder
 import org.treebolic.filechooser.FileChooserActivity.Companion.setFolder
-import org.treebolic.glue.BuildConfig
 import org.treebolic.guide.AboutActivity
 import org.treebolic.guide.HelpActivity
 import org.treebolic.guide.Tip.Companion.show
@@ -54,6 +53,7 @@ import org.treebolic.storage.Deployer.expandZipAssetFile
 import org.treebolic.storage.Storage.getTreebolicStorage
 import java.io.File
 import java.io.IOException
+import org.treebolic.common.BuildConfig as CommonBuildConfig
 import org.treebolic.glue.BuildConfig as GlueBuildConfig
 
 /**
@@ -357,6 +357,8 @@ class MainActivity : AppCompatCommonActivity(), View.OnClickListener {
                 val v = appVersion(this.applicationContext)
                     .append(buildTime(BuildConfig.BUILD_TIME, "app"))
                     .append(gitHash(BuildConfig.GIT_HASH, "app"))
+                    .append(buildTime(CommonBuildConfig.BUILD_TIME, "common"))
+                    .append(gitHash(CommonBuildConfig.GIT_HASH, "common"))
                     .append(buildTime(GlueBuildConfig.BUILD_TIME, "glue"))
                     .append(gitHash(GlueBuildConfig.GIT_HASH, "glue"))
                 dialog(v, this)
