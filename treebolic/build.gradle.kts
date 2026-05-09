@@ -32,30 +32,24 @@ val keystorePropertiesFile: File = rootProject.file("keystore.properties")
 val keystoreProperties: Properties = Properties()
 keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 
-private val vCode by lazy { rootProject.extra["versionCode"] as Int }
-private val vName by lazy { rootProject.extra["versionName"] as String }
-private val vCompileSdk by lazy { rootProject.extra["compileSdk"] as Int }
-private val vMinSdk by lazy { rootProject.extra["minSdk"] as Int }
-private val vTargetSdk by lazy { rootProject.extra["targetSdk"] as Int }
-
 android {
 
     namespace = "org.treebolic"
 
-    compileSdk = vCompileSdk
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "org.treebolic"
-        versionCode = vCode
-        versionName = vName
-        minSdk = vMinSdk
-        targetSdk = vTargetSdk
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get() as String?
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
 
         // BuildConfig fields
-        buildConfigField("int", "VERSION_CODE", vCode.toString())
-        buildConfigField("String", "VERSION_NAME", "\"$vName\"")
+        buildConfigField("int", "VERSION_CODE", libs.versions.versionCode.get())
+        buildConfigField("String", "VERSION_NAME", "\"${libs.versions.versionCode.get()}\"")
         buildConfigField("String", "BUILD_TIME", "\"$buildTime\"")
         buildConfigField("String", "GIT_HASH", "\"${getGitHash(File("Treebolic"))}\"")
     }
