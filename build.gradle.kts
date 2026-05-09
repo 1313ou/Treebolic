@@ -16,14 +16,6 @@ buildscript {
 
 allprojects {
 
-    ext {
-        set("versionCode", 1)
-        set("versionName", "0.1")
-        set("minSdk", 21)
-        set("targetSdk", 35)
-        set("compileSdk", 35)
-     }
-
     gradle.projectsEvaluated {
         tasks.withType<JavaCompile> {
             options.compilerArgs.addAll(arrayOf("-Xlint:deprecation", "-Xlint:unchecked"))
